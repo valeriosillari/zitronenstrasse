@@ -1,9 +1,13 @@
 # Zitronenstrasse
 ## Romantic Spots in Berlin.
 
-> Nuxt.js project
+### Concept
 
-## Build Setup
+A side Project with a list of romantic spots in Berlin.
+
+Based on VueJS (Nuxt) and Google Maps.
+
+### Build Setup
 
 ``` bash
 # install dependencies
