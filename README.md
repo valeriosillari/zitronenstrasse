@@ -2,6 +2,7 @@
 
 ### Romantic Spots in Berlin.
 
+[ ![Codeship Status for valeriosillari/zitronenstrasse](https://app.codeship.com/projects/45f42180-b923-0135-4183-366309507115/status?branch=master)](https://app.codeship.com/projects/259131)
 
 ### Concept
 
