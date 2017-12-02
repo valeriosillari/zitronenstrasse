@@ -1,9 +1,7 @@
 <template lang="pug">
-  .wrap-1
-
+  .layout-wrap
     //- navbar
     navbar
-
     //- nuxt tag
     nuxt
 </template>

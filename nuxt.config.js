@@ -27,13 +27,14 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [
+      {
+        // call google map javascript API
+        // TODO: set here our custom API ID later
+        src: `https://maps.googleapis.com/maps/api/js?v=3&libraries=places`
+      }
     ]
-    // script: [
-    //   {
-    //     // TODO: set here our custom API ID later
-    //     src: `https://maps.googleapis.com/maps/api/js?v=3&libraries=places`
-    //   }
-    // ]
   },
 
   /*
