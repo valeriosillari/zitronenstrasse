@@ -6,7 +6,10 @@
         zitronenstrasse
       </h1>
       <h2 class="subtitle">
-        A Nuxt.js project. develop 001.
+        A Nuxt.js project.
+      </h2>
+      <h3 class="subtitle">
+        Deployed github repo on heroku via codeship.
       </h2>
       <div class="links">
         <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
