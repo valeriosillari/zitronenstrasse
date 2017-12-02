@@ -49,8 +49,11 @@
               console.log(status)
               return
             }
+            // marker
             let marker = new google.maps.Marker({
               map: map,
+              // set icon custo style
+              // icon: 'https://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
               position: result.geometry.location
             })
             const currentInfoWindow = new google.maps.InfoWindow({
