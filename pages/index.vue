@@ -6,7 +6,7 @@
         zitronenstrasse
       </h1>
       <h2 class="subtitle">
-        A Nuxt.js project.
+        A Nuxt.js project. 1.
       </h2>
       <div class="links">
         <a href="https://nuxtjs.org/" target="_blank" class="button--green">Documentation</a>
