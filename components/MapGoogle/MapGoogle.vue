@@ -1,6 +1,5 @@
 <template lang="pug">
-  .google-map-wrapper
-    .google-map#map-id
+  .google-map#google-map
 </template>
 
 <script>
@@ -25,7 +24,7 @@
       const initialize = () => {
         let map
         let activeInfoWindow
-        const divWrapperItemID = 'map-id'
+        const divWrapperItemID = 'google-map'
         // set map view option
         const mapOptions = {
           zoom: 14,
@@ -77,9 +76,6 @@
 </script>
 
 <style lang="sass" scoped>
-  .google-map-wrapper
-    width: 100%
-    min-height: 100%
   .google-map
     position: absolute
     width: 100%

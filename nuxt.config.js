@@ -49,6 +49,7 @@ module.exports = {
   ** Global CSS
   */
   css: [
+    'assets/stylesheets/global.sass',
     'bootstrap/dist/css/bootstrap.css'
   ],
 
