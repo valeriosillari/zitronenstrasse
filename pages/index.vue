@@ -3,7 +3,7 @@
 </template>
 
 <script>
-  import MapGoogle from '~/components/MapGoogle.vue'
+  import MapGoogle from '~/components/MapGoogle/MapGoogle.vue'
   export default {
     head () {
       // Set Meta Tags for this Page

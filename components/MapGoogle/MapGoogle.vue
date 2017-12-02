@@ -4,6 +4,14 @@
 </template>
 
 <script>
+  // based on:
+  // https://medium.com/founders-factory/building-a-custom-google-map-component-with-vue-js-d1c01ddd0b0a
+  // https://stackoverflow.com/questions/29723134/google-map-add-marker-using-place-id
+  // https://stackoverflow.com/questions/16985867/adding-an-onclick-event-to-google-map-marker
+
+  import placeIdArray from '~/components/MapGoogle/_placesIdArrays.js'
+  import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
+
   export default {
     data: () => {
       const MapGoogle = {
@@ -13,9 +21,6 @@
     },
     // mounted: WHEN ALL code on server is already loaded!
     mounted: () => {
-      // based on:
-      // https://stackoverflow.com/questions/29723134/google-map-add-marker-using-place-id
-      // https://stackoverflow.com/questions/16985867/adding-an-onclick-event-to-google-map-marker
       const google = window.google
       const initialize = () => {
         let map
@@ -28,23 +33,13 @@
           // map options
           options: {
             disableDefaultUI: true,
-            attributionControl: false
+            attributionControl: false,
+            // set custom map styles
+            styles: mapStylesDark
           }
         }
         // attach map to the div element, passing all the option above
         map = new google.maps.Map(document.getElementById(divWrapperItemID), mapOptions)
-
-        // set list of places
-        const placeIdArray = [
-          // tier
-          'ChIJOSWgYaVPqEcR63RnoNfgsDg',
-          // b-lage
-          'ChIJAV_YIZ5PqEcRKxI0jRwb58I',
-          // Geschwister Nothaft Café
-          'ChIJX2MutgxPqEcR2nvgHiQ0ojE',
-          // Herr Lindemann
-          'ChIJd-_qBqBPqEcRhdYalX3ASNI'
-        ]
 
         for (let placeID of placeIdArray) {
           new google.maps.places.PlacesService(map).getDetails({
@@ -83,7 +78,6 @@
     width: 100%
     min-height: 100%
   .google-map
-    background: gray
     position: absolute
     width: 100%
     height: 100%
