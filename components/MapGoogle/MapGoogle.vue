@@ -1,5 +1,6 @@
 <template lang="pug">
-  .google-map#google-map
+  .map-main-wrapper
+    .google-map#google-map
 </template>
 
 <script>
@@ -77,6 +78,10 @@
 </script>
 
 <style lang="sass" scoped>
+  .map-main-wrapper
+    width: 100%
+    min-height: 100%
+
   .google-map
     position: absolute
     width: 100%

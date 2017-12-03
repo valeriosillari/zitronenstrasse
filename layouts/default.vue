@@ -1,16 +1,21 @@
 <template lang="pug">
   .layout-wrap
     //- navbar
-    navbar
+    Navbar
     //- nuxt tag
     nuxt
+    //- footer
+    Footer
 </template>
 
 <script>
   import Navbar from '~/components/Navbar.vue'
+  import Footer from '~/components/Footer.vue'
+
   export default {
     components: {
-      Navbar
+      Navbar,
+      Footer
     }
   }
 </script>
