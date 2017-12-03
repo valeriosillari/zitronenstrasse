@@ -69,7 +69,7 @@
           })
         }
       }
-
+      // TODO: load works at page load, not if you switch pages ...
       google.maps.event.addDomListener(window, 'load', initialize)
     }
   }
