@@ -1,5 +1,6 @@
 <template lang="pug">
-  .google-map#google-map
+  .map-main-wrapper
+    .google-map#google-map
 </template>
 
 <script>
@@ -7,6 +8,7 @@
   // https://medium.com/founders-factory/building-a-custom-google-map-component-with-vue-js-d1c01ddd0b0a
   // https://stackoverflow.com/questions/29723134/google-map-add-marker-using-place-id
   // https://stackoverflow.com/questions/16985867/adding-an-onclick-event-to-google-map-marker
+  // https://laracasts.com/discuss/channels/vue/google-maps-and-vue-js?page=2
 
   import placeIdArray from '~/components/MapGoogle/_placesIdArrays.js'
   import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
@@ -19,29 +21,31 @@
       return MapGoogle
     },
     // mounted: WHEN ALL code on server is already loaded!
-    mounted: () => {
-      const google = window.google
-      const initialize = () => {
-        let map
-        let activeInfoWindow
-        const divWrapperItemID = 'google-map'
-        // set map view option
-        const mapOptions = {
+    mounted: function () {
+      this.initMap()
+    },
+    methods: {
+      initMap: function () {
+        const google = window.google
+        this.map = new google.maps.Map(document.getElementById('google-map'), {
+          center: {
+            lat: 52.482841,
+            lng: 13.4252209
+          },
           zoom: 14,
-          center: new google.maps.LatLng(52.482841, 13.4252209),
           // map options
           options: {
-            disableDefaultUI: true,
-            attributionControl: false,
+            // disableDefaultUI: true,
+            // attributionControl: false,
             // set custom map styles
             styles: mapStylesDark
           }
-        }
-        // attach map to the div element, passing all the option above
-        map = new google.maps.Map(document.getElementById(divWrapperItemID), mapOptions)
 
+        })
+        let mapLoaded = this.map
+        let activeInfoWindow
         for (let placeID of placeIdArray) {
-          new google.maps.places.PlacesService(map).getDetails({
+          new google.maps.places.PlacesService(mapLoaded).getDetails({
             placeId: placeID
           }, (result, status) => {
             if (status !== google.maps.places.PlacesServiceStatus.OK) {
@@ -50,7 +54,7 @@
             }
             // marker
             let marker = new google.maps.Marker({
-              map: map,
+              map: mapLoaded,
               // set icon custo style
               // icon: 'https://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
               position: result.geometry.location
@@ -62,20 +66,22 @@
               // close info window of previous opened marker : reset
               activeInfoWindow && activeInfoWindow.close()
               // open current clicked one
-              currentInfoWindow.open(map, marker)
+              currentInfoWindow.open(mapLoaded, marker)
               // set the current one as opened one
               activeInfoWindow = currentInfoWindow
             })
           })
         }
       }
-      // TODO: load works at page load, not if you switch pages ...
-      google.maps.event.addDomListener(window, 'load', initialize)
     }
   }
 </script>
 
 <style lang="sass" scoped>
+  .map-main-wrapper
+    width: 100%
+    min-height: 100%
+
   .google-map
     position: absolute
     width: 100%
