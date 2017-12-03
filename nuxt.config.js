@@ -30,9 +30,7 @@ module.exports = {
     ],
     script: [
       {
-        // call google map javascript API
-        // TODO: set here our custom API ID later
-        src: `https://maps.googleapis.com/maps/api/js?v=3&libraries=places`
+        // todo
       }
     ]
   },
