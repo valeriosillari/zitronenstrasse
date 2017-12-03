@@ -9,7 +9,7 @@
   // https://stackoverflow.com/questions/16985867/adding-an-onclick-event-to-google-map-marker
   // https://laracasts.com/discuss/channels/vue/google-maps-and-vue-js?page=2
   import placeIdArray from '~/components/MapGoogle/_placesIdArrays.js'
-  // import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
+  import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
 
   export default {
     data: () => {
@@ -30,8 +30,15 @@
             lat: 52.482841,
             lng: 13.4252209
           },
-          scrollwheel: false,
-          zoom: 14
+          zoom: 14,
+          // map options
+          options: {
+            disableDefaultUI: true,
+            attributionControl: false,
+            // set custom map styles
+            styles: mapStylesDark
+          }
+
         })
         let mapLoaded = this.map
         let activeInfoWindow
