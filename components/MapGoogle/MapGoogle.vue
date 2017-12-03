@@ -4,6 +4,11 @@
     :zoom='zoom',
     :options='options'
   )
+    gmap-marker(
+      :key='index',
+      v-for='(item, index) in markers',
+      :position="item.position"
+    )
 </template>
 
 <script>
@@ -27,8 +32,9 @@
           // set custom map styles
           styles: mapStylesDark
         },
-        // markers : an array
+        // markers
         markers: [
+          // empty ...
         ]
       }
       return MapGoogle
