@@ -16,5 +16,4 @@
 <style lang="sass" scoped>
   .footer
     min-height: 300px
-    background: red
 </style>
