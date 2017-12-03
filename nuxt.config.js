@@ -57,7 +57,7 @@ module.exports = {
     vendor: [
       'axios',
       'jquery',
-      'bootstrap',
+      'bootstrap'
     ],
     plugins: [
       // set shortcuts as global for bootstrap
@@ -88,6 +88,6 @@ module.exports = {
   ** Customize the Vue Plugins
   */
   plugins: [
-    // todo
+    '~/plugins/vue-google-maps'
   ]
 }

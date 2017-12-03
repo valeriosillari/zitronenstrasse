@@ -1,17 +1,35 @@
 <template lang="pug">
-  .google-map
-    | heererere
+  gmap-map.google-map(
+    :center='center',
+    :zoom='zoom',
+    :options='options'
+  )
 </template>
 
 <script>
   // import placeIdArray from '~/components/MapGoogle/_placesIdArrays.js'
-  // import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
+  import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
 
   export default {
-    data: () => {
+    data () {
       const MapGoogle = {
-        // empty object
-        dummy: 'dummy text'
+        zoom: 14,
+
+        // map position: set my custom BERLIN map info
+        center: {
+          lat: 52.482841,
+          lng: 13.4252209
+        },
+        // map options
+        options: {
+          disableDefaultUI: true,
+          attributionControl: false,
+          // set custom map styles
+          styles: mapStylesDark
+        },
+        // markers : an array
+        markers: [
+        ]
       }
       return MapGoogle
     }
