@@ -8,7 +8,7 @@
   // https://stackoverflow.com/questions/29723134/google-map-add-marker-using-place-id
   // https://stackoverflow.com/questions/16985867/adding-an-onclick-event-to-google-map-marker
 
-  // import placeIdArray from '~/components/MapGoogle/_placesIdArrays.js'
+  import placeIdArray from '~/components/MapGoogle/_placesIdArrays.js'
   // import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
 
   export default {
@@ -33,6 +33,36 @@
           scrollwheel: false,
           zoom: 14
         })
+        let map1 = this.map
+        let activeInfoWindow
+        for (let placeID of placeIdArray) {
+          new google.maps.places.PlacesService(map1).getDetails({
+            placeId: placeID
+          }, (result, status) => {
+            if (status !== google.maps.places.PlacesServiceStatus.OK) {
+              console.log(status)
+              return
+            }
+            // marker
+            let marker = new google.maps.Marker({
+              map: map1,
+              // set icon custo style
+              // icon: 'https://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
+              position: result.geometry.location
+            })
+            const currentInfoWindow = new google.maps.InfoWindow({
+              content: result.name
+            })
+            google.maps.event.addListener(marker, 'click', (el) => {
+              // close info window of previous opened marker : reset
+              activeInfoWindow && activeInfoWindow.close()
+              // open current clicked one
+              currentInfoWindow.open(map1, marker)
+              // set the current one as opened one
+              activeInfoWindow = currentInfoWindow
+            })
+          })
+        }
       }
     }
     //
