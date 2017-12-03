@@ -33,10 +33,10 @@
           scrollwheel: false,
           zoom: 14
         })
-        let map1 = this.map
+        let mapLoaded = this.map
         let activeInfoWindow
         for (let placeID of placeIdArray) {
-          new google.maps.places.PlacesService(map1).getDetails({
+          new google.maps.places.PlacesService(mapLoaded).getDetails({
             placeId: placeID
           }, (result, status) => {
             if (status !== google.maps.places.PlacesServiceStatus.OK) {
@@ -45,7 +45,7 @@
             }
             // marker
             let marker = new google.maps.Marker({
-              map: map1,
+              map: mapLoaded,
               // set icon custo style
               // icon: 'https://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
               position: result.geometry.location
@@ -57,7 +57,7 @@
               // close info window of previous opened marker : reset
               activeInfoWindow && activeInfoWindow.close()
               // open current clicked one
-              currentInfoWindow.open(map1, marker)
+              currentInfoWindow.open(mapLoaded, marker)
               // set the current one as opened one
               activeInfoWindow = currentInfoWindow
             })
