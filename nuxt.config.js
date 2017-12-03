@@ -41,7 +41,7 @@ module.exports = {
   ** Customize the progress-bar color
   */
   loading: {
-    color: '#FFF229',
+    color: '#e0d853',
     height: '5px'
   },
 
@@ -49,8 +49,7 @@ module.exports = {
   ** Global CSS
   */
   css: [
-    'assets/stylesheets/global.sass',
-    'bootstrap/dist/css/bootstrap.css'
+    'assets/stylesheets/global.sass'
   ],
 
   /*

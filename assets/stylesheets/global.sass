@@ -1,6 +1,33 @@
+@import '../../node_modules/bootstrap/scss/functions'
+@import '../../node_modules/bootstrap/scss/variables'
+
+$color_dark_01: #292929
+
+$color_accent_001: #ccc99d
+$color_accent_002: #e0d853
+
+$body-bg: $color_dark_01
+$body-color: color_accent_001
+
+$navbar-light-color: $color_accent_001
+$navbar-light-hover-color: $color_accent_002
+$navbar-light-active-color: $color_accent_002
+$navbar-light-toggler-icon-bg: str-replace(url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='#{$color_accent_001}' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E"), "#", "%23")
+$navbar-light-toggler-border-color: $color_accent_001
+
+
+@import '../../node_modules/bootstrap/scss/mixins'
+@import '../../node_modules/bootstrap/scss/reboot'
+@import '../../node_modules/bootstrap/scss/type'
+@import '../../node_modules/bootstrap/scss/grid'
+@import '../../node_modules/bootstrap/scss/buttons'
+@import '../../node_modules/bootstrap/scss/transitions'
+@import '../../node_modules/bootstrap/scss/dropdown'
+@import '../../node_modules/bootstrap/scss/nav'
+@import '../../node_modules/bootstrap/scss/navbar'
+
 html,
 body
   margin: 0
   padding: 0
   height: 100%
-  background: red
