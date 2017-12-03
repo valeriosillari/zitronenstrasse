@@ -11,5 +11,5 @@ yarn-error.log
 # Nuxt generate
 dist
 
-# Ignore ENV file with password keys (env dot)
+# Ignore ENV file with password keys (ENV DOT module)
 /env_variables/env_keys
