@@ -1,5 +1,5 @@
 <template lang="pug">
-  nav.navbar.navbar-expand-lg.navbar-light.bg-light
+  nav.navbar.navbar-expand-lg.navbar-light.bg-light.fixed-top
 
     nuxt-link.navbar-brand(to='/')
       | Home Nav Bar
