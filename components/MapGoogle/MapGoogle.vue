@@ -7,7 +7,7 @@
   // https://medium.com/founders-factory/building-a-custom-google-map-component-with-vue-js-d1c01ddd0b0a
   // https://stackoverflow.com/questions/29723134/google-map-add-marker-using-place-id
   // https://stackoverflow.com/questions/16985867/adding-an-onclick-event-to-google-map-marker
-
+  // https://laracasts.com/discuss/channels/vue/google-maps-and-vue-js?page=2
   import placeIdArray from '~/components/MapGoogle/_placesIdArrays.js'
   // import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
 
