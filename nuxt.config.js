@@ -1,4 +1,5 @@
-const dotenv = require('dotenv').config({path: './env_variables/env_keys'});
+const newrelic = require('newrelic')
+const dotenv = require('dotenv').config({path: './env_variables/env_keys'})
 const webpack = require('webpack')
 
 // set GOOGLE MAP API KEY access keys
