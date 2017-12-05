@@ -5,17 +5,17 @@
     //- nuxt tag
     nuxt
     //- footer
-    Footer
+    FooterArea
 </template>
 
 <script>
   import Navbar from '~/components/Navbar.vue'
-  import Footer from '~/components/Footer.vue'
+  import FooterArea from '~/components/FooterArea.vue'
 
   export default {
     components: {
       Navbar,
-      Footer
+      FooterArea
     }
   }
 </script>
