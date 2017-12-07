@@ -94,6 +94,6 @@ module.exports = {
   ** Customize the Vue Plugins
   */
   plugins: [
-    // todo
+    '~/plugins/vue-analytics'
   ]
 }
