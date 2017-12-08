@@ -94,6 +94,10 @@ module.exports = {
   ** Customize the Vue Plugins
   */
   plugins: [
-    '~/plugins/vue-analytics'
+    // google analytics
+    {
+      src: '~/plugins/ga',
+      ssr: false
+    }
   ]
 }
