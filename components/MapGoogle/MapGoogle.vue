@@ -13,13 +13,17 @@
   import placeIdArray from '~/components/MapGoogle/_placesIdArrays.js'
   import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
 
-  const goldStar = {
-    path: 'M 125,5 155,90 245,90 175,145 200,230 125,180 50,230 75,145 5,90 95,90 z',
+  const customMarker = {
+    // path inspiration form this codepen:
+    // https://codepen.io/defvayne23/pen/EVYGRw?editors=1010
+    // we follow the vg path to amazon and ttaken the path from the original url
+    // https://s3-us-west-2.amazonaws.com/s.cdpn.io/134893/pin-red.svg
+    path: 'M 8 2.1 c 1.1 0 2.2 0.5 3 1.3 c 0.8 0.9 1.3 1.9 1.3 3.1 s -0.5 2.5 -1.3 3.3 l -3 3.1 l -3 -3.1 c -0.8 -0.8 -1.3 -2 -1.3 -3.3 c 0 -1.2 0.4 -2.2 1.3 -3.1 c 0.8 -0.8 1.9 -1.3 3 -1.3 Z',
     fillColor: 'yellow',
-    fillOpacity: 0.8,
-    scale: 1,
     strokeColor: 'gold',
-    strokeWeight: 14
+    fillOpacity: 1,
+    scale: 2.5,
+    strokeWeight: 5
   }
 
   export default {
@@ -64,9 +68,9 @@
             // marker
             let marker = new google.maps.Marker({
               map: mapLoaded,
-              position: result.geometry.location
+              position: result.geometry.location,
               // set icon custom style
-              // icon: goldStar
+              icon: customMarker
             })
             const currentInfoWindow = new google.maps.InfoWindow({
               content: result.name
