@@ -1,6 +1,8 @@
 export default ({ app }) => {
   // TODO: set analytics keyID as ENV key?
   const googleAnalyticsId = 'UA-110867603-1'
+  let window
+  let document
   // define Google analytics as variable. jsut as varibale, NOT as const
   let ga
 
