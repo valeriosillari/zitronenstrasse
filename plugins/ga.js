@@ -3,6 +3,7 @@ export default ({ app }) => {
   const googleAnalyticsId = 'UA-110867603-1'
   let window
   let document
+  let GoogleAnalyticsObject
   // define Google analytics as variable. jsut as varibale, NOT as const
   let ga
 
