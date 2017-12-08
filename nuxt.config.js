@@ -94,10 +94,6 @@ module.exports = {
   ** Customize the Vue Plugins
   */
   plugins: [
-    // google analytics
-    {
-      src: '~/plugins/ga',
-      ssr: false
-    }
+    // todo
   ]
 }
