@@ -13,6 +13,15 @@
   import placeIdArray from '~/components/MapGoogle/_placesIdArrays.js'
   import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
 
+  const goldStar = {
+    path: 'M 125,5 155,90 245,90 175,145 200,230 125,180 50,230 75,145 5,90 95,90 z',
+    fillColor: 'yellow',
+    fillOpacity: 0.8,
+    scale: 1,
+    strokeColor: 'gold',
+    strokeWeight: 14
+  }
+
   export default {
     data: () => {
       const MapGoogle = {
@@ -55,9 +64,9 @@
             // marker
             let marker = new google.maps.Marker({
               map: mapLoaded,
-              // set icon custo style
-              // icon: 'https://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
               position: result.geometry.location
+              // set icon custom style
+              // icon: goldStar
             })
             const currentInfoWindow = new google.maps.InfoWindow({
               content: result.name
