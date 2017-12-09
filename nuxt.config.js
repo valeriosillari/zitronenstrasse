@@ -57,6 +57,12 @@ module.exports = {
   ],
 
   /*
+  ** Router (pages url)
+  */
+  router: {
+  },
+
+  /*
   ** Build configuration
   */
   build: {
