@@ -35,6 +35,7 @@
           zoom: 14,
           // map options
           options: {
+            streetViewControl: false,
             // disableDefaultUI: true,
             // attributionControl: false,
             // set custom map styles
