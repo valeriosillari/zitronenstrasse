@@ -36,6 +36,8 @@
           // map options
           options: {
             streetViewControl: false,
+            fullscreenControl: false,
+            mapTypeControl: false,
             // disableDefaultUI: true,
             // attributionControl: false,
             // set custom map styles
