@@ -35,6 +35,9 @@
           zoom: 14,
           // map options
           options: {
+            streetViewControl: false,
+            fullscreenControl: false,
+            mapTypeControl: false,
             // disableDefaultUI: true,
             // attributionControl: false,
             // set custom map styles
@@ -44,6 +47,20 @@
         })
         let mapLoaded = this.map
         let activeInfoWindow
+        const customMarker = {
+          // path inspiration form this codepen:
+          // https://codepen.io/defvayne23/pen/EVYGRw?editors=1010
+          // we follow the vg path to amazon and ttaken the path from the original url
+          // https://s3-us-west-2.amazonaws.com/s.cdpn.io/134893/pin-red.svg
+          path: 'M 8 2.1 c 1.1 0 2.2 0.5 3 1.3 c 0.8 0.9 1.3 1.9 1.3 3.1 s -0.5 2.5 -1.3 3.3 l -3 3.1 l -3 -3.1 c -0.8 -0.8 -1.3 -2 -1.3 -3.3 c 0 -1.2 0.4 -2.2 1.3 -3.1 c 0.8 -0.8 1.9 -1.3 3 -1.3 Z',
+          fillColor: 'yellow',
+          strokeColor: 'gold',
+          fillOpacity: 1,
+          scale: 2.5,
+          strokeWeight: 5,
+          // for correct alignmnet of custom SVG icon with map point
+          anchor: new google.maps.Point(11, 12)
+        }
         for (let placeID of placeIdArray) {
           new google.maps.places.PlacesService(mapLoaded).getDetails({
             placeId: placeID
@@ -52,12 +69,13 @@
               console.log(status)
               return
             }
+
             // marker
             let marker = new google.maps.Marker({
               map: mapLoaded,
-              // set icon custo style
-              // icon: 'https://maps.google.com/mapfiles/ms/icons/yellow-dot.png',
-              position: result.geometry.location
+              position: result.geometry.location,
+              // set icon custom style
+              icon: customMarker
             })
             const currentInfoWindow = new google.maps.InfoWindow({
               content: result.name
