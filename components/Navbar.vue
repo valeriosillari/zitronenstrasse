@@ -1,9 +1,12 @@
 <template>
-  <div class="navigation">
+  <div
+    class="navigation"
+    v-bind:class="{ isNavOpen: isNavOpen }"
+  > 
 
     <div
       class="btn-menu"
-      @click='btnMenuClick'
+      v-on:click="isNavOpen = !isNavOpen"
     >
       <span class="btn-menu-line top"></span>
       <span class="btn-menu-line middle"></span>
@@ -28,14 +31,7 @@
   export default {
     data () {
       return {
-      }
-    },
-    methods: {
-      btnMenuClick: (event) => {
-        const btnMenuEl = event.currentTarget
-        console.log('CLICK')
-        btnMenuEl.classList.toggle('active')
-        // $overlayMenu.toggleClass('open')
+        isNavOpen: false
       }
     }
   }
@@ -43,11 +39,12 @@
 
 <style lang="scss" scoped>
 
-$color-background: #333;
+$color_nav_bar: #2b2b2b;
+$color-background: #2b2b2b;
 $color-text: #5a5a5a;
 $color-main: #ffff00;
 $color-active: #FFF;
-$color-link: #333;
+$color-link: #2b2b2b;
 
 $button-height: 27px;
 $button-width: 35px;
@@ -55,7 +52,7 @@ $button-width: 35px;
 
 .navigation {
   position: fixed;
-  background: pink;
+  background: $color_nav_bar;
   top: 0;
   left: 0;
   right: 0;
@@ -71,23 +68,7 @@ $button-width: 35px;
   cursor: pointer;
   transition: opacity .25s ease;
   &:hover {
-    opacity: .7;
-  }
-
-  &.active {
-    .top {
-      transform: translateY(11px) translateX(0) rotate(45deg);
-      background: $color-text;
-    }
-    .middle {
-      opacity: 0;
-      background: $color-text;
-    }
-    
-    .bottom {
-      transform: translateY(-11px) translateX(0) rotate(-45deg);
-      background: $color-text;
-    }
+    opacity: .8;
   }
 
   .btn-menu-line {
@@ -125,27 +106,7 @@ $button-width: 35px;
   visibility: hidden;
   transition: opacity .35s, visibility .35s, height .35s;
   overflow: hidden;
-  
-  &.open {
-    opacity: 1;
-    visibility: visible;
-    height: 100%;
-    
-    li {
-      animation: fadeInRight .5s ease forwards;
-      animation-delay: .35s;
-      
-      &:nth-of-type(2) {
-        animation-delay: .4s;
-      }
-      &:nth-of-type(3) {
-        animation-delay: .45s;
-      }
-      &:nth-of-type(4) {
-        animation-delay: .50s;
-      }
-    }
-  }
+
   nav {
     position: relative;
     height: 70%;
@@ -196,6 +157,48 @@ $button-width: 35px;
           background: $color-link;
           transition: .35s;
         }
+      }
+    }
+  }
+}
+
+// nav is open! see overlay
+.isNavOpen {
+
+  .btn-menu {
+    z-index: 200;
+    .top {
+      transform: translateY(11px) translateX(0) rotate(45deg);
+      background: $color-text;
+    }
+    .middle {
+      opacity: 0;
+      background: $color-text;
+    }
+    
+    .bottom {
+      transform: translateY(-11px) translateX(0) rotate(-45deg);
+      background: $color-text;
+    }
+  }
+
+  .overlay {
+    opacity: 1;
+    visibility: visible;
+    height: 100%;
+    
+    li {
+      animation: fadeInRight .5s ease forwards;
+      animation-delay: .35s;
+      
+      &:nth-of-type(2) {
+        animation-delay: .4s;
+      }
+      &:nth-of-type(3) {
+        animation-delay: .45s;
+      }
+      &:nth-of-type(4) {
+        animation-delay: .50s;
       }
     }
   }
