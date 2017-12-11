@@ -9,20 +9,6 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'zitronenstrasse',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
-  },
-  /*
-  ** Headers of the page
-  */
-  head: {
     title: 'Zitronenstrasse | Romantic Spots in Berlin.',
     meta: [
       { charset: 'utf-8' },
@@ -45,8 +31,8 @@ module.exports = {
   ** Customize the progress-bar color
   */
   loading: {
-    color: '#e0d853',
-    height: '5px'
+    color: 'yellow',
+    height: '10px'
   },
 
   /*
@@ -55,12 +41,6 @@ module.exports = {
   css: [
     'assets/stylesheets/global.sass'
   ],
-
-  /*
-  ** Router (pages url)
-  */
-  router: {
-  },
 
   /*
   ** Build configuration
