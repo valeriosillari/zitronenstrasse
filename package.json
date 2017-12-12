@@ -21,6 +21,7 @@
     "axios": "^0.16.2",
     "bootstrap": "4.0.0-beta",
     "dotenv": "^4.0.0",
+    "express": "^4.16.2",
     "jquery": "^3.2.1",
     "newrelic": "^2.4.1",
     "node-sass": "^4.5.3",
