@@ -28,13 +28,6 @@ module.exports = {
   },
 
   /*
-  ** Global CSS
-  */
-  css: [
-    'assets/stylesheets/global.sass'
-  ],
-
-  /*
   ** Build configuration
   */
   build: {
@@ -57,6 +50,12 @@ module.exports = {
     ** Run ESLint on save
     */
     extend (config, ctx) {
+      config.module.rules.forEach((rule) => {
+        if (rule.test.toString() === '/\\.vue$/') {
+          rule.options.loaders.sass[2].options.data = '@import "./assets/stylesheets/global"'
+        }
+      })      
+      
       if (ctx.dev && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
