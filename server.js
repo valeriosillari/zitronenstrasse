@@ -1,17 +1,38 @@
-const { Nuxt, Builder } = require('nuxt')
+const newrelic = require('newrelic')
 const app = require('express')()
+const { Nuxt, Builder } = require('nuxt')
 
-// We instantiate Nuxt.js with the options
-const isProd = process.env.NODE_ENV === 'production'
-const nuxt = new Nuxt({ dev: !isProd })
+const port = process.env.PORT || 3000
 
-// No build in production
-if (!isProd) {
+// Import and Set Nuxt.js options
+let config = require('./nuxt.config.js')
+config.dev = !(process.env.NODE_ENV === 'production')
+
+app.set('port', port)
+
+// Init Nuxt.js
+const nuxt = new Nuxt(config)
+
+// Build only in dev mode
+if (config.dev) {
   const builder = new Builder(nuxt)
   builder.build()
 }
 
-// test heroku with no changes on application, but with ENV keys on heroku itself
+// Give nuxt middleware to express
 app.use(nuxt.render)
-.listen(process.env.PORT || 3000)
-console.log('Server is listening on http://localhost:3000')
+// Listen the server
+.listen(port)
+
+
+console.log('=========================================================')
+console.log(config)
+console.log('=============')
+console.log(config.dev)
+console.log('=============')
+console.log(port)
+
+
+console.log('=========================================================')
+// eslint-disable-line no-console
+console.log(`Server listening (locally) on localhost:${port}`)
