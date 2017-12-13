@@ -14,6 +14,4 @@
 
 ## NICE TO HAVE
 
-### GOOGLE ANALYTIC : set analytics for Nuxt with ENV variable
-
-### NEW RELIC : fix/set node agent for Nuxt
+### GOOGLE ANALYTIC : set analytics for Nuxt with ENV variable ?
