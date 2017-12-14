@@ -5,6 +5,14 @@
     :zoom='zoomOption'
     :options='options'
   >
+
+    <gmap-marker
+      :key="index"
+      v-for="(m, index) in markers"
+      :position="m.position"
+    >
+    </gmap-marker>
+
   </gmap-map>
 </template>
 
@@ -24,7 +32,18 @@
           mapTypeControl: false
           // set custom map styles
           // styles: mapStylesDark
-        }
+        },
+        markers: [{
+          position: {
+            lat: 52.482845,
+            lng: 13.438589
+          }
+        }, {
+          position: {
+            lat: 52.478430,
+            lng: 13.439651
+          }
+        }]
       }
     }
   }
