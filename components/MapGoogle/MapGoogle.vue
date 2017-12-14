@@ -1,43 +1,15 @@
 <template lang="pug">
-  gmap-map.google-map(
-    :center='center',
-    :zoom='zoom',
-    :options='options'
-  )
-    gmap-marker(
-      :key='index',
-      v-for='(item, index) in markers',
-      :position="item.position"
-    )
+  .test
+    | ciaone
 </template>
 
 <script>
   // import placeIdArray from '~/components/MapGoogle/_placesIdArrays.js'
-  import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
+  // import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
 
   export default {
     data () {
-      const MapGoogle = {
-        zoom: 14,
-
-        // map position: set my custom BERLIN map info
-        center: {
-          lat: 52.482841,
-          lng: 13.4252209
-        },
-        // map options
-        options: {
-          disableDefaultUI: true,
-          attributionControl: false,
-          // set custom map styles
-          styles: mapStylesDark
-        },
-        // markers
-        markers: [
-          // empty ...
-        ]
-      }
-      return MapGoogle
+      return 'dummyReturn'
     }
   }
 </script>
