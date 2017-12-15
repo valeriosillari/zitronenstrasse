@@ -24,15 +24,9 @@ app.use(nuxt.render)
 // Listen the server
 .listen(port)
 
-
-console.log('=========================================================')
-console.log(config)
-console.log('=============')
-console.log(config.dev)
-console.log('=============')
-console.log(port)
-
-
-console.log('=========================================================')
 // eslint-disable-line no-console
-console.log(`Server listening (locally) on localhost:${port}`)
+console.log(`
+  ++++++++++++++++++++++++++++++++++++++++++++++++
+  Served on localhost:${port}
+  ++++++++++++++++++++++++++++++++++++++++++++++++
+`)
