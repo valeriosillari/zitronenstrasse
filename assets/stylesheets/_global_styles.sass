@@ -2,7 +2,15 @@
 @import '../../node_modules/bootstrap/scss/variables'
 @import '../../node_modules/bootstrap/scss/mixins'
 // @import '../../node_modules/bootstrap/scss/print'
-// @import '../../node_modules/bootstrap/scss/reboot'
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400')
+$font-family-base: 'Roboto', sans-serif
+$font-weight-normal: 400
+$body-bg:       $color_dark_001
+$body-color:    $color_light
+
+
+@import '../../node_modules/bootstrap/scss/reboot'
 @import '../../node_modules/bootstrap/scss/type'
 // @import '../../node_modules/bootstrap/scss/images'
 // @import '../../node_modules/bootstrap/scss/code'
@@ -47,7 +55,7 @@ body
 
 // padding top for fixed header alignment
 .container
-  padding-top: 40px
+  padding-top: 75px
 
 body,
 //the nuxt main element

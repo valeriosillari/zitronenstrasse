@@ -2,7 +2,7 @@
   <div
     class="navigation"
     v-bind:class="{ isNavOpen: isNavOpen }"
-  > 
+  >
 
     <div
       class="btn-menu"
@@ -45,6 +45,7 @@
     z-index: 100
     +paddingBoxDefaut()
     background: $color_nav_bar_bg
+    border-bottom: 1px solid $color_dark_002
 
   .btn-menu
     position: relative
@@ -66,7 +67,7 @@
 
       &:nth-of-type(2)
         top: 11px
-      
+
       &:nth-of-type(3)
         top: 22px
 
@@ -76,7 +77,7 @@
 
   .overlay
     position: fixed
-    background: $color_main
+    background: $color_nav_bar_overlay_bg
     top: 0
     left: 0
     width: 100%
@@ -101,7 +102,7 @@
       display: inline-block
       position: relative
       height: 100%
-      
+
     li
       display: block
       height: 30%
@@ -113,14 +114,15 @@
     a
       display: block
       position: relative
-      color: $color_link
+      color: $color_nav_bar_overlay_text
       text-decoration: none
       overflow: hidden
       &:hover:after,
       &:focus:after,
       &:active:after
         width: 100%
-      
+        color: $color_nav_bar_overlay_text_hvr
+
       &:after
         content: ''
         position: absolute
@@ -129,7 +131,7 @@
         width: 0%
         transform: translateX(-50%)
         height: 3px
-        background: $color_link
+        background: $color_nav_bar_overlay_text_hvr
         transition: .35s
 
 
@@ -172,7 +174,7 @@
     0%
       opacity: 0
       left: 20%
-  
+
     100%
       opacity: 1
       left: 0
