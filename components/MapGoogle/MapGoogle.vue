@@ -26,7 +26,6 @@
     },
     methods: {
       initMap: function () {
-
         // delay font css loading
         let head = document.getElementsByTagName('head')[0]
         // Save the original method
