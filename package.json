@@ -18,15 +18,12 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
-    "axios": "^0.16.2",
     "bootstrap": "4.0.0-beta",
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
-    "jquery": "^3.2.1",
     "newrelic": "^2.4.1",
     "node-sass": "^4.5.3",
     "nuxt": "1.0.0-rc11",
-    "popper.js": "^1.12.5",
     "pug": "2.0.0-beta6",
     "pug-loader": "^2.3.0",
     "sass-loader": "^6.0.6",
