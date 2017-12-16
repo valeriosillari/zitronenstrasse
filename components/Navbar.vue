@@ -55,7 +55,7 @@
     cursor: pointer
     transition: opacity .25s ease
     .btn-menu-line
-      background: $color_main
+      background: $color_nav_bar_btn
       border: none
       height: 5px
       width: 100%
@@ -73,7 +73,7 @@
 
     &:hover
       .btn-menu-line
-        background: $color_main_02
+        background: $color_nav_bar_btn_hvr
 
   .overlay
     position: fixed
@@ -92,7 +92,7 @@
       height: 70%
       top: 50%
       transform: translateY(-50%)
-      font-size: 50px
+      font-size: 90px
       text-align: center
 
     ul
@@ -117,12 +117,6 @@
       color: $color_nav_bar_overlay_text
       text-decoration: none
       overflow: hidden
-      &:hover:after,
-      &:focus:after,
-      &:active:after
-        width: 100%
-        color: $color_nav_bar_overlay_text_hvr
-
       &:after
         content: ''
         position: absolute
@@ -132,7 +126,11 @@
         transform: translateX(-50%)
         height: 3px
         background: $color_nav_bar_overlay_text_hvr
-        transition: .35s
+        transition: .4s
+      &:hover
+        color: $color_nav_bar_overlay_text_hvr
+        &:after
+          width: 100%
 
 
   // nav is open! see overlay
