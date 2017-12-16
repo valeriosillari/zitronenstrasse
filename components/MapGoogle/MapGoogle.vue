@@ -107,7 +107,7 @@
   }
 </script>
 
-<style lang="sass" scoped>
+<style lang="sass">
   .map-main-wrapper
     width: 100%
     min-height: 100%
@@ -116,4 +116,19 @@
     position: absolute
     width: 100%
     height: 100%
+
+  // remove google cc
+  // and remove some weird grey box set on right side from google
+  .gm-style-cc
+    display: none
+
+  // // remove goggle map logo
+  // a[href^="http://maps.google.com/maps"],
+  // a[href^="https://maps.google.com/maps"],
+  // a[href^="https://www.google.com/maps"]
+  //     display: none !important
+  // .gmnoprint:not(.gm-bundled-control)
+  //   display: none
+  // .gm-bundled-control .gmnoprint
+  //   display: block
 </style>

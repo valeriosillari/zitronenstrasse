@@ -6,8 +6,8 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400')
 $font-family-base: 'Roboto', sans-serif
 $font-weight-normal: 400
-$body-bg:       $color_dark_001
-$body-color:    $color_light
+$body-bg:       $color_body_bg
+$body-color:    $color_body_text
 
 
 @import '../../node_modules/bootstrap/scss/reboot'
@@ -41,21 +41,11 @@ $body-color:    $color_light
 // @import '../../node_modules/bootstrap/scss/carousel'
 // @import '../../node_modules/bootstrap/scss/utilities'
 
-// todo: set later navi classes and styles via sass. now just dark one
-.bg-dark,
-.footer
-  color: white
-  background: #232527 !important
-
 html,
 body
   margin: 0
   padding: 0
   height: 100%
-
-// padding top for fixed header alignment
-.container
-  padding-top: 90px
 
 body,
 //the nuxt main element
@@ -65,16 +55,6 @@ body,
   margin: 0px
   padding: 0px
 
-// remove some weird grey box set on right side from google
-.gm-style-cc
-  display: none
-
-// // remove goggle map logo
-// a[href^="http://maps.google.com/maps"],
-// a[href^="https://maps.google.com/maps"],
-// a[href^="https://www.google.com/maps"]
-//     display: none !important
-// .gmnoprint:not(.gm-bundled-control)
-//   display: none
-// .gm-bundled-control .gmnoprint
-//   display: block
+// padding top for fixed header alignment
+.container
+  padding-top: 90px

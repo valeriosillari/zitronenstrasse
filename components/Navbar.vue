@@ -44,18 +44,18 @@
     right: 0
     z-index: 100
     +paddingBoxDefaut()
-    background: $color_nav_bar_bg
-    border-bottom: 1px solid $color_dark_002
+    background: $color_navigation_bg
+    border-bottom: 1px solid $color_navigation_border
 
   .btn-menu
     position: relative
     float: right
-    height: $button_height
-    width: $button_width
+    height: $button_navigation_height
+    width: $button_navigation_width
     cursor: pointer
     transition: opacity .25s ease
     .btn-menu-line
-      background: $color_nav_bar_btn
+      background: $color_navigation_btn
       border: none
       height: 5px
       width: 100%
@@ -73,11 +73,11 @@
 
     &:hover
       .btn-menu-line
-        background: $color_nav_bar_btn_hvr
+        background: $color_navigation_btn_hvr
 
   .overlay
     position: fixed
-    background: $color_nav_bar_overlay_bg
+    background: $color_navigation_overlay_bg
     top: 0
     left: 0
     width: 100%
@@ -114,8 +114,7 @@
     a
       display: block
       position: relative
-      color: $color_nav_bar_overlay_text
-      text-decoration: none
+      color: $color_navigation_overlay_text
       overflow: hidden
       &:after
         content: ''
@@ -125,10 +124,12 @@
         width: 0%
         transform: translateX(-50%)
         height: 3px
-        background: $color_nav_bar_overlay_text_hvr
+        background: $color_navigation_overlay_text_hvr
         transition: .4s
-      &:hover
-        color: $color_nav_bar_overlay_text_hvr
+      &:hover,
+      &:focus
+        color: $color_navigation_overlay_text_hvr
+        text-decoration: none
         &:after
           width: 100%
 
@@ -139,7 +140,7 @@
     .btn-menu
       z-index: 200
       .btn-menu-line
-        background: $color_close_icon
+        background: $color_ico_close
       .top
         transform: translateY(11px) translateX(0) rotate(45deg)
       .middle
@@ -148,7 +149,7 @@
         transform: translateY(-11px) translateX(0) rotate(-45deg)
       &:hover
         .btn-menu-line
-          background: $color_close_icon_hvr
+          background: $color_ico_close_hvr
 
     .overlay
       opacity: 1
