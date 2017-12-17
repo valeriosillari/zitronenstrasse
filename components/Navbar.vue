@@ -54,7 +54,6 @@
     z-index: 100
     +paddingBoxDefaut()
     background: $color_navigation_bg
-    border-bottom: 1px solid $color_navigation_border
 
   .btn-menu
     position: relative
