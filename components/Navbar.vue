@@ -114,6 +114,7 @@
     a
       display: block
       position: relative
+      line-height: 1.5
       color: $color_navigation_overlay_text
       overflow: hidden
       &:after
