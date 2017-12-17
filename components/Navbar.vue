@@ -54,6 +54,7 @@
     z-index: 100
     +paddingBoxDefaut()
     background: $color_navigation_bg
+    border-bottom: 1px solid $color_navigation_overlay_border
 
   .btn-menu
     position: relative
@@ -122,7 +123,7 @@
     a
       display: block
       position: relative
-      line-height: 1.5
+      line-height: 1.25
       color: $color_navigation_overlay_text
       overflow: hidden
       &:after
