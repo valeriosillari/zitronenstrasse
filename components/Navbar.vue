@@ -37,6 +37,15 @@
 </script>
 
 <style lang="sass">
+  @keyframes fadeInRight
+    0%
+      opacity: 0
+      left: 20%
+
+    100%
+      opacity: 1
+      left: 0
+
   .navigation
     position: fixed
     top: 0
@@ -169,13 +178,4 @@
 
         &:nth-of-type(4)
           animation-delay: .50s
-
-  @keyframes fadeInRight
-    0%
-      opacity: 0
-      left: 20%
-
-    100%
-      opacity: 1
-      left: 0
 </style>
