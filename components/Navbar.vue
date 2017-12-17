@@ -100,7 +100,7 @@
       height: 70%
       top: 50%
       transform: translateY(-50%)
-      font-size: 90px
+      font-size: 84px
       text-align: center
 
     ul
