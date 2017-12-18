@@ -63,6 +63,14 @@ module.exports = {
   },
 
   /*
+  ** Customize the progress-bar color
+  */
+  loading: {
+    color: 'gold',
+    height: '5px'
+  },
+
+  /*
   ** Customize the Vue Plugins
   */
   plugins: [
