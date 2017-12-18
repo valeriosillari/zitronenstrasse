@@ -17,13 +17,25 @@
       <nav class="overlay-menu">
         <ul>
           <li>
-            <a href='/'>Home</a>
+            <nuxt-link
+              to="/"
+            >
+              Home
+            </nuxt-link>
           </li>
           <li>
-            <nuxt-link to="/about">About</nuxt-link>
+            <nuxt-link
+              to="/about"
+            >
+              About
+            </nuxt-link>
           </li>
           <li>
-            <a href='/contact'>Contact</a>
+            <nuxt-link
+              to="/contact"
+            >
+              Contact
+            </nuxt-link>
           </li>
         </ul>
       </nav>
