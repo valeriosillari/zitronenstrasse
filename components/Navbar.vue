@@ -16,27 +16,37 @@
     <div class="overlay">
       <nav class="overlay-menu">
         <ul>
-          <li>
+
+          <li
+            v-on:click="isNavOpen = !isNavOpen"
+          >
             <nuxt-link
               to="/"
             >
               Home
             </nuxt-link>
           </li>
-          <li>
+
+          <li
+            v-on:click="isNavOpen = !isNavOpen"
+          >
             <nuxt-link
               to="/about"
             >
               About
             </nuxt-link>
           </li>
-          <li>
+
+          <li
+            v-on:click="isNavOpen = !isNavOpen"
+          >
             <nuxt-link
               to="/contact"
             >
               Contact
             </nuxt-link>
           </li>
+
         </ul>
       </nav>
     </div>
