@@ -138,44 +138,38 @@
       font-size: 84px
       text-align: center
 
-    ul
+    // UL
+    .items
       list-style: none
       padding: 0
       margin: 0 auto
       display: inline-block
       position: relative
+      width: 100%
       height: 100%
 
-    li
+    // LI
+    .item
       display: block
-      height: 30%
       height: calc(100% / 3)
-      min-height: 50px
       position: relative
       opacity: 0
 
-    a
+    // <a> tag
+    .item-link
       display: block
-      position: relative
-      line-height: 1.25
+      position: absolute
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+      line-height: 2.50
       color: $color_navigation_overlay_text
       overflow: hidden
-      &:after
-        content: ''
-        position: absolute
-        bottom: 0
-        left: 50%
-        width: 0%
-        transform: translateX(-50%)
-        height: 3px
-        background: $color_navigation_overlay_text_hvr
-        transition: .4s
       &:hover,
       &:focus
         color: $color_navigation_overlay_text_hvr
         text-decoration: none
-        &:after
-          width: 100%
 
 
   // nav is open! see overlay
@@ -200,7 +194,7 @@
       visibility: visible
       height: 100%
 
-      li
+      .item
         animation: fadeInRight .5s ease forwards
         animation-delay: .35s
 
