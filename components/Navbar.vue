@@ -132,7 +132,7 @@
 
     nav
       position: relative
-      height: 70%
+      height: 85%
       top: 50%
       transform: translateY(-50%)
       font-size: 84px
