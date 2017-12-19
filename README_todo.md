@@ -7,9 +7,9 @@
 
 ### STYLES: implement concept for the design/styles
 
-### FONT FAMILY: check how to reduce loading time for Roboto. now called by google map
-
 ### ERROR PAGE: set custom error page
+
+### CONTACT PAGE: set node mailer and all the logic
 
 
 ## NICE TO HAVE
