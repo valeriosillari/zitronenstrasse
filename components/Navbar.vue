@@ -151,7 +151,9 @@
     // LI
     .item
       display: block
+      height: 33%
       height: calc(100% / 3)
+      min-height: 50px
       position: relative
       opacity: 0
 
