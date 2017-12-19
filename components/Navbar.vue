@@ -15,12 +15,14 @@
 
     <div class="overlay">
       <nav class="overlay-menu">
-        <ul>
+        <ul class="items">
 
           <li
+            class="item"
             v-on:click="isNavOpen = !isNavOpen"
           >
             <nuxt-link
+              class="item-link"
               to="/"
             >
               Home
@@ -28,9 +30,11 @@
           </li>
 
           <li
+            class="item"
             v-on:click="isNavOpen = !isNavOpen"
           >
             <nuxt-link
+              class="item-link"
               to="/about"
             >
               About
@@ -38,9 +42,11 @@
           </li>
 
           <li
+            class="item"
             v-on:click="isNavOpen = !isNavOpen"
           >
             <nuxt-link
+              class="item-link"
               to="/contact"
             >
               Contact
