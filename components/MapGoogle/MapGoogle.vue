@@ -90,6 +90,8 @@
               icon: customMarker
             })
             const currentInfoWindow = new google.maps.InfoWindow({
+              // here set logic for info window for each item
+              // https://developers.google.com/maps/documentation/javascript/infowindows
               content: result.name
             })
             google.maps.event.addListener(marker, 'click', (el) => {
