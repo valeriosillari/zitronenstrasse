@@ -135,7 +135,7 @@
       height: 85%
       top: 50%
       transform: translateY(-50%)
-      font-size: 84px
+      font-size: 80px
       text-align: center
 
     // UL
@@ -161,12 +161,6 @@
     // <a> tag
     .item-link
       display: block
-      max-width: 50%
-      // position: absolute
-      // top: 0
-      // bottom: 0
-      // left: 0
-      // right: 0
       line-height: 1.2
       color: $color_navigation_overlay_text
       overflow: hidden
