@@ -41,7 +41,7 @@ $body-color:    $color_body_text
 // @import '../../node_modules/bootstrap/scss/tooltip'
 // @import '../../node_modules/bootstrap/scss/popover'
 // @import '../../node_modules/bootstrap/scss/carousel'
-// @import '../../node_modules/bootstrap/scss/utilities'
+@import '../../node_modules/bootstrap/scss/utilities'
 
 html,
 body
@@ -56,6 +56,11 @@ body,
   height: 100%
   margin: 0px
   padding: 0px
+
+a
+  &:hover,
+  &:focus  
+    text-decoration: none
 
 // padding top for fixed header alignment
 .section

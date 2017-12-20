@@ -169,7 +169,6 @@
       &:hover,
       &:focus
         color: $color_navigation_overlay_text_hvr
-        text-decoration: none
 
 
   // nav is open! see overlay
