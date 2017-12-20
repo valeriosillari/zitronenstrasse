@@ -154,15 +154,19 @@
       height: calc(100% / 3)
       position: relative
       opacity: 0
+      display: flex
+      align-items: center
+      justify-content: center
 
     // <a> tag
     .item-link
       display: block
-      position: absolute
-      top: 0
-      bottom: 0
-      left: 0
-      right: 0
+      max-width: 50%
+      // position: absolute
+      // top: 0
+      // bottom: 0
+      // left: 0
+      // right: 0
       line-height: 1.5
       color: $color_navigation_overlay_text
       overflow: hidden
