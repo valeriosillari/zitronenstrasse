@@ -167,9 +167,10 @@
       // bottom: 0
       // left: 0
       // right: 0
-      line-height: 1.5
+      line-height: 1.2
       color: $color_navigation_overlay_text
       overflow: hidden
+      +underline-from-center()
       &:hover,
       &:focus
         color: $color_navigation_overlay_text_hvr
