@@ -22,7 +22,7 @@ module.exports = {
       {
         // TODO: try to call it via plugin for vue JS? just the library?
         // call google map javascript API
-        src: `https://maps.googleapis.com/maps/api/js?key=${mapApiKey}&v=3&libraries=places`
+        src: `https://maps.googleapis.com/maps/api/js?key=${mapApiKey}&v=3&libraries=places`, defer: true
       }
     ]
   },
