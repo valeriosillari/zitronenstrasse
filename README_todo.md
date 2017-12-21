@@ -1,6 +1,5 @@
 # Zitronenstrasse | todo
 
-
 ## TODO
 
 ### DESIGN: set a concept for the design (logo + colors + interaction and modules)
