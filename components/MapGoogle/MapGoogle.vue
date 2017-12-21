@@ -73,6 +73,7 @@
           // for correct alignmnet of custom SVG icon with map point
           anchor: new google.maps.Point(11, 12)
         }
+
         for (let placeID of placeIdArray) {
           new google.maps.places.PlacesService(mapLoaded).getDetails({
             placeId: placeID
@@ -89,10 +90,21 @@
               // set icon custom style
               icon: customMarker
             })
+
+            // // TODO: remove: for checking
+            // if (result.opening_hours.open_now !== 'undefined') {
+            //   console.log(result.opening_hours.open_now)
+            // } else {
+            //   console.log('apertura non definita!')
+            // }
+
             const currentInfoWindow = new google.maps.InfoWindow({
               // here set logic for info window for each item
               // https://developers.google.com/maps/documentation/javascript/infowindows
-              content: result.name
+              content: `
+                <p class='text title'>${result.name}</p>
+                <p class='text address'>${result.adr_address}</p>
+              `
             })
             google.maps.event.addListener(marker, 'click', (el) => {
               // close info window of previous opened marker : reset
@@ -119,8 +131,16 @@
     width: 100%
     height: 100%
 
+  // map bg whn loading
   .gm-style
     background: $color_map_bg
+
+  // content of each map info InfoWindow
+  .gm-style-iw
+    color: $color_info_winfow_text
+    .title
+      font-size: 18px
+      font-weight: bold
 
   // remove google cc
   // and remove some weird grey box set on right side from google
