@@ -143,14 +143,14 @@
 
     .title
       font-size: 18px
-      font-weight: bold
-
+      font-weight: 500
+      color: $color_info_winfow_title
     // option for color of opening
     .open-time
       color: $color_open_undefined
     .is-open-now
-      font-weight: bold
       color: $color_open_yes
+      font-weight: 500
     .is-open-not
       color: $color_open_no
 
