@@ -91,12 +91,18 @@
               icon: customMarker
             })
 
-            // // TODO: remove: for checking
-            // if (result.opening_hours.open_now !== 'undefined') {
-            //   console.log(result.opening_hours.open_now)
-            // } else {
-            //   console.log('apertura non definita!')
-            // }
+            let isOpenClass = 'is-open-not'
+            let isOpenText = 'Closed now'
+            // TODO: remove: for checking
+            if (typeof result.opening_hours !== 'undefined') {
+              if (result.opening_hours.open_now) {
+                isOpenClass = 'is-open-now'
+                isOpenText = 'Open now'
+              }
+            } else {
+              isOpenClass = 'is-open-unknown'
+              isOpenText = 'No info about opening time'
+            }
 
             const currentInfoWindow = new google.maps.InfoWindow({
               // here set logic for info window for each item
@@ -104,6 +110,7 @@
               content: `
                 <p class='text title'>${result.name}</p>
                 <p class='text address'>${result.adr_address}</p>
+                <p class='text open-time ${isOpenClass}'>${isOpenText}</p>
               `
             })
             google.maps.event.addListener(marker, 'click', (el) => {
@@ -138,9 +145,22 @@
   // content of each map info InfoWindow
   .gm-style-iw
     color: $color_info_winfow_text
+
+    .text
+      margin-bottom: .25rem
+
     .title
       font-size: 18px
       font-weight: bold
+
+    // option for color of opening
+    .open-time
+      color: #ccc
+    .is-open-now
+      font-weight: bold
+      color: green
+    .is-open-not
+      color: red
 
   // remove google cc
   // and remove some weird grey box set on right side from google
