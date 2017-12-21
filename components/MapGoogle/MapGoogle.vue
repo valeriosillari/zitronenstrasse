@@ -73,6 +73,7 @@
           // for correct alignmnet of custom SVG icon with map point
           anchor: new google.maps.Point(11, 12)
         }
+
         for (let placeID of placeIdArray) {
           new google.maps.places.PlacesService(mapLoaded).getDetails({
             placeId: placeID
@@ -89,8 +90,28 @@
               // set icon custom style
               icon: customMarker
             })
+
+            let isOpenClass = 'is-open-not'
+            let isOpenText = 'Closed now'
+            // TODO: remove: for checking
+            if (typeof result.opening_hours !== 'undefined') {
+              if (result.opening_hours.open_now) {
+                isOpenClass = 'is-open-now'
+                isOpenText = 'Open now'
+              }
+            } else {
+              isOpenClass = 'is-open-unknown'
+              isOpenText = 'No info about opening time'
+            }
+
             const currentInfoWindow = new google.maps.InfoWindow({
-              content: result.name
+              // here set logic for info window for each item
+              // https://developers.google.com/maps/documentation/javascript/infowindows
+              content: `
+                <p class='text title'>${result.name}</p>
+                <p class='text address'>${result.adr_address}</p>
+                <p class='text open-time ${isOpenClass}'>${isOpenText}</p>
+              `
             })
             google.maps.event.addListener(marker, 'click', (el) => {
               // close info window of previous opened marker : reset
@@ -117,8 +138,29 @@
     width: 100%
     height: 100%
 
+  // map bg whn loading
   .gm-style
     background: $color_map_bg
+
+  // content of each map info InfoWindow
+  .gm-style-iw
+    color: $color_info_winfow_text
+
+    .text
+      margin-bottom: .25rem
+
+    .title
+      font-size: 18px
+      font-weight: bold
+
+    // option for color of opening
+    .open-time
+      color: $color_open_undefined
+    .is-open-now
+      font-weight: bold
+      color: $color_open_yes
+    .is-open-not
+      color: $color_open_no
 
   // remove google cc
   // and remove some weird grey box set on right side from google
