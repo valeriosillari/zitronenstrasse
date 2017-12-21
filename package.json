@@ -29,8 +29,7 @@
     "pug-loader": "^2.3.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
-    "vue-analytics": "^5.6.0",
-    "vue2-google-maps": "v0.8.4"
+    "vue-analytics": "^5.6.0"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",

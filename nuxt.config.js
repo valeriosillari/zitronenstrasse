@@ -1,6 +1,9 @@
 const dotenv = require('dotenv').config({path: './env_variables/env_keys'})
 const webpack = require('webpack')
 
+// set GOOGLE MAP API KEY access keys
+const mapApiKey = process.env.GOOGLE_MAP_API_KEY
+
 module.exports = {
   /*
   ** Headers of the page
@@ -17,14 +20,11 @@ module.exports = {
     ],
     script: [
       {
-        // todo
+        // TODO: try to call it via plugin for vue JS? just the library?
+        // call google map javascript API
+        src: `https://maps.googleapis.com/maps/api/js?key=${mapApiKey}&v=3&libraries=places`
       }
     ]
-  },
-
-  // ENV : set here bby dot env, spread from here in all application
-  env: {
-    googleMapApiKey:  process.env.GOOGLE_MAP_API_KEY || ''
   },
 
   /*
@@ -74,7 +74,6 @@ module.exports = {
   ** Customize the Vue Plugins
   */
   plugins: [
-    '~/plugins/vue_analytics',
-    '~/plugins/vue-google-maps'
+    '~/plugins/vue_analytics'
   ]
 }
