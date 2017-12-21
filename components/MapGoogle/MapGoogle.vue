@@ -155,12 +155,12 @@
 
     // option for color of opening
     .open-time
-      color: #ccc
+      color: $color_open_undefined
     .is-open-now
       font-weight: bold
-      color: green
+      color: $color_open_yes
     .is-open-not
-      color: red
+      color: $color_open_no
 
   // remove google cc
   // and remove some weird grey box set on right side from google
