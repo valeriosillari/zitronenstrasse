@@ -4,9 +4,13 @@ node_modules
 # logs
 npm-debug.log
 yarn-error.log
+newrelic_agent.log
 
 # Nuxt build
 .nuxt
 
 # Nuxt generate
 dist
+
+# Ignore ENV file with password keys (ENV DOT module)
+/env_variables/env_keys

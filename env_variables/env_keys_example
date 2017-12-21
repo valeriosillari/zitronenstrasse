@@ -1,0 +1,14 @@
+##########################################################
+# GOOGLE MAP API
+GOOGLE_MAP_API_KEY        = 'your_api_key'
+
+
+##########################################################
+# NEW RELIC LICENSE KEY
+NEW_RELIC_LICENSE_KEY     = 'your_license_key'
+
+
+##########################################################
+# GMAIL CONTACT FORM
+# GMAILUSER               = 'your_mail_address'
+# GMAILPASSWORD           = 'your_mail_password'

@@ -5,20 +5,6 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'zitronenstrasse',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Nuxt.js project' }
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
-  },
-  /*
-  ** Headers of the page
-  */
-  head: {
     title: 'Zitronenstrasse | Romantic Spots in Berlin.',
     meta: [
       { charset: 'utf-8' },
@@ -36,43 +22,29 @@ module.exports = {
   },
 
   /*
-  ** Customize the progress-bar color
-  */
-  loading: {
-    color: '#e0d853',
-    height: '5px'
-  },
-
-  /*
-  ** Global CSS
-  */
-  css: [
-    'assets/stylesheets/global.sass'
-  ],
-
-  /*
   ** Build configuration
   */
   build: {
     vendor: [
-      'axios',
-      'jquery',
-      'bootstrap'
+      // here ...
     ],
     plugins: [
       // set shortcuts as global for bootstrap
       new webpack.ProvidePlugin({
-        $: 'jquery',
-        jQuery: 'jquery',
-        'window.jQuery': 'jquery',
-        // needed for bootstrap transitions
-        Popper: ['popper.js', 'default'],
+        // here ...
       })
     ],
     /*
     ** Run ESLint on save
     */
     extend (config, ctx) {
+      config.module.rules.forEach((rule) => {
+        // add to ALL vue modules the sass file 'global'
+        if (rule.test.toString() === '/\\.vue$/') {
+          rule.options.loaders.sass[2].options.data = '@import "./assets/stylesheets/global"'
+        }
+      })
+
       if (ctx.dev && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
@@ -85,9 +57,18 @@ module.exports = {
   },
 
   /*
+  ** Customize the progress-bar color
+  */
+  loading: {
+    color: 'gold',
+    height: '5px'
+  },
+
+  /*
   ** Customize the Vue Plugins
   */
   plugins: [
+    '~/plugins/vue_analytics',
     '~/plugins/vue-google-maps'
   ]
 }
