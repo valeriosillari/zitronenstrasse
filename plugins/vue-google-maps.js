@@ -3,7 +3,7 @@ import * as VueGoogleMaps from '~/node_modules/vue2-google-maps/src/main'
 
 Vue.use(VueGoogleMaps, {
   load: {
-    // TODO: our key for API set in google
+    // TODO: here KEY !!!
     key: '',
     version: '3.29',
     // This is required if you use the Autocomplete plugin
