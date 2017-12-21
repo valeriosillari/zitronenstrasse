@@ -1,3 +1,4 @@
+const dotenv = require('dotenv').config({path: './env_variables/env_keys'})
 const webpack = require('webpack')
 
 module.exports = {
@@ -19,6 +20,11 @@ module.exports = {
         // todo
       }
     ]
+  },
+
+  // ENV : set here bby dot env, spread from here in all application
+  env: {
+    googleMapApiKey:  process.env.GOOGLE_MAP_API_KEY || ''
   },
 
   /*

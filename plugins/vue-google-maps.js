@@ -3,8 +3,8 @@ import * as VueGoogleMaps from '~/node_modules/vue2-google-maps/src/main'
 
 Vue.use(VueGoogleMaps, {
   load: {
-    // TODO: here KEY !!!
-    key: '',
+    // key from nuxt.config
+    key: process.env.googleMapApiKey,
     version: '3.29',
     // This is required if you use the Autocomplete plugin
     libraries: 'places'
