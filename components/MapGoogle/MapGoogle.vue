@@ -26,20 +26,10 @@
     },
     methods: {
       initMap: function () {
-        // ------- FONT MAP delay -------
-        // // delay font css loading
-        // let head = document.getElementsByTagName('head')[0]
-        // // Save the original method
-        // let insertBefore = head.insertBefore
-        // // Replace it!
-        // head.insertBefore = function (newElement, referenceElement) {
-        //   if (newElement.href && newElement.href.indexOf('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700') === 0) {
-        //     return
-        //   }
-        //   insertBefore.call(head, newElement, referenceElement)
-        // }
+        let activeInfoWindow
 
         const google = window.google
+
         this.map = new google.maps.Map(document.getElementById('google-map'), {
           center: {
             lat: 52.486757,
@@ -58,8 +48,9 @@
           }
 
         })
+
         let mapLoaded = this.map
-        let activeInfoWindow
+
         const customMarker = {
           // path inspiration form this codepen:
           // https://codepen.io/defvayne23/pen/EVYGRw?editors=1010
