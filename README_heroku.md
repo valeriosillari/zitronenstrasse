@@ -30,7 +30,7 @@ git push heroku master
 If you need to connect the local repo to the origin one (maybe from another machine), type this on CLI
 
 ```
-heroku git:remote -a nuxt-new-relic
+heroku git:remote -a zitronenstrasse
 ```
 
 
@@ -47,14 +47,14 @@ https://kb.heroku.com/why-am-i-seeing-application-error
 First command to run for seeing error on server. here you start
 
 ```
-heroku logs --tail --app nuxt-new-relic
+heroku logs --tail --app zitronenstrasse
 ```
 
 
 ### Heroku re-start server
 
 ```
-heroku restart --app nuxt-new-relic
+heroku restart --app zitronenstrasse
 ```
 
 ### Heroku Start A node command on heroku server (as it was locally)
