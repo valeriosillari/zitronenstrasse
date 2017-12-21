@@ -119,6 +119,9 @@
     width: 100%
     height: 100%
 
+  .gm-style
+    background: $color_map_bg
+
   // remove google cc
   // and remove some weird grey box set on right side from google
   .gm-style-cc
