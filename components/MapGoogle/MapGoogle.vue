@@ -26,17 +26,18 @@
     },
     methods: {
       initMap: function () {
-        // delay font css loading
-        let head = document.getElementsByTagName('head')[0]
-        // Save the original method
-        let insertBefore = head.insertBefore
-        // Replace it!
-        head.insertBefore = function (newElement, referenceElement) {
-          if (newElement.href && newElement.href.indexOf('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700') === 0) {
-            return
-          }
-          insertBefore.call(head, newElement, referenceElement)
-        }
+        // ------- FONT MAP delay -------
+        // // delay font css loading
+        // let head = document.getElementsByTagName('head')[0]
+        // // Save the original method
+        // let insertBefore = head.insertBefore
+        // // Replace it!
+        // head.insertBefore = function (newElement, referenceElement) {
+        //   if (newElement.href && newElement.href.indexOf('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700') === 0) {
+        //     return
+        //   }
+        //   insertBefore.call(head, newElement, referenceElement)
+        // }
 
         const google = window.google
         this.map = new google.maps.Map(document.getElementById('google-map'), {
