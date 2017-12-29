@@ -75,5 +75,18 @@ module.exports = {
   */
   plugins: [
     // TODO
+  ],
+
+  /*
+  ** Customize modules. now for google analytics
+  */
+  modules: [
+    // Simple usage
+    // https://github.com/nuxt-community/analytics-module
+    [
+      '@nuxtjs/google-analytics', {
+        id: 'UA-110867603-1'
+      }
+    ]
   ]
 }
