@@ -14,3 +14,4 @@
 ## NICE TO HAVE
 
 ### GOOGLE ANALYTIC : set analytics for Nuxt with ENV variable ?
+ENV info for Nuxt here: https://nuxtjs.org/api/configuration-env/
