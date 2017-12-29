@@ -10,9 +10,9 @@
 
 ### CONTACT PAGE: set node mailer and all the logic
 
-###NUXT problems with analytics vue plugin?
-https://github.com/MatteoGabriele/vue-analytics/issues/32
-
+###NUXT problems with analytics vue plugin? TRY
+https://github.com/nuxt/nuxt.js/issues/2460
+https://github.com/nuxt-community/analytics-module
 
 ## NICE TO HAVE
 

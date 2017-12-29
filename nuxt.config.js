@@ -74,6 +74,19 @@ module.exports = {
   ** Customize the Vue Plugins
   */
   plugins: [
-    '~/plugins/vue-analytics'
+    // TODO
+  ],
+
+  /*
+  ** Customize modules. now for google analytics
+  */
+  modules: [
+    // Simple usage
+    // https://github.com/nuxt-community/analytics-module
+    [
+      '@nuxtjs/google-analytics', {
+        id: 'UA-110867603-1'
+      }
+    ]
   ]
 }
