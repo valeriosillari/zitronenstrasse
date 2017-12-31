@@ -57,8 +57,8 @@
           // we follow the vg path to amazon and ttaken the path from the original url
           // https://s3-us-west-2.amazonaws.com/s.cdpn.io/134893/pin-red.svg
           path: 'M 8 2.1 c 1.1 0 2.2 0.5 3 1.3 c 0.8 0.9 1.3 1.9 1.3 3.1 s -0.5 2.5 -1.3 3.3 l -3 3.1 l -3 -3.1 c -0.8 -0.8 -1.3 -2 -1.3 -3.3 c 0 -1.2 0.4 -2.2 1.3 -3.1 c 0.8 -0.8 1.9 -1.3 3 -1.3 Z',
-          fillColor: 'yellow',
-          strokeColor: 'gold',
+          fillColor: '#f5dd66',
+          strokeColor: '#eabf0d',
           fillOpacity: 1,
           scale: 2.5,
           strokeWeight: 5,
