@@ -4,6 +4,8 @@
     v-bind:class="{ isNavOpen: isNavOpen }"
   >
 
+    <div class="logo"></div>
+
     <div
       class="btn-menu"
       v-on:click="isNavOpen = !isNavOpen"
@@ -90,11 +92,18 @@
     background: $color_navigation_bg
     border-bottom: 1px solid $color_navigation_border
 
+  .logo
+    height: 45px
+    width: 45px
+    float: left
+    background: red
+
   .btn-menu
     position: relative
     float: right
     height: $button_navigation_height
     width: $button_navigation_width
+    margin-top: 8px
     cursor: pointer
     transition: opacity .25s ease
     .btn-menu-line
