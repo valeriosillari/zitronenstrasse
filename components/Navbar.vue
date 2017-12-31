@@ -4,7 +4,18 @@
     v-bind:class="{ isNavOpen: isNavOpen }"
   >
 
-    <div class="logo"></div>
+
+    <svg
+      class="logo"
+      enable-background="new 0 0 70 70"
+      version="1.1"
+      viewBox="0 0 70 70"
+      xml:space="preserve"
+      xmlns="http://www.w3.org/2000 svg"
+    >
+      <path class="logo-path-01" d="M35,0c7.1,0,14.3,3.2,19.4,8.4c5.2,5.8,8.4,12.3,8.4,20.1s-3.2,16.2-8.4,21.4L35,70L15.6,49.9  c-5.2-5.2-8.4-13-8.4-21.4c0-7.8,2.6-14.3,8.4-20.1C20.7,3.2,27.9,0,35,0z"/>
+      <path class="logo-path-02" d="m19.9 54.4l15.1 15.6 15.2-15.7c-2-3.8-5.5-6.8-9.6-8.2v-8.1h2.6v-2h-6.2l-0.7-27.6c-0.5-0.1-1-0.2-1.6-0.2-0.3 0-0.6 0-0.9 0.1l-0.8 27.8h-6.1v2h2.6v8.1c-4.1 1.3-7.6 4.3-9.6 8.2z"/>
+    </svg>
 
     <div
       class="btn-menu"
@@ -96,7 +107,12 @@
     height: 45px
     width: 45px
     float: left
-    background: red
+
+  .logo-path-01
+    fill: $color_logo_01
+
+  .logo-path-02
+    fill: $color_logo_02
 
   .btn-menu
     position: relative
