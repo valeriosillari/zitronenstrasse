@@ -24,7 +24,7 @@
     "express": "^4.16.2",
     "hover.css": "^2.2.1",
     "newrelic": "^2.4.1",
-    "node-sass": "^4.5.3",
+    "node-sass": "v4.7.2",
     "nuxt": "1.0.0-rc11",
     "pug": "2.0.0-rc.4",
     "pug-loader": "^2.3.0",
