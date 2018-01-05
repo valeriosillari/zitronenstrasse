@@ -53,7 +53,7 @@
 <style lang="sass">
   .error-message
     @extend .h4
-    color: $color_dark_05
+    color: $color_error_page_subtitle
 
   .section-error
     text-align: center
