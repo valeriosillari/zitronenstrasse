@@ -2,9 +2,9 @@
 
 ## TODO
 
-### DESIGN: set a concept for the design (logo + colors + interaction and modules)
-### STYLES: implement concept for the design/styles
-### icon svg always DOUBLE as the space they take? or as external files + CSS? look if we move from error page we lost styles
+### SVG icon always DOUBLE as the space they take? or as external files + CSS? look if we move from error page we lost styles
+
+### OG images and social images
 
 ### CONTACT PAGE: set node mailer and all the logic
 
