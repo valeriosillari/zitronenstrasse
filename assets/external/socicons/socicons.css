@@ -2,6 +2,8 @@
 @font-face {
   font-family: 'Socicon';
   src:
+    /*  the font url original path inside the original css */
+    /*  https://s3.amazonaws.com/icomoon.io/114779/Socicon/Socicon.woff2?7n8taj */
     url('~/assets/fonts/socicon/socicon-webfont.woff2') format('woff2'),
     url('~/assets/fonts/socicon/socicon-webfont.ttf') format('truetype'),
     url('~/assets/fonts/socicon/socicon-webfont.woff') format('woff');
