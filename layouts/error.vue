@@ -62,4 +62,4 @@
     margin: 30px auto
     .st-error
       fill: $color_dark_06
-</style>style>
+</style>
