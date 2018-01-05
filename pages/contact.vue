@@ -1,6 +1,6 @@
 <template lang="pug">
-  .container
-    section.section.section-home(style='min-height: 1200px;')
+  section.section.section-top
+    .container
       h1
         | Contact
 </template>

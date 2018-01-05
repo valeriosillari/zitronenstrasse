@@ -1,5 +1,5 @@
 <template lang="pug">
-  .layout-wrap
+  .layout-wrapper
     //- navbar
     Navbar
     //- nuxt tag
