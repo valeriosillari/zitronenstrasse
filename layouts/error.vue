@@ -38,7 +38,6 @@
       Navbar,
       FooterArea
     },
-    name: 'nuxt-error',
     props: ['error'],
     head () {
       return {
