@@ -7,12 +7,14 @@
     //- main area
     .container
       section.section.section-error(style='min-height: 1200px;')
+
+        div.icon-compass
+
         h1.error-code
           | {{ error.statusCode }}
 
-        .error-wrapper-message
-          h2.error-message
-            | {{ error.message }}
+        h2.error-message
+          | {{ error.message }}
 
         p(v-if='error.statusCode === 404')
           nuxt-link.tem-link.error-link(to="/")
@@ -40,3 +42,19 @@
     }
   }
 </script>
+
+<style lang="sass">
+  
+  .error-message
+    @extend .h4
+    color: $color_dark_05
+
+  .section-error
+    text-align: center
+
+  .icon-compass
+    width: 260px
+    height: 260px
+    margin: 30px auto
+    background: red
+</style>style>

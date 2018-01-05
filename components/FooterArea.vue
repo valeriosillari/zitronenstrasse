@@ -80,11 +80,16 @@
     position: relative
     height: 45px
     width: 45px
-    // color status
-    fill: $color_link
+
+  // color status
+  .icon,
+  .item-link
+    color: $color_footer_link
+    fill: $color_footer_link
     &:hover,
     &:focus
-      fill: $color_link_hvr
+      color: $color_footer_link_hvr
+      fill: $color_footer_link_hvr
 
   // grid SM: 576px
   @media screen and (min-width: 576px)
