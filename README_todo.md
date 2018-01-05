@@ -6,11 +6,9 @@
 
 ### STYLES: implement concept for the design/styles
 
-### ERROR PAGE: set custom error page
-
 ### CONTACT PAGE: set node mailer and all the logic
 
-### NO JS message: if browswe has no js set ...
+### NO JS message: if browser has no js set ...
 
 ## NICE TO HAVE
 
