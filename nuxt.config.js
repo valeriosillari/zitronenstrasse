@@ -16,7 +16,8 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Zitronenstrasse | Romantic Spots in Berlin.' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://s3.amazonaws.com/icomoon.io/114779/Socicon/style.css?u8vidh' }
     ],
     script: [
       {
