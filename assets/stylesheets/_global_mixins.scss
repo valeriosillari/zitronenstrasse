@@ -1,0 +1,19 @@
+// mixins set on :
+// https://css-tricks.com/snippets/css/using-font-face/
+// https://github.com/magnetikonline/sassboilerplate/blob/master/fontface.scss
+@mixin fontFace($familyName, $srcPath, $srcFileName, $style: normal, $weight: normal) {
+	@font-face {
+	  font-family: $familyName;
+	  src:
+			url('~/fonts/#{$srcPath}/#{$srcFileName}.woff2') format('woff2'),
+			url('~/fonts/#{$srcPath}/#{$srcFileName}.woff') format('woff'),
+			url('~/fonts/#{$srcPath}/#{$srcFileName}.ttf') format('truetype');
+	  font-style: $style;
+	  font-weight: $weight;
+	}
+}
+
+// box padding
+@mixin paddingBoxDefaut() {
+  padding: 10px 15px;
+}
