@@ -23,7 +23,7 @@
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
     "hover.css": "^2.2.1",
-    "newrelic": "^2.4.1",
+    "newrelic": "^v2.5.0",
     "node-sass": "v4.7.2",
     "nuxt": "1.0.0-rc11",
     "pug": "2.0.0-rc.4",
