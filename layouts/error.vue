@@ -15,7 +15,7 @@
             | {{ error.message }}
 
         p(v-if='error.statusCode === 404')
-          nuxt-link.error-link(to="/")
+          nuxt-link.tem-link.error-link(to="/")
             | Back to the home page
 
     //- footer
