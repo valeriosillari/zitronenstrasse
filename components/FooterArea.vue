@@ -84,8 +84,4 @@
       margin-top: 0
       text-align: right
 
-    // LI
-    .item-icon
-      padding-left: 7.5px
-
 </style>
