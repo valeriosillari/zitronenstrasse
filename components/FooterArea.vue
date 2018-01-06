@@ -47,6 +47,8 @@
   .col-right
     margin-top: 15px
 
+  .item-link
+    color: $color_footer_link
 
   // UL
   .item-icons
@@ -68,11 +70,11 @@
     position: relative
     font-size: 32px
     line-height: 1
+    color: $color_footer_icon
 
   // color status
   .socicon,
   .item-link
-    color: $color_footer_link
     &:hover,
     &:focus
       color: $color_footer_link_hvr
