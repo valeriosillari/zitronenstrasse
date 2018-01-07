@@ -30,13 +30,19 @@
       }
       return MapGoogle
     },
+
     // mounted: WHEN ALL code on server is already loaded!
     mounted: function () {
-      this.initMap()
+      console.log('+++ mounted START +++')
+      const mapLogicInit = this
+      setTimeout(() => {
+        console.log('+++ mounted TIMEOUT start +++')
+        mapLogicInit.initMap()
+      }, 5000)
     },
+
     methods: {
       initMap: function () {
-
         const google = window.google
 
         // attach map to the div element, passing all the option
