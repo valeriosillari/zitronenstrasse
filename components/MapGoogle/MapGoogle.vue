@@ -4,47 +4,6 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      'latitude': {
-        type: Number,
-        default: function () {
-          return 39.50
-        }
-      },
-      'longitude': {
-        type: Number,
-        default: function () {
-          return -98.35
-        }
-      },
-      'zoom': {
-        type: Number,
-        default: function () {
-          return 4
-        }
-      }
-    },
-    data () {
-      return {
-        // empty
-      }
-    },
-    mounted () {
-      const google = window.google
-      /*
-        We don't want the map to be reactive, so we initialize it locally,
-        but don't store it in our data array.
-      */
-      this.map = new google.maps.Map(document.getElementById('google-map'), {
-        center: {
-          lat: this.latitude,
-          lng: this.longitude
-        },
-        zoom: this.zoom
-      })
-    }
-  }
 </script>
 
 <style lang="sass">
