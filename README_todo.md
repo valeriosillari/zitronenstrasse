@@ -31,3 +31,11 @@
 - come sopra ...
 
 ### 3) commit: no code for map in component: speed 98/100
+
+
+### 4) commit: floow this tutorial. step one. we see the map, no markers: speed 84/100
+- Dai la priorità ai contenuti visibili
+- Sfrutta il caching del browser (analytics and map js)
+
+Tutorial:
+https://serversideup.net/displaying-resources-google-map-vue-js/
