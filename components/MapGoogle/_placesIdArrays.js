@@ -1,24 +1,24 @@
 const placeIdArray = [
-  // // Geschwister Nothaft Café
-  // 'ChIJX2MutgxPqEcR2nvgHiQ0ojE',
-  // // b-lage
-  // 'ChIJAV_YIZ5PqEcRKxI0jRwb58I',
-  // // Herr Lindemann
-  // 'ChIJd-_qBqBPqEcRhdYalX3ASNI',
-  // // Hallmann und Klee
-  // 'ChIJa6BtJAtPqEcRfVVCtKgmXAA',
-  // // Cafebar Mal so Mal so
-  // 'ChIJIStVHgtPqEcRpj_scwDgiho',
-  // // Körner Park
-  // 'ChIJTRJ0JZ9PqEcRABns9MHCtoA',
-  // // DAS KAPiTAL
-  // 'ChIJdT1vJqBPqEcRKr3fqKwU5gI',
-  // // balera Weinhandlung
-  // 'ChIJyaJmgJ9PqEcRmFMyFfFqJGQ',
-  // // Vux
-  // 'ChIJC-mZa6BPqEcRMXhPH5jFJyo',
-  // // tier
-  // 'ChIJOSWgYaVPqEcR63RnoNfgsDg'
+  // 001 - Geschwister Nothaft Café
+  'ChIJX2MutgxPqEcR2nvgHiQ0ojE',
+  // 002 - b-lage
+  'ChIJAV_YIZ5PqEcRKxI0jRwb58I',
+  // 003 - Herr Lindemann
+  'ChIJd-_qBqBPqEcRhdYalX3ASNI',
+  // 004 - Hallmann und Klee
+  'ChIJa6BtJAtPqEcRfVVCtKgmXAA',
+  // 005 - Cafebar Mal so Mal so
+  'ChIJIStVHgtPqEcRpj_scwDgiho',
+  // 006 - Körner Park
+  'ChIJTRJ0JZ9PqEcRABns9MHCtoA',
+  // 007 - DAS KAPiTAL
+  'ChIJdT1vJqBPqEcRKr3fqKwU5gI',
+  // 008 - balera Weinhandlung
+  'ChIJyaJmgJ9PqEcRmFMyFfFqJGQ',
+  // 009 - Vux
+  'ChIJC-mZa6BPqEcRMXhPH5jFJyo',
+  // 010 - tier
+  'ChIJOSWgYaVPqEcR63RnoNfgsDg'
 
   // ------------------------------------------
   // more than 10
