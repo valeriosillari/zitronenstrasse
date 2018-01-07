@@ -23,6 +23,9 @@
 
 ## PERFORMANCE
 
-### commit: no markers: speed 84/100
+### 1) commit: no markers: speed 84/100
 - Dai la priorità ai contenuti visibili
 - Sfrutta il caching del browser (analytics and map js)
+
+### 2) commit: no markers and no marker JS: speed 84/100
+- come sopra ...
