@@ -6,6 +6,14 @@ const headDescription = 'Zitronenstrasse | Romantic Spots in Berlin.'
 
 module.exports = {
   /*
+  ** ENV vars to spread in all the app.
+  ** https://nuxtjs.org/api/configuration-env
+  */
+  env: {
+    googleMapApiKey: process.env.GOOGLE_MAP_API_KEY || ''
+  },
+
+  /*
   ** Headers of the page
   */
   head: {
