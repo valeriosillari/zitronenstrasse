@@ -29,3 +29,5 @@
 
 ### 2) commit: no markers and no marker JS: speed 84/100
 - come sopra ...
+
+### 3) commit: no code for map in component: speed 98/100
