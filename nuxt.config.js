@@ -1,5 +1,8 @@
-const webpack = require('webpack')
 const dotenv = require('dotenv').config({path: './env_variables/env_keys'})
+const webpack = require('webpack')
+
+// set GOOGLE MAP API KEY access keys   
+const mapApiKey = process.env.GOOGLE_MAP_API_KEY
 
 const headTitle = 'Zitronenstrasse | Romantic Spots in Berlin.'
 const headDescription = 'Zitronenstrasse | Romantic Spots in Berlin.'
@@ -10,7 +13,7 @@ module.exports = {
   ** https://nuxtjs.org/api/configuration-env
   */
   env: {
-    googleMapApiKey: process.env.GOOGLE_MAP_API_KEY || ''
+    // empty
   },
 
   /*
@@ -29,6 +32,13 @@ module.exports = {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+    ],
+    script: [   
+      {    
+        // TODO: try to call it via plugin for vue JS? just the library?   
+        // call google map javascript API    
+        src: `https://maps.googleapis.com/maps/api/js?key=${mapApiKey}&v=3&libraries=places`, async: true, defer: true
+      }
     ]
   },
 
@@ -79,7 +89,7 @@ module.exports = {
   ** Customize the Vue Plugins
   */
   plugins: [
-    '~/plugins/vue-google-maps'
+    // TODO
   ],
 
   /*
