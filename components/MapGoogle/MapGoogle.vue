@@ -36,7 +36,6 @@
     },
     methods: {
       initMap: function () {
-        // let activeInfoWindow
 
         const google = window.google
 
