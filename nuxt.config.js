@@ -1,6 +1,10 @@
 const dotenv = require('dotenv').config({path: './env_variables/env_keys'})
 const webpack = require('webpack')
 
+const headTitle = 'Zitronenstrasse | Romantic Spots in Berlin.'
+const headDescription = 'Zitronenstrasse | Romantic Spots in Berlin.'
+
+
 // set GOOGLE MAP API KEY access keys
 const mapApiKey = process.env.GOOGLE_MAP_API_KEY
 
@@ -9,11 +13,15 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'Zitronenstrasse | Romantic Spots in Berlin.',
+    title: headTitle,
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Zitronenstrasse | Romantic Spots in Berlin.' }
+      {
+      	hid: 'description',
+      	name: 'description',
+      	content: headDescription
+      }
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -22,7 +30,7 @@ module.exports = {
       {
         // TODO: try to call it via plugin for vue JS? just the library?
         // call google map javascript API
-        src: `https://maps.googleapis.com/maps/api/js?key=${mapApiKey}&v=3&libraries=places`, defer: true
+        src: `https://maps.googleapis.com/maps/api/js?key=${mapApiKey}&v=3&libraries=places`, async: true, defer: true
       }
     ]
   },
