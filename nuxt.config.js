@@ -1,4 +1,5 @@
 const webpack = require('webpack')
+const dotenv = require('dotenv').config({path: './env_variables/env_keys'})
 
 const headTitle = 'Zitronenstrasse | Romantic Spots in Berlin.'
 const headDescription = 'Zitronenstrasse | Romantic Spots in Berlin.'
@@ -70,7 +71,7 @@ module.exports = {
   ** Customize the Vue Plugins
   */
   plugins: [
-    // TODO
+    '~/plugins/vue-google-maps'
   ],
 
   /*
