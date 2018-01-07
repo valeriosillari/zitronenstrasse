@@ -33,12 +33,8 @@
 
     // mounted: WHEN ALL code on server is already loaded!
     mounted: function () {
-      console.log('+++ mounted START +++')
       const mapLogicInit = this
-      setTimeout(() => {
-        console.log('+++ mounted TIMEOUT start +++')
-        mapLogicInit.initMap()
-      }, 2000)
+      mapLogicInit.initMap()
     },
 
     methods: {
