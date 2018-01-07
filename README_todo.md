@@ -39,3 +39,6 @@
 
 Tutorial:
 https://serversideup.net/displaying-resources-google-map-vue-js/
+
+
+## vue map2 now buggy at build. check if ENV options or map2 logic...
