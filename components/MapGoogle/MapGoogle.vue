@@ -38,7 +38,7 @@
       setTimeout(() => {
         console.log('+++ mounted TIMEOUT start +++')
         mapLogicInit.initMap()
-      }, 5000)
+      }, 2000)
     },
 
     methods: {
