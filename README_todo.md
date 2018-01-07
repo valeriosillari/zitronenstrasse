@@ -1,5 +1,13 @@
 # Zitronenstrasse | todo
 
+## PERF INFO
+
+- using js external - NO init map - NO markers >>> speed insight: 98 / 100
+
+- using js external + init map - NO markers >>> speed insight: 84 / 100
+
+- using js external + init map + markers >>> speed insight: go down at each marker
+
 
 
 
