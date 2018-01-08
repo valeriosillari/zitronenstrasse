@@ -44,6 +44,18 @@
         // !!! we need this google constant
         const google = window.google
 
+        const customMarker = {
+          path: markerPath,
+          fillColor: markerColorFill,
+          strokeColor: markerColorStroke,
+          fillOpacity: 1,
+          scale: 2.5,
+          strokeWeight: 2,
+          // for correct alignmnet of custom SVG icon with map point
+          anchor: new google.maps.Point(11, 12)
+        }
+
+        // init map
         this.map = new google.maps.Map(document.getElementById('google-map'), {
           center: {
             lat: 52.486757,
@@ -64,17 +76,6 @@
         })
 
         let mapLoaded = this.map
-
-        const customMarker = {
-          path: markerPath,
-          fillColor: markerColorFill,
-          strokeColor: markerColorStroke,
-          fillOpacity: 1,
-          scale: 2.5,
-          strokeWeight: 2,
-          // for correct alignmnet of custom SVG icon with map point
-          anchor: new google.maps.Point(11, 12)
-        }
 
         for (let placeID of placeIdArray) {
           new google.maps.places.PlacesService(mapLoaded).getDetails({
