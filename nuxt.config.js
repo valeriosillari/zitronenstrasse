@@ -1,11 +1,20 @@
 const dotenv = require('dotenv').config({path: './env_variables/env_keys'})
 const webpack = require('webpack')
 
-// set GOOGLE MAP API KEY access keys   
+// set GOOGLE MAP API KEY access keys
 const mapApiKey = process.env.GOOGLE_MAP_API_KEY || ''
 
 const headTitle = 'Zitronenstrasse | Romantic Spots in Berlin.'
 const headDescription = 'Zitronenstrasse | Romantic Spots in Berlin.'
+
+// og for FB and Linkedin
+const ogTitle = headTitle
+const ogDescription = headDescription
+const ogType = 'website'
+const ogImage = '/zitronenstrasse_og_image_001.png'
+// TODO: the URL set as variables check for redirect DNS
+const ogUrl = 'https://zitronenstrasse.herokuapp.com/'
+
 
 module.exports = {
   /*
@@ -28,15 +37,44 @@ module.exports = {
       	hid: 'description',
       	name: 'description',
       	content: headDescription
+      },
+      {
+        hid: `og:title`,
+        property: 'og:title',
+      	content: ogTitle
+      },
+      {
+        hid: `og:description`,
+        property: 'og:description',
+      	content: ogDescription
+      },
+      {
+        hid: `og:type`,
+        property: 'og:type',
+      	content: ogType
+      },
+      {
+        hid: `og:url`,
+        property: 'og:url',
+      	content: ogUrl
+      },
+      {
+        hid: `og:image`,
+        property: 'og:image',
+      	content: ogImage
       }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      // favicon
+      {
+        rel: 'icon',
+        type: 'image/x-icon',
+        href: '/favicon.ico'
+      }
     ],
-    script: [   
-      {    
-        // TODO: try to call it via plugin for vue JS? just the library?   
-        // call google map javascript API    
+    script: [
+      {
+        // call google map javascript API
         src: `https://maps.googleapis.com/maps/api/js?key=${mapApiKey}&v=3&libraries=places`, async: true, defer: true
       }
     ]
