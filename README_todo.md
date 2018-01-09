@@ -15,6 +15,7 @@
 
 ### OG images and social images
 - linkedin for computer/pc is oK. on mobile app use different sizes? could we set custom image here with smaller sizes? another meta tag to set?
+- the front front IMAGE looks having perfect proportions! https://frontendfront.com/
 
 ### CONTACT PAGE: set node mailer and all the logic
 
