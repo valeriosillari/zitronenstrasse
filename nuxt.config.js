@@ -122,6 +122,11 @@ module.exports = {
         type: 'image/x-icon',
         href: '/favicon.ico'
       },
+      // apple-touch-icon
+      {
+        rel: 'apple-touch-icon',
+        href: '/apple_touch_icon.png'
+      },      
       // link canonical
       {
         rel: 'canonical',
