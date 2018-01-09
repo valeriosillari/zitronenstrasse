@@ -7,13 +7,17 @@ const mapApiKey = process.env.GOOGLE_MAP_API_KEY || ''
 const headTitle = 'Zitronenstrasse | Romantic Spots in Berlin.'
 const headDescription = 'Zitronenstrasse | Romantic Spots in Berlin.'
 
+// TODO: the URL set as variables check for redirect DNS
+const thisAppMainUrl = 'https://zitronenstrasse.herokuapp.com/'
+
 // og for FB and Linkedin
+const ogUrl = thisAppMainUrl
 const ogTitle = headTitle
 const ogDescription = headDescription
 const ogType = 'website'
-const ogImage = '/zitronenstrasse_og_image_001.png'
-// TODO: the URL set as variables check for redirect DNS
-const ogUrl = 'https://zitronenstrasse.herokuapp.com/'
+const ogImage = '/zitronenstrasse_og_image.png'
+const ogImageWidth = '1200'
+const ogImageHeight = '630'
 
 
 module.exports = {
@@ -38,6 +42,7 @@ module.exports = {
       	name: 'description',
       	content: headDescription
       },
+      // OG options for open graph: Fb and Linkedin
       {
         hid: `og:title`,
         property: 'og:title',
@@ -61,8 +66,54 @@ module.exports = {
       {
         hid: `og:image`,
         property: 'og:image',
-      	content: ogImage
-      }
+        content: ogImage
+      },
+      {
+        hid: `og:image:width`,
+        property: 'og:image:width',
+        content: ogImageWidth
+      },
+      {
+        hid: `og:image:height`,
+        property: 'og:image:height',
+        content: ogImageHeight
+      },
+      // Twitter card
+      {
+        hid: `twitter:card`,
+        property: 'twitter:card',
+        content: 'summary_large_image'
+      },
+      {
+        hid: `twitter:site`,
+        property: 'twitter:site',
+        content: '@zitronenstrasse'
+      },
+      {
+        hid: `twitter:creator`,
+        property: 'twitter:creator',
+        content: 'Valerio Sillari'
+      },
+      {
+        hid: `twitter:title`,
+        property: 'twitter:title',
+        content: ogTitle
+      },
+      {
+        hid: `twitter:description`,
+        property: 'twitter:description',
+        content: ogDescription
+      },
+      {
+        hid: `twitter:image`,
+        property: 'twitter:image',
+        content: ogImage
+      },
+      {
+        hid: `twitter:image:alt`,
+        property: 'twitter:image:alt',
+        content: ogTitle
+      },      
     ],
     link: [
       // favicon
@@ -70,6 +121,11 @@ module.exports = {
         rel: 'icon',
         type: 'image/x-icon',
         href: '/favicon.ico'
+      },
+      // link canonical
+      {
+        rel: 'canonical',
+        href: thisAppMainUrl
       }
     ],
     script: [
