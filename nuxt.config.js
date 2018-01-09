@@ -5,7 +5,7 @@ const webpack = require('webpack')
 const mapApiKey = process.env.GOOGLE_MAP_API_KEY || ''
 
 const headTitle = 'Zitronenstrasse | Romantic Spots in Berlin.'
-const headDescription = 'Zitronenstrasse | Romantic Spots in Berlin.'
+const headDescription = 'A project for mapping and sharing romantic spots in Berlin.'
 
 // TODO: the URL set as variables check for redirect DNS
 const thisAppMainUrl = 'https://zitronenstrasse.herokuapp.com/'
