@@ -42,6 +42,26 @@ module.exports = {
       	name: 'description',
       	content: headDescription
       },
+      {
+        hid: 'author',
+        name: 'author',
+        content: 'Valerio Sillari'
+      },
+      {
+        hid: 'keywords',
+        name: 'keywords',
+        content: 'Zitronenstrasse, Zitrone, Strasse, Berlin, Map, Mapping, Frontend, Vue, Nuxt'
+      },
+      {
+        hid: 'HandheldFriendly',
+        name: 'HandheldFriendly',
+        content: 'True'
+      },
+      {
+        hid: 'MobileOptimized',
+        name: 'MobileOptimized',
+        content: '320'
+      },
       // OG options for open graph: Fb and Linkedin
       {
         hid: `og:title`,
