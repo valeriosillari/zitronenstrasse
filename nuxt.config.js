@@ -15,7 +15,7 @@ const ogUrl = thisAppMainUrl
 const ogTitle = headTitle
 const ogDescription = headDescription
 const ogType = 'website'
-const ogImage = `${thisAppMainUrl}/logo_og_image_001.png`
+const ogImage = `${thisAppMainUrl}/zitronenstrasse_og_image.png`
 const ogImageWidth = '1200'
 const ogImageHeight = '630'
 
