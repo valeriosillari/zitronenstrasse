@@ -1,4 +1,5 @@
-# Zitronenstrasse | todo
+Zitronenstrasse | TODO
+===================
 
 ## PERF INFO
 
@@ -13,11 +14,18 @@
 
 ## TODO
 
-### OG images and social images
-- linkedin for computer/pc is oK. on mobile app use different sizes? could we set custom image here with smaller sizes? another meta tag to set?
-- the front front IMAGE looks having perfect proportions! https://frontendfront.com/
+#### OG images and social images
+
+icons: follow logic from latest boileplate.
+
+set icons with online generator: http://iconifier.net/ | start image is 256x256
+
+- 1) favicon.ico : 32x32px
+- 2) apple_touch_icon.png : 192x192px (for apple stuff)
+
 
 ### CONTACT PAGE: set node mailer and all the logic
+
 
 ### NO JS message: if browser has no js set ...
 
@@ -26,4 +34,4 @@
 
 ## NICE TO HAVE
 
-### GOOGLE ANALYTIC : set analytics for Nuxt with ENV variable ?
+#### GOOGLE ANALYTIC : set analytics for Nuxt with ENV variable ?

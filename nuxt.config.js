@@ -31,12 +31,28 @@ module.exports = {
 
   /*
   ** Headers of the page
+  ** https://github.com/declandewet/vue-meta#recognized-metainfo-properties
   */
   head: {
     title: headTitle,
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        htmlAttrs: {
+          class: 'todo_htmlClass'
+        }
+      },
+      {
+        ['http-equiv']: 'x-ua-compatible',
+        content: 'ie=edge'
+      },
+      {
+        charset: 'utf-8'
+      },
+      // viewport set on mobile
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1, shrink-to-fit=no'
+      },
       {
       	hid: 'description',
       	name: 'description',
@@ -133,7 +149,7 @@ module.exports = {
         hid: `twitter:image:alt`,
         property: 'twitter:image:alt',
         content: ogTitle
-      },      
+      }
     ],
     link: [
       // favicon
@@ -146,11 +162,16 @@ module.exports = {
       {
         rel: 'apple-touch-icon',
         href: 'apple_touch_icon.png'
-      },      
+      },
       // link canonical
       {
         rel: 'canonical',
         href: thisAppMainUrl
+      },
+      // site manifest
+      {
+        rel: 'manifest',
+        href: 'site.webmanifest'
       }
     ],
     script: [
