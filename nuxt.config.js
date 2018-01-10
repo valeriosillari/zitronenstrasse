@@ -8,14 +8,14 @@ const headTitle = 'Zitronenstrasse | Romantic Spots in Berlin.'
 const headDescription = 'A project for mapping and sharing romantic spots in Berlin.'
 
 // TODO: the URL set as variables check for redirect DNS
-const thisAppMainUrl = 'https://zitronenstrasse.herokuapp.com/'
+const thisAppMainUrl = 'https://zitronenstrasse.herokuapp.com'
 
 // og for FB and Linkedin
 const ogUrl = thisAppMainUrl
 const ogTitle = headTitle
 const ogDescription = headDescription
 const ogType = 'website'
-const ogImage = '/logo_og_image_001.png'
+const ogImage = `${thisAppMainUrl}/logo_og_image_001.png`
 const ogImageWidth = '1200'
 const ogImageHeight = '630'
 
@@ -140,12 +140,12 @@ module.exports = {
       {
         rel: 'icon',
         type: 'image/x-icon',
-        href: '/favicon.ico'
+        href: 'favicon.ico'
       },
       // apple-touch-icon
       {
         rel: 'apple-touch-icon',
-        href: '/apple_touch_icon.png'
+        href: 'apple_touch_icon.png'
       },      
       // link canonical
       {
