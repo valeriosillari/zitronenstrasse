@@ -79,11 +79,11 @@
     &:focus
       color: $color_footer_link_hvr
 
-  // grid SM: 576px
-  @media screen and (min-width: 576px)
+  +breakpoint($breakpoint_sm)
 
     .col-right
       margin-top: 0
       text-align: right
+      background: yellow
 
 </style>
