@@ -35,12 +35,11 @@ module.exports = {
   */
   head: {
     title: headTitle,
+    // this htmlAttrs you need
+    htmlAttrs: {
+      class: 'html-class-test-here',
+    },
     meta: [
-      {
-        htmlAttrs: {
-          class: 'todo_htmlClass'
-        }
-      },
       {
         ['http-equiv']: 'x-ua-compatible',
         content: 'ie=edge'
