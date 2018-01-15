@@ -14,6 +14,8 @@ Zitronenstrasse | TODO
 
 ## TODO
 
+### Update NUXT Version
+
 ### MAP: set fading effect on each marker when appears
 
 ### CONTACT PAGE: set mail as simplest one
