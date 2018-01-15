@@ -54,7 +54,7 @@
   import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
 
   // !!! timer for timeout of marker for avoiding API jquey TIMEOUT
-  const timerSeconds = 20
+  const timerSeconds = 420
 
   // marker custom colors
   // custom color: a little bit darker then the main one. for the marker looks the same
@@ -129,12 +129,17 @@
             new google.maps.places.PlacesService(mapLoaded).getDetails({
               placeId: placeID
             }, (result, status) => {
+              // marker has errors ...
               if (status !== google.maps.places.PlacesServiceStatus.OK) {
-                console.log(status)
+                if (status === google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT) {
+                  console.error(`💩 : OVER_QUERY_LIMIT : ${indexNumber}`)
+                } else {
+                  console.error('💩 : generic placeID error')
+                }
                 return
               }
 
-              // marker
+              // marker OK
               let marker = new google.maps.Marker({
                 map: mapLoaded,
                 position: result.geometry.location,
