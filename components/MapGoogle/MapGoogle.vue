@@ -63,8 +63,13 @@
                 icon: customMarker
               })
 
-              return marker
+              // set marker click event
+              marker.addListener('click', () => {
+                console.log(`marker!!!! ckik >> ${indexNumber}`)
+                // infowindow.open(map, marker);
+              })
 
+              return marker
             // ============== TODO set fade in logic ==============
             } else if (status === google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT) {
               console.error(`💩 : OVER_QUERY_LIMIT : ${indexNumber}`)
