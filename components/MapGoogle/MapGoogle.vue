@@ -96,6 +96,22 @@
           anchor: new google.maps.Point(11, 12)
         }
 
+        const fadeInMarker = (marker, opacityValue) => {
+          // TRICK: value for opacity NOT 1, but a little bit less.
+          // so we are avoiding visual flickering
+          if (marker.opacity < 0.9) {
+            opacityValue = opacityValue + 0.1
+            marker.setOpacity(opacityValue)
+            // call this method again
+            setTimeout(() => {
+              fadeInMarker(marker, opacityValue)
+            }, 35)
+          } else {
+            // fade i value set to 1. DONE fade in effect. stop here the loop
+            marker.setOpacity(1)
+          }
+        }
+
         // init map
         this.map = new google.maps.Map(document.getElementById('google-map'), {
           center: {
@@ -139,7 +155,7 @@
                 return
               }
 
-              // marker OK
+              // ========= set marker API data =========
               let marker = new google.maps.Marker({
                 map: mapLoaded,
                 position: result.geometry.location,
@@ -147,6 +163,15 @@
                 icon: customMarker
               })
 
+              // ========= set marker fadeIn effect =========
+              // set fade as default as zero
+              // opacity looks one of the only options accepted by google API
+              let opacityValue = 0
+              marker.setOpacity(0)
+              // start fade in logic
+              fadeInMarker(marker, opacityValue)
+
+              // ========= set marker Infowindow =========
               let isOpenClass = 'is-open-not'
               let isOpenText = 'Closed now'
               // TODO: remove: for checking
