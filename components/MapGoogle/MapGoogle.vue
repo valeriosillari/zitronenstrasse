@@ -31,85 +31,21 @@
     },
 
     methods: {
-      addMarker: (google, mapLoaded, placeID, indexNumber, infowindow) => {
-        // timer for avoiding TIMEOUT: 450 looks fine, below errors ...
-        const timer = indexNumber * 425
-
-        // set marker options: custom design + infowindow options
-        const setMarkerOptions = (map, placeID, result) => {
-          // set marker item as pin
-          const marker = new google.maps.Marker({
-            map: map,
-            place: {
-              placeId: placeID,
-              location: result.geometry.location
-            },
-            // set icon custom style
-            icon: {
-              path: markerPath,
-              fillColor: markerColorFill,
-              strokeColor: markerColorStroke,
-              fillOpacity: 1,
-              scale: 2.5,
-              strokeWeight: 2,
-              // for correct alignmnet of custom SVG icon with map point
-              anchor: new google.maps.Point(11, 12)
-            }
-          })
-
-          // set marker infowindow
-          let isOpenClass = 'is-open-not'
-          let isOpenText = 'Closed now'
-          if (typeof result.opening_hours !== 'undefined') {
-            if (result.opening_hours.open_now) {
-              isOpenClass = 'is-open-now'
-              isOpenText = 'Open now'
-            }
-          } else {
-            isOpenClass = 'is-open-unknown'
-            isOpenText = 'No info about opening time'
-          }
-
-          // marker at click
-          google.maps.event.addListener(marker, 'click', function () {
-            // reset: close previous ones
-            infowindow.close()
-            // set current one
-            infowindow.setContent(`
-              <p class='text title'>${result.name}</p>
-              <p class='text address'>${result.adr_address}</p>
-              <p class='text open-time ${isOpenClass}'>${isOpenText}</p>
-            `)
-            infowindow.open(map, this)
-          })
-
-          return marker
-        }
-
-        // timeout playing time
-        setTimeout(() => {
-          new google.maps.places.PlacesService(mapLoaded).getDetails({
-            placeId: placeID
-          }, (result, status) => {
-            if (status === google.maps.places.PlacesServiceStatus.OK) {
-              setMarkerOptions(mapLoaded, placeID, result)
-            // ============== TODO set fade in logic ==============
-            } else if (status === google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT) {
-              console.error(`💩 : OVER_QUERY_LIMIT : ${indexNumber}`)
-            } else {
-              console.error('💩 : generic placeID error')
-            }
-          })
-        }, timer)
-      },
-
       initMap () {
+        let activeInfoWindow
         // !!! we need this google constant
         const google = window.google
 
-        // https://stackoverflow.com/questions/1875596/have-just-one-infowindow-open-in-google-maps-api-v3/3412504
-        // answered Aug 5 '10 at 7:14 BY skarE
-        let infowindow = new google.maps.InfoWindow()
+        const customMarker = {
+          path: markerPath,
+          fillColor: markerColorFill,
+          strokeColor: markerColorStroke,
+          fillOpacity: 1,
+          scale: 2.5,
+          strokeWeight: 2,
+          // for correct alignmnet of custom SVG icon with map point
+          anchor: new google.maps.Point(11, 12)
+        }
 
         // init map
         this.map = new google.maps.Map(document.getElementById('google-map'), {
@@ -118,20 +54,78 @@
             lng: 13.4403271
           },
           zoom: 14,
+          // map options
           options: {
             streetViewControl: false,
             fullscreenControl: false,
             mapTypeControl: false,
+            // disableDefaultUI: true,
+            // attributionControl: false,
             // set custom map styles
             styles: mapStylesDark
           }
+
         })
+
+        const mapLoaded = this.map
 
         // add markers in the loop with order number
         // https://stackoverflow.com/questions/10179815/how-do-you-get-the-loop-counter-index-using-a-for-in-syntax-in-javascript
-        for (const [i, placeID] of placeIdArray.entries()) {
-          // TODO: here we have to pass google. coudl we set it more globally?
-          this.addMarker(google, this.map, placeID, i + 1, infowindow)
+        for (const [indexNumber, placeID] of placeIdArray.entries()) {
+          // timer for avoiding TIMEOUT: 450 looks fine, below errors ...
+          const timer = (indexNumber + 1) * 425
+
+          // timeout playing time
+          setTimeout(() => {
+            new google.maps.places.PlacesService(mapLoaded).getDetails({
+              placeId: placeID
+            }, (result, status) => {
+              if (status !== google.maps.places.PlacesServiceStatus.OK) {
+                console.log(status)
+                return
+              }
+
+              // marker
+              let marker = new google.maps.Marker({
+                map: mapLoaded,
+                position: result.geometry.location,
+                // set icon custom style
+                icon: customMarker
+              })
+
+              let isOpenClass = 'is-open-not'
+              let isOpenText = 'Closed now'
+              // TODO: remove: for checking
+              if (typeof result.opening_hours !== 'undefined') {
+                if (result.opening_hours.open_now) {
+                  isOpenClass = 'is-open-now'
+                  isOpenText = 'Open now'
+                }
+              } else {
+                isOpenClass = 'is-open-unknown'
+                isOpenText = 'No info about opening time'
+              }
+
+              const currentInfoWindow = new google.maps.InfoWindow({
+                // here set logic for info window for each item
+                // https://developers.google.com/maps/documentation/javascript/infowindows
+                content: `
+                  <p class='text title'>${result.name}</p>
+                  <p class='text address'>${result.adr_address}</p>
+                  <p class='text open-time ${isOpenClass}'>${isOpenText}</p>
+                `
+              })
+              google.maps.event.addListener(marker, 'click', (el) => {
+                // close info window of previous opened marker : reset
+                activeInfoWindow && activeInfoWindow.close()
+                // open current clicked one
+                currentInfoWindow.open(mapLoaded, marker)
+                // set the current one as opened one
+                activeInfoWindow = currentInfoWindow
+              })
+            })
+          // close timer for each marker
+          }, timer)
         }
       }
     }
@@ -176,4 +170,14 @@
   // and remove some weird grey box set on right side from google
   .gm-style-cc
     display: none
+
+  // // remove goggle map logo
+  // a[href^="http://maps.google.com/maps"],
+  // a[href^="https://maps.google.com/maps"],
+  // a[href^="https://www.google.com/maps"]
+  //     display: none !important
+  // .gmnoprint:not(.gm-bundled-control)
+  //   display: none
+  // .gm-bundled-control .gmnoprint
+  //   display: block
 </style>
