@@ -14,11 +14,9 @@ Zitronenstrasse | TODO
 
 ## TODO
 
-### MAP: set fading effect on each marker when appears
-
 ### CONTACT PAGE: set mail as simplest one
 
-### ABOIT PAGE: set text and info
+### ABOUT PAGE: set text and info
 
 ### NO JS message: if browser has NO-JS set ...
 
@@ -33,4 +31,4 @@ Zitronenstrasse | TODO
 
 #### CONTACT PAGE: set node mailer and all the logic for form mailer
 
-#### GOOGLE ANALYTIC : set analytics for Nuxt with ENV variable ?
+#### GOOGLE ANALYTICS : set analytics for Nuxt with ENV variable ?
