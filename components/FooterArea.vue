@@ -79,8 +79,8 @@
     &:focus
       color: $color_footer_link_hvr
 
-  // grid SM: 576px
-  @media screen and (min-width: 576px)
+  // =============================== SM viewport ===============================
+  +breakpoint($breakpoint_sm)
 
     .col-right
       margin-top: 0
