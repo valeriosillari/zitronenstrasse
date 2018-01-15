@@ -32,12 +32,13 @@
     },
 
     methods: {
-      addMarker: (google, mapLoaded, placeID, indexNumber) => {
+      addMarker: (google, mapLoaded, placeID, indexNumber, infowindow) => {
         // timer for avoiding TIMEOUT: 450 looks fine, below errors ...
         const timer = indexNumber * 425
 
         // set marker options: custom design + infowindow options
         const setMarkerOptions = (map, placeID, result) => {
+          // set marker item as pin
           const marker = new google.maps.Marker({
             map: map,
             place: {
@@ -57,9 +58,29 @@
             }
           })
 
+          // set marker infowindow
+          let isOpenClass = 'is-open-not'
+          let isOpenText = 'Closed now'
+          if (typeof result.opening_hours !== 'undefined') {
+            if (result.opening_hours.open_now) {
+              isOpenClass = 'is-open-now'
+              isOpenText = 'Open now'
+            }
+          } else {
+            isOpenClass = 'is-open-unknown'
+            isOpenText = 'No info about opening time'
+          }
+
           // marker at click
-          google.maps.event.addListener(marker, 'click', () => {
-            console.log(`${indexNumber}. ===> Clicked`)
+          google.maps.event.addListener(marker, 'click', function () {
+            infowindow.close()
+            console.log('HERE')
+            infowindow.setContent(`
+              <p class='text title'>${result.name}</p>
+              <p class='text address'>${result.adr_address}</p>
+              <p class='text open-time ${isOpenClass}'>${isOpenText}</p>
+            `)
+            infowindow.open(map, this)
           })
 
           return marker
@@ -86,6 +107,10 @@
         // !!! we need this google constant
         const google = window.google
 
+        // https://stackoverflow.com/questions/1875596/have-just-one-infowindow-open-in-google-maps-api-v3/3412504
+        // answered Aug 5 '10 at 7:14 BY skarE
+        let infowindow = new google.maps.InfoWindow()
+
         // init map
         this.map = new google.maps.Map(document.getElementById('google-map'), {
           center: {
@@ -106,7 +131,7 @@
         // https://stackoverflow.com/questions/10179815/how-do-you-get-the-loop-counter-index-using-a-for-in-syntax-in-javascript
         for (const [i, placeID] of placeIdArray.entries()) {
           // TODO: here we have to pass google. coudl we set it more globally?
-          this.addMarker(google, this.map, placeID, i + 1)
+          this.addMarker(google, this.map, placeID, i + 1, infowindow)
         }
       }
     }
