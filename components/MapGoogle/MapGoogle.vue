@@ -163,14 +163,4 @@
   // and remove some weird grey box set on right side from google
   .gm-style-cc
     display: none
-
-  // // remove goggle map logo
-  // a[href^="http://maps.google.com/maps"],
-  // a[href^="https://maps.google.com/maps"],
-  // a[href^="https://www.google.com/maps"]
-  //     display: none !important
-  // .gmnoprint:not(.gm-bundled-control)
-  //   display: none
-  // .gm-bundled-control .gmnoprint
-  //   display: block
 </style>
