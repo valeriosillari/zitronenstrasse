@@ -54,7 +54,7 @@
   import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
 
   // !!! timer for timeout of marker for avoiding API jquey TIMEOUT
-  const timerSeconds = 420
+  const timerSeconds = 450
 
   // marker custom colors
   // custom color: a little bit darker then the main one. for the marker looks the same
