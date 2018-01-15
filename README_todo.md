@@ -14,24 +14,23 @@ Zitronenstrasse | TODO
 
 ## TODO
 
-#### OG images and social images
+### MAP: set fading effect on each marker when appears
 
-icons: follow logic from latest boileplate.
+### MAP: remove/custom link "View on Google Maps" from marker INFO window. before we have not ...
 
-set icons with online generator: http://iconifier.net/ | start image is 256x256
+### CONTACT PAGE: set mail as simplest one
 
-- 1) favicon.ico : 32x32px
-- 2) apple_touch_icon.png : 192x192px (for apple stuff)
+### ABOIT PAGE: set text and info
 
+### NO JS message: if browser has NO-JS set ...
 
-### CONTACT PAGE: set node mailer and all the logic
-
-
-### NO JS message: if browser has no js set ...
+### Update REAME FILE
 
 
 
 
 ## NICE TO HAVE
+
+#### CONTACT PAGE: set node mailer and all the logic for form mailer
 
 #### GOOGLE ANALYTIC : set analytics for Nuxt with ENV variable ?
