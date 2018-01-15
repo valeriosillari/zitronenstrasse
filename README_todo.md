@@ -16,8 +16,6 @@ Zitronenstrasse | TODO
 
 ### MAP: set fading effect on each marker when appears
 
-### MAP: remove/custom link "View on Google Maps" from marker INFO window. before we have not ...
-
 ### CONTACT PAGE: set mail as simplest one
 
 ### ABOIT PAGE: set text and info
@@ -30,6 +28,8 @@ Zitronenstrasse | TODO
 
 
 ## NICE TO HAVE
+
+#### MAP COMPONENT: set the JS code more modular
 
 #### CONTACT PAGE: set node mailer and all the logic for form mailer
 
