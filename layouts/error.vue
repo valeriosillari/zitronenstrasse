@@ -1,38 +1,26 @@
 <template lang="pug">
-  .layout-wrapper
-    //- navbar
-    Navbar
+  //- ERROR PAGE: we extend the default layout. this is the page CONTENT OF THE PAGE actually!
 
-    //- main area
-    section.section.section-top.section-error
-      .container
+  //- main area
+  section.section.section-top.section-error
+    .container
 
-        //- div with css bg as svg | compass
-        .svg-icon-compass
+      //- div with css bg as svg | compass
+      .svg-icon-compass
 
-        h1.error-code
-          | {{ error.statusCode }}
+      h1.error-code
+        | {{ error.statusCode }}
 
-        h2.error-message
-          | {{ error.message }}
+      h2.error-message
+        | {{ error.message }}
 
-        p(v-if='error.statusCode === 404')
-          nuxt-link.error-link(to="/")
-            | Back to the home page
-
-    //- footer
-    FooterArea
+      p(v-if='error.statusCode === 404')
+        nuxt-link.error-link(to="/")
+          | Back to the home page
 </template>
 
 <script>
-  import Navbar from '~/components/Navbar.vue'
-  import FooterArea from '~/components/FooterArea.vue'
-
   export default {
-    components: {
-      Navbar,
-      FooterArea
-    },
     props: ['error'],
     head () {
       return {
