@@ -7,6 +7,9 @@
   import placeIdArray from '~/components/MapGoogle/_placesIdArrays.js'
   import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
 
+  // !!! timer for timeout of marker for avoiding API jquey TIMEOUT
+  const timerSeconds = 420
+
   // marker custom colors
   // custom color: a little bit darker then the main one. for the marker looks the same
   const markerColorFill = '#eab622'
@@ -73,7 +76,7 @@
         // https://stackoverflow.com/questions/10179815/how-do-you-get-the-loop-counter-index-using-a-for-in-syntax-in-javascript
         for (const [indexNumber, placeID] of placeIdArray.entries()) {
           // timer for avoiding TIMEOUT: 450 looks fine, below errors ...
-          const timer = (indexNumber + 1) * 425
+          const timer = (indexNumber + 1) * timerSeconds
 
           // timeout playing time
           setTimeout(() => {
