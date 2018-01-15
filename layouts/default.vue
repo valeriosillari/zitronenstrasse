@@ -18,4 +18,6 @@
       FooterArea
     }
   }
+
+  console.log('🍋 🍋 🍋')
 </script>
