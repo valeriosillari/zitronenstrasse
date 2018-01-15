@@ -36,15 +36,33 @@
         // timer for avoiding TIMEOUT: 450 looks fine, below errors ...
         const timer = indexNumber * 425
 
-        const customMarker = {
-          path: markerPath,
-          fillColor: markerColorFill,
-          strokeColor: markerColorStroke,
-          fillOpacity: 1,
-          scale: 2.5,
-          strokeWeight: 2,
-          // for correct alignmnet of custom SVG icon with map point
-          anchor: new google.maps.Point(11, 12)
+        // set marker options: custom design + infowindow options
+        const setMarkerOptions = (map, placeID, result) => {
+          const marker = new google.maps.Marker({
+            map: map,
+            place: {
+              placeId: placeID,
+              location: result.geometry.location
+            },
+            // set icon custom style
+            icon: {
+              path: markerPath,
+              fillColor: markerColorFill,
+              strokeColor: markerColorStroke,
+              fillOpacity: 1,
+              scale: 2.5,
+              strokeWeight: 2,
+              // for correct alignmnet of custom SVG icon with map point
+              anchor: new google.maps.Point(11, 12)
+            }
+          })
+
+          // marker at click
+          google.maps.event.addListener(marker, 'click', () => {
+            console.log(`${indexNumber}. ===> Clicked`)
+          })
+
+          return marker
         }
 
         // timeout playing time
@@ -53,23 +71,7 @@
             placeId: placeID
           }, (result, status) => {
             if (status === google.maps.places.PlacesServiceStatus.OK) {
-              const marker = new google.maps.Marker({
-                map: mapLoaded,
-                place: {
-                  placeId: placeID,
-                  location: result.geometry.location
-                },
-                // set icon custom style
-                icon: customMarker
-              })
-
-              // set marker click event
-              marker.addListener('click', () => {
-                console.log(`marker!!!! ckik >> ${indexNumber}`)
-                // infowindow.open(map, marker);
-              })
-
-              return marker
+              setMarkerOptions(mapLoaded, placeID, result)
             // ============== TODO set fade in logic ==============
             } else if (status === google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT) {
               console.error(`💩 : OVER_QUERY_LIMIT : ${indexNumber}`)
