@@ -26,9 +26,8 @@
     // mounted: WHEN ALL code on server is already loaded!
     mounted () {
       // 'this' is the VUE component
-      const selfComponent = this
       // add map to page
-      selfComponent.initMap()
+      this.initMap()
     },
 
     methods: {
@@ -73,8 +72,9 @@
 
           // marker at click
           google.maps.event.addListener(marker, 'click', function () {
+            // reset: close previous ones
             infowindow.close()
-            console.log('HERE')
+            // set current one
             infowindow.setContent(`
               <p class='text title'>${result.name}</p>
               <p class='text address'>${result.adr_address}</p>
