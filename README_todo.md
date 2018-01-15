@@ -24,7 +24,7 @@ Zitronenstrasse | TODO
 
 ### NO JS message: if browser has NO-JS set ...
 
-### Update REAME FILE
+### Update REAME FILE (set this list into read me as roadmap)
 
 
 
