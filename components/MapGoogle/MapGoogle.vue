@@ -4,7 +4,7 @@
 </template>
 
 <script>
-  // import placeIdArray from '~/components/MapGoogle/_placesIdArrays.js'
+  import placeIdArray from '~/components/MapGoogle/_placesIdArrays.js'
   import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
 
   export default {
@@ -16,10 +16,46 @@
     // mounted: WHEN ALL code on server is already loaded!
     mounted () {
       // 'this' is the VUE component
-      this.initMap()
+      const selfComponent = this
+      // add map to page
+      selfComponent.initMap()
     },
 
     methods: {
+      addMarker: (google, mapLoaded, placeID, indexNumber) => {
+        // timer for avoiding TIMEOUT: 450 looks fine, below errors ...
+        const timer = indexNumber * 425
+
+        // timeout playing time
+        setTimeout(() => {
+          console.log('-------------------------------------')
+          console.log(timer)
+
+          new google.maps.places.PlacesService(mapLoaded).getDetails({
+            placeId: placeID
+          }, (result, status) => {
+            if (status === google.maps.places.PlacesServiceStatus.OK) {
+              console.log(`========= YES : ${indexNumber} ==========`)
+
+              // set marker on map
+              // const marker = new google.maps.Marker({
+              //   map: mapLoaded,
+              //   place: {
+              //     placeId: placeID,
+              //     location: result.geometry.location
+              //   }
+              // })
+
+              // ============== TODO set fade in logic ==============
+            } else if (status === google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT) {
+              console.error(`💩 : OVER_QUERY_LIMIT : ${indexNumber}`)
+            } else {
+              console.error('💩 : generic placeID error')
+            }
+          })
+        }, timer)
+      },
+
       initMap () {
         // !!! we need this google constant
         const google = window.google
@@ -39,6 +75,13 @@
             styles: mapStylesDark
           }
         })
+
+        // add markers in the loop with order number
+        // https://stackoverflow.com/questions/10179815/how-do-you-get-the-loop-counter-index-using-a-for-in-syntax-in-javascript
+        for (const [i, placeID] of placeIdArray.entries()) {
+          // TODO: here we have to pass google. coudl we set it more globally?
+          this.addMarker(google, this.map, placeID, i + 1)
+        }
       }
     }
   }
