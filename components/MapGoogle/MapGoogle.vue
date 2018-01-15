@@ -28,25 +28,22 @@
 
         // timeout playing time
         setTimeout(() => {
-          console.log('-------------------------------------')
-          console.log(timer)
-
           new google.maps.places.PlacesService(mapLoaded).getDetails({
             placeId: placeID
           }, (result, status) => {
             if (status === google.maps.places.PlacesServiceStatus.OK) {
-              console.log(`========= YES : ${indexNumber} ==========`)
+              const marker = new google.maps.Marker({
+                map: mapLoaded,
+                place: {
+                  placeId: placeID,
+                  location: result.geometry.location
+                }
+                // TODO: set icon custom style
+              })
 
-              // set marker on map
-              // const marker = new google.maps.Marker({
-              //   map: mapLoaded,
-              //   place: {
-              //     placeId: placeID,
-              //     location: result.geometry.location
-              //   }
-              // })
+              return marker
 
-              // ============== TODO set fade in logic ==============
+            // ============== TODO set fade in logic ==============
             } else if (status === google.maps.places.PlacesServiceStatus.OVER_QUERY_LIMIT) {
               console.error(`💩 : OVER_QUERY_LIMIT : ${indexNumber}`)
             } else {
