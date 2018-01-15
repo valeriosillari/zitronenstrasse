@@ -190,10 +190,13 @@
     // <a> tag
     .item-link
       display: block
-      line-height: 1.2
+      overflow: hidden            
       color: $color_navigation_overlay_text
-      overflow: hidden
-      +underline-from-center()
+      +underline-from-center()      
+      font-size: 5rem
+      line-height: 1.2
+      +breakpoint($breakpoint_sm)
+        font-size: 9rem
       &:hover,
       &:focus
         color: $color_navigation_overlay_text_hvr
