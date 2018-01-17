@@ -1,11 +1,8 @@
 # Heroku Info
 
-## NOT set any config key on heroku about deployment itself
-## The one you need are set in folder "env_variables"
-
 ### Access Heroku via CLI with heroku Toolbelt
 
-enter with your credentials
+Enter with your credentials in CLI
 
 https://devcenter.heroku.com/articles/heroku-cli
 
@@ -40,16 +37,17 @@ Basic info, not so useful :
 
 https://devcenter.heroku.com/articles/troubleshooting-node-deploys
 
+
 More info about errors and how to check them:
 
 https://kb.heroku.com/why-am-i-seeing-application-error
+
 
 First command to run for seeing error on server. here you start
 
 ```
 heroku logs --tail --app zitronenstrasse
 ```
-
 
 ### Heroku re-start server
 
