@@ -150,10 +150,7 @@
               return
             }
 
-            console.log(`LOADEd place ${indexNumber + 1}`)
-
             // ========= set marker API data =========
-
             let marker = new google.maps.Marker({
               map: mapLoaded,
               position: result.geometry.location,
