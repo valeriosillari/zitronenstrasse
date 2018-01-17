@@ -4,9 +4,9 @@
 
 [ ![Codeship Status for valeriosillari/zitronenstrasse](https://app.codeship.com/projects/45f42180-b923-0135-4183-366309507115/status?branch=master)](https://app.codeship.com/projects/259131)
 
-### Concept
+### Usage (Nuxt Logic)
 
-A side Project with a list of romantic spots in Berlin.
+A side project with a list of romantic spots in Berlin.
 
 Based on VueJS (Nuxt) and Google Maps.
 
@@ -33,18 +33,17 @@ For detailed explanation on how Nuxt work, checkout the [Nuxt.js docs](https://g
 
 ### Heroku Deploy Info
 
-You need to set some CONFIG VAR options on Heroku.
+##### You need to set some CONFIG VAR options on Heroku.
 
-Follow this doc info on the official Github repo:
+You can find which ones in the ENV example file:
 
-https://github.com/nuxt/docs/blob/master/en/faq/heroku-deployment.md
-
-Here fast options:
-
-``` bash
-NPM_CONFIG_PRODUCTION = false
-
-HOST = 0.0.0.0
-
-NODE_ENV = production
+``` html
+# example file for CONFIG KEYS required. Based on dotenv package
+./env_variables/env_keys_example
 ```
+
+##### We use EXPRESS as server on Heroku.
+
+For setting more server options for the application, we use Nuxt with Express.
+
+Check the server.js file and documentation for more info.
