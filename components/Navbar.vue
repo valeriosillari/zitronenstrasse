@@ -194,10 +194,11 @@
       color: $color_navigation_overlay_text
       +underline-from-center()
       font-family: $font_family_secondary
-      font-size: 4rem
+      font-size: 5rem
       line-height: 1.2
       +breakpoint($breakpoint_sm)
-        font-size: 9rem
+        font-size: 11rem
+        line-height: 1
       &:hover,
       &:focus
         color: $color_navigation_overlay_text_hvr
