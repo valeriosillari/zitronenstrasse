@@ -36,9 +36,13 @@ module.exports = {
   head: {
     title: headTitle,
     // this htmlAttrs you need
-    htmlAttrs: {
-      class: 'html-class-test-here',
-    },
+    // htmlAttrs: {
+    //   class: 'here',
+    // },
+    // this bodyAttrs you need
+    // bodyAttrs: {
+    //   class: 'here',
+    // },
     meta: [
       {
         ['http-equiv']: 'x-ua-compatible',
