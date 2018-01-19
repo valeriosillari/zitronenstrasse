@@ -83,6 +83,13 @@
       return {
         isNavOpen: false
       }
+    },
+    head () {
+      return {
+        bodyAttrs: {
+          class: this.isNavOpen ? 'isNavigationOpenBody' : ''
+        }
+      }
     }
   }
 </script>
@@ -203,6 +210,9 @@
       &:focus
         color: $color_navigation_overlay_text_hvr
 
+  // nav is open! set EXTRA BODY class
+  .isNavigationOpenBody
+    overflow: hidden
 
   // nav is open! see overlay
   .isNavOpen
