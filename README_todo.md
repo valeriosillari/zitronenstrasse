@@ -27,6 +27,14 @@ Zitronenstrasse | TODO
 
 ## NICE TO HAVE
 
+#### OVERFLOW body: at nav overlay open. play with propagation
+
+#### MAP VUE PLUGIN: check if possible to use it with place ID
+
+#### MAP LOAD ONCE: check if possible to load it ONCE, maybe on layout
+
+#### MAP LOAD 10by10: check if we break array in sub arrays with bigger time out looks better 
+
 #### MAP COMPONENT: set the JS code more modular
 
 #### CONTACT PAGE: set node mailer and all the logic for form mailer
