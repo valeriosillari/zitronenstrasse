@@ -19,5 +19,5 @@
     }
   }
 
-  console.log('🍋 🍋 🍋')
+  console.log('🍋 🍋 🍋 - NO codeship config 001')
 </script>
