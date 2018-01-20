@@ -11,7 +11,7 @@
       p
         | here a
         a(href='https://twitter.com')
-          | basic link
+          |  basic link
 
       h2
         | The subtitle
