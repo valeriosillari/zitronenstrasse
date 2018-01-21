@@ -16,8 +16,10 @@
     components: {
       Navbar,
       FooterArea
+    },
+    // mounted: WHEN ALL code on server is already loaded!
+    mounted () {
+      console.log('🍋 🍋 🍋')
     }
   }
-
-  console.log('🍋 🍋 🍋')
 </script>
