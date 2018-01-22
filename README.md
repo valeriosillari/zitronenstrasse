@@ -11,7 +11,7 @@
 
 A side project with a list of romantic spots in Berlin.
 
-Based on VueJS (Nuxt), Google Maps and Express Server.
+Based on **VueJS (Nuxt)**, **Google Maps** and **Express Server**.
 
 
 ## Setup
@@ -36,10 +36,12 @@ For detailed explanation on how Nuxt work, checkout the [Nuxt.js docs](https://g
 
 ## DEPLOY INFO
 
-We deploying on Heroku, using Codeship.
+We deploying on **Heroku**, using **Codeship**.
 
 
-#### ENV: You need to set some CONFIG VAR options locally and on Heroku for custom Plugins as Google Map, Analytics and New Relic.
+#### ENV OPTIONS
+
+You need to set some CONFIG VAR options locally and on Heroku for custom Plugins as Google Map, Analytics and New Relic.
 
 You can find which ones in the ENV example file:
 
@@ -51,16 +53,18 @@ You can find which ones in the ENV example file:
 For detailed explanation on how dotenv work, checkout the [dotenv docs](https://github.com/motdotla/dotenv).
 
 
-#### SERVER: We use EXPRESS as server.
+#### SERVER OPTIONS
+
+We use Express as server.
 
 For setting more server options for the application, we use Nuxt with Express.
 
 Check the server.js file and documentation for more info.
 
 
-#### Heroku CLI: shorcuts
+#### Heroku CLI SHORTCUTS
 
-Enter with your credentials in CLI
+**Login**: enter with your credentials in CLI
 
 https://devcenter.heroku.com/articles/heroku-cli
 
@@ -68,7 +72,7 @@ https://devcenter.heroku.com/articles/heroku-cli
 heroku login
 ```
 
-CLI deploy: when logged in, push your commits to heroku master for starting the deploy
+**CLI deploy**: when logged in, push your commits to heroku master for starting the deploy
 
 https://devcenter.heroku.com/articles/git
 
@@ -82,19 +86,19 @@ If you need to connect the local repo to the origin one (maybe from another mach
 heroku git:remote -a zitronenstrasse
 ```
 
-First command to run for seeing error on server. here you start
+**CLI show logs**: first command to run for seeing error on server.
 
 ```
 heroku logs --tail --app zitronenstrasse
 ```
 
-CLI Heroku: re-start server
+CLI Heroku: **re-start server**
 
 ```
 heroku restart --app zitronenstrasse
 ```
 
-CLI Heroku: start a node command on heroku server (as it was locally)
+CLI Heroku: **start a node command** on heroku server (as it was locally)
 
 ```
 heroku run XXXyourcommandXXX
@@ -105,14 +109,14 @@ heroku run XXXyourcommandXXX
 
 #### TODO
 
-- NO JS message: if browser has NO-JS set ...
+- **NO JS message**: if browser has NO-JS set ...
 
 #### NICE TO HAVE
 
-- MAP LOAD: check if can found workaround for placeIDs and avoid idle time or query timeout API
+- **MAP LOAD**: check if can found workaround for placeIDs and avoid idle time or query timeout API
 
-- MAP VUE PLUGIN: check if possible to use it with place ID
+- **MAP VUE PLUGIN**: check if possible to use it with place ID
 
-- MAP COMPONENT: set the JS code more modular, using methods
+- **MAP COMPONENT**: set the JS code more modular, using methods
 
-- CONTACT PAGE: set node mailer and all the logic for form mailer
+- **CONTACT PAGE**: set node mailer and all the logic for form mailer
