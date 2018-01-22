@@ -2,7 +2,7 @@
 
 #### Romantic Spots in Berlin.
 
-[zitronenstrasse.com](http://www.zitronenstrasse.com/){:target="_blank"}
+[zitronenstrasse.com](http://www.zitronenstrasse.com/ target="_blank")
 
 [ ![Codeship Status for valeriosillari/zitronenstrasse](https://app.codeship.com/projects/45f42180-b923-0135-4183-366309507115/status?branch=master)](https://app.codeship.com/projects/259131)
 
@@ -31,7 +31,7 @@ $ yarn start
 $ yarn run generate
 ```
 
-For detailed explanation on how Nuxt work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js){:target="_blank"}.
+For detailed explanation on how Nuxt work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js :target="_blank").
 
 
 ## DEPLOY INFO
@@ -47,7 +47,7 @@ You can find which ones in the ENV example file:
 ./env_variables/env_keys_example
 ```
 
-For detailed explanation on how dotenv work, checkout the [dotenv docs](https://github.com/motdotla/dotenv){:target="_blank"}.
+For detailed explanation on how dotenv work, checkout the [dotenv docs](https://github.com/motdotla/dotenv :target="_blank").
 
 ##### SERVER: We use EXPRESS as server.
 
@@ -58,17 +58,14 @@ Check the server.js file and documentation for more info.
 ##### Heroku CLI: shorcuts
 
 
-Enter with your credentials in CLI
 
-https://devcenter.heroku.com/articles/heroku-cli{:target="_blank"}
+[Enter with your credentials in CLI](https://devcenter.heroku.com/articles/heroku-cli target="_blank)
 
 ```
 heroku login
 ```
 
-CLI deploy: when logged in, push your commits to heroku master for starting the deploy
-
-https://devcenter.heroku.com/articles/git{:target="_blank"}
+[CLI deploy: when logged in, push your commits to heroku master for starting the deploy](https://devcenter.heroku.com/articles/git target="_blank)
 
 ```
 git push heroku master
