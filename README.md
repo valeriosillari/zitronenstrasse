@@ -38,7 +38,8 @@ For detailed explanation on how Nuxt work, checkout the [Nuxt.js docs](https://g
 
 We deploying on Heroku, using Codeship.
 
-##### ENV: You need to set some CONFIG VAR options locally and on Heroku for custom Plugins as Google Map, Analytics and New Relic.
+
+#### ENV: You need to set some CONFIG VAR options locally and on Heroku for custom Plugins as Google Map, Analytics and New Relic.
 
 You can find which ones in the ENV example file:
 
@@ -49,13 +50,15 @@ You can find which ones in the ENV example file:
 
 For detailed explanation on how dotenv work, checkout the [dotenv docs](https://github.com/motdotla/dotenv).
 
-##### SERVER: We use EXPRESS as server.
+
+#### SERVER: We use EXPRESS as server.
 
 For setting more server options for the application, we use Nuxt with Express.
 
 Check the server.js file and documentation for more info.
 
-##### Heroku CLI: shorcuts
+
+#### Heroku CLI: shorcuts
 
 Enter with your credentials in CLI
 
