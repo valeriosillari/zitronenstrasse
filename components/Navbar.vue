@@ -36,9 +36,10 @@
 
           <li
             class="item"
-            v-on:click="isNavOpen = !isNavOpen"
+            
           >
             <nuxt-link
+              v-on:click.native='isNavOpen = !isNavOpen'
               class="item-link"
               to="/"
             >
@@ -48,9 +49,9 @@
 
           <li
             class="item"
-            v-on:click="isNavOpen = !isNavOpen"
           >
             <nuxt-link
+              v-on:click.native='isNavOpen = !isNavOpen'            
               class="item-link"
               to="/about"
             >
@@ -60,9 +61,9 @@
 
           <li
             class="item"
-            v-on:click="isNavOpen = !isNavOpen"
           >
             <nuxt-link
+              v-on:click.native='isNavOpen = !isNavOpen'
               class="item-link"
               to="/contact"
             >
