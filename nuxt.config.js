@@ -69,17 +69,7 @@ module.exports = {
       {
         hid: 'keywords',
         name: 'keywords',
-        content: 'Zitronenstrasse, Zitrone, Strasse, Berlin, Map, Mapping, Frontend, Vue, Nuxt'
-      },
-      {
-        hid: 'HandheldFriendly',
-        name: 'HandheldFriendly',
-        content: 'True'
-      },
-      {
-        hid: 'MobileOptimized',
-        name: 'MobileOptimized',
-        content: '320'
+        content: 'Zitronenstrasse, Zitrone, Strasse, Berlin, Map, Mapping, Frontend, Vue, Nuxt, Romantic, Spots, Romantic Spots Berlin'
       },
       // OG options for open graph: Fb and Linkedin
       {
