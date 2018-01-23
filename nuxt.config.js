@@ -19,7 +19,6 @@ const ogImage = `${thisAppMainUrl}/zitronenstrasse_og_image.png`
 const ogImageWidth = '1200'
 const ogImageHeight = '630'
 
-
 module.exports = {
   /*
   ** ENV vars to spread in all the app.
