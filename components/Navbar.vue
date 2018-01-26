@@ -1,7 +1,7 @@
 <template>
   <div
     class="navigation"
-    v-bind:class="{ isNavOpen: isNavOpen }"
+    v-bind:class='{ isNavOpen: isNavOpen }'
   >
 
     <nuxt-link
@@ -23,7 +23,7 @@
 
     <div
       class="btn-menu"
-      v-on:click="isNavOpen = !isNavOpen"
+      v-on:click='isNavOpen = !isNavOpen'
     >
       <span class="btn-menu-line top"></span>
       <span class="btn-menu-line middle"></span>
@@ -39,7 +39,7 @@
 
           >
             <nuxt-link
-              v-on:click.native="navBarHandler(isNavOpen)"            
+              v-on:click.native='navBarHandler(isNavOpen)'
               class="item-link"
               to="/"
             >
@@ -51,7 +51,7 @@
             class="item"
           >
             <nuxt-link
-              v-on:click.native="navBarHandler(isNavOpen)"
+              v-on:click.native='navBarHandler(isNavOpen)'
               class="item-link"
               to="/about"
             >
@@ -63,7 +63,7 @@
             class="item"
           >
             <nuxt-link
-              v-on:click.native="navBarHandler(isNavOpen)"
+              v-on:click.native='navBarHandler(isNavOpen)'
               class="item-link"
               to="/contact"
             >
@@ -87,22 +87,20 @@
       }
     },
     methods: {
-      method1: function () {
+      mapResetAtPageChange: function () {
         this.isPageSwitchDone = true
         this.$root.$emit('checkPageChangeStatus', {
           isPageSwitchDone: this.isPageSwitchDone
         })
-        console.log('isPageSwitchDone')
       },
-      method2: function (isNavOpen) {
-        console.log('remove CLASEE TODO')
+      toggleBodyClassAtNavOpen: function (isNavOpen) {
         this.isNavOpen = !isNavOpen
         return this.isNavOpen
       },
+      // at click trigger here more events
       navBarHandler: function (isNavOpen) {
-        console.log('MULTIPLE')
-        this.method1()
-        this.method2(isNavOpen)
+        this.mapResetAtPageChange()
+        this.toggleBodyClassAtNavOpen(isNavOpen)
       }
     },
     head () {

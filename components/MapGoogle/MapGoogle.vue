@@ -67,7 +67,6 @@
           if (filter) {
             // change value
             this.isLoopGoingOn = false
-            console.log(`isLoopMarkerGoingOn >> nav btn clicked : loop is going on? >>> ${this.isLoopGoingOn}`)
           }
         })
       }
@@ -81,8 +80,6 @@
       // if we go to anotehr rout/map, we check and block loop logic.
       // avoiding google map query limit ...
       this.isLoopMarkerGoingOn()
-
-      // let activeInfoWindow
 
       // !!! we need this google constant
       const google = window.google
@@ -106,8 +103,6 @@
             styles: mapStylesDark
           }
         })
-
-        console.log('MAP ADDED')
         return this.map
       }
 
@@ -116,8 +111,6 @@
         // RUN add marker ONLY if the vent is ok.
         // we stop this loop at page change :)
         if (isLoopGoingOn) {
-          console.log('===== GO ON : add marker =====')
-
           new google.maps.places.PlacesService(this.map).getDetails({
             placeId: placeID
           }, (result, status) => {
@@ -151,6 +144,8 @@
           }, (indexNumber + 1) * 425)
         }
       }
+
+      // ========================== START inits ==========================
 
       // we load JUST map
       initMapCanvas()
