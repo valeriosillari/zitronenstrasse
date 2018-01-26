@@ -50,7 +50,7 @@
             class="item"
           >
             <nuxt-link
-              v-on:click.native='clickEventSwicthMapReset'
+              v-on:click.native="navBarHandler()"
               class="item-link"
               to="/about"
             >
@@ -62,7 +62,7 @@
             class="item"
           >
             <nuxt-link
-              v-on:click.native='clickEventSwicthMapReset'
+              v-on:click.native="navBarHandler()"
               class="item-link"
               to="/contact"
             >
@@ -86,11 +86,20 @@
       }
     },
     methods: {
-      clickEventSwicthMapReset () {
+      method1: function () {
         this.isPageSwitchDone = true
         this.$root.$emit('checkPageChangeStatus', {
           isPageSwitchDone: this.isPageSwitchDone
         })
+        console.log('isPageSwitchDone')
+      },
+      method2: function () {
+        console.log('remove CLASEE TODO')
+      },
+      navBarHandler: function () {
+        console.log('MULTIPLE')
+        this.method1()
+        this.method2()
       }
     },
     head () {
