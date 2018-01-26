@@ -39,6 +39,7 @@
 
           >
             <nuxt-link
+              v-on:click.native="navBarHandler(isNavOpen)"            
               class="item-link"
               to="/"
             >
@@ -50,7 +51,7 @@
             class="item"
           >
             <nuxt-link
-              v-on:click.native="navBarHandler()"
+              v-on:click.native="navBarHandler(isNavOpen)"
               class="item-link"
               to="/about"
             >
@@ -62,7 +63,7 @@
             class="item"
           >
             <nuxt-link
-              v-on:click.native="navBarHandler()"
+              v-on:click.native="navBarHandler(isNavOpen)"
               class="item-link"
               to="/contact"
             >
@@ -93,13 +94,15 @@
         })
         console.log('isPageSwitchDone')
       },
-      method2: function () {
+      method2: function (isNavOpen) {
         console.log('remove CLASEE TODO')
+        this.isNavOpen = !isNavOpen
+        return this.isNavOpen
       },
-      navBarHandler: function () {
+      navBarHandler: function (isNavOpen) {
         console.log('MULTIPLE')
         this.method1()
-        this.method2()
+        this.method2(isNavOpen)
       }
     },
     head () {
