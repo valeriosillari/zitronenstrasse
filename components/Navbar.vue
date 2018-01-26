@@ -36,10 +36,9 @@
 
           <li
             class="item"
-            
+
           >
             <nuxt-link
-              v-on:click.native='isNavOpen = !isNavOpen'
               class="item-link"
               to="/"
             >
@@ -51,7 +50,7 @@
             class="item"
           >
             <nuxt-link
-              v-on:click.native='isNavOpen = !isNavOpen'            
+              v-on:click.native='clickEventSwicthMapReset'
               class="item-link"
               to="/about"
             >
@@ -63,7 +62,7 @@
             class="item"
           >
             <nuxt-link
-              v-on:click.native='isNavOpen = !isNavOpen'
+              v-on:click.native='clickEventSwicthMapReset'
               class="item-link"
               to="/contact"
             >
@@ -82,7 +81,16 @@
   export default {
     data () {
       return {
-        isNavOpen: false
+        isNavOpen: false,
+        isPageSwitchDone: false
+      }
+    },
+    methods: {
+      clickEventSwicthMapReset () {
+        this.isPageSwitchDone = true
+        this.$root.$emit('checkPageChangeStatus', {
+          isPageSwitchDone: this.isPageSwitchDone
+        })
       }
     },
     head () {
