@@ -76,6 +76,8 @@
     mounted () {
       console.log('============================ MOUNTED COMPONENT ============================')
 
+      let activeInfoWindow
+
       // vue listening if STOP marker loop
       // if we go to anotehr rout/map, we check and block loop logic.
       // avoiding google map query limit ...
@@ -128,6 +130,38 @@
             let marker = new google.maps.Marker({
               map: this.map,
               position: result.geometry.location
+            })
+
+            // ========= set marker Infowindow =========
+            let isOpenClass = 'is-open-not'
+            let isOpenText = 'Closed now'
+            if (typeof result.opening_hours !== 'undefined') {
+              if (result.opening_hours.open_now) {
+                isOpenClass = 'is-open-now'
+                isOpenText = 'Open now'
+              }
+            } else {
+              isOpenClass = 'is-open-unknown'
+              isOpenText = 'No info about opening time'
+            }
+
+            const currentInfoWindow = new google.maps.InfoWindow({
+              // here set logic for info window for each item
+              // https://developers.google.com/maps/documentation/javascript/infowindows
+              content: `
+                <p class='text title'>${result.name}</p>
+                <p class='text address'>${result.adr_address}</p>
+                <p class='text open-time ${isOpenClass}'>${isOpenText}</p>
+              `
+            })
+
+            google.maps.event.addListener(marker, 'click', (el) => {
+              // close info window of previous opened marker : reset
+              activeInfoWindow && activeInfoWindow.close()
+              // open current clicked one
+              currentInfoWindow.open(this.map, marker)
+              // set the current one as opened one
+              activeInfoWindow = currentInfoWindow
             })
 
             return marker
