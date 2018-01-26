@@ -1,7 +1,7 @@
 <template>
   <div
     class="navigation"
-    v-bind:class="{ isNavOpen: isNavOpen }"
+    v-bind:class='{ isNavOpen: isNavOpen }'
   >
 
     <nuxt-link
@@ -23,7 +23,7 @@
 
     <div
       class="btn-menu"
-      v-on:click="isNavOpen = !isNavOpen"
+      v-on:click='isNavOpen = !isNavOpen'
     >
       <span class="btn-menu-line top"></span>
       <span class="btn-menu-line middle"></span>
@@ -36,10 +36,10 @@
 
           <li
             class="item"
-            
+
           >
             <nuxt-link
-              v-on:click.native='isNavOpen = !isNavOpen'
+              v-on:click.native='navBarHandler(isNavOpen)'
               class="item-link"
               to="/"
             >
@@ -51,7 +51,7 @@
             class="item"
           >
             <nuxt-link
-              v-on:click.native='isNavOpen = !isNavOpen'            
+              v-on:click.native='navBarHandler(isNavOpen)'
               class="item-link"
               to="/about"
             >
@@ -63,7 +63,7 @@
             class="item"
           >
             <nuxt-link
-              v-on:click.native='isNavOpen = !isNavOpen'
+              v-on:click.native='navBarHandler(isNavOpen)'
               class="item-link"
               to="/contact"
             >
@@ -82,7 +82,25 @@
   export default {
     data () {
       return {
-        isNavOpen: false
+        isNavOpen: false,
+        isPageSwitchDone: false
+      }
+    },
+    methods: {
+      mapResetAtPageChange: function () {
+        this.isPageSwitchDone = true
+        this.$root.$emit('checkPageChangeStatus', {
+          isPageSwitchDone: this.isPageSwitchDone
+        })
+      },
+      toggleBodyClassAtNavOpen: function (isNavOpen) {
+        this.isNavOpen = !isNavOpen
+        return this.isNavOpen
+      },
+      // at click trigger here more events
+      navBarHandler: function (isNavOpen) {
+        this.mapResetAtPageChange()
+        this.toggleBodyClassAtNavOpen(isNavOpen)
       }
     },
     head () {

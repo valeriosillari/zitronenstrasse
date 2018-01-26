@@ -55,19 +55,36 @@
 
   export default {
     data () {
-      // empty object
-      return {}
+      return {
+        isLoopGoingOn: true
+      }
+    },
+
+    methods: {
+      isLoopMarkerGoingOn () {
+        // sniffing option from NAVIGATION
+        this.$root.$on('checkPageChangeStatus', filter => {
+          if (filter) {
+            // change value
+            this.isLoopGoingOn = false
+          }
+        })
+      }
     },
 
     // mounted: WHEN ALL code on server is already loaded!
     mounted () {
+      console.log('============================ MOUNTED COMPONENT ============================')
+
       let activeInfoWindow
+
+      // vue listening if STOP marker loop
+      // if we go to anotehr rout/map, we check and block loop logic.
+      // avoiding google map query limit ...
+      this.isLoopMarkerGoingOn()
 
       // !!! we need this google constant
       const google = window.google
-
-      // !!! timer for timeout of marker for avoiding API jquey TIMEOUT
-      const timerSeconds = 450
 
       // marker custom colors
       // custom color: a little bit darker then the main one. for the marker looks the same
@@ -107,37 +124,34 @@
         }
       }
 
-      // init map
-      this.map = new google.maps.Map(document.getElementById('google-map'), {
-        center: {
-          lat: 52.486757,
-          lng: 13.4403271
-        },
-        zoom: 14,
-        // map options
-        options: {
-          streetViewControl: false,
-          fullscreenControl: false,
-          mapTypeControl: false,
-          // disableDefaultUI: true,
-          // attributionControl: false,
-          // set custom map styles
-          styles: mapStylesDark
-        }
+      const initMapCanvas = () => {
+        // init map
+        this.map = new google.maps.Map(document.getElementById('google-map'), {
+          center: {
+            lat: 52.486757,
+            lng: 13.4403271
+          },
+          zoom: 14,
+          // map options
+          options: {
+            streetViewControl: false,
+            fullscreenControl: false,
+            mapTypeControl: false,
+            // disableDefaultUI: true,
+            // attributionControl: false,
+            // set custom map styles
+            styles: mapStylesDark
+          }
+        })
+        return this.map
+      }
 
-      })
-
-      const mapLoaded = this.map
-
-      // add markers in the loop with order number
-      // https://stackoverflow.com/questions/10179815/how-do-you-get-the-loop-counter-index-using-a-for-in-syntax-in-javascript
-      for (const [indexNumber, placeID] of placeIdArray.entries()) {
-        // timer for avoiding TIMEOUT: 450 looks fine, below errors ...
-        const timer = (indexNumber + 1) * timerSeconds
-
-        // timeout playing time
-        setTimeout(() => {
-          new google.maps.places.PlacesService(mapLoaded).getDetails({
+      // check if add marker. if YES, run google map logic
+      const addSingleMarker = (placeID, indexNumber, isLoopGoingOn) => {
+        // RUN add marker ONLY if the vent is ok.
+        // we stop this loop at page change :)
+        if (isLoopGoingOn) {
+          new google.maps.places.PlacesService(this.map).getDetails({
             placeId: placeID
           }, (result, status) => {
             // marker has errors ...
@@ -152,7 +166,7 @@
 
             // ========= set marker API data =========
             let marker = new google.maps.Marker({
-              map: mapLoaded,
+              map: this.map,
               position: result.geometry.location,
               // set icon custom style
               icon: customMarker
@@ -169,7 +183,6 @@
             // ========= set marker Infowindow =========
             let isOpenClass = 'is-open-not'
             let isOpenText = 'Closed now'
-            // TODO: remove: for checking
             if (typeof result.opening_hours !== 'undefined') {
               if (result.opening_hours.open_now) {
                 isOpenClass = 'is-open-now'
@@ -189,18 +202,39 @@
                 <p class='text open-time ${isOpenClass}'>${isOpenText}</p>
               `
             })
+
             google.maps.event.addListener(marker, 'click', (el) => {
               // close info window of previous opened marker : reset
               activeInfoWindow && activeInfoWindow.close()
               // open current clicked one
-              currentInfoWindow.open(mapLoaded, marker)
+              currentInfoWindow.open(this.map, marker)
               // set the current one as opened one
               activeInfoWindow = currentInfoWindow
             })
+
+            return marker
           })
-        // close timer for each marker
-        }, timer)
+        }
       }
+
+      const addMarkers = () => {
+        for (const [indexNumber, placeID] of placeIdArray.entries()) {
+          setTimeout(() => {
+            // https://stackoverflow.com/questions/8909652/adding-click-event-listeners-in-loop
+            addSingleMarker(placeID, indexNumber, this.isLoopGoingOn)
+          // close timer for each marker
+          }, (indexNumber + 1) * 425)
+        }
+      }
+
+      // ========================== START inits ==========================
+
+      // we load JUST map
+      initMapCanvas()
+
+      // we start add markers, but as callback FIRST we set the map
+      addMarkers()
+
     // end mounted
     }
   }
