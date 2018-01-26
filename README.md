@@ -113,10 +113,8 @@ heroku run XXXyourcommandXXX
 
 #### NICE TO HAVE
 
-- **MAP LOAD**: check if can found workaround for placeIDs and avoid idle time or query timeout API
+- **MAP COMPONENT**: set the JS code more modular, using methods
 
 - **MAP VUE PLUGIN**: check if possible to use it with place ID
-
-- **MAP COMPONENT**: set the JS code more modular, using methods
 
 - **CONTACT PAGE**: set node mailer and all the logic for form mailer
