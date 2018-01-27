@@ -123,6 +123,7 @@
       }
 
       const initMapCanvas = () => {
+        console.log('=== MAP INIT ===')
         // init map
         this.map = new google.maps.Map(document.getElementById('google-map'), {
           center: {
@@ -227,11 +228,8 @@
 
       // ========================== START inits ==========================
 
-      // we load JUST map
-      initMapCanvas()
-
       // we start add markers, but as callback FIRST we set the map
-      addMarkers()
+      addMarkers(initMapCanvas())
 
     // end mounted
     }
