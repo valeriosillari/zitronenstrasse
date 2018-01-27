@@ -111,6 +111,10 @@ heroku run XXXyourcommandXXX
 
 - **NO JS message**: if browser has NO-JS set ...
 
+- **ERROR PAGE**: set logic for reset map (if you switch page via browser arrow 'before' and 'after')
+
+- **SWITCH PAGE VIA BROWSER**: logic for reset map works if you click our navi. But NOT via browser arrows
+
 #### NICE TO HAVE
 
 - **MAP COMPONENT**: set the JS code more modular, using methods
