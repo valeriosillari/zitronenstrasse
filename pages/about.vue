@@ -65,7 +65,7 @@
         | &nbsp;
         i
           | lemon
-        |) is: it is a slang word for
+        |) is: it's a slang word for
         | &nbsp;
         i
           | making out (limonare)
