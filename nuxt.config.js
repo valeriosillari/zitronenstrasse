@@ -5,7 +5,7 @@ const webpack = require('webpack')
 const mapApiKey = process.env.GOOGLE_MAP_API_KEY || ''
 
 const headTitle = 'Zitronenstrasse | Romantic Spots in Berlin.'
-const headDescription = 'A project for mapping and sharing romantic spots in Berlin.'
+const headDescription = 'A mapping project to collect and share romantic spots in Berlin.'
 
 // the URL set as variables: for redirect DNS
 const thisAppMainUrl = 'http://www.zitronenstrasse.com'

@@ -8,7 +8,7 @@
         span.text-accent
           | Zitronenstrasse
         | &nbsp;
-        | is a small project for collecting and sharing romantic and cozy spots in Berlin.
+        | is a mapping project to collect and share romantic spots in Berlin.
 
       p
         | Bars, cafes, restaurants, bistros, parks and some little hidden places around the city.
