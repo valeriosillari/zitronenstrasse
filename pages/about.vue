@@ -13,7 +13,8 @@
       p
         | Bars, cafes, restaurants, bistros, parks and some little hidden places around the city.
 
-      //- ====================
+
+      //- ============================================================
       h2
         | The Project
 
@@ -25,15 +26,16 @@
         | &nbsp;
         span.text-accent
           | sometimes finding the right place for the right mood is so hard
-        | , even harder when you are looking for a romantic place. It has to be nice, but not so much cozy; it has to have nice music, but not too much loud; nice drinks and menu, but nothing too much classic; with nice people, but not too much crowd.
+        | , even harder when you are looking for a romantic place. It has to be nice, but not uptight; it needs good music, but not too loud; cool drinks and a good menu, but nothing too classy; with fancy people, but not too crowded.
 
       p
-        | So here you can find a small selection of romantic spots: some of them are perfect for a brunch or a coffee, ones for the evening with drinks and music, others are bars or outdoors places where drinking a beer and waiting for the sunset.
+        | So here you can find a small selection of romantic spots: some of them are perfect for a brunch or a coffee, some other are for the evening with drinks and music. You van also find bars or outdoors places where you can drink a beer, waiting for the sunset.
       
       P
         | Hopefully you will find here your romantic place.
 
-      //- ====================
+
+      //- ============================================================
       h2
         | The Name
 
@@ -85,7 +87,8 @@
           | Straße
         | ). And so, we got Zitronenstrasse: the romantic place for making out ...
 
-      //- ====================
+
+      //- ============================================================
       h2
         | The Author
 
