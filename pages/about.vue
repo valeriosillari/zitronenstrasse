@@ -18,7 +18,7 @@
         | The Project
 
       p
-        | Berlin is wonderful city. So vivid, multicultural, full of history and so many secret places.
+        | Berlin is a wonderful city. So vivid, multicultural, full of history and with so many secret places.
 
       p
         | However,
