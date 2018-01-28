@@ -5,11 +5,26 @@
       h1
         | Contact
 
-      p
+      p.text-accent
         | Do you want to tell us something?
 
       P
-        | Maybe a new romantic place you know and want to share?
+        | Maybe a new romantic place you know and wanting to share?
+
+      p
+        | A comment about the project?
+
+      p
+        | A bug in the website?
+      
+      p
+        | Or do you just want to spread your love for Zitronenstrasse?
+
+      p
+        | Whatever it is your message,
+        | &nbsp;        
+        span.text-accent
+          | we’d love to hear your romantic thoughts!
 
       P
         | Write us a
@@ -31,6 +46,7 @@
 <style lang="sass">
   .link-contact,
   .link-social
+    text-decoration: underline
     &:hover
       text-decoration: underline
 </style>
