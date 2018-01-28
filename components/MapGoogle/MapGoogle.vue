@@ -225,10 +225,18 @@
         }
       }
 
+      const initAll = () => {
+        console.log('======= INIT ALL =======')
+        console.log(google)
+        console.log(addMarkers(initMapCanvas()))
+        console.log('======= DONE =======')
+        // addMarkers(initMapCanvas())
+      }
+
       // ========================== START inits ==========================
 
       // we start add markers, but as callback FIRST we set the map
-      addMarkers(initMapCanvas())
+      google.maps.event.addDomListener(window, 'load', initAll)
 
     // end mounted
     }
