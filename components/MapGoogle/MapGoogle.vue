@@ -226,7 +226,9 @@
       }
 
       // ========================== START inits ==========================
-      google.maps.event.addDomListener(window, 'ready', addMarkers(initMapCanvas()))
+      // google.maps.event.addDomListener(window, 'ready', addMarkers(initMapCanvas()))
+      initMapCanvas()
+      addMarkers()
 
     // end mounted
     }
