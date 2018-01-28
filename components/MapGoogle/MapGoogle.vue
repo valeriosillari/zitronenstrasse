@@ -123,7 +123,6 @@
       }
 
       const initMapCanvas = () => {
-        console.log('=== MAP INIT ===')
         // init map
         this.map = new google.maps.Map(document.getElementById('google-map'), {
           center: {
@@ -227,12 +226,6 @@
       }
 
       // ========================== START inits ==========================
-
-      if (google) {
-        console.log(' CI SONO')
-      } else {
-        console.log(' NN ANCORA')
-      }
 
       // we start add markers, but as callback FIRST we set the map
       addMarkers(initMapCanvas())
