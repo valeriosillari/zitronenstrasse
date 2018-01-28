@@ -225,16 +225,8 @@
         }
       }
 
-      const initAll = () => {
-        console.log('======= INIT 22 =======')
-        // we start add markers, but as callback FIRST we set the map        
-        console.log(addMarkers(initMapCanvas()))
-        console.log('======= DONE 22 =======')
-        // addMarkers(initMapCanvas())
-      }
-
       // ========================== START inits ==========================
-      google.maps.event.addDomListener(window, 'load', initAll)
+      google.maps.event.addDomListener(window, 'ready', addMarkers(initMapCanvas()))
 
     // end mounted
     }
