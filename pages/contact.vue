@@ -9,7 +9,7 @@
         | Do you want to tell us something?
 
       P
-        | Maybe a new romantic place you know and wanting to share?
+        | Maybe a new romantic place you know and want to share?
 
       p
         | A comment about the project?
@@ -27,7 +27,7 @@
           | we’d love to hear your romantic thoughts!
 
       P
-        | Write us a
+        | Write us an
         | &nbsp;
         a.link-contact(href='mailto:hello@zitronenstrasse.com')
           | Email
