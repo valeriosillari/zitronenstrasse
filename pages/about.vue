@@ -43,49 +43,45 @@
         span.text-accent
           | Why Zitronenstrasse?
         | &nbsp;
-        | It is just a name of a street? A real one? What does it means?
+        | It’s just a name of a street? It’s real one? What does it mean?
       
       p
-        | Well, here the story ...
+        | Well, here is the story.
 
       p
-        | Basically Zitronenstrasse is an
+        | Zitronenstrasse is an
         | &nbsp;
         span.text-accent
           | inside joke between two languages
         |, German and Italian.
 
       p
-        | In Italian there is slang word that means
-        | &nbsp;
-        span.text-accent
-          | making out
-        | :
+        | Italians know well what a
         | &nbsp;
         i
-          | 'limonare'
-        | , from the word
+          | limone
+        | &nbsp;
+        | (literally:
         | &nbsp;
         i
-          | 'limone'
+          | lemon
+        |) is: it is a slang word for
         | &nbsp;
-        | (lemon).
-
+        i
+          | making out (limonare)
+        |.
+        
       p
-        | So we mixed this word with the German name for
+        | Being in Germany we thought about
+        i 
+          | The street of lemons
         | &nbsp;
-        span.text-accent
-          | street
-        | &nbsp;
-        | (
-        i
-          | Strasse
-        | &nbsp;
-        | or 
+        | in the local language:
         | &nbsp;
         i
-          | Straße
-        | ). And so, we got Zitronenstrasse: the romantic place for making out ...
+          | Zitronen-strasse
+        |, the romantic street for (hopefully) making out.
+
 
 
       //- ============================================================
