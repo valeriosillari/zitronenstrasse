@@ -19,7 +19,7 @@
         | The Project
 
       p
-        | Berlin is a wonderful city. So vivid, multicultural, full of history and with so many secret places.
+        | Berlin is a wonderful city. So vivid, multicultural, full of history and with so many secret spots.
 
       p
         | However,
@@ -29,7 +29,7 @@
         | , even harder when you are looking for a romantic place. It has to be nice, but not uptight; it needs good music, but not too loud; cool drinks and a good menu, but nothing too classy; with fancy people, but not too crowded.
 
       p
-        | So here you can find a small selection of romantic spots: some of them are perfect for a brunch or a coffee, some other are for the evening with drinks and music. You van also find bars or outdoors places where you can drink a beer, waiting for the sunset.
+        | So here you can find a small selection of romantic spots: some of them are perfect for a brunch or a coffee, some other are for the evening with drinks and music. You can also find bars or outdoors places where drinking a beer while waiting for the sunset.
       
       P
         | Hopefully you will find here your romantic place.
