@@ -93,10 +93,10 @@
         | &nbsp;
         span.text-accent
           | Valerio
-        |. I am working as Frontend Developer and in the last years I have fallen in love with the Berlin.
+        |. I am working as Frontend Developer and in the last years I've fallen in love with the Berlin.
 
       p
-        | So I decided to create this website for collecting all the nice romantic places I have found and also playing with new frontend languages for my work.
+        | So I decided to create this website to collect all the nice romantic places I've found and play with new frontend languages.
 
       p
         | I hope you like it, either you are a romantic person or a romantic coder.
