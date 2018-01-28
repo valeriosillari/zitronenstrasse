@@ -228,6 +228,12 @@
 
       // ========================== START inits ==========================
 
+      if (google) {
+        console.log(' CI SONO')
+      } else {
+        console.log(' NN ANCORA')
+      }
+
       // we start add markers, but as callback FIRST we set the map
       addMarkers(initMapCanvas())
 
