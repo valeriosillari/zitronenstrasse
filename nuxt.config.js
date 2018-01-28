@@ -176,11 +176,12 @@ module.exports = {
       {
         // call google map javascript API
         src: `https://maps.googleapis.com/maps/api/js?key=${mapApiKey}&v=3&libraries=places`,
-        async: true,
-        defer: true,
         // set js at end of body:
         // https://github.com/nuxt/nuxt.js/issues/241
-        body: true        
+        body: true,
+        // TODO: check nuxt logic for async. we got issue with map
+        // async: true,
+        // defer: true
       }
     ]
   },
