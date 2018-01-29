@@ -17,9 +17,9 @@ const placeIdArray = [
   'ChIJyaJmgJ9PqEcRmFMyFfFqJGQ',
   // 009 - Vux
   'ChIJC-mZa6BPqEcRMXhPH5jFJyo',
+
   // 010 - Böhmisches Dorf
   'ChIJZYdI_KBPqEcRpHBUVSa86UQ',
-
   // 011 - CocoLiebe
   'ChIJy91K4KNPqEcRCAd6KD6oZx8',
   // 012 - Paulinski Palme
@@ -59,9 +59,9 @@ const placeIdArray = [
   'ChIJeZcqEh9PqEcRXsBoKa1ZkIk',
   // 029 - Friedhof Alt-Stralau
   'ChIJ_So_Jx5PqEcRoulQtLXbCkM',
+
   // 030 - Arena Berlin
   'ChIJC0xKsFVOqEcRhjEGUJP9Umg',
-
   // 031 - Pony Saloon Berlin
   'ChIJqwCqdclPqEcRYUkH0bnBeFk',
   // 032 - La Pecora Nera
@@ -72,31 +72,33 @@ const placeIdArray = [
   'ChIJoa2VQShQqEcRA7c9NHuooAA',
   // 035 - Landwehrkanalufer
   'ChIJo341is1PqEcRK8FKsc6xA0A',
-  // 036 - Kirk Bar
+  // 036 - Tante Lisbeth
+  'ChIJ2XYhzUtOqEcRIFyMFC_-0oA',
+  // 037 - Kirk Bar
   'ChIJ8Saj101OqEcRBXa22Ic61B4',
-  // 037 - Cuore Di Vetro
+  // 038 - Cuore Di Vetro
   'ChIJVwi_HOJRqEcRdZxCHyZt1D0',
-  // 038 - Kosmetiksalon Babette
+  // 039 - Kosmetiksalon Babette
   'ChIJEfO84BdOqEcRD1BMG5OkIvE',
-  // 039 - Sheriff Teddy Bar
-  'ChIJ1dfMe19OqEcRaAo1wYu7_nE',
-  // 040 - PLACE CLICHY
-  'ChIJteBFYVlOqEcRwPmMHbasUKU',
 
-  // 041 - WohnZimmer
+  // 040 - Sheriff Teddy Bar
+  'ChIJ1dfMe19OqEcRaAo1wYu7_nE',
+  // 041 - PLACE CLICHY
+  'ChIJteBFYVlOqEcRwPmMHbasUKU',
+  // 042 - WohnZimmer
   'ChIJkdsxhf9NqEcROqrpU0E2Wdo',
-  // 042 - Park am Wasserturm
+  // 043 - Park am Wasserturm
   'ChIJheO_BwNOqEcRKANj6C1rPzY',
-  // 043 - Bitte und Danke
+  // 044 - Bitte und Danke
   'ChIJp5s5Q2BOqEcRA7z8fxMJRbk',
-  // 044 - Atopia Kaffeehaus
+  // 045 - Atopia Kaffeehaus
   'ChIJ48HH5P1NqEcRJonad7BUUEc',
-  // 045 - Absinthdepot Berlin
+  // 046 - Absinthdepot Berlin
   'ChIJL3N7C-FRqEcRlz-AbriEvhU',
-  // 046 - LOLA was here
+  // 047 - LOLA was here
   'ChIJl5fmoQVSqEcROIldStvJvTw',
   // ------------
-  // 047 - LAST FOR NOW - Dujardin WEDDING
+  // 048 - LAST FOR NOW - Dujardin WEDDING
   'ChIJ6yHZuChSqEcRPlv3ejkpuec'
 ]
 
