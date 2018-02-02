@@ -5,8 +5,8 @@
   "author": "Valerio Sillari <hello@zitronenstrasse.com>",
   "private": true,
   "engines": {
-    "node": "v9.3.0",
-    "yarn": "v1.3.2"
+    "node": ">= v9.5.0",
+    "yarn": ">= v1.3.2"
   },
   "scripts": {
     "dev": "node server.js",
