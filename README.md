@@ -109,13 +109,11 @@ heroku run XXXyourcommandXXX
 
 #### TODO
 
+- **PERFORMANCE**: async / defer js as external JS has some issues. check nuxt option for async external js of Google Map. set axios on map component only?
+
+- set new logic for fade / timer of markers at first map load? we can play with vue on/emit
+
 - **NO JS message**: if browser has NO-JS set ...
-
-- **SWITCH PAGE VIA BROWSER**: logic for reset map works if you click our navi. But NOT via browser arrows
-
-- **ERROR PAGE**: set logic for reset map (if you switch page via browser arrow 'before' and 'after')
-
-- **PERFORMANCE**: async / defere js as external JS has some issues. check nuxt option for async external js of Google Map.
 
 #### NICE TO HAVE
 
