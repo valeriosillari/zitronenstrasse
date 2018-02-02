@@ -31,14 +31,15 @@
       font-size: 18px
       font-weight: 500
       color: $color_info_winfow_title
-    // option for color of opening
-    .open-time
-      color: $color_open_undefined
-    .is-open-now
-      color: $color_open_yes
-      font-weight: 500
-    .is-open-not
-      color: $color_open_no
+
+    // link for website and/or fb
+    .link
+      color: $color_info_winfow_link
+      float: left
+      margin-right: 5px
+      &:hover
+        color: $color_info_winfow_link_hvr
+        text-decoration: underline
 
   // remove google cc
   // and remove some weird grey box set on right side from google
