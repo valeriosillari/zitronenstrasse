@@ -174,8 +174,8 @@ module.exports = {
         // https://github.com/nuxt/nuxt.js/issues/241
         body: true,
         // TODO: check nuxt logic for async. we got issue with map
-        async: true,
-        defer: true
+        // async: true,
+        // defer: true
       }
     ]
   },
