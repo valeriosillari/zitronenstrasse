@@ -184,7 +184,6 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    extractCSS: true,    
     vendor: [
       // here ...
     ],
