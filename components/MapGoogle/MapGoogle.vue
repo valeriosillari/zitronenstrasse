@@ -201,9 +201,9 @@
       // google.maps.event.addDomListener(window, 'ready', addMarkers(initMapCanvas()))
       if (google) {
         initMap()
-        console.log('🍋 map loaded.')
+        console.log('🍋  | map loaded.')
       } else {
-        console.error('💩 map NOT loaded.')
+        console.error('💩 | map NOT loaded.')
       }
     // end mounted
     }
