@@ -117,6 +117,12 @@ heroku run XXXyourcommandXXX
 
 #### NICE TO HAVE
 
+- **https also on DOMAIN .com
+
+  Looks like we have an issue with js map on http domain (www.zitronenstrasse.com)
+
+  https://security.googleblog.com/2017/04/next-steps-toward-more-connection.html
+
 - **MAP COMPONENT**: set the JS code more modular, using methods
 
 - **MAP VUE PLUGIN**: check if possible to use it with place ID
