@@ -109,19 +109,21 @@ heroku run XXXyourcommandXXX
 
 #### TODO
 
-- **PERFORMANCE**: async / defer js as external JS has some issues. check nuxt option for async external js of Google Map. set axios on map component only?
+- **PERFORMANCE**:
+
+  async / defer js as external JS has some issues. removed for now.
+
+  Looks like we have an issue with js map on http domain (http://www.zitronenstrasse.com)
+
+  with https looks fine.
+
+  https://security.googleblog.com/2017/04/next-steps-toward-more-connection.html
 
 - set new logic for fade / timer of markers at first map load? we can play with vue on/emit
 
 - **NO JS message**: if browser has NO-JS set ...
 
 #### NICE TO HAVE
-
-- **https also on DOMAIN .com
-
-  Looks like we have an issue with js map on http domain (www.zitronenstrasse.com)
-
-  https://security.googleblog.com/2017/04/next-steps-toward-more-connection.html
 
 - **MAP COMPONENT**: set the JS code more modular, using methods
 
