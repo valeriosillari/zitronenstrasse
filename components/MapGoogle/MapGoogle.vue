@@ -199,8 +199,12 @@
 
       // ========================== START inits ==========================
       // google.maps.event.addDomListener(window, 'ready', addMarkers(initMapCanvas()))
-      initMap()
-
+      if (google) {
+        initMap()
+        console.log('🍋 map loaded.')
+      } else {
+        console.error('💩 map NOT loaded.')
+      }
     // end mounted
     }
   }
