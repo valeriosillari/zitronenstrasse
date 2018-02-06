@@ -168,14 +168,18 @@ module.exports = {
       // CSS font as external resources from Google Fonts
       {
         rel: 'stylesheet',
-        body: true,        
-        href: 'https://fonts.googleapis.com/css?family=Saira+Condensed:300'
-      }      
+        href: 'https://fonts.googleapis.com/css?family=Saira+Condensed:300',
+        // set css at end of body:
+        // https://github.com/nuxt/nuxt.js/issues/241
+        body: true
+      }
     ],
     script: [
       {
         // call google map javascript API
-        src: `https://maps.googleapis.com/maps/api/js?key=${mapApiKey}&v=3`,        
+        src: `https://maps.googleapis.com/maps/api/js?key=${mapApiKey}&v=3`,
+        async: true,
+        defer: true,
         // set js at end of body:
         // https://github.com/nuxt/nuxt.js/issues/241
         body: true
