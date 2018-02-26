@@ -124,11 +124,9 @@
       left: 0
 
   .navigation
-    position: fixed
-    top: 0
-    left: 0
-    right: 0
+    position: relative
     z-index: 100
+    @extend .clearfix
     +paddingBoxDefaut()
     background: $color_navigation_bg
     border-bottom: 1px solid $color_navigation_border
