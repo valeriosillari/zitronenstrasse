@@ -8,7 +8,6 @@
 
 <style lang="sass">
   .map-main-wrapper
-    width: 100%
     min-height: 100%
 
   .google-map
@@ -199,12 +198,8 @@
 
       // ========================== START inits ==========================
       // google.maps.event.addDomListener(window, 'ready', addMarkers(initMapCanvas()))
-      if (google) {
-        initMap()
-        console.log('🍋  | map loaded.')
-      } else {
-        console.error('💩 | map NOT loaded.')
-      }
+      initMap()
+
     // end mounted
     }
   }
