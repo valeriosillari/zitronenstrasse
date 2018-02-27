@@ -8,7 +8,8 @@
 
 <style lang="sass">
   .map-main-wrapper
-    min-height: 100%
+    position: relative
+    height: calc(100% - 66px)
 
   .google-map
     position: absolute
