@@ -30,7 +30,7 @@
 
       p
         | So here you can find a small selection of romantic spots: some of them are perfect for a brunch or a coffee, some other are for the evening with drinks and music. You can also find bars or outdoors places where drinking a beer while waiting for the sunset.
-      
+
       P
         | Hopefully you will find here your romantic place.
 
@@ -44,7 +44,7 @@
           | Why Zitronenstrasse?
         | &nbsp;
         | It’s just a name of a street? It’s real one? What does it mean?
-      
+
       p
         | Well, here is the story.
 
@@ -70,10 +70,10 @@
         i
           | making out (limonare)
         |.
-        
+
       p
         | Being in Germany we thought about
-        i 
+        i
           | The street of lemons
         | &nbsp;
         | in the local language:
@@ -100,5 +100,19 @@
 
       p
         | I hope you like it, either you are a romantic person or a romantic coder.
-
 </template>
+
+
+<script>
+  export default {
+    head () {
+      // Set Meta Tags for this Page
+      return {
+        title: 'About | Zitronenstrasse',
+        meta: [
+          { hid: 'description', name: 'description', content: `About | Zitronenstrasse | A mapping project to collect and share romantic spots in Berlin.` }
+        ]
+      }
+    }
+  }
+</script>

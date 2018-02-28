@@ -16,13 +16,13 @@
 
       p
         | A bug in the website?
-      
+
       p
         | Or do you just want to spread your love for Zitronenstrasse?
 
       p
         | Whatever it is your message,
-        | &nbsp;        
+        | &nbsp;
         span.text-accent
           | we’d love to hear your romantic thoughts!
 
@@ -31,7 +31,7 @@
         | &nbsp;
         a.link-contact(href='mailto:hello@zitronenstrasse.com')
           | Email
-        | &nbsp;          
+        | &nbsp;
         | or follow us on
         | &nbsp;
         a.link-social(href='https://www.facebook.com/zitronenstrasse/', title='Zitronenstrasse on Facebook', target='_blank')
@@ -50,3 +50,17 @@
     &:hover
       text-decoration: underline
 </style>
+
+<script>
+  export default {
+    head () {
+      // Set Meta Tags for this Page
+      return {
+        title: 'Contact | Zitronenstrasse',
+        meta: [
+          { hid: 'description', name: 'description', content: `Contact | Zitronenstrasse | A mapping project to collect and share romantic spots in Berlin.` }
+        ]
+      }
+    }
+  }
+</script>
