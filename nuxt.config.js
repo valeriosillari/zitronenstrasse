@@ -34,14 +34,18 @@ module.exports = {
   */
   head: {
     title: headTitle,
+
     // this htmlAttrs you need
     // htmlAttrs: {
-    //   class: 'here',
+    //   class: 'valerio-HTML'
     // },
+
     // this bodyAttrs you need
     // bodyAttrs: {
-    //   class: 'here',
+    //   // if you set this attribute in a component, that option will overwrite here the config file
+    //   class: 'valerio-BODY'
     // },
+
     meta: [
       {
         ['http-equiv']: 'x-ua-compatible',
@@ -56,9 +60,9 @@ module.exports = {
         content: 'width=device-width, initial-scale=1, shrink-to-fit=no'
       },
       {
-      	hid: 'description',
-      	name: 'description',
-      	content: headDescription
+        hid: 'description',
+        name: 'description',
+        content: headDescription
       },
       {
         hid: 'author',
@@ -74,22 +78,22 @@ module.exports = {
       {
         hid: `og:title`,
         property: 'og:title',
-      	content: ogTitle
+        content: ogTitle
       },
       {
         hid: `og:description`,
         property: 'og:description',
-      	content: ogDescription
+        content: ogDescription
       },
       {
         hid: `og:type`,
         property: 'og:type',
-      	content: ogType
+        content: ogType
       },
       {
         hid: `og:url`,
         property: 'og:url',
-      	content: ogUrl
+        content: ogUrl
       },
       {
         hid: `og:image`,
@@ -168,7 +172,6 @@ module.exports = {
       // CSS font as external resources from Google Fonts
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Saira+Condensed:300',
         // set css at end of body:
         // https://github.com/nuxt/nuxt.js/issues/241
         body: true

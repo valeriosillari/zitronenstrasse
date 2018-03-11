@@ -1,5 +1,5 @@
 <template lang="pug">
-  section.section.section-top
+  section.section.section-text
     .container
       h1
         | About

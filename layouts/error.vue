@@ -2,7 +2,7 @@
   //- ERROR PAGE: we extend the default layout. this is the page CONTENT OF THE PAGE actually!
 
   //- main area
-  section.section.section-top.section-error
+  section.section.section-top.section-text
     .container
 
       //- div with css bg as svg | compass

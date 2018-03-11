@@ -6,7 +6,6 @@
 
 [ ![Codeship Status for valeriosillari/zitronenstrasse](https://app.codeship.com/projects/45f42180-b923-0135-4183-366309507115/status?branch=master)](https://app.codeship.com/projects/259131)
 
-
 ## GENERAL INFO
 
 A side project with a list of romantic spots in Berlin.
@@ -108,6 +107,11 @@ heroku run XXXyourcommandXXX
 ## ROAD MAP
 
 #### TODO
+- SET google analytics not in nuxt config file but in ENV. consistent logic for KEYS
+
+- FONT NOT LOADED NICELY. load better
+
+- **NO JS message**: if browser has NO-JS set ...
 
 - **PERFORMANCE**:
 
@@ -118,10 +122,6 @@ heroku run XXXyourcommandXXX
   with https looks fine.
 
   https://security.googleblog.com/2017/04/next-steps-toward-more-connection.html
-
-- set new logic for fade / timer of markers at first map load? we can play with vue on/emit
-
-- **NO JS message**: if browser has NO-JS set ...
 
 #### NICE TO HAVE
 

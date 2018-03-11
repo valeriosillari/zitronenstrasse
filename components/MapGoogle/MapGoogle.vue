@@ -1,6 +1,13 @@
 <template lang="pug">
-  .map-main-wrapper
+  .map-main-wrapper.map-wrapper-sidebar-push(v-bind:class='isSidebarBindClass')
     .google-map#google-map
+
+    //- Sidebar
+    .sidebar-animation
+      Sidebar(
+        :currentMarkerDetails='currentMarkerDetails',
+        v-on:isSidebarButtonClose='isSidebarClose()'
+      )
 </template>
 
 
@@ -9,7 +16,48 @@
 <style lang="sass">
   .map-main-wrapper
     position: relative
-    height: calc(100% - 66px)
+    height: $map_height
+
+  // WRAPPER classes
+  .map-wrapper-sidebar-push
+    overflow-x: hidden
+    position: relative
+    left: 0
+
+  .sidebar-animation
+    position: fixed
+    top: 0
+    z-index: 1000
+    height: 100%
+    width: 100%
+    background: $color_sidebar_bg
+    right: -$sidebar_width_xs
+    +breakpoint($breakpoint_sm)
+      width: $sidebar_width_sm
+      right: -$sidebar_width_sm
+    +breakpoint($breakpoint_md)
+      width: $sidebar_width_md
+      right: -$sidebar_width_md
+
+  // Transitions
+  .sidebar-animation,
+  .map-wrapper-sidebar-push
+    -webkit-transition: all .25s ease
+    -moz-transition: all .25s ease
+    transition: all .25s ease
+
+  // -- OPEN. js add classes
+
+  // extra class added via JS when sidebar is shown (WRAPPER/PARENT element)
+  .isOpenClass
+    left: -$sidebar_width_xs
+    +breakpoint($breakpoint_sm)
+      left: -$sidebar_width_sm
+    +breakpoint($breakpoint_md)
+      left: -$sidebar_width_md
+    // extra class added via JS when sidebar is shown (sidebar element)
+    .sidebar-animation
+      right: 0px
 
   .google-map
     position: absolute
@@ -19,27 +67,6 @@
   // map bg whn loading
   .gm-style
     background: $color_map_bg
-
-  // content of each map info InfoWindow
-  .gm-style-iw
-    color: $color_info_winfow_text
-
-    .text
-      margin-bottom: .25rem
-
-    .title
-      font-size: 18px
-      font-weight: 500
-      color: $color_info_winfow_title
-
-    // link for website and/or fb
-    .link
-      color: $color_info_winfow_link
-      float: left
-      margin-right: 5px
-      &:hover
-        color: $color_info_winfow_link_hvr
-        text-decoration: underline
 
   // remove google cc
   // and remove some weird grey box set on right side from google
@@ -51,25 +78,77 @@
 
 
 <script>
+  import Sidebar from '~/components/Sidebar.vue'
   import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
   import placesList from '~/components/MapGoogle/_places_list.js'
 
   export default {
+    components: {
+      Sidebar
+    },
+
     data () {
       return {
-        isLoopGoingOn: true
+        isScreenBig: false,
+        // our core element
+        currentMarkerDetails: {
+          title: false,
+          address: false,
+          website: false,
+          fbPage: false,
+          position: {
+            lat: false,
+            lng: false
+          }
+        },
+        isSidebarBindClass: {
+          // first value is class to attach/bind, second value is status
+          'isOpenClass': false
+        },
+        isMapDragged: false
       }
     },
 
     methods: {
-      isLoopMarkerGoingOn () {
-        // sniffing option from NAVIGATION
-        this.$root.$on('checkPageChangeStatus', filter => {
-          if (filter) {
-            // change value
-            this.isLoopGoingOn = false
-          }
-        })
+      // move map (animation) to current marker
+      panMovement (movementLatValue) {
+        this.map.panToWithOffset(
+          new window.google.maps.LatLng(
+            this.currentMarkerDetails.position.lat,
+            this.currentMarkerDetails.position.lng
+          ), movementLatValue, 0
+        )
+      },
+
+      isSidebarOpen (screen) {
+        this.isScreenBig = false
+        if (screen >= 576) {
+          this.isScreenBig = true
+        }
+        // reset drag option
+        this.isMapDragged = false
+
+        // when function trigger, set value as TRUE. we change DATA value
+        // https://vuejs.org/v2/guide/reactivity.html#Change-Detection-Caveats
+        this.$set(this.isSidebarBindClass, 'isOpenClass', true)
+
+        // todo: check at page resize
+        if (this.isScreenBig) {
+          setTimeout(() => {
+            // value '-200' seems ok. for all RWD breakpoints
+            this.panMovement(-200)
+          }, 350)
+        }
+      },
+
+      isSidebarClose () {
+        // reset drag option
+        this.isMapDragged = false
+
+        // TOGGLE CLASS for close sidebar
+        // when function trigger, set value as TRUE. we change DATA value
+        // https://vuejs.org/v2/guide/reactivity.html#Change-Detection-Caveats
+        this.$set(this.isSidebarBindClass, 'isOpenClass', false)
       }
     },
 
@@ -77,15 +156,6 @@
     mounted () {
       // !!! we need this google constant
       const google = window.google
-
-      // TODO: check if we need it.
-      // vue listening if STOP marker loop
-      // if we go to anotehr rout/map, we check and block loop logic.
-      // avoiding google map query limit ...
-      // this.isLoopMarkerGoingOn()
-
-      // for infowindow: just one is opened at time.
-      let activeInfoWindow
 
       // marker custom colors
       // custom color: a little bit darker then the main one. for the marker looks the same
@@ -127,6 +197,20 @@
           }
         })
 
+        // function for PAN movement
+        google.maps.Map.prototype.panToWithOffset = function (latlng, offsetX, offsetY) {
+          var ov = new google.maps.OverlayView()
+          ov.onAdd = function () {
+            var proj = this.getProjection()
+            var aPoint = proj.fromLatLngToContainerPixel(latlng)
+            aPoint.x = aPoint.x + offsetX
+            aPoint.y = aPoint.y + offsetY
+            map.panTo(proj.fromContainerPixelToLatLng(aPoint))
+          }
+          ov.draw = function () {}
+          ov.setMap(this)
+        }
+
         const setSingleMarker = (indexNumber, placeID) => {
           let marker = new google.maps.Marker({
             position: new google.maps.LatLng(placeID.position.lat, placeID.position.lng),
@@ -136,71 +220,51 @@
             icon: customMarker
           })
 
-          // fallback for text: just empty string
-          let linkTextWebsite = ''
-          let linkTextFb = ''
-
-          // set link website if exists
-          if (placeID.website) {
-            linkTextWebsite = `
-              <a href='${placeID.website}' class='link pull-left link-website' alt='Link to official Website for ${placeID.title}' target="_blank">
-                Website
-              </a>
-            `
-          }
-
-          // set link FB page if exists
-          if (placeID.fbPage) {
-            linkTextFb = `
-              <a href='${placeID.fbPage}' class='link pull-left link-fb' alt='Link to official Facebook Page for ${placeID.title}' target="_blank">
-                Facebook Page
-              </a>
-            `
-          }
-
-          const currentInfoWindow = new google.maps.InfoWindow({
-            // here set logic for info window for each item
-            // https://developers.google.com/maps/documentation/javascript/infowindows
-            content: `
-              <div class="info-window-wrapper">
-                <p class='text title'>${placeID.title}</p>
-                <p class='text address'>${placeID.address}</p>
-                ${linkTextWebsite}
-                ${linkTextFb}
-              </div>
-            `
-          })
-
-          // open infowindow with inside info
+          // at marker click ...
           google.maps.event.addListener(marker, 'click', () => {
-            // close info window of previous opened marker : reset
-            activeInfoWindow && activeInfoWindow.close()
-            // open current clicked one
-            currentInfoWindow.open(map, marker)
-            // // set the current one as opened one
-            activeInfoWindow = currentInfoWindow
+            // update info in sidebar with current marker
+            this.currentMarkerDetails.title = placeID.title
+            this.currentMarkerDetails.address = placeID.address
+            this.currentMarkerDetails.position = placeID.position
+            this.currentMarkerDetails.website = placeID.website
+            this.currentMarkerDetails.fbPage = placeID.fbPage
+
+            // open sidebar + PAN MOVE
+            this.isSidebarOpen(window.innerWidth)
+
+            // move THEN start bounce
+            setTimeout(() => {
+              marker.setAnimation(google.maps.Animation.BOUNCE)
+            }, 500)
+            // stop bounce
+            setTimeout(() => {
+              marker.setAnimation(null)
+            }, 1250)
           })
+
           return marker
         // ./ end setSingleMarker
         }
 
         // Loop our LIST array and set marker on map
         for (const [indexNumber, placeID] of placesList.entries()) {
-          // let itemNumber = indexNumber + 1
-          // https://stackoverflow.com/questions/8909652/adding-click-event-listeners-in-loop
-          // TODO: set here logic for move around pages later ...
-          // setTimeout(() => {
           setSingleMarker(indexNumber, placeID)
-          // // close timer for each marker
-          // }, itemNumber * 150)
         }
+
+        // return map so we can used it globally
+        this.map = map
+
+        // TODO: set as function?
+        // check if user is dragging the map. we need it later for close option
+        google.maps.event.addListener(map, 'dragend', () => {
+          this.isMapDragged = true
+        })
+
+        return map
       // ./ end init
       }
 
-      // ========================== START inits ==========================
-      // google.maps.event.addDomListener(window, 'ready', addMarkers(initMapCanvas()))
       initMap()
-
     // end mounted
     }
   }

@@ -82,29 +82,22 @@
   export default {
     data () {
       return {
-        isNavOpen: false,
-        isPageSwitchDone: false
+        isNavOpen: false
       }
     },
     methods: {
-      mapResetAtPageChange: function () {
-        this.isPageSwitchDone = true
-        this.$root.$emit('checkPageChangeStatus', {
-          isPageSwitchDone: this.isPageSwitchDone
-        })
-      },
       toggleBodyClassAtNavOpen: function (isNavOpen) {
         this.isNavOpen = !isNavOpen
         return this.isNavOpen
       },
       // at click trigger here more events
       navBarHandler: function (isNavOpen) {
-        this.mapResetAtPageChange()
         this.toggleBodyClassAtNavOpen(isNavOpen)
       }
     },
     head () {
       return {
+        // like this it OVERRIDE the logic in vue config. we have to ADD just one class!!!
         bodyAttrs: {
           class: this.isNavOpen ? 'isNavigationOpenBody' : ''
         }
@@ -126,7 +119,9 @@
   .navigation
     position: relative
     z-index: 100
-    @extend .clearfix
+    // fixed height!
+    // related to the map height trick
+    height: $navi_min_height
     +paddingBoxDefaut()
     background: $color_navigation_bg
     border-bottom: 1px solid $color_navigation_border

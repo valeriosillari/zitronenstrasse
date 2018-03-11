@@ -10,6 +10,7 @@ $font_family_secondary: 'Saira Condensed', sans-serif
 // --------------------------------------
 // --------------------------------------
 $color_white: white
+$color_transparent: transparent
 
 $color_dark_01: #2b2b2b
 $color_dark_02: #797978
@@ -85,10 +86,6 @@ $color_footer_link_hvr : $color_light_01
 // --------------------------------------
 // google map styles
 $color_map_bg: $color_body_bg
-$color_info_winfow_text: $color_dark_05
-$color_info_winfow_title: $color_dark_01
-$color_info_winfow_link: $color_dark_01
-$color_info_winfow_link_hvr: $color_dark_02
 
 // --------------------------------------
 // error page
@@ -101,9 +98,33 @@ $button_navigation_width: 36px
 $button_navigation_height: 30px
 
 // --------------------------------------
+// navigation
+$navi_min_height: 65px
+
+// --------------------------------------
+// sidebar
+// set calc with inside sass var
+// https://codepen.io/thebabydino/pen/hgFno
+$map_height: calc(100% -#{$navi_min_height})
+
+// we have to play here ...
+$sidebar_width_xs: 100%
+$sidebar_width_sm: 360px
+$sidebar_width_md: 480px
+
+$color_sidebar_bg: #212121
+$color_sidebar_text: $color_white
+$color_sidebar_info: #c1c1c1
+$color_sidebar_link: #ffe198
+$color_sidebar_link_hvr: $color_link_hvr
+
+// --------------------------------------
 // --------------------------------------
 // breakpoints (breakpoint-sass)
 $breakpoint_sm: 576px
+$breakpoint_md: 768px
+$breakpoint_lg: 992px
+$breakpoint_xl: 1200px
 
 // --------------------------------------
 // --------------------------------------
