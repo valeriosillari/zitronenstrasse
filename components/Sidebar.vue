@@ -69,8 +69,8 @@
     display: block
     color: $color_sidebar_info
 
-  .action-area
-      margin-bottom: 0
+  .line
+    margin-bottom: 0
 
   // link for website and/or fb
   .link
