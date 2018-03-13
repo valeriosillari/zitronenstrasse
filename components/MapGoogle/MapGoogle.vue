@@ -42,9 +42,9 @@
   // Transitions
   .sidebar-animation,
   .map-wrapper-sidebar-push
-    -webkit-transition: all .25s ease
-    -moz-transition: all .25s ease
-    transition: all .25s ease
+    -webkit-transition: all .2s ease
+    -moz-transition: all .2s ease
+    transition: all .2s ease
 
   // -- OPEN. js add classes
 
@@ -128,16 +128,13 @@
         // reset drag option
         this.isMapDragged = false
 
+        // open sidebar (css animation in milleseconds)
         // when function trigger, set value as TRUE. we change DATA value
         // https://vuejs.org/v2/guide/reactivity.html#Change-Detection-Caveats
         this.$set(this.isSidebarBindClass, 'isOpenClass', true)
 
-        // todo: check at page resize
         if (this.isScreenBig) {
-          setTimeout(() => {
-            // value '-200' seems ok. for all RWD breakpoints
-            this.panMovement(-200)
-          }, 350)
+          this.panMovement(-200)
         }
       },
 
@@ -232,14 +229,15 @@
             // open sidebar + PAN MOVE
             this.isSidebarOpen(window.innerWidth)
 
-            // move THEN start bounce
+            // todo: set better with NO timeout?
+            // START bounce
             setTimeout(() => {
               marker.setAnimation(google.maps.Animation.BOUNCE)
-            }, 500)
-            // stop bounce
+            }, 400)
+            // END bounce
             setTimeout(() => {
               marker.setAnimation(null)
-            }, 1250)
+            }, 1150)
           })
 
           return marker
