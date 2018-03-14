@@ -107,8 +107,6 @@ heroku run XXXyourcommandXXX
 ## ROAD MAP
 
 #### TODO
-- SET google analytics not in nuxt config file but in ENV. consistent logic for KEYS
-
 - FONT NOT LOADED NICELY. load better
 
 - **NO JS message**: if browser has NO-JS set ...
