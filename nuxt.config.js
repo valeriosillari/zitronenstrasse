@@ -1,8 +1,9 @@
 const dotenv = require('dotenv').config({path: './env_variables/env_keys'})
 const webpack = require('webpack')
 
-// set GOOGLE MAP API KEY access keys
-const mapApiKey = process.env.GOOGLE_MAP_API_KEY || ''
+// set GOOGLE keys via dotenv
+const googleMapApiKey = process.env.GOOGLE_MAP_API_KEY || ''
+const googleAnalyticsKey = process.env.GOOGLE_ANALYTICS_KEY || ''
 
 const headTitle = 'Zitronenstrasse | Romantic Spots in Berlin.'
 const headDescription = 'A mapping project to collect and share romantic spots in Berlin.'
@@ -181,7 +182,7 @@ module.exports = {
     script: [
       {
         // call google map javascript API
-        src: `https://maps.googleapis.com/maps/api/js?key=${mapApiKey}&v=3`,
+        src: `https://maps.googleapis.com/maps/api/js?key=${googleMapApiKey}&v=3`,
         // google HTTPS bug here ... we risk ot to load the code.
         // async: true,
         // defer: true,
@@ -250,7 +251,7 @@ module.exports = {
     // https://github.com/nuxt-community/analytics-module
     [
       '@nuxtjs/google-analytics', {
-        id: 'UA-110867603-1'
+        id: googleAnalyticsKey
       }
     ]
   ]
