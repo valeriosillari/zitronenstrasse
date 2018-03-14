@@ -197,15 +197,15 @@
 
         // function for PAN movement
         google.maps.Map.prototype.panToWithOffset = function (latlng, offsetX, offsetY) {
-          var ov = new google.maps.OverlayView()
+          let ov = new google.maps.OverlayView()
           ov.onAdd = function () {
-            var proj = this.getProjection()
-            var aPoint = proj.fromLatLngToContainerPixel(latlng)
+            let proj = this.getProjection()
+            let aPoint = proj.fromLatLngToContainerPixel(latlng)
             aPoint.x = aPoint.x + offsetX
             aPoint.y = aPoint.y + offsetY
             map.panTo(proj.fromContainerPixelToLatLng(aPoint))
           }
-          ov.draw = function () {}
+          ov.draw = () => {}
           ov.setMap(this)
         }
 
