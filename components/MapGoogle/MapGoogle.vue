@@ -39,12 +39,13 @@
       width: $sidebar_width_md
       right: -$sidebar_width_md
 
+  $sidebar_animation: all .35s ease
   // Transitions
   .sidebar-animation,
   .map-wrapper-sidebar-push
-    -webkit-transition: all .2s ease
-    -moz-transition: all .2s ease
-    transition: all .2s ease
+    -webkit-transition: $sidebar_animation
+    -moz-transition: $sidebar_animation
+    transition: $sidebar_animation
 
   // -- OPEN. js add classes
 
