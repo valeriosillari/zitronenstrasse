@@ -510,7 +510,7 @@ const placesList = [
     }
   },
   {
-    // ChIJl5fmoQVSqEcROIldStvJvTw    
+    // ChIJl5fmoQVSqEcROIldStvJvTw
     title: 'LOLA was here',
     address: 'Seelower Str. 8, 10439',
     website: 'http://www.lolawashere.de/',
