@@ -9,7 +9,7 @@
       | {{ currentMarkerDetails.title }}
 
     //- img(v-lazy='http://placehold.it/400x300/00ff00.png')
-    img(src='~/assets/img/image.jpg')
+    img(src='~/assets/img/440x250_green.png')
 
     p.address
       span.info
