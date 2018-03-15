@@ -1,12 +1,15 @@
 <template lang="pug">
   aside.sidebar
-    
+
     //- btn area
     div.clearfix
       button.btn-close(@click='actionSidebarClose')
 
     h2.title
       | {{ currentMarkerDetails.title }}
+
+    //- img(v-lazy='http://placehold.it/400x300/00ff00.png')
+    img(src='~/assets/img/image.jpg')
 
     p.address
       span.info
@@ -17,7 +20,7 @@
     span.info(v-if='(currentMarkerDetails.website) || (currentMarkerDetails.fbPage)')
       | Links:
 
-    
+
     .action-area
       p.line(v-if='currentMarkerDetails.website')
         a.link.link-website(
