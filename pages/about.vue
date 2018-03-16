@@ -105,7 +105,7 @@
       div(v-lazy-container="{ selector: 'img' }")
         img.thumb(
           data-loading='/images/440x250_red.png'
-          data-src='/images/440x250_green.png'
+          data-src='~/assets/img/440x250_orange.png'
         )
       //- just an image like this works
       //- img(src='~/assets/img/440x250_orange.png')
