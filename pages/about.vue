@@ -100,6 +100,13 @@
 
       p
         | I hope you like it, either you are a romantic person or a romantic coder.
+
+      //- it seems we need a div as container
+      div(v-lazy-container="{ selector: 'img' }")
+        img(
+          data-src='/images/440x250_green.png'
+          data-loading='/images/440x250_red.png'
+        )
 </template>
 
 

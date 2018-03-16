@@ -8,13 +8,6 @@
     h2.title
       | {{ currentMarkerDetails.title }}
 
-    //- it seems we need a div as container
-    div(v-lazy-container="{ selector: 'img' }")
-      img(
-        data-src='/images/440x250_green.png'
-        data-loading='/images/440x250_red.png'
-      )
-
     p.address
       span.info
         | Address:
