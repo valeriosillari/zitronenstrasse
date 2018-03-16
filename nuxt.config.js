@@ -169,15 +169,14 @@ module.exports = {
       {
         rel: 'manifest',
         href: 'site.webmanifest'
-      },
-      // CSS font as external resources from Google Fonts
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Saira+Condensed:300'        
-        // set css at end of body:
-        // https://github.com/nuxt/nuxt.js/issues/241
-        // body: true
       }
+      // CSS font as external resources from Google Fonts
+      // {
+      //   rel: 'stylesheet',
+      //   // set css at end of body:
+      //   // https://github.com/nuxt/nuxt.js/issues/241
+      //   // body: true
+      // }
     ],
     script: [
       {
