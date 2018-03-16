@@ -103,11 +103,22 @@
 
       //- it seems we need a div as container
       div(v-lazy-container="{ selector: 'img' }")
-        img(
+        img.thumb(
           data-src='/images/440x250_green.png'
           data-loading='/images/440x250_red.png'
         )
 </template>
+
+
+<style lang='sass'>
+  .thumb
+    transition: opacity 1.5s ease-in-out
+  // exttra data attribute added via lazy loading
+  img[lazy=loading]
+    opacity: 0
+  img[lazy=loaded]
+    opacity: 1
+</style>
 
 
 <script>
