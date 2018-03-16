@@ -5,7 +5,7 @@
  * See lib/config.defaults.js in the agent distribution for a more complete
  * description of configuration variables and their potential values.
  */
-const dotenv = require('dotenv').config({path: './env_variables/env_keys'});
+const dotenv = require('dotenv').config({path: './env_variables/env_keys'})
 
 exports.config = {
   /**
