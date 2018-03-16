@@ -213,7 +213,10 @@ module.exports = {
       // useful for lazy loading
       // https://github.com/nuxt/nuxt.js/issues/2650
       const vueLoader = config.module.rules.find((rule) => rule.loader === 'vue-loader')
-      vueLoader.options.transformToRequire['img'] = ['src', 'data-src']
+      vueLoader.options.transformToRequire['img'] = [
+        'data-loading',
+        'data-src'
+      ]
 
       config.module.rules.forEach((rule) => {
         // add to ALL vue modules the sass file 'global'

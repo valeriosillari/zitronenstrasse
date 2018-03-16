@@ -104,11 +104,9 @@
       //- it seems we need a div as container
       div(v-lazy-container="{ selector: 'img' }")
         img.thumb(
-          data-loading='/images/440x250_red.png'
-          data-src='~/assets/img/440x250_orange.png'
+          data-loading='~/assets/img/fallback/440x250_fallback_magenta.png'
+          data-src='~/assets/img/places/440x250_green.png'
         )
-      //- just an image like this works
-      //- img(src='~/assets/img/440x250_orange.png')
 </template>
 
 
