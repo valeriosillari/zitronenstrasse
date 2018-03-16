@@ -107,7 +107,6 @@ heroku run XXXyourcommandXXX
 ## ROAD MAP
 
 #### TODO
-- FONT NOT LOADED NICELY. load better
 
 - **NO JS message**: if browser has NO-JS set ...
 
@@ -123,8 +122,6 @@ heroku run XXXyourcommandXXX
 
 #### NICE TO HAVE
 
-- **MAP COMPONENT**: set the JS code more modular, using methods
-
-- **MAP VUE PLUGIN**: check if possible to use it with place ID
+- **MAP COMPONENT**: set the JS code more modular
 
 - **CONTACT PAGE**: set node mailer and all the logic for form mailer
