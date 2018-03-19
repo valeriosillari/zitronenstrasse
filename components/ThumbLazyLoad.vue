@@ -1,9 +1,8 @@
 <template lang="pug">
   div(v-lazy-container="{ selector: 'img' }")
     img.thumb(
-      data-loading='~/assets/img/fallback/440x250_fallback_magenta.png'
+      v-bind:data-loading='lazyLoadThumbLoading'
       data-src='~/assets/img/places/440x250_green.png'
-      v-bind:data-valerio='lazyLoadThumbLoading'
     )
 </template>
 
@@ -23,7 +22,8 @@
   export default {
     data () {
       return {
-        lazyLoadThumbLoading: 'test-string-LOADING'
+        // '~/assets/img/fallback/440x250_fallback_magenta.png'
+        lazyLoadThumbLoading: 'test-string-LOADING-2'
       }
     }
   }
