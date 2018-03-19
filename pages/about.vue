@@ -101,28 +101,17 @@
       p
         | I hope you like it, either you are a romantic person or a romantic coder.
 
-      //- it seems we need a div as container
-      div(v-lazy-container="{ selector: 'img' }")
-        img.thumb(
-          data-loading='~/assets/img/fallback/440x250_fallback_magenta.png'
-          data-src='~/assets/img/places/440x250_green.png'
-        )
+      //- lazy load Thumb
+      ThumbLazyLoad
 </template>
 
 
-<style lang='sass'>
-  .thumb
-    transition: opacity 1.5s ease-in-out
-  // extra data attribute added via lazy loading
-  img[lazy=loading]
-    opacity: 0
-  img[lazy=loaded]
-    opacity: 1
-</style>
-
-
 <script>
+  import ThumbLazyLoad from '~/components/ThumbLazyLoad.vue'
   export default {
+    components: {
+      ThumbLazyLoad
+    },
     head () {
       // Set Meta Tags for this Page
       return {
