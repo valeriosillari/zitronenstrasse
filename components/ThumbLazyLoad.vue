@@ -3,6 +3,7 @@
     img.thumb(
       data-loading='~/assets/img/fallback/440x250_fallback_magenta.png'
       data-src='~/assets/img/places/440x250_green.png'
+      v-bind:data-valerio='lazyLoadThumbLoading'
     )
 </template>
 
@@ -22,7 +23,7 @@
   export default {
     data () {
       return {
-        // empty
+        lazyLoadThumbLoading: 'test-string-LOADING'
       }
     }
   }
