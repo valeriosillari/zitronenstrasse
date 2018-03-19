@@ -23,7 +23,8 @@
     data () {
       return {
         // '~/assets/img/fallback/440x250_fallback_magenta.png'
-        lazyLoadThumbLoading: 'test-string-LOADING-2'
+        // from statci folder it is ok.
+        lazyLoadThumbLoading: '/440x250_fallback_magenta_static.png'
       }
     }
   }
