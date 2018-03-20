@@ -100,18 +100,11 @@
 
       p
         | I hope you like it, either you are a romantic person or a romantic coder.
-
-      //- lazy load Thumb
-      ThumbLazyLoad
 </template>
 
 
 <script>
-  import ThumbLazyLoad from '~/components/ThumbLazyLoad.vue'
   export default {
-    components: {
-      ThumbLazyLoad
-    },
     head () {
       // Set Meta Tags for this Page
       return {

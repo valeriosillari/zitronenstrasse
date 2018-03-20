@@ -8,6 +8,9 @@
     h2.title
       | {{ currentMarkerDetails.title }}
 
+    //- lazy load Thumb
+    ThumbLazyLoad
+
     p.address
       span.info
         | Address:
@@ -38,7 +41,11 @@
 
 
 <script>
+  import ThumbLazyLoad from '~/components/ThumbLazyLoad.vue'
   export default {
+    components: {
+      ThumbLazyLoad
+    },
     // input from PARENTS
     props: [
       'currentMarkerDetails'
