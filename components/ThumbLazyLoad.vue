@@ -1,17 +1,14 @@
 <template lang="pug">
   div(v-lazy-container="{ selector: 'img' }")
     img.thumb(
-      :data-loading='lazyLoadThumbLoading'
-      :data-src='lazyLoadThumbLoaded',
-      :title='lazyLoadThumbTitle'
+      data-loading='~/assets/img/fallback/440x250_fallback_magenta.png'
+      data-src='~/assets/img/places/001_nothaftcafes.png'
     )
 </template>
 
 
 <style lang="sass">
   .thumb
-    +img-fluid
-    margin-bottom: 20px
     transition: opacity 1.5s ease-in-out
   // extra data attribute added via lazy loading
   img[lazy=loading]
@@ -25,10 +22,7 @@
   export default {
     data () {
       return {
-        // from static folder it is ok.
-        lazyLoadThumbLoading: '/thumbs/fallback/440x250_fallback_magenta.png',
-        lazyLoadThumbLoaded: '/thumbs/places/001_nothaftcafes.png',
-        lazyLoadThumbTitle: 'TITLE image heres'
+        // empty
       }
     }
   }
