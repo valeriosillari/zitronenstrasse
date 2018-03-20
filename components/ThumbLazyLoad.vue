@@ -1,9 +1,9 @@
 <template lang="pug">
   div(v-lazy-container="{ selector: 'img' }")
     img.thumb(
-      v-bind:data-loading='lazyLoadThumbLoading'
-      v-bind:data-src='lazyLoadThumbLoaded',
-      v-bind:title='lazyLoadThumbTitle'
+      :data-loading='lazyLoadThumbLoading'
+      :data-src='lazyLoadThumbLoaded',
+      :title='lazyLoadThumbTitle'
     )
 </template>
 
