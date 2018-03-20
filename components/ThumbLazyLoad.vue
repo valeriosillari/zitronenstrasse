@@ -2,7 +2,7 @@
   div(v-lazy-container="{ selector: 'img' }")
     img.thumb(
       v-bind:data-loading='lazyLoadThumbLoading'
-      data-src='~/assets/img/places/440x250_green.png'
+      v-bind:data-src='lazyLoadThumbLoaded'
     )
 </template>
 
@@ -22,9 +22,9 @@
   export default {
     data () {
       return {
-        // '~/assets/img/fallback/440x250_fallback_magenta.png'
-        // from statci folder it is ok.
-        lazyLoadThumbLoading: '/440x250_fallback_magenta_static.png'
+        // from static folder it is ok.
+        lazyLoadThumbLoading: '/thumbs/fallback/440x250_fallback_magenta.png',
+        lazyLoadThumbLoaded: '/thumbs/places/440x250_green.png'
       }
     }
   }
