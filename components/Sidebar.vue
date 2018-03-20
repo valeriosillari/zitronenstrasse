@@ -21,16 +21,16 @@
     .action-area
       p.line(v-if='currentMarkerDetails.website')
         a.link.link-website(
-          v-bind:href='currentMarkerDetails.website',
-          title='Official Website',
+          :href='currentMarkerDetails.website',
+          :title="currentMarkerDetails.title + ' | Official Website'",
           target='_blank'
         )
           | Official Website
 
       p.line(v-if='currentMarkerDetails.fbPage')
         a.link.link-facebook(
-          v-bind:href='currentMarkerDetails.fbPage',
-          title='Facebook Page',
+          :href='currentMarkerDetails.fbPage',
+          :title="currentMarkerDetails.title + ' | Facebook Page'",
           target='_blank'
         )
           | Facebook Page
