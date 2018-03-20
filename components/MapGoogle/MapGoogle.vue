@@ -94,6 +94,7 @@
         // our core element
         currentMarkerDetails: {
           title: false,
+          thumb: false,
           address: false,
           website: false,
           fbPage: false,
