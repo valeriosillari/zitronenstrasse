@@ -27,7 +27,7 @@
       return {
         // from static folder it is ok.
         lazyLoadThumbLoading: '/thumbs/fallback/440x250_fallback_magenta.png',
-        lazyLoadThumbLoaded: '/thumbs/places/440x250_green.png',
+        lazyLoadThumbLoaded: '/thumbs/places/001_nothaftcafes.png',
         lazyLoadThumbTitle: 'TITLE image heres'
       }
     }
