@@ -8,7 +8,7 @@
 </template>
 
 
-<style lang='sass'>
+<style lang="sass">
   .thumb
     +img-fluid
     margin-bottom: 20px
