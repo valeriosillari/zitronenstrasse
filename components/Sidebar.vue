@@ -9,7 +9,7 @@
       | {{ currentMarkerDetails.title }}
 
     //- lazy load Thumb
-    ThumbLazyLoad
+    ThumbLazyLoad(:currentMarkerDetails='currentMarkerDetails',)
 
     p.address
       span.info
