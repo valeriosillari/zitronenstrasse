@@ -10,6 +10,8 @@
 
 <style lang='sass'>
   .thumb
+    +img-fluid
+    margin-bottom: 20px
     transition: opacity 1.5s ease-in-out
   // extra data attribute added via lazy loading
   img[lazy=loading]
