@@ -2,16 +2,13 @@
   div(style='border: 5px solid blue;')
 
     p(style='background: pink;')
-      | {{ currentMarkerDetails.title }}
-
-    p(style='background: #ccc;')
-      | {{ currentMarkerDetails.thumb }}
+      | {{ infoThumbLazyLoad }}
 
     div(v-lazy-container="{ selector: 'img' }")
       img.thumb(
         data-loading='/thumb/fallback/440x250_fallback_magenta.png',
         data-src='/thumb/fallback/440x250_fallback_yellow.png',
-        :title='currentMarkerDetails.title'
+        :title='infoThumbLazyLoad.title'
       )
 </template>
 
@@ -31,7 +28,7 @@
   export default {
     // input from PARENTS
     props: [
-      'currentMarkerDetails'
+      'infoThumbLazyLoad'
     ],
     data () {
       return {
