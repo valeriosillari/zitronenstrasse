@@ -95,6 +95,7 @@
         currentMarkerDetails: {
           title: false,
           thumb: false,
+          thumbCredits: false,
           address: false,
           website: false,
           fbPage: false,
@@ -224,6 +225,7 @@
             // update info in sidebar with current marker
             this.currentMarkerDetails.title = placeID.title
             this.currentMarkerDetails.thumb = placeID.thumb
+            this.currentMarkerDetails.thumbCredits = placeID.thumbCredits
             this.currentMarkerDetails.address = placeID.address
             this.currentMarkerDetails.position = placeID.position
             this.currentMarkerDetails.website = placeID.website

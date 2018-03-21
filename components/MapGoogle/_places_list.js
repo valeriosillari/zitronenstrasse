@@ -8,7 +8,7 @@ const placesList = [
     title: 'Geschwister Nothaft Café',
     address: 'Schwarzastraße 9, 12055',
     thumb: '/thumbs/places/001_nothaftcafes.jpg',
-    thumbCredit: 'Geschwister Nothaft Café Website',
+    thumbCredits: 'Geschwister Nothaft Café Website',
     website: 'http://nothaftcafes.com/',
     fbPage: 'https://www.facebook.com/geschwisternothaft/',
     position: {
@@ -22,7 +22,7 @@ const placesList = [
     title: 'B-Lage',
     address: 'Mareschstraße 1, 12055',
     thumb: '/thumbs/places/002_blage.jpg',
-    thumbCredit: 'B-Lage Website',
+    thumbCredits: 'B-Lage Website',
     website: 'http://www.b-lage.de/',
     fbPage: 'https://www.facebook.com/BLageNeukoelln/',
     position: {
@@ -36,7 +36,7 @@ const placesList = [
     title: 'Herr Lindemann',
     address: 'Richardpl. 16, 12055',
     thumb: '/thumbs/places/003_herr_lindemann.jpg',
-    thumbCredit: 'Herr Lindemann FB Page',
+    thumbCredits: 'Herr Lindemann FB Page',
     fbPage: 'https://www.facebook.com/pg/BarHerrLindemann',
     position: {
       lat: 52.47371,
@@ -49,7 +49,7 @@ const placesList = [
     title: 'Hallmann und Klee',
     address: 'Böhmische Str. 13, 12055',
     thumb: '/thumbs/places/004_hallmann_klee.jpg',
-    thumbCredit: 'Hallmann und Klee FB Page',
+    thumbCredits: 'Hallmann und Klee FB Page',
     website: 'https://www.hallmann-klee.de/',
     fbPage: 'https://www.facebook.com/HallmannKlee/',
     position: {
@@ -63,7 +63,7 @@ const placesList = [
     title: 'Mal so Mal so',
     address: 'Böhmische Str. 14, 12055',
     thumb: '/thumbs/places/005_mal_so_mal_so.jpg',
-    thumbCredit: 'Mal so Mal so FB Page',
+    thumbCredits: 'Mal so Mal so FB Page',
     website: 'http://www.malso-malso.de/',
     fbPage: 'https://www.facebook.com/malso.malso.rixdorf',
     position: {
@@ -339,7 +339,7 @@ const placesList = [
     title: 'Molecule Men',
     address: 'An den Treptowers 1, 12435',
     thumb: '/thumbs/places/028_molecule_men.jpg',
-    thumbCredit: 'Zitronenstrasse',
+    thumbCredits: 'Zitronenstrasse',
     // NO websites
     position: {
       lat: 52.496976,
