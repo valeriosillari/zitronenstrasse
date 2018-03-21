@@ -336,6 +336,8 @@ const placesList = [
     // ChIJlRNaZ_5OqEcRom1mEqQnRcw
     title: 'Molecule Men',
     address: 'An den Treptowers 1, 12435',
+    thumb: '/thumb/places/028_molecule_men.jpg',
+    thumbCredit: 'Zitronenstrasse',
     // NO websites
     position: {
       lat: 52.496976,
