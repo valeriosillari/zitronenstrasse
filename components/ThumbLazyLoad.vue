@@ -1,15 +1,17 @@
+<!-- this component actually is not with lazy load yet, we work on it ... -->
+
 <template lang="pug">
-    img.thumb(
-      v-if='infoThumbLazyLoad.thumb'
-      :src='infoThumbLazyLoad.thumb'
-      :alt='infoThumbLazyLoad.title'
-    )
-    //- fallback
-    img.thumb(
-      v-else='infoThumbLazyLoad.thumb'
-      src='/thumbs/fallback/place_fallback.jpg'
-      :alt='infoThumbLazyLoad.title'
-    )
+  img.thumb(
+    v-if='infoThumbLazyLoad.thumb'
+    :src='infoThumbLazyLoad.thumb'
+    :alt='infoThumbLazyLoad.title'
+  )
+  //- fallback
+  img.thumb(
+    v-else='infoThumbLazyLoad.thumb'
+    src='/thumbs/fallback/place_fallback.jpg'
+    :alt='infoThumbLazyLoad.title'
+  )
 </template>
 
 
