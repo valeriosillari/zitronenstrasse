@@ -7,7 +7,7 @@
     //- fallback
     img.thumb(
       v-else='infoThumbLazyLoad.thumb'
-      src='/thumb/fallback/place_fallback.jpg'
+      src='/thumbs/fallback/place_fallback.jpg'
       :alt='infoThumbLazyLoad.title'
     )
 </template>
@@ -16,7 +16,7 @@
 <style lang="sass">
   .thumb
     +img-fluid
-    margin-bottom: 20px    
+    margin-bottom: 20px
 </style>
 
 

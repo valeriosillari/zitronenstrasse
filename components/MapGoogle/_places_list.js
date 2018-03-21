@@ -5,7 +5,7 @@ const placesList = [
     // ChIJX2MutgxPqEcR2nvgHiQ0ojE
     title: 'Geschwister Nothaft Café',
     address: 'Schwarzastraße 9, 12055',
-    thumb: '/thumb/places/001_nothaftcafes.jpg',
+    thumb: '/thumbs/places/001_nothaftcafes.jpg',
     thumbCredit: 'Geschwister Nothaft Café Website',
     website: 'http://nothaftcafes.com/',
     fbPage: 'https://www.facebook.com/geschwisternothaft/',
@@ -19,7 +19,7 @@ const placesList = [
     // ChIJAV_YIZ5PqEcRKxI0jRwb58I
     title: 'B-Lage',
     address: 'Mareschstraße 1, 12055',
-    thumb: '/thumb/places/002_blage.jpg',
+    thumb: '/thumbs/places/002_blage.jpg',
     thumbCredit: 'B-Lage Website',
     website: 'http://www.b-lage.de/',
     fbPage: 'https://www.facebook.com/BLageNeukoelln/',
@@ -33,7 +33,7 @@ const placesList = [
     // ChIJd-_qBqBPqEcRhdYalX3ASNI
     title: 'Herr Lindemann',
     address: 'Richardpl. 16, 12055',
-    thumb: '/thumb/places/003_herr_lindemann.jpg',
+    thumb: '/thumbs/places/003_herr_lindemann.jpg',
     thumbCredit: 'Herr Lindemann FB Page',
     fbPage: 'https://www.facebook.com/pg/BarHerrLindemann',
     position: {
@@ -46,7 +46,7 @@ const placesList = [
     // ChIJa6BtJAtPqEcRfVVCtKgmXAA
     title: 'Hallmann und Klee',
     address: 'Böhmische Str. 13, 12055',
-    thumb: '/thumb/places/004_hallmann_klee.jpg',
+    thumb: '/thumbs/places/004_hallmann_klee.jpg',
     thumbCredit: 'Hallmann und Klee FB Page',
     website: 'https://www.hallmann-klee.de/',
     fbPage: 'https://www.facebook.com/HallmannKlee/',
@@ -60,7 +60,7 @@ const placesList = [
     // ChIJIStVHgtPqEcRpj_scwDgiho
     title: 'Mal so Mal so',
     address: 'Böhmische Str. 14, 12055',
-    thumb: '/thumb/places/005_mal_so_mal_so.jpg',
+    thumb: '/thumbs/places/005_mal_so_mal_so.jpg',
     thumbCredit: 'Mal so Mal so FB Page',
     website: 'http://www.malso-malso.de/',
     fbPage: 'https://www.facebook.com/malso.malso.rixdorf',
@@ -336,7 +336,7 @@ const placesList = [
     // ChIJlRNaZ_5OqEcRom1mEqQnRcw
     title: 'Molecule Men',
     address: 'An den Treptowers 1, 12435',
-    thumb: '/thumb/places/028_molecule_men.jpg',
+    thumb: '/thumbs/places/028_molecule_men.jpg',
     thumbCredit: 'Zitronenstrasse',
     // NO websites
     position: {

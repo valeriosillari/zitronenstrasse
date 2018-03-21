@@ -94,7 +94,7 @@
         // our core element
         currentMarkerDetails: {
           title: false,
-          thumb: '/thumb/fallback/place_fallback.jpg',
+          thumb: false,
           address: false,
           website: false,
           fbPage: false,
