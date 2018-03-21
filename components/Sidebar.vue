@@ -4,9 +4,6 @@
     div.clearfix
       button.btn-close(@click='actionSidebarClose')
 
-    p(style='background: cadetblue;')
-      | {{ currentMarkerDetails }}
-
     h2.title
       | {{ currentMarkerDetails.title }}
 

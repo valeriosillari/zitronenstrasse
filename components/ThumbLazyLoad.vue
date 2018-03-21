@@ -1,16 +1,8 @@
 <template lang="pug">
-  div(style='border: 5px solid blue;')
-
-    p(style='background: pink;')
-      | {{ infoThumbLazyLoad }}
-
-    div(v-lazy-container="{ selector: 'img' }")
-      img.thumb(
-        data-loading='/thumb/fallback/440x250_fallback_magenta.png',
-        data-src='/thumb/fallback/440x250_fallback_yellow.png',
-        :title='infoThumbLazyLoad.title'
-      )
-    img(:src='infoThumbLazyLoad.thumb')
+    img(
+      :src='infoThumbLazyLoad.thumb'
+      :alt='infoThumbLazyLoad.title'
+    )
 </template>
 
 
@@ -30,11 +22,6 @@
     // input from PARENTS
     props: [
       'infoThumbLazyLoad'
-    ],
-    data () {
-      return {
-        testMe: 'https://placehold.it/400x300.png'
-      }
-    }
+    ]
   }
 </script>

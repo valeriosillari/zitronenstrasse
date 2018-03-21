@@ -94,7 +94,7 @@
         // our core element
         currentMarkerDetails: {
           title: false,
-          thumb: false,
+          thumb: '/thumb/fallback/440x250_fallback_magenta.png',
           address: false,
           website: false,
           fbPage: false,
