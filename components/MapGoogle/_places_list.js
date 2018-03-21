@@ -1,4 +1,6 @@
-// images are set inside our folder. but the original ones are coming form the web. we set credits for each of it.
+// INFO: a js file with a object with all the places.
+// images are set inside our folder. but the original ones are from the web.
+// we set credits for each of it.
 const placesList = [
   {
     // 001
