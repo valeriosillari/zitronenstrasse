@@ -1,20 +1,16 @@
 <template lang="pug">
-    img(
-      :src='infoThumbLazyLoad.thumb'
-      :alt='infoThumbLazyLoad.title'
-    )
+    div.line(v-if='infoThumbLazyLoad.thumb')
+      img.thumb(
+        :src='infoThumbLazyLoad.thumb'
+        :alt='infoThumbLazyLoad.title'
+      )
+    //- fallback
+    div.line(v-else='infoThumbLazyLoad.thumb')
+      img.thumb(
+        src='/thumb/fallback/440x250_fallback_magenta.png'
+        :alt='infoThumbLazyLoad.title'
+      )
 </template>
-
-
-<style lang="sass">
-  .thumb
-    transition: opacity 1.5s ease-in-out
-  // extra data attribute added via lazy loading
-  img[lazy=loading]
-    opacity: 0
-  img[lazy=loaded]
-    opacity: 1
-</style>
 
 
 <script>
