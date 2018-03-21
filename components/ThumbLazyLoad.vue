@@ -10,6 +10,7 @@
         data-src='/thumb/fallback/440x250_fallback_yellow.png',
         :title='infoThumbLazyLoad.title'
       )
+    img(:src='infoThumbLazyLoad.thumb')
 </template>
 
 
@@ -32,7 +33,7 @@
     ],
     data () {
       return {
-        // empty
+        testMe: 'https://placehold.it/400x300.png'
       }
     }
   }
