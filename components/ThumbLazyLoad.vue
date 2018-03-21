@@ -3,21 +3,21 @@
 <template lang="pug">
   .thumb-area
     img.thumb(
-      v-if='infoThumbLazyLoad.thumb'
-      :src='infoThumbLazyLoad.thumb'
-      :alt='infoThumbLazyLoad.title'
+      v-if='currentMarkerDetails.thumb'
+      :src='currentMarkerDetails.thumb'
+      :alt='currentMarkerDetails.title'
     )
     //- fallback
     img.thumb(
-      v-else='infoThumbLazyLoad.thumb'
+      v-else='currentMarkerDetails.thumb'
       src='/thumbs/fallback/place_fallback.jpg'
-      :alt='infoThumbLazyLoad.title'
+      :alt='currentMarkerDetails.title'
     )
 
     span.credits(
-      v-if='infoThumbLazyLoad.thumbCredits'
+      v-if='currentMarkerDetails.thumbCredits'
     )
-      | Credits: {{ infoThumbLazyLoad.thumbCredits }}
+      | Credits: {{ currentMarkerDetails.thumbCredits }}
 </template>
 
 
@@ -38,7 +38,7 @@
   export default {
     // input from PARENTS
     props: [
-      'infoThumbLazyLoad'
+      'currentMarkerDetails'
     ]
   }
 </script>
