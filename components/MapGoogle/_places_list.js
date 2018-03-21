@@ -1,3 +1,4 @@
+// images are set inside our folder. but the original ones are coming form the web. we set credits for each of it.
 const placesList = [
   {
     // 001
