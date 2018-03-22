@@ -403,7 +403,9 @@ const placesList = [
     // ChIJ_So_Jx5PqEcRoulQtLXbCkM
     title: 'Friedhof Alt-Stralau',
     address: 'Tunnelstraße 5-11, 10245',
-    // NO websites
+    thumb: '/thumbs/places/030_friedhof_alt_stralau.jpg',
+    thumbCredits: 'Friedhof Alt-Stralau Website',
+    website: 'http://www.evfbs.de/index.php?id=225',
     position: {
       lat: 52.4910906,
       lng: 13.4788836
