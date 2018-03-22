@@ -309,6 +309,8 @@ const placesList = [
     // ChIJn6jqirZPqEcRSTM-cJbVGAY
     title: 'Myxa Café Berlin',
     address: 'Lenaustraße 22, 12047',
+    thumb: '/thumbs/places/23_myxa.jpg',
+    thumbCredits: 'Myxa Café Berlin Website',
     website: 'http://aplacecalledmyxa.tumblr.com/about',
     fbPage: 'https://www.facebook.com/myxaberlin/',
     position: {
