@@ -540,6 +540,8 @@ const placesList = [
     // ChIJEfO84BdOqEcRD1BMG5OkIvE
     title: 'Kosmetiksalon Babette',
     address: 'Karl-Marx-Allee 36, 10178',
+    thumb: '/thumbs/places/040_babette.jpg',
+    thumbCredits: 'Kosmetiksalon Babette Website',
     website: 'http://www.barbabette.com/',
     fbPage: 'https://www.facebook.com/pages/Bar-Babette/136696746381818',
     position: {
