@@ -266,7 +266,7 @@ const placesList = [
     // ChIJp0sppLZPqEcRasG_5n9uw3A
     title: 'Damensalon',
     address: 'Reuterstraße 39, 12047',
-    thumb: '/thumbs/places/20_damensalon.jpg',
+    thumb: '/thumbs/places/020_damensalon.jpg',
     thumbCredits: 'Damensalon Website',
     website: 'https://damensalon-bar.com/',
     fbPage: 'https://www.facebook.com/damensalonbarberlin',
@@ -309,7 +309,7 @@ const placesList = [
     // ChIJn6jqirZPqEcRSTM-cJbVGAY
     title: 'Myxa Café Berlin',
     address: 'Lenaustraße 22, 12047',
-    thumb: '/thumbs/places/23_myxa.jpg',
+    thumb: '/thumbs/places/023_myxa.jpg',
     thumbCredits: 'Myxa Café Berlin Website',
     website: 'http://aplacecalledmyxa.tumblr.com/about',
     fbPage: 'https://www.facebook.com/myxaberlin/',
@@ -323,7 +323,7 @@ const placesList = [
     // ChIJ_UQ2CbpPqEcRzhfVydN_PCs
     title: 'Roamers',
     address: 'Pannierstraße 64, 12043',
-    thumb: '/thumbs/places/24_roamers.jpg',
+    thumb: '/thumbs/places/024_roamers.jpg',
     thumbCredits: 'Roamers Website',
     website: 'http://www.roamers.cc/',
     fbPage: 'https://www.facebook.com/RoamersBerlin',
@@ -337,7 +337,7 @@ const placesList = [
     // ChIJo99QRrZPqEcRXW-E2PeTJ4A
     title: 'Geist im Glas',
     address: 'Lenaustraße 27, 12047',
-    thumb: '/thumbs/places/25_geist_im_glas.jpg',
+    thumb: '/thumbs/places/025_geist_im_glas.jpg',
     thumbCredits: 'Geist im Glas FB Page',
     fbPage: 'https://www.facebook.com/geistimglas/',
     position: {
