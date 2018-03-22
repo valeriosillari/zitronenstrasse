@@ -76,6 +76,8 @@ const placesList = [
     // ChIJTRJ0JZ9PqEcRABns9MHCtoA
     title: 'Körner Park',
     address: 'Körner Park, Schierker Str. 8, 12051',
+    thumb: '/thumbs/places/006_korner_park.jpg',
+    thumbCredits: 'Körner Park Website',
     website: 'http://www.körnerpark.de/',
     position: {
       lat: 52.47136099999999,
