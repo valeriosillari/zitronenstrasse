@@ -131,8 +131,9 @@ const placesList = [
     // ChIJ31MDQKBPqEcRySz9dj60j7M
     title: 'Comenius-Garten',
     address: 'Richardstraße 35, 12043',
+    thumb: '/thumbs/places/010_comenius_garten.jpg',
+    thumbCredits: 'Comenius Garten Wikipedia Page',
     website: 'http://comenius-garten.de/',
-    fbPage: 'https://www.facebook.com/pages/Comenius-Garten/153276991378798',
     position: {
       lat: 52.4751335,
       lng: 13.4432263
