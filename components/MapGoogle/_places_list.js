@@ -348,8 +348,10 @@ const placesList = [
   {
     // 026
     // ChIJccDCX8pPqEcRkdhWnC8AyNI
-    title: 'Cafe Jacques',
+    title: 'Café Jacques',
     address: 'Maybachufer 14, 12047',
+    thumb: '/thumbs/places/026_cafe_jacques.jpg',
+    thumbCredits: 'Café Jacques Website',
     website: 'http://cafejacques.de/',
     fbPage: 'https://www.facebook.com/pages/Cafe-Jacques-am-Maybachufer/106295842766499',
     position: {
