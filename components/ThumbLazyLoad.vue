@@ -14,7 +14,7 @@
       :alt='currentMarkerDetails.title'
     )
 
-    span.credits(
+    p.credits(
       v-if='currentMarkerDetails.thumbCredits'
     )
       | Credits: {{ currentMarkerDetails.thumbCredits }}
@@ -30,6 +30,7 @@
 
   .credits
     font-size: .65rem
+    margin-bottom: 0
     color: $color_sidebar_credits
 </style>
 
