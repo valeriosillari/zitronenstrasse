@@ -364,6 +364,7 @@ const placesList = [
     // ChIJRSQRf8tPqEcRw5esshbdL8k
     title: 'Fuchsbau',
     address: 'Planufer 96, 10967',
+    // todo: add image
     fbPage: 'https://www.facebook.com/derfuchsbau/',
     position: {
       lat: 52.4956697,
@@ -388,7 +389,10 @@ const placesList = [
     // ChIJeZcqEh9PqEcRXsBoKa1ZkIk
     title: 'Insel der Jugend',
     address: 'Alt-Treptow 6, 12435',
-    // NO websites
+    thumb: '/thumbs/places/029_insel_der_jugend.jpg',
+    thumbCredits: 'Zerletti Photography',
+    website: 'http://inselberlin.de/',
+    fbPage: 'https://www.facebook.com/inselberlin/',
     position: {
       lat: 52.4868198,
       lng: 13.4809252
