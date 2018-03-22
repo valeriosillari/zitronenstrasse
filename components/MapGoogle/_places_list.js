@@ -432,6 +432,8 @@ const placesList = [
     // ChIJqwCqdclPqEcRYUkH0bnBeFk
     title: 'Pony Saloon Berlin',
     address: 'Dieffenbachstraße 36, 10967',
+    thumb: '/thumbs/places/032_pony_saloon.jpg',
+    thumbCredits: 'Pony Saloon FB Page',
     fbPage: 'https://www.facebook.com/Pony-Saloon-Berlin-252462801476185/',
     position: {
       lat: 52.491695,
