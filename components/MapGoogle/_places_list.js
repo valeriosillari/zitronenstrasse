@@ -513,6 +513,7 @@ const placesList = [
     // ChIJ8Saj101OqEcRBXa22Ic61B4
     title: 'Kirk Bar',
     address: 'Skalitzer Str. 75, 10997',
+    // todo: add image
     website: 'http://www.kirkbar-berlin.de/',
     fbPage: 'https://www.facebook.com/pages/Kirk-Bar/132427720140135',
     position: {
@@ -525,6 +526,8 @@ const placesList = [
     // ChIJVwi_HOJRqEcRdZxCHyZt1D0
     title: 'Cuore Di Vetro',
     address: 'Max-Beer-Straße 33, 10119',
+    thumb: '/thumbs/places/039_cuore_vetro.jpg',
+    thumbCredits: 'Cuore Di Vetro FB Page',
     website: 'http://www.cuoredivetro.berlin/',
     fbPage: 'https://www.facebook.com/CuoreDiVetroBerlin/',
     position: {
