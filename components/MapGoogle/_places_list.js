@@ -266,6 +266,8 @@ const placesList = [
     // ChIJp0sppLZPqEcRasG_5n9uw3A
     title: 'Damensalon',
     address: 'Reuterstraße 39, 12047',
+    thumb: '/thumbs/places/20_damensalon.jpg',
+    thumbCredits: 'Damensalon Website',
     website: 'https://damensalon-bar.com/',
     fbPage: 'https://www.facebook.com/damensalonbarberlin',
     position: {
