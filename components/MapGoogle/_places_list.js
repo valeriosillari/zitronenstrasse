@@ -282,6 +282,8 @@ const placesList = [
     // ChIJOSWgYaVPqEcR63RnoNfgsDg
     title: 'TiEr',
     address: 'Weserstraße 42, 12045',
+    thumb: '/thumbs/places/021_tier.jpg',
+    thumbCredits: 'TiEr FB Page',
     website: 'http://www.tier.bar/',
     fbPage: 'https://www.facebook.com/TiERBAR',
     position: {
