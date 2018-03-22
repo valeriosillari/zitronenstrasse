@@ -418,6 +418,8 @@ const placesList = [
     // ChIJC0xKsFVOqEcRhjEGUJP9Umg
     title: 'Arena Berlin',
     address: 'Eichenstraße 4, 12435',
+    thumb: '/thumbs/places/031_arena.jpg',
+    thumbCredits: 'Arena Berlin Website',
     website: 'http://www.arena.berlin/',
     fbPage: 'https://www.facebook.com/ARENABERLIN',
     position: {
