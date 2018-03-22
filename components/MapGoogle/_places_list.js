@@ -445,6 +445,8 @@ const placesList = [
     // ChIJ17uJN75PqEcRKVO6yDVtNog
     title: 'La Pecora Nera',
     address: 'Herrfurthpl. 6, 12049',
+    thumb: '/thumbs/places/033_pecora_nera.jpg',
+    thumbCredits: 'La Pecora Nera FB Page',
     website: 'http://www.pecoraberlin.de/',
     fbPage: 'https://www.facebook.com/lapecoraneraberlin/',
     position: {
