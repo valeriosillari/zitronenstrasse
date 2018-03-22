@@ -487,6 +487,7 @@ const placesList = [
     // ChIJo341is1PqEcRK8FKsc6xA0A
     title: 'Landwehrkanalufer',
     address: 'Kreuzberg, 10967',
+    // todo: add image
     // NO websites
     position: {
       lat: 52.4952365,
@@ -498,6 +499,8 @@ const placesList = [
     // ChIJ2XYhzUtOqEcRIFyMFC_-0oA
     title: 'Tante Lisbeth',
     address: 'Muskauer Str. 49, 10997',
+    thumb: '/thumbs/places/037_tante_lisbeth.jpg',
+    thumbCredits: 'Tante Lisbeth Website',
     website: 'http://www.pyonen.de/tantelisbeth/',
     fbPage: 'https://www.facebook.com/Tante-Lisbeth-167076453314044/',
     position: {
