@@ -337,6 +337,8 @@ const placesList = [
     // ChIJo99QRrZPqEcRXW-E2PeTJ4A
     title: 'Geist im Glas',
     address: 'Lenaustraße 27, 12047',
+    thumb: '/thumbs/places/25_geist_im_glas.jpg',
+    thumbCredits: 'Geist im Glas FB Page',
     fbPage: 'https://www.facebook.com/geistimglas/',
     position: {
       lat: 52.490117,
