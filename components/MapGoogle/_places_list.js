@@ -473,6 +473,8 @@ const placesList = [
     // ChIJoa2VQShQqEcRA7c9NHuooAA
     title: 'LIMONADIER',
     address: 'Nostitzstraße 12, 10961',
+    thumb: '/thumbs/places/035_limonadier.jpg',
+    thumbCredits: 'LIMONADIER Website',
     website: 'http://www.limonadier.de/',
     fbPage: 'https://www.facebook.com/LimonadierBar',
     position: {
