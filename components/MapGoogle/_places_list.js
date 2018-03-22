@@ -89,6 +89,8 @@ const placesList = [
     // ChIJdT1vJqBPqEcRKr3fqKwU5gI
     title: 'DAS KAPiTAL',
     address: 'Karl-Marx-Platz 18, 12043',
+    thumb: '/thumbs/places/007_das_kapital.jpg',
+    thumbCredits: 'DAS KAPiTAL FB Page',
     website: 'http://www.kapital.menu/',
     fbPage: 'https://www.facebook.com/kapital.menu/',
     position: {
