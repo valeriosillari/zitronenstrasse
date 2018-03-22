@@ -146,6 +146,7 @@ const placesList = [
     // ChIJZYdI_KBPqEcRpHBUVSa86UQ
     title: 'Böhmisches Dorf',
     address: 'Kirchgasse, 12043 Berlin',
+    // todo: add image
     website: 'http://www.boehmisches-dorf.de/',
     position: {
       lat: 52.4766317,
@@ -157,6 +158,8 @@ const placesList = [
     // ChIJy91K4KNPqEcRCAd6KD6oZx8
     title: 'CocoLiebe',
     address: 'Richardstraße 107, 12043',
+    thumb: '/thumbs/places/012_cocoliebe.jpg',
+    thumbCredits: 'CocoLiebe FB Page',
     website: 'http://cocoliebe.com/',
     fbPage: 'https://www.facebook.com/CocoLiebe-552868534832866/',
     position: {
