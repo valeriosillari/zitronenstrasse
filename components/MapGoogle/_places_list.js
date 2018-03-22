@@ -186,6 +186,8 @@ const placesList = [
     // ChIJC8oyvqJPqEcRJiH6bTWiOos
     title: 'Berliner Berg Brauerei',
     address: 'Kopfstraße 59, 12053',
+    thumb: '/thumbs/places/014_berliner_berg_brauerei.jpg',
+    thumbCredits: 'Berliner Berg Brauerei Website',
     website: 'http://berlinerberg.com/',
     fbPage: 'https://www.facebook.com/berlinerberg',
     position: {
