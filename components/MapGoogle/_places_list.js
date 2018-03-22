@@ -556,6 +556,8 @@ const placesList = [
     // ChIJ1dfMe19OqEcRaAo1wYu7_nE
     title: 'Sheriff Teddy Bar',
     address: 'Weserstraße 25, 10247',
+    thumb: '/thumbs/places/041_sheriff_teddy.jpg',
+    thumbCredits: 'Sheriff Teddy Bar Website',
     website: 'http://www.sheriff-teddy.de/wordpress/',
     fbPage: 'https://www.facebook.com/pages/Sheriff-Teddy-Bar/175296822498538',
     position: {
