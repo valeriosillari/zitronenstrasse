@@ -597,7 +597,9 @@ const placesList = [
     // ChIJheO_BwNOqEcRKANj6C1rPzY
     title: 'Park am Wasserturm',
     address: 'Diedenhofer Str. 9, 10405',
-    // NO websites
+    thumb: '/thumbs/places/044_park_wasserturm.jpg',
+    thumbCredits: 'Visit Berlin',
+    website: 'https://www.visitberlin.de/de/wasserturm-am-kollwitzplatz-wasserturmplatz',
     position: {
       lat: 52.53336849999999,
       lng: 13.4176316
@@ -608,6 +610,8 @@ const placesList = [
     // ChIJp5s5Q2BOqEcRA7z8fxMJRbk
     title: 'Bitte und Danke',
     address: 'Silvio-Meier-Straße 8, 10247',
+    thumb: '/thumbs/places/045_bitte_danke.jpg',
+    thumbCredits: 'Bitte und Danke Website',
     website: 'http://www.partyquartier.de/',
     fbPage: 'https://www.facebook.com/BitteDanke8',
     position: {
@@ -620,6 +624,7 @@ const placesList = [
     // ChIJ48HH5P1NqEcRJonad7BUUEc
     title: 'Atopia Kaffeehaus',
     address: 'Prenzlauer Allee 187, 10405',
+    // todo: add image
     fbPage: 'https://www.facebook.com/AtopiaKaffeehaus/',
     position: {
       lat: 52.5415791,
@@ -631,6 +636,8 @@ const placesList = [
     // ChIJL3N7C-FRqEcRlz-AbriEvhU
     title: 'Absinthdepot Berlin',
     address: 'Weinmeisterstraße 4, 10178',
+    thumb: '/thumbs/places/047_absinthdepot.jpg',
+    thumbCredits: 'Absinthdepot Berlin Website',
     website: 'https://absinthdepot.de/',
     fbPage: 'https://www.facebook.com/absinthdepot.berlin/',
     position: {
@@ -643,6 +650,8 @@ const placesList = [
     // ChIJl5fmoQVSqEcROIldStvJvTw
     title: 'LOLA was here',
     address: 'Seelower Str. 8, 10439',
+    thumb: '/thumbs/places/048_lola.jpg',
+    thumbCredits: 'LOLA was here Website',
     website: 'http://www.lolawashere.de/',
     fbPage: 'https://www.facebook.com/lolawashere.cafe',
     position: {
@@ -655,6 +664,8 @@ const placesList = [
     // ChIJ6yHZuChSqEcRPlv3ejkpuec
     title: 'Dujardin',
     address: 'Uferstraße 12, 13357',
+    thumb: '/thumbs/places/049_dujardin.jpg',
+    thumbCredits: 'Dujardin Website',
     website: 'http://www.cafedujardin.de/',
     fbPage: 'https://www.facebook.com/Caf%C3%A9-Dujardin-482078158551600/',
     position: {
