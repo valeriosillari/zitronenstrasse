@@ -8,7 +8,7 @@ const placesList = [
     title: 'Geschwister Nothaft Café',
     address: 'Schwarzastraße 9, 12055',
     thumb: '/thumbs/places/001_nothaftcafes.jpg',
-    thumbCredits: 'Geschwister Nothaft Café Website',
+    thumbCredits: 'Geschwister Nothaft Café FB Page',
     website: 'http://nothaftcafes.com/',
     fbPage: 'https://www.facebook.com/geschwisternothaft/',
     position: {
@@ -62,8 +62,7 @@ const placesList = [
     // ChIJIStVHgtPqEcRpj_scwDgiho
     title: 'Mal so Mal so',
     address: 'Böhmische Str. 14, 12055',
-    thumb: '/thumbs/places/005_mal_so_mal_so.jpg',
-    thumbCredits: 'Mal so Mal so FB Page',
+    // todo: add image
     website: 'http://www.malso-malso.de/',
     fbPage: 'https://www.facebook.com/malso.malso.rixdorf',
     position: {
@@ -671,6 +670,20 @@ const placesList = [
     position: {
       lat: 52.550876,
       lng: 13.3735181
+    }
+  },
+  {
+    // 050
+    // ChIJO_yy5gpPqEcRcwAKoGIi6ZE
+    title: 'Rotbart',
+    address: 'Böhmische Straße 43, 12055',
+    thumb: '/thumbs/places/050_rotbart.jpg',
+    thumbCredits: 'Rotbart FB Page',
+    website: 'http://www.rotbart-rixdorf.de/',
+    fbPage: 'https://www.facebook.com/rotbart.rixdorf/',
+    position: {
+      lat: 52.4742213,
+      lng: 13.4491873
     }
   }
 ]
