@@ -323,6 +323,8 @@ const placesList = [
     // ChIJ_UQ2CbpPqEcRzhfVydN_PCs
     title: 'Roamers',
     address: 'Pannierstraße 64, 12043',
+    thumb: '/thumbs/places/24_roamers.jpg',
+    thumbCredits: 'Roamers Website',
     website: 'http://www.roamers.cc/',
     fbPage: 'https://www.facebook.com/RoamersBerlin',
     position: {
