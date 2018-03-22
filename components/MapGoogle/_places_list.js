@@ -117,6 +117,8 @@ const placesList = [
     // mZa6BPqEcRMXhPH5jFJyo
     title: 'Vux',
     address: 'Wipperstraße 14, 12055 Berlin',
+    thumb: '/thumbs/places/009_vux.jpg',
+    thumbCredits: 'Vux FB Page',
     website: 'http://www.vux-berlin.com/',
     fbPage: 'https://www.facebook.com/Caf%C3%A9-Vux-140098601300/',
     position: {
