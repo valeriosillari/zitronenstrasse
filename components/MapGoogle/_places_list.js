@@ -295,6 +295,8 @@ const placesList = [
     // 022
     // ChIJIzn297ZPqEcRgw6RoWPK3GU
     title: 'Fuk;s Bar',
+    thumb: '/thumbs/places/022_fuks.jpg',
+    thumbCredits: 'Zitronenstrasse',
     address: 'Hobrechtstraße 64, 12047',
     fbPage: 'https://www.facebook.com/FUKS-266431236749703/',
     position: {
