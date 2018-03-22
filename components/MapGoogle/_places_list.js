@@ -172,6 +172,8 @@ const placesList = [
     // ChIJP36bUnVPqEcRIwk3dhSvYWo
     title: 'Paulinski Palme',
     address: 'Richardstraße 76, 12043',
+    thumb: '/thumbs/places/013_paulinski_palme.jpg',
+    thumbCredits: 'Paulinski Palme FB Page',
     website: 'http://www.paulinskipalme.de/',
     fbPage: 'https://www.facebook.com/Paulinskipalme/',
     position: {
