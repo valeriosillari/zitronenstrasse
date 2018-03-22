@@ -103,6 +103,8 @@ const placesList = [
     // ChIJyaJmgJ9PqEcRmFMyFfFqJGQ
     title: 'balera Weinhandlung',
     address: 'Karl-Marx-Platz 6, 12043',
+    thumb: '/thumbs/places/008_balera.jpg',
+    thumbCredits: 'balera Weinhandlung FB Page',
     website: 'http://baleraweine.com/',
     fbPage: 'https://www.facebook.com/baleraweine/',
     position: {
