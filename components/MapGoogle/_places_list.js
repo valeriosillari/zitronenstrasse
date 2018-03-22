@@ -459,6 +459,8 @@ const placesList = [
     // ChIJvwxxdbxPqEcRimRthUrKjUs
     title: 'Sala da Mangiare',
     address: 'Mainzer Str. 23, 12053',
+    thumb: '/thumbs/places/034_sala_mangiare.jpg',
+    thumbCredits: 'Sala da Mangiare Website',
     website: 'http://saladamangiare.de/',
     fbPage: 'https://www.facebook.com/saladamangiare',
     position: {
