@@ -200,7 +200,8 @@ const placesList = [
     // ChIJn5Np3qNPqEcRrRkTsDUHeEg
     title: 'Sameheads',
     address: 'Richardstraße 10, 12043',
-    website: 'http://www.sameheads.com/home',
+    // todo: add image
+    website: 'http://www.sameheads.com',
     fbPage: 'https://www.facebook.com/sameheadsberlin/',
     position: {
       lat: 52.4778094,
@@ -212,6 +213,8 @@ const placesList = [
     // ChIJBfIPPbtPqEcRMnne4FZmMfk
     title: 'Klunkerkranich',
     address: 'Karl-Marx-Straße 66, 12043',
+    thumb: '/thumbs/places/016_klunkerkranich.jpg',
+    thumbCredits: 'Klunkerkranich FB Page',
     website: 'http://klunkerkranich.de/',
     fbPage: 'https://www.facebook.com/kulturdachgartenklunkerkranich/',
     position: {
