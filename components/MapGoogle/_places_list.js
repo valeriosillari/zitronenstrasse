@@ -227,6 +227,7 @@ const placesList = [
     // ChIJwbcY56VPqEcRWeH0D3fTHf0
     title: 'K-Fetisch',
     address: 'Wildenbruchstraße 86, 12045',
+    // todo: add image
     website: 'http://kfetisch.blogsport.de/',
     fbPage: 'https://www.facebook.com/kfetisch/',
     position: {
@@ -239,6 +240,7 @@ const placesList = [
     // ChIJz61EdaZPqEcRZb1ZzQXwx_4
     title: 'Ä',
     address: 'Weserstraße 40, 12045',
+    // todo: add image
     website: 'http://www.ae-neukoelln.de/',
     position: {
       lat: 52.4850275,
@@ -251,6 +253,8 @@ const placesList = [
     title: 'Vin Aqua Vin',
     address: 'Weserstraße 204, 12047',
     website: 'https://www.vinaquavin.de/',
+    thumb: '/thumbs/places/019_vin_aqua_vin.jpg',
+    thumbCredits: 'Vin Aqua Vin Website',
     fbPage: 'https://www.facebook.com/Vin-Aqua-Vin-138683709477176/',
     position: {
       lat: 52.48804209999999,
