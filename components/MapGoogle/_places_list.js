@@ -570,6 +570,7 @@ const placesList = [
     // ChIJteBFYVlOqEcRwPmMHbasUKU
     title: 'PLACE CLICHY',
     address: 'Simon-Dach-Straße 22, 10245',
+    // todo: add image
     website: 'http://placeclichyberlin.blogspot.de/',
     fbPage: 'https://www.facebook.com/pages/Place-Clichy/163492683667285',
     position: {
@@ -582,6 +583,8 @@ const placesList = [
     // ChIJkdsxhf9NqEcROqrpU0E2Wdo
     title: 'WohnZimmer',
     address: 'Lettestraße 6, 10437',
+    thumb: '/thumbs/places/043_wohnzimmer.jpg',
+    thumbCredits: 'WohnZimmer FB Page',
     website: 'http://www.wohnzimmer-bar.de/',
     fbPage: 'https://www.facebook.com/wohnzimmerbarberlin/',
     position: {
