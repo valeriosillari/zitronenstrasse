@@ -16,7 +16,7 @@ const ogUrl = thisAppMainUrl
 const ogTitle = headTitle
 const ogDescription = headDescription
 const ogType = 'website'
-const ogImage = `${thisAppMainUrl}/zitronenstrasse_og_image.png`
+const ogImage = `${thisAppMainUrl}/favicons/zitronenstrasse_og_image.png`
 const ogImageWidth = '1200'
 const ogImageHeight = '630'
 
@@ -153,12 +153,12 @@ module.exports = {
       {
         rel: 'icon',
         type: 'image/x-icon',
-        href: 'favicon.ico'
+        href: 'favicons/favicon.ico'
       },
       // apple-touch-icon
       {
         rel: 'apple-touch-icon',
-        href: 'apple_touch_icon.png'
+        href: 'favicons/apple_touch_icon.png'
       },
       // link canonical
       {
@@ -168,7 +168,7 @@ module.exports = {
       // site manifest
       {
         rel: 'manifest',
-        href: 'site.webmanifest'
+        href: 'favicons/site.webmanifest'
       }
       // CSS font as external resources from Google Fonts
       // {
@@ -209,6 +209,15 @@ module.exports = {
     ** Run ESLint on save
     */
     extend (config, ctx) {
+      // for using images in folder 'assets' also in data attribute 'data-src'
+      // useful for lazy loading
+      // https://github.com/nuxt/nuxt.js/issues/2650
+      const vueLoader = config.module.rules.find((rule) => rule.loader === 'vue-loader')
+      vueLoader.options.transformToRequire['img'] = [
+        'data-loading',
+        'data-src'
+      ]
+
       config.module.rules.forEach((rule) => {
         // add to ALL vue modules the sass file 'global'
         if (rule.test.toString() === '/\\.vue$/') {
@@ -239,7 +248,7 @@ module.exports = {
   ** Customize the Vue Plugins
   */
   plugins: [
-    // TODO
+    '~/plugins/vue-lazyload'
   ],
 
   /*

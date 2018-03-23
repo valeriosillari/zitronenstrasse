@@ -108,6 +108,8 @@ heroku run XXXyourcommandXXX
 
 #### TODO
 
+- **LAZY LOAD**: set logic for place images. we have added plugin, but we got issues with images.
+
 - **NO JS message**: if browser has NO-JS set ...
 
 - **PERFORMANCE**:

@@ -43,6 +43,7 @@
           | Twitter
 </template>
 
+
 <style lang="sass">
   .link-contact,
   .link-social
@@ -51,6 +52,7 @@
       text-decoration: underline
 </style>
 
+
 <script>
   export default {
     head () {
@@ -58,7 +60,11 @@
       return {
         title: 'Contact | Zitronenstrasse',
         meta: [
-          { hid: 'description', name: 'description', content: `Contact | Zitronenstrasse | A mapping project to collect and share romantic spots in Berlin.` }
+          {
+            hid: 'description',
+            name: 'description',
+            content: `Contact | Zitronenstrasse | A mapping project to collect and share romantic spots in Berlin.`
+          }
         ]
       }
     }

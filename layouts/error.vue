@@ -3,7 +3,7 @@
 
   //- main area
   section.section.section-top.section-text
-    .container
+    .container.text-center
 
       //- div with css bg as svg | compass
       .svg-icon-compass
@@ -43,5 +43,5 @@
     height: 260px
     margin: 30px auto
     // we set svg as image in css. nuxt is happy, but we lost the fill color options
-    background-image: url('~/assets/img/svg_icon_compass.svg')
+    background-image: url('~/assets/img/svg/svg_icon_compass.svg')
 </style>

@@ -110,7 +110,11 @@
       return {
         title: 'About | Zitronenstrasse',
         meta: [
-          { hid: 'description', name: 'description', content: `About | Zitronenstrasse | A mapping project to collect and share romantic spots in Berlin.` }
+          {
+            hid: 'description',
+            name: 'description',
+            content: `About | Zitronenstrasse | A mapping project to collect and share romantic spots in Berlin.`
+          }
         ]
       }
     }

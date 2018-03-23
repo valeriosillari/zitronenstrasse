@@ -1,12 +1,14 @@
 <template lang="pug">
   aside.sidebar
-    
     //- btn area
     div.clearfix
       button.btn-close(@click='actionSidebarClose')
 
     h2.title
       | {{ currentMarkerDetails.title }}
+
+    //- lazy load Thumb
+    ThumbLazyLoad(:currentMarkerDetails='currentMarkerDetails',)
 
     p.address
       span.info
@@ -17,20 +19,20 @@
     span.info(v-if='(currentMarkerDetails.website) || (currentMarkerDetails.fbPage)')
       | Links:
 
-    
+
     .action-area
       p.line(v-if='currentMarkerDetails.website')
         a.link.link-website(
-          v-bind:href='currentMarkerDetails.website',
-          title='Official Website',
+          :href='currentMarkerDetails.website',
+          :title="currentMarkerDetails.title + ' | Official Website'",
           target='_blank'
         )
           | Official Website
 
       p.line(v-if='currentMarkerDetails.fbPage')
         a.link.link-facebook(
-          v-bind:href='currentMarkerDetails.fbPage',
-          title='Facebook Page',
+          :href='currentMarkerDetails.fbPage',
+          :title="currentMarkerDetails.title + ' | Facebook Page'",
           target='_blank'
         )
           | Facebook Page
@@ -38,7 +40,11 @@
 
 
 <script>
+  import ThumbLazyLoad from '~/components/ThumbLazyLoad.vue'
   export default {
+    components: {
+      ThumbLazyLoad
+    },
     // input from PARENTS
     props: [
       'currentMarkerDetails'
