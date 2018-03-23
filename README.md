@@ -110,6 +110,12 @@ heroku run XXXyourcommandXXX
 
 - **LAZY LOAD**: set logic for place images. we have added plugin, but we got issues with images.
 
+- **MAP PAN (movement)**: set it slow and nicer/smoother
+
+- **MAP CUSTOM STYLES**: at map movement it is always flickering cause of image request. is is ok? could we prevent it?
+
+- **HEADLINE**: on homepage/map set some kind of headline for recognizing the website brand
+
 - **NO JS message**: if browser has NO-JS set ...
 
 - **PERFORMANCE**:
