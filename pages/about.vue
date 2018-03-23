@@ -73,6 +73,7 @@
 
       p
         | Being in Germany we thought about
+        | &nbsp;
         i
           | The street of lemons
         | &nbsp;
