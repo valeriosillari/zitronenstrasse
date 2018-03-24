@@ -182,12 +182,11 @@ module.exports = {
       {
         // call google map javascript API
         src: `https://maps.googleapis.com/maps/api/js?key=${googleMapApiKey}&v=3`,
-        // google HTTPS bug here ... we risk ot to load the code.
-        // async: true,
-        // defer: true,
+        async: true,
+        defer: true,
         // set js at end of body:
         // https://github.com/nuxt/nuxt.js/issues/241
-        body: true
+        // body: true
       }
     ]
   },
