@@ -118,15 +118,20 @@ heroku run XXXyourcommandXXX
 
 - **NO JS message**: if browser has NO-JS set ...
 
+
+
+#### ISSUES
+
 - **PERFORMANCE**:
 
-  async / defer js as external JS has some issues. removed for now.
+  async / defer js as external JS has some issues on INCOGNITO mode.
 
   Looks like we have an issue with js map on http domain (http://www.zitronenstrasse.com)
 
   with https looks fine.
 
   https://security.googleblog.com/2017/04/next-steps-toward-more-connection.html
+
 
 #### NICE TO HAVE
 
