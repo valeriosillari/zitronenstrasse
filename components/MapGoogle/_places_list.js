@@ -685,6 +685,19 @@ const placesList = [
       lat: 52.4742213,
       lng: 13.4491873
     }
+  },
+  {
+    // 051
+    // ChIJcx6bYQRSqEcRrtYwfRHc3Ew
+    title: 'Omoni',
+    address: 'Kopenhagener Str. 14, 10437',
+    thumb: '/thumbs/places/051_omoni.jpg',
+    thumbCredits: 'Zitronenstrasse',
+    fbPage: 'https://www.facebook.com/pages/Omoni/171813879520332',
+    position: {
+      lat: 52.5491494,
+      lng: 13.408966
+    }
   }
 ]
 
