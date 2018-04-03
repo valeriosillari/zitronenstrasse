@@ -19,9 +19,7 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
-    "@fortawesome/fontawesome": "^1.1.5",
-    "@fortawesome/fontawesome-free-solid": "^5.0.9",
-    "@fortawesome/vue-fontawesome": "^0.0.22",
+    "@nuxtjs/font-awesome": "^1.0.3",
     "@nuxtjs/google-analytics": "^2.0.2",
     "bootstrap": "v4.0.0",
     "breakpoint-sass": "^2.7.1",
