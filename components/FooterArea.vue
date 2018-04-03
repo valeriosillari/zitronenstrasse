@@ -10,6 +10,9 @@
               | Valerio Sillari
 
         .col-sm-4.col-right
+
+          i.fab.fa-github-square
+
           ul.item-icons
             //- FB
             li.item-icon
@@ -22,6 +25,7 @@
               a.socicon.socicon-github(href='https://github.com/valeriosillari/zitronenstrasse' title='Zitronenstrasse on Github', target='_blank')
 </template>
 
+
 <script>
   export default {
     data () {
@@ -31,6 +35,7 @@
     }
   }
 </script>
+
 
 <style lang="sass">
   // todo: set later navi classes and styles via sass. now just dark one
