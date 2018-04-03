@@ -11,7 +11,7 @@
 
         .col-sm-4.col-right
 
-          i.fab.fa-github-square
+          i.fa.fa-bath.bath
 
           ul.item-icons
             //- FB
