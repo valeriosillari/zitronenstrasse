@@ -19,7 +19,7 @@
     },
     // mounted: WHEN ALL code on server is already loaded!
     mounted () {
-      console.log('🍋 🍋 🍋 - 001')
+      console.log('🍋 🍋 🍋')
     }
   }
 </script>
