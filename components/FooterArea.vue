@@ -11,22 +11,19 @@
 
         .col-sm-4.col-right
 
-          i.fa.fa-facebook
-          i.fa.fa-twitter
-          i.fa.fa-github
-          i.fa.fa-spotify
-
-
           ul.item-icons
-            //- FB
+            //- Facebook
             li.item-icon
-              a.socicon.socicon-facebook(href='https://www.facebook.com/zitronenstrasse/', title='Zitronenstrasse on Facebook', target='_blank')
+              a.fa.fa-facebook.item-social(href='https://www.facebook.com/zitronenstrasse/', title='Zitronenstrasse on Facebook', target='_blank')
             //- Twitter
             li.item-icon
-              a.socicon.socicon-twitter(href='https://twitter.com/zitronenstrasse' title='Zitronenstrasse on Twitter', target='_blank')
+              a.fa.fa-twitter.item-social(href='https://twitter.com/zitronenstrasse' title='Zitronenstrasse on Twitter', target='_blank')
+            //- Spotify
+            li.item-icon
+              a.fa.fa-spotify.item-social(href='https://open.spotify.com/user/stellavalerio/playlist/4J2AU9XfvfJOgc0MBE1WlX?si=xoXk0YnDRWGlmgtR99qXrw' title='Zitronenstrasse Playlist on Spotify', target='_blank')
             //- Github
             li.item-icon
-              a.socicon.socicon-github(href='https://github.com/valeriosillari/zitronenstrasse' title='Zitronenstrasse on Github', target='_blank')
+              a.fa.fa-github.item-social(href='https://github.com/valeriosillari/zitronenstrasse' title='Zitronenstrasse on Github', target='_blank')
 </template>
 
 
@@ -74,7 +71,7 @@
       padding: 0
 
   // <a> icon
-  .socicon
+  .item-social
     display: block
     position: relative
     font-size: 32px
@@ -82,7 +79,7 @@
     color: $color_footer_icon
 
   // color status
-  .socicon,
+  .item-social,
   .item-link
     &:hover,
     &:focus
