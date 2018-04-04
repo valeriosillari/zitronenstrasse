@@ -11,7 +11,11 @@
 
         .col-sm-4.col-right
 
-          i.fa.fa-bath.bath
+          i.fa.fa-facebook
+          i.fa.fa-twitter
+          i.fa.fa-github
+          i.fa.fa-spotify
+
 
           ul.item-icons
             //- FB
