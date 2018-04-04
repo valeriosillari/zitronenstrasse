@@ -19,6 +19,7 @@
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
+    "@nuxtjs/font-awesome": "^1.0.3",
     "@nuxtjs/google-analytics": "^2.0.2",
     "bootstrap": "v4.0.0",
     "breakpoint-sass": "^2.7.1",

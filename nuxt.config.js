@@ -260,6 +260,7 @@ module.exports = {
       '@nuxtjs/google-analytics', {
         id: googleAnalyticsKey
       }
-    ]
+    ],
+    '@nuxtjs/font-awesome'
   ]
 }
