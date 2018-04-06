@@ -1,8 +1,9 @@
-<template lang="pug">
-  section.section.section-text
-    .container
-      h1
-        | Test
+<template>
+  <div class="cippa">
+    <img src="~/assets/basic.png">
+    <img src="~/assets/img/sub_image_001.png">
+    <img src="~/assets/img/thumbs/sub_thumbs_001.png">
+  </div>
 </template>
 
 

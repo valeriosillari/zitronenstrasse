@@ -208,15 +208,6 @@ module.exports = {
     ** Run ESLint on save
     */
     extend (config, ctx) {
-      // for using images in folder 'assets' also in data attribute 'data-src'
-      // useful for lazy loading
-      // https://github.com/nuxt/nuxt.js/issues/2650
-      const vueLoader = config.module.rules.find((rule) => rule.loader === 'vue-loader')
-      vueLoader.options.transformToRequire['img'] = [
-        'data-loading',
-        'data-src'
-      ]
-
       config.module.rules.forEach((rule) => {
         // add to ALL vue modules the sass file 'global'
         if (rule.test.toString() === '/\\.vue$/') {
