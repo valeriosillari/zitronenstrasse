@@ -1,9 +1,8 @@
-<template>
-  <div class="cippa">
-    <img src="~/assets/basic.png">
-    <img src="~/assets/img/sub_image_001.png">
-    <img src="~/assets/img/thumbs/sub_thumbs_001.png">
-  </div>
+<template lang="pug">
+  .cippa
+    img(src='~/assets/basic.png')
+    img(src='~/assets/img/sub_image_001.png')
+    img(src='~/assets/img/thumbs/sub_thumbs_001.png')
 </template>
 
 
