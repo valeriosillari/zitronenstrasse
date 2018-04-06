@@ -1,5 +1,3 @@
-<!-- this component actually is not with lazy load yet, we work on it ... -->
-
 <template lang="pug">
   .thumb-area
     img.thumb(
@@ -10,7 +8,7 @@
     //- fallback
     img.thumb(
       v-else='currentMarkerDetails.thumb'
-      src='/thumbs/fallback/place_fallback.jpg'
+      src='~/assets/img/thumbs/fallback/place_fallback.jpg'
       :alt='currentMarkerDetails.title'
     )
 

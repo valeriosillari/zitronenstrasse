@@ -7,8 +7,8 @@
     h2.title
       | {{ currentMarkerDetails.title }}
 
-    //- lazy load Thumb
-    ThumbLazyLoad(:currentMarkerDetails='currentMarkerDetails',)
+    //- Thumb Place
+    Thumb(:currentMarkerDetails='currentMarkerDetails',)
 
     p.address
       span.info
@@ -40,10 +40,10 @@
 
 
 <script>
-  import ThumbLazyLoad from '~/components/ThumbLazyLoad.vue'
+  import Thumb from '~/components/Thumb.vue'
   export default {
     components: {
-      ThumbLazyLoad
+      Thumb
     },
     // input from PARENTS
     props: [
