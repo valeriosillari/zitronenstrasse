@@ -8,7 +8,7 @@
     //- fallback
     img.thumb(
       v-else='currentMarkerDetails.thumb'
-      src='/thumbs/fallback/place_fallback.jpg'
+      src='~/assets/img/thumbs/fallback/place_fallback.jpg'
       :alt='currentMarkerDetails.title'
     )
 
