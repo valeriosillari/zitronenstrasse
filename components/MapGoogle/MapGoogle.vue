@@ -1,5 +1,10 @@
 <template lang="pug">
   .map-main-wrapper.map-wrapper-sidebar-push(v-bind:class='isSidebarBindClass')
+    //- hidden heading for seo.
+    //- inside component for design reasons (I'm lazy)
+    h1.heading-title
+      | Zitronenstrasse
+
     .google-map#google-map
 
     //- Sidebar
@@ -17,6 +22,10 @@
   .map-main-wrapper
     position: relative
     height: $map_height
+
+  // title for seo
+  .heading-title
+    display: none
 
   // WRAPPER classes
   .map-wrapper-sidebar-push
