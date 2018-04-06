@@ -238,7 +238,7 @@ module.exports = {
   ** Customize the Vue Plugins
   */
   plugins: [
-    '~/plugins/vue-lazyload'
+    // empty
   ],
 
   /*
