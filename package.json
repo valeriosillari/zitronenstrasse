@@ -21,6 +21,7 @@
   "dependencies": {
     "@nuxtjs/font-awesome": "^1.0.3",
     "@nuxtjs/google-analytics": "^2.0.2",
+    "@nuxtjs/sitemap": "^0.0.3",
     "bootstrap": "v4.0.0",
     "breakpoint-sass": "^2.7.1",
     "dotenv": "^4.0.0",
