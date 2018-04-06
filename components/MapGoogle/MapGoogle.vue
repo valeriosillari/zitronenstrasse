@@ -102,7 +102,8 @@
         isScreenBig: false,
         // our core element
         currentMarkerDetails: {
-          title: false,
+          // for seo reasons.
+          title: 'Zitronenstrasse Placeholder Thumb',
           thumb: false,
           thumbCredits: false,
           address: false,
