@@ -108,15 +108,23 @@ heroku run XXXyourcommandXXX
 
 #### TODO
 
+- **IMAGES in ASSETS FOLDER**: set all images in asset folder. now in static folder. not quite sure if it is the right place.
+
 - **LAZY LOAD**: set logic for place images. we have added plugin, but we got issues with images.
 
 - **MAP PAN (movement)**: set it slow and nicer/smoother
 
 - **MAP CUSTOM STYLES**: at map movement it is always flickering cause of image request. is is ok? could we prevent it?
 
-- **HEADLINE**: on homepage/map set some kind of headline for recognizing the website brand
+- **MAP FILTER**: show places sorted by some kind of filter (only bars, only restaurants etc ...). Design + Code need to a concept.
+
+- **HEADLINE**: on homepage/map set some kind of headline for recognising the website brand
+
+- **SEO FIXES**: check how to improve seo logic for pages
 
 - **NO JS message**: if browser has NO-JS set ...
+
+- **HTTPS**: this is connect to our provider and DNS ... long story ...
 
 
 
@@ -124,7 +132,7 @@ heroku run XXXyourcommandXXX
 
 - **PERFORMANCE**:
 
-  async / defer js as external JS has some issues on INCOGNITO mode.
+  async / defer js as external JS has some issues on INCOGNITO and NORMAL mode.
 
   Looks like we have an issue with js map on http domain (http://www.zitronenstrasse.com)
 
