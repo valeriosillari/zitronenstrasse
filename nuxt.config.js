@@ -192,6 +192,25 @@ module.exports = {
   },
 
   /*
+  ** Site Map Options
+  */
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: ogUrl,
+    cacheTime: 1000 * 60 * 15,
+    // Enable me when using nuxt generate
+    generate: false,
+    exclude: [
+      // empty
+    ],
+    routes: [
+      { url: '/', changefreq: 'daily' },
+      { url: '/about', changefreq: 'daily' },
+      { url: '/contact', changefreq: 'daily' }
+    ]
+  },
+
+  /*
   ** Build configuration
   */
   build: {
@@ -252,6 +271,7 @@ module.exports = {
         id: googleAnalyticsKey
       }
     ],
+    '@nuxtjs/sitemap',
     '@nuxtjs/font-awesome'
   ]
 }
