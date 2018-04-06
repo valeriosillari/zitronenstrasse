@@ -1,7 +1,7 @@
 <template lang="pug">
   .cippa
     img(src='~/assets/img/thumbs/fallback/fallback.png')
-    img(src='~/assets/img/thumbs/places/place_001.png')      
+    img(src='~/assets/img/thumbs/places/place_001.png')   
 </template>
 
 

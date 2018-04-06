@@ -1,5 +1,3 @@
-<!-- this component actually is not with lazy load yet, we work on it ... -->
-
 <template lang="pug">
   .thumb-area
     img.thumb(
