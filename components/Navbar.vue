@@ -7,6 +7,7 @@
     <nuxt-link
       class="logo-link"
       to="/"
+      title="Home"
     >
       <svg
         class="logo"
@@ -41,6 +42,7 @@
             <nuxt-link
               v-on:click.native='navBarHandler(isNavOpen)'
               class="item-link"
+              title="Home"
               to="/"
             >
               Home
@@ -53,6 +55,7 @@
             <nuxt-link
               v-on:click.native='navBarHandler(isNavOpen)'
               class="item-link"
+              title="About"
               to="/about"
             >
               About
@@ -65,6 +68,7 @@
             <nuxt-link
               v-on:click.native='navBarHandler(isNavOpen)'
               class="item-link"
+              title="Contact"              
               to="/contact"
             >
               Contact
