@@ -699,6 +699,19 @@ const placesList = [
       lat: 52.5491494,
       lng: 13.408966
     }
+  },
+  {
+    // 052
+    // ChIJDd47W7ZPqEcRIQcDmqwJ85A
+    title: 'Galatea Wine and Music Berlin',
+    address: 'Lenaustraße 5, 12047',
+    thumb: '/thumbs/places/052_galatea.jpg',
+    thumbCredits: 'Galatea Wine and Music Berlin FB Page',
+    fbPage: 'https://www.facebook.com/GalateaWineBerlin/',
+    position: {
+      lat: 52.4899228,
+      lng: 13.4255371
+    }
   }
 ]
 
