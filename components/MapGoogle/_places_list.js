@@ -712,6 +712,20 @@ const placesList = [
       lat: 52.4899228,
       lng: 13.4255371
     }
+  },
+  {
+    // 053
+    // ChIJDaRG171PqEcRSpDqEb_nv6Y
+    title: 'MAMA KALO',
+    address: 'Herrfurthstraße 23, 12049',
+    thumb: '/thumbs/places/053_mamakalo.jpg',
+    thumbCredits: 'MAMA KALO Website',
+    website: 'http://mamakalo.de/',
+    fbPage: 'https://www.facebook.com/MAMAKALO/',
+    position: {
+      lat: 52.4767774,
+      lng: 13.4207261
+    }
   }
 ]
 
