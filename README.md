@@ -116,11 +116,13 @@ heroku run XXXyourcommandXXX
 
 - **MAP CUSTOM STYLES**: at map movement it is always flickering cause of image request. is is ok? could we prevent it?
 
-- **MAP FILTER**: show places sorted by some kind of filter (only bars, only restaurants etc ...). Design + Code need to a concept.
+- **FILTERS**: show places sorted by some kind of filter (only bars, only restaurants etc ...). Design + Code need to a concept.
+
+- **SHARE SINGLE PLACES**: suggestion for sharing (on FB, twitter, as link) only a single place on the map. Conceptually possible? we have to check
 
 - **HEADLINE**: on homepage/map set some kind of headline for recognising the website brand
 
-- **SEO FIXES**: check how to improve seo logic for pages
+- **SEO FIXES**: check how to improve SEO logic for pages
 
 - **NO JS message**: if browser has NO-JS set ...
 
