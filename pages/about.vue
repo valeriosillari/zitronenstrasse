@@ -93,7 +93,7 @@
         | I am
         | &nbsp;
         span.text-accent
-          | Valerio
+          | Valerio Sillari
         |. I am working as Frontend Developer and in the last years I've fallen in love with Berlin.
 
       p
