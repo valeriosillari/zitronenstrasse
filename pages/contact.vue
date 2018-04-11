@@ -63,7 +63,7 @@
           {
             hid: 'description',
             name: 'description',
-            content: `Contact | Zitronenstrasse | A mapping project to collect and share romantic spots in Berlin.`
+            content: `Contact | Zitronenstrasse | ${process.env.metaHeadDescription}`
           }
         ]
       }
