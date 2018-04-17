@@ -12,5 +12,10 @@ newrelic_agent.log
 # Nuxt generate
 dist
 
+# Generated Modernizr File
+# you need to copy and paste the code manually in plugin
+# more info here: https://github.com/nuxt/nuxt.js/issues/2525
+modernizr.js
+
 # Ignore ENV file with password keys (ENV DOT module)
 /env_variables/env_keys
