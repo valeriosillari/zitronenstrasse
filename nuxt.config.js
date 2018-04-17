@@ -7,7 +7,7 @@ const googleAnalyticsKey = process.env.GOOGLE_ANALYTICS_KEY || ''
 
 const headTitle = 'Zitronenstrasse | Romantic Spots in Berlin.'
 
-// used in head description in all the pages 
+// used in head description in all the pages
 const headDescription = 'A mapping project to collect and share romantic spots in Berlin.'
 
 // the URL set as variables: for redirect DNS
@@ -259,7 +259,7 @@ module.exports = {
   ** Customize the Vue Plugins
   */
   plugins: [
-    // empty
+    '~/plugins/modernizr-plugin'
   ],
 
   /*
