@@ -39,9 +39,9 @@ module.exports = {
     title: headTitle,
 
     // this htmlAttrs you need
-    // htmlAttrs: {
-    //   class: 'valerio-HTML'
-    // },
+    htmlAttrs: {
+      class: 'valerio-HTML no-js'
+    },
 
     // this bodyAttrs you need
     // bodyAttrs: {
