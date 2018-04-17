@@ -82,6 +82,12 @@
   // and remove some weird grey box set on right side from google
   .gm-style-cc
     display: none
+
+  // === no JS logic | modernizr ===
+  // not show map (google)
+  .no-js
+    .google-map
+      display: none
 </style>
 
 
