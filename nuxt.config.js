@@ -40,7 +40,11 @@ module.exports = {
 
     // this htmlAttrs you need
     htmlAttrs: {
-      class: 'valerio-HTML no-js'
+      // set class for MODERNIZR logic.
+      // we load via nuxt/vue plugin all the Custom Modernizr code we need
+      // little bit tricky: you have to generate code and copy/paste in plugin
+      // info here: https://github.com/nuxt/nuxt.js/issues/2525
+      class: 'no-js'
     },
 
     // this bodyAttrs you need
