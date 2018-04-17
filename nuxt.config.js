@@ -39,6 +39,7 @@ module.exports = {
     title: headTitle,
 
     // this htmlAttrs you need
+    // TODO: at page change, even with NO click menu, we got issue here ...
     htmlAttrs: {
       // set class for MODERNIZR logic.
       // we load via nuxt/vue plugin all the Custom Modernizr code we need

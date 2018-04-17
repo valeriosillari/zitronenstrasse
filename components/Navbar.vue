@@ -98,15 +98,15 @@
       navBarHandler: function (isNavOpen) {
         this.toggleBodyClassAtNavOpen(isNavOpen)
       }
-    },
-    head () {
-      return {
-        // like this it OVERRIDE the logic in vue config. we have to ADD just one class!!!
-        bodyAttrs: {
-          class: this.isNavOpen ? 'isNavigationOpenBody' : ''
-        }
-      }
     }
+    // head () {
+    //   return {
+    //     // like this it OVERRIDE the logic in vue config. we have to ADD just one class!!!
+    //     bodyAttrs: {
+    //       class: this.isNavOpen ? 'isNavigationOpenBody' : ''
+    //     }
+    //   }
+    // }
   }
 </script>
 
