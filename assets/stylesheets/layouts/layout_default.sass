@@ -1,0 +1,40 @@
+// common rules, used in all pages on the same layout
+
+html,
+body
+  margin: 0
+  padding: 0
+  height: 100%
+
+body,
+//the nuxt main elements
+#__nuxt,
+#__layout,
+.layout-wrapper
+  height: 100%
+  margin: 0px
+  padding: 0px
+
+.section
+  min-height: 100%
+
+a
+  color: $color_link
+  &:hover,
+  &:focus
+    color: $color_link_hvr
+    text-decoration: none
+
+// padding top for fixed header alignment
+.section-text
+  padding: 60px 0
+
+.text-accent
+  color: $color_text_accent
+
+// ------------------------------
+// no JS logic (modernizr)
+// class added to the <html> tag
+.no-js
+  body
+    background: cadetblue
