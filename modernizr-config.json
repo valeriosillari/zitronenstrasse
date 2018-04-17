@@ -4,6 +4,5 @@
     "setClasses"
   ],
   "feature-detects": [
-    "test/touchevents"
   ]
 }
