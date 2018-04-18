@@ -68,7 +68,7 @@
             <nuxt-link
               v-on:click.native='navBarHandler(isNavOpen)'
               class="item-link"
-              title="Contact"              
+              title="Contact"
               to="/contact"
             >
               Contact
@@ -264,4 +264,10 @@
 
         &:nth-of-type(4)
           animation-delay: .50s
+
+  // === no JS logic | modernizr ===
+  // not show menu button
+  .no-js
+    .btn-menu
+      display: none
 </style>

@@ -7,7 +7,7 @@ const googleAnalyticsKey = process.env.GOOGLE_ANALYTICS_KEY || ''
 
 const headTitle = 'Zitronenstrasse | Romantic Spots in Berlin.'
 
-// used in head description in all the pages 
+// used in head description in all the pages
 const headDescription = 'A mapping project to collect and share romantic spots in Berlin.'
 
 // the URL set as variables: for redirect DNS
@@ -38,9 +38,10 @@ module.exports = {
   head: {
     title: headTitle,
 
-    // this htmlAttrs you need
+    // this htmlAttrs removed for using correctly Modernizr no-js/js class
+    // NOT ADD any class attribute here !!!
     // htmlAttrs: {
-    //   class: 'valerio-HTML'
+    //   class: 'XXX'
     // },
 
     // this bodyAttrs you need
@@ -259,7 +260,7 @@ module.exports = {
   ** Customize the Vue Plugins
   */
   plugins: [
-    // empty
+    '~/plugins/modernizr-plugin'
   ],
 
   /*
