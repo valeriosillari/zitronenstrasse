@@ -124,10 +124,6 @@ heroku run XXXyourcommandXXX
 
 - **HEADLINE**: on homepage/map set some kind of headline for recognising the website brand
 
-- **SEO FIXES**: check how to improve SEO logic for pages
-
-- **NO JS message**: if browser has NO-JS set ...
-
 - **HTTPS**: this is connect to our provider and DNS ... long story ...
 
 
@@ -138,7 +134,7 @@ heroku run XXXyourcommandXXX
 
   async / defer js as external JS has some issues on INCOGNITO and NORMAL mode.
 
-  Looks like we have an issue with js map on http domain (http://www.zitronenstrasse.com)
+  Looks like we have an issue with js map on http domain (http://zitronenstrasse.com)
 
   with https looks fine.
 
