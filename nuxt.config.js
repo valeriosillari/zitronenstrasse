@@ -38,15 +38,11 @@ module.exports = {
   head: {
     title: headTitle,
 
-    // this htmlAttrs you need
-    // TODO: at page change, even with NO click menu, we got issue here ...
-    htmlAttrs: {
-      // set class for MODERNIZR logic.
-      // we load via nuxt/vue plugin all the Custom Modernizr code we need
-      // little bit tricky: you have to generate code and copy/paste in plugin
-      // info here: https://github.com/nuxt/nuxt.js/issues/2525
-      class: 'no-js'
-    },
+    // this htmlAttrs removed for using correctly Modernizr no-js/js class
+    // NOT ADD any class attribute here !!!
+    // htmlAttrs: {
+    //   class: 'XXX'
+    // },
 
     // this bodyAttrs you need
     // bodyAttrs: {
