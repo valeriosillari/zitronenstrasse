@@ -6,8 +6,8 @@
   "license": "GPL-3.0",
   "private": true,
   "engines": {
-    "node": ">= v9.5.0",
-    "yarn": ">= v1.3.2"
+    "node": ">= v10.0.0",
+    "yarn": ">= v1.6.0"
   },
   "scripts": {
     "dev": "node server.js",
