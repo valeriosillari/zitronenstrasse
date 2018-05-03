@@ -4,7 +4,9 @@ const webpack = require('webpack')
 // set GOOGLE keys via dotenv
 const googleMapApiKey = process.env.GOOGLE_MAP_API_KEY || ''
 const googleAnalyticsKey = process.env.GOOGLE_ANALYTICS_KEY || ''
+const googleVerificationOwnerKey = process.env.GOOGLE_VERIFICATION_OWNER_KEY || ''
 
+// main title
 const headTitle = 'Zitronenstrasse | Romantic Spots in Berlin.'
 
 // used in head description in all the pages
@@ -149,7 +151,15 @@ module.exports = {
         hid: `twitter:image:alt`,
         property: 'twitter:image:alt',
         content: ogTitle
-      }
+      },
+      // meta for google verificagion
+      // alternative mode, NOT HTML file added in the root
+      // https://support.google.com/webmasters/answer/35179?hl=en
+      // check "HTML tag" option
+      {
+        name: 'google-site-verification',
+        content: googleVerificationOwnerKey
+      },
     ],
     link: [
       // favicon
