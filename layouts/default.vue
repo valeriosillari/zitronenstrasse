@@ -22,7 +22,7 @@
     },
     // mounted: WHEN ALL code on server is already loaded!
     mounted () {
-      console.log('🍋 🍋 🍋 - test verification owner key. test LIVE')
+      console.log('🍋')
     }
   }
 </script>
