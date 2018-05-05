@@ -5,7 +5,7 @@
         .col-10.col-sm-8.col-left
           p.text
             | Zitronenstrasse | {{ dateYear }} | A project by
-            | &nbsp;
+            |
             a.item-link(href='http://www.valeriosillari.com/', title='Valerio Sillari', target='_blank')
               | Valerio Sillari
 

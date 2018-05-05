@@ -22,23 +22,23 @@
 
       p
         | Whatever it is your message,
-        | &nbsp;
+        |
         span.text-accent
           | we’d love to hear your romantic thoughts!
 
       P
         | Write us an
-        | &nbsp;
+        |
         a.link-contact(href='mailto:hello@zitronenstrasse.com')
           | Email
-        | &nbsp;
+        |
         | or follow us on
-        | &nbsp;
+        |
         a.link-social(href='https://www.facebook.com/zitronenstrasse/', title='Zitronenstrasse on Facebook', target='_blank')
           | Facebook
-        | &nbsp;
+        |
         | or
-        | &nbsp;
+        |
         a.link-social(href='https://twitter.com/zitronenstrasse' title='Zitronenstrasse on Twitter', target='_blank')
           | Twitter
 </template>

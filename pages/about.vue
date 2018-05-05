@@ -7,7 +7,7 @@
       p
         span.text-accent
           | Zitronenstrasse
-        | &nbsp;
+        |
         | is a mapping project to collect and share romantic spots in Berlin.
 
       p
@@ -23,7 +23,7 @@
 
       p
         | However,
-        | &nbsp;
+        |
         span.text-accent
           | sometimes finding the right place for the right mood is so hard
         | , even harder when you are looking for a romantic place. It has to be nice, but not uptight; it needs good music, but not too loud; cool drinks and a good menu, but nothing too classy; with fancy people, but not too crowded.
@@ -42,7 +42,7 @@
       p
         span.text-accent
           | Why Zitronenstrasse?
-        | &nbsp;
+        |
         | It’s just a name of a street? It’s real one? What does it mean?
 
       p
@@ -50,35 +50,35 @@
 
       p
         | Zitronenstrasse is an
-        | &nbsp;
+        |
         span.text-accent
           | inside joke between two languages
         |, German and Italian.
 
       p
         | Italians know well what a
-        | &nbsp;
+        |
         i
           | limone
-        | &nbsp;
+        |
         | (literally:
-        | &nbsp;
+        |
         i
           | lemon
         |) is: it's a slang word for
-        | &nbsp;
+        |
         i
           | making out (limonare)
         |.
 
       p
         | Being in Germany we thought about
-        | &nbsp;
+        |
         i
           | The street of lemons
-        | &nbsp;
+        |
         | in the local language:
-        | &nbsp;
+        |
         i
           | Zitronen-strasse
         |, the romantic street for (hopefully) making out.
@@ -90,11 +90,11 @@
         | The Author
 
       p
-        | I am
-        | &nbsp;
+        | I'm
+        |
         span.text-accent
           | Valerio Sillari
-        |. I am working as Frontend Developer and in the last years I've fallen in love with Berlin.
+        |. I'm working as Frontend Developer and in the last years I've fallen in love with Berlin.
 
       p
         | So I decided to create this website to collect all the nice romantic places I've found and play with new frontend languages.

@@ -9,7 +9,7 @@
         | You can also continue watching the website without Javascript, but you will lose a lot of fun ...
       p
         | To enable JS follow the info
-        | &nbsp;
+        |
         a(href='https://enable-javascript.com/', target='_blank', title='Enable Javascript')
           | here
 </template>
