@@ -726,6 +726,19 @@ const placesList = [
       lat: 52.4767774,
       lng: 13.4207261
     }
+  },
+  {
+    // 054
+    // ChIJ1deWK2ZQqEcR7iiuf3wwW4o
+    title: 'Rudolph-Wilde Park',
+    address: 'Kufsteiner Straße, 10825',
+    thumb: '/thumbs/places/054_rudolph_wilde_park.jpg',
+    thumbCredits: 'Zitronenstrasse',
+    website: 'https://www.berlin.de/senuvk/umwelt/stadtgruen/gruenanlagen/de/gruenanlagen_plaetze/schoeneberg/rudolph_wilde_park/index.shtml',
+    position: {
+      lat: 52.4828472,
+      lng: 13.3411489
+    }
   }
 ]
 
