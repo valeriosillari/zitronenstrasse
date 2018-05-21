@@ -743,7 +743,7 @@ const placesList = [
   {
     // 055 (Restaurant RioGrande)
     // ChIJx8Iw5VFOqEcRXUgfWxkmAaA
-    title: 'Red Ballonn View',
+    title: 'Red Balloon View',
     address: 'May-Ayim-Ufer 9/11, 10997',
     thumb: '/thumbs/places/055_red_balloon_view.jpg',
     thumbCredits: 'Zitronenstrasse',
