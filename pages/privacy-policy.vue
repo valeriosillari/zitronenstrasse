@@ -5,7 +5,21 @@
         | Privacy Policy
 
       p
-        | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur perspiciatis dignissimos, ad? Nostrum vero eligendi quos temporibus, debitis, molestiae odio repellat enim iusto ipsa repellendus, quo eaque earum, hic laudantium!
+        | This site uses cookies – small text files that are placed on your machine to help the site provide a better user experience.
+
+      p
+        | In general, cookies are used to retain user preferences, store information for things like shopping carts, and provide anonymised tracking data to third party applications like Google Analytics. As a rule, cookies will make your browsing experience better.
+
+      p
+        | However, you may prefer to disable cookies on this site and on others.
+
+      p
+        | The most effective way to do this is to disable cookies in your browser. We suggest consulting the "Help Section" of your browser or taking a look at the
+        |
+        a.link-text(href='https://www.aboutcookies.org/', target='_blank')
+          | About Cookies Website
+        |
+        | which offers guidance for all modern browsers
 </template>
 
 
