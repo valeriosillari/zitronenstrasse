@@ -219,7 +219,8 @@ module.exports = {
     routes: [
       { url: '/', changefreq: 'daily' },
       { url: '/about', changefreq: 'daily' },
-      { url: '/contact', changefreq: 'daily' }
+      { url: '/contact', changefreq: 'daily' },
+      { url: '/privacy-policy', changefreq: 'daily' }
     ]
   },
 
