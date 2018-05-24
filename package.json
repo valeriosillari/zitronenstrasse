@@ -24,7 +24,6 @@
     "@nuxtjs/sitemap": "^0.0.3",
     "bootstrap": "v4.0.0",
     "breakpoint-sass": "^2.7.1",
-    "cookieconsent": "^3.0.6",
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
     "hover.css": "^2.2.1",
@@ -35,7 +34,8 @@
     "pug": "^2.0.0-rc.4",
     "pug-loader": "^2.3.0",
     "sass-loader": "^6.0.6",
-    "style-loader": "^v0.19.1"
+    "style-loader": "^v0.19.1",
+    "vue-cookie-law": "^1.6.0"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
