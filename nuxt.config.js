@@ -219,7 +219,8 @@ module.exports = {
     routes: [
       { url: '/', changefreq: 'daily' },
       { url: '/about', changefreq: 'daily' },
-      { url: '/contact', changefreq: 'daily' }
+      { url: '/contact', changefreq: 'daily' },
+      { url: '/privacy-policy', changefreq: 'daily' }
     ]
   },
 
@@ -270,7 +271,8 @@ module.exports = {
   ** Customize the Vue Plugins
   */
   plugins: [
-    '~/plugins/modernizr-plugin'
+    '~/plugins/modernizr-plugin',
+    '~/plugins/vue-cookie-law'
   ],
 
   /*

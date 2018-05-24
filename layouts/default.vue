@@ -8,17 +8,21 @@
     FooterArea
     //- no js fallback
     NoJsFallback
+    //- Privacy Policy Banner
+    PrivacyPolicyBanner      
 </template>
 
 <script>
   import Navbar from '~/components/Navbar.vue'
   import FooterArea from '~/components/FooterArea.vue'
   import NoJsFallback from '~/components/NoJsFallback.vue'
+  import PrivacyPolicyBanner from '~/components/PrivacyPolicyBanner.vue'
   export default {
     components: {
       Navbar,
       FooterArea,
-      NoJsFallback
+      NoJsFallback,
+      PrivacyPolicyBanner
     },
     // mounted: WHEN ALL code on server is already loaded!
     mounted () {
