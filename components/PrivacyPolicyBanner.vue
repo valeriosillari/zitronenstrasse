@@ -1,4 +1,7 @@
 <template lang="pug">
+  //- small trick for SSR (document not found) using SSR tag.
+  //- info here:
+  //- https://github.com/apertureless/vue-cookie-law/issues/19 | indifisher commented on 23 Apr
   no-ssr
     cookie-law(theme='lemon-theme' buttonText='I agree')
       div(slot='message')
