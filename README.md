@@ -109,6 +109,8 @@ heroku run XXXyourcommandXXX
 
 #### TODO
 
+- **ALERT**: issue with DEPLOy with node + yarn + dependencies!!!
+
 - **SVG on IE**: we have to check if we see markers custom svg on windows
 
 - **IMAGES in ASSETS FOLDER**: set all images in asset folder. now in static folder. not quite sure if it is the right place.
