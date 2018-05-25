@@ -29,28 +29,19 @@
       P
         | Write us an
         |
-        a.link-contact(href='mailto:hello@zitronenstrasse.com')
+        a.link-text(href='mailto:hello@zitronenstrasse.com')
           | Email
         |
         | or follow us on
         |
-        a.link-social(href='https://www.facebook.com/zitronenstrasse/', title='Zitronenstrasse on Facebook', target='_blank')
+        a.link-text(href='https://www.facebook.com/zitronenstrasse/', title='Zitronenstrasse on Facebook', target='_blank')
           | Facebook
         |
         | or
         |
-        a.link-social(href='https://twitter.com/zitronenstrasse' title='Zitronenstrasse on Twitter', target='_blank')
+        a.link-text(href='https://twitter.com/zitronenstrasse' title='Zitronenstrasse on Twitter', target='_blank')
           | Twitter
 </template>
-
-
-<style lang="sass">
-  .link-contact,
-  .link-social
-    text-decoration: underline
-    &:hover
-      text-decoration: underline
-</style>
 
 
 <script>

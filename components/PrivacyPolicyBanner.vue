@@ -8,7 +8,7 @@
         | This site uses some cookies in order to count visits. By clicking the 'I agree' button you give your consent.
         | More info here about Privacy Policy
         |
-        nuxt-link(to='/privacy-policy' title='Privacy Policy Info')
+        nuxt-link.link-text(to='/privacy-policy' title='Privacy Policy Info')
           | here
         |.
 </template>
@@ -24,16 +24,16 @@
 
 <style lang="sass">
   .Cookie--lemon-theme
-    background: #212121
     padding: 20px 15px
+    background: $color_banner_bg
     .Cookie__content
-      color: #c1c1c1
+      color: $color_banner_content_text
 
     .Cookie__button
-      border: 1px solid $color_main
       padding: 10px 45px
-      color: $color_white
+      border: 1px solid $color_banner_btn_border
+      color: $color_banner_btn_txt
       &:hover
-        border: 1px solid $color_light_01
-        color: $color_light_01
+        border: 1px solid $color_banner_btn_border_hvr
+        color: $color_banner_btn_txt_hvr
 </style>
