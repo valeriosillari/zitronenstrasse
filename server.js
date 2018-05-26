@@ -23,10 +23,3 @@ if (config.dev) {
 app.use(nuxt.render)
 // Listen the server
 .listen(port)
-
-// eslint-disable-line no-console
-console.log(`
-++++++++++++++++++++++++++++++++++++++++++++++++
-Served on localhost:${port}
-++++++++++++++++++++++++++++++++++++++++++++++++
-`)
