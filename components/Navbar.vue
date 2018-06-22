@@ -96,7 +96,9 @@
       },
       // at click trigger here more events
       navBarHandler: function (isNavOpen) {
-        this.toggleBodyClassAtNavOpen(isNavOpen)
+        setTimeout(() => {
+          this.toggleBodyClassAtNavOpen(isNavOpen)
+        }, 300)
       }
     },
     head () {
@@ -179,7 +181,7 @@
     height: 0%
     opacity: 0
     visibility: hidden
-    transition: opacity .35s, visibility .35s, height .35s
+    transition: opacity $animation_navigation_overlay, visibility $animation_navigation_overlay, height $animation_navigation_overlay
     overflow: hidden
 
     nav
@@ -263,7 +265,7 @@
           animation-delay: .45s
 
         &:nth-of-type(4)
-          animation-delay: .50s
+          animation-delay: .5s
 
   // === no JS logic | modernizr ===
   // not show menu button
