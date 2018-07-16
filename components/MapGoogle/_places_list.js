@@ -761,8 +761,8 @@ const placesList = [
     thumbCredits: 'Zosse FB Page',
     fbPage: 'https://www.facebook.com/ZosseBar/',
     position: {
-      lat: 52.4749825,
-      lng: 13.4441024
+      lat: 52.4749991,
+      lng: 13.4437522
     }
   },
   {
