@@ -1,7 +1,13 @@
 // INFO: a js file with a object with all the places.
+
+// 1)
+// list of places called from static folder: as an API object
+
+// 2)
 // images are set inside our folder (static one).
 // but the original ones are from the web.
 // we set credits for each of it.
+
 const placesList = [
   {
     // 001
@@ -750,6 +756,32 @@ const placesList = [
     position: {
       lat: 52.502094,
       lng: 13.443147
+    }
+  },
+  {
+    // 056
+    // ChIJIzn7BchPqEcRF5uxEeEl-JE
+    title: 'Zosse',
+    address: 'Richardstraße 37, 12043',
+    thumb: '/thumbs/places/056_zosse.jpg',
+    thumbCredits: 'Zosse FB Page',
+    fbPage: 'https://www.facebook.com/ZosseBar/',
+    position: {
+      lat: 52.4749991,
+      lng: 13.4437522
+    }
+  },
+  {
+    // 057
+    // ChIJe-JZ6sRPqEcR57AEB-9Vg90
+    title: 'Floating University Berlin',
+    address: 'Lilienthalstraße 32, 10965 ',
+    thumb: '/thumbs/places/057_floating_university_berlin.jpg',
+    thumbCredits: 'Zitronenstrasse',
+    website: 'http://www.floatinguniversity.org/',
+    position: {
+      lat: 52.4847201,
+      lng: 13.4065031
     }
   }
 ]
