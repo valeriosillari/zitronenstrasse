@@ -1,7 +1,13 @@
 // INFO: a js file with a object with all the places.
+
+// 1)
+// list of places called from static folder: as an API object
+
+// 2)
 // images are set inside our folder (static one).
 // but the original ones are from the web.
 // we set credits for each of it.
+
 const placesList = [
   {
     // 001

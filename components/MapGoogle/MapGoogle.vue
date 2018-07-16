@@ -96,7 +96,8 @@
 <script>
   import Sidebar from '~/components/Sidebar.vue'
   import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
-  import placesList from '~/components/MapGoogle/_places_list.js'
+  // list of places called from static folder: as an API object
+  import placesList from '~/static/places_list.js'
 
   export default {
     components: {
