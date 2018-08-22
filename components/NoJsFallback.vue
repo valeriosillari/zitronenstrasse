@@ -41,11 +41,11 @@
       border-bottom: 1px solid $color_fallback_border
       color: $color_fallback_text
       // fade in animation
-      animation: 3s ease 0s normal forwards 1 fadein
+      animation: 5s ease 0s normal forwards 1 fadein
 
       // content area: centered by flexbox
       .content
         padding: 10px 15px
         font-size: 0.75rem
-        line-height: 0.6rem
+        line-height: .9rem
 </style>
