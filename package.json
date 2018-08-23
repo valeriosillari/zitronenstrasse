@@ -35,7 +35,8 @@
     "pug-loader": "^2.3.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^v0.19.1",
-    "vue-cookie-law": "^1.6.0"
+    "vue-cookie-law": "^1.6.0",
+    "vue2-google-maps": "^0.10.2"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",
