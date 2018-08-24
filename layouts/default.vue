@@ -26,7 +26,7 @@
     },
     // mounted: WHEN ALL code on server is already loaded!
     mounted () {
-      console.log('🍋 - develop 01')
+      console.log('🍋 - develop 02')
     }
   }
 </script>
