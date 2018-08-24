@@ -1,7 +1,23 @@
 <template>
-  <h1>
-    HERE!!!
-  </h1>
+  <div class="cippa">
+
+    <h1>
+      START
+    </h1>
+
+    <GmapMap
+      :center="{lat:10, lng:10}"
+      :zoom="7"
+      map-type-id="terrain"
+      style="width: 500px; height: 300px"
+    >
+    </GmapMap>
+
+    <h1>
+      END
+    </h1>
+
+  </div>
 </template>
 
 
