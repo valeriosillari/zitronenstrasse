@@ -284,7 +284,13 @@
       // ./ end init
       }
 
-      initMap()
+      // wait google Plugin set and attached to window object
+      if (window.google) {
+        initMap()
+      } else {
+        console.log('MAP not loaded 💩 💩 💩')
+      }
+
     // end mounted
     }
   }
