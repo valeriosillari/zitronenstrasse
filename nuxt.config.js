@@ -49,7 +49,7 @@ module.exports = {
     // this bodyAttrs you need
     // bodyAttrs: {
     //   // if you set this attribute in a component, that option will overwrite here the config file
-    //   class: 'valerio-BODY'
+    //   class: 'extra-body-class'
     // },
 
     meta: [
