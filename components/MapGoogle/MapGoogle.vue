@@ -285,11 +285,21 @@
       }
 
       // wait google Plugin set and attached to window object
-      if (window.google) {
-        initMap()
-      } else {
-        console.log('MAP not loaded 💩 💩 💩')
-      }
+      initMap()
+
+      // STILL GOT error
+
+      // TypeError: Cannot read property 'maps' of undefined
+      //     at a.mounted (index.9184bbb3c2c1d9918cc7.js:1)
+      //     at ke (vendor.c3f3f18d189f9d279731.js:2)
+      //     at Object.insert (vendor.c3f3f18d189f9d279731.js:2)
+      //     at C (vendor.c3f3f18d189f9d279731.js:2)
+      //     at pn.__patch__ (vendor.c3f3f18d189f9d279731.js:2)
+      //     at pn.t._update (vendor.c3f3f18d189f9d279731.js:2)
+      //     at pn.<anonymous> (vendor.c3f3f18d189f9d279731.js:2)
+      //     at $e.get (vendor.c3f3f18d189f9d279731.js:2)
+      //     at new $e (vendor.c3f3f18d189f9d279731.js:2)
+      //     at t (vendor.c3f3f18d189f9d279731.js:2)
 
     // end mounted
     }
