@@ -194,8 +194,10 @@ module.exports = {
 
     script: [
       {
-        // call google map javascript API
-        src: `https://maps.googleapis.com/maps/api/js?key=${googleMapApiKey}&v=3`,
+        // set version google map javascript API.
+        // list of versions here:
+        // https://developers.google.com/maps/documentation/javascript/releases
+        src: `https://maps.googleapis.com/maps/api/js?key=${googleMapApiKey}&v=3.34`,
         async: true,
         defer: true,
         // test no ssr option
