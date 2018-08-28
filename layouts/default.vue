@@ -23,10 +23,6 @@
       FooterArea,
       NoJsFallback,
       PrivacyPolicyBanner
-    },
-    // mounted: WHEN ALL code on server is already loaded!
-    mounted () {
-      console.log('🍋 🍋 🍋')
     }
   }
 </script>
