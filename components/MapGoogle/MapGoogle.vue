@@ -286,7 +286,7 @@
 
       // start
       setTimeout(function () {
-        console.log('🍋 - 11')
+        console.log('🍋')
         initMap()
       }, 250)
     }
