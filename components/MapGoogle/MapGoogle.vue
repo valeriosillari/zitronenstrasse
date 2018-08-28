@@ -6,16 +6,16 @@
       | Zitronenstrasse
 
     GmapMap(
-      class="gmap-container"
-      :center="center"
-      :zoom="zoom"
-      :options="options"
+      class='gmap-container'
+      :center='center'
+      :zoom='zoom'
+      :options='options'
     )
       gmap-marker(
-        :key="index"
-        v-for="(m, index) in markers"
-        :position="m.position"
-        :clickable="true"
+        :key='index'
+        v-for='(m, index) in markers'
+        :position='m.position'
+        :clickable='true'
       )
     //- Sidebar
 </template>
@@ -105,8 +105,8 @@
 
         // map position: set my custom BERLIN map info
         center: {
-          lat: 52.482841,
-          lng: 13.4252209
+          lat: 52.48383,
+          lng: 13.4395546
         },
 
         // map options
