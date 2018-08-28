@@ -100,6 +100,7 @@
 <script>
   // list of places called from static folder: as an API object
   import placesList from '~/static/places_list.js'
+  import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
 
   export default {
     data () {
@@ -114,8 +115,11 @@
 
         // map options
         options: {
-          disableDefaultUI: true,
-          attributionControl: false
+          streetViewControl: false,
+          fullscreenControl: false,
+          mapTypeControl: false,
+          // set custom map styles
+          styles: mapStylesDark
         },
 
         // markers : to test !!!
