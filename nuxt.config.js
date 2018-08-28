@@ -30,7 +30,8 @@ module.exports = {
   ** https://nuxtjs.org/api/configuration-env
   */
   env: {
-    metaHeadDescription: headDescription
+    metaHeadDescription: headDescription,
+    googleMapApiKey: googleMapApiKey
   },
 
   /*
@@ -252,7 +253,7 @@ module.exports = {
         })
       }
 
-      // vue2-google-maps
+      // for vue2-google-maps
       if (!ctx.isClient) {
         // This instructs Webpack to include `vue2-google-maps`'s Vue files
         // for server-side rendering
@@ -280,7 +281,8 @@ module.exports = {
   */
   plugins: [
     '~/plugins/modernizr-plugin',
-    '~/plugins/vue-cookie-law'
+    '~/plugins/vue-cookie-law',
+    '~/plugins/vue2-google-maps'
   ],
 
   /*
