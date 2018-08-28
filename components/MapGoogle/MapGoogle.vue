@@ -285,7 +285,11 @@
         // ./ end init
         }
 
-        initMap()
+        setTimeout(function () {
+          console.log('>>>>>> NOW SET TIMEOUT <<<<<<<')
+          console.log(google)
+          initMap()
+        }, 100)
       } else {
         console.log('MAP not loaded 💩 💩 💩')
       }
