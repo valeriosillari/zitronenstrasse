@@ -225,7 +225,8 @@ module.exports = {
   */
   build: {
     vendor: [
-      // here ...
+      // for google map on IE11
+      'babel-polyfill'
     ],
     plugins: [
       // set shortcuts as global for bootstrap
