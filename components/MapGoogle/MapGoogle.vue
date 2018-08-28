@@ -98,6 +98,9 @@
 
 
 <script>
+  // list of places called from static folder: as an API object
+  import placesList from '~/static/places_list.js'
+
   export default {
     data () {
       return {
@@ -118,28 +121,7 @@
         // markers : to test !!!
         // place ID finder:
         // https://developers.google.com/places/place-id
-        markers: [
-          // Molecule Men
-          {
-            position: {
-              lat: 52.4928835,
-              lng: 13.452538
-              // place ID
-              // ChIJlRNaZ_5OqEcRom1mEqQnRcw
-            }
-          },
-
-          // Flughafen / Airport Tempelhof
-          {
-            position: {
-              lat: 52.482371,
-              lng: 13.422217
-              // place ID
-              // ChIJmzoVxehPqEcRB6YzEZWqGuM
-            }
-          }
-
-        ]
+        markers: placesList
       }
     }
   }
