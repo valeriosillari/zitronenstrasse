@@ -187,8 +187,6 @@
         C18.2,61.7,14,51.7,14,40.8c0-10,3.3-18.4,10.9-26C31.6,8.2,40.8,4,50,4z"/>
         </svg>
         `
-        // we scale it but again with GOOGLE OPTION ... not good for our logic
-        // scaledSize: new google.maps.Size(50, 50)
       }
 
       // follow this tutorial
