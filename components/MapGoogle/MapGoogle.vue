@@ -178,8 +178,8 @@
       // https://s3-us-west-2.amazonaws.com/s.cdpn.io/134893/pin-red.svg
       const customMarker = {
         url: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/134893/pin-red.svg',
-        fillOpacity: 1,
-        scale: 0.5
+        // we scale it but again with GOOGLE OPTION ... not good for our logic
+        scaledSize: new google.maps.Size(50, 50)
       }
 
       // follow this tutorial
