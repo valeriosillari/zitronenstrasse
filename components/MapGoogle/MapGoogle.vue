@@ -266,9 +266,9 @@
       // ./ end init
       }
 
-      // start
-      setTimeout(function () {
-        console.log('🍋')
+      // start with delay. 200 is too fast
+      setTimeout(() => {
+        console.log('🍋 🍋')
         initMap()
       }, 250)
     }
