@@ -177,7 +177,10 @@
       // we follow the svg path to amazon and taken the path from the original url
       // https://s3-us-west-2.amazonaws.com/s.cdpn.io/134893/pin-red.svg
       const customMarker = {
-        url: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/134893/pin-red.svg',
+        url: `data:image/svg+xml;utf-8, \
+      <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"> \
+        <path fill="red" stroke="white" stroke-width="1.5" d="M3.5 3.5h25v25h-25z" ></path> \
+      </svg>`,
         // we scale it but again with GOOGLE OPTION ... not good for our logic
         scaledSize: new google.maps.Size(50, 50)
       }
