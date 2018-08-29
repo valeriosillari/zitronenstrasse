@@ -285,10 +285,10 @@
       }
 
       // start
-      setTimeout(function () {
-        console.log('🍋')
+      setTimeout(() => {
+        console.log('🍋 🍋 🍋')
         initMap()
-      }, 250)
+      }, 200)
     }
   }
 </script>
