@@ -234,7 +234,7 @@ module.exports = {
   */
   build: {
     vendor: [
-      // here ...
+      'babel-polyfill'
     ],
     plugins: [
       // set shortcuts as global for bootstrap
