@@ -15,11 +15,11 @@ const colorStroke = 'FFC832'
 
 const customMarker = {
   url: `data:image/svg+xml;utf-8, \
-  <svg enable-background="new 0 0 100 100" version="1.1" viewBox="0 0 100 100" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
-    <style type="text/css">
-      .st0{fill:${hashTag}${colorFill};stroke:${hashTag}${colorStroke};stroke-width:7;stroke-miterlimit:10;}
-    </style>
-    <path class="st0" d="M50,4c9.2,0,18.4,4.2,25.1,10.9c6.7,7.5,10.9,15.9,10.9,26s-4.2,20.9-10.9,27.6L50,94.4l-25.1-26  C18.2,61.7,14,51.7,14,40.8c0-10,3.3-18.4,10.9-26C31.6,8.2,40.8,4,50,4z"/>
+  <svg enable-background="new 0 0 25 30" version="1.1" viewBox="0 0 25 30" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
+  <style type="text/css">
+    .st0{fill:${hashTag}${colorFill};stroke:${hashTag}${colorStroke};stroke-width:3;stroke-miterlimit:10;}
+  </style>
+  <path class="st0" d="m12.5 2.2c2.6 0 5.2 1.2 7.1 3.1 1.9 2.1 3.1 4.5 3.1 7.3s-1.2 5.9-3.1 7.8l-7.1 7.3-7.1-7.3c-1.9-1.9-3.1-4.7-3.1-7.8 0-2.8 0.9-5.2 3.1-7.3 1.9-1.9 4.5-3.1 7.1-3.1z"/>
   </svg>
   `
 }
