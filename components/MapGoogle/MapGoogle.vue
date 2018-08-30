@@ -130,6 +130,11 @@
         // https://developers.google.com/places/place-id
         markers: placesList
       }
+    },
+
+    // mounted: WHEN ALL code on server is already loaded!
+    mounted () {
+      console.log('MOUNTED map componnet')
     }
   }
 </script>
