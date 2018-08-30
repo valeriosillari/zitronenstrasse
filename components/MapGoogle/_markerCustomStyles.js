@@ -13,6 +13,8 @@ const hashTag = '%23'
 const colorFill = 'EAB622'
 const colorStroke = 'FFC832'
 
+// for right dimension:
+// to the SVG add always Width and Height info
 const customMarker = {
   url: `data:image/svg+xml;utf-8, \
   <svg width="25" height="30" viewBox="0 0 25 30" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
