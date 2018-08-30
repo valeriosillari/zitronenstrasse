@@ -13,10 +13,11 @@
     )
       gmap-marker(
         :key='index'
-        v-for='(m, index) in markers'
-        :position='m.position'
+        v-for='(currentMarkerInfo, index) in markers'
+        :position='currentMarkerInfo.position'
         :icon='customMarker'
         :clickable='true'
+        @click='isMarkerClicked(currentMarkerInfo)'
       )
     //- Sidebar
 </template>
@@ -128,9 +129,16 @@
       }
     },
 
+    methods: {
+      isMarkerClicked (currentMarkerInfo) {
+        console.log('>>> MARKER CLICKED: info passed <<<')
+        console.log(currentMarkerInfo)
+      }
+    },
+
     // mounted: WHEN ALL code on server is already loaded!
     mounted () {
-      console.log('MOUNTED map componnet')
+      console.log('!!! MOUNTED map componnet !!!')
     }
   }
 </script>
