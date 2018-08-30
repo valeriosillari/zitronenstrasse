@@ -17,7 +17,7 @@
         :position='currentMarkerInfo.position'
         :icon='customMarker'
         :clickable='true'
-        @click='isMarkerClicked(currentMarkerInfo)'
+        @click='isMarkerClicked(google, currentMarkerInfo)'
       )
     //- Sidebar
 </template>
@@ -100,6 +100,7 @@
 
 
 <script>
+  import {gmapApi} from 'vue2-google-maps'
   // list of places called from static folder: as an API object
   import placesList from '~/static/places_list.js'
   import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
@@ -130,10 +131,14 @@
     },
 
     methods: {
-      isMarkerClicked (currentMarkerInfo) {
+      isMarkerClicked (google, currentMarkerInfo) {
         console.log('>>> MARKER CLICKED: info passed <<<')
-        console.log(currentMarkerInfo)
+        console.log(google)
       }
+    },
+
+    computed: {
+      google: gmapApi
     },
 
     // mounted: WHEN ALL code on server is already loaded!
