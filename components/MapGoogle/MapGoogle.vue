@@ -15,7 +15,7 @@
         :key='index'
         v-for='(m, index) in markers'
         :position='m.position'
-        :icon='markerCustomStyles'
+        :icon='customMarker'
         :clickable='true'
       )
     //- Sidebar
@@ -102,19 +102,17 @@
   // list of places called from static folder: as an API object
   import placesList from '~/static/places_list.js'
   import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
-  import markerCustomStyles from '~/components/MapGoogle/_markerCustomStyles.js'
+  import customMarker from '~/components/MapGoogle/_markerCustomStyles.js'
 
   export default {
     data () {
       return {
-        zoom: 14,
-
         // map position: set my custom BERLIN map info
         center: {
           lat: 52.48383,
           lng: 13.4395546
         },
-
+        zoom: 14,
         // map options
         options: {
           streetViewControl: false,
@@ -125,7 +123,7 @@
         },
 
         // custom styles for the marker
-        markerCustomStyles: markerCustomStyles,
+        customMarker: customMarker,
 
         // markers : to test !!!
         // place ID finder:
