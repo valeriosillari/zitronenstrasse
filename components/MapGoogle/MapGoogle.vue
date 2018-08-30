@@ -121,13 +121,9 @@
           // set custom map styles
           styles: mapStylesDark
         },
-
         // custom styles for the marker
         customMarker: customMarker,
-
-        // markers : to test !!!
-        // place ID finder:
-        // https://developers.google.com/places/place-id
+        // markers list as array
         markers: placesList
       }
     },
