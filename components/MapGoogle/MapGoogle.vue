@@ -1,5 +1,5 @@
 <template lang="pug">
-  .map-main-wrapper.map-wrapper-sidebar-push
+  .map-main-wrapper.map-wrapper-sidebar-push(v-bind:class='isSidebarBindClass')
     //- hidden heading for seo.
     //- inside component for design reasons (I'm lazy)
     h1.heading-title
@@ -12,7 +12,13 @@
       :zoom='zoom'
       :options='options'
     )
+
     //- Sidebar
+    .sidebar-animation
+      Sidebar(
+        :currentMarkerDetails='currentMarkerDetails',
+        v-on:isSidebarButtonClose='isSidebarClose()'
+      )
 </template>
 
 
@@ -93,15 +99,19 @@
 
 
 <script>
-  // list of places called from static folder: as an API object
   // import placesList from '~/static/places_list.js'
   import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
   // import customMarker from '~/components/MapGoogle/_markerCustomStyles.js'
+  import Sidebar from '~/components/Sidebar.vue'
 
   export default {
+    components: {
+      Sidebar
+    },
+
     data () {
       return {
-        // map position: set my custom BERLIN map info
+        // map
         center: {
           lat: 52.48383,
           lng: 13.4395546
@@ -114,7 +124,80 @@
           mapTypeControl: false,
           // set custom map styles
           styles: mapStylesDark
+        },
+        // rest of options
+        isScreenBig: false,
+        // our core element
+        currentMarkerDetails: {
+          // for seo reasons.
+          title: 'Zitronenstrasse Placeholder Thumb',
+          thumb: false,
+          thumbCredits: false,
+          address: false,
+          website: false,
+          fbPage: false,
+          position: {
+            lat: false,
+            lng: false
+          }
+        },
+        isSidebarBindClass: {
+          // first value is class to attach/bind, second value is status
+          'isOpenClass': false
+        },
+        isMapDragged: false
+      }
+    },
+
+    methods: {
+      // move map (animation) to current marker
+      panMovement (movementLatValue) {
+        this.map.panToWithOffset(
+          new window.google.maps.LatLng(
+            this.currentMarkerDetails.position.lat,
+            this.currentMarkerDetails.position.lng
+          ), movementLatValue, 0
+        )
+      },
+
+      markerAnimation (currentMarker) {
+        // todo: set better with NO timeout?
+        // start bounce
+        setTimeout(() => {
+          currentMarker.setAnimation(window.google.maps.Animation.BOUNCE)
+        }, 400)
+        // end bounce
+        setTimeout(() => {
+          currentMarker.setAnimation(null)
+        }, 1150)
+      },
+
+      isSidebarOpen (screen) {
+        this.isScreenBig = false
+        if (screen >= 576) {
+          this.isScreenBig = true
         }
+        // reset drag option
+        this.isMapDragged = false
+
+        // open sidebar (css animation in milleseconds)
+        // when function trigger, set value as TRUE. we change DATA value
+        // https://vuejs.org/v2/guide/reactivity.html#Change-Detection-Caveats
+        this.$set(this.isSidebarBindClass, 'isOpenClass', true)
+
+        if (this.isScreenBig) {
+          this.panMovement(-200)
+        }
+      },
+
+      isSidebarClose () {
+        // reset drag option
+        this.isMapDragged = false
+
+        // TOGGLE CLASS for close sidebar
+        // when function trigger, set value as TRUE. we change DATA value
+        // https://vuejs.org/v2/guide/reactivity.html#Change-Detection-Caveats
+        this.$set(this.isSidebarBindClass, 'isOpenClass', false)
       }
     },
 
@@ -123,10 +206,18 @@
       // wait having the map created. info and tips from this issue:
       // https://github.com/xkjyeah/vue-google-maps/issues/301
       this.$refs.map.$mapPromise.then(() => {
-        console.log('map created!!!')
+        // wait google Plugin set and attached to window object
         const google = window.google
-        // looks with got google object here
-        console.log(google)
+
+        // need to be here, after google is set
+        const initLogic = () => {
+          console.log('======================')
+          console.log(google)
+        // ./ end init
+        }
+
+        initLogic()
+      // ./ end map created
       })
     }
   }
