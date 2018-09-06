@@ -6,7 +6,7 @@
       | Zitronenstrasse
 
     GmapMap(
-      ref='map'
+      ref='mapRef'
       class='gmap-container'
       :center='center'
       :zoom='zoom'
@@ -205,10 +205,10 @@
     mounted () {
       // wait having the map created. info and tips from this issue:
       // https://github.com/xkjyeah/vue-google-maps/issues/301
-      this.$refs.map.$mapPromise.then(() => {
+      this.$refs.mapRef.$mapPromise.then((map) => {
         // wait google Plugin set and attached to window object
         const google = window.google
-
+        console.log(map)
         // need to be here, after google is set
         const initLogic = () => {
           console.log('======================')
