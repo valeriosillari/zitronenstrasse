@@ -271,10 +271,15 @@
       // ./ end init
       }
 
-      // start with delay.
-      setTimeout(() => {
-        initMap()
-      }, 300)
+      // test
+      window.addEventListener('load', () => {
+        if (window.google) {
+          initMap()
+          console.log('🚀 🚀 🚀')
+        } else {
+          console.log('💩 💩 💩')
+        }
+      }, false)
     }
   }
 </script>
