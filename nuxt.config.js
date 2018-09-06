@@ -30,7 +30,8 @@ module.exports = {
   ** https://nuxtjs.org/api/configuration-env
   */
   env: {
-    metaHeadDescription: headDescription
+    metaHeadDescription: headDescription,
+    googleMapApiKey: googleMapApiKey
   },
 
   /*
@@ -194,17 +195,7 @@ module.exports = {
 
     script: [
       {
-        // set version google map javascript API.
-        // list of versions here:
-        // https://developers.google.com/maps/documentation/javascript/releases
-        src: `https://maps.googleapis.com/maps/api/js?key=${googleMapApiKey}&v=3.34`,
-        async: true,
-        defer: true,
-        // test no ssr option
-        ssr: false
-        // set js at end of body:
-        // https://github.com/nuxt/nuxt.js/issues/241
-        // body: true
+        // js external here
       }
     ]
   },
@@ -234,6 +225,7 @@ module.exports = {
   */
   build: {
     vendor: [
+      // for google map on IE11
       'babel-polyfill'
     ],
     plugins: [
@@ -261,6 +253,19 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+
+      // for vue2-google-maps
+      if (!ctx.isClient) {
+        // This instructs Webpack to include `vue2-google-maps`'s Vue files
+        // for server-side rendering
+        config.externals.splice(0, 0, function (context, request, callback) {
+          if (/^vue2-google-maps($|\/)/.test(request)) {
+            callback(null, false)
+          } else {
+            callback()
+          }
+        })
+      }
     }
   },
 
@@ -277,7 +282,8 @@ module.exports = {
   */
   plugins: [
     '~/plugins/modernizr-plugin',
-    '~/plugins/vue-cookie-law'
+    '~/plugins/vue-cookie-law',
+    '~/plugins/vue2-google-maps'
   ],
 
   /*

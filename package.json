@@ -22,6 +22,7 @@
     "@nuxtjs/font-awesome": "^1.0.3",
     "@nuxtjs/google-analytics": "^2.0.2",
     "@nuxtjs/sitemap": "^0.0.3",
+    "babel-polyfill": "^6.26.0",
     "bootstrap": "v4.0.0",
     "breakpoint-sass": "^2.7.1",
     "dotenv": "^4.0.0",
@@ -35,7 +36,8 @@
     "pug-loader": "^2.3.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^v0.19.1",
-    "vue-cookie-law": "^1.6.0"
+    "vue-cookie-law": "^1.6.0",
+    "vue2-google-maps": "^0.10.2"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.3",

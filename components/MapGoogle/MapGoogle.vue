@@ -5,7 +5,13 @@
     h1.heading-title
       | Zitronenstrasse
 
-    .google-map#google-map
+    GmapMap(
+      ref='mapRef'
+      class='gmap-container'
+      :center='center'
+      :zoom='zoom'
+      :options='options'
+    )
 
     //- Sidebar
     .sidebar-animation
@@ -14,8 +20,6 @@
         v-on:isSidebarButtonClose='isSidebarClose()'
       )
 </template>
-
-
 
 
 <style lang="sass">
@@ -69,7 +73,7 @@
     .sidebar-animation
       right: 0px
 
-  .google-map
+  .vue-map-container
     position: absolute
     width: 100%
     height: 100%
@@ -94,12 +98,10 @@
 
 
 <script>
-  import Sidebar from '~/components/Sidebar.vue'
+  import placesList from '~/static/places_list.js'
   import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
   import customMarker from '~/components/MapGoogle/_markerCustomStyles.js'
-
-  // list of places called from static folder: as an API object
-  import placesList from '~/static/places_list.js'
+  import Sidebar from '~/components/Sidebar.vue'
 
   export default {
     components: {
@@ -108,6 +110,21 @@
 
     data () {
       return {
+        // map
+        center: {
+          lat: 52.48383,
+          lng: 13.4395546
+        },
+        zoom: 14,
+        // map options
+        options: {
+          streetViewControl: false,
+          fullscreenControl: false,
+          mapTypeControl: false,
+          // set custom map styles
+          styles: mapStylesDark
+        },
+        // rest of options
         isScreenBig: false,
         // our core element
         currentMarkerDetails: {
@@ -185,101 +202,77 @@
 
     // mounted: WHEN ALL code on server is already loaded!
     mounted () {
-    // wait google Plugin set and attached to window object
-      const google = window.google
-
-      // follow this tutorial
-      // https://wrightshq.com/playground/placing-multiple-markers-on-a-google-map-using-api-3/
-      const initMap = () => {
-        // init map canvas
-        const map = new google.maps.Map(document.getElementById('google-map'), {
-          center: {
-            lat: 52.48383,
-            lng: 13.4395546
-          },
-          zoom: 14,
-          // map options
-          options: {
-            streetViewControl: false,
-            fullscreenControl: false,
-            mapTypeControl: false,
-            // set custom map styles
-            styles: mapStylesDark
+      // wait having the map created. info and tips from this issue:
+      // https://github.com/xkjyeah/vue-google-maps/issues/301
+      this.$refs.mapRef.$mapPromise.then((map) => {
+        // wait google Plugin set and attached to window object
+        const google = window.google
+        // need to be here, after google is set
+        const initLogic = () => {
+          // function for PAN movement
+          google.maps.Map.prototype.panToWithOffset = function (latlng, offsetX, offsetY) {
+            let ov = new google.maps.OverlayView()
+            ov.onAdd = function () {
+              let proj = this.getProjection()
+              let aPoint = proj.fromLatLngToContainerPixel(latlng)
+              aPoint.x = aPoint.x + offsetX
+              aPoint.y = aPoint.y + offsetY
+              map.panTo(proj.fromContainerPixelToLatLng(aPoint))
+            }
+            ov.draw = () => {}
+            ov.setMap(this)
           }
-        })
 
-        // function for PAN movement
-        google.maps.Map.prototype.panToWithOffset = function (latlng, offsetX, offsetY) {
-          let ov = new google.maps.OverlayView()
-          ov.onAdd = function () {
-            let proj = this.getProjection()
-            let aPoint = proj.fromLatLngToContainerPixel(latlng)
-            aPoint.x = aPoint.x + offsetX
-            aPoint.y = aPoint.y + offsetY
-            map.panTo(proj.fromContainerPixelToLatLng(aPoint))
+          const setSingleMarker = (indexNumber, placeID) => {
+            let marker = new google.maps.Marker({
+              position: new google.maps.LatLng(placeID.position.lat, placeID.position.lng),
+              map: map,
+              title: placeID.title,
+              // set icon custom style
+              icon: customMarker
+            })
+
+            // at marker click ...
+            google.maps.event.addListener(marker, 'click', () => {
+              // update info in sidebar with current marker
+              this.currentMarkerDetails.title = placeID.title
+              this.currentMarkerDetails.thumb = placeID.thumb
+              this.currentMarkerDetails.thumbCredits = placeID.thumbCredits
+              this.currentMarkerDetails.address = placeID.address
+              this.currentMarkerDetails.position = placeID.position
+              this.currentMarkerDetails.website = placeID.website
+              this.currentMarkerDetails.fbPage = placeID.fbPage
+
+              // marker animation
+              this.markerAnimation(marker)
+
+              // open sidebar + PAN MOVE
+              this.isSidebarOpen(window.innerWidth)
+            })
+
+            return marker
+          // ./ end setSingleMarker
           }
-          ov.draw = () => {}
-          ov.setMap(this)
-        }
 
-        const setSingleMarker = (indexNumber, placeID) => {
-          let marker = new google.maps.Marker({
-            position: new google.maps.LatLng(placeID.position.lat, placeID.position.lng),
-            map: map,
-            title: placeID.title,
-            // set icon custom style
-            icon: customMarker
+          // Loop our LIST array and set marker on map
+          for (const [indexNumber, placeID] of placesList.entries()) {
+            setSingleMarker(indexNumber, placeID)
+          }
+
+          // return map so we can used it globally
+          this.map = map
+
+          // TODO: set as function?
+          // check if user is dragging the map. we need it later for close option
+          google.maps.event.addListener(map, 'dragend', () => {
+            this.isMapDragged = true
           })
-
-          // at marker click ...
-          google.maps.event.addListener(marker, 'click', () => {
-            // update info in sidebar with current marker
-            this.currentMarkerDetails.title = placeID.title
-            this.currentMarkerDetails.thumb = placeID.thumb
-            this.currentMarkerDetails.thumbCredits = placeID.thumbCredits
-            this.currentMarkerDetails.address = placeID.address
-            this.currentMarkerDetails.position = placeID.position
-            this.currentMarkerDetails.website = placeID.website
-            this.currentMarkerDetails.fbPage = placeID.fbPage
-
-            // marker animation
-            this.markerAnimation(marker)
-
-            // open sidebar + PAN MOVE
-            this.isSidebarOpen(window.innerWidth)
-          })
-
-          return marker
-        // ./ end setSingleMarker
+        // ./ end init
         }
 
-        // Loop our LIST array and set marker on map
-        for (const [indexNumber, placeID] of placesList.entries()) {
-          setSingleMarker(indexNumber, placeID)
-        }
-
-        // return map so we can used it globally
-        this.map = map
-
-        // TODO: set as function?
-        // check if user is dragging the map. we need it later for close option
-        google.maps.event.addListener(map, 'dragend', () => {
-          this.isMapDragged = true
-        })
-
-        return map
-      // ./ end init
-      }
-
-      // test
-      window.addEventListener('load', () => {
-        if (window.google) {
-          initMap()
-          console.log('🚀 🚀 🚀')
-        } else {
-          console.log('💩 💩 💩')
-        }
-      }, false)
+        initLogic()
+      // ./ end map created
+      })
     }
   }
 </script>
