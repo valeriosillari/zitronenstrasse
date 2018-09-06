@@ -142,6 +142,18 @@
         )
       },
 
+      markerAnimation (currentMarker) {
+        // todo: set better with NO timeout?
+        // start bounce
+        setTimeout(() => {
+          currentMarker.setAnimation(window.google.maps.Animation.BOUNCE)
+        }, 400)
+        // end bounce
+        setTimeout(() => {
+          currentMarker.setAnimation(null)
+        }, 1150)
+      },
+
       isSidebarOpen (screen) {
         this.isScreenBig = false
         if (screen >= 576) {
@@ -230,18 +242,11 @@
             this.currentMarkerDetails.website = placeID.website
             this.currentMarkerDetails.fbPage = placeID.fbPage
 
+            // marker animation
+            this.markerAnimation(marker)
+
             // open sidebar + PAN MOVE
             this.isSidebarOpen(window.innerWidth)
-
-            // todo: set better with NO timeout?
-            // START bounce
-            setTimeout(() => {
-              marker.setAnimation(google.maps.Animation.BOUNCE)
-            }, 400)
-            // END bounce
-            setTimeout(() => {
-              marker.setAnimation(null)
-            }, 1150)
           })
 
           return marker
