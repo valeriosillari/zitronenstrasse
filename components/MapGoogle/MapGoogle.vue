@@ -99,9 +99,9 @@
 
 
 <script>
-  // import placesList from '~/static/places_list.js'
+  import placesList from '~/static/places_list.js'
   import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
-  // import customMarker from '~/components/MapGoogle/_markerCustomStyles.js'
+  import customMarker from '~/components/MapGoogle/_markerCustomStyles.js'
   import Sidebar from '~/components/Sidebar.vue'
 
   export default {
@@ -208,11 +208,66 @@
       this.$refs.mapRef.$mapPromise.then((map) => {
         // wait google Plugin set and attached to window object
         const google = window.google
-        console.log(map)
         // need to be here, after google is set
         const initLogic = () => {
-          console.log('======================')
-          console.log(google)
+          // function for PAN movement
+          google.maps.Map.prototype.panToWithOffset = function (latlng, offsetX, offsetY) {
+            let ov = new google.maps.OverlayView()
+            ov.onAdd = function () {
+              let proj = this.getProjection()
+              let aPoint = proj.fromLatLngToContainerPixel(latlng)
+              aPoint.x = aPoint.x + offsetX
+              aPoint.y = aPoint.y + offsetY
+              map.panTo(proj.fromContainerPixelToLatLng(aPoint))
+            }
+            ov.draw = () => {}
+            ov.setMap(this)
+          }
+
+          const setSingleMarker = (indexNumber, placeID) => {
+            let marker = new google.maps.Marker({
+              position: new google.maps.LatLng(placeID.position.lat, placeID.position.lng),
+              map: map,
+              title: placeID.title,
+              // set icon custom style
+              icon: customMarker
+            })
+
+            // at marker click ...
+            google.maps.event.addListener(marker, 'click', () => {
+              // update info in sidebar with current marker
+              this.currentMarkerDetails.title = placeID.title
+              this.currentMarkerDetails.thumb = placeID.thumb
+              this.currentMarkerDetails.thumbCredits = placeID.thumbCredits
+              this.currentMarkerDetails.address = placeID.address
+              this.currentMarkerDetails.position = placeID.position
+              this.currentMarkerDetails.website = placeID.website
+              this.currentMarkerDetails.fbPage = placeID.fbPage
+
+              // marker animation
+              this.markerAnimation(marker)
+
+              // open sidebar + PAN MOVE
+              this.isSidebarOpen(window.innerWidth)
+            })
+
+            return marker
+          // ./ end setSingleMarker
+          }
+
+          // Loop our LIST array and set marker on map
+          for (const [indexNumber, placeID] of placesList.entries()) {
+            setSingleMarker(indexNumber, placeID)
+          }
+
+          // return map so we can used it globally
+          this.map = map
+
+          // TODO: set as function?
+          // check if user is dragging the map. we need it later for close option
+          google.maps.event.addListener(map, 'dragend', () => {
+            this.isMapDragged = true
+          })
         // ./ end init
         }
 
