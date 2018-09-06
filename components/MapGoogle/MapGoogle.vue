@@ -6,20 +6,12 @@
       | Zitronenstrasse
 
     GmapMap(
-      ref="map"
+      ref='map'
       class='gmap-container'
       :center='center'
       :zoom='zoom'
       :options='options'
     )
-      gmap-marker(
-        :key='index'
-        v-for='(currentMarkerInfo, index) in markers'
-        :position='currentMarkerInfo.position'
-        :icon='customMarker'
-        :clickable='true'
-        @click='isMarkerClicked(google, currentMarkerInfo)'
-      )
     //- Sidebar
 </template>
 
@@ -101,11 +93,10 @@
 
 
 <script>
-  import {gmapApi} from 'vue2-google-maps'
   // list of places called from static folder: as an API object
-  import placesList from '~/static/places_list.js'
+  // import placesList from '~/static/places_list.js'
   import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
-  import customMarker from '~/components/MapGoogle/_markerCustomStyles.js'
+  // import customMarker from '~/components/MapGoogle/_markerCustomStyles.js'
 
   export default {
     data () {
@@ -123,23 +114,7 @@
           mapTypeControl: false,
           // set custom map styles
           styles: mapStylesDark
-        },
-        // custom styles for the marker
-        customMarker: customMarker,
-        // markers list as array
-        markers: placesList
-      }
-    },
-
-    computed: {
-      google: gmapApi
-    },
-
-    methods: {
-      isMarkerClicked (google, currentMarkerInfo) {
-        console.log('>>> MARKER CLICKED: info passed <<<')
-        console.log(currentMarkerInfo)
-        console.log(google)
+        }
       }
     },
 
