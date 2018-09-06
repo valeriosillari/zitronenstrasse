@@ -770,20 +770,22 @@ const placesList = [
       lat: 52.4749991,
       lng: 13.4437522
     }
-  },
-  {
-    // 057
-    // ChIJe-JZ6sRPqEcR57AEB-9Vg90
-    title: 'Floating University Berlin',
-    address: 'Lilienthalstraße 32, 10965 ',
-    thumb: '/thumbs/places/057_floating_university_berlin.jpg',
-    thumbCredits: 'Zitronenstrasse',
-    website: 'http://www.floatinguniversity.org/',
-    position: {
-      lat: 52.4847201,
-      lng: 13.4065031
-    }
   }
+
+  // DISABLED ones
+  // {
+  //   // ...
+  //   // ChIJe-JZ6sRPqEcR57AEB-9Vg90
+  //   title: 'Floating University Berlin',
+  //   address: 'Lilienthalstraße 32, 10965 ',
+  //   thumb: '/thumbs/places/057_floating_university_berlin.jpg',
+  //   thumbCredits: 'Zitronenstrasse',
+  //   website: 'http://www.floatinguniversity.org/',
+  //   position: {
+  //     lat: 52.4847201,
+  //     lng: 13.4065031
+  //   }
+  // }
 ]
 
 export default placesList
