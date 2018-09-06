@@ -6,6 +6,7 @@
       | Zitronenstrasse
 
     GmapMap(
+      ref="map"
       class='gmap-container'
       :center='center'
       :zoom='zoom'
@@ -17,7 +18,7 @@
         :position='currentMarkerInfo.position'
         :icon='customMarker'
         :clickable='true'
-        @click='isMarkerClicked(google, currentMarkerInfo)'
+        @click='isMarkerClicked(currentMarkerInfo)'
       )
     //- Sidebar
 </template>
@@ -100,7 +101,6 @@
 
 
 <script>
-  import {gmapApi} from 'vue2-google-maps'
   // list of places called from static folder: as an API object
   import placesList from '~/static/places_list.js'
   import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
@@ -131,19 +131,22 @@
     },
 
     methods: {
-      isMarkerClicked (google, currentMarkerInfo) {
+      isMarkerClicked (currentMarkerInfo) {
         console.log('>>> MARKER CLICKED: info passed <<<')
-        console.log(google)
+        console.log(currentMarkerInfo)
       }
-    },
-
-    computed: {
-      google: gmapApi
     },
 
     // mounted: WHEN ALL code on server is already loaded!
     mounted () {
-      console.log('!!! MOUNTED map componnet !!!')
+      // wait having the map created. info and tips from this issue:
+      // https://github.com/xkjyeah/vue-google-maps/issues/301
+      this.$refs.map.$mapPromise.then(() => {
+        console.log('map created!!!')
+        const google = window.google
+        // looks with got google object here
+        console.log(google)
+      })
     }
   }
 </script>
