@@ -266,10 +266,10 @@
       // ./ end init
       }
 
-      // start with delay. 200 is too fast
+      // start with delay.
       setTimeout(() => {
         initMap()
-      }, 250)
+      }, 300)
     }
   }
 </script>
