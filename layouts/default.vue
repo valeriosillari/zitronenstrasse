@@ -23,6 +23,9 @@
       FooterArea,
       NoJsFallback,
       PrivacyPolicyBanner
+    },
+    mounted () {
+      console.log('🍋')
     }
   }
 </script>
