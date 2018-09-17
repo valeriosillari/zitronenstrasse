@@ -3,9 +3,9 @@
   //- info here:
   //- https://github.com/apertureless/vue-cookie-law/issues/19 | indifisher commented on 23 Apr
   no-ssr
-    cookie-law(theme='lemon-theme' buttonText='I agree')
+    cookie-law(theme='lemon-theme' buttonText='Ok')
       div(slot='message')
-        | This site uses some cookies in order to count visits. By clicking the 'I agree' button you give your consent.
+        | This site uses some cookies in order to count visits. By clicking the 'Ok' button on this banner you give your consent.
         | More info here about Privacy Policy
         |
         nuxt-link.link-text(to='/privacy-policy' title='Privacy Policy Info')
