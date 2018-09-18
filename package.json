@@ -23,7 +23,7 @@
     "@nuxtjs/google-analytics": "^2.0.2",
     "@nuxtjs/sitemap": "^0.0.3",
     "babel-polyfill": "^6.26.0",
-    "bootstrap": "v4.0.0",
+    "bootstrap": "^v4.1.0",
     "breakpoint-sass": "^2.7.1",
     "dotenv": "^4.0.0",
     "express": "^4.16.2",
