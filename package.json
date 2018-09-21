@@ -32,6 +32,7 @@
     "newrelic": "^v2.5.0",
     "node-sass": "^v4.7.2",
     "nuxt": "1.4.2",
+    "nuxt-sass-resources-loader": "^2.0.5",
     "pug": "^2.0.0-rc.4",
     "pug-loader": "^2.3.0",
     "sass-loader": "^6.0.6",
