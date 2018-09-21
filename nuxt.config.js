@@ -238,13 +238,6 @@ module.exports = {
     ** Run ESLint on save
     */
     extend (config, ctx) {
-      config.module.rules.forEach((rule) => {
-        // add to ALL vue modules the sass file 'global'
-        if (rule.test.toString() === '/\\.vue$/') {
-          rule.options.loaders.sass[2].options.data = '@import "./assets/stylesheets/global"'
-        }
-      })
-
       if (ctx.dev && ctx.isClient) {
         config.module.rules.push({
           enforce: 'pre',
@@ -290,6 +283,11 @@ module.exports = {
   ** Customize modules. now for google analytics
   */
   modules: [
+    // load SASS file globallythe
+    // nuxt-sass-resources-loade package | native options
+    ['nuxt-sass-resources-loader', {
+        resources: './assets/stylesheets/global.sass'
+    }],
     // Simple usage
     // https://github.com/nuxt-community/analytics-module
     [
