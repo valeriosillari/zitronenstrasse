@@ -4,7 +4,18 @@
       .row.align-items-center
         .col-10.col-sm-8.col-left
           p.text
-            | Zitronenstrasse | {{ dateYear }} | A project by
+            | Zitronenstrasse
+            |
+            | {{ dateYear }}
+            |
+            | |
+            |
+            nuxt-link.item-link(to='/privacy-policy', title='Privacy Policy')
+              | Privacy Policy
+            |
+            | |
+            |
+            | A project by
             |
             a.item-link(href='http://www.valeriosillari.com/', title='Valerio Sillari', target='_blank')
               | Valerio Sillari
