@@ -16,12 +16,12 @@
 
 
 
-      h3.sub-title
+      h2.sub-title
         | Data Controller Contact Information
 
       p
         | Valerio Sillari
-      
+
       p
         | Owner contact email:
         |
@@ -30,7 +30,7 @@
 
 
 
-      h3.sub-title
+      h2.sub-title
         | Types of Data collected
 
       p
@@ -43,12 +43,12 @@
         | Personal Data may be freely provided by the User, or, in case of Cookies, collected automatically when using the website.
 
 
-      h3.sub-title
+      h2.sub-title
         | The rights of Users
 
       p
         | User may exercise certain rights regarding Data processed by the Owner.
-      
+
       p
         | In particular, Users have the right to do the following:
 
@@ -72,7 +72,7 @@
 
 
 
-      h3.sub-title
+      h2.sub-title
         | How to exercise these rights
 
       p
@@ -80,21 +80,21 @@
 
 
 
-      h3.sub-title
+      h2.sub-title
         | We Collect Your Personal Data in the Following Ways
 
 
-      h5.sub-section
+      h3.sub-section
         | Cookies
-      
+
       p
         | When you enter and use our website and agree to accept cookies, some of these cookies may contain your Personal Data.
-      
+
       p
         | Cookies are small text files that are placed on your machine to help the site provide a better user experience. In general, cookies are used to retain user preferences, store information for things like shopping carts, and provide anonymised tracking data to third party applications like Google Analytics.
 
       p
-        | As a rule, cookies will make your browsing experience better. 
+        | As a rule, cookies will make your browsing experience better.
 
       p
         | However, you may prefer to disable cookies on this site and on others. The most effective way to do this is to disable cookies in your browser. We suggest consulting the Help section of your browser or taking a look at the
@@ -106,15 +106,15 @@
 
 
 
-      h5.sub-section
+      h3.sub-section
         | Google Analytics
-      
+
       p
-        | Our website uses Google Analytics to collect information about the use of our website. 
+        | Our website uses Google Analytics to collect information about the use of our website.
 
       p
         | Google Analytics is a web analysis service provided by Google Inc. (“Google”). Google utilizes the Data collected to track and examine the use of the website, to prepare reports on its activities and share them with other Google services. Google may use the Data collected to contextualize and personalize the ads of its own advertising network. This integration of Google Analytics anonymizes your IP address. It works by shortening Users' IP addresses within member states of the European Union or in other contracting states to the Agreement on the European Economic Area. Only in exceptional cases will the complete IP address be sent to a Google server and shortened within the US.
-      
+
       p
         | Personal Data collected: Cookies and Usage Data.
 
@@ -132,7 +132,7 @@
         |
         | Privacy Shield participant.
 
-      h3.sub-title
+      h2.sub-title
         | Sharing Informations with affiliates and other third parties
 
       p
@@ -140,28 +140,37 @@
 
 
 
-      h3.sub-title
+      h2.sub-title
         | Revoking your consent for using your personal data
 
       p
         | You have the right to revoke your consent for us to use your Personal Data at any time.
-      
+
       p
         | If you want to revoke your consent for us to use your Personal Data, send us an email with your request  directed to the Owner through the contact details provided in this document. 
 
 
 
-      h3.sub-title
+      h2.sub-title
         | Questions about our privacy policy
 
       p
         | If you have any questions about our privacy notice, please contact us using the information at the top of this privacy notice.
 
-
-      //- button go to homepage
-      a.btn.btn-back(href="/" alt=backButtonText, title=backButtonText)
-        =backButtonText
+      nuxt-link.error-link(to='/', title='Back to the home page')
+        | Back to the home page
 </template>
+
+
+<style lang="sass">
+  .sub-title
+    @extend .h3
+    margin-top: 60px
+
+  .sub-section
+    @extend .h5
+    margin-top: 30px
+</style>
 
 
 <script>

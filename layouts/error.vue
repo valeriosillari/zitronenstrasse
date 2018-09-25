@@ -15,7 +15,7 @@
         | {{ error.message }}
 
       p(v-if='error.statusCode === 404')
-        nuxt-link.error-link(to="/")
+        nuxt-link.error-link(to='/', title='Back to the home page')
           | Back to the home page
 </template>
 
