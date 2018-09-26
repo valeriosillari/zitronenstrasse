@@ -41,7 +41,8 @@ We deploying on **Heroku**, using **Codeship**.
 
 #### ENV OPTIONS
 
-You need to set some CONFIG VAR options locally and on Heroku for custom Plugins as Google Map, Analytics and New Relic.
+You need to set some CONFIG VAR options locally and on Heroku for custom Plugins as Google Map and Analytics.
+
 
 You can find which ones in the ENV example file:
 
