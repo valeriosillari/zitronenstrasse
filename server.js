@@ -1,4 +1,3 @@
-const newrelic = require('newrelic')
 const app = require('express')()
 const { Nuxt, Builder } = require('nuxt')
 

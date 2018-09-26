@@ -6,9 +6,3 @@ GOOGLE_MAP_API_KEY        = 'your_api_key'
 GOOGLE_ANALYTICS_KEY      = 'your_api_key'
 
 GOOGLE_VERIFICATION_OWNER_KEY = 'your_verification_owner_key'
-
-
-##########################################################
-# NEW RELIC
-
-NEW_RELIC_LICENSE_KEY     = 'your_license_key'

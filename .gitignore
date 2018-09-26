@@ -4,7 +4,6 @@ node_modules
 # logs
 npm-debug.log
 yarn-error.log
-newrelic_agent.log
 
 # Nuxt build
 .nuxt
