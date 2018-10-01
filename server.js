@@ -1,5 +1,9 @@
+const sslRedirect = require('heroku-ssl-redirect');
 const app = require('express')()
 const { Nuxt, Builder } = require('nuxt')
+
+// enable ssl redirect | heroku
+app.use(sslRedirect());
 
 const port = process.env.PORT || 3000
 
