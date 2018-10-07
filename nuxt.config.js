@@ -13,7 +13,8 @@ const headTitle = 'Zitronenstrasse | Romantic Spots in Berlin.'
 const headDescription = 'A mapping project to collect and share romantic spots in Berlin.'
 
 // the URL set as variables: for redirect DNS
-const thisAppMainUrl = 'www.zitronenstrasse.com'
+// with httpS: in case redirect take care of it
+const thisAppMainUrl = 'https://www.zitronenstrasse.com'
 
 // og for FB and Linkedin
 const ogUrl = thisAppMainUrl
