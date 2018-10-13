@@ -1,10 +1,15 @@
 import Vue from 'vue'
-import * as VueGoogleMaps from 'vue2-google-maps'
+import * as VueGoogleMaps from '~/node_modules/vue2-google-maps'
 
 Vue.use(VueGoogleMaps, {
   load: {
-    // todo: set here APKI key
-    key: 'YOUR_API_TOKEN',
-    libraries: 'places'
+    // our key for API set in google
+    // update: removed from here. we have to set new key from JUNE 2018
+    key: process.env.googleMapApiKey,
+    // set version. list of versions here:
+    // https://developers.google.com/maps/documentation/javascript/releases
+    version: '3.34'
+    // This is required if you use the Autocomplete plugin
+    // libraries: 'places'
   }
 })
