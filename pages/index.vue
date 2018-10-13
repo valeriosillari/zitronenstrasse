@@ -1,12 +1,18 @@
-<template lang="pug">
-  MapGoogle
-</template>
+<template>
+  <GmapMap
+    :center="{lat:10, lng:10}"
+    :zoom="7"
+    map-type-id="terrain"
+    style="width: 500px; height: 300px"
+  >
+    <GmapMarker
+      v-for="(m, index) in markers"    
+      :key="index"
+      :position="m.position"
+      :clickable="true"
+      :draggable="true"
+      @click="center=m.position"
+    />
 
-<script>
-  import MapGoogle from '~/components/MapGoogle/MapGoogle.vue'
-  export default {
-    components: {
-      MapGoogle
-    }
-  }
-</script>
+  </GmapMap>
+</template>
