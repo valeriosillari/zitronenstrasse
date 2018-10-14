@@ -4,9 +4,16 @@
     :center='center'
     :zoom='zoom'
     :options='options'
-    style="width: 800px; height: 400px"
+    class='gmap-container'
   )
 </template>
+
+
+<style lang="sass">
+  .gmap-container
+    width: 800px
+    height: 400px
+</style>
 
 
 <script>
