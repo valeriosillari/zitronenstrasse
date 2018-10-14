@@ -132,19 +132,9 @@ heroku run XXXyourcommandXXX
 
 #### ISSUES
 
-- **PERFORMANCE**:
-
-  async / defer js as external JS has some issues on INCOGNITO and NORMAL mode.
-
-  Looks like we have an issue with js map on http domain (http://zitronenstrasse.com)
-
-  with https looks fine.
-
-  https://security.googleblog.com/2017/04/next-steps-toward-more-connection.html
+- **SVG**: issue with svg and nuxt2. for compass on error page.
 
 
 #### NICE TO HAVE
-
-- **MAP COMPONENT**: set the JS code more modular
 
 - **CONTACT PAGE**: set node mailer and all the logic for form mailer
