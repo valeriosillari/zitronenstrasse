@@ -277,6 +277,12 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    plugins: [  
+      // set shortcuts as global for bootstrap  
+      new webpack.ProvidePlugin({ 
+        // here ... 
+      })  
+    ],
 
     /*
     ** You can extend webpack config here
@@ -294,7 +300,7 @@ module.exports = {
       // }
     },
 
-
+    // set logic for loading vue2 google map
     transpile: [/^vue2-google-maps($|\/)/]
   }
 }
