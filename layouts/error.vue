@@ -43,5 +43,8 @@
     height: 260px
     margin: 30px auto
     // we set svg as image in css. nuxt is happy, but we lost the fill color options
-    background-image: url('~/assets/img/svg/svg_icon_compass.svg')
+    // trick for assets loaded on Nuxt 2
+    // "~assets/", NOT "~/assets/" : removed slash
+    // info: https://github.com/nuxt/nuxt.js/issues/3723    
+    background-image: url('~assets/svg/svg_icon_compass.svg')
 </style>
