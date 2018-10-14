@@ -1,18 +1,27 @@
 <template lang="pug">
-  GmapMap(
-    ref='mapRef'
-    :center='center'
-    :zoom='zoom'
-    :options='options'
-    class='gmap-container'
-  )
+  .map-main-wrapper
+    GmapMap(
+      ref='mapRef'
+      :center='center'
+      :zoom='zoom'
+      :options='options'
+      class='gmap-container'
+    )
 </template>
 
 
 <style lang="sass">
+  .map-main-wrapper
+    position: relative
+    // todo: height got some issue ...
+    height: $map_height
+    height: 630px
+
   .gmap-container
-    width: 800px
-    height: 400px
+    position: absolute
+    width: 100%
+    height: 100%
+
 </style>
 
 
