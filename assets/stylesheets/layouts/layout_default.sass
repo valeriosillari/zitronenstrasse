@@ -1,22 +1,13 @@
 // common rules, used in all pages on the same layout
 
 html,
-body
-  margin: 0
-  padding: 0
-  height: 100%
-
 body,
-//the nuxt main elements
 #__nuxt,
 #__layout,
 .layout-wrapper
+  margin: 0
+  padding: 0
   height: 100%
-  margin: 0px
-  padding: 0px
-
-.section
-  min-height: 100%
 
 a
   color: $color_link
@@ -24,6 +15,9 @@ a
   &:focus
     color: $color_link_hvr
     text-decoration: none
+
+.section
+  min-height: 100%
 
 // padding top for fixed header alignment
 .section-text

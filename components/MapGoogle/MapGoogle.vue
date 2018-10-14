@@ -13,9 +13,7 @@
 <style lang="sass">
   .map-main-wrapper
     position: relative
-    // todo: height got some issue ...
     height: $map_height
-    height: 630px
 
   .gmap-container
     position: absolute
