@@ -1,12 +1,4 @@
 <template lang="pug">
-  MapGoogle
+  .ciao
+    | YOOO
 </template>
-
-<script>
-  import MapGoogle from '~/components/MapGoogle/MapGoogle.vue'
-  export default {
-    components: {
-      MapGoogle
-    }
-  }
-</script>
