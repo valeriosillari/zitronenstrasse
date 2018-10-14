@@ -132,8 +132,9 @@ heroku run XXXyourcommandXXX
 
 #### ISSUES
 
-- **SVG**: issue with svg and nuxt2. for compass on error page.
+- **ESLINTER and PRETTIRE**: now all disable
 
+- **HEROKU**: nuxt2 logic to be tested again on heroku
 
 #### NICE TO HAVE
 
