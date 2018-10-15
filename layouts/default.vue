@@ -25,7 +25,7 @@
       PrivacyPolicyBanner
     },
     mounted () {
-      console.log('🍋')
+      console.log('🍋 - test 001')
     }
   }
 </script>
