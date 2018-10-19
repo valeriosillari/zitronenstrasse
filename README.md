@@ -112,8 +112,6 @@ heroku run XXXyourcommandXXX
 
 ## ROAD MAP
 
-#### TODO
-
 - **SVG on IE**: we have to check if we see markers custom svg on windows
 
 - **IMAGES in ASSETS FOLDER**: set all images in asset folder. now in static folder. not quite sure if it is the right place.
@@ -131,10 +129,11 @@ heroku run XXXyourcommandXXX
 - **HEADLINE**: on homepage/map set some kind of headline for recognising the website brand
 
 
-
 #### ISSUES
 
-- **+PRETTIER**: now all disabled
+- **+PRETTIER**: now all disabled. Adding it?
+
+- **+SVG**: Set all as CSS image, no inline
 
 
 #### NICE TO HAVE
