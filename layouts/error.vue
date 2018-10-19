@@ -21,8 +21,13 @@
 
 <script>
   export default {
-    props: ['error'],
-    head () {
+    props: {
+      error: {
+        type: String,
+        required: true,
+        default: '',
+      }
+    },    head () {
       return {
         title: this.error.message || 'An error occured'
       }
