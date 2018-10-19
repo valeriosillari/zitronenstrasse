@@ -36,8 +36,12 @@
 <script>
   export default {
     // input from PARENTS
-    props: [
-      'currentMarkerDetails'
-    ]
+    props: {
+      currentMarkerDetails: {
+        type: String,
+        required: true,
+        default: '',
+      }
+    },    
   }
 </script>
