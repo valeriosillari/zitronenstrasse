@@ -130,17 +130,20 @@
         isScreenBig: false,
         // our core element
         currentMarkerDetails: {
-          // for seo reasons.
-          title: 'Zitronenstrasse Placeholder Thumb',
-          thumb: false,
-          thumbCredits: false,
-          address: false,
-          website: false,
-          fbPage: false,
-          position: {
-            lat: false,
-            lng: false
-          }
+          type: Object,
+          required: true,
+          default: () => ({
+            title: String,
+            address: String,
+            thumb: String,
+            thumbCredits: String,
+            website: String,
+            fbPage: String,
+            position: {
+              lat: Number,
+              lng: Number
+            }
+          })
         },
         isSidebarBindClass: {
           // first value is class to attach/bind, second value is status
