@@ -1,5 +1,5 @@
 <template lang="pug">
-  .footer
+  footer.footer
     .container
       .row.align-items-center
         .col-10.col-sm-8.col-left

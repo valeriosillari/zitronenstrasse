@@ -18,10 +18,10 @@
       }
     ];
 
-  .navigation(v-bind:class='{ isNavOpen: isNavOpen }')
+  nav.navigation(v-bind:class='{ isNavOpen: isNavOpen }')
 
     nuxt-link.logo-link(to='/', title='Home')
-      //- here set logo as assets
+      //- todo: here set logo as assets
       svg.logo(
       class="logo"
       enable-background="new 0 0 70 70"
