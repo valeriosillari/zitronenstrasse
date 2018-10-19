@@ -15,11 +15,11 @@
 
     //- Sidebar
     .sidebar-animation
-      Sidebar(
-        :currentMarkerDetails='currentMarkerDetails',
-        v-on:isSidebarButtonClose='isSidebarClose()'
-      )
-
+      no-ssr
+        Sidebar(
+          :currentMarkerDetails='currentMarkerDetails',
+          v-on:isSidebarButtonClose='isSidebarClose()'
+        )
 </template>
 
 
