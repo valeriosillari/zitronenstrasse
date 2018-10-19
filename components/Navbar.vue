@@ -1,85 +1,51 @@
-<template>
-  <div
-    class="navigation"
-    v-bind:class='{ isNavOpen: isNavOpen }'
-  >
+<template lang="pug">
+  .navigation(v-bind:class='{ isNavOpen: isNavOpen }')
 
-    <nuxt-link
-      class="logo-link"
-      to="/"
-      title="Home"
-    >
-      <svg
-        class="logo"
-        enable-background="new 0 0 70 70"
-        version="1.1"
-        viewBox="0 0 70 70"
-        xml:space="preserve"
-        xmlns="http://www.w3.org/2000 svg"
-      >
-        <path class="logo-path-01" d="M35,0c7.1,0,14.3,3.2,19.4,8.4c5.2,5.8,8.4,12.3,8.4,20.1s-3.2,16.2-8.4,21.4L35,70L15.6,49.9  c-5.2-5.2-8.4-13-8.4-21.4c0-7.8,2.6-14.3,8.4-20.1C20.7,3.2,27.9,0,35,0z"/>
-        <path class="logo-path-02" d="m19.9 54.4l15.1 15.6 15.2-15.7c-2-3.8-5.5-6.8-9.6-8.2v-8.1h2.6v-2h-6.2l-0.7-27.6c-0.5-0.1-1-0.2-1.6-0.2-0.3 0-0.6 0-0.9 0.1l-0.8 27.8h-6.1v2h2.6v8.1c-4.1 1.3-7.6 4.3-9.6 8.2z"/>
-      </svg>
-    </nuxt-link>
+    nuxt-link.logo-link(to='/', title='Home')
+      //- here set logo as assets
+      svg.logo(
+      class="logo"
+      enable-background="new 0 0 70 70"
+      version="1.1"
+      viewBox="0 0 70 70"
+      xml:space="preserve"
+      xmlns="http://www.w3.org/2000 svg"
+      )
+        path.logo-path-01(d="M35,0c7.1,0,14.3,3.2,19.4,8.4c5.2,5.8,8.4,12.3,8.4,20.1s-3.2,16.2-8.4,21.4L35,70L15.6,49.9  c-5.2-5.2-8.4-13-8.4-21.4c0-7.8,2.6-14.3,8.4-20.1C20.7,3.2,27.9,0,35,0z")
+        path.logo-path-02(d="m19.9 54.4l15.1 15.6 15.2-15.7c-2-3.8-5.5-6.8-9.6-8.2v-8.1h2.6v-2h-6.2l-0.7-27.6c-0.5-0.1-1-0.2-1.6-0.2-0.3 0-0.6 0-0.9 0.1l-0.8 27.8h-6.1v2h2.6v8.1c-4.1 1.3-7.6 4.3-9.6 8.2z")
 
-    <div
-      class="btn-menu"
-      v-on:click='isNavOpen = !isNavOpen'
-    >
-      <span class="btn-menu-line top"></span>
-      <span class="btn-menu-line middle"></span>
-      <span class="btn-menu-line bottom"></span>
-    </div>
+    .btn-menu(v-on:click='isNavOpen = !isNavOpen')    
+      span.btn-menu-line top
+      span.btn-menu-line middle
+      span.btn-menu-line bottom
 
-    <div class="overlay">
-      <nav class="overlay-menu">
-        <ul class="items">
-
-          <li
-            class="item"
-
-          >
-            <nuxt-link
+    .overlay
+      nav.overlay-menu
+        ul.items
+          //- todo: set loop
+          li.item
+            nuxt-link.item-link(
               v-on:click.native='navBarHandler(isNavOpen)'
-              class="item-link"
               title="Home"
               to="/"
-            >
-              Home
-            </nuxt-link>
-          </li>
+            )
+              | Home
 
-          <li
-            class="item"
-          >
-            <nuxt-link
+          li.item
+            nuxt-link.item-link(
               v-on:click.native='navBarHandler(isNavOpen)'
-              class="item-link"
               title="About"
               to="/about"
-            >
-              About
-            </nuxt-link>
-          </li>
+            )
+              | About
 
-          <li
-            class="item"
-          >
-            <nuxt-link
+         li.item
+            nuxt-link.item-link(
               v-on:click.native='navBarHandler(isNavOpen)'
-              class="item-link"
-              title="Contact"
-              to="/contact"
-            >
-              Contact
-            </nuxt-link>
-          </li>
-
-        </ul>
-      </nav>
-    </div>
-
-  </div>
+              title="contact"
+              to="/about"
+            )
+              | Contact
 </template>
 
 <script>
