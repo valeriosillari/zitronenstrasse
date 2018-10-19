@@ -150,58 +150,6 @@
       }
     },
 
-    methods: {
-      // move map (animation) to current marker
-      panMovement (movementLatValue) {
-        this.map.panToWithOffset(
-          new window.google.maps.LatLng(
-            this.currentMarkerDetails.position.lat,
-            this.currentMarkerDetails.position.lng
-          ), movementLatValue, 0
-        )
-      },
-
-      markerAnimation (currentMarker) {
-        // todo: set better with NO timeout?
-        // start bounce
-        setTimeout(() => {
-          currentMarker.setAnimation(window.google.maps.Animation.BOUNCE)
-        }, 400)
-        // end bounce
-        setTimeout(() => {
-          currentMarker.setAnimation(null)
-        }, 1150)
-      },
-
-      isSidebarOpen (screen) {
-        this.isScreenBig = false
-        if (screen >= 576) {
-          this.isScreenBig = true
-        }
-        // reset drag option
-        this.isMapDragged = false
-
-        // open sidebar (css animation in milleseconds)
-        // when function trigger, set value as TRUE. we change DATA value
-        // https://vuejs.org/v2/guide/reactivity.html#Change-Detection-Caveats
-        this.$set(this.isSidebarBindClass, 'isOpenClass', true)
-
-        if (this.isScreenBig) {
-          this.panMovement(-200)
-        }
-      },
-
-      isSidebarClose () {
-        // reset drag option
-        this.isMapDragged = false
-
-        // TOGGLE CLASS for close sidebar
-        // when function trigger, set value as TRUE. we change DATA value
-        // https://vuejs.org/v2/guide/reactivity.html#Change-Detection-Caveats
-        this.$set(this.isSidebarBindClass, 'isOpenClass', false)
-      }
-    },
-
     // mounted: WHEN ALL code on server is already loaded!
     mounted () {
       // wait having the map created. info and tips from this issue:
@@ -275,6 +223,57 @@
         initLogic()
       // ./ end map created
       })
+    },
+    methods: {
+      // move map (animation) to current marker
+      panMovement (movementLatValue) {
+        this.map.panToWithOffset(
+          new window.google.maps.LatLng(
+            this.currentMarkerDetails.position.lat,
+            this.currentMarkerDetails.position.lng
+          ), movementLatValue, 0
+        )
+      },
+
+      markerAnimation (currentMarker) {
+        // todo: set better with NO timeout?
+        // start bounce
+        setTimeout(() => {
+          currentMarker.setAnimation(window.google.maps.Animation.BOUNCE)
+        }, 400)
+        // end bounce
+        setTimeout(() => {
+          currentMarker.setAnimation(null)
+        }, 1150)
+      },
+
+      isSidebarOpen (screen) {
+        this.isScreenBig = false
+        if (screen >= 576) {
+          this.isScreenBig = true
+        }
+        // reset drag option
+        this.isMapDragged = false
+
+        // open sidebar (css animation in milleseconds)
+        // when function trigger, set value as TRUE. we change DATA value
+        // https://vuejs.org/v2/guide/reactivity.html#Change-Detection-Caveats
+        this.$set(this.isSidebarBindClass, 'isOpenClass', true)
+
+        if (this.isScreenBig) {
+          this.panMovement(-200)
+        }
+      },
+
+      isSidebarClose () {
+        // reset drag option
+        this.isMapDragged = false
+
+        // TOGGLE CLASS for close sidebar
+        // when function trigger, set value as TRUE. we change DATA value
+        // https://vuejs.org/v2/guide/reactivity.html#Change-Detection-Caveats
+        this.$set(this.isSidebarBindClass, 'isOpenClass', false)
+      }
     }
   }
 </script>
