@@ -40,7 +40,25 @@
       currentMarkerDetails: {
         type: String,
         required: true,
-        default: '',
+        // input from PARENTS
+        props: {
+          currentMarkerDetails: {
+            type: Object,
+            required: false,
+            default: () => ({
+              title: String,
+              address: String,
+              thumb: String,
+              thumbCredits: String,
+              website: String,
+              fbPage: String,
+              position: {
+                lat: Number,
+                lng: Number
+              }
+            })
+          }
+        }
       }
     },    
   }

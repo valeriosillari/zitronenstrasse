@@ -48,9 +48,20 @@
     // input from PARENTS
     props: {
       currentMarkerDetails: {
-        type: String,
+        type: Object,
         required: true,
-        default: '',
+        default: () => ({
+          title: String,
+          address: String,
+          thumb: String,
+          thumbCredits: String,
+          website: String,
+          fbPage: String,
+          position: {
+            lat: Number,
+            lng: Number
+          }
+        })
       }
     },
     methods: {
