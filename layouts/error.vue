@@ -30,7 +30,8 @@
         })
 
       }
-    },    head () {
+    },
+    head () {
       return {
         title: this.error.message || 'An error occured'
       }
