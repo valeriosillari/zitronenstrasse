@@ -134,7 +134,7 @@ heroku run XXXyourcommandXXX
 
 #### ISSUES
 
-- **ESLINTER and PRETTIRE**: now all disabled
+- **+PRETTIER**: now all disabled
 
 
 #### NICE TO HAVE
