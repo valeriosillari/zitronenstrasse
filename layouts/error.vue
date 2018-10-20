@@ -55,5 +55,5 @@
     // trick for assets loaded on Nuxt 2
     // "~assets/", NOT "~/assets/" : removed slash
     // info: https://github.com/nuxt/nuxt.js/issues/3723    
-    background-image: url('~assets/svg/svg_icon_compass.svg')
+    background-image: url('~assets/svg/compass.svg')
 </style>
