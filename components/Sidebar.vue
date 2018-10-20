@@ -4,12 +4,48 @@
     .clearfix
       button.btn-close(@click='actionSidebarClose')
 
-    | SIDEBAR
+    h2.title
+      | {{ currentMarkerDetails.title }}
+
+    //- Thumb Place
+    //- Thumb(:currentMarkerDetails='currentMarkerDetails',)
+
+    p.address
+      //- span.info
+      //-  | Address:
+      | {{ currentMarkerDetails.address }}
+
+    //- links area
+    span.info(v-if='(currentMarkerDetails.website) || (currentMarkerDetails.fbPage)')
+      | Links:
+
+    .action-area
+      p.line(v-if='currentMarkerDetails.website')
+        a.link.link-website(
+          :href='currentMarkerDetails.website',
+          :title="currentMarkerDetails.title + ' | Official Website'",
+          target='_blank'
+        )
+          | Official Website
+
+      p.line(v-if='currentMarkerDetails.fbPage')
+        a.link.link-facebook(
+          :href='currentMarkerDetails.fbPage',
+          :title="currentMarkerDetails.title + ' | Facebook Page'",
+          target='_blank'
+        )
+          | Facebook Page
 </template>
 
 
 <script>
   export default {
+    props: {
+      currentMarkerDetails: {
+        type: Object,
+        required: true,
+      }
+    },
     mounted () {
       console.log('========= SIDEBAR mounted ========')
     },

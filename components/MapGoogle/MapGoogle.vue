@@ -188,19 +188,25 @@
             // at marker click ...
             google.maps.event.addListener(marker, 'click', () => {
               // update info for current marker object
-              this.currentMarkerDetails.title = placeID.title
-              this.currentMarkerDetails.thumb = placeID.thumb
-              this.currentMarkerDetails.thumbCredits = placeID.thumbCredits
-              this.currentMarkerDetails.address = placeID.address
-              this.currentMarkerDetails.position = placeID.position
-              this.currentMarkerDetails.website = placeID.website
-              this.currentMarkerDetails.fbPage = placeID.fbPage
+              this.$set(this.currentMarkerDetails, 'title', placeID.title)
+              this.$set(this.currentMarkerDetails, 'thumb', placeID.thumb)
+              this.$set(this.currentMarkerDetails, 'thumbCredits', placeID.thumbCredits)
+              this.$set(this.currentMarkerDetails, 'address', placeID.address)
+              this.$set(this.currentMarkerDetails, 'position', placeID.position)
+              this.$set(this.currentMarkerDetails, 'website', placeID.website)
+              this.$set(this.currentMarkerDetails, 'fbPage', placeID.fbPage)
 
               // marker animation
               this.markerAnimation(marker)
 
               // open sidebar + PAN MOVE
               this.isSidebarOpen(window.innerWidth)
+
+
+              console.log('============= CLICK ===============')
+              console.log(placeID.title)
+              console.log(this.currentMarkerDetails.title)
+
             })
 
             return marker
