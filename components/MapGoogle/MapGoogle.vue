@@ -15,11 +15,10 @@
 
     //- Sidebar
     .sidebar-animation
-      no-ssr
-        Sidebar(
-          :currentMarkerDetails='currentMarkerDetails',
-          v-on:isSidebarButtonClose='isSidebarClose()'
-        )
+      Sidebar(
+        :currentMarkerDetails='currentMarkerDetails',
+        v-on:isSidebarButtonClose='isSidebarClose()'
+      )
 </template>
 
 
@@ -108,26 +107,7 @@
   export default {
     components: {
       Sidebar
-    },
-    // input from PARENTS
-    props: {
-      currentMarkerDetails: {
-        type: Object,
-        required: true,
-        default: () => ({
-          title: String,
-          address: String,
-          thumb: String,
-          thumbCredits: String,
-          website: String,
-          fbPage: String,
-          position: {
-            lat: Number,
-            lng: Number
-          }
-        })
-      }
-    },
+    },     
     data () {
       return {
         // map
@@ -150,7 +130,26 @@
           // first value is class to attach/bind, second value is status
           'isOpenClass': false
         },
-        isMapDragged: false
+        isMapDragged: false,
+
+        // created object with all info for details
+        currentMarkerDetails: {
+          type: Object,
+          required: true,
+          default: () => ({
+            title: String,
+            address: String,
+            thumb: String,
+            thumbCredits: String,
+            website: String,
+            fbPage: String,
+            position: {
+              lat: Number,
+              lng: Number
+            }
+          })
+        }
+
       }
     },
 
@@ -188,7 +187,7 @@
 
             // at marker click ...
             google.maps.event.addListener(marker, 'click', () => {
-              // update info in sidebar with current marker
+              // update info for current marker object
               this.currentMarkerDetails.title = placeID.title
               this.currentMarkerDetails.thumb = placeID.thumb
               this.currentMarkerDetails.thumbCredits = placeID.thumbCredits
