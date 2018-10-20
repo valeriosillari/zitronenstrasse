@@ -133,8 +133,6 @@ heroku run XXXyourcommandXXX
 
 - **+PRETTIER**: now all disabled. Adding it?
 
-- **+SVG**: Set all as CSS image, no inline
-
 
 #### NICE TO HAVE
 
