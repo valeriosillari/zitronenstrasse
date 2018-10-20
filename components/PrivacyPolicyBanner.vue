@@ -36,6 +36,7 @@
       padding: 10px 45px
       border: 1px solid $color_banner_btn_border
       color: $color_banner_btn_txt
+      background: $color_banner_btn_bg
       &:hover
         border: 1px solid $color_banner_btn_border_hvr
         color: $color_banner_btn_txt_hvr
