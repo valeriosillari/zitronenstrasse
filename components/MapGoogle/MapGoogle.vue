@@ -109,7 +109,25 @@
     components: {
       Sidebar
     },
-
+    // input from PARENTS
+    props: {
+      currentMarkerDetails: {
+        type: Object,
+        required: true,
+        default: () => ({
+          title: String,
+          address: String,
+          thumb: String,
+          thumbCredits: String,
+          website: String,
+          fbPage: String,
+          position: {
+            lat: Number,
+            lng: Number
+          }
+        })
+      }
+    },
     data () {
       return {
         // map
@@ -128,23 +146,6 @@
         },
         // rest of options
         isScreenBig: false,
-        // our core element
-        currentMarkerDetails: {
-          type: Object,
-          required: true,
-          default: () => ({
-            title: String,
-            address: String,
-            thumb: String,
-            thumbCredits: String,
-            website: String,
-            fbPage: String,
-            position: {
-              lat: Number,
-              lng: Number
-            }
-          })
-        },
         isSidebarBindClass: {
           // first value is class to attach/bind, second value is status
           'isOpenClass': false
