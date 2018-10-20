@@ -1,3 +1,4 @@
+const pkg = require('./package')
 const dotenv = require('dotenv').config({path: './env_variables/env_keys'})
 const webpack = require('webpack')
 
@@ -26,6 +27,8 @@ const ogImageWidth = '1200'
 const ogImageHeight = '630'
 
 module.exports = {
+  mode: 'universal',
+
   /*
   ** ENV vars to spread in all the app.
   ** https://nuxtjs.org/api/configuration-env
@@ -202,6 +205,20 @@ module.exports = {
   },
 
   /*
+  ** Customize the progress-bar color
+  */
+  loading: {
+    color: '#ffd400',
+    height: '5px'
+  },
+
+  /*
+  ** Global CSS
+  */
+  css: [
+  ],
+
+  /*
   ** Site Map Options
   */
   sitemap: {
@@ -222,64 +239,20 @@ module.exports = {
   },
 
   /*
-  ** Build configuration
-  */
-  build: {
-    vendor: [
-      // for google map on IE11
-      'babel-polyfill'
-    ],
-    plugins: [
-      // set shortcuts as global for bootstrap
-      new webpack.ProvidePlugin({
-        // here ...
-      })
-    ],
-    /*
-    ** Run ESLint on save
-    */
-    extend (config, ctx) {
-      if (ctx.dev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
-
-      // for vue2-google-maps
-      if (!ctx.isClient) {
-        // This instructs Webpack to include `vue2-google-maps`'s Vue files
-        // for server-side rendering
-        config.externals.splice(0, 0, function (context, request, callback) {
-          if (/^vue2-google-maps($|\/)/.test(request)) {
-            callback(null, false)
-          } else {
-            callback()
-          }
-        })
-      }
-    }
-  },
-
-  /*
-  ** Customize the progress-bar color
-  */
-  loading: {
-    color: '#ffd400',
-    height: '5px'
-  },
-
-  /*
-  ** Customize the Vue Plugins
+  ** Plugins to load before mounting the App
   */
   plugins: [
     '~/plugins/modernizr-plugin',
-    '~/plugins/vue-cookie-law',
-    '~/plugins/vue2-google-maps'
+    '~/plugins/vue-cookie-law',  
+    {
+      src: '~/plugins/vue2-google-maps',
+      ssr: true
+    }
   ],
 
+  /*
+  ** Nuxt.js modules
+  */
   /*
   ** Customize modules. now for google analytics
   */
@@ -298,5 +271,35 @@ module.exports = {
     ],
     '@nuxtjs/sitemap',
     '@nuxtjs/font-awesome'
-  ]
+  ],
+
+  /*
+  ** Build configuration
+  */
+  build: {
+    plugins: [  
+      // set shortcuts as global for bootstrap  
+      new webpack.ProvidePlugin({ 
+        // here ... 
+      })  
+    ],
+
+    /*
+    ** You can extend webpack config here
+    */
+    extend(config, ctx) {
+      // Run ESLint on save
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/
+        })
+      }
+    },
+
+    // set logic for loading vue2 google map
+    transpile: [/^vue2-google-maps($|\/)/]
+  }
 }

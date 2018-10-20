@@ -1,6 +1,18 @@
+// font info:
 // https://google-webfonts-helper.herokuapp.com/fonts/saira-condensed?subsets=latin
+
+// trick for assets loaded on Nuxt 2
+// "~assets/", NOT "~/assets/" : removed slash
+// info: https://github.com/nuxt/nuxt.js/issues/3723
+
+// we set variables here
+$font_assets_path_saira: '~assets/fonts/saira_condensed'
+$font_assets_saira_woff2: '#{$font_assets_path_saira}/saira-condensed-v3-latin-300.woff2'
+$font_assets_saira_woff: '#{$font_assets_path_saira}/saira-condensed-v3-latin-300.woff'
+$font_assets_saira_ttf: '#{$font_assets_path_saira}/saira-condensed-v3-latin-300.ttf'
+
 @font-face
   font-family: 'Saira Condensed'
-  src: url('~/assets/fonts/saira_condensed/saira-condensed-v3-latin-300.woff2') format("woff2"), url('~/assets/fonts/saira_condensed/saira-condensed-v3-latin-300.ttf') format("truetype"), url('~/assets/fonts/saira_condensed/saira-condensed-v3-latin-300.woff') format("woff")
+  src: url('#{$font_assets_saira_woff2}') format('woff2'), url('#{$font_assets_saira_woff}') format('woff'), url('#{$font_assets_saira_ttf}') format('truetype')
   font-weight: normal
   font-style: 300

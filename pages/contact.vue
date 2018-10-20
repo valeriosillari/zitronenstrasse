@@ -1,5 +1,5 @@
 <template lang="pug">
-  section.section.section-text
+  section.section
     .container
 
       h1

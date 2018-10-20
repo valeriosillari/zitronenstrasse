@@ -2,7 +2,7 @@
 
 #### Romantic Spots in Berlin.
 
-[zitronenstrasse.com](http://www.zitronenstrasse.com/)
+[zitronenstrasse.com](https://www.zitronenstrasse.com/)
 
 [ ![Codeship Status for valeriosillari/zitronenstrasse](https://app.codeship.com/projects/45f42180-b923-0135-4183-366309507115/status?branch=master)](https://app.codeship.com/projects/259131)
 
@@ -38,6 +38,10 @@ For detailed explanation on how Nuxt work, checkout the [Nuxt.js docs](https://g
 
 We deploying on **Heroku**, using **Codeship**.
 
+For setting Nuxt on Heroku you need to set some config options
+
+[Here info](https://nuxtjs.org/faq/heroku-deployment#how-to-deploy-on-heroku-)
+
 
 #### ENV OPTIONS
 
@@ -56,11 +60,11 @@ For detailed explanation on how dotenv work, checkout the [dotenv docs](https://
 
 #### SERVER OPTIONS
 
-We use Express as server.
+We use Express as server. set by Nuxt Boilerplate option.
 
 For setting more server options for the application, we use Nuxt with Express.
 
-Check the server.js file and documentation for more info.
+Check the server/index.js file and documentation for more info.
 
 
 #### Heroku CLI SHORTCUTS
@@ -108,8 +112,6 @@ heroku run XXXyourcommandXXX
 
 ## ROAD MAP
 
-#### TODO
-
 - **SVG on IE**: we have to check if we see markers custom svg on windows
 
 - **IMAGES in ASSETS FOLDER**: set all images in asset folder. now in static folder. not quite sure if it is the right place.
@@ -126,25 +128,12 @@ heroku run XXXyourcommandXXX
 
 - **HEADLINE**: on homepage/map set some kind of headline for recognising the website brand
 
-- **HTTPS**: this is connect to our provider and DNS ... long story ...
-
-
 
 #### ISSUES
 
-- **PERFORMANCE**:
-
-  async / defer js as external JS has some issues on INCOGNITO and NORMAL mode.
-
-  Looks like we have an issue with js map on http domain (http://zitronenstrasse.com)
-
-  with https looks fine.
-
-  https://security.googleblog.com/2017/04/next-steps-toward-more-connection.html
+- **+PRETTIER**: now all disabled. Adding it?
 
 
 #### NICE TO HAVE
-
-- **MAP COMPONENT**: set the JS code more modular
 
 - **CONTACT PAGE**: set node mailer and all the logic for form mailer

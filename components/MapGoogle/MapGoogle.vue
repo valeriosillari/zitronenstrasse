@@ -7,18 +7,19 @@
 
     GmapMap(
       ref='mapRef'
-      class='gmap-container'
       :center='center'
       :zoom='zoom'
       :options='options'
+      class='gmap-container'
     )
 
     //- Sidebar
     .sidebar-animation
-      Sidebar(
-        :currentMarkerDetails='currentMarkerDetails',
-        v-on:isSidebarButtonClose='isSidebarClose()'
-      )
+      no-ssr
+        Sidebar(
+          :currentMarkerDetails='currentMarkerDetails',
+          v-on:isSidebarButtonClose='isSidebarClose()'
+        )
 </template>
 
 
@@ -26,6 +27,21 @@
   .map-main-wrapper
     position: relative
     height: $map_height
+
+  .gmap-container
+    position: absolute
+    width: 100%
+    height: 100%
+
+  // map bg whn loading
+  .gm-style
+    background: $color_map_bg
+
+  // remove google cc
+  // and remove some weird grey box set on right side from google
+  .gm-style-cc
+    display: none
+
 
   // title for seo
   .heading-title
@@ -73,27 +89,13 @@
     .sidebar-animation
       right: 0px
 
-  .vue-map-container
-    position: absolute
-    width: 100%
-    height: 100%
-
-  // map bg whn loading
-  .gm-style
-    background: $color_map_bg
-
-  // remove google cc
-  // and remove some weird grey box set on right side from google
-  .gm-style-cc
-    display: none
-
   // === no JS logic | modernizr ===
   // not show map (google)
   .no-js
     .google-map
       display: none
-</style>
 
+</style>
 
 
 
@@ -128,75 +130,26 @@
         isScreenBig: false,
         // our core element
         currentMarkerDetails: {
-          // for seo reasons.
-          title: 'Zitronenstrasse Placeholder Thumb',
-          thumb: false,
-          thumbCredits: false,
-          address: false,
-          website: false,
-          fbPage: false,
-          position: {
-            lat: false,
-            lng: false
-          }
+          type: Object,
+          required: true,
+          default: () => ({
+            title: String,
+            address: String,
+            thumb: String,
+            thumbCredits: String,
+            website: String,
+            fbPage: String,
+            position: {
+              lat: Number,
+              lng: Number
+            }
+          })
         },
         isSidebarBindClass: {
           // first value is class to attach/bind, second value is status
           'isOpenClass': false
         },
         isMapDragged: false
-      }
-    },
-
-    methods: {
-      // move map (animation) to current marker
-      panMovement (movementLatValue) {
-        this.map.panToWithOffset(
-          new window.google.maps.LatLng(
-            this.currentMarkerDetails.position.lat,
-            this.currentMarkerDetails.position.lng
-          ), movementLatValue, 0
-        )
-      },
-
-      markerAnimation (currentMarker) {
-        // todo: set better with NO timeout?
-        // start bounce
-        setTimeout(() => {
-          currentMarker.setAnimation(window.google.maps.Animation.BOUNCE)
-        }, 400)
-        // end bounce
-        setTimeout(() => {
-          currentMarker.setAnimation(null)
-        }, 1150)
-      },
-
-      isSidebarOpen (screen) {
-        this.isScreenBig = false
-        if (screen >= 576) {
-          this.isScreenBig = true
-        }
-        // reset drag option
-        this.isMapDragged = false
-
-        // open sidebar (css animation in milleseconds)
-        // when function trigger, set value as TRUE. we change DATA value
-        // https://vuejs.org/v2/guide/reactivity.html#Change-Detection-Caveats
-        this.$set(this.isSidebarBindClass, 'isOpenClass', true)
-
-        if (this.isScreenBig) {
-          this.panMovement(-200)
-        }
-      },
-
-      isSidebarClose () {
-        // reset drag option
-        this.isMapDragged = false
-
-        // TOGGLE CLASS for close sidebar
-        // when function trigger, set value as TRUE. we change DATA value
-        // https://vuejs.org/v2/guide/reactivity.html#Change-Detection-Caveats
-        this.$set(this.isSidebarBindClass, 'isOpenClass', false)
       }
     },
 
@@ -273,6 +226,57 @@
         initLogic()
       // ./ end map created
       })
+    },
+    methods: {
+      // move map (animation) to current marker
+      panMovement (movementLatValue) {
+        this.map.panToWithOffset(
+          new window.google.maps.LatLng(
+            this.currentMarkerDetails.position.lat,
+            this.currentMarkerDetails.position.lng
+          ), movementLatValue, 0
+        )
+      },
+
+      markerAnimation (currentMarker) {
+        // todo: set better with NO timeout?
+        // start bounce
+        setTimeout(() => {
+          currentMarker.setAnimation(window.google.maps.Animation.BOUNCE)
+        }, 400)
+        // end bounce
+        setTimeout(() => {
+          currentMarker.setAnimation(null)
+        }, 1150)
+      },
+
+      isSidebarOpen (screen) {
+        this.isScreenBig = false
+        if (screen >= 576) {
+          this.isScreenBig = true
+        }
+        // reset drag option
+        this.isMapDragged = false
+
+        // open sidebar (css animation in milleseconds)
+        // when function trigger, set value as TRUE. we change DATA value
+        // https://vuejs.org/v2/guide/reactivity.html#Change-Detection-Caveats
+        this.$set(this.isSidebarBindClass, 'isOpenClass', true)
+
+        if (this.isScreenBig) {
+          this.panMovement(-200)
+        }
+      },
+
+      isSidebarClose () {
+        // reset drag option
+        this.isMapDragged = false
+
+        // TOGGLE CLASS for close sidebar
+        // when function trigger, set value as TRUE. we change DATA value
+        // https://vuejs.org/v2/guide/reactivity.html#Change-Detection-Caveats
+        this.$set(this.isSidebarBindClass, 'isOpenClass', false)
+      }
     }
   }
 </script>

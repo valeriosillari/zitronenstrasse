@@ -46,9 +46,24 @@
       Thumb
     },
     // input from PARENTS
-    props: [
-      'currentMarkerDetails'
-    ],
+    props: {
+      currentMarkerDetails: {
+        type: Object,
+        required: true,
+        default: () => ({
+          title: String,
+          address: String,
+          thumb: String,
+          thumbCredits: String,
+          website: String,
+          fbPage: String,
+          position: {
+            lat: Number,
+            lng: Number
+          }
+        })
+      }
+    },
     methods: {
       actionSidebarClose () {
         this.$emit('isSidebarButtonClose')

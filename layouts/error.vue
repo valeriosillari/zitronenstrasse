@@ -2,8 +2,8 @@
   //- ERROR PAGE: we extend the default layout. this is the page CONTENT OF THE PAGE actually!
 
   //- main area
-  section.section.section-top.section-text
-    .container.text-center
+  section.section.section-error
+    .container
 
       //- div with css bg as svg | compass
       .svg-icon-compass
@@ -21,7 +21,16 @@
 
 <script>
   export default {
-    props: ['error'],
+    props: {
+      error: {
+        type: Object,
+        required: true,
+        default: () => ({
+          message: String
+        })
+
+      }
+    },
     head () {
       return {
         title: this.error.message || 'An error occured'
@@ -43,5 +52,8 @@
     height: 260px
     margin: 30px auto
     // we set svg as image in css. nuxt is happy, but we lost the fill color options
-    background-image: url('~/assets/img/svg/svg_icon_compass.svg')
+    // trick for assets loaded on Nuxt 2
+    // "~assets/", NOT "~/assets/" : removed slash
+    // info: https://github.com/nuxt/nuxt.js/issues/3723    
+    background-image: url('~assets/svg/compass.svg')
 </style>
