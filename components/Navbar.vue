@@ -39,11 +39,9 @@
                 title=item.title
                 to=item.link
               )
-                =item.title
-
-
-           
+                =item.title 
 </template>
+
 
 <script>
   export default {
@@ -74,6 +72,7 @@
     }
   }
 </script>
+
 
 <style lang="sass">
   @keyframes fadeInRight
