@@ -1,4 +1,4 @@
-##########################################################
+####################
 # GOOGLE
 
 GOOGLE_MAP_API_KEY        = 'your_api_key'
@@ -6,3 +6,13 @@ GOOGLE_MAP_API_KEY        = 'your_api_key'
 GOOGLE_ANALYTICS_KEY      = 'your_api_key'
 
 GOOGLE_VERIFICATION_OWNER_KEY = 'your_verification_owner_key'
+
+
+####################
+# HEROKU EXTRA CONFIG FOR DEPLYOMENT | just remainder, not need it as secret key
+
+HOST = 'your_value_here'
+
+NODE_ENV = 'your_value_here'
+
+NPM_CONFIG_PRODUCTION = 'your_value_here'
