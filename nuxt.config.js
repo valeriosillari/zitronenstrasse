@@ -244,10 +244,7 @@ module.exports = {
   plugins: [
     '~/plugins/modernizr-plugin',
     '~/plugins/vue-cookie-law',  
-    {
-      src: '~/plugins/vue2-google-maps',
-      ssr: true
-    }
+    '~/plugins/vue2-google-maps'
   ],
 
   /*
