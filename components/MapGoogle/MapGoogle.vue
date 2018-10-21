@@ -129,8 +129,8 @@
           // first value is class to attach/bind, second value is status
           'isOpenClass': false
         },
+        // map drag for marker animation
         isMapDragged: false,
-
         // created object with all info for details
         currentMarkerDetails: {
           type: Object,
@@ -148,7 +148,6 @@
             }
           })
         }
-
       }
     },
 
@@ -226,6 +225,7 @@
       // ./ end map created
       })
     },
+
     methods: {
       // move map (animation) to current marker
       panMovement (movementLatValue) {

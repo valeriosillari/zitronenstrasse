@@ -60,7 +60,6 @@
 
 
 <style lang="sass">
-
   // class for sidebar ELEMENT, inside a FIXED wrapper
   .sidebar
     line-height: 1.5
@@ -125,5 +124,4 @@
       -ms-transform: rotate(-45deg)
       -o-transform: rotate(-45deg)
       transform: rotate(-45deg)
-
 </style>
