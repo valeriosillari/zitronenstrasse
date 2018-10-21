@@ -8,12 +8,7 @@
       | {{ currentMarkerDetails.title }}
 
     //- Thumb Place
-    //- Thumb(:currentMarkerDetails='currentMarkerDetails',)
-
-    p.address
-      //- span.info
-      //-  | Address:
-      | {{ currentMarkerDetails.address }}
+    Thumb(:currentMarkerDetails='currentMarkerDetails')
 
     //- links area
     span.info(v-if='(currentMarkerDetails.website) || (currentMarkerDetails.fbPage)')
@@ -39,7 +34,11 @@
 
 
 <script>
+  import Thumb from '~/components/Thumb.vue'
   export default {
+    components: {
+      Thumb
+    },    
     props: {
       currentMarkerDetails: {
         type: Object,
