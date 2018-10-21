@@ -10,6 +10,11 @@
     //- Thumb Place
     Thumb(:currentMarkerDetails='currentMarkerDetails')
 
+    p.address(v-if='currentMarkerDetails.address')
+      span.info
+        | Address:
+      | {{ currentMarkerDetails.address }}
+
     //- links area
     span.info(v-if='(currentMarkerDetails.website) || (currentMarkerDetails.fbPage)')
       | Links:
