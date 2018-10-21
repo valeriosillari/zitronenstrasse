@@ -97,7 +97,6 @@
 </style>
 
 
-
 <script>
   import placesList from '~/static/places_list.js'
   import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
@@ -201,12 +200,6 @@
 
               // open sidebar + PAN MOVE
               this.isSidebarOpen(window.innerWidth)
-
-
-              console.log('============= CLICK ===============')
-              console.log(placeID.title)
-              console.log(this.currentMarkerDetails.title)
-
             })
 
             return marker

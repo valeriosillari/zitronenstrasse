@@ -45,9 +45,6 @@
         required: true,
       }
     },
-    mounted () {
-      console.log('========= SIDEBAR mounted ========')
-    },
     methods: {
       actionSidebarClose () {
         this.$emit('isSidebarButtonClose')
