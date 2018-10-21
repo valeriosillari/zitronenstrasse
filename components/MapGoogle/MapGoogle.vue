@@ -15,11 +15,10 @@
 
     //- Sidebar
     .sidebar-animation
-      no-ssr
-        Sidebar(
-          :currentMarkerDetails='currentMarkerDetails',
-          v-on:isSidebarButtonClose='isSidebarClose()'
-        )
+      Sidebar(
+        :currentMarkerDetails='currentMarkerDetails',
+        v-on:isSidebarButtonClose='isSidebarClose()'
+      )
 </template>
 
 
@@ -98,7 +97,6 @@
 </style>
 
 
-
 <script>
   import placesList from '~/static/places_list.js'
   import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
@@ -108,26 +106,7 @@
   export default {
     components: {
       Sidebar
-    },
-    // input from PARENTS
-    props: {
-      currentMarkerDetails: {
-        type: Object,
-        required: true,
-        default: () => ({
-          title: String,
-          address: String,
-          thumb: String,
-          thumbCredits: String,
-          website: String,
-          fbPage: String,
-          position: {
-            lat: Number,
-            lng: Number
-          }
-        })
-      }
-    },
+    },     
     data () {
       return {
         // map
@@ -150,7 +129,25 @@
           // first value is class to attach/bind, second value is status
           'isOpenClass': false
         },
-        isMapDragged: false
+        // map drag for marker animation
+        isMapDragged: false,
+        // created object with all info for details
+        currentMarkerDetails: {
+          type: Object,
+          required: true,
+          default: () => ({
+            title: String,
+            address: String,
+            thumb: String,
+            thumbCredits: String,
+            website: String,
+            fbPage: String,
+            position: {
+              lat: Number,
+              lng: Number
+            }
+          })
+        }
       }
     },
 
@@ -188,14 +185,14 @@
 
             // at marker click ...
             google.maps.event.addListener(marker, 'click', () => {
-              // update info in sidebar with current marker
-              this.currentMarkerDetails.title = placeID.title
-              this.currentMarkerDetails.thumb = placeID.thumb
-              this.currentMarkerDetails.thumbCredits = placeID.thumbCredits
-              this.currentMarkerDetails.address = placeID.address
-              this.currentMarkerDetails.position = placeID.position
-              this.currentMarkerDetails.website = placeID.website
-              this.currentMarkerDetails.fbPage = placeID.fbPage
+              // update info for current marker object
+              this.$set(this.currentMarkerDetails, 'title', placeID.title)
+              this.$set(this.currentMarkerDetails, 'thumb', placeID.thumb)
+              this.$set(this.currentMarkerDetails, 'thumbCredits', placeID.thumbCredits)
+              this.$set(this.currentMarkerDetails, 'address', placeID.address)
+              this.$set(this.currentMarkerDetails, 'position', placeID.position)
+              this.$set(this.currentMarkerDetails, 'website', placeID.website)
+              this.$set(this.currentMarkerDetails, 'fbPage', placeID.fbPage)
 
               // marker animation
               this.markerAnimation(marker)
@@ -228,6 +225,7 @@
       // ./ end map created
       })
     },
+
     methods: {
       // move map (animation) to current marker
       panMovement (movementLatValue) {

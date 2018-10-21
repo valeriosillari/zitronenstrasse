@@ -35,23 +35,10 @@
 
 <script>
   export default {
-    // input from PARENTS
     props: {
       currentMarkerDetails: {
         type: Object,
         required: true,
-        default: () => ({
-          title: String,
-          address: String,
-          thumb: String,
-          thumbCredits: String,
-          website: String,
-          fbPage: String,
-          position: {
-            lat: Number,
-            lng: Number
-          }
-        })
       }
     }
   }

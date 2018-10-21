@@ -1,16 +1,16 @@
 <template lang="pug">
   aside.sidebar
     //- btn area
-    div.clearfix
+    .clearfix
       button.btn-close(@click='actionSidebarClose')
 
     h2.title
       | {{ currentMarkerDetails.title }}
 
     //- Thumb Place
-    Thumb(:currentMarkerDetails='currentMarkerDetails',)
+    Thumb(:currentMarkerDetails='currentMarkerDetails')
 
-    p.address
+    p.address(v-if='currentMarkerDetails.address')
       span.info
         | Address:
       | {{ currentMarkerDetails.address }}
@@ -18,7 +18,6 @@
     //- links area
     span.info(v-if='(currentMarkerDetails.website) || (currentMarkerDetails.fbPage)')
       | Links:
-
 
     .action-area
       p.line(v-if='currentMarkerDetails.website')
@@ -44,24 +43,11 @@
   export default {
     components: {
       Thumb
-    },
-    // input from PARENTS
+    },    
     props: {
       currentMarkerDetails: {
         type: Object,
         required: true,
-        default: () => ({
-          title: String,
-          address: String,
-          thumb: String,
-          thumbCredits: String,
-          website: String,
-          fbPage: String,
-          position: {
-            lat: Number,
-            lng: Number
-          }
-        })
       }
     },
     methods: {
@@ -74,7 +60,6 @@
 
 
 <style lang="sass">
-
   // class for sidebar ELEMENT, inside a FIXED wrapper
   .sidebar
     line-height: 1.5
@@ -139,5 +124,4 @@
       -ms-transform: rotate(-45deg)
       -o-transform: rotate(-45deg)
       transform: rotate(-45deg)
-
 </style>
