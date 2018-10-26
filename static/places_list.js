@@ -707,20 +707,8 @@ const placesList = [
     }
   },
   {
-    // 052
-    // ChIJDd47W7ZPqEcRIQcDmqwJ85A
-    title: 'Galatea Wine and Music Berlin',
-    address: 'Lenaustraße 5, 12047',
-    thumb: '/thumbs/places/052_galatea.jpg',
-    thumbCredits: 'Galatea Wine and Music Berlin FB Page',
-    fbPage: 'https://www.facebook.com/GalateaWineBerlin/',
-    position: {
-      lat: 52.4899228,
-      lng: 13.4255371
-    }
-  },
   {
-    // 053
+    // 052
     // ChIJDaRG171PqEcRSpDqEb_nv6Y
     title: 'MAMA KALO',
     address: 'Herrfurthstraße 23, 12049',
@@ -734,7 +722,7 @@ const placesList = [
     }
   },
   {
-    // 054
+    // 053
     // ChIJ1deWK2ZQqEcR7iiuf3wwW4o
     title: 'Rudolph-Wilde Park',
     address: 'Kufsteiner Straße, 10825',
@@ -747,7 +735,7 @@ const placesList = [
     }
   },
   {
-    // 055 (Restaurant RioGrande)
+    // 054 (Restaurant RioGrande)
     // ChIJx8Iw5VFOqEcRXUgfWxkmAaA
     title: 'Red Balloon View',
     address: 'May-Ayim-Ufer 9/11, 10997',
@@ -759,7 +747,7 @@ const placesList = [
     }
   },
   {
-    // 056
+    // 055
     // ChIJIzn7BchPqEcRF5uxEeEl-JE
     title: 'Zosse',
     address: 'Richardstraße 37, 12043',
@@ -775,7 +763,7 @@ const placesList = [
   // DISABLED ones
   // {
   //   // ...
-  //   // ChIJe-JZ6sRPqEcR57AEB-9Vg90
+  //   // ChIJe-JZ6sRPqEcR57AEB-9Vg90 | closed for winter
   //   title: 'Floating University Berlin',
   //   address: 'Lilienthalstraße 32, 10965 ',
   //   thumb: '/thumbs/places/057_floating_university_berlin.jpg',
@@ -786,6 +774,17 @@ const placesList = [
   //     lng: 13.4065031
   //   }
   // }
+  //   // ChIJDd47W7ZPqEcRIQcDmqwJ85A | closed
+  //   title: 'Galatea Wine and Music Berlin',
+  //   address: 'Lenaustraße 5, 12047',
+  //   thumb: '/thumbs/places/052_galatea.jpg',
+  //   thumbCredits: 'Galatea Wine and Music Berlin FB Page',
+  //   fbPage: 'https://www.facebook.com/GalateaWineBerlin/',
+  //   position: {
+  //     lat: 52.4899228,
+  //     lng: 13.4255371
+  //   }
+  // },  
 ]
 
 export default placesList
