@@ -707,7 +707,6 @@ const placesList = [
     }
   },
   {
-  {
     // 052
     // ChIJDaRG171PqEcRSpDqEb_nv6Y
     title: 'MAMA KALO',
@@ -773,6 +772,7 @@ const placesList = [
   //     lat: 52.4847201,
   //     lng: 13.4065031
   //   }
+  // },
   // }
   //   // ChIJDd47W7ZPqEcRIQcDmqwJ85A | closed
   //   title: 'Galatea Wine and Music Berlin',
