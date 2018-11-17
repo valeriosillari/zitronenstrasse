@@ -226,7 +226,7 @@ module.exports = {
     hostname: ogUrl,
     cacheTime: 1000 * 60 * 15,
     // Enable me when using nuxt generate
-    generate: false,
+    generate: true,
     exclude: [
       // empty
     ],
@@ -243,7 +243,7 @@ module.exports = {
   */
   plugins: [
     '~/plugins/modernizr-plugin',
-    '~/plugins/vue-cookie-law',  
+    '~/plugins/vue-cookie-law',
     '~/plugins/vue2-google-maps'
   ],
 
@@ -274,11 +274,11 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    plugins: [  
-      // set shortcuts as global for bootstrap  
-      new webpack.ProvidePlugin({ 
-        // here ... 
-      })  
+    plugins: [
+      // set shortcuts as global for bootstrap
+      new webpack.ProvidePlugin({
+        // here ...
+      })
     ],
 
     /*
