@@ -131,7 +131,9 @@ heroku run XXXyourcommandXXX
 
 #### ISSUES
 
-- **+PRETTIER**: now all disabled. Adding it?
+- **PRETTIER**: now all disabled. Adding it?
+
+- **XML SITEMAP**: ok on heroku with running application. on static website (ftp) need to be checked
 
 
 #### NICE TO HAVE

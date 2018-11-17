@@ -4,8 +4,9 @@
 User-agent: *
 
 # Set where is the sitemap file for crawlers
-Sitemap: http://www.zitronenstrasse.com/sitemap.xml
+# Sitemap: https://www.zitronenstrasse.com/sitemap.xml
 
 # Disallow crawling of some pages below
-Disallow: /privacy-policy
-
+Disallow: /testme
+Disallow: /wip_files
+Disallow: /redirect_heroku
