@@ -10,6 +10,8 @@ yarn-error.log
 
 # Nuxt generate
 dist
+# sitemap create during "generate"
+static/sitemap.xml
 
 # Generated Modernizr File
 # you need to copy and paste the code manually in plugin
