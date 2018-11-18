@@ -298,5 +298,12 @@ module.exports = {
 
     // set logic for loading vue2 google map
     transpile: [/^vue2-google-maps($|\/)/]
+  },
+
+  /*
+  ** Generate configuration
+  */
+  generate: {
+    // options here
   }
 }
