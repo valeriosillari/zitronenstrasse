@@ -25,7 +25,7 @@
       PrivacyPolicyBanner
     },
     mounted () {
-      console.log('🍋 - purge 01')
+      console.log('🍋')
     }
   }
 </script>
