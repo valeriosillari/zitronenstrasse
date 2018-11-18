@@ -274,11 +274,11 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    plugins: [  
-      // set shortcuts as global for bootstrap  
-      new webpack.ProvidePlugin({ 
-        // here ... 
-      })  
+    plugins: [
+      // set shortcuts as global for bootstrap
+      new webpack.ProvidePlugin({
+        // here ...
+      })
     ],
 
     /*
