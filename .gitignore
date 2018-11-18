@@ -11,6 +11,9 @@ yarn-error.log
 # Nuxt generate
 dist
 
+# Ignore sitemap file created by Generate
+static/sitemap.xml
+
 # Generated Modernizr File
 # you need to copy and paste the code manually in plugin
 # more info here: https://github.com/nuxt/nuxt.js/issues/2525
