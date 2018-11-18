@@ -226,7 +226,7 @@ module.exports = {
     hostname: ogUrl,
     cacheTime: 1000 * 60 * 15,
     // Enable me when using nuxt generate
-    generate: false,
+    generate: true,
     exclude: [
       // empty
     ],
