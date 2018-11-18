@@ -303,8 +303,7 @@ module.exports = {
   /*
   ** Generate configuration
   */
-  // generate: {
-  //   subFolders: false,
-  //   routes: ['404']
-  // }
+  generate: {
+    // options here
+  }
 }
