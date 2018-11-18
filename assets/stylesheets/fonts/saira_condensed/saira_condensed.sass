@@ -13,8 +13,7 @@ $font_assets_saira_ttf: '#{$font_assets_path_saira}/saira-condensed-v3-latin-300
 
 @font-face
   font-family: 'Saira Condensed'
-  src: url('#{$font_assets_saira_woff2}') format('woff2'), url('#{$font_assets_saira_woff}') format('woff'), url('#{$font_assets_saira_ttf}') format('truetype')
+  font-display: swap  
+  src: local('Saira Condensed'), url('#{$font_assets_saira_woff2}') format('woff2'), url('#{$font_assets_saira_woff}') format('woff'), url('#{$font_assets_saira_ttf}') format('truetype')
   font-weight: normal
   font-style: 300
-  // The bare minimum for the English Language
-  font-display: swap
