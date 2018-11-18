@@ -1,6 +1,9 @@
 const pkg = require('./package')
 const dotenv = require('dotenv').config({path: './env_variables/env_keys'})
 const webpack = require('webpack')
+const PurgecssPlugin = require('purgecss-webpack-plugin')
+const glob = require('glob-all')
+const path = require('path')
 
 // set GOOGLE keys via dotenv
 const googleMapApiKey = process.env.GOOGLE_MAP_API_KEY || ''
@@ -294,6 +297,21 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+
+      if (!ctx.isDev) {
+        // Remove unused CSS using purgecss. See https://github.com/FullHuman/purgecss
+        // for more information about purgecss.
+        config.plugins.push(
+          new PurgecssPlugin({
+            paths: glob.sync([
+              path.join(__dirname, './pages/**/*.vue'),
+              path.join(__dirname, './layouts/**/*.vue'),
+              path.join(__dirname, './components/**/*.vue')
+            ]),
+            whitelist: ['html', 'body']
+          })
+        )
+      }
     },
 
     // set logic for loading vue2 google map
@@ -305,5 +323,10 @@ module.exports = {
   */
   generate: {
     // options here
-  }
+  },
+
+  /*
+  ** Purge CSS
+  */
+  extractCSS: true
 }
