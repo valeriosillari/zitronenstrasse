@@ -243,7 +243,7 @@ module.exports = {
   */
   plugins: [
     '~/plugins/modernizr-plugin',
-    '~/plugins/vue-cookie-law',  
+    '~/plugins/vue-cookie-law',
     '~/plugins/vue2-google-maps'
   ],
 
