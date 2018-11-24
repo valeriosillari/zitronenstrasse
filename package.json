@@ -6,8 +6,8 @@
   "license": "GPL-3.0",
   "private": true,
   "engines": {
-    "node": ">= v10.11.0",
-    "yarn": ">= v1.9.4"
+    "node": ">= v10.13.0",
+    "yarn": ">= v1.12.3"
   },
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
