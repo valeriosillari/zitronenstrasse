@@ -9,7 +9,14 @@ GOOGLE_VERIFICATION_OWNER_KEY = 'your_verification_owner_key'
 
 
 ####################
-# HEROKU EXTRA CONFIG FOR DEPLYOMENT | just remainder, not need it as secret key
+# NEW RELIC
+
+NEW_RELIC_LICENSE_KEY     = 'your_license_key'
+
+
+####################
+# HEROKU EXTRA CONFIG FOR DEPLOYMENT
+# just remainder, not need it as secret key for develop mode, but empty string
 
 HOST = 'your_value_here'
 

@@ -1,3 +1,4 @@
+const newrelic = require('newrelic')
 const sslRedirect = require('heroku-ssl-redirect')
 const express = require('express')
 const consola = require('consola')
