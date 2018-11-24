@@ -31,7 +31,7 @@
     "heroku-ssl-redirect": "^0.0.4",
     "hover.css": "^2.3.2",
     "modernizr": "^3.6.0",
-    "newrelic": "^v2.5.0",
+    "newrelic": "^4.0.0",
     "node-sass": "^4.9.3",
     "nuxt": "^2.0.0",
     "nuxt-sass-resources-loader": "^2.0.5",
