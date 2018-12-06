@@ -6,10 +6,12 @@ GOOGLE_MAP_API_KEY        = 'your_api_key'
 GOOGLE_ANALYTICS_KEY      = 'your_api_key'
 
 GOOGLE_VERIFICATION_OWNER_KEY = 'your_verification_owner_key'
+# just remainder, not need it as secret key for develop mode, but empty string
 
 
 ####################
 # NEW RELIC
+# just remainder, not need it as secret key for develop mode, but empty string
 
 NEW_RELIC_LICENSE_KEY     = 'your_license_key'
 
