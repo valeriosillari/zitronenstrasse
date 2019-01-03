@@ -315,5 +315,6 @@ module.exports = {
   */
   generate: {
     // options here
+    fallback: '404.html'
   }
 }

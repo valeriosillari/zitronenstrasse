@@ -25,7 +25,7 @@
       PrivacyPolicyBanner
     },
     mounted () {
-      console.log('🍋 - github pages - 222')
+      console.log('🍋 - github pages - 333')
     }
   }
 </script>
