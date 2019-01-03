@@ -2,6 +2,13 @@ const pkg = require('./package')
 const dotenv = require('dotenv').config({path: './env_variables/env_keys'})
 const webpack = require('webpack')
 
+// only add `router.base = '/<repository-name>/'` if `DEPLOY_ENV` is `GH_PAGES`
+ const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+   router: {
+     base: '/zitronenstrasse'
+   }
+ } : {}
+
 // set GOOGLE keys via dotenv
 const googleMapApiKey = process.env.GOOGLE_MAP_API_KEY || ''
 const googleAnalyticsKey = process.env.GOOGLE_ANALYTICS_KEY || ''
@@ -28,6 +35,9 @@ const ogImageHeight = '630'
 
 module.exports = {
   mode: 'universal',
+
+  // for deploy as static github page
+  ...routerBase,
 
   /*
   ** ENV vars to spread in all the app.
