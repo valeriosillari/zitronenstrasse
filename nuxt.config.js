@@ -314,7 +314,7 @@ module.exports = {
   ** Generate configuration
   */
   generate: {
-    // options here
+    // set error page for generated static website
     fallback: '404.html'
   }
 }
