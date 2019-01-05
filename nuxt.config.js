@@ -12,7 +12,8 @@ const webpack = require('webpack')
 // set option for correct ulr on github pages
  const deployUrl = {
    // Changes the website's base to work on Github pages
-   router: process.env.NODE_ENV == 'GH_PAGES' ? '/zitronenstrasse' : '/cippa'
+   // fallback OK
+   router: process.env.NODE_ENV == 'gh_pages' ? '/zitronenstrasse' : ''
  };
 
 // set GOOGLE keys via dotenv
