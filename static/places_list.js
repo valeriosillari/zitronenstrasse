@@ -784,7 +784,7 @@ const placesList = [
   //     lat: 52.4899228,
   //     lng: 13.4255371
   //   }
-  // },  
+  // },
 ]
 
 export default placesList

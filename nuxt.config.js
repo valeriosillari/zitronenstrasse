@@ -9,6 +9,12 @@ const webpack = require('webpack')
    }
  } : {}
 
+// set option for correct ulr on github pages
+ const deployUrl = {
+   // Changes the website's base to work on Github pages
+   router: process.env.NODE_ENV == 'GH_PAGES' ? '/zitronenstrasse' : ''
+ };
+
 // set GOOGLE keys via dotenv
 const googleMapApiKey = process.env.GOOGLE_MAP_API_KEY || ''
 const googleAnalyticsKey = process.env.GOOGLE_ANALYTICS_KEY || ''
@@ -29,7 +35,7 @@ const ogUrl = thisAppMainUrl
 const ogTitle = headTitle
 const ogDescription = headDescription
 const ogType = 'website'
-const ogImage = `${thisAppMainUrl}/favicons/zitronenstrasse_og_image.png`
+const ogImage = `${deployUrl.router}favicons/zitronenstrasse_og_image.png`
 const ogImageWidth = '1200'
 const ogImageHeight = '630'
 
@@ -181,12 +187,12 @@ module.exports = {
       {
         rel: 'icon',
         type: 'image/x-icon',
-        href: 'favicons/favicon.ico'
+        href: `${deployUrl.router}/favicons/favicon.ico`
       },
       // apple-touch-icon
       {
         rel: 'apple-touch-icon',
-        href: 'favicons/apple_touch_icon.png'
+        href: `${deployUrl.router}/favicons/apple_touch_icon.png`
       },
       // link canonical
       {
@@ -196,7 +202,7 @@ module.exports = {
       // site manifest
       {
         rel: 'manifest',
-        href: 'favicons/site.webmanifest'
+        href: `${deployUrl.router}/favicons/site.webmanifest`
       }
       // CSS font as external resources from Google Fonts
       // {
@@ -232,7 +238,7 @@ module.exports = {
   ** Site Map Options
   */
   sitemap: {
-    path: '/sitemap.xml',
+    path: `${deployUrl.router}/sitemap.xml`,
     hostname: ogUrl,
     cacheTime: 1000 * 60 * 15,
     // Enable me when using nuxt generate
