@@ -12,7 +12,7 @@ const webpack = require('webpack')
 // set option for correct ulr on github pages
  const deployUrl = {
    // Changes the website's base to work on Github pages
-   router: process.env.NODE_ENV == 'GH_PAGES' ? '/zitronenstrasse' : ''
+   router: process.env.NODE_ENV == 'GH_PAGES' ? '/zitronenstrasse' : '/cippa'
  };
 
 // set GOOGLE keys via dotenv
@@ -35,7 +35,7 @@ const ogUrl = thisAppMainUrl
 const ogTitle = headTitle
 const ogDescription = headDescription
 const ogType = 'website'
-const ogImage = `${deployUrl.router}favicons/zitronenstrasse_og_image.png`
+const ogImage = `${deployUrl.router}/favicons/zitronenstrasse_og_image.png`
 const ogImageWidth = '1200'
 const ogImageHeight = '630'
 
