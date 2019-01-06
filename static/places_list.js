@@ -14,7 +14,7 @@ const placesList = [
     // ChIJX2MutgxPqEcR2nvgHiQ0ojE
     title: 'Geschwister Nothaft Café',
     address: 'Schwarzastraße 9, 12055',
-    thumb: '/thumbs/places/001_nothaftcafes.jpg',
+    thumb: '001_nothaftcafes.jpg',
     thumbCredits: 'Geschwister Nothaft Café FB Page',
     website: 'http://nothaftcafes.com/',
     fbPage: 'https://www.facebook.com/geschwisternothaft/',
@@ -28,7 +28,7 @@ const placesList = [
     // ChIJAV_YIZ5PqEcRKxI0jRwb58I
     title: 'B-Lage',
     address: 'Mareschstraße 1, 12055',
-    thumb: '/thumbs/places/002_blage.jpg',
+    thumb: '002_blage.jpg',
     thumbCredits: 'B-Lage Website',
     website: 'http://www.b-lage.de/',
     fbPage: 'https://www.facebook.com/BLageNeukoelln/',
@@ -42,7 +42,7 @@ const placesList = [
     // ChIJd-_qBqBPqEcRhdYalX3ASNI
     title: 'Herr Lindemann',
     address: 'Richardpl. 16, 12055',
-    thumb: '/thumbs/places/003_herr_lindemann.jpg',
+    thumb: '003_herr_lindemann.jpg',
     thumbCredits: 'Herr Lindemann FB Page',
     fbPage: 'https://www.facebook.com/pg/BarHerrLindemann',
     position: {
@@ -55,7 +55,7 @@ const placesList = [
     // ChIJa6BtJAtPqEcRfVVCtKgmXAA
     title: 'Hallmann und Klee',
     address: 'Böhmische Str. 13, 12055',
-    thumb: '/thumbs/places/004_hallmann_klee.jpg',
+    thumb: '004_hallmann_klee.jpg',
     thumbCredits: 'Hallmann und Klee FB Page',
     website: 'https://www.hallmann-klee.de/',
     fbPage: 'https://www.facebook.com/HallmannKlee/',
@@ -82,7 +82,7 @@ const placesList = [
     // ChIJTRJ0JZ9PqEcRABns9MHCtoA
     title: 'Körner Park',
     address: 'Körner Park, Schierker Str. 8, 12051',
-    thumb: '/thumbs/places/006_korner_park.jpg',
+    thumb: '006_korner_park.jpg',
     thumbCredits: 'Körner Park Website',
     website: 'http://www.körnerpark.de/',
     position: {
@@ -95,7 +95,7 @@ const placesList = [
     // ChIJdT1vJqBPqEcRKr3fqKwU5gI
     title: 'DAS KAPiTAL',
     address: 'Karl-Marx-Platz 18, 12043',
-    thumb: '/thumbs/places/007_das_kapital.jpg',
+    thumb: '007_das_kapital.jpg',
     thumbCredits: 'DAS KAPiTAL FB Page',
     website: 'http://www.kapital.menu/',
     fbPage: 'https://www.facebook.com/kapital.menu/',
@@ -109,7 +109,7 @@ const placesList = [
     // ChIJyaJmgJ9PqEcRmFMyFfFqJGQ
     title: 'balera Weinhandlung',
     address: 'Karl-Marx-Platz 6, 12043',
-    thumb: '/thumbs/places/008_balera.jpg',
+    thumb: '008_balera.jpg',
     thumbCredits: 'balera Weinhandlung FB Page',
     website: 'http://baleraweine.com/',
     fbPage: 'https://www.facebook.com/baleraweine/',
@@ -123,7 +123,7 @@ const placesList = [
     // mZa6BPqEcRMXhPH5jFJyo
     title: 'Vux',
     address: 'Wipperstraße 14, 12055 Berlin',
-    thumb: '/thumbs/places/009_vux.jpg',
+    thumb: '009_vux.jpg',
     thumbCredits: 'Vux FB Page',
     website: 'http://www.vux-berlin.com/',
     fbPage: 'https://www.facebook.com/Caf%C3%A9-Vux-140098601300/',
@@ -137,7 +137,7 @@ const placesList = [
     // ChIJ31MDQKBPqEcRySz9dj60j7M
     title: 'Comenius-Garten',
     address: 'Richardstraße 35, 12043',
-    thumb: '/thumbs/places/010_comenius_garten.jpg',
+    thumb: '010_comenius_garten.jpg',
     thumbCredits: 'Comenius Garten Wikipedia Page',
     website: 'http://comenius-garten.de/',
     position: {
@@ -164,7 +164,7 @@ const placesList = [
     // ChIJy91K4KNPqEcRCAd6KD6oZx8
     title: 'CocoLiebe',
     address: 'Richardstraße 107, 12043',
-    thumb: '/thumbs/places/012_cocoliebe.jpg',
+    thumb: '012_cocoliebe.jpg',
     thumbCredits: 'CocoLiebe FB Page',
     website: 'http://cocoliebe.com/',
     fbPage: 'https://www.facebook.com/CocoLiebe-552868534832866/',
@@ -178,7 +178,7 @@ const placesList = [
     // ChIJP36bUnVPqEcRIwk3dhSvYWo
     title: 'Paulinski Palme',
     address: 'Richardstraße 76, 12043',
-    thumb: '/thumbs/places/013_paulinski_palme.jpg',
+    thumb: '013_paulinski_palme.jpg',
     thumbCredits: 'Paulinski Palme FB Page',
     website: 'http://www.paulinskipalme.de/',
     fbPage: 'https://www.facebook.com/Paulinskipalme/',
@@ -192,7 +192,7 @@ const placesList = [
     // ChIJC8oyvqJPqEcRJiH6bTWiOos
     title: 'Berliner Berg Brauerei',
     address: 'Kopfstraße 59, 12053',
-    thumb: '/thumbs/places/014_berliner_berg_brauerei.jpg',
+    thumb: '014_berliner_berg_brauerei.jpg',
     thumbCredits: 'Berliner Berg Brauerei Website',
     website: 'http://berlinerberg.com/',
     fbPage: 'https://www.facebook.com/berlinerberg',
@@ -219,7 +219,7 @@ const placesList = [
     // ChIJBfIPPbtPqEcRMnne4FZmMfk
     title: 'Klunkerkranich',
     address: 'Karl-Marx-Straße 66, 12043',
-    thumb: '/thumbs/places/016_klunkerkranich.jpg',
+    thumb: '016_klunkerkranich.jpg',
     thumbCredits: 'Klunkerkranich FB Page',
     website: 'http://klunkerkranich.de/',
     fbPage: 'https://www.facebook.com/kulturdachgartenklunkerkranich/',
@@ -259,7 +259,7 @@ const placesList = [
     title: 'Vin Aqua Vin',
     address: 'Weserstraße 204, 12047',
     website: 'https://www.vinaquavin.de/',
-    thumb: '/thumbs/places/019_vin_aqua_vin.jpg',
+    thumb: '019_vin_aqua_vin.jpg',
     thumbCredits: 'Vin Aqua Vin Website',
     fbPage: 'https://www.facebook.com/Vin-Aqua-Vin-138683709477176/',
     position: {
@@ -272,7 +272,7 @@ const placesList = [
     // ChIJp0sppLZPqEcRasG_5n9uw3A
     title: 'Damensalon',
     address: 'Reuterstraße 39, 12047',
-    thumb: '/thumbs/places/020_damensalon.jpg',
+    thumb: '020_damensalon.jpg',
     thumbCredits: 'Damensalon Website',
     website: 'https://damensalon-bar.com/',
     fbPage: 'https://www.facebook.com/damensalonbarberlin',
@@ -288,7 +288,7 @@ const placesList = [
     // ChIJOSWgYaVPqEcR63RnoNfgsDg
     title: 'TiEr',
     address: 'Weserstraße 42, 12045',
-    thumb: '/thumbs/places/021_tier.jpg',
+    thumb: '021_tier.jpg',
     thumbCredits: 'TiEr FB Page',
     website: 'http://www.tier.bar/',
     fbPage: 'https://www.facebook.com/TiERBAR',
@@ -301,7 +301,7 @@ const placesList = [
     // 022
     // ChIJIzn297ZPqEcRgw6RoWPK3GU
     title: 'Fuk;s Bar',
-    thumb: '/thumbs/places/022_fuks.jpg',
+    thumb: '022_fuks.jpg',
     thumbCredits: 'Zitronenstrasse',
     address: 'Hobrechtstraße 64, 12047',
     fbPage: 'https://www.facebook.com/FUKS-266431236749703/',
@@ -315,7 +315,7 @@ const placesList = [
     // ChIJn6jqirZPqEcRSTM-cJbVGAY
     title: 'Myxa Café Berlin',
     address: 'Lenaustraße 22, 12047',
-    thumb: '/thumbs/places/023_myxa.jpg',
+    thumb: '023_myxa.jpg',
     thumbCredits: 'Myxa Café Berlin Website',
     website: 'http://aplacecalledmyxa.tumblr.com/about',
     fbPage: 'https://www.facebook.com/myxaberlin/',
@@ -329,7 +329,7 @@ const placesList = [
     // ChIJ_UQ2CbpPqEcRzhfVydN_PCs
     title: 'Roamers',
     address: 'Pannierstraße 64, 12043',
-    thumb: '/thumbs/places/024_roamers.jpg',
+    thumb: '024_roamers.jpg',
     thumbCredits: 'Roamers Website',
     website: 'http://www.roamers.cc/',
     fbPage: 'https://www.facebook.com/RoamersBerlin',
@@ -343,7 +343,7 @@ const placesList = [
     // ChIJo99QRrZPqEcRXW-E2PeTJ4A
     title: 'Geist im Glas',
     address: 'Lenaustraße 27, 12047',
-    thumb: '/thumbs/places/025_geist_im_glas.jpg',
+    thumb: '025_geist_im_glas.jpg',
     thumbCredits: 'Geist im Glas FB Page',
     fbPage: 'https://www.facebook.com/geistimglas/',
     position: {
@@ -356,7 +356,7 @@ const placesList = [
     // ChIJccDCX8pPqEcRkdhWnC8AyNI
     title: 'Café Jacques',
     address: 'Maybachufer 14, 12047',
-    thumb: '/thumbs/places/026_cafe_jacques.jpg',
+    thumb: '026_cafe_jacques.jpg',
     thumbCredits: 'Café Jacques Website',
     website: 'http://cafejacques.de/',
     fbPage: 'https://www.facebook.com/pages/Cafe-Jacques-am-Maybachufer/106295842766499',
@@ -382,7 +382,7 @@ const placesList = [
     // ChIJlRNaZ_5OqEcRom1mEqQnRcw
     title: 'Molecule Men',
     address: 'An den Treptowers 1, 12435',
-    thumb: '/thumbs/places/028_molecule_men.jpg',
+    thumb: '028_molecule_men.jpg',
     thumbCredits: 'Zitronenstrasse',
     // NO websites
     position: {
@@ -395,7 +395,7 @@ const placesList = [
     // ChIJeZcqEh9PqEcRXsBoKa1ZkIk
     title: 'Insel der Jugend',
     address: 'Alt-Treptow 6, 12435',
-    thumb: '/thumbs/places/029_insel_der_jugend.jpg',
+    thumb: '029_insel_der_jugend.jpg',
     thumbCredits: 'Zerletti Photography',
     website: 'http://inselberlin.de/',
     fbPage: 'https://www.facebook.com/inselberlin/',
@@ -409,7 +409,7 @@ const placesList = [
     // ChIJ_So_Jx5PqEcRoulQtLXbCkM
     title: 'Friedhof Alt-Stralau',
     address: 'Tunnelstraße 5-11, 10245',
-    thumb: '/thumbs/places/030_friedhof_alt_stralau.jpg',
+    thumb: '030_friedhof_alt_stralau.jpg',
     thumbCredits: 'Friedhof Alt-Stralau Website',
     website: 'http://www.evfbs.de/index.php?id=225',
     position: {
@@ -424,7 +424,7 @@ const placesList = [
     // ChIJC0xKsFVOqEcRhjEGUJP9Umg
     title: 'Arena Berlin',
     address: 'Eichenstraße 4, 12435',
-    thumb: '/thumbs/places/031_arena.jpg',
+    thumb: '031_arena.jpg',
     thumbCredits: 'Arena Berlin Website',
     website: 'http://www.arena.berlin/',
     fbPage: 'https://www.facebook.com/ARENABERLIN',
@@ -438,7 +438,7 @@ const placesList = [
     // ChIJqwCqdclPqEcRYUkH0bnBeFk
     title: 'Pony Saloon Berlin',
     address: 'Dieffenbachstraße 36, 10967',
-    thumb: '/thumbs/places/032_pony_saloon.jpg',
+    thumb: '032_pony_saloon.jpg',
     thumbCredits: 'Pony Saloon FB Page',
     fbPage: 'https://www.facebook.com/Pony-Saloon-Berlin-252462801476185/',
     position: {
@@ -451,7 +451,7 @@ const placesList = [
     // ChIJ17uJN75PqEcRKVO6yDVtNog
     title: 'La Pecora Nera',
     address: 'Herrfurthpl. 6, 12049',
-    thumb: '/thumbs/places/033_pecora_nera.jpg',
+    thumb: '033_pecora_nera.jpg',
     thumbCredits: 'La Pecora Nera FB Page',
     website: 'http://www.pecoraberlin.de/',
     fbPage: 'https://www.facebook.com/lapecoraneraberlin/',
@@ -465,7 +465,7 @@ const placesList = [
     // ChIJvwxxdbxPqEcRimRthUrKjUs
     title: 'Sala da Mangiare',
     address: 'Mainzer Str. 23, 12053',
-    thumb: '/thumbs/places/034_sala_mangiare.jpg',
+    thumb: '034_sala_mangiare.jpg',
     thumbCredits: 'Sala da Mangiare Website',
     website: 'http://saladamangiare.de/',
     fbPage: 'https://www.facebook.com/saladamangiare',
@@ -479,7 +479,7 @@ const placesList = [
     // ChIJoa2VQShQqEcRA7c9NHuooAA
     title: 'LIMONADIER',
     address: 'Nostitzstraße 12, 10961',
-    thumb: '/thumbs/places/035_limonadier.jpg',
+    thumb: '035_limonadier.jpg',
     thumbCredits: 'LIMONADIER Website',
     website: 'http://www.limonadier.de/',
     fbPage: 'https://www.facebook.com/LimonadierBar',
@@ -505,7 +505,7 @@ const placesList = [
     // ChIJ2XYhzUtOqEcRIFyMFC_-0oA
     title: 'Tante Lisbeth',
     address: 'Muskauer Str. 49, 10997',
-    thumb: '/thumbs/places/037_tante_lisbeth.jpg',
+    thumb: '037_tante_lisbeth.jpg',
     thumbCredits: 'Tante Lisbeth Website',
     website: 'http://www.pyonen.de/tantelisbeth/',
     fbPage: 'https://www.facebook.com/Tante-Lisbeth-167076453314044/',
@@ -532,7 +532,7 @@ const placesList = [
     // ChIJVwi_HOJRqEcRdZxCHyZt1D0
     title: 'Cuore Di Vetro',
     address: 'Max-Beer-Straße 33, 10119',
-    thumb: '/thumbs/places/039_cuore_vetro.jpg',
+    thumb: '039_cuore_vetro.jpg',
     thumbCredits: 'Cuore Di Vetro FB Page',
     website: 'http://www.cuoredivetro.berlin/',
     fbPage: 'https://www.facebook.com/CuoreDiVetroBerlin/',
@@ -546,7 +546,7 @@ const placesList = [
     // ChIJEfO84BdOqEcRD1BMG5OkIvE
     title: 'Kosmetiksalon Babette',
     address: 'Karl-Marx-Allee 36, 10178',
-    thumb: '/thumbs/places/040_babette.jpg',
+    thumb: '040_babette.jpg',
     thumbCredits: 'Kosmetiksalon Babette Website',
     website: 'http://www.barbabette.com/',
     fbPage: 'https://www.facebook.com/pages/Bar-Babette/136696746381818',
@@ -562,7 +562,7 @@ const placesList = [
     // ChIJ1dfMe19OqEcRaAo1wYu7_nE
     title: 'Sheriff Teddy Bar',
     address: 'Weserstraße 25, 10247',
-    thumb: '/thumbs/places/041_sheriff_teddy.jpg',
+    thumb: '041_sheriff_teddy.jpg',
     thumbCredits: 'Sheriff Teddy Bar Website',
     website: 'http://www.sheriff-teddy.de/wordpress/',
     fbPage: 'https://www.facebook.com/pages/Sheriff-Teddy-Bar/175296822498538',
@@ -589,7 +589,7 @@ const placesList = [
     // ChIJkdsxhf9NqEcROqrpU0E2Wdo
     title: 'WohnZimmer',
     address: 'Lettestraße 6, 10437',
-    thumb: '/thumbs/places/043_wohnzimmer.jpg',
+    thumb: '043_wohnzimmer.jpg',
     thumbCredits: 'WohnZimmer FB Page',
     website: 'http://www.wohnzimmer-bar.de/',
     fbPage: 'https://www.facebook.com/wohnzimmerbarberlin/',
@@ -603,7 +603,7 @@ const placesList = [
     // ChIJheO_BwNOqEcRKANj6C1rPzY
     title: 'Park am Wasserturm',
     address: 'Diedenhofer Str. 9, 10405',
-    thumb: '/thumbs/places/044_park_wasserturm.jpg',
+    thumb: '044_park_wasserturm.jpg',
     thumbCredits: 'Visit Berlin',
     website: 'https://www.visitberlin.de/de/wasserturm-am-kollwitzplatz-wasserturmplatz',
     position: {
@@ -616,7 +616,7 @@ const placesList = [
     // ChIJp5s5Q2BOqEcRA7z8fxMJRbk
     title: 'Bitte und Danke',
     address: 'Silvio-Meier-Straße 8, 10247',
-    thumb: '/thumbs/places/045_bitte_danke.jpg',
+    thumb: '045_bitte_danke.jpg',
     thumbCredits: 'Bitte und Danke Website',
     website: 'http://www.partyquartier.de/',
     fbPage: 'https://www.facebook.com/BitteDanke8',
@@ -642,7 +642,7 @@ const placesList = [
     // ChIJL3N7C-FRqEcRlz-AbriEvhU
     title: 'Absinthdepot Berlin',
     address: 'Weinmeisterstraße 4, 10178',
-    thumb: '/thumbs/places/047_absinthdepot.jpg',
+    thumb: '047_absinthdepot.jpg',
     thumbCredits: 'Absinthdepot Berlin Website',
     website: 'https://absinthdepot.de/',
     fbPage: 'https://www.facebook.com/absinthdepot.berlin/',
@@ -656,7 +656,7 @@ const placesList = [
     // ChIJl5fmoQVSqEcROIldStvJvTw
     title: 'LOLA was here',
     address: 'Seelower Str. 8, 10439',
-    thumb: '/thumbs/places/048_lola.jpg',
+    thumb: '048_lola.jpg',
     thumbCredits: 'LOLA was here Website',
     website: 'http://www.lolawashere.de/',
     fbPage: 'https://www.facebook.com/lolawashere.cafe',
@@ -670,7 +670,7 @@ const placesList = [
     // ChIJ6yHZuChSqEcRPlv3ejkpuec
     title: 'Dujardin',
     address: 'Uferstraße 12, 13357',
-    thumb: '/thumbs/places/049_dujardin.jpg',
+    thumb: '049_dujardin.jpg',
     thumbCredits: 'Dujardin Website',
     website: 'http://www.cafedujardin.de/',
     fbPage: 'https://www.facebook.com/Caf%C3%A9-Dujardin-482078158551600/',
@@ -684,7 +684,7 @@ const placesList = [
     // ChIJO_yy5gpPqEcRcwAKoGIi6ZE
     title: 'Rotbart',
     address: 'Böhmische Straße 43, 12055',
-    thumb: '/thumbs/places/050_rotbart.jpg',
+    thumb: '050_rotbart.jpg',
     thumbCredits: 'Rotbart FB Page',
     website: 'http://www.rotbart-rixdorf.de/',
     fbPage: 'https://www.facebook.com/rotbart.rixdorf/',
@@ -698,7 +698,7 @@ const placesList = [
     // ChIJcx6bYQRSqEcRrtYwfRHc3Ew
     title: 'Omoni',
     address: 'Kopenhagener Str. 14, 10437',
-    thumb: '/thumbs/places/051_omoni.jpg',
+    thumb: '051_omoni.jpg',
     thumbCredits: 'Zitronenstrasse',
     fbPage: 'https://www.facebook.com/pages/Omoni/171813879520332',
     position: {
@@ -711,7 +711,7 @@ const placesList = [
     // ChIJDaRG171PqEcRSpDqEb_nv6Y
     title: 'MAMA KALO',
     address: 'Herrfurthstraße 23, 12049',
-    thumb: '/thumbs/places/053_mamakalo.jpg',
+    thumb: '053_mamakalo.jpg',
     thumbCredits: 'MAMA KALO Website',
     website: 'http://mamakalo.de/',
     fbPage: 'https://www.facebook.com/MAMAKALO/',
@@ -725,7 +725,7 @@ const placesList = [
     // ChIJ1deWK2ZQqEcR7iiuf3wwW4o
     title: 'Rudolph-Wilde Park',
     address: 'Kufsteiner Straße, 10825',
-    thumb: '/thumbs/places/054_rudolph_wilde_park.jpg',
+    thumb: '054_rudolph_wilde_park.jpg',
     thumbCredits: 'Zitronenstrasse',
     website: 'https://www.berlin.de/senuvk/umwelt/stadtgruen/gruenanlagen/de/gruenanlagen_plaetze/schoeneberg/rudolph_wilde_park/index.shtml',
     position: {
@@ -738,7 +738,7 @@ const placesList = [
     // ChIJx8Iw5VFOqEcRXUgfWxkmAaA
     title: 'Red Balloon View',
     address: 'May-Ayim-Ufer 9/11, 10997',
-    thumb: '/thumbs/places/055_red_balloon_view.jpg',
+    thumb: '055_red_balloon_view.jpg',
     thumbCredits: 'Zitronenstrasse',
     position: {
       lat: 52.502094,
@@ -750,7 +750,7 @@ const placesList = [
     // ChIJIzn7BchPqEcRF5uxEeEl-JE
     title: 'Zosse',
     address: 'Richardstraße 37, 12043',
-    thumb: '/thumbs/places/056_zosse.jpg',
+    thumb: '056_zosse.jpg',
     thumbCredits: 'Zosse FB Page',
     fbPage: 'https://www.facebook.com/ZosseBar/',
     position: {
@@ -765,7 +765,7 @@ const placesList = [
   //   // ChIJe-JZ6sRPqEcR57AEB-9Vg90 | closed for winter
   //   title: 'Floating University Berlin',
   //   address: 'Lilienthalstraße 32, 10965 ',
-  //   thumb: '/thumbs/places/057_floating_university_berlin.jpg',
+  //   thumb: '057_floating_university_berlin.jpg',
   //   thumbCredits: 'Zitronenstrasse',
   //   website: 'http://www.floatinguniversity.org/',
   //   position: {
@@ -777,7 +777,7 @@ const placesList = [
   //   // ChIJDd47W7ZPqEcRIQcDmqwJ85A | closed
   //   title: 'Galatea Wine and Music Berlin',
   //   address: 'Lenaustraße 5, 12047',
-  //   thumb: '/thumbs/places/052_galatea.jpg',
+  //   thumb: '052_galatea.jpg',
   //   thumbCredits: 'Galatea Wine and Music Berlin FB Page',
   //   fbPage: 'https://www.facebook.com/GalateaWineBerlin/',
   //   position: {

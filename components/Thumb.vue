@@ -2,14 +2,14 @@
   .thumb-area
     img.thumb(
       v-if='currentMarkerDetails.thumb'
-      :src='currentMarkerDetails.thumb'
       :alt='currentMarkerDetails.title'
+      :src="'/thumbs/places/' + currentMarkerDetails.thumb"
     )
     //- fallback
     img.thumb(
       v-else='currentMarkerDetails.thumb'
-      src='~/assets/img/thumbs/fallback/place_fallback.jpg'
       :alt='currentMarkerDetails.title'
+      src='/thumbs/fallback/place_fallback.jpg'
     )
 
     p.credits(
