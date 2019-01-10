@@ -1,17 +1,8 @@
 <template lang="pug">
   .thumb-area
-    //- todo: image concatenated : image need to go from scripts and update at chnage
-    //- the we got methid set correct url based on ENV to deploy
     img.thumb(
-      v-if='currentMarkerDetails.thumb'
       :alt='currentMarkerDetails.title'
-      :src="`/thumbs/places/${currentMarkerDetails.thumb}`"
-    )
-    //- fallback
-    img.thumb(
-      v-else='currentMarkerDetails.thumb'
-      :alt='currentMarkerDetails.title'
-      src='/thumbs/fallback/place_fallback.jpg'
+      :src='currentMarkerDetails.thumb'
     )
 
     p.credits(

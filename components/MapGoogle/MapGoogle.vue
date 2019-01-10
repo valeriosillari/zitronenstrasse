@@ -134,18 +134,41 @@
         // created object with all info for details
         currentMarkerDetails: {
           type: Object,
-          required: true,
           default: () => ({
-            title: String,
-            address: String,
-            thumb: String,
-            thumbCredits: String,
-            website: String,
-            fbPage: String,
+            title: {
+              type: String,
+              default: false,
+            },
+            address: {
+              type: String,
+              default: false,
+            },
+            thumb: {
+              type: String,
+              default: `~/assets/thumbs/places/00_place_fallback.jpg`,
+            },
+            thumbCredits: {
+              type: String,
+              default: false,
+            },
+            website: {
+              type: String,
+              default: false,
+            },
+            fbPage: {
+              type: String,
+              default: false,
+            },
             position: {
-              lat: Number,
-              lng: Number
-            }
+              lng: {
+                type: Number,
+                default: false,
+              },
+              lng: {
+                type: Number,
+                default: false,
+              }
+            },
           })
         }
       }
@@ -153,6 +176,12 @@
 
     // mounted: WHEN ALL code on server is already loaded!
     mounted () {
+
+
+      console.log('============== MOUTED ================')
+      console.log(this.currentMarkerDetails.thumb)
+
+
       // wait having the map created. info and tips from this issue:
       // https://github.com/xkjyeah/vue-google-maps/issues/301
       this.$refs.mapRef.$mapPromise.then((map) => {
@@ -185,9 +214,13 @@
 
             // at marker click ...
             google.maps.event.addListener(marker, 'click', () => {
+
+              console.log('============== CLCIK ================')
+              console.log( `~/assets/thumbs/places/${placeID.thumb}`)
+
               // update info for current marker object
               this.$set(this.currentMarkerDetails, 'title', placeID.title)
-              this.$set(this.currentMarkerDetails, 'thumb', placeID.thumb)
+              this.$set(this.currentMarkerDetails, 'thumb', `~/assets/thumbs/places/${placeID.thumb}`)
               this.$set(this.currentMarkerDetails, 'thumbCredits', placeID.thumbCredits)
               this.$set(this.currentMarkerDetails, 'address', placeID.address)
               this.$set(this.currentMarkerDetails, 'position', placeID.position)
