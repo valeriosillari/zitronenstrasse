@@ -163,18 +163,36 @@
             ov.setMap(this)
           }
 
+          // set single marker behavious
           const setSingleMarker = (indexNumber, placeID) => {
+
+            // firts create object with all data for current marker
             let marker = new google.maps.Marker({
-              position: new google.maps.LatLng(placeID.position.lat, placeID.position.lng),
+              // set current map
               map: map,
-              title: placeID.title,
               // set icon custom style
-              icon: customMarker
+              icon: customMarker,
+              // set place info              
+              title: placeID.title,
+              address:  placeID.address,
+              thumb: placeID.thumb,
+              thumbCredits: placeID.thumbCredits,
+              position: new google.maps.LatLng(placeID.position.lat, placeID.position.lng),
+              website: placeID.website,
+              fbPage: placeID.fbPage,
             })
 
-            // at marker click ...
+            // at marker click passed all the current marker info to the store object:
+            // so we update globally the info about current item in all components
             google.maps.event.addListener(marker, 'click', () => {
-              console.log('============== CLCIK ================')
+              console.log('============== CLICK ================')
+              console.log(marker.title)
+              console.log(marker.address)
+              console.log(marker.thumb)
+              console.log(marker.thumbCredits)
+              console.log(marker.position)
+              console.log(marker.website)
+              console.log(marker.fbPage)
             })
 
             return marker
