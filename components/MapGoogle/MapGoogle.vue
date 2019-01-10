@@ -139,8 +139,7 @@
 
 
       console.log('============== Mounted - MAP ================')
-      console.log( this.$store.state.currentPlace )
-      console.log( this.$store.state.currentPlace.thumb )
+      console.log( this.$store.state.test)
 
       // wait having the map created. info and tips from this issue:
       // https://github.com/xkjyeah/vue-google-maps/issues/301
@@ -186,13 +185,19 @@
             // so we update globally the info about current item in all components
             google.maps.event.addListener(marker, 'click', () => {
               console.log('============== CLICK ================')
-              console.log(marker.title)
-              console.log(marker.address)
-              console.log(marker.thumb)
-              console.log(marker.thumbCredits)
-              console.log(marker.position)
-              console.log(marker.website)
-              console.log(marker.fbPage)
+              // console.log(marker.title)
+              // console.log(marker.address)
+              // console.log(marker.thumb)
+              // console.log(marker.thumbCredits)
+              // console.log(marker.position)
+              // console.log(marker.website)
+              // console.log(marker.fbPage)
+
+
+              console.log('======= store now is ... =======')
+              this.$store.commit('updateCurrentItem')
+              console.log( this.$store.state.test )
+
             })
 
             return marker
