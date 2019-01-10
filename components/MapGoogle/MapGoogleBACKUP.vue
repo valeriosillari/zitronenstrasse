@@ -14,10 +14,11 @@
     )
 
     //- Sidebar
-      .sidebar-animation
-        Sidebar(
-          v-on:isSidebarButtonClose='isSidebarClose()'
-        )
+    .sidebar-animation
+      Sidebar(
+        :currentMarkerDetails='currentMarkerDetails',
+        v-on:isSidebarButtonClose='isSidebarClose()'
+      )
 </template>
 
 
@@ -100,13 +101,12 @@
   import placesList from '~/static/places_list.js'
   import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
   import customMarker from '~/components/MapGoogle/_markerCustomStyles.js'
-  // import Sidebar from '~/components/Sidebar.vue'
+  import Sidebar from '~/components/Sidebar.vue'
 
   export default {
-    // components: {
-    //   Sidebar
-    // },
-
+    components: {
+      Sidebar
+    },     
     data () {
       return {
         // map
@@ -131,6 +131,46 @@
         },
         // map drag for marker animation
         isMapDragged: false,
+        // created object with all info for details
+        currentMarkerDetails: {
+          type: Object,
+          default: () => ({
+            title: {
+              type: String,
+              default: false,
+            },
+            address: {
+              type: String,
+              default: false,
+            },
+            thumb: {
+              type: String,
+              default: `~/assets/img/places/000_place_fallback.jpg`,
+            },
+            thumbCredits: {
+              type: String,
+              default: false,
+            },
+            website: {
+              type: String,
+              default: false,
+            },
+            fbPage: {
+              type: String,
+              default: false,
+            },
+            position: {
+              lng: {
+                type: Number,
+                default: false,
+              },
+              lng: {
+                type: Number,
+                default: false,
+              }
+            },
+          })
+        }
       }
     },
 
@@ -138,9 +178,9 @@
     mounted () {
 
 
-      console.log('============== Mounted - MAP ================')
-      console.log( this.$store.state.currentPlace )
-      console.log( this.$store.state.currentPlace.thumb )
+      console.log('============== MOUTED ================')
+      console.log(this.currentMarkerDetails.thumb)
+
 
       // wait having the map created. info and tips from this issue:
       // https://github.com/xkjyeah/vue-google-maps/issues/301
@@ -174,7 +214,23 @@
 
             // at marker click ...
             google.maps.event.addListener(marker, 'click', () => {
+
               console.log('============== CLCIK ================')
+
+              // update info for current marker object
+              this.$set(this.currentMarkerDetails, 'title', placeID.title)
+              this.$set(this.currentMarkerDetails, 'thumb', require(`~/assets/img/places/${placeID.thumb}`))
+              this.$set(this.currentMarkerDetails, 'thumbCredits', placeID.thumbCredits)
+              this.$set(this.currentMarkerDetails, 'address', placeID.address)
+              this.$set(this.currentMarkerDetails, 'position', placeID.position)
+              this.$set(this.currentMarkerDetails, 'website', placeID.website)
+              this.$set(this.currentMarkerDetails, 'fbPage', placeID.fbPage)
+
+              // marker animation
+              this.markerAnimation(marker)
+
+              // open sidebar + PAN MOVE
+              this.isSidebarOpen(window.innerWidth)
             })
 
             return marker
@@ -189,6 +245,11 @@
           // return map so we can used it globally
           this.map = map
 
+          // TODO: set as function?
+          // check if user is dragging the map. we need it later for close option
+          google.maps.event.addListener(map, 'dragend', () => {
+            this.isMapDragged = true
+          })
         // ./ end init
         }
 
@@ -198,6 +259,45 @@
     },
 
     methods: {
+      // move map (animation) to current marker
+      panMovement (movementLatValue) {
+        this.map.panToWithOffset(
+          new window.google.maps.LatLng(
+            this.currentMarkerDetails.position.lat,
+            this.currentMarkerDetails.position.lng
+          ), movementLatValue, 0
+        )
+      },
+
+      markerAnimation (currentMarker) {
+        // todo: set better with NO timeout?
+        // start bounce
+        setTimeout(() => {
+          currentMarker.setAnimation(window.google.maps.Animation.BOUNCE)
+        }, 400)
+        // end bounce
+        setTimeout(() => {
+          currentMarker.setAnimation(null)
+        }, 1150)
+      },
+
+      isSidebarOpen (screen) {
+        this.isScreenBig = false
+        if (screen >= 576) {
+          this.isScreenBig = true
+        }
+        // reset drag option
+        this.isMapDragged = false
+
+        // open sidebar (css animation in milleseconds)
+        // when function trigger, set value as TRUE. we change DATA value
+        // https://vuejs.org/v2/guide/reactivity.html#Change-Detection-Caveats
+        this.$set(this.isSidebarBindClass, 'isOpenClass', true)
+
+        if (this.isScreenBig) {
+          this.panMovement(-200)
+        }
+      },
 
       isSidebarClose () {
         // reset drag option
