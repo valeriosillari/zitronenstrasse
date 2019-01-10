@@ -145,7 +145,7 @@
             },
             thumb: {
               type: String,
-              default: `~/assets/thumbs/places/00_place_fallback.jpg`,
+              default: `~/assets/img/places/000_place_fallback.jpg`,
             },
             thumbCredits: {
               type: String,
@@ -216,11 +216,10 @@
             google.maps.event.addListener(marker, 'click', () => {
 
               console.log('============== CLCIK ================')
-              console.log( `~/assets/thumbs/places/${placeID.thumb}`)
 
               // update info for current marker object
               this.$set(this.currentMarkerDetails, 'title', placeID.title)
-              this.$set(this.currentMarkerDetails, 'thumb', `~/assets/thumbs/places/${placeID.thumb}`)
+              this.$set(this.currentMarkerDetails, 'thumb', require(`~/assets/img/places/${placeID.thumb}`))
               this.$set(this.currentMarkerDetails, 'thumbCredits', placeID.thumbCredits)
               this.$set(this.currentMarkerDetails, 'address', placeID.address)
               this.$set(this.currentMarkerDetails, 'position', placeID.position)
