@@ -139,7 +139,7 @@
 
 
       console.log('============== Mounted - MAP ================')
-      console.log( this.$store.state.test)
+      console.log(this.$store.state.currentPlace)
 
       // wait having the map created. info and tips from this issue:
       // https://github.com/xkjyeah/vue-google-maps/issues/301
@@ -195,8 +195,12 @@
 
 
               console.log('======= store now is ... =======')
-              this.$store.commit('updateCurrentItem')
-              console.log( this.$store.state.test )
+
+              // update store
+              this.$store.commit('updateCurrentItem' === 'UPDATEEEEE')
+
+              // check
+              console.log(this.$store.state.currentPlace)
 
             })
 

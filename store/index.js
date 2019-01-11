@@ -5,7 +5,7 @@
 // https://blog.prototypr.io/nuxt-prototyping-storing-design-tokens-dummy-data-globally-adf97ab47eeb
 
 export const state = () => ({
-  test: 0,
+  currentPlace: 'yolo BASE',
   // currentPlace: {
   //   title: 'STore Title Defaul 11',
   //   address: false,
@@ -21,7 +21,8 @@ export const state = () => ({
 })
 
 export const mutations = {
-  updateCurrentItem (state) {
-    state.test++
+  updateCurrentItem (state, currentPlace) {
+    String.assign(state.currentPlace, currentPlace);
   }
+
 }
