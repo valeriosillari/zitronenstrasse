@@ -12,7 +12,6 @@
       :options='options'
       class='gmap-container'
     )
-
     //- Sidebar
       .sidebar-animation
         Sidebar(
@@ -136,10 +135,7 @@
 
     // mounted: WHEN ALL code on server is already loaded!
     mounted () {
-
-
       console.log('============== Mounted - MAP ================')
-      console.log(this.$store.state.currentPlace)
 
       // wait having the map created. info and tips from this issue:
       // https://github.com/xkjyeah/vue-google-maps/issues/301
@@ -162,7 +158,7 @@
             ov.setMap(this)
           }
 
-          // set single marker behavious
+          // set single marker Loop (at page load)
           const setSingleMarker = (indexNumber, placeID) => {
 
             // firts create object with all data for current marker
@@ -171,7 +167,7 @@
               map: map,
               // set icon custom style
               icon: customMarker,
-              // set place info              
+              // set place info
               title: placeID.title,
               address:  placeID.address,
               thumb: placeID.thumb,
@@ -184,24 +180,24 @@
             // at marker click passed all the current marker info to the store object:
             // so we update globally the info about current item in all components
             google.maps.event.addListener(marker, 'click', () => {
+
               console.log('============== CLICK ================')
-              // console.log(marker.title)
-              // console.log(marker.address)
-              // console.log(marker.thumb)
-              // console.log(marker.thumbCredits)
-              // console.log(marker.position)
-              // console.log(marker.website)
-              // console.log(marker.fbPage)
 
+              let testValuesForStore = {
+                title: placeID.title,
+                address:  placeID.address,
+                thumb: placeID.thumb,
+                thumbCredits: placeID.thumbCredits,
+                website: placeID.website,
+                fbPage: placeID.fbPage,
+                position: {
+                  lat: placeID.position.lat,
+                  lng: placeID.position.lng,
+                }
+              }
 
-              console.log('======= store now is ... =======')
-
-              // update store
-              this.$store.commit('updateCurrentItem' === 'UPDATEEEEE')
-
-              // check
-              console.log(this.$store.state.currentPlace)
-
+              // update store with current place
+              this.$store.commit('currentPlace/updateCurrentPlace', testValuesForStore)
             })
 
             return marker
