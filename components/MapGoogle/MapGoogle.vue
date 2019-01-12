@@ -16,6 +16,7 @@
     //- Sidebar
     .sidebar-animation
       Sidebar(
+        :currentPlace='$store.state.currentPlace.item'
         v-on:isSidebarButtonClose='isSidebarClose()'
       )
 </template>

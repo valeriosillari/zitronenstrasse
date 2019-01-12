@@ -3,7 +3,7 @@
 
 // set default store object at app start
 export const state = () => ({
-  item: false
+  item: {}
 })
 
 export const mutations = {
