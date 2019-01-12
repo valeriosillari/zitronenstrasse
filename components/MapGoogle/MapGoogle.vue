@@ -176,9 +176,10 @@
             // so we update globally the info about current item in all components
             google.maps.event.addListener(marker, 'click', () => {
 
-              console.log('============== CLICK ================')
+              console.log('============== CLICK - MAP ================')
 
-              let testValuesForStore = {
+              // set update object to pass to the store
+              let currentPlace = {
                 title: placeID.title,
                 address:  placeID.address,
                 thumb: placeID.thumb,
@@ -191,17 +192,13 @@
                 }
               }
 
-              // update store with current place info
-              this.$store.commit('currentPlace/updateCurrentPlace', testValuesForStore)
-
-              console.log('uppdate is ...')
-              console.log(this.$store.state.currentPlace.currentItem.title)
-
+              // update store with current place data
+              this.$store.commit('currentPlace/updateCurrentPlace', currentPlace)
 
               // marker animation
               this.markerAnimation(marker)
 
-              // open sidebar + PAN MOVE
+              // open sidebar + pan movement (for centering)
               this.isSidebarOpen(window.innerWidth)
             })
 
@@ -230,8 +227,9 @@
       panMovement (movementLatValue) {
         this.map.panToWithOffset(
           new window.google.maps.LatLng(
-            this.$store.state.currentPlace.currentItem.position.lat,
-            this.$store.state.currentPlace.currentItem.position.lng
+            // from store
+            this.$store.state.currentPlace.item.position.lat,
+            this.$store.state.currentPlace.item.position.lng
           ), movementLatValue, 0
         )
       },

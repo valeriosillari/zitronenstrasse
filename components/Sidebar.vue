@@ -8,7 +8,7 @@
       | sidebar
 
     p
-      | {{ $store.state.currentPlace.currentItem.title}}
+      | {{ $store.state.currentPlace.item.title}}
     //- h2.title
     //-   | {{ currentMarkerDetails.title }}
     //-
