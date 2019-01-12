@@ -12,11 +12,12 @@
       :options='options'
       class='gmap-container'
     )
+
     //- Sidebar
-      .sidebar-animation
-        Sidebar(
-          v-on:isSidebarButtonClose='isSidebarClose()'
-        )
+    .sidebar-animation
+      Sidebar(
+        v-on:isSidebarButtonClose='isSidebarClose()'
+      )
 </template>
 
 
@@ -99,12 +100,12 @@
   import placesList from '~/static/places_list.js'
   import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
   import customMarker from '~/components/MapGoogle/_markerCustomStyles.js'
-  // import Sidebar from '~/components/Sidebar.vue'
+  import Sidebar from '~/components/Sidebar.vue'
 
   export default {
-    // components: {
-    //   Sidebar
-    // },
+    components: {
+      Sidebar
+    },
 
     data () {
       return {
@@ -195,6 +196,13 @@
 
               console.log('uppdate is ...')
               console.log(this.$store.state.currentPlace.currentItem.title)
+
+
+              // marker animation
+              this.markerAnimation(marker)
+
+              // open sidebar + PAN MOVE
+              this.isSidebarOpen(window.innerWidth)
             })
 
             return marker
@@ -218,6 +226,45 @@
     },
 
     methods: {
+      // move map (animation) to current marker
+      panMovement (movementLatValue) {
+        this.map.panToWithOffset(
+          new window.google.maps.LatLng(
+            this.$store.state.currentPlace.currentItem.position.lat,
+            this.$store.state.currentPlace.currentItem.position.lng
+          ), movementLatValue, 0
+        )
+      },
+
+      markerAnimation (currentMarker) {
+        // todo: set better with NO timeout?
+        // start bounce
+        setTimeout(() => {
+          currentMarker.setAnimation(window.google.maps.Animation.BOUNCE)
+        }, 400)
+        // end bounce
+        setTimeout(() => {
+          currentMarker.setAnimation(null)
+        }, 1150)
+      },
+
+      isSidebarOpen (screen) {
+        this.isScreenBig = false
+        if (screen >= 576) {
+          this.isScreenBig = true
+        }
+        // reset drag option
+        this.isMapDragged = false
+
+        // open sidebar (css animation in milleseconds)
+        // when function trigger, set value as TRUE. we change DATA value
+        // https://vuejs.org/v2/guide/reactivity.html#Change-Detection-Caveats
+        this.$set(this.isSidebarBindClass, 'isOpenClass', true)
+
+        if (this.isScreenBig) {
+          this.panMovement(-200)
+        }
+      },
 
       isSidebarClose () {
         // reset drag option
