@@ -96,6 +96,7 @@
 
 
 <script>
+  import { mapMutations } from 'vuex'
   import placesList from '~/static/places_list.js'
   import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
   import customMarker from '~/components/MapGoogle/_markerCustomStyles.js'
@@ -133,6 +134,12 @@
       }
     },
 
+    computed: {
+      currentPlace () {
+        return this.$store.state.currentPlace.currentItem
+      }
+    },
+
     // mounted: WHEN ALL code on server is already loaded!
     mounted () {
       console.log('============== Mounted - MAP ================')
@@ -167,14 +174,8 @@
               map: map,
               // set icon custom style
               icon: customMarker,
-              // set place info
-              title: placeID.title,
-              address:  placeID.address,
-              thumb: placeID.thumb,
-              thumbCredits: placeID.thumbCredits,
+              // set position
               position: new google.maps.LatLng(placeID.position.lat, placeID.position.lng),
-              website: placeID.website,
-              fbPage: placeID.fbPage,
             })
 
             // at marker click passed all the current marker info to the store object:
@@ -196,8 +197,11 @@
                 }
               }
 
-              // update store with current place
+              // update store with current place info
               this.$store.commit('currentPlace/updateCurrentPlace', testValuesForStore)
+
+              console.log('uppdate is ...')
+              console.log(this.$store.state.currentPlace.currentItem.title)
             })
 
             return marker
