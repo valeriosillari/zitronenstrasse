@@ -109,6 +109,7 @@
       top: 50%
       left: 0
       margin-top: -1px
+      // todo: set variable
       background: #8e8d8d
 
     &::before
