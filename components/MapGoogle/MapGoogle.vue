@@ -96,7 +96,6 @@
 
 
 <script>
-  import { mapMutations } from 'vuex'
   import placesList from '~/static/places_list.js'
   import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
   import customMarker from '~/components/MapGoogle/_markerCustomStyles.js'
@@ -131,12 +130,6 @@
         },
         // map drag for marker animation
         isMapDragged: false,
-      }
-    },
-
-    computed: {
-      currentPlace () {
-        return this.$store.state.currentPlace.currentItem
       }
     },
 
