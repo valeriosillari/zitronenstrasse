@@ -183,7 +183,7 @@
               let currentPlace = {
                 title: placeID.title,
                 address:  placeID.address,
-                thumb: placeID.thumb,
+                thumb: placeID.thumb || '000_place_fallback.jpg',
                 thumbCredits: placeID.thumbCredits,
                 website: placeID.website,
                 fbPage: placeID.fbPage,

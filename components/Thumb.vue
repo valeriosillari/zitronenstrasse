@@ -1,15 +1,33 @@
 <template lang="pug">
   .thumb-area
-    img.thumb(
-      :alt='currentMarkerDetails.title'
-      :src='currentMarkerDetails.thumb'
-    )
+
+    p(style="padding: 10px; color: white; background: red;")
+      | {{ currentThumb.thumbPath }}
+
+    //- img.thumb(
+    //-   v-if='currentThumb.thumbPath'
+    //-   :alt='currentThumb.title'
+    //-   :src='`/thumbs/${currentThumb.thumbPath}`'
+    //- )
 
     p.credits(
-      v-if='currentMarkerDetails.thumbCredits'
+      v-if='currentThumb.credits'
     )
-      | Credits: {{ currentMarkerDetails.thumbCredits }}
+      | Credits: {{ currentThumb.credits }}
 </template>
+
+
+<script>
+  export default {
+    props: {
+      // created object with all info for details
+      currentThumb: {
+        type: Object,
+        required: true,
+      }
+    },
+  }
+</script>
 
 
 <style lang="sass">
@@ -24,15 +42,3 @@
     margin-bottom: 0
     color: $color_sidebar_credits
 </style>
-
-
-<script>
-  export default {
-    props: {
-      currentMarkerDetails: {
-        type: Object,
-        required: true,
-      }
-    }
-  }
-</script>

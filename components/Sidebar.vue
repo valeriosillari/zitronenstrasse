@@ -8,7 +8,7 @@
       | {{ currentPlace.title }}
 
     //- Thumb Place
-    //- Thumb(:currentMarkerDetails='currentMarkerDetails')
+    Thumb(:currentThumb="{title: currentPlace.title, thumbPath: currentPlace.thumb, credits: currentPlace.thumbCredits }")
 
     p.address(v-if='currentPlace.address')
       span.info
@@ -39,11 +39,12 @@
 
 
 <script>
-  // import Thumb from '~/components/Thumb.vue'
+  import Thumb from '~/components/Thumb.vue'
+
   export default {
-    // components: {
-    //   Thumb
-    // },
+    components: {
+      Thumb
+    },
 
     props: {
       currentPlace: {
