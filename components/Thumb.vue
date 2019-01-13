@@ -1,14 +1,11 @@
 <template lang="pug">
   .thumb-area
 
-    p(style="padding: 10px; color: white; background: red;")
-      | {{ currentThumb.thumbPath }}
-
-    //- img.thumb(
-    //-   v-if='currentThumb.thumbPath'
-    //-   :alt='currentThumb.title'
-    //-   :src='`/thumbs/${currentThumb.thumbPath}`'
-    //- )
+    img.thumb(
+      v-if='currentThumb.thumbPath'
+      :alt='currentThumb.title'
+      :src="`/places/${currentThumb.thumbPath}`"
+    )
 
     p.credits(
       v-if='currentThumb.credits'
