@@ -1,7 +1,9 @@
 <template lang="pug">
   .thumb-area
 
+    //- you need IF for load page. So no errors
     img.thumb(
+      v-if='currentThumb.thumbPath'
       :alt='currentThumb.title'
       :src="`${thumbPath}${currentThumb.thumbPath}`"
     )
