@@ -52,7 +52,8 @@ module.exports = {
   */
   env: {
     metaHeadDescription: headDescription,
-    googleMapApiKey: googleMapApiKey
+    googleMapApiKey: googleMapApiKey,
+    deployUrl: deployUrl
   },
 
   /*

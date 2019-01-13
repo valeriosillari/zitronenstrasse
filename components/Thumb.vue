@@ -4,7 +4,7 @@
     img.thumb(
       v-if='currentThumb.thumbPath'
       :alt='currentThumb.title'
-      :src="`/places/${currentThumb.thumbPath}`"
+      :src="`${thumbPath}${currentThumb.thumbPath}`"
     )
 
     p.credits(
@@ -24,10 +24,19 @@
       }
     },
 
+    data () {
+      return {
+        // map
+        thumbPath: `${process.env.deployUrl.router}/places/`
+      }
+    },
+
     // mounted: WHEN ALL code on server is already loaded!
     mounted () {
       console.log('============== Mounted - THUMB ================')
-      console.log(process.env.DEPLOY_ENV)
+      // console.log(deployUrl)
+      console.log(process.env.deployUrl)
+      console.log(process.env.deployUrl.router)
     }
 
   }
