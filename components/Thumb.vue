@@ -23,6 +23,13 @@
         required: true,
       }
     },
+
+    // mounted: WHEN ALL code on server is already loaded!
+    mounted () {
+      console.log('============== Mounted - THUMB ================')
+      console.log(process.env.DEPLOY_ENV)
+    }
+
   }
 </script>
 
