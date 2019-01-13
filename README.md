@@ -133,8 +133,6 @@ heroku run XXXyourcommandXXX
 
 - **PRETTIER**: now all disabled. Adding it?
 
-- **ERROR PAGE (Generate)**: check logic for generate error page. for FTP.
-
 - **PERFORMANCES**: check speed insight (November 2018)
 
 
