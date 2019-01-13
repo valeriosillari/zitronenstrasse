@@ -14,6 +14,7 @@
     )
 
     //- Sidebar
+    //- todo: set via store the close logid
     .sidebar-animation
       Sidebar(
         :currentPlace='$store.state.currentPlace.item'

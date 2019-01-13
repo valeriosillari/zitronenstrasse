@@ -58,6 +58,7 @@
 
     methods: {
       actionSidebarClose () {
+        // todo: set via store
         this.$emit('isSidebarButtonClose')
       }
     }
