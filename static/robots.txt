@@ -7,3 +7,4 @@ User-agent: *
 # Sitemap: https://www.zitronenstrasse.com/sitemap.xml
 
 # Disallow crawling of some pages below
+/wip
