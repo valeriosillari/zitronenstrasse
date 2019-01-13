@@ -137,8 +137,6 @@
 
     // mounted: WHEN ALL code on server is already loaded!
     mounted () {
-      console.log('============== Mounted - MAP ================')
-
       // wait having the map created. info and tips from this issue:
       // https://github.com/xkjyeah/vue-google-maps/issues/301
       this.$refs.mapRef.$mapPromise.then((map) => {
@@ -176,9 +174,6 @@
             // at marker click passed all the current marker info to the store object:
             // so we update globally the info about current item in all components
             google.maps.event.addListener(marker, 'click', () => {
-
-              console.log('============== CLICK - MAP ================')
-
               // set update object to pass to the store
               let currentPlace = {
                 title: placeID.title,
@@ -214,6 +209,12 @@
 
           // return map so we can used it globally
           this.map = map
+
+          // TODO: set as function?
+          // check if user is dragging the map. we need it later for close option
+          google.maps.event.addListener(map, 'dragend', () => {
+            this.isMapDragged = true
+          })
 
         // ./ end init
         }

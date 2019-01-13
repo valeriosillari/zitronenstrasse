@@ -240,7 +240,7 @@ module.exports = {
   ** Site Map Options
   */
   sitemap: {
-    path: `/sitemap.xml`,
+    path: '/sitemap.xml',
     hostname: ogUrl,
     cacheTime: 1000 * 60 * 15,
     // Enable me when using nuxt generate

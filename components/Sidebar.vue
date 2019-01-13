@@ -7,7 +7,8 @@
     h2.title
       | {{ currentPlace.title }}
 
-    //- Thumb Place: todo: pass better object, creatded not in markup
+    //- Thumb Place
+    //- todo: pass better object, creatded not in markup
     Thumb(
       :currentThumb='{title: currentPlace.title, thumbPath: currentPlace.thumb, credits: currentPlace.thumbCredits }'
     )
@@ -59,7 +60,7 @@
       actionSidebarClose () {
         this.$emit('isSidebarButtonClose')
       }
-    },
+    }
   }
 </script>
 
