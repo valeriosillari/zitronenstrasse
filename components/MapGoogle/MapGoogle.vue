@@ -1,5 +1,5 @@
 <template lang="pug">
-  .map-main-wrapper.map-wrapper-sidebar-push(v-bind:class='isSidebarBindClass')
+  .map-main-wrapper.map-wrapper-sidebar-push
     //- hidden heading for seo.
     //- inside component for design reasons (I'm lazy)
     h1.heading-title
@@ -18,7 +18,6 @@
     .sidebar-animation
       Sidebar(
         :currentPlace='$store.state.currentPlace.item'
-        v-on:isSidebarButtonClose='isSidebarClose()'
       )
 </template>
 
@@ -127,10 +126,6 @@
         },
         // rest of options
         isScreenBig: false,
-        isSidebarBindClass: {
-          // first value is class to attach/bind, second value is status
-          'isOpenClass': false
-        },
         // map drag for marker animation
         isMapDragged: false,
       }
@@ -250,31 +245,27 @@
       },
 
       isSidebarOpen (screen) {
+        // todo: set if/else on one line
         this.isScreenBig = false
         if (screen >= 576) {
           this.isScreenBig = true
         }
+
         // reset drag option
         this.isMapDragged = false
 
-        // open sidebar (css animation in milleseconds)
-        // when function trigger, set value as TRUE. we change DATA value
-        // https://vuejs.org/v2/guide/reactivity.html#Change-Detection-Caveats
-        this.$set(this.isSidebarBindClass, 'isOpenClass', true)
-
+        // pan movement if big screen
         if (this.isScreenBig) {
           this.panMovement(-200)
         }
+
+        // update store: sidebar is open
+        this.$store.commit('sidebar/isSidebarOpen', true)
       },
 
       isSidebarClose () {
         // reset drag option
         this.isMapDragged = false
-
-        // TOGGLE CLASS for close sidebar
-        // when function trigger, set value as TRUE. we change DATA value
-        // https://vuejs.org/v2/guide/reactivity.html#Change-Detection-Caveats
-        this.$set(this.isSidebarBindClass, 'isOpenClass', false)
       }
     }
   }

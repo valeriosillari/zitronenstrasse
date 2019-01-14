@@ -58,8 +58,9 @@
 
     methods: {
       actionSidebarClose () {
+        console.log('=========== CLICK CLOSE SIDEBAR ==============')
         // todo: set via store
-        this.$emit('isSidebarButtonClose')
+        // this.$emit('isSidebarButtonClose')
       }
     }
   }
