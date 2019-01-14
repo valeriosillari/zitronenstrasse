@@ -59,8 +59,8 @@
     methods: {
       actionSidebarClose () {
         console.log('=========== CLICK CLOSE SIDEBAR ==============')
-        // todo: set via store
-        // this.$emit('isSidebarButtonClose')
+        // update store: sidebar is open
+        this.$store.commit('sidebar/isSidebarOpen', false)
       }
     }
   }

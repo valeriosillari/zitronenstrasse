@@ -1,9 +1,9 @@
 <template lang="pug">
-  .map-main-wrapper.map-wrapper-sidebar-push
+  .map-main-wrapper.map-wrapper-sidebar-push(v-bind:class="{ 'is-sidebar-open' : $store.state.sidebar.isOpen }")
     //- hidden heading for seo.
     //- inside component for design reasons (I'm lazy)
     h1.heading-title
-      | Zitronenstrasse
+      | Zitronenstrasse - {{ $store.state.sidebar.isOpen }}
 
     GmapMap(
       ref='mapRef'
@@ -78,7 +78,7 @@
   // -- OPEN. js add classes
 
   // extra class added via JS when sidebar is shown (WRAPPER/PARENT element)
-  .isOpenClass
+  .is-sidebar-open
     left: -$sidebar_width_xs
     +breakpoint($breakpoint_sm)
       left: -$sidebar_width_sm
@@ -265,7 +265,7 @@
 
       isSidebarClose () {
         // reset drag option
-        this.isMapDragged = false
+        this.isMapDragged = false      
       }
     }
   }
