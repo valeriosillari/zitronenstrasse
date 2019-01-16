@@ -25,7 +25,7 @@
       PrivacyPolicyBanner
     },
     mounted () {
-      console.log('🍋 🍋 🍋 - Develop 04')
+      console.log('🍋 🍋 🍋 - Develop 05')
     }
   }
 </script>

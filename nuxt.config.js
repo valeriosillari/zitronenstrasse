@@ -13,7 +13,7 @@ const webpack = require('webpack')
  const deployUrl = {
    // Changes the website's base to work on Github pages
    // fallback OK
-   router: process.env.DEPLOY_ENV === 'GH_PAGES' ? '' : ''
+   router: process.env.DEPLOY_ENV === 'GH_PAGES' ? '/zitronenstrasse' : ''
  };
 
 // set GOOGLE keys via dotenv
