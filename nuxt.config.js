@@ -15,7 +15,7 @@ const headDescription = 'A mapping project to collect and share romantic spots i
 
 // the URL set as variables: for redirect DNS
 // with httpS: in case redirect take care of it
-const thisAppMainUrl = 'https://www.zitronenstrasse.com'
+const thisAppMainUrl = 'https://zitronenstrasse.com'
 
 // og for FB and Linkedin
 const ogUrl = thisAppMainUrl
