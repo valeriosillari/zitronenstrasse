@@ -1,0 +1,4 @@
+RewriteEngine On
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^www\.domain\.com$ [NC]
+RewriteRule ^(.*)$ https://www.domain.com/$1 [L,R=301]
