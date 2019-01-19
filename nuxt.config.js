@@ -3,7 +3,7 @@ const dotenv = require('dotenv').config({path: './env_variables/env_keys'})
 const webpack = require('webpack')
 
 // only add `router.base = '/<repository-name>/'` if `DEPLOY_ENV` is `GH_PAGES`
- const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+ const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES_TEST' ? {
    router: {
      base: '/zitronenstrasse'
    }
