@@ -5,7 +5,7 @@
     img.thumb(
       v-if='currentThumb.thumbPath'
       :alt='currentThumb.title'
-      :src="`${thumbPath}${currentThumb.thumbPath}`"
+      :src="`/places/${currentThumb.thumbPath}`"
     )
 
     p.credits(
@@ -24,13 +24,6 @@
         required: true,
       }
     },
-
-    data () {
-      return {
-        // set url path for iages. different one based on deploy env
-        thumbPath: `${process.env.deployUrl.router}/places/`
-      }
-    }
   }
 </script>
 
