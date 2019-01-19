@@ -19,7 +19,9 @@
     "heroku-postbuild": "npm run build",
     "build:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt build",
     "generate:gh-pages": "DEPLOY_ENV=GH_PAGES nuxt generate",
-    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+    "gh-pages-deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
+    "deploy": "yarn generate:gh-pages && yarn gh-pages-deploy"
+
   },
   "dependencies": {
     "@nuxtjs/font-awesome": "^1.0.3",
