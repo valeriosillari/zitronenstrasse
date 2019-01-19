@@ -2,20 +2,6 @@ const pkg = require('./package')
 const dotenv = require('dotenv').config({path: './env_variables/env_keys'})
 const webpack = require('webpack')
 
-// only add `router.base = '/<repository-name>/'` if `DEPLOY_ENV` is `GH_PAGES`
- const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES_TEST' ? {
-   router: {
-     base: '/zitronenstrasse'
-   }
- } : {}
-
-// set option for correct ulr on github pages
- const deployUrl = {
-   // Changes the website's base to work on Github pages
-   // fallback OK
-   router: process.env.DEPLOY_ENV === 'GH_PAGES_TEST' ? '/zitronenstrasse' : ''
- };
-
 // set GOOGLE keys via dotenv
 const googleMapApiKey = process.env.GOOGLE_MAP_API_KEY || ''
 const googleAnalyticsKey = process.env.GOOGLE_ANALYTICS_KEY || ''
@@ -36,15 +22,12 @@ const ogUrl = thisAppMainUrl
 const ogTitle = headTitle
 const ogDescription = headDescription
 const ogType = 'website'
-const ogImage = `${deployUrl.router}/favicons/zitronenstrasse_og_image.png`
+const ogImage = '/favicons/zitronenstrasse_og_image.png'
 const ogImageWidth = '1200'
 const ogImageHeight = '630'
 
 module.exports = {
   mode: 'universal',
-
-  // for deploy as static github page
-  ...routerBase,
 
   /*
   ** ENV vars to spread in all the app.
@@ -53,7 +36,6 @@ module.exports = {
   env: {
     metaHeadDescription: headDescription,
     googleMapApiKey: googleMapApiKey,
-    deployUrl: deployUrl
   },
 
   /*
@@ -189,12 +171,12 @@ module.exports = {
       {
         rel: 'icon',
         type: 'image/x-icon',
-        href: `${deployUrl.router}/favicons/favicon.ico`
+        href: '/favicons/favicon.ico'
       },
       // apple-touch-icon
       {
         rel: 'apple-touch-icon',
-        href: `${deployUrl.router}/favicons/apple_touch_icon.png`
+        href: '/favicons/apple_touch_icon.png'
       },
       // link canonical
       {
@@ -204,7 +186,7 @@ module.exports = {
       // site manifest
       {
         rel: 'manifest',
-        href: `${deployUrl.router}/favicons/site.webmanifest`
+        href: '/favicons/site.webmanifest'
       }
       // CSS font as external resources from Google Fonts
       // {
