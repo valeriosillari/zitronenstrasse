@@ -25,7 +25,7 @@
       PrivacyPolicyBanner
     },
     mounted () {
-      console.log('🍋 - Github 001')
+      console.log('🍋 - DEVELEOP 01')
     }
   }
 </script>
