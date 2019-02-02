@@ -9,6 +9,9 @@
     "node": ">= v10.15.1",
     "yarn": ">= v1.13.0"
   },
+  "resolutions": {
+    "terser": "3.14.1"
+  },
   "scripts": {
     "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
     "build": "nuxt build",
