@@ -254,11 +254,6 @@ module.exports = {
   ** Customize modules. now for google analytics
   */
   modules: [
-    // load SASS file globallythe
-    // nuxt-sass-resources-loade package | native options
-    ['nuxt-sass-resources-loader', {
-        resources: './assets/stylesheets/global.sass'
-    }],
     // Simple usage
     // https://github.com/nuxt-community/analytics-module
     [
@@ -267,8 +262,17 @@ module.exports = {
       }
     ],
     '@nuxtjs/sitemap',
-    '@nuxtjs/font-awesome'
+    '@nuxtjs/font-awesome',
+    '@nuxtjs/style-resources',
   ],
+
+  // load SASS file globally
+  styleResources: {
+    // your settings here
+    sass: [
+      './assets/stylesheets/global.sass'
+    ],
+  },
 
   /*
   ** Build configuration
