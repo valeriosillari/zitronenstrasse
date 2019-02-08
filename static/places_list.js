@@ -771,7 +771,7 @@ const placesList = [
     }
   },
   // {
-  //   // ...
+  //   // 057
   //   // ChIJe-JZ6sRPqEcR57AEB-9Vg90 | closed for winter
   //   title: 'Floating University Berlin',
   //   address: 'Lilienthalstraße 32, 10965 ',
@@ -795,6 +795,19 @@ const placesList = [
     position: {
       lat: 52.48995180000001,
       lng: 13.4101029
+    }
+  },
+  {
+    // 059
+    // ChIJr6XuoSRSqEcRH1TnYbUc6F4
+    title: 'Malör',
+    address: 'Bellermannstraße 98, 13357',
+    thumb: '059_malor.jpg',
+    thumbCredits: 'Malör FB Page',
+    fbPage: 'https://www.facebook.com/bellermann98/',
+    position: {
+      lat: 52.5548563,
+      lng: 13.384403
     }
   },
 ]
