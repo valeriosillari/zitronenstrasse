@@ -10,6 +10,9 @@
             |
             | |
             |
+            | v{{ appVersion }}
+
+          p.text
             nuxt-link.item-link(to='/privacy-policy', title='Privacy Policy')
               | Privacy Policy
             |
@@ -42,9 +45,11 @@
   export default {
     data () {
       return {
-        dateYear: new Date().getFullYear()
+        dateYear: new Date().getFullYear(),
+        appVersion: process.env.appVersion
       }
     }
+
   }
 </script>
 
@@ -59,7 +64,7 @@
     border-top: 1px solid $color_footer_border
 
   .text
-    margin-bottom: .05rem
+    margin-bottom: .025rem
 
   .col-right
     margin-top: 15px
