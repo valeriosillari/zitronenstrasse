@@ -9,13 +9,6 @@ GOOGLE_ANALYTICS_KEY      = ''
 
 GOOGLE_VERIFICATION_OWNER_KEY = ''
 
-
-####################
-# NEW RELIC
-
-NEW_RELIC_LICENSE_KEY     = ''
-
-
 ####################
 # HEROKU EXTRA CONFIG FOR DEPLOYMENT
 
