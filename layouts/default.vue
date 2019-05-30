@@ -25,7 +25,7 @@ export default {
     PrivacyPolicyBanner
   },
   mounted() {
-    console.log('🍋 - 02')
+    console.log('🍋 - test 001')
   }
 }
 </script>
