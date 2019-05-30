@@ -255,6 +255,7 @@ module.exports = {
   ** Customize modules. now for google analytics
   */
   modules: [
+    '@nuxtjs/pwa',    
     // Simple usage
     // https://github.com/nuxt-community/analytics-module
     [

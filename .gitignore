@@ -26,3 +26,6 @@ modernizr.js
 
 # Ignore ENV file with password keys (ENV DOT module)
 /env_variables/env_keys
+
+# Service worker
+sw.*
