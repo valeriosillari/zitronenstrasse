@@ -18,7 +18,8 @@ module.exports = {
   ],
   // add your custom rules here
   rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    // enable console logs (just warnings)
+    'no-console': 1,
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
   }
 }
