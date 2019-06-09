@@ -8,6 +8,7 @@ const dotenv = dotenvPkg.config({
 })
 
 // set GOOGLE keys via dotenv
+const googleMapApiKey = process.env.GOOGLE_MAP_API_KEY || ''
 const googleAnalyticsKey = process.env.GOOGLE_ANALYTICS_KEY || ''
 const googleVerificationOwnerKey =
   process.env.GOOGLE_VERIFICATION_OWNER_KEY || ''
@@ -41,6 +42,7 @@ module.exports = {
    */
   env: {
     metaHeadDescription: headDescription,
+    googleMapApiKey: googleMapApiKey,
     appVersion: pkg.version
   },
 
@@ -63,7 +65,8 @@ module.exports = {
   plugins: [
     '~/plugins/modernizr-plugin',
     '~/plugins/vue-cookie-law',
-    '~/plugins/fontawesome.js'
+    '~/plugins/fontawesome.js',
+    '~/plugins/vue2-google-maps'
   ],
 
   /*
@@ -147,7 +150,10 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-    }
+    },
+
+    // set logic for loading vue2 google map
+    transpile: [/^vue2-google-maps($|\/)/]
   },
 
   /*
