@@ -1,12 +1,12 @@
 <template lang="pug">
-  MapGoogle
+  section.section
+    .container
+      h1
+        | HOME
 </template>
 
 <script>
-  import MapGoogle from '~/components/MapGoogle/MapGoogle.vue'
-  export default {
-    components: {
-      MapGoogle
-    }
-  }
+// empty
 </script>
+
+<style lang="sass"></style>

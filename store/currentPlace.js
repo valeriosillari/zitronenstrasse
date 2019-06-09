@@ -7,8 +7,8 @@ export const state = () => ({
 })
 
 export const mutations = {
-  updateCurrentPlace (state, newUpdatePlace) {
+  updateCurrentPlace(state, newUpdatePlace) {
     // set store object with new update data (an object)
     state.item = newUpdatePlace
-  },
+  }
 }

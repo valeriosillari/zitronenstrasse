@@ -103,21 +103,22 @@
         | I hope you like it, either you are a romantic person or a romantic coder.
 </template>
 
-
 <script>
-  export default {
-    head () {
-      // Set Meta Tags for this Page
-      return {
-        title: 'About | Zitronenstrasse',
-        meta: [
-          {
-            hid: 'description',
-            name: 'description',
-            content: `About | Zitronenstrasse | ${process.env.metaHeadDescription}`
-          }
-        ]
-      }
+export default {
+  head() {
+    // Set Meta Tags for this Page
+    return {
+      title: 'About | Zitronenstrasse',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `About | Zitronenstrasse | ${
+            process.env.metaHeadDescription
+          }`
+        }
+      ]
     }
   }
+}
 </script>

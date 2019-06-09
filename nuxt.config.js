@@ -1,17 +1,23 @@
+const dotenvPkg = require('dotenv')
+const shrinkRay = require('shrink-ray-current')
 const pkg = require('./package')
-const dotenv = require('dotenv').config({path: './env_variables/env_keys'})
-const webpack = require('webpack')
+
+// dotENV custom path keys file
+const dotenv = dotenvPkg.config({
+  path: './env_variables/env_keys'
+})
 
 // set GOOGLE keys via dotenv
-const googleMapApiKey = process.env.GOOGLE_MAP_API_KEY || ''
 const googleAnalyticsKey = process.env.GOOGLE_ANALYTICS_KEY || ''
-const googleVerificationOwnerKey = process.env.GOOGLE_VERIFICATION_OWNER_KEY || ''
+const googleVerificationOwnerKey =
+  process.env.GOOGLE_VERIFICATION_OWNER_KEY || ''
 
 // main title
 const headTitle = 'Zitronenstrasse | Romantic Spots in Berlin.'
 
 // used in head description in all the pages
-const headDescription = 'A mapping project to collect and share romantic spots in Berlin.'
+const headDescription =
+  'A mapping project to collect and share romantic spots in Berlin.'
 
 // the URL set as variables: for redirect DNS
 // with httpS: in case redirect take care of it
@@ -30,37 +36,144 @@ module.exports = {
   mode: 'universal',
 
   /*
-  ** ENV vars to spread in all the app.
-  ** https://nuxtjs.org/api/configuration-env
-  */
+   ** ENV vars to spread in all the app.
+   ** https://nuxtjs.org/api/configuration-env
+   */
   env: {
     metaHeadDescription: headDescription,
-    googleMapApiKey: googleMapApiKey,
     appVersion: pkg.version
   },
 
   /*
-  ** Headers of the page
-  ** https://github.com/declandewet/vue-meta#recognized-metainfo-properties
-  */
+   ** Customize the progress-bar color
+   */
+  loading: {
+    color: '#ffd400',
+    height: '5px'
+  },
+
+  /*
+   ** Global CSS
+   */
+  css: ['@fortawesome/fontawesome-svg-core/styles.css'],
+
+  /*
+   ** Plugins to load before mounting the App
+   */
+  plugins: [
+    '~/plugins/modernizr-plugin',
+    '~/plugins/vue-cookie-law',
+    '~/plugins/fontawesome.js'
+  ],
+
+  /*
+   ** Site Map Options
+   */
+  sitemap: {
+    path: '/sitemap.xml',
+    gzip: true,
+    hostname: ogUrl,
+    cacheTime: 1000 * 60 * 15,
+    exclude: [
+      // empty
+    ],
+    routes: [
+      { url: '/', changefreq: 'daily' },
+      { url: '/about', changefreq: 'daily' },
+      { url: '/contact', changefreq: 'daily' },
+      { url: '/privacy-policy', changefreq: 'daily' }
+    ]
+  },
+
+  /*
+   ** Nuxt.js modules
+   */
+  modules: [
+    'nuxt-webfontloader',
+    '@nuxtjs/pwa',
+    '@nuxtjs/style-resources',
+    '@nuxtjs/sitemap',
+    // Simple usage
+    // https://github.com/nuxt-community/analytics-module
+    [
+      '@nuxtjs/google-analytics',
+      {
+        id: googleAnalyticsKey
+      }
+    ],
+    [
+      'nuxt-fontawesome',
+      {
+        component: 'fab',
+        imports: [
+          // https://medium.com/@kozyreva.hanna/nuxt-js-fontawesome-integration-7ec56b1a41c8
+          // https://github.com/vaso2/nuxt-fontawesome
+          // import icons from set "brand"
+          {
+            set: '@fortawesome/free-brands-svg-icons',
+            icons: ['fab']
+          }
+        ]
+      }
+    ]
+  ],
+
+  styleResources: {
+    sass: ['assets/stylesheets/global.sass']
+  },
+
+  // Load fonts from Google via Nuxt Font Package
+  // No js = no font loaded
+  webfontloader: {
+    google: {
+      families: ['Roboto:400']
+    }
+  },
+
+  /*
+   ** Build configuration
+   */
+  build: {
+    /*
+     ** You can extend webpack config here
+     */
+    extend(config, ctx) {
+      // Run ESLint on save
+      if (ctx.isDev && ctx.isClient) {
+        config.module.rules.push({
+          enforce: 'pre',
+          test: /\.(js|vue)$/,
+          loader: 'eslint-loader',
+          exclude: /(node_modules)/
+        })
+      }
+    }
+  },
+
+  /*
+   ** Generate configuration
+   */
+  generate: {
+    // set error page for generated static website
+    fallback: '404.html'
+  },
+
+  // for using brotli compression
+  // https://blog.lichter.io/posts/nuxtjs-on-brotli/
+  render: {
+    compressor: shrinkRay()
+  },
+
+  /*
+   ** Headers of the page
+   ** https://github.com/declandewet/vue-meta#recognized-metainfo-properties
+   */
   head: {
     title: headTitle,
 
-    // this htmlAttrs removed for using correctly Modernizr no-js/js class
-    // NOT ADD any class attribute here !!!
-    // htmlAttrs: {
-    //   class: 'XXX'
-    // },
-
-    // this bodyAttrs you need
-    // bodyAttrs: {
-    //   // if you set this attribute in a component, that option will overwrite here the config file
-    //   class: 'extra-body-class'
-    // },
-
     meta: [
       {
-        ['http-equiv']: 'x-ua-compatible',
+        'http-equiv': 'x-ua-compatible',
         content: 'ie=edge'
       },
       {
@@ -84,7 +197,8 @@ module.exports = {
       {
         hid: 'keywords',
         name: 'keywords',
-        content: 'Zitronenstrasse, Zitrone, Strasse, Berlin, Zitrone Berlin, Zitronen Berlin, Map, Mapping, Frontend, Vue, Nuxt, Romantic, Spots, Romantic Spots Berlin'
+        content:
+          'Zitronenstrasse, Zitrone, Strasse, Berlin, Zitrone Berlin, Zitronen Berlin, Map, Mapping, Frontend, Vue, Nuxt, Romantic, Spots, Romantic Spots Berlin'
       },
       // OG options for open graph: Fb and Linkedin
       {
@@ -166,6 +280,11 @@ module.exports = {
         name: 'google-site-verification',
         content: googleVerificationOwnerKey
       },
+      // site manifest
+      {
+        rel: 'manifest',
+        href: '/favicons/site.webmanifest'
+      }
     ],
     link: [
       // favicon
@@ -183,19 +302,7 @@ module.exports = {
       {
         rel: 'canonical',
         href: thisAppMainUrl
-      },
-      // site manifest
-      {
-        rel: 'manifest',
-        href: '/favicons/site.webmanifest'
       }
-      // CSS font as external resources from Google Fonts
-      // {
-      //   rel: 'stylesheet',
-      //   // set css at end of body:
-      //   // https://github.com/nuxt/nuxt.js/issues/241
-      //   // body: true
-      // }
     ],
 
     script: [
@@ -203,114 +310,5 @@ module.exports = {
         // js external here
       }
     ]
-  },
-
-  /*
-  ** Customize the progress-bar color
-  */
-  loading: {
-    color: '#ffd400',
-    height: '5px'
-  },
-
-  /*
-  ** Global CSS
-  */
-  css: [
-  ],
-
-  /*
-  ** Site Map Options
-  */
-  sitemap: {
-    path: '/sitemap.xml',
-    hostname: ogUrl,
-    cacheTime: 1000 * 60 * 15,
-    // Enable me when using nuxt generate
-    generate: true,
-    exclude: [
-      // empty
-    ],
-    routes: [
-      { url: '/', changefreq: 'daily' },
-      { url: '/about', changefreq: 'daily' },
-      { url: '/contact', changefreq: 'daily' },
-      { url: '/privacy-policy', changefreq: 'daily' }
-    ]
-  },
-
-  /*
-  ** Plugins to load before mounting the App
-  */
-  plugins: [
-    '~/plugins/modernizr-plugin',
-    '~/plugins/vue-cookie-law',
-    '~/plugins/vue2-google-maps'
-  ],
-
-  /*
-  ** Nuxt.js modules
-  */
-  /*
-  ** Customize modules. now for google analytics
-  */
-  modules: [
-    '@nuxtjs/pwa',    
-    // Simple usage
-    // https://github.com/nuxt-community/analytics-module
-    [
-      '@nuxtjs/google-analytics', {
-        id: googleAnalyticsKey
-      }
-    ],
-    '@nuxtjs/sitemap',
-    '@nuxtjs/font-awesome',
-    '@nuxtjs/style-resources',
-  ],
-
-  // load SASS file globally
-  styleResources: {
-    // your settings here
-    sass: [
-      './assets/stylesheets/global.sass'
-    ],
-  },
-
-  /*
-  ** Build configuration
-  */
-  build: {
-    plugins: [
-      // set shortcuts as global for bootstrap
-      new webpack.ProvidePlugin({
-        // here ...
-      })
-    ],
-
-    /*
-    ** You can extend webpack config here
-    */
-    extend(config, ctx) {
-      // Run ESLint on save
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
-    },
-
-    // set logic for loading vue2 google map
-    transpile: [/^vue2-google-maps($|\/)/]
-  },
-
-  /*
-  ** Generate configuration
-  */
-  generate: {
-    // set error page for generated static website
-    fallback: '404.html'
   }
 }

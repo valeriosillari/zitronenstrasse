@@ -1,5 +1,4 @@
 <template lang="pug">
-  //- ERROR PAGE: we extend the default layout. this is the page CONTENT OF THE PAGE actually!
 
   //- main area
   section.section.section-error
@@ -20,40 +19,39 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      error: {
-        type: Object,
-        required: true,
-        default: () => ({
-          message: String
-        })
-
-      }
-    },
-    head () {
-      return {
-        title: this.error.message || 'An error occured'
-      }
+export default {
+  props: {
+    error: {
+      type: Object,
+      required: true,
+      default: () => ({
+        message: String
+      })
+    }
+  },
+  head() {
+    return {
+      title: this.error.message || 'An error occured'
     }
   }
+}
 </script>
 
 <style lang="sass">
-  .error-message
-    @extend .h4
-    color: $color_error_page_subtitle
+.error-message
+  @extend .h4
+  color: $color_error_page_subtitle
 
-  .section-error
-    text-align: center
+.section-error
+  text-align: center
 
-  .svg-icon-compass
-    width: 260px
-    height: 260px
-    margin: 30px auto
-    // we set svg as image in css. nuxt is happy, but we lost the fill color options
-    // trick for assets loaded on Nuxt 2
-    // "~assets/", NOT "~/assets/" : removed slash
-    // info: https://github.com/nuxt/nuxt.js/issues/3723    
-    background-image: url('~assets/svg/compass.svg')
+.svg-icon-compass
+  width: 260px
+  height: 260px
+  margin: 30px auto
+  // we set svg as image in css. nuxt is happy, but we lost the fill color options
+  // trick for assets loaded on Nuxt 2
+  // "~assets/", NOT "~/assets/" : removed slash
+  // info: https://github.com/nuxt/nuxt.js/issues/3723
+  background-image: url('~assets/svg/compass.svg')
 </style>
