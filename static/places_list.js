@@ -359,7 +359,8 @@ const placesList = [
     thumb: '026_cafe_jacques.jpg',
     thumbCredits: 'Café Jacques Website',
     website: 'http://cafejacques.de/',
-    fbPage: 'https://www.facebook.com/pages/Cafe-Jacques-am-Maybachufer/106295842766499',
+    fbPage:
+      'https://www.facebook.com/pages/Cafe-Jacques-am-Maybachufer/106295842766499',
     position: {
       lat: 52.4942363,
       lng: 13.4254769
@@ -605,7 +606,8 @@ const placesList = [
     address: 'Diedenhofer Str. 9, 10405',
     thumb: '044_park_wasserturm.jpg',
     thumbCredits: 'Visit Berlin',
-    website: 'https://www.visitberlin.de/de/wasserturm-am-kollwitzplatz-wasserturmplatz',
+    website:
+      'https://www.visitberlin.de/de/wasserturm-am-kollwitzplatz-wasserturmplatz',
     position: {
       lat: 52.53336849999999,
       lng: 13.4176316
@@ -739,7 +741,8 @@ const placesList = [
     address: 'Kufsteiner Straße, 10825',
     thumb: '054_rudolph_wilde_park.jpg',
     thumbCredits: 'Zitronenstrasse',
-    website: 'https://www.berlin.de/senuvk/umwelt/stadtgruen/gruenanlagen/de/gruenanlagen_plaetze/schoeneberg/rudolph_wilde_park/index.shtml',
+    website:
+      'https://www.berlin.de/senuvk/umwelt/stadtgruen/gruenanlagen/de/gruenanlagen_plaetze/schoeneberg/rudolph_wilde_park/index.shtml',
     position: {
       lat: 52.4828472,
       lng: 13.3411489
@@ -770,19 +773,19 @@ const placesList = [
       lng: 13.4437522
     }
   },
-  // {
-  //   // 057
-  //   // ChIJe-JZ6sRPqEcR57AEB-9Vg90 | closed for winter
-  //   title: 'Floating University Berlin',
-  //   address: 'Lilienthalstraße 32, 10965 ',
-  //   thumb: '057_floating_university_berlin.jpg',
-  //   thumbCredits: 'Zitronenstrasse',
-  //   website: 'http://www.floatinguniversity.org/',
-  //   position: {
-  //     lat: 52.4847201,
-  //     lng: 13.4065031
-  //   }
-  // },
+  {
+    // 057
+    // ChIJe-JZ6sRPqEcR57AEB-9Vg90 | closed for winter
+    title: 'Floating University Berlin',
+    address: 'Lilienthalstraße 32, 10965 ',
+    thumb: '057_floating_university_berlin.jpg',
+    thumbCredits: 'Zitronenstrasse',
+    website: 'http://www.floatinguniversity.org/',
+    position: {
+      lat: 52.4847201,
+      lng: 13.4065031
+    }
+  },
   {
     // 058
     // ChIJiU3Wkc9PqEcRLB2iphmLvAU
@@ -791,7 +794,8 @@ const placesList = [
     thumb: '058_sputnik_kino.jpg',
     thumbCredits: 'Sputnik Kino Website',
     website: 'https://www.sputnik-kino.com',
-    fbPage: 'https://www.facebook.com/SPUTNIK-KINO-H%C3%B6fe-am-S%C3%BCdstern-Berlin-Kreuzberg-234120463286303/',
+    fbPage:
+      'https://www.facebook.com/SPUTNIK-KINO-H%C3%B6fe-am-S%C3%BCdstern-Berlin-Kreuzberg-234120463286303/',
     position: {
       lat: 52.48995180000001,
       lng: 13.4101029
@@ -809,7 +813,7 @@ const placesList = [
       lat: 52.5548563,
       lng: 13.384403
     }
-  },
+  }
 ]
 
 export default placesList
