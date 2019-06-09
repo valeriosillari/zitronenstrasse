@@ -26,7 +26,7 @@ export default {
   },
 
   mounted() {
-    console.log('🍋 - test Font - 001')
+    // empty
   }
 }
 </script>
