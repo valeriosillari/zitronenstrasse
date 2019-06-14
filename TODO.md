@@ -8,6 +8,8 @@ Using Netlify asset-optimization and pre-rendering seems helping.
 
 But we got preload warning on Chrome.
 
+- Around 70 / 73 % with preload and chrome warning.
+
 ### Font Check
 
 ### Lazy Load map?
