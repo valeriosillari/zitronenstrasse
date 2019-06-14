@@ -26,7 +26,7 @@ export default {
   },
 
   mounted() {
-    console.log('test Netlify setting - 01')
+    // empty ...
   }
 }
 </script>
