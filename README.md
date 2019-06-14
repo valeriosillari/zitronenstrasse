@@ -56,12 +56,6 @@ Check the server/index.js file and documentation for more info.
 
 ## ROAD MAP
 
-- **SVG on IE**: we have to check if we see markers custom svg on windows
-
-- **IMAGES in ASSETS FOLDER**: set all images in asset folder. now in static folder. not quite sure if it is the right place.
-
-- **LAZY LOAD**: set logic for place images. we have added plugin, but we got issues with images.
-
 - **MAP PAN (movement)**: set it slow and nicer/smoother
 
 - **MAP CUSTOM STYLES**: at map movement it is always flickering cause of image request. is is ok? could we prevent it?
