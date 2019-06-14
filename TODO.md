@@ -2,13 +2,13 @@
 
 ### Yarn update
 
-### CHeck ENV (poduction) for better performances?
+### better performances?
 
-Using Netlify asset-optimization and pre-rendering seems helping.
+Netlify asset-optimization : ON
 
-But we got preload warning on Chrome.
+Netlify pre-rendering : ON
 
-- Around 70 / 73 % with preload and chrome warning.
+ENV set as "production" : OK
 
 ### Font Check
 
