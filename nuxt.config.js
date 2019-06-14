@@ -121,7 +121,12 @@ module.exports = {
   ],
 
   // netlify dynamic header
-  netlify: {},
+  netlify: {
+    headers: {
+      '/*': ['Access-Control-Allow-Origin: *', `X-Build: ${pkg.version}`],
+      '/favicon.ico': ['Cache-Control: public, max-age=86400']
+    }
+  },
 
   styleResources: {
     sass: ['assets/stylesheets/global.sass']
