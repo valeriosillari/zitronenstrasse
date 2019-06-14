@@ -90,7 +90,6 @@ module.exports = {
    ** Nuxt.js modules
    */
   modules: [
-    '@bazzite/nuxt-netlify',
     'nuxt-webfontloader',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
@@ -119,14 +118,6 @@ module.exports = {
       }
     ]
   ],
-
-  // netlify dynamic header
-  netlify: {
-    headers: {
-      '/*': ['Access-Control-Allow-Origin: *', `X-Build: ${pkg.version}`],
-      '/favicon.ico': ['Cache-Control: public, max-age=86400']
-    }
-  },
 
   styleResources: {
     sass: ['assets/stylesheets/global.sass']
