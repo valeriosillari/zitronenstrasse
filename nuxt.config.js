@@ -90,7 +90,6 @@ module.exports = {
    ** Nuxt.js modules
    */
   modules: [
-    '@bazzite/nuxt-netlify',
     'nuxt-webfontloader',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
@@ -119,9 +118,6 @@ module.exports = {
       }
     ]
   ],
-
-  // netlify dynamic header
-  netlify: {},
 
   styleResources: {
     sass: ['assets/stylesheets/global.sass']
