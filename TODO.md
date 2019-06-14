@@ -4,6 +4,10 @@
 
 ### CHeck ENV (poduction) for better performances?
 
+Using Netlify asset-optimization and pre-rendering seems helping.
+
+But we got preload warning on Chrome.
+
 ### Font Check
 
 ### Lazy Load map?
