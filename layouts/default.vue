@@ -26,7 +26,7 @@ export default {
   },
 
   mounted() {
-    // empty
+    console.log('test nodeJS')
   }
 }
 </script>
