@@ -1,6 +1,14 @@
 {
+  "name": "zitronenstrasse",
   "version": 2,
   "builds": [{ "src": "package.json", "use": "@now/static-build" }],
+  "regions": ["bru", "cdg1", "arn1"],
+  "build": {
+    "env": {
+      "GOOGLE_MAP_API_KEY": "@google_map_api_key",
+      "GOOGLE_ANALYTICS_KEY": "@google_analytics_key"
+    }
+  },
   "env": {
     "GOOGLE_MAP_API_KEY": "@google_map_api_key",
     "GOOGLE_ANALYTICS_KEY": "@google_analytics_key"
