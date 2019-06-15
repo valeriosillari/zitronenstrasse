@@ -1,5 +1,6 @@
 {
   "version": 2,
+  "builds": [{ "src": "package.json", "use": "@now/static-build" }],
   "env": {
     "GOOGLE_MAP_API_KEY": "",
     "GOOGLE_ANALYTICS_KEY": ""
