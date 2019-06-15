@@ -1,0 +1,7 @@
+{
+  "version": 2,
+  "env": {
+    "GOOGLE_MAP_API_KEY": "",
+    "GOOGLE_ANALYTICS_KEY": ""
+  }
+}
