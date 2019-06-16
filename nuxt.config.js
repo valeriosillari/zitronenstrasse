@@ -187,6 +187,7 @@ module.exports = {
     compressor: shrinkRay(),
 
     // preload assets
+    // https://stackoverflow.com/questions/54083703/nuxt-js-preload-woff-fonts-loaded-as-font-face
     bundleRenderer: {
       shouldPreload: (file, type) => {
         return ['script', 'style', 'font'].includes(type)
