@@ -90,7 +90,6 @@ module.exports = {
    ** Nuxt.js modules
    */
   modules: [
-    'nuxt-webfontloader',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
     '@nuxtjs/sitemap',
@@ -122,14 +121,14 @@ module.exports = {
   styleResources: {
     sass: ['assets/stylesheets/global.sass']
   },
-
-  // Load fonts from Google via Nuxt Font Package
-  // No js = no font loaded
-  webfontloader: {
-    google: {
-      families: ['Roboto:400', 'Saira Condensed:300']
-    }
-  },
+  //
+  // // Load fonts from Google via Nuxt Font Package
+  // // No js = no font loaded
+  // webfontloader: {
+  //   google: {
+  //     families: ['Roboto:400', 'Saira Condensed:300']
+  //   }
+  // },
 
   /*
    ** Build configuration
@@ -322,6 +321,17 @@ module.exports = {
       {
         rel: 'canonical',
         href: thisAppMainUrl
+      },
+
+      // Load fonts from google
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Roboto&display=swap'
+      },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://fonts.googleapis.com/css?family=Saira+Condensed:300&display=swap'
       }
     ],
 
