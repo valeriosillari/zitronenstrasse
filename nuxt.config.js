@@ -181,10 +181,17 @@ module.exports = {
     fallback: '404.html'
   },
 
-  // for using brotli compression
-  // https://blog.lichter.io/posts/nuxtjs-on-brotli/
   render: {
-    compressor: shrinkRay()
+    // for using brotli compression
+    // https://blog.lichter.io/posts/nuxtjs-on-brotli/
+    compressor: shrinkRay(),
+
+    // preload assets
+    bundleRenderer: {
+      shouldPreload: (file, type) => {
+        return ['script', 'style', 'font'].includes(type)
+      }
+    }
   },
 
   /*
