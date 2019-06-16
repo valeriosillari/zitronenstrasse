@@ -90,6 +90,7 @@ module.exports = {
    ** Nuxt.js modules
    */
   modules: [
+    'nuxt-webfontloader',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
     '@nuxtjs/sitemap',
@@ -121,14 +122,14 @@ module.exports = {
   styleResources: {
     sass: ['assets/stylesheets/global.sass']
   },
-  //
-  // // Load fonts from Google via Nuxt Font Package
-  // // No js = no font loaded
-  // webfontloader: {
-  //   google: {
-  //     families: ['Roboto:400', 'Saira Condensed:300']
-  //   }
-  // },
+
+  // Load fonts from Google via Nuxt Font Package
+  // No js = no font loaded
+  webfontloader: {
+    google: {
+      families: ['Roboto:400', 'Saira Condensed:300']
+    }
+  },
 
   /*
    ** Build configuration
@@ -184,15 +185,7 @@ module.exports = {
   render: {
     // for using brotli compression
     // https://blog.lichter.io/posts/nuxtjs-on-brotli/
-    compressor: shrinkRay(),
-
-    // preload assets
-    // https://stackoverflow.com/questions/54083703/nuxt-js-preload-woff-fonts-loaded-as-font-face
-    bundleRenderer: {
-      shouldPreload: (file, type) => {
-        return ['script', 'style', 'font'].includes(type)
-      }
-    }
+    compressor: shrinkRay()
   },
 
   /*
@@ -329,17 +322,6 @@ module.exports = {
       {
         rel: 'canonical',
         href: thisAppMainUrl
-      },
-
-      // Load fonts from google
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Roboto&display=swap'
-      },
-      {
-        rel: 'stylesheet',
-        href:
-          'https://fonts.googleapis.com/css?family=Saira+Condensed:300&display=swap'
       }
     ],
 
