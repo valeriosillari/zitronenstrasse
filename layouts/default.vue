@@ -26,7 +26,7 @@ export default {
   },
 
   mounted() {
-    console.log('develop 001')
+    console.log('develop 002')
   }
 }
 </script>
