@@ -196,7 +196,6 @@ module.exports = {
     title: headTitle,
 
     htmlAttrs: {
-      class: 'no-js',
       lang: 'en'
     },
 
