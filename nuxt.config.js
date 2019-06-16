@@ -148,6 +148,26 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
+
+      // image optimization
+      config.module.rules.forEach(rule => {
+        if (String(rule.test) === String(/\.(png|jpe?g|gif|svg|webp)$/)) {
+          // add a second loader when loading images
+          rule.use.push({
+            loader: 'image-webpack-loader',
+            options: {
+              svgo: {
+                plugins: [
+                  // use these settings for internet explorer for proper scalable SVGs
+                  // https://css-tricks.com/scale-svg/
+                  { removeViewBox: false },
+                  { removeDimensions: true }
+                ]
+              }
+            }
+          })
+        }
+      })
     },
 
     // set logic for loading vue2 google map
