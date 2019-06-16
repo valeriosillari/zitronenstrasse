@@ -26,7 +26,7 @@ export default {
   },
 
   mounted() {
-    console.log('develop 002')
+    console.log('develop 003 - all by css')
   }
 }
 </script>
