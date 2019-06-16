@@ -175,6 +175,11 @@ module.exports = {
   head: {
     title: headTitle,
 
+    htmlAttrs: {
+      class: 'no-js',
+      lang: 'en'
+    },
+
     meta: [
       {
         'http-equiv': 'x-ua-compatible',
