@@ -90,7 +90,7 @@ module.exports = {
    ** Nuxt.js modules
    */
   modules: [
-    // 'nuxt-webfontloader',
+    'nuxt-webfontloader',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
     '@nuxtjs/sitemap',
@@ -125,11 +125,11 @@ module.exports = {
 
   // Load fonts from Google via Nuxt Font Package
   // No js = no font loaded
-  // webfontloader: {
-  //   google: {
-  //     families: ['Roboto:400']
-  //   }
-  // },
+  webfontloader: {
+    google: {
+      families: ['Roboto:400', 'Saira Condensed:300']
+    }
+  },
 
   /*
    ** Build configuration
@@ -185,14 +185,7 @@ module.exports = {
   render: {
     // for using brotli compression
     // https://blog.lichter.io/posts/nuxtjs-on-brotli/
-    compressor: shrinkRay(),
-
-    // pre-load assets
-    bundleRenderer: {
-      shouldPreload: (file, type) => {
-        return ['script', 'style', 'font'].includes(type)
-      }
-    }
+    compressor: shrinkRay()
   },
 
   /*
