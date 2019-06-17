@@ -90,7 +90,7 @@ module.exports = {
    ** Nuxt.js modules
    */
   modules: [
-    'nuxt-webfontloader',
+    // 'nuxt-webfontloader',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
     '@nuxtjs/sitemap',
@@ -125,11 +125,11 @@ module.exports = {
 
   // Load fonts from Google via Nuxt Font Package
   // No js = no font loaded
-  webfontloader: {
-    google: {
-      // families: ['Roboto:400']
-    }
-  },
+  // webfontloader: {
+  //   google: {
+  //     families: ['Roboto:400']
+  //   }
+  // },
 
   /*
    ** Build configuration
