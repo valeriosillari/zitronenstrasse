@@ -127,7 +127,7 @@ module.exports = {
   // No js = no font loaded
   webfontloader: {
     google: {
-      families: ['Roboto:400', 'Saira Condensed:300']
+      families: ['Roboto&display=swap:400']
     }
   },
 
