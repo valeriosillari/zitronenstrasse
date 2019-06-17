@@ -26,7 +26,7 @@ export default {
   },
 
   mounted() {
-    console.log('develop 006 | web fonr loader still faster.')
+    console.log('develop 001')
   }
 }
 </script>
