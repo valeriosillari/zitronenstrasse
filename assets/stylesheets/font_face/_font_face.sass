@@ -1,0 +1,23 @@
+// trick for assets loaded on Nuxt 2
+// "~assets/", NOT "~/assets/" : removed slash
+// info: https://github.com/nuxt/nuxt.js/issues/3723
+
+$font_dislay_option: swap
+
+// =======================
+// SAIRA loaded via css. SO we get them also with no js situation
+
+// we set variables here
+$font_assets_path_saira: '~assets/fonts/saira_condensed'
+$font_assets_saira_ttf: '#{$font_assets_path_saira}/SairaCondensed-Light.ttf'
+
+@font-face
+  font-family: 'Saira Condensed'
+  src: local('Saira Condensed'), url('#{$font_assets_saira_ttf}') format('truetype')
+  font-weight: normal
+  font-style: 300
+  font-display: $font_dislay_option
+
+
+// =======================
+// ROBOT loaded via JS for better performances

@@ -185,7 +185,14 @@ module.exports = {
   render: {
     // for using brotli compression
     // https://blog.lichter.io/posts/nuxtjs-on-brotli/
-    compressor: shrinkRay()
+    compressor: shrinkRay(),
+
+    // pre-load assets
+    bundleRenderer: {
+      shouldPreload: (file, type) => {
+        return ['script', 'style', 'font'].includes(type)
+      }
+    }
   },
 
   /*

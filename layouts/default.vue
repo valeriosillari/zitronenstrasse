@@ -26,7 +26,7 @@ export default {
   },
 
   mounted() {
-    console.log('develop 004 - font loader but NO swap')
+    console.log('develop 005 - preload?')
   }
 }
 </script>
