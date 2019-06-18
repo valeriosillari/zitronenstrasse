@@ -126,8 +126,12 @@ module.exports = {
   // Load fonts from Google via Nuxt Font Package
   // No js = no font loaded
   webfontloader: {
-    google: {
-      families: ['Roboto:400', 'Saira Condensed:300']
+    custom: {
+      families: ['Roboto', 'Saira+Condensed'],
+      urls: [
+        'https://fonts.googleapis.com/css?family=Roboto:400&display=swap',
+        'https://fonts.googleapis.com/css?family=Saira+Condensed:300&display=swap'
+      ]
     }
   },
 
