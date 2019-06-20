@@ -1,5 +1,4 @@
 const dotenvPkg = require('dotenv')
-const shrinkRay = require('shrink-ray-current')
 const pkg = require('./package')
 
 // dotENV custom path keys file
@@ -152,26 +151,6 @@ module.exports = {
           exclude: /(node_modules)/
         })
       }
-
-      // image optimization
-      config.module.rules.forEach(rule => {
-        if (String(rule.test) === String(/\.(png|jpe?g|gif|svg|webp)$/)) {
-          // add a second loader when loading images
-          rule.use.push({
-            loader: 'image-webpack-loader',
-            options: {
-              svgo: {
-                plugins: [
-                  // use these settings for internet explorer for proper scalable SVGs
-                  // https://css-tricks.com/scale-svg/
-                  { removeViewBox: false },
-                  { removeDimensions: true }
-                ]
-              }
-            }
-          })
-        }
-      })
     },
 
     // set logic for loading vue2 google map
@@ -184,12 +163,6 @@ module.exports = {
   generate: {
     // set error page for generated static website
     fallback: '404.html'
-  },
-
-  render: {
-    // for using brotli compression
-    // https://blog.lichter.io/posts/nuxtjs-on-brotli/
-    compressor: shrinkRay()
   },
 
   /*
