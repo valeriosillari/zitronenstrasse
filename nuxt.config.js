@@ -115,7 +115,7 @@ module.exports = {
 
   // Load gloablly Functions / Variables / Mixins
   styleResources: {
-    sass: ['assets/stylesheets/global.sass']
+    sass: ['assets/stylesheets/pre_processing/pre_processing.sass']
   },
 
   /*
@@ -123,8 +123,8 @@ module.exports = {
    */
   css: [
     '@fortawesome/fontawesome-svg-core/styles.css',
-    // here ssass tyles
-    '@/assets/stylesheets/_test.sass'
+    // here sass common styles
+    '@/assets/stylesheets/common_styles.sass'
   ],
 
   // Load fonts from Google via Nuxt Font Package

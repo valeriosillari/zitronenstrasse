@@ -170,11 +170,11 @@
 
 <style lang="sass">
 .sub-title
-  @extend .h3
+  // @extend .h3
   margin-top: 60px
 
 .sub-section
-  @extend .h5
+  // @extend .h5
   margin-top: 30px
 </style>
 
@@ -188,9 +188,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: `Privacy Policy | Zitronenstrasse | ${
-            process.env.metaHeadDescription
-          }`
+          content: `Privacy Policy | Zitronenstrasse | ${process.env.metaHeadDescription}`
         }
       ]
     }
