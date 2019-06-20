@@ -4,6 +4,9 @@
 
 Split styles and set loader only for functions, variables and mixins.
 
+!!! seems slower (88%) then develop (90%) on NOW.
+Try again. maybe just speed insight random flaw.
+
 ### Yarn + Node update
 
 ### Better performances?
