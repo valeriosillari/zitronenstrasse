@@ -1,8 +1,12 @@
 # TODO
 
-### Yarn update
+### Style Loader
 
-### better performances?
+Split styles and set loader only for functions, variables and mixins.
+
+### Yarn + Node update
+
+### Better performances?
 
 Netlify asset-optimization : ON
 
@@ -11,6 +15,8 @@ Netlify pre-rendering : ON
 ENV set as "production" : OK
 
 ### Font Check
+
+Working on it
 
 ### Lazy Load map?
 
