@@ -52,11 +52,6 @@ module.exports = {
   },
 
   /*
-   ** Global CSS
-   */
-  css: ['@fortawesome/fontawesome-svg-core/styles.css'],
-
-  /*
    ** Plugins to load before mounting the App
    */
   plugins: [
@@ -118,9 +113,19 @@ module.exports = {
     ]
   ],
 
+  // Load gloablly Functions / Variables / Mixins
   styleResources: {
     sass: ['assets/stylesheets/global.sass']
   },
+
+  /*
+   ** Global CSS | SASS
+   */
+  css: [
+    '@fortawesome/fontawesome-svg-core/styles.css',
+    // here ssass tyles
+    '@/assets/stylesheets/_test.sass'
+  ],
 
   // Load fonts from Google via Nuxt Font Package
   // No js = no font loaded
