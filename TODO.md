@@ -14,6 +14,8 @@ Netlify pre-rendering : ON
 
 ENV set as "production" : OK
 
+Try Now for hosting/Deploy
+
 ### Font Check
 
 Working on it
