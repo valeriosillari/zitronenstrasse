@@ -1,7 +1,7 @@
 {
   "name": "zitronenstrasse",
   "version": 2,
-  "alias": "zitronenstrasse.com",
+  "alias": ["zitronenstrasse.com", "www.zitronenstrasse.com"],
   "builds": [{ "src": "package.json", "use": "@now/static-build" }],
   "regions": ["bru", "cdg1", "arn1"],
   "build": {
