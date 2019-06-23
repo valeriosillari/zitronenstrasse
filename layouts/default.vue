@@ -26,7 +26,7 @@ export default {
   },
 
   mounted() {
-    console.log('try Now Zeit | 002')
+    // empty
   }
 }
 </script>

@@ -1,24 +1,22 @@
 # TODO
 
-### Style Loader
+### Now Zeit
 
-Split styles and set loader only for functions, variables and mixins.
+- Set website and urls
 
-### Yarn + Node update
+- check FTP and EMAIL.
+
+- test push from feature branches (alias)
+
+- set better Secret ENV keys logic
 
 ### Better performances?
 
-Netlify asset-optimization : ON
+to test
 
-Netlify pre-rendering : ON
+### Style Loader
 
-ENV set as "production" : OK
-
-Try Now for hosting/Deploy
-
-### Font Check
-
-Working on it
+Split styles and set loader only for functions, variables and mixins.
 
 ### Lazy Load map?
 
