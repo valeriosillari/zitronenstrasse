@@ -33,10 +33,8 @@ const ogImageHeight = '630'
 module.exports = {
   mode: 'universal',
 
-  /*
-   ** ENV vars to spread in all the app.
-   ** https://nuxtjs.org/api/configuration-env
-   */
+  // ENV vars to spread in all the app.
+  // https://nuxtjs.org/api/configuration-env
   env: {
     metaHeadDescription: headDescription,
     googleMapApiKey: googleMapApiKey,
