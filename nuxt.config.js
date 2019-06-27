@@ -41,9 +41,7 @@ module.exports = {
     appVersion: pkg.version
   },
 
-  /*
-   ** Customize the progress-bar color
-   */
+  // Customize the progress-bar color
   loading: {
     color: '#ffd400',
     height: '5px'
