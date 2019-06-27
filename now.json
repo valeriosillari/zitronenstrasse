@@ -9,5 +9,15 @@
       "GOOGLE_MAP_API_KEY": "@google_map_api_key",
       "GOOGLE_ANALYTICS_KEY": "@google_analytics_key"
     }
-  }
+  },
+  "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/.*",
+      "status": 404,
+      "dest": "404.html"
+    }
+  ]
 }
