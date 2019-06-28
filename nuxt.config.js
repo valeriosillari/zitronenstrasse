@@ -47,9 +47,7 @@ module.exports = {
     height: '5px'
   },
 
-  /*
-   ** Global CSS
-   */
+  // Global CSS
   css: ['@fortawesome/fontawesome-svg-core/styles.css'],
 
   /*
