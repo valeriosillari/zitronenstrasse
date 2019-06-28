@@ -6,7 +6,7 @@
   "license": "GPL-3.0",
   "private": true,
   "engines": {
-    "node": ">= v12.5.0",
+    "node": ">= v10.x",
     "yarn": ">= v1.16.0"
   },
   "scripts": {
