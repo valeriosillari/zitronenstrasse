@@ -2,12 +2,6 @@
 
 ### Now Zeit
 
-- Set website and urls
-
-- check FTP and EMAIL.
-
-- test push from feature branches (alias)
-
 - set better Secret ENV keys logic
 
 ### Better performances?
