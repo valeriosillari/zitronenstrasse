@@ -25,7 +25,7 @@ export default {
     PrivacyPolicyBanner
   },
 
-  mounted() {
+  mounted()  {
     // empty
   }
 }
