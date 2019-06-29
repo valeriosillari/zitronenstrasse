@@ -4,10 +4,6 @@
 
 [zitronenstrasse.com](https://zitronenstrasse.com/)
 
-[ ![Codeship Status for valeriosillari/zitronenstrasse](https://app.codeship.com/projects/45f42180-b923-0135-4183-366309507115/status?branch=master)](https://app.codeship.com/projects/259131)
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/de1455c3-64d1-41ca-bc68-80dd588b75fe/deploy-status)](https://app.netlify.com/sites/zitronestrasse/deploys)
-
 ## GENERAL INFO
 
 A side project with a list of romantic spots in Berlin.
