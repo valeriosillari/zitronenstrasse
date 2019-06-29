@@ -103,7 +103,7 @@ import Sidebar from '~/components/Sidebar.vue'
 
 export default {
   components: {
-    Sidebar
+    Sidebar,
   },
 
   data() {
@@ -111,7 +111,7 @@ export default {
       // map
       center: {
         lat: 52.48383,
-        lng: 13.4395546
+        lng: 13.4395546,
       },
       zoom: 14,
       // map options
@@ -120,16 +120,16 @@ export default {
         fullscreenControl: false,
         mapTypeControl: false,
         // set custom map styles
-        styles: mapStylesDark
+        styles: mapStylesDark,
       },
       // rest of options
       isScreenBig: false,
       isSidebarBindClass: {
         // first value is class to attach/bind, second value is status
-        isOpenClass: false
+        isOpenClass: false,
       },
       // map drag for marker animation
-      isMapDragged: false
+      isMapDragged: false,
     }
   },
 
@@ -174,7 +174,7 @@ export default {
             position: new google.maps.LatLng(
               placeID.position.lat,
               placeID.position.lng
-            )
+            ),
           })
 
           // at marker click passed all the current marker info to the store object:
@@ -190,8 +190,8 @@ export default {
               fbPage: placeID.fbPage,
               position: {
                 lat: placeID.position.lat,
-                lng: placeID.position.lng
-              }
+                lng: placeID.position.lng,
+              },
             }
 
             // update store with current place data
@@ -282,7 +282,7 @@ export default {
       // when function trigger, set value as TRUE. we change DATA value
       // https://vuejs.org/v2/guide/reactivity.html#Change-Detection-Caveats
       this.$set(this.isSidebarBindClass, 'isOpenClass', false)
-    }
-  }
+    },
+  },
 }
 </script>
