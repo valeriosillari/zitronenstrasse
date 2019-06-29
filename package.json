@@ -17,7 +17,7 @@
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "prettier": "prettier --write '**/*.{css,scss,js,vue}'",
     "precommit": "npm run lint",
-    "now-build": "lint && nuxt generate"
+    "now-build": "yarn lint && nuxt generate"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
