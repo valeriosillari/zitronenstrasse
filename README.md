@@ -8,7 +8,7 @@
 
 A side project with a list of romantic spots in Berlin.
 
-Based on **VueJS (Nuxt)**, **Google Maps** and **Express Server**.
+Based on **Nuxt (VueJS)** and **Google Maps**.
 
 ## Setup
 
@@ -44,7 +44,7 @@ For detailed explanation on how dotenv work, checkout the [dotenv docs](https://
 
 #### SERVER OPTIONS
 
-We use Express as server. set by Nuxt Boilerplate option.
+We use Express as server. Set by Nuxt Boilerplate option.
 
 For setting more server options for the application, we use Nuxt with Express.
 
