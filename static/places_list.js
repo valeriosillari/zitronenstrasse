@@ -20,8 +20,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/geschwisternothaft/',
     position: {
       lat: 52.472729,
-      lng: 13.454635
-    }
+      lng: 13.454635,
+    },
   },
   {
     // 002
@@ -34,8 +34,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/BLageNeukoelln/',
     position: {
       lat: 52.473724,
-      lng: 13.451103
-    }
+      lng: 13.451103,
+    },
   },
   {
     // 003
@@ -47,8 +47,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/pg/BarHerrLindemann',
     position: {
       lat: 52.47371,
-      lng: 13.44499
-    }
+      lng: 13.44499,
+    },
   },
   {
     // 004
@@ -61,8 +61,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/HallmannKlee/',
     position: {
       lat: 52.47383629999999,
-      lng: 13.4497396
-    }
+      lng: 13.4497396,
+    },
   },
   {
     // 005
@@ -74,8 +74,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/malso.malso.rixdorf',
     position: {
       lat: 52.4742567,
-      lng: 13.449592
-    }
+      lng: 13.449592,
+    },
   },
   {
     // 006
@@ -87,8 +87,8 @@ const placesList = [
     website: 'http://www.körnerpark.de/',
     position: {
       lat: 52.47136099999999,
-      lng: 13.437907
-    }
+      lng: 13.437907,
+    },
   },
   {
     // 007
@@ -101,8 +101,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/kapital.menu/',
     position: {
       lat: 52.47388549999999,
-      lng: 13.4426487
-    }
+      lng: 13.4426487,
+    },
   },
   {
     // 008
@@ -115,8 +115,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/baleraweine/',
     position: {
       lat: 52.473589,
-      lng: 13.4417472
-    }
+      lng: 13.4417472,
+    },
   },
   {
     // 009
@@ -129,8 +129,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/Caf%C3%A9-Vux-140098601300/',
     position: {
       lat: 52.47208,
-      lng: 13.4425101
-    }
+      lng: 13.4425101,
+    },
   },
   {
     // 0010
@@ -142,8 +142,8 @@ const placesList = [
     website: 'http://comenius-garten.de/',
     position: {
       lat: 52.4751335,
-      lng: 13.4432263
-    }
+      lng: 13.4432263,
+    },
   },
 
   // ====================== 11 - 20 ======================
@@ -156,8 +156,8 @@ const placesList = [
     website: 'http://www.boehmisches-dorf.de/',
     position: {
       lat: 52.4766317,
-      lng: 13.4432199
-    }
+      lng: 13.4432199,
+    },
   },
   {
     // 012
@@ -170,8 +170,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/CocoLiebe-552868534832866/',
     position: {
       lat: 52.47813,
-      lng: 13.43966
-    }
+      lng: 13.43966,
+    },
   },
   {
     // 013
@@ -184,8 +184,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/Paulinskipalme/',
     position: {
       lat: 52.47483,
-      lng: 13.44494
-    }
+      lng: 13.44494,
+    },
   },
   {
     // 014
@@ -198,8 +198,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/berlinerberg',
     position: {
       lat: 52.4758709,
-      lng: 13.4328072
-    }
+      lng: 13.4328072,
+    },
   },
   {
     // 015
@@ -211,8 +211,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/sameheadsberlin/',
     position: {
       lat: 52.4778094,
-      lng: 13.4393049
-    }
+      lng: 13.4393049,
+    },
   },
   {
     // 016
@@ -225,8 +225,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/kulturdachgartenklunkerkranich/',
     position: {
       lat: 52.4821731,
-      lng: 13.4318764
-    }
+      lng: 13.4318764,
+    },
   },
   {
     // 017
@@ -238,8 +238,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/kfetisch/',
     position: {
       lat: 52.4830722,
-      lng: 13.4417665
-    }
+      lng: 13.4417665,
+    },
   },
   {
     // 018
@@ -250,8 +250,8 @@ const placesList = [
     website: 'http://www.ae-neukoelln.de/',
     position: {
       lat: 52.4850275,
-      lng: 13.4371403
-    }
+      lng: 13.4371403,
+    },
   },
   {
     // 019
@@ -264,8 +264,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/Vin-Aqua-Vin-138683709477176/',
     position: {
       lat: 52.48804209999999,
-      lng: 13.4307912
-    }
+      lng: 13.4307912,
+    },
   },
   {
     // 020
@@ -278,8 +278,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/damensalonbarberlin',
     position: {
       lat: 52.491,
-      lng: 13.42944
-    }
+      lng: 13.42944,
+    },
   },
 
   // ====================== 21 - 30 ======================
@@ -294,8 +294,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/TiERBAR',
     position: {
       lat: 52.4848514,
-      lng: 13.4375875
-    }
+      lng: 13.4375875,
+    },
   },
   {
     // 022
@@ -307,8 +307,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/FUKS-266431236749703/',
     position: {
       lat: 52.4896975,
-      lng: 13.4262947
-    }
+      lng: 13.4262947,
+    },
   },
   {
     // 023
@@ -321,8 +321,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/myxaberlin/',
     position: {
       lat: 52.49027299999999,
-      lng: 13.426709
-    }
+      lng: 13.426709,
+    },
   },
   {
     // 024
@@ -335,8 +335,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/RoamersBerlin',
     position: {
       lat: 52.48553,
-      lng: 13.429323
-    }
+      lng: 13.429323,
+    },
   },
   {
     // 025
@@ -348,8 +348,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/geistimglas/',
     position: {
       lat: 52.490117,
-      lng: 13.424802
-    }
+      lng: 13.424802,
+    },
   },
   {
     // 026
@@ -363,8 +363,8 @@ const placesList = [
       'https://www.facebook.com/pages/Cafe-Jacques-am-Maybachufer/106295842766499',
     position: {
       lat: 52.4942363,
-      lng: 13.4254769
-    }
+      lng: 13.4254769,
+    },
   },
   {
     // 027
@@ -375,8 +375,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/derfuchsbau/',
     position: {
       lat: 52.4956697,
-      lng: 13.41943
-    }
+      lng: 13.41943,
+    },
   },
   {
     // 028
@@ -388,8 +388,8 @@ const placesList = [
     // NO websites
     position: {
       lat: 52.496976,
-      lng: 13.4590888
-    }
+      lng: 13.4590888,
+    },
   },
   {
     // 029
@@ -402,8 +402,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/inselberlin/',
     position: {
       lat: 52.4868198,
-      lng: 13.4809252
-    }
+      lng: 13.4809252,
+    },
   },
   {
     // 030
@@ -415,8 +415,8 @@ const placesList = [
     website: 'http://www.evfbs.de/index.php?id=225',
     position: {
       lat: 52.4910906,
-      lng: 13.4788836
-    }
+      lng: 13.4788836,
+    },
   },
 
   // ====================== 31 - 40 ======================
@@ -431,8 +431,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/ARENABERLIN',
     position: {
       lat: 52.4966473,
-      lng: 13.4530078
-    }
+      lng: 13.4530078,
+    },
   },
   {
     // 032
@@ -444,8 +444,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/Pony-Saloon-Berlin-252462801476185/',
     position: {
       lat: 52.491695,
-      lng: 13.4195261
-    }
+      lng: 13.4195261,
+    },
   },
   {
     // 033
@@ -458,8 +458,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/lapecoraneraberlin/',
     position: {
       lat: 52.4771757,
-      lng: 13.4211344
-    }
+      lng: 13.4211344,
+    },
   },
   {
     // 034
@@ -472,8 +472,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/saladamangiare',
     position: {
       lat: 52.4807266,
-      lng: 13.427628
-    }
+      lng: 13.427628,
+    },
   },
   {
     // 035
@@ -486,8 +486,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/LimonadierBar',
     position: {
       lat: 52.4918274,
-      lng: 13.3904505
-    }
+      lng: 13.3904505,
+    },
   },
   {
     // 036
@@ -498,8 +498,8 @@ const placesList = [
     // NO websites
     position: {
       lat: 52.4952365,
-      lng: 13.4097972
-    }
+      lng: 13.4097972,
+    },
   },
   {
     // 037
@@ -512,8 +512,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/Tante-Lisbeth-167076453314044/',
     position: {
       lat: 52.5012121,
-      lng: 13.4317021
-    }
+      lng: 13.4317021,
+    },
   },
   {
     // 038
@@ -525,8 +525,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/pages/Kirk-Bar/132427720140135',
     position: {
       lat: 52.5009317,
-      lng: 13.4404779
-    }
+      lng: 13.4404779,
+    },
   },
   {
     // 039
@@ -539,8 +539,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/CuoreDiVetroBerlin/',
     position: {
       lat: 52.52656899999999,
-      lng: 13.4085013
-    }
+      lng: 13.4085013,
+    },
   },
   {
     // 040
@@ -553,8 +553,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/pages/Bar-Babette/136696746381818',
     position: {
       lat: 52.5194805,
-      lng: 13.423457
-    }
+      lng: 13.423457,
+    },
   },
 
   // ====================== 41 - ... ======================
@@ -569,8 +569,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/pages/Sheriff-Teddy-Bar/175296822498538',
     position: {
       lat: 52.51144559999999,
-      lng: 13.463458
-    }
+      lng: 13.463458,
+    },
   },
   {
     // 042
@@ -582,8 +582,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/pages/Place-Clichy/163492683667285',
     position: {
       lat: 52.50847,
-      lng: 13.45523
-    }
+      lng: 13.45523,
+    },
   },
   {
     // 043
@@ -596,8 +596,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/wohnzimmerbarberlin/',
     position: {
       lat: 52.5434934,
-      lng: 13.4191829
-    }
+      lng: 13.4191829,
+    },
   },
   {
     // 044
@@ -610,8 +610,8 @@ const placesList = [
       'https://www.visitberlin.de/de/wasserturm-am-kollwitzplatz-wasserturmplatz',
     position: {
       lat: 52.53336849999999,
-      lng: 13.4176316
-    }
+      lng: 13.4176316,
+    },
   },
   {
     // 045
@@ -624,8 +624,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/BitteDanke8',
     position: {
       lat: 52.51617049999999,
-      lng: 13.4635443
-    }
+      lng: 13.4635443,
+    },
   },
   {
     // 046
@@ -636,8 +636,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/AtopiaKaffeehaus/',
     position: {
       lat: 52.5415791,
-      lng: 13.4249168
-    }
+      lng: 13.4249168,
+    },
   },
   {
     // 047
@@ -650,8 +650,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/absinthdepot.berlin/',
     position: {
       lat: 52.5253564,
-      lng: 13.4050257
-    }
+      lng: 13.4050257,
+    },
   },
   {
     // 048
@@ -664,8 +664,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/lolawashere.cafe',
     position: {
       lat: 52.5518699,
-      lng: 13.410824
-    }
+      lng: 13.410824,
+    },
   },
   {
     // 049
@@ -678,8 +678,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/Caf%C3%A9-Dujardin-482078158551600/',
     position: {
       lat: 52.550876,
-      lng: 13.3735181
-    }
+      lng: 13.3735181,
+    },
   },
   {
     // 050
@@ -692,8 +692,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/rotbart.rixdorf/',
     position: {
       lat: 52.4742213,
-      lng: 13.4491873
-    }
+      lng: 13.4491873,
+    },
   },
   {
     // 051
@@ -705,8 +705,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/pages/Omoni/171813879520332',
     position: {
       lat: 52.5491494,
-      lng: 13.408966
-    }
+      lng: 13.408966,
+    },
   },
   // {
   //   // ChIJDd47W7ZPqEcRIQcDmqwJ85A | closed
@@ -731,8 +731,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/MAMAKALO/',
     position: {
       lat: 52.4767774,
-      lng: 13.4207261
-    }
+      lng: 13.4207261,
+    },
   },
   {
     // 054
@@ -745,8 +745,8 @@ const placesList = [
       'https://www.berlin.de/senuvk/umwelt/stadtgruen/gruenanlagen/de/gruenanlagen_plaetze/schoeneberg/rudolph_wilde_park/index.shtml',
     position: {
       lat: 52.4828472,
-      lng: 13.3411489
-    }
+      lng: 13.3411489,
+    },
   },
   {
     // 055 (Restaurant RioGrande)
@@ -757,8 +757,8 @@ const placesList = [
     thumbCredits: 'Zitronenstrasse',
     position: {
       lat: 52.502094,
-      lng: 13.443147
-    }
+      lng: 13.443147,
+    },
   },
   {
     // 056
@@ -770,8 +770,8 @@ const placesList = [
     fbPage: 'https://www.facebook.com/ZosseBar/',
     position: {
       lat: 52.4749991,
-      lng: 13.4437522
-    }
+      lng: 13.4437522,
+    },
   },
   {
     // 057
@@ -783,8 +783,8 @@ const placesList = [
     website: 'http://www.floatinguniversity.org/',
     position: {
       lat: 52.4847201,
-      lng: 13.4065031
-    }
+      lng: 13.4065031,
+    },
   },
   {
     // 058
@@ -798,8 +798,8 @@ const placesList = [
       'https://www.facebook.com/SPUTNIK-KINO-H%C3%B6fe-am-S%C3%BCdstern-Berlin-Kreuzberg-234120463286303/',
     position: {
       lat: 52.48995180000001,
-      lng: 13.4101029
-    }
+      lng: 13.4101029,
+    },
   },
   {
     // 059
@@ -811,9 +811,9 @@ const placesList = [
     fbPage: 'https://www.facebook.com/bellermann98/',
     position: {
       lat: 52.5548563,
-      lng: 13.384403
-    }
-  }
+      lng: 13.384403,
+    },
+  },
 ]
 
 export default placesList

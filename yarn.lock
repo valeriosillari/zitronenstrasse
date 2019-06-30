@@ -1272,6 +1272,13 @@
   resolved "https://registry.yarnpkg.com/@nuxtjs/eslint-config/-/eslint-config-0.0.1.tgz#3aeed1cc6a2e01331c7e6b56bfa7152ce8bb2d90"
   integrity sha512-Scz5oYNtVwePF1ebXcWPrFxBpNF5wAkYh8L++6f2ZdLyUb1mCOwzE2+oVZxS25hGCYUyecFEshbqeSwkC+ktqA==
 
+"@nuxtjs/eslint-module@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/eslint-module/-/eslint-module-0.0.1.tgz#fecad1dd8c75ad2e71286284bdebd104cf3c4822"
+  integrity sha512-KAiSZMgomUAojQjBaPAJaRHd/bZRknSJdgwwcN2UlOFGfHEnFkman6kag99qfes235XCIPHzR4FOKjEeWZcYaA==
+  dependencies:
+    eslint-loader "^2.1.2"
+
 "@nuxtjs/google-analytics@^2.2.0":
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/@nuxtjs/google-analytics/-/google-analytics-2.2.0.tgz#4b2072824961974109eb0bff6a95591fea92c6d9"
@@ -3588,9 +3595,9 @@ ejs@^2.6.1:
   integrity sha512-PcW2a0tyTuPHz3tWyYqtK6r1fZ3gp+3Sop8Ph+ZYN81Ob5rwmbHEzaqs10N3BEsaGTkh/ooniXK+WwszGlc2+Q==
 
 electron-to-chromium@^1.3.164:
-  version "1.3.176"
-  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.176.tgz#df54c54386e0f205dc6d1f5582d9e8b0cd30532b"
-  integrity sha512-hsQ/BH6x2iCvJ7WOIbNTAlsT39vsVGIVoJJ9i6ZkGXUE2LdzWsNv0xJI2uZ5/Hkqv1oTTLxAYjbtGKVJzqYbjA==
+  version "1.3.177"
+  resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.177.tgz#6ee78908c38f8021f6864a0ad534452fefd1e24c"
+  integrity sha512-vMoq8iU57YZgxrW9kglf1ZEBcU+Ec72OlR+SH/UdBTKS6tZTCypxa8pmD1CPZ3olU4IJX2ujilGkvpn0GHSwTQ==
 
 elliptic@^6.0.0:
   version "6.5.0"
@@ -9227,9 +9234,9 @@ terser-webpack-plugin@^1.1.0, terser-webpack-plugin@^1.3.0:
     worker-farm "^1.7.0"
 
 terser@^4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/terser/-/terser-4.0.0.tgz#ef356f6f359a963e2cc675517f21c1c382877374"
-  integrity sha512-dOapGTU0hETFl1tCo4t56FN+2jffoKyER9qBGoUFyZ6y7WLoKT0bF+lAYi6B6YsILcGF3q1C2FBh8QcKSCgkgA==
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/terser/-/terser-4.0.1.tgz#f2e90b453cff6fb317fc33bb277517753e3e2bef"
+  integrity sha512-27+kdMOAwb9HMtSfSL1wYDwbh+zKTSFrnT76g5M0LS14XFBEqBWvFuBCLXr0Ceoxp+nlBjCBF6GAma/aoj7COA==
   dependencies:
     commander "^2.19.0"
     source-map "~0.6.1"

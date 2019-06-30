@@ -22,11 +22,11 @@ export default {
     Navbar,
     Footer,
     NoJsFallback,
-    PrivacyPolicyBanner
+    PrivacyPolicyBanner,
   },
 
   mounted() {
     // empty
-  }
+  },
 }
 </script>
