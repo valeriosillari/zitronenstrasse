@@ -22,11 +22,12 @@ export default {
     Navbar,
     Footer,
     NoJsFallback,
-    PrivacyPolicyBanner
+    PrivacyPolicyBanner,
   },
 
   mounted() {
     // empty
-  }
+    console.log('Yolo')
+  },
 }
 </script>

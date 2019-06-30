@@ -22,260 +22,265 @@
       )
 </template>
 
-
 <style lang="sass">
-  .map-main-wrapper
-    position: relative
-    height: $map_height
+.map-main-wrapper
+  position: relative
+  height: $map_height
 
-  .gmap-container
-    position: absolute
-    width: 100%
-    height: 100%
+.gmap-container
+  position: absolute
+  width: 100%
+  height: 100%
 
-  // map bg whn loading
-  .gm-style
-    background: $color_map_bg
+// map bg whn loading
+.gm-style
+  background: $color_map_bg
 
-  // remove google cc
-  // and remove some weird grey box set on right side from google
-  .gm-style-cc
-    display: none
+// remove google cc
+// and remove some weird grey box set on right side from google
+.gm-style-cc
+  display: none
 
 
-  // title for seo
-  .heading-title
-    display: none
+// title for seo
+.heading-title
+  display: none
 
-  // WRAPPER classes
-  .map-wrapper-sidebar-push
-    overflow-x: hidden
-    position: relative
-    left: 0
+// WRAPPER classes
+.map-wrapper-sidebar-push
+  overflow-x: hidden
+  position: relative
+  left: 0
 
+.sidebar-animation
+  position: fixed
+  top: 0
+  z-index: 1000
+  height: 100%
+  width: 100%
+  background: $color_sidebar_bg
+  right: -$sidebar_width_xs
+  +breakpoint($breakpoint_sm)
+    width: $sidebar_width_sm
+    right: -$sidebar_width_sm
+  +breakpoint($breakpoint_md)
+    width: $sidebar_width_md
+    right: -$sidebar_width_md
+
+$sidebar_animation: all .35s ease
+// Transitions
+.sidebar-animation,
+.map-wrapper-sidebar-push
+  -webkit-transition: $sidebar_animation
+  -moz-transition: $sidebar_animation
+  transition: $sidebar_animation
+
+// -- OPEN. js add classes
+
+// extra class added via JS when sidebar is shown (WRAPPER/PARENT element)
+.isOpenClass
+  left: -$sidebar_width_xs
+  +breakpoint($breakpoint_sm)
+    left: -$sidebar_width_sm
+  +breakpoint($breakpoint_md)
+    left: -$sidebar_width_md
+  // extra class added via JS when sidebar is shown (sidebar element)
   .sidebar-animation
-    position: fixed
-    top: 0
-    z-index: 1000
-    height: 100%
-    width: 100%
-    background: $color_sidebar_bg
-    right: -$sidebar_width_xs
-    +breakpoint($breakpoint_sm)
-      width: $sidebar_width_sm
-      right: -$sidebar_width_sm
-    +breakpoint($breakpoint_md)
-      width: $sidebar_width_md
-      right: -$sidebar_width_md
+    right: 0px
 
-  $sidebar_animation: all .35s ease
-  // Transitions
-  .sidebar-animation,
-  .map-wrapper-sidebar-push
-    -webkit-transition: $sidebar_animation
-    -moz-transition: $sidebar_animation
-    transition: $sidebar_animation
-
-  // -- OPEN. js add classes
-
-  // extra class added via JS when sidebar is shown (WRAPPER/PARENT element)
-  .isOpenClass
-    left: -$sidebar_width_xs
-    +breakpoint($breakpoint_sm)
-      left: -$sidebar_width_sm
-    +breakpoint($breakpoint_md)
-      left: -$sidebar_width_md
-    // extra class added via JS when sidebar is shown (sidebar element)
-    .sidebar-animation
-      right: 0px
-
-  // === no JS logic | modernizr ===
-  // not show map (google)
-  .no-js
-    .google-map
-      display: none
-
+// === no JS logic | modernizr ===
+// not show map (google)
+.no-js
+  .google-map
+    display: none
 </style>
 
-
 <script>
-  import placesList from '~/static/places_list.js'
-  import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
-  import customMarker from '~/components/MapGoogle/_markerCustomStyles.js'
-  import Sidebar from '~/components/Sidebar.vue'
+import placesList from '~/static/places_list.js'
+import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
+import customMarker from '~/components/MapGoogle/_markerCustomStyles.js'
+import Sidebar from '~/components/Sidebar.vue'
 
-  export default {
-    components: {
-      Sidebar
-    },
+export default {
+  components: {
+    Sidebar,
+  },
 
-    data () {
-      return {
-        // map
-        center: {
-          lat: 52.48383,
-          lng: 13.4395546
-        },
-        zoom: 14,
-        // map options
-        options: {
-          streetViewControl: false,
-          fullscreenControl: false,
-          mapTypeControl: false,
-          // set custom map styles
-          styles: mapStylesDark
-        },
-        // rest of options
-        isScreenBig: false,
-        isSidebarBindClass: {
-          // first value is class to attach/bind, second value is status
-          'isOpenClass': false
-        },
-        // map drag for marker animation
-        isMapDragged: false,
-      }
-    },
+  data() {
+    return {
+      // map
+      center: {
+        lat: 52.48383,
+        lng: 13.4395546,
+      },
+      zoom: 14,
+      // map options
+      options: {
+        streetViewControl: false,
+        fullscreenControl: false,
+        mapTypeControl: false,
+        // set custom map styles
+        styles: mapStylesDark,
+      },
+      // rest of options
+      isScreenBig: false,
+      isSidebarBindClass: {
+        // first value is class to attach/bind, second value is status
+        isOpenClass: false,
+      },
+      // map drag for marker animation
+      isMapDragged: false,
+    }
+  },
 
-    // mounted: WHEN ALL code on server is already loaded!
-    mounted () {
-      // wait having the map created. info and tips from this issue:
-      // https://github.com/xkjyeah/vue-google-maps/issues/301
-      this.$refs.mapRef.$mapPromise.then((map) => {
-        // wait google Plugin set and attached to window object
-        const google = window.google
-        // need to be here, after google is set
-        const initLogic = () => {
-          // function for PAN movement
-          google.maps.Map.prototype.panToWithOffset = function (latlng, offsetX, offsetY) {
-            let ov = new google.maps.OverlayView()
-            ov.onAdd = function () {
-              let proj = this.getProjection()
-              let aPoint = proj.fromLatLngToContainerPixel(latlng)
-              aPoint.x = aPoint.x + offsetX
-              aPoint.y = aPoint.y + offsetY
-              map.panTo(proj.fromContainerPixelToLatLng(aPoint))
-            }
-            ov.draw = () => {}
-            ov.setMap(this)
+  // mounted: WHEN ALL code on server is already loaded!
+  mounted() {
+    // wait having the map created. info and tips from this issue:
+    // https://github.com/xkjyeah/vue-google-maps/issues/301
+    this.$refs.mapRef.$mapPromise.then(map => {
+      // wait google Plugin set and attached to window object
+      const google = window.google
+      // need to be here, after google is set
+      const initLogic = () => {
+        // function for PAN movement
+        google.maps.Map.prototype.panToWithOffset = function(
+          latlng,
+          offsetX,
+          offsetY
+        ) {
+          const ov = new google.maps.OverlayView()
+          ov.onAdd = function() {
+            const proj = this.getProjection()
+            const aPoint = proj.fromLatLngToContainerPixel(latlng)
+            aPoint.x = aPoint.x + offsetX
+            aPoint.y = aPoint.y + offsetY
+            map.panTo(proj.fromContainerPixelToLatLng(aPoint))
           }
+          ov.draw = () => {}
+          ov.setMap(this)
+        }
 
-          // set single marker Loop (at page load)
-          const setSingleMarker = (indexNumber, placeID) => {
-
-            // firts create object with all data for current marker
-            let marker = new google.maps.Marker({
-              // set current map
-              map: map,
-              // set icon custom style
-              icon: customMarker,
-              // set position
-              position: new google.maps.LatLng(placeID.position.lat, placeID.position.lng),
-            })
-
-            // at marker click passed all the current marker info to the store object:
-            // so we update globally the info about current item in all components
-            google.maps.event.addListener(marker, 'click', () => {
-              // set update object to pass to the store
-              let currentPlace = {
-                title: placeID.title,
-                address:  placeID.address,
-                thumb: placeID.thumb || '000_place_fallback.jpg',
-                thumbCredits: placeID.thumbCredits,
-                website: placeID.website,
-                fbPage: placeID.fbPage,
-                position: {
-                  lat: placeID.position.lat,
-                  lng: placeID.position.lng,
-                }
-              }
-
-              // update store with current place data
-              this.$store.commit('currentPlace/updateCurrentPlace', currentPlace)
-
-              // marker animation
-              this.markerAnimation(marker)
-
-              // open sidebar + pan movement (for centering)
-              this.isSidebarOpen(window.innerWidth)
-            })
-
-            return marker
-          // ./ end setSingleMarker
-          }
-
-          // Loop our LIST array and set marker on map
-          for (const [indexNumber, placeID] of placesList.entries()) {
-            setSingleMarker(indexNumber, placeID)
-          }
-
-          // return map so we can used it globally
-          this.map = map
-
-          // TODO: set as function?
-          // check if user is dragging the map. we need it later for close option
-          google.maps.event.addListener(map, 'dragend', () => {
-            this.isMapDragged = true
+        // set single marker Loop (at page load)
+        const setSingleMarker = (indexNumber, placeID) => {
+          // firts create object with all data for current marker
+          const marker = new google.maps.Marker({
+            // set current map
+            map: map,
+            // set icon custom style
+            icon: customMarker,
+            // set position
+            position: new google.maps.LatLng(
+              placeID.position.lat,
+              placeID.position.lng
+            ),
           })
 
-        // ./ end init
+          // at marker click passed all the current marker info to the store object:
+          // so we update globally the info about current item in all components
+          google.maps.event.addListener(marker, 'click', () => {
+            // set update object to pass to the store
+            const currentPlace = {
+              title: placeID.title,
+              address: placeID.address,
+              thumb: placeID.thumb || '000_place_fallback.jpg',
+              thumbCredits: placeID.thumbCredits,
+              website: placeID.website,
+              fbPage: placeID.fbPage,
+              position: {
+                lat: placeID.position.lat,
+                lng: placeID.position.lng,
+              },
+            }
+
+            // update store with current place data
+            this.$store.commit('currentPlace/updateCurrentPlace', currentPlace)
+
+            // marker animation
+            this.markerAnimation(marker)
+
+            // open sidebar + pan movement (for centering)
+            this.isSidebarOpen(window.innerWidth)
+          })
+
+          return marker
+          // ./ end setSingleMarker
         }
 
-        initLogic()
+        // Loop our LIST array and set marker on map
+        for (const [indexNumber, placeID] of placesList.entries()) {
+          setSingleMarker(indexNumber, placeID)
+        }
+
+        // return map so we can used it globally
+        this.map = map
+
+        // TODO: set as function?
+        // check if user is dragging the map. we need it later for close option
+        google.maps.event.addListener(map, 'dragend', () => {
+          this.isMapDragged = true
+        })
+
+        // ./ end init
+      }
+
+      initLogic()
       // ./ end map created
-      })
+    })
+  },
+
+  methods: {
+    // move map (animation) to current marker
+    panMovement(movementLatValue) {
+      this.map.panToWithOffset(
+        new window.google.maps.LatLng(
+          // from store
+          this.$store.state.currentPlace.item.position.lat,
+          this.$store.state.currentPlace.item.position.lng
+        ),
+        movementLatValue,
+        0
+      )
     },
 
-    methods: {
-      // move map (animation) to current marker
-      panMovement (movementLatValue) {
-        this.map.panToWithOffset(
-          new window.google.maps.LatLng(
-            // from store
-            this.$store.state.currentPlace.item.position.lat,
-            this.$store.state.currentPlace.item.position.lng
-          ), movementLatValue, 0
-        )
-      },
+    markerAnimation(currentMarker) {
+      // todo: set better with NO timeout?
+      // start bounce
+      setTimeout(() => {
+        currentMarker.setAnimation(window.google.maps.Animation.BOUNCE)
+      }, 400)
+      // end bounce
+      setTimeout(() => {
+        currentMarker.setAnimation(null)
+      }, 1150)
+    },
 
-      markerAnimation (currentMarker) {
-        // todo: set better with NO timeout?
-        // start bounce
-        setTimeout(() => {
-          currentMarker.setAnimation(window.google.maps.Animation.BOUNCE)
-        }, 400)
-        // end bounce
-        setTimeout(() => {
-          currentMarker.setAnimation(null)
-        }, 1150)
-      },
-
-      isSidebarOpen (screen) {
-        this.isScreenBig = false
-        if (screen >= 576) {
-          this.isScreenBig = true
-        }
-        // reset drag option
-        this.isMapDragged = false
-
-        // open sidebar (css animation in milleseconds)
-        // when function trigger, set value as TRUE. we change DATA value
-        // https://vuejs.org/v2/guide/reactivity.html#Change-Detection-Caveats
-        this.$set(this.isSidebarBindClass, 'isOpenClass', true)
-
-        if (this.isScreenBig) {
-          this.panMovement(-200)
-        }
-      },
-
-      isSidebarClose () {
-        // reset drag option
-        this.isMapDragged = false
-
-        // TOGGLE CLASS for close sidebar
-        // when function trigger, set value as TRUE. we change DATA value
-        // https://vuejs.org/v2/guide/reactivity.html#Change-Detection-Caveats
-        this.$set(this.isSidebarBindClass, 'isOpenClass', false)
+    isSidebarOpen(screen) {
+      this.isScreenBig = false
+      if (screen >= 576) {
+        this.isScreenBig = true
       }
-    }
-  }
+      // reset drag option
+      this.isMapDragged = false
+
+      // open sidebar (css animation in milleseconds)
+      // when function trigger, set value as TRUE. we change DATA value
+      // https://vuejs.org/v2/guide/reactivity.html#Change-Detection-Caveats
+      this.$set(this.isSidebarBindClass, 'isOpenClass', true)
+
+      if (this.isScreenBig) {
+        this.panMovement(-200)
+      }
+    },
+
+    isSidebarClose() {
+      // reset drag option
+      this.isMapDragged = false
+
+      // TOGGLE CLASS for close sidebar
+      // when function trigger, set value as TRUE. we change DATA value
+      // https://vuejs.org/v2/guide/reactivity.html#Change-Detection-Caveats
+      this.$set(this.isSidebarBindClass, 'isOpenClass', false)
+    },
+  },
+}
 </script>

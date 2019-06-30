@@ -46,7 +46,7 @@
 export default {
   data() {
     return {
-      isNavOpen: false
+      isNavOpen: false,
     }
   },
   methods: {
@@ -59,16 +59,16 @@ export default {
       setTimeout(() => {
         this.toggleBodyClassAtNavOpen(isNavOpen)
       }, 300)
-    }
+    },
   },
   head() {
     return {
       // like this it OVERRIDE the logic in vue config. we have to ADD just one class!!!
       bodyAttrs: {
-        class: this.isNavOpen ? 'isNavigationOpenBody' : ''
-      }
+        class: this.isNavOpen ? 'isNavigationOpenBody' : '',
+      },
     }
-  }
+  },
 }
 </script>
 
