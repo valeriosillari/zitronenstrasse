@@ -135,8 +135,6 @@ export default {
 
   // mounted: WHEN ALL code on server is already loaded!
   mounted() {
-    console.log('yolo')
-
     // wait having the map created. info and tips from this issue:
     // https://github.com/xkjyeah/vue-google-maps/issues/301
     this.$refs.mapRef.$mapPromise.then(map => {

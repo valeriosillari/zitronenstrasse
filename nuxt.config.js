@@ -84,6 +84,7 @@ module.exports = {
    */
   modules: [
     'nuxt-webfontloader',
+    '@nuxtjs/eslint-module',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
     '@nuxtjs/sitemap',
@@ -135,17 +136,7 @@ module.exports = {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {
-      // Run ESLint on save
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/,
-        })
-      }
-    },
+    extend(config, ctx) {},
 
     // set logic for loading vue2 google map
     transpile: [/^vue2-google-maps($|\/)/],
