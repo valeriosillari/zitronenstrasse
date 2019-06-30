@@ -1,8 +1,6 @@
-const dotenvPkg = require('dotenv')
 const pkg = require('./package')
 
-// dotENV custom path keys file
-const dotenv = dotenvPkg.config({
+require('dotenv').config({
   path: './env_variables/env_keys',
 })
 
