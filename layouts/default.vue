@@ -27,6 +27,7 @@ export default {
 
   mounted() {
     // empty
+    console.log('you should fails now.')
   },
 }
 </script>

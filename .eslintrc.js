@@ -19,6 +19,6 @@ module.exports = {
   rules: {
     'nuxt/no-cjs-in-config': 'off',
     // enable console logs (just warnings)
-    'no-console': 1,
+    'no-console': 2,
   },
 }
