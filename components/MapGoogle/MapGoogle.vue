@@ -148,10 +148,10 @@ export default {
           offsetX,
           offsetY
         ) {
-          let ov = new google.maps.OverlayView()
+          const ov = new google.maps.OverlayView()
           ov.onAdd = function() {
-            let proj = this.getProjection()
-            let aPoint = proj.fromLatLngToContainerPixel(latlng)
+            const proj = this.getProjection()
+            const aPoint = proj.fromLatLngToContainerPixel(latlng)
             aPoint.x = aPoint.x + offsetX
             aPoint.y = aPoint.y + offsetY
             map.panTo(proj.fromContainerPixelToLatLng(aPoint))
@@ -163,7 +163,7 @@ export default {
         // set single marker Loop (at page load)
         const setSingleMarker = (indexNumber, placeID) => {
           // firts create object with all data for current marker
-          let marker = new google.maps.Marker({
+          const marker = new google.maps.Marker({
             // set current map
             map: map,
             // set icon custom style
@@ -179,7 +179,7 @@ export default {
           // so we update globally the info about current item in all components
           google.maps.event.addListener(marker, 'click', () => {
             // set update object to pass to the store
-            let currentPlace = {
+            const currentPlace = {
               title: placeID.title,
               address: placeID.address,
               thumb: placeID.thumb || '000_place_fallback.jpg',
