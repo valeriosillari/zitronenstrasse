@@ -27,6 +27,7 @@ export default {
 
   mounted() {
     // empty
+    console.log('ignore 001')
   },
 }
 </script>
