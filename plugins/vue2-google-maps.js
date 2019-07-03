@@ -8,8 +8,8 @@ Vue.use(VueGoogleMaps, {
     key: process.env.googleMapApiKey,
     // set version. list of versions here:
     // https://developers.google.com/maps/documentation/javascript/releases
-    version: '3.35'
+    version: '3.35',
     // This is required if you use the Autocomplete plugin
     // libraries: 'places'
-  }
+  },
 })

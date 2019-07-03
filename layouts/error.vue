@@ -25,15 +25,15 @@ export default {
       type: Object,
       required: true,
       default: () => ({
-        message: String
-      })
-    }
+        message: String,
+      }),
+    },
   },
   head() {
     return {
-      title: this.error.message || 'An error occured'
+      title: this.error.message || 'An error occured',
     }
-  }
+  },
 }
 </script>
 

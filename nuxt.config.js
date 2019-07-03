@@ -1,9 +1,7 @@
-const dotenvPkg = require('dotenv')
 const pkg = require('./package')
 
-// dotENV custom path keys file
-const dotenv = dotenvPkg.config({
-  path: './env_variables/env_keys'
+require('dotenv').config({
+  path: './env_variables/env_keys',
 })
 
 // set GOOGLE keys via dotenv
@@ -33,22 +31,18 @@ const ogImageHeight = '630'
 module.exports = {
   mode: 'universal',
 
-  /*
-   ** ENV vars to spread in all the app.
-   ** https://nuxtjs.org/api/configuration-env
-   */
+  // ENV vars to spread in all the app.
+  // https://nuxtjs.org/api/configuration-env
   env: {
     metaHeadDescription: headDescription,
     googleMapApiKey: googleMapApiKey,
-    appVersion: pkg.version
+    appVersion: pkg.version,
   },
 
-  /*
-   ** Customize the progress-bar color
-   */
+  // Customize the progress-bar color
   loading: {
     color: '#ffd400',
-    height: '5px'
+    height: '5px',
   },
 
   /*
@@ -58,7 +52,7 @@ module.exports = {
     '~/plugins/modernizr-plugin',
     '~/plugins/vue-cookie-law',
     '~/plugins/fontawesome.js',
-    '~/plugins/vue2-google-maps'
+    '~/plugins/vue2-google-maps',
   ],
 
   /*
@@ -76,8 +70,8 @@ module.exports = {
       { url: '/', changefreq: 'daily' },
       { url: '/about', changefreq: 'daily' },
       { url: '/contact', changefreq: 'daily' },
-      { url: '/privacy-policy', changefreq: 'daily' }
-    ]
+      { url: '/privacy-policy', changefreq: 'daily' },
+    ],
   },
 
   /*
@@ -85,6 +79,7 @@ module.exports = {
    */
   modules: [
     'nuxt-webfontloader',
+    '@nuxtjs/eslint-module',
     '@nuxtjs/pwa',
     '@nuxtjs/style-resources',
     '@nuxtjs/sitemap',
@@ -93,8 +88,8 @@ module.exports = {
     [
       '@nuxtjs/google-analytics',
       {
-        id: googleAnalyticsKey
-      }
+        id: googleAnalyticsKey,
+      },
     ],
     [
       'nuxt-fontawesome',
@@ -106,26 +101,22 @@ module.exports = {
           // import icons from set "brand"
           {
             set: '@fortawesome/free-brands-svg-icons',
-            icons: ['fab']
-          }
-        ]
-      }
-    ]
+            icons: ['fab'],
+          },
+        ],
+      },
+    ],
   ],
 
   // Load gloablly Functions / Variables / Mixins
   styleResources: {
-    sass: ['assets/stylesheets/pre_processing/pre_processing.sass']
+    sass: ['assets/stylesheets/pre_processing/pre_processing.sass'],
   },
 
   /*
    ** Global CSS | SASS
    */
-  css: [
-    '@fortawesome/fontawesome-svg-core/styles.css',
-    // here sass common styles
-    '@/assets/stylesheets/common_styles.sass'
-  ],
+  css: ['@fortawesome/fontawesome-svg-core/styles.css'],
 
   // Load fonts from Google via Nuxt Font Package
   // No js = no font loaded
@@ -134,9 +125,9 @@ module.exports = {
       families: ['Roboto', 'Saira+Condensed'],
       urls: [
         'https://fonts.googleapis.com/css?family=Roboto:400&display=swap',
-        'https://fonts.googleapis.com/css?family=Saira+Condensed:300&display=swap'
-      ]
-    }
+        'https://fonts.googleapis.com/css?family=Saira+Condensed:300&display=swap',
+      ],
+    },
   },
 
   /*
@@ -146,20 +137,10 @@ module.exports = {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {
-      // Run ESLint on save
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
-    },
+    extend(config, ctx) {},
 
     // set logic for loading vue2 google map
-    transpile: [/^vue2-google-maps($|\/)/]
+    transpile: [/^vue2-google-maps($|\/)/],
   },
 
   /*
@@ -167,7 +148,7 @@ module.exports = {
    */
   generate: {
     // set error page for generated static website
-    fallback: '404.html'
+    fallback: '404.html',
   },
 
   /*
@@ -178,139 +159,139 @@ module.exports = {
     title: headTitle,
 
     htmlAttrs: {
-      lang: 'en'
+      lang: 'en',
     },
 
     meta: [
       {
         'http-equiv': 'x-ua-compatible',
-        content: 'ie=edge'
+        content: 'ie=edge',
       },
       {
-        charset: 'utf-8'
+        charset: 'utf-8',
       },
       // viewport set on mobile
       {
         name: 'viewport',
-        content: 'width=device-width, initial-scale=1, shrink-to-fit=no'
+        content: 'width=device-width, initial-scale=1, shrink-to-fit=no',
       },
       {
         hid: 'description',
         name: 'description',
-        content: headDescription
+        content: headDescription,
       },
       {
         hid: 'author',
         name: 'author',
-        content: 'Valerio Sillari'
+        content: 'Valerio Sillari',
       },
       {
         hid: 'keywords',
         name: 'keywords',
         content:
-          'Zitronenstrasse, Zitrone, Strasse, Berlin, Zitrone Berlin, Zitronen Berlin, Map, Mapping, Frontend, Vue, Nuxt, Romantic, Spots, Romantic Spots Berlin'
+          'Zitronenstrasse, Zitrone, Strasse, Berlin, Zitrone Berlin, Zitronen Berlin, Map, Mapping, Frontend, Vue, Nuxt, Romantic, Spots, Romantic Spots Berlin',
       },
       // OG options for open graph: Fb and Linkedin
       {
         hid: `og:title`,
         property: 'og:title',
-        content: ogTitle
+        content: ogTitle,
       },
       {
         hid: `og:description`,
         property: 'og:description',
-        content: ogDescription
+        content: ogDescription,
       },
       {
         hid: `og:type`,
         property: 'og:type',
-        content: ogType
+        content: ogType,
       },
       {
         hid: `og:url`,
         property: 'og:url',
-        content: ogUrl
+        content: ogUrl,
       },
       {
         hid: `og:image`,
         property: 'og:image',
-        content: ogImage
+        content: ogImage,
       },
       {
         hid: `og:image:width`,
         property: 'og:image:width',
-        content: ogImageWidth
+        content: ogImageWidth,
       },
       {
         hid: `og:image:height`,
         property: 'og:image:height',
-        content: ogImageHeight
+        content: ogImageHeight,
       },
       // Twitter card
       {
         hid: `twitter:card`,
         property: 'twitter:card',
-        content: 'summary_large_image'
+        content: 'summary_large_image',
       },
       {
         hid: `twitter:site`,
         property: 'twitter:site',
-        content: '@zitronenstrasse'
+        content: '@zitronenstrasse',
       },
       {
         hid: `twitter:creator`,
         property: 'twitter:creator',
-        content: 'Valerio Sillari'
+        content: 'Valerio Sillari',
       },
       {
         hid: `twitter:title`,
         property: 'twitter:title',
-        content: ogTitle
+        content: ogTitle,
       },
       {
         hid: `twitter:description`,
         property: 'twitter:description',
-        content: ogDescription
+        content: ogDescription,
       },
       {
         hid: `twitter:image`,
         property: 'twitter:image',
-        content: ogImage
+        content: ogImage,
       },
       {
         hid: `twitter:image:alt`,
         property: 'twitter:image:alt',
-        content: ogTitle
+        content: ogTitle,
       },
       // site manifest
       {
         rel: 'manifest',
-        href: '/favicons/site.webmanifest'
-      }
+        href: '/favicons/site.webmanifest',
+      },
     ],
     link: [
       // favicon
       {
         rel: 'icon',
         type: 'image/x-icon',
-        href: '/favicons/favicon.ico'
+        href: '/favicons/favicon.ico',
       },
       // apple-touch-icon
       {
         rel: 'apple-touch-icon',
-        href: '/favicons/apple_touch_icon.png'
+        href: '/favicons/apple_touch_icon.png',
       },
       // link canonical
       {
         rel: 'canonical',
-        href: thisAppMainUrl
-      }
+        href: thisAppMainUrl,
+      },
     ],
 
     script: [
       {
         // js external here
-      }
-    ]
-  }
+      },
+    ],
+  },
 }

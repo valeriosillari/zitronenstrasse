@@ -45,22 +45,22 @@ import Thumb from '~/components/Thumb.vue'
 
 export default {
   components: {
-    Thumb
+    Thumb,
   },
 
   props: {
     currentPlace: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
 
   methods: {
     actionSidebarClose() {
       // todo: set via store
       this.$emit('isSidebarButtonClose')
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -72,10 +72,12 @@ export default {
   color: $color_sidebar_text
 
 .title
+  // TODO
   // @extend .h5
 
 // span
 .info
+  // TODO
   // @extend .small
   display: block
   color: $color_sidebar_info

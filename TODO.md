@@ -1,25 +1,12 @@
 # TODO
 
-### Style Loader
+### Now Zeit
 
-Split styles and set loader only for functions, variables and mixins.
-
-!!! seems slower (88%) then develop (90%) on NOW.
-Try again. maybe just speed insight random flaw.
-
-### Yarn + Node update
+- set better Secret ENV keys logic
 
 ### Better performances?
 
-Netlify asset-optimization : ON
-
-Netlify pre-rendering : ON
-
-ENV set as "production" : OK
-
-### Font Check
-
-Working on it
+to test
 
 ### Lazy Load map?
 

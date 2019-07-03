@@ -85,9 +85,9 @@ export default {
   data() {
     return {
       dateYear: new Date().getFullYear(),
-      appVersion: process.env.appVersion
+      appVersion: process.env.appVersion,
     }
-  }
+  },
 }
 </script>
 
