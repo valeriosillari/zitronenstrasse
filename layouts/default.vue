@@ -65,12 +65,8 @@ export default {
 // @import '../node_modules/bootstrap/scss/utilities'
 
 // need it for map area spacing and footer
-html,
-body,
-#__nuxt,
-#__layout,
 .layout-wrapper
-  height: 100%
+  height: $map_height
 
 a
   color: $color_link
