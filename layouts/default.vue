@@ -2,7 +2,7 @@
   .layout-wrapper
     Navbar
 
-    nuxt
+    nuxt(role='main')
 
     Footer
 

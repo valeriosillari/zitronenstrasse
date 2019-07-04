@@ -17,8 +17,11 @@
         link: '/contact'
       }
     ];
- 
-  nav.navigation(v-bind:class='{ isNavOpen: isNavOpen }')
+
+  nav.navigation(
+    role='navigation'
+    v-bind:class='{ isNavOpen: isNavOpen }'
+  )
 
     nuxt-link.logo-link(to='/', title='Home')
       .logo
