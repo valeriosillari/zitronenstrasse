@@ -72,13 +72,11 @@ export default {
   color: $color_sidebar_text
 
 .title
-  // TODO
-  // @extend .h5
+  @include font-size($h5-font-size)
 
 // span
 .info
-  // TODO
-  // @extend .small
+  @include font-size($small-font-size)
   display: block
   color: $color_sidebar_info
 

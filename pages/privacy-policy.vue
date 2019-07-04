@@ -170,11 +170,11 @@
 
 <style lang="sass">
 .sub-title
-  // @extend .h3
+  @include font-size($h3-font-size)
   margin-top: 60px
 
 .sub-section
-  // @extend .h5
+  @include font-size($h5-font-size)
   margin-top: 30px
 </style>
 

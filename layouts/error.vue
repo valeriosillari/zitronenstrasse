@@ -39,7 +39,7 @@ export default {
 
 <style lang="sass">
 .error-message
-  // @extend .h4
+  @include font-size($h4-font-size)
   color: $color_error_page_subtitle
 
 .section-error
