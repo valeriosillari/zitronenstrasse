@@ -27,7 +27,6 @@ export default {
 
   mounted() {
     // empty
-    console.log('STYLES 001')
   },
 }
 </script>
@@ -41,8 +40,8 @@ export default {
 @import '../node_modules/bootstrap/scss/grid'
 // @import '../node_modules/bootstrap/scss/tables'
 // @import '../node_modules/bootstrap/scss/forms'
-@import '../node_modules/bootstrap/scss/buttons'
-@import '../node_modules/bootstrap/scss/transitions'
+// @import '../node_modules/bootstrap/scss/buttons'
+// @import '../node_modules/bootstrap/scss/transitions'
 // @import '../node_modules/bootstrap/scss/dropdown'
 // @import '../node_modules/bootstrap/scss/button-group'
 // @import '../node_modules/bootstrap/scss/input-group'
@@ -63,7 +62,7 @@ export default {
 // @import '../node_modules/bootstrap/scss/tooltip'
 // @import '../node_modules/bootstrap/scss/popover'
 // @import '../node_modules/bootstrap/scss/carousel'
-@import '../node_modules/bootstrap/scss/utilities'
+// @import '../node_modules/bootstrap/scss/utilities'
 
 // need it for map area spacing and footer
 html,
