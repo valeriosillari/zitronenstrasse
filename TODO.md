@@ -8,10 +8,6 @@
 
 to test
 
-### Style Loader
-
-Split styles and set loader only for functions, variables and mixins.
-
 ### Lazy Load map?
 
 ### SVG on IE

@@ -10,7 +10,6 @@
       :center='center'
       :zoom='zoom'
       :options='options'
-      class='gmap-container'
     )
 
     //- Sidebar
@@ -24,11 +23,10 @@
 
 <style lang="sass">
 .map-main-wrapper
-  position: relative
-  height: $map_height
+  height: 100%
 
-.gmap-container
-  position: absolute
+// plugin wrapper overwritten
+.vue-map-container
   width: 100%
   height: 100%
 
