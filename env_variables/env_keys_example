@@ -4,12 +4,3 @@
 GOOGLE_MAP_API_KEY        = ''
 
 GOOGLE_ANALYTICS_KEY      = ''
-
-####################
-# HEROKU EXTRA CONFIG FOR DEPLOYMENT
-
-HOST = ''
-
-NODE_ENV = ''
-
-NPM_CONFIG_PRODUCTION = ''
