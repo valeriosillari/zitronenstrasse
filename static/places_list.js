@@ -557,7 +557,7 @@ const placesList = [
     },
   },
 
-  // ====================== 41 - ... ======================
+  // ====================== 41 - 50 ======================
   {
     // 041
     // ChIJ1dfMe19OqEcRaAo1wYu7_nE
@@ -695,6 +695,8 @@ const placesList = [
       lng: 13.4491873,
     },
   },
+
+  // ====================== 51 - 60 ======================
   {
     // 051
     // ChIJcx6bYQRSqEcRrtYwfRHc3Ew
@@ -812,6 +814,36 @@ const placesList = [
     position: {
       lat: 52.5548563,
       lng: 13.384403,
+    },
+  },
+  {
+    // 060
+    // ChIJU1qJezNQqEcRC6S-QH3btN4
+    title: 'BRLO Brwhouse',
+    address: 'Schöneberger Str. 16, 10963',
+    thumb: '060_brlo.jpg',
+    thumbCredits: 'BRLO Brwhouse Website',
+    website: 'https://www.brlo.de/',
+    fbPage: 'https://www.facebook.com/BRLObeer/',
+    position: {
+      lat: 52.5000503,
+      lng: 13.3736449,
+    },
+  },
+
+  // ====================== 61 - 70 ======================
+  {
+    // 061
+    // ChIJqa8_eQRSqEcR6l2pt2usV8s
+    title: 'Orlando Berlin',
+    address: 'Rhinower Str. 10, 10437',
+    thumb: '061_orlando.jpg',
+    thumbCredits: 'Orlando Berlin FB Page',
+    website: 'https://www.orlandoberlin.com/',
+    fbPage: 'https://www.facebook.com/orlandofoodberlin/',
+    position: {
+      lat: 52.5481794,
+      lng: 13.409557,
     },
   },
 ]
