@@ -2,7 +2,7 @@
   footer.footer
     .container
       .row.align-items-center
-        .col-10.col-sm-8.col-left
+        .col-10.col-sm-7.col-md-8.col-left
           p.text
             | Zitronenstrasse
             |
@@ -30,8 +30,7 @@
             )
               | Valerio Sillari
 
-        .col-sm-4.col-right
-
+        .col-sm-5.col-md-4.col-right
           ul.item-icons
             //- Facebook
             li.item-icon
@@ -109,7 +108,7 @@ export default {
 .item-link
   color: $color_footer_link
 
-// UL
+// <ul>
 .item-icons
   display: block
   list-style: none
@@ -123,6 +122,14 @@ export default {
 
   &:first-child
     padding: 0
+
+// <a>
+.item-social
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 32px
+  height: 32px
 
 // svg icon (font awesome)
 .icon-svg
