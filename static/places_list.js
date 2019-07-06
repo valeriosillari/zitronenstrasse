@@ -814,6 +814,20 @@ const placesList = [
       lng: 13.384403,
     },
   },
+  {
+    // 060
+    // ChIJU1qJezNQqEcRC6S-QH3btN4
+    title: 'BRLO Brwhouse',
+    address: 'Schöneberger Str. 16, 10963',
+    thumb: '060_brlo.jpg',
+    thumbCredits: 'BRLO Brwhouse Website',
+    website: 'https://www.brlo.de/',
+    fbPage: 'https://www.facebook.com/BRLObeer/',
+    position: {
+      lat: 52.5000503,
+      lng: 13.3736449,
+    },
+  },
 ]
 
 export default placesList
