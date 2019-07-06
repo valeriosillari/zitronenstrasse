@@ -1,12 +1,9 @@
 # TODO
 
-### Now Zeit
-
-- set better Secret ENV keys logic
-
 ### Better performances?
 
-to test
+- speed issue with Nuxt Font Awesome Plugin
+- speed issue with Vue Google Map Plugin
 
 ### Lazy Load map?
 
