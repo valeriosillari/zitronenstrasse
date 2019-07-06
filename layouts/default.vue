@@ -1,5 +1,6 @@
 <template lang="pug">
   .layout-wrapper
+
     Navbar
 
     nuxt(role='main')

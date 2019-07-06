@@ -1,5 +1,8 @@
 <template lang="pug">
-  .map-main-wrapper.map-wrapper-sidebar-push(v-bind:class='isSidebarBindClass')
+  .map-main-wrapper.map-wrapper-sidebar-push(
+    v-bind:class='isSidebarBindClass'
+  )
+
     //- hidden heading for seo.
     //- inside component for design reasons (I'm lazy)
     h1.heading-title

@@ -50,40 +50,28 @@ module.exports = {
    */
   plugins: [
     '~/plugins/modernizr-plugin',
-    '~/plugins/vue-cookie-law',
-    '~/plugins/fontawesome.js',
+    { src: '~/plugins/vue-cookie-law', mode: 'client' },
+    '~/plugins/fontawesome',
     '~/plugins/vue2-google-maps',
   ],
-
-  /*
-   ** Site Map Options
-   */
-  sitemap: {
-    path: '/sitemap.xml',
-    gzip: true,
-    hostname: ogUrl,
-    cacheTime: 1000 * 60 * 15,
-    exclude: [
-      // empty
-    ],
-    routes: [
-      { url: '/', changefreq: 'daily' },
-      { url: '/about', changefreq: 'daily' },
-      { url: '/contact', changefreq: 'daily' },
-      { url: '/privacy-policy', changefreq: 'daily' },
-    ],
-  },
 
   /*
    ** Nuxt.js modules
    */
   modules: [
-    'nuxt-webfontloader',
-    '@nuxtjs/eslint-module',
     '@nuxtjs/pwa',
-    '@nuxtjs/style-resources',
+
+    '@nuxtjs/eslint-module',
+
     '@nuxtjs/sitemap',
-    // Simple usage
+
+    // for font-face
+    'nuxt-webfontloader',
+
+    // for loading sass var/mixin/function globally
+    '@nuxtjs/style-resources',
+
+    // Google Analytics
     // https://github.com/nuxt-community/analytics-module
     [
       '@nuxtjs/google-analytics',
@@ -91,6 +79,8 @@ module.exports = {
         id: googleAnalyticsKey,
       },
     ],
+
+    // Font Awesome Nuxt
     [
       'nuxt-fontawesome',
       {
@@ -108,15 +98,13 @@ module.exports = {
     ],
   ],
 
-  // Load gloablly Functions / Variables / Mixins
+  // Load globally Functions / Variables / Mixins
   styleResources: {
     sass: ['assets/stylesheets/pre_processing/pre_processing.sass'],
   },
 
-  /*
-   ** Global CSS | SASS
-   */
-  css: ['@fortawesome/fontawesome-svg-core/styles.css'],
+  // Global CSS | SASS
+  css: [],
 
   // Load fonts from Google via Nuxt Font Package
   // No js = no font loaded
@@ -141,6 +129,23 @@ module.exports = {
 
     // set logic for loading vue2 google map
     transpile: [/^vue2-google-maps($|\/)/],
+  },
+
+  // Site Map Options
+  sitemap: {
+    path: '/sitemap.xml',
+    gzip: true,
+    hostname: ogUrl,
+    cacheTime: 1000 * 60 * 15,
+    exclude: [
+      // empty
+    ],
+    routes: [
+      { url: '/', changefreq: 'daily' },
+      { url: '/about', changefreq: 'daily' },
+      { url: '/contact', changefreq: 'daily' },
+      { url: '/privacy-policy', changefreq: 'daily' },
+    ],
   },
 
   /*
