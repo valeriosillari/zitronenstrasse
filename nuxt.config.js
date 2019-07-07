@@ -79,23 +79,6 @@ module.exports = {
         id: googleAnalyticsKey,
       },
     ],
-
-    // Font Awesome Nuxt
-    [
-      'nuxt-fontawesome',
-      {
-        component: 'fab',
-        imports: [
-          // https://medium.com/@kozyreva.hanna/nuxt-js-fontawesome-integration-7ec56b1a41c8
-          // https://github.com/vaso2/nuxt-fontawesome
-          // import icons from set "brand"
-          {
-            set: '@fortawesome/free-brands-svg-icons',
-            icons: ['fab'],
-          },
-        ],
-      },
-    ],
   ],
 
   // Load globally Functions / Variables / Mixins
@@ -104,7 +87,7 @@ module.exports = {
   },
 
   // Global CSS | SASS
-  css: [],
+  css: ['@fortawesome/fontawesome-svg-core/styles.css'],
 
   // Load fonts from Google via Nuxt Font Package
   // No js = no font loaded
