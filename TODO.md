@@ -2,7 +2,6 @@
 
 ### Better performances?
 
-- speed issue with Nuxt Font Awesome Plugin
 - speed issue with Vue Google Map Plugin
 
 ### Lazy Load map?
