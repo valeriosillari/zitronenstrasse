@@ -130,7 +130,6 @@ export default {
   align-items: center
   width: 32px
   height: 32px
-  background: red
 
 // svg icon (font awesome)
 .icon-svg

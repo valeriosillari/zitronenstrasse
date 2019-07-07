@@ -87,7 +87,10 @@ module.exports = {
   },
 
   // Global CSS | SASS
-  css: ['@fortawesome/fontawesome-svg-core/styles.css'],
+  css: [
+    // font awesome
+    '@fortawesome/fontawesome-svg-core/styles.css',
+  ],
 
   // Load fonts from Google via Nuxt Font Package
   // No js = no font loaded
