@@ -57,7 +57,6 @@ export default {
 
   methods: {
     actionSidebarClose() {
-      console.log('=========== CLICK CLOSE SIDEBAR ==============')
       // update store: sidebar is open
       this.$store.commit('sidebar/isSidebarOpen', false)
     },
