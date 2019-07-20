@@ -1,16 +1,17 @@
 <template lang="pug">
-  .map-main-wrapper.map-wrapper-sidebar-push(v-bind:class="{ 'is-sidebar-open' : $store.state.sidebar.isOpen }")
+  .map-main-wrapper.map-wrapper-sidebar-push(
+    v-bind:class="{ 'is-sidebar-open' : $store.state.sidebar.isOpen }"
+  )
     //- hidden heading for seo.
     //- inside component for design reasons (I'm lazy)
     h1.heading-title
-      | Zitronenstrasse - {{ $store.state.sidebar.isOpen }}
+      | Zitronenstrasse
 
     GmapMap(
       ref='mapRef'
       :center='center'
       :zoom='zoom'
       :options='options'
-      class='gmap-container'
     )
 
     //- Sidebar
@@ -23,23 +24,7 @@
 
 <style lang="sass">
 .map-main-wrapper
-  position: relative
-  height: $map_height
-
-.gmap-container
-  position: absolute
-  width: 100%
   height: 100%
-
-// map bg whn loading
-.gm-style
-  background: $color_map_bg
-
-// remove google cc
-// and remove some weird grey box set on right side from google
-.gm-style-cc
-  display: none
-
 
 // title for seo
 .heading-title
@@ -92,6 +77,21 @@ $sidebar_animation: all .35s ease
 .no-js
   .google-map
     display: none
+
+
+// plugin wrapper overwritten
+.vue-map-container
+  width: 100%
+  height: 100%
+
+// map bg when loading
+.gm-style
+  background: $color_map_bg
+
+// remove google cc
+// and remove some weird grey box set on right side from google
+.gm-style-cc
+  display: none
 </style>
 
 <script>
