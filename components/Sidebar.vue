@@ -9,14 +9,9 @@
     h2.title
       | {{ currentPlace.title }}
 
-    //- Thumb Place
-    //- todo: pass better object, creatded not in markup
+    //- Thumb for Place
     Thumb(
-      :thumb='{
-        title: currentPlace.title,
-        thumbPath: currentPlace.thumb,
-        credits: currentPlace.thumbCredits
-      }'
+      :thumb='{title: currentPlace.title, thumbPath: currentPlace.thumb, credits: currentPlace.thumbCredits}'
     )
 
     p.address(v-if='currentPlace.address')
