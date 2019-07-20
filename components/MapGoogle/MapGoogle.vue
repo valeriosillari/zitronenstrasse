@@ -194,7 +194,7 @@ export default {
             this.markerAnimation(marker)
 
             // open sidebar + pan movement (for centering)
-            this.isSidebarOpen(window.innerWidth)
+            this.openSidebar(window.innerWidth)
           })
 
           return marker
@@ -250,7 +250,7 @@ export default {
       }, 1150)
     },
 
-    isSidebarOpen(screen) {
+    openSidebar(screen) {
       // todo: set if/else on one line
       this.isScreenBig = false
       if (screen >= 576) {
@@ -267,11 +267,6 @@ export default {
 
       // update store: sidebar is open
       this.$store.commit('sidebar/isSidebarOpen', true)
-    },
-
-    isSidebarClose() {
-      // reset drag option
-      this.isMapDragged = false
     },
   },
 }
