@@ -219,6 +219,7 @@ export default {
       }
 
       initLogic()
+
       // ./ end map created
     })
   },

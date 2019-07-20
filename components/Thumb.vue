@@ -3,22 +3,22 @@
 
     //- you need IF for load page. So no errors
     img.thumb(
-      v-if='currentThumb.thumbPath'
-      :alt='currentThumb.title'
-      :src="`/places/${currentThumb.thumbPath}`"
+      v-if='thumb.thumbPath'
+      :alt='thumb.title'
+      :src="`/places/${thumb.thumbPath}`"
     )
 
     p.credits(
-      v-if='currentThumb.credits'
+      v-if='thumb.credits'
     )
-      | Credits: {{ currentThumb.credits }}
+      | Credits: {{ thumb.credits }}
 </template>
 
 <script>
 export default {
   props: {
     // created object with all info for details
-    currentThumb: {
+    thumb: {
       type: Object,
       required: true,
     },
