@@ -2,15 +2,16 @@
   aside.sidebar
     //- btn area
     .clearfix
-      button.btn-close(@click='actionSidebarClose')
+      button.btn-close(
+        @click='actionSidebarClose'
+      )
 
     h2.title
       | {{ currentPlace.title }}
 
-    //- Thumb Place
-    //- todo: pass better object, creatded not in markup
+    //- Thumb for Place
     Thumb(
-      :currentThumb='{title: currentPlace.title, thumbPath: currentPlace.thumb, credits: currentPlace.thumbCredits }'
+      :thumb='{title: currentPlace.title, thumbPath: currentPlace.thumb, credits: currentPlace.thumbCredits}'
     )
 
     p.address(v-if='currentPlace.address')
@@ -57,8 +58,8 @@ export default {
 
   methods: {
     actionSidebarClose() {
-      // todo: set via store
-      this.$emit('isSidebarButtonClose')
+      // update store: sidebar is open
+      this.$store.commit('sidebar/isSidebarOpen', false)
     },
   },
 }

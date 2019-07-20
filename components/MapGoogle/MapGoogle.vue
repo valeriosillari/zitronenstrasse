@@ -1,8 +1,7 @@
 <template lang="pug">
   .map-main-wrapper.map-wrapper-sidebar-push(
-    v-bind:class='isSidebarBindClass'
+    v-bind:class="{ 'is-sidebar-open' : $store.state.sidebar.isOpen }"
   )
-
     //- hidden heading for seo.
     //- inside component for design reasons (I'm lazy)
     h1.heading-title
@@ -20,28 +19,12 @@
     .sidebar-animation
       Sidebar(
         :currentPlace='$store.state.currentPlace.item'
-        v-on:isSidebarButtonClose='isSidebarClose()'
       )
 </template>
 
 <style lang="sass">
 .map-main-wrapper
   height: 100%
-
-// plugin wrapper overwritten
-.vue-map-container
-  width: 100%
-  height: 100%
-
-// map bg whn loading
-.gm-style
-  background: $color_map_bg
-
-// remove google cc
-// and remove some weird grey box set on right side from google
-.gm-style-cc
-  display: none
-
 
 // title for seo
 .heading-title
@@ -79,7 +62,7 @@ $sidebar_animation: all .35s ease
 // -- OPEN. js add classes
 
 // extra class added via JS when sidebar is shown (WRAPPER/PARENT element)
-.isOpenClass
+.is-sidebar-open
   left: -$sidebar_width_xs
   +breakpoint($breakpoint_sm)
     left: -$sidebar_width_sm
@@ -94,6 +77,21 @@ $sidebar_animation: all .35s ease
 .no-js
   .google-map
     display: none
+
+
+// plugin wrapper overwritten
+.vue-map-container
+  width: 100%
+  height: 100%
+
+// map bg when loading
+.gm-style
+  background: $color_map_bg
+
+// remove google cc
+// and remove some weird grey box set on right side from google
+.gm-style-cc
+  display: none
 </style>
 
 <script>
@@ -125,10 +123,6 @@ export default {
       },
       // rest of options
       isScreenBig: false,
-      isSidebarBindClass: {
-        // first value is class to attach/bind, second value is status
-        isOpenClass: false,
-      },
       // map drag for marker animation
       isMapDragged: false,
     }
@@ -200,7 +194,7 @@ export default {
             this.markerAnimation(marker)
 
             // open sidebar + pan movement (for centering)
-            this.isSidebarOpen(window.innerWidth)
+            this.openSidebar(window.innerWidth)
           })
 
           return marker
@@ -225,6 +219,7 @@ export default {
       }
 
       initLogic()
+
       // ./ end map created
     })
   },
@@ -255,32 +250,23 @@ export default {
       }, 1150)
     },
 
-    isSidebarOpen(screen) {
+    openSidebar(screen) {
+      // todo: set if/else on one line
       this.isScreenBig = false
       if (screen >= 576) {
         this.isScreenBig = true
       }
+
       // reset drag option
       this.isMapDragged = false
 
-      // open sidebar (css animation in milleseconds)
-      // when function trigger, set value as TRUE. we change DATA value
-      // https://vuejs.org/v2/guide/reactivity.html#Change-Detection-Caveats
-      this.$set(this.isSidebarBindClass, 'isOpenClass', true)
-
+      // pan movement if big screen
       if (this.isScreenBig) {
         this.panMovement(-200)
       }
-    },
 
-    isSidebarClose() {
-      // reset drag option
-      this.isMapDragged = false
-
-      // TOGGLE CLASS for close sidebar
-      // when function trigger, set value as TRUE. we change DATA value
-      // https://vuejs.org/v2/guide/reactivity.html#Change-Detection-Caveats
-      this.$set(this.isSidebarBindClass, 'isOpenClass', false)
+      // update store: sidebar is open
+      this.$store.commit('sidebar/isSidebarOpen', true)
     },
   },
 }
