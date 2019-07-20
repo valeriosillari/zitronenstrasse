@@ -1,31 +1,91 @@
 <template lang="pug">
   .layout-wrapper
-    //- navbar
+
     Navbar
-    //- nuxt tag (page core)
-    nuxt
-    //- footer
-    FooterArea
-    //- no js fallback
+
+    nuxt(role='main')
+
+    Footer
+
     NoJsFallback
-    //- Privacy Policy Banner
+
     PrivacyPolicyBanner
 </template>
 
 <script>
-  import Navbar from '~/components/Navbar.vue'
-  import FooterArea from '~/components/FooterArea.vue'
-  import NoJsFallback from '~/components/NoJsFallback.vue'
-  import PrivacyPolicyBanner from '~/components/PrivacyPolicyBanner.vue'
-  export default {
-    components: {
-      Navbar,
-      FooterArea,
-      NoJsFallback,
-      PrivacyPolicyBanner
-    },
-    mounted () {
-      console.log('🍋 🍋 🍋')
-    }
-  }
+import Navbar from '~/components/Navbar.vue'
+import Footer from '~/components/Footer.vue'
+import NoJsFallback from '~/components/NoJsFallback.vue'
+import PrivacyPolicyBanner from '~/components/PrivacyPolicyBanner.vue'
+
+export default {
+  components: {
+    Navbar,
+    Footer,
+    NoJsFallback,
+    PrivacyPolicyBanner,
+  },
+
+  mounted() {
+    // empty
+  },
+}
 </script>
+
+<style lang="sass">
+// @import '../node_modules/bootstrap/scss/print'
+@import '../node_modules/bootstrap/scss/reboot'
+@import '../node_modules/bootstrap/scss/type'
+// @import '../node_modules/bootstrap/scss/images'
+// @import '../node_modules/bootstrap/scss/code'
+@import '../node_modules/bootstrap/scss/grid'
+// @import '../node_modules/bootstrap/scss/tables'
+// @import '../node_modules/bootstrap/scss/forms'
+// @import '../node_modules/bootstrap/scss/buttons'
+// @import '../node_modules/bootstrap/scss/transitions'
+// @import '../node_modules/bootstrap/scss/dropdown'
+// @import '../node_modules/bootstrap/scss/button-group'
+// @import '../node_modules/bootstrap/scss/input-group'
+// @import '../node_modules/bootstrap/scss/custom-forms'
+// @import '../node_modules/bootstrap/scss/nav'
+// @import '../node_modules/bootstrap/scss/navbar'
+// @import '../node_modules/bootstrap/scss/card'
+// @import '../node_modules/bootstrap/scss/breadcrumb'
+// @import '../node_modules/bootstrap/scss/pagination'
+// @import '../node_modules/bootstrap/scss/badge'
+// @import '../node_modules/bootstrap/scss/jumbotron'
+// @import '../node_modules/bootstrap/scss/alert'
+// @import '../node_modules/bootstrap/scss/progress'
+// @import '../node_modules/bootstrap/scss/media'
+// @import '../node_modules/bootstrap/scss/list-group'
+// @import '../node_modules/bootstrap/scss/close'
+// @import '../node_modules/bootstrap/scss/modal'
+// @import '../node_modules/bootstrap/scss/tooltip'
+// @import '../node_modules/bootstrap/scss/popover'
+// @import '../node_modules/bootstrap/scss/carousel'
+// @import '../node_modules/bootstrap/scss/utilities'
+
+// need it for map area spacing and footer
+.layout-wrapper
+  height: $map_height
+
+a
+  color: $color_link
+  &:hover,
+  &:focus
+    color: $color_link_hvr
+    text-decoration: none
+
+.link-text
+  text-decoration: underline
+  &:hover
+    text-decoration: underline
+
+.text-accent
+  color: $color_text_accent
+
+.section
+  min-height: 100%
+  // padding top for fixed header alignment
+  padding: 60px 0
+</style>

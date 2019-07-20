@@ -1,27 +1,6 @@
 ####################
 # GOOGLE
 
-GOOGLE_MAP_API_KEY        = 'your_api_key'
+GOOGLE_MAP_API_KEY        = ''
 
-GOOGLE_ANALYTICS_KEY      = 'your_api_key'
-
-GOOGLE_VERIFICATION_OWNER_KEY = 'your_verification_owner_key'
-# just remainder, not need it as secret key for develop mode, but empty string
-
-
-####################
-# NEW RELIC
-# just remainder, not need it as secret key for develop mode, but empty string
-
-NEW_RELIC_LICENSE_KEY     = 'your_license_key'
-
-
-####################
-# HEROKU EXTRA CONFIG FOR DEPLOYMENT
-# just remainder, not need it as secret key for develop mode, but empty string
-
-HOST = 'your_value_here'
-
-NODE_ENV = 'your_value_here'
-
-NPM_CONFIG_PRODUCTION = 'your_value_here'
+GOOGLE_ANALYTICS_KEY      = ''

@@ -3,10 +3,10 @@
 </template>
 
 <script>
-  import MapGoogle from '~/components/MapGoogle/MapGoogle.vue'
-  export default {
-    components: {
-      MapGoogle
-    }
-  }
+import MapGoogle from '~/components/MapGoogle/MapGoogle.vue'
+export default {
+  components: {
+    MapGoogle,
+  },
+}
 </script>

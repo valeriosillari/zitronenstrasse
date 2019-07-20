@@ -2,9 +2,10 @@
 // --------------------------------------
 // --------------------------------------
 
-$font_family_basic: Roboto, sans-serif
-$font_family_secondary: 'Saira Condensed', sans-serif
-
+// overwrite bootstrap fonts. now we use this,
+// font face come from nuxt font loader
+$font_family_basic: 'Roboto', 'Helvetica Neue', Arial, sans-serif
+$font_family_secondary: 'Saira Condensed', 'Helvetica Neue', Arial, sans-serif
 
 // --------------------------------------
 // --------------------------------------
@@ -107,7 +108,7 @@ $navi_min_height: 65px
 // sidebar
 // set calc with inside sass var
 // https://codepen.io/thebabydino/pen/hgFno
-$map_height: calc(100% - #{$navi_min_height})
+$map_height: calc(100vh - #{$navi_min_height})
 
 // we have to play here ...
 $sidebar_width_xs: 100%
@@ -164,6 +165,7 @@ $body-color:    $color_body_text
 
 $headings-color: $color_heading
 $headings-font-family: $font_family_secondary
+$headings-font-weight: 300
 $h1-font-size: 5rem
 $h2-font-size: 3.6rem
 $h3-font-size: 3rem

@@ -4,7 +4,6 @@
       h1
         | Privacy Policy
 
-
       p
         | Here all the info about how we may collect personal data (PD) and non-personal data (NPD) from our users.
 
@@ -54,30 +53,37 @@
 
       ul.items
         li.item
-          | Withdraw their consent at any time. Users have the right to withdraw consent where they have previously given their consent to the processing of their Personal Data.
+          | Withdraw their consent at any time.
+          | Users have the right to withdraw consent where they have previously given their consent to the processing of their Personal Data.
         li.item
-          | Object to processing of their Data. Users have the right to object to the processing of their Data if the processing is carried out on a legal basis other than consent. Further details are provided in the dedicated section below.
+          | Object to processing of their Data.
+          | Users have the right to object to the processing of their Data if the processing is carried out on a legal basis other than consent.
+          | Further details are provided in the dedicated section below.
         li.item
-          | Access their Data. Users have the right to learn if Data is being processed by the Owner, obtain disclosure regarding certain aspects of the processing and obtain a copy of the Data undergoing processing.
+          | Access their Data.
+          | Users have the right to learn if Data is being processed by the Owner, obtain disclosure regarding certain aspects of the processing and obtain a copy of the Data undergoing processing.
         li.item
-          | Verify and seek rectification. Users have the right to verify the accuracy of their Data and ask for it to be updated or corrected.
+          | Verify and seek rectification.
+          | Users have the right to verify the accuracy of their Data and ask for it to be updated or corrected.
         li.item
-          | Restrict the processing of their Data. Users have the right, under certain circumstances, to restrict the processing of their Data. In this case, the Owner will not process their Data for any purpose other than storing it.
+          | Restrict the processing of their Data.
+          | Users have the right, under certain circumstances, to restrict the processing of their Data. In this case, the Owner will not process their Data for any purpose other than storing it.
         li.item
-          | Have their Personal Data deleted or otherwise removed. Users have the right, under certain circumstances, to obtain the erasure of their Data from the Owner.
+          | Have their Personal Data deleted or otherwise removed.
+          | Users have the right, under certain circumstances, to obtain the erasure of their Data from the Owner.
         li.item
-          | Receive their Data and have it transferred to another controller. Users have the right to receive their Data in a structured, commonly used and machine readable format and, if technically feasible, to have it transmitted to another controller without any hindrance. This provision is applicable provided that the Data is processed by automated means and that the processing is based on the User's consent, on a contract which the User is part of or on pre-contractual obligations thereof.
+          | Receive their Data and have it transferred to another controller.
+          | Users have the right to receive their Data in a structured, commonly used and machine readable format and, if technically feasible, to have it transmitted to another controller without any hindrance. This provision is applicable provided that the Data is processed by automated means and that the processing is based on the User's consent, on a contract which the User is part of or on pre-contractual obligations thereof.
         li.item
-          | Lodge a complaint. Users have the right to bring a claim before their competent data protection authority.
-
+          | Lodge a complaint.
+          | Users have the right to bring a claim before their competent data protection authority.
 
 
       h2.sub-title
         | How to exercise these rights
 
       p
-        | Any requests to exercise User rights can be directed to the Owner through the contact details provided in this document. 
-
+        | Any requests to exercise User rights can be directed to the Owner through the contact details provided in this document.
 
 
       h2.sub-title
@@ -97,7 +103,8 @@
         | As a rule, cookies will make your browsing experience better.
 
       p
-        | However, you may prefer to disable cookies on this site and on others. The most effective way to do this is to disable cookies in your browser. We suggest consulting the Help section of your browser or taking a look at the
+        | However, you may prefer to disable cookies on this site and on others.
+        | The most effective way to do this is to disable cookies in your browser. We suggest consulting the Help section of your browser or taking a look at the
         |
         a.link-text(href='https://www.aboutcookies.org/')
           | About Cookies website
@@ -147,7 +154,7 @@
         | You have the right to revoke your consent for us to use your Personal Data at any time.
 
       p
-        | If you want to revoke your consent for us to use your Personal Data, send us an email with your request  directed to the Owner through the contact details provided in this document. 
+        | If you want to revoke your consent for us to use your Personal Data, send us an email with your request directed to the Owner through the contact details provided in this document.
 
 
 
@@ -161,32 +168,30 @@
         | Back to the home page
 </template>
 
-
 <style lang="sass">
-  .sub-title
-    @extend .h3
-    margin-top: 60px
+.sub-title
+  @include font-size($h3-font-size)
+  margin-top: 60px
 
-  .sub-section
-    @extend .h5
-    margin-top: 30px
+.sub-section
+  @include font-size($h5-font-size)
+  margin-top: 30px
 </style>
 
-
 <script>
-  export default {
-    head () {
-      // Set Meta Tags for this Page
-      return {
-        title: 'Privacy Policy | Zitronenstrasse',
-        meta: [
-          {
-            hid: 'description',
-            name: 'description',
-            content: `Privacy Policy | Zitronenstrasse | ${process.env.metaHeadDescription}`
-          }
-        ]
-      }
+export default {
+  head() {
+    // Set Meta Tags for this Page
+    return {
+      title: 'Privacy Policy | Zitronenstrasse',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `Privacy Policy | Zitronenstrasse | ${process.env.metaHeadDescription}`,
+        },
+      ],
     }
-  }
+  },
+}
 </script>

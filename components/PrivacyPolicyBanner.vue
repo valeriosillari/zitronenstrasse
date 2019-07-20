@@ -17,27 +17,25 @@
           |.
 </template>
 
-
 <script>
-  import CookieLaw from 'vue-cookie-law'
-  export default {
-    components: { CookieLaw }
-  }
+import CookieLaw from 'vue-cookie-law'
+export default {
+  components: { CookieLaw },
+}
 </script>
 
-
 <style lang="sass">
-  .Cookie--lemon-theme
-    padding: 20px 15px
-    background: $color_banner_bg
-    .Cookie__content
-      color: $color_banner_content_text
-    .Cookie__button
-      padding: 10px 45px
-      border: 1px solid $color_banner_btn_border
-      color: $color_banner_btn_txt
-      background: $color_banner_btn_bg
-      &:hover
-        border: 1px solid $color_banner_btn_border_hvr
-        color: $color_banner_btn_txt_hvr
+.Cookie--lemon-theme
+  padding: 20px 15px
+  background: $color_banner_bg
+  .Cookie__content
+    color: $color_banner_content_text
+  .Cookie__button
+    padding: 10px 45px
+    border: 1px solid $color_banner_btn_border
+    color: $color_banner_btn_txt
+    background: $color_banner_btn_bg
+    &:hover
+      border: 1px solid $color_banner_btn_border_hvr
+      color: $color_banner_btn_txt_hvr
 </style>

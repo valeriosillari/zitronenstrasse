@@ -43,21 +43,20 @@
           | Twitter
 </template>
 
-
 <script>
-  export default {
-    head () {
-      // Set Meta Tags for this Page
-      return {
-        title: 'Contact | Zitronenstrasse',
-        meta: [
-          {
-            hid: 'description',
-            name: 'description',
-            content: `Contact | Zitronenstrasse | ${process.env.metaHeadDescription}`
-          }
-        ]
-      }
+export default {
+  head() {
+    // Set Meta Tags for this Page
+    return {
+      title: 'Contact | Zitronenstrasse',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `Contact | Zitronenstrasse | ${process.env.metaHeadDescription}`,
+        },
+      ],
     }
-  }
+  },
+}
 </script>
