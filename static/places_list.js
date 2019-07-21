@@ -860,6 +860,19 @@ const placesList = [
       lng: 13.4244301,
     },
   },
+  {
+    // 063
+    // ChIJO-QpGJVPqEcRe3u5xlOC0Iw
+    title: 'Tempelhof Gemeinschaftsgarten Allmende-Kontor',
+    address: 'Tempelhofer Feld (Schillerkiez), 12049',
+    thumb: '063_tempelhof_garden.jpg',
+    thumbCredits: 'Gemeinschaftsgarten Allmende-Kontor Website',
+    website: 'https://www.allmende-kontor.de/',
+    position: {
+      lat: 52.4744782,
+      lng: 13.4169272,
+    },
+  },
 ]
 
 export default placesList
