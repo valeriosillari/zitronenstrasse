@@ -846,6 +846,20 @@ const placesList = [
       lng: 13.409557,
     },
   },
+  {
+    // 062
+    // ChIJnbNuyRhPqEcRUIN-creCDbw
+    title: 'Holzmarkt',
+    address: 'Holzmarktstraße 19, 10243',
+    thumb: '062_holzmarkt.jpg',
+    thumbCredits: 'Holzmarkt FB Page',
+    website: 'https://www.holzmarkt.com/',
+    fbPage: 'https://www.facebook.com/Holzmarkt25',
+    position: {
+      lat: 52.51272059999999,
+      lng: 13.4244301,
+    },
+  },
 ]
 
 export default placesList
