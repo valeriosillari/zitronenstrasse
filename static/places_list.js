@@ -887,6 +887,20 @@ const placesList = [
       lng: 13.4388173,
     },
   },
+  {
+    // 065
+    // ChIJkYKVILRPqEcRgYywmXjU7_8
+    title: 'Lager Lager | Neukölln',
+    address: 'Pflügerstraße 68, 12047',
+    thumb: '065_lager_lager.jpg',
+    thumbCredits: 'Lager Lager Website',
+    website: 'https://www.lagerlagerberlin.de/',
+    fbPage: 'https://www.facebook.com/lagerlagerberlin/',
+    position: {
+      lat: 52.4915536,
+      lng: 13.4286914,
+    },
+  },
 ]
 
 export default placesList
