@@ -873,6 +873,20 @@ const placesList = [
       lng: 13.4169272,
     },
   },
+  {
+    // 064
+    // ChIJt4VZ0U1OqEcRkg1EbzcZyvU
+    title: 'Duo | Sicilian Ice Cream',
+    address: 'Skalitzer Str. 82, 10997',
+    thumb: '064_duo.jpg',
+    thumbCredits: 'Duo FB Page',
+    website: 'http://duoicecream.de/',
+    fbPage: 'https://www.facebook.com/duoicecream/',
+    position: {
+      lat: 52.5006767,
+      lng: 13.4388173,
+    },
+  },
 ]
 
 export default placesList
