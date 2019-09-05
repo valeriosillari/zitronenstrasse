@@ -2,11 +2,11 @@
   //- you need to wrap the banner in an element.
   //- the ssr itself not work on nuxt v2
   .privacy-area
-    //- small trick for SSR (document not found) using SSR tag.
+    //- small trick for SSR (document not found) using SSR/client-only tag.
     //- info here:
     //- https://github.com/apertureless/vue-cookie-law/issues/19
     //- indifiser commented on 23 Apr
-    no-ssr
+    client-only
       cookie-law(theme='lemon-theme' buttonText='Ok')
         div(slot='message')
           | This site uses some cookies in order to count visits. By clicking the 'Ok' button on this banner you give your consent.
