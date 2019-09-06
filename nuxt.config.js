@@ -6,8 +6,7 @@ require('dotenv').config({
 
 // set GOOGLE keys via dotenv
 const googleMapApiKey = process.env.GOOGLE_MAP_API_KEY || ''
-const googleAnalyticsKey =
-  process.env.GOOGLE_ANALYTICS_KEY_ZITRONENSTRASSE || ''
+const googleAnalyticsKey = process.env.GOOGLE_ANALYTICS_KEY || ''
 
 // main title
 const headTitle = 'Zitronenstrasse | Romantic Spots in Berlin.'

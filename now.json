@@ -7,7 +7,7 @@
   "build": {
     "env": {
       "GOOGLE_MAP_API_KEY": "@zitronenstrasse_google_map_api_key",
-      "GOOGLE_ANALYTICS_KEY_ZITRONENSTRASSE": "@zitronenstrasse_google_analytics_key"
+      "GOOGLE_ANALYTICS_KEY": "@zitronenstrasse_google_analytics_key"
     }
   },
   "routes": [
