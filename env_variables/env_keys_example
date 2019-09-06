@@ -1,6 +1,6 @@
 ####################
 # GOOGLE
 
-GOOGLE_MAP_API_KEY        = ''
+GOOGLE_MAP_API_KEY = ''
 
-GOOGLE_ANALYTICS_KEY      = ''
+GOOGLE_ANALYTICS_KEY_ZITRONENSTRASSE = ''
