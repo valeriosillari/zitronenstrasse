@@ -901,6 +901,20 @@ const placesList = [
       lng: 13.4286914,
     },
   },
+  {
+    // 066
+    // ChIJXZ9LIuRRqEcR4MGb8ykDdlM
+    title: 'Milch Halle Coffee',
+    address: ' Auguststraße 50, 10119',
+    thumb: '066_milch_halle.jpg',
+    thumbCredits: 'Milch Halle Coffee FB Page',
+    website: 'https://www.milchhalle.com/',
+    fbPage: 'https://www.facebook.com/MilchHalle/',
+    position: {
+      lat: 52.52781700000001,
+      lng: 13.400525,
+    },
+  },
 ]
 
 export default placesList
