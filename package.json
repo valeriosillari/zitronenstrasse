@@ -20,7 +20,6 @@
     "@fortawesome/free-brands-svg-icons": "^5.9.0",
     "@fortawesome/vue-fontawesome": "^0.1.6",
     "@nuxtjs/google-analytics": "^2.2.0",
-    "@nuxtjs/pwa": "^2.6.0",
     "@nuxtjs/sitemap": "^1.2.0",
     "@nuxtjs/style-resources": "^0.1.2",
     "bootstrap": "^4.3.1",
@@ -35,7 +34,7 @@
     "nuxt-webfontloader": "^1.1.0",
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",
-    "sass-loader": "^7.1.0",
+    "sass-loader": "^v8.0.0",
     "vue-cookie-law": "^1.10.0",
     "vue2-google-maps": "^0.10.6"
   },
