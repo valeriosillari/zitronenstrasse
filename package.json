@@ -34,7 +34,7 @@
     "nuxt-webfontloader": "^1.1.0",
     "pug": "^2.0.3",
     "pug-plain-loader": "^1.0.0",
-    "sass-loader": "^7.1.0",
+    "sass-loader": "^v8.0.0",
     "vue-cookie-law": "^1.10.0",
     "vue2-google-maps": "^0.10.6"
   },
