@@ -57,7 +57,7 @@ export default {
     removeNavOverlay() {
       setTimeout(() => {
         this.isNavOpen = !this.isNavOpen
-      }, 300)
+      }, 350)
     },
   },
 

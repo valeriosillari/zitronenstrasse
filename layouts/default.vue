@@ -96,7 +96,9 @@ a
   opacity: 0
 
 .page-transition-enter-active
-  transition: all .9s ease-in-out
+  transition: all .75s ease-in-out
+  // a little bit more than navigation overlay timeout
+  transition-delay: .35s
 
 .page-transition-leave,
 .page-transition-leave-active,
