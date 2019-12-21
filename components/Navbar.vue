@@ -38,7 +38,7 @@
 
             li.item
               nuxt-link.item-link(
-                v-on:click.native='navBarHandler(isNavOpen)'
+                v-on:click.native='isNavOpen = !isNavOpen'
                 title=item.title
                 to=item.link
               )
@@ -53,25 +53,10 @@ export default {
     }
   },
 
-  methods: {
-    toggleBodyClassAtNavOpen: () => {
-      console.log('toggleBodyClassAtNavOpen')
-      console.log(this.isNavOpen)
-      // this.isNavOpen = !this.isNavOpen
-      // return this.isNavOpen
-    },
-    // at click trigger here more events
-    navBarHandler: () => {
-      console.log('toggleBodyClassAtNavOpen')
-      // setTimeout(() => {
-      //   this.toggleBodyClassAtNavOpen()
-      // }, 300)
-    },
-  },
-
   head() {
     return {
-      // like this it OVERRIDE the logic in vue config. we have to ADD just one class!!!
+      // OVERRIDE the logic in vue config for body element.
+      // we have to ADD just one class
       bodyAttrs: {
         class: this.isNavOpen ? 'is-navigation-open-body' : '',
       },
