@@ -39,11 +39,8 @@ module.exports = {
     googleMapApiKey,
   },
 
-  // Customize the progress-bar color
-  loading: {
-    color: '#ffd400',
-    height: '5px',
-  },
+  // page transition common name. for css transition
+  pageTransition: 'page-transition',
 
   /*
    ** Plugins to load before mounting the App

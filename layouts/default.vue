@@ -88,4 +88,20 @@ a
   min-height: 100%
   // padding top for fixed header alignment
   padding: 60px 0
+
+// ============
+// page transition (vue transition)
+.page-transition-enter
+  transform: translateY(40px)
+  opacity: 0
+
+.page-transition-enter-active
+  transition: all .75s ease-in-out
+  // a little bit more than navigation overlay timeout
+  transition-delay: .35s
+
+.page-transition-leave,
+.page-transition-leave-active,
+.page-transition-leave-to
+  opacity: 0
 </style>
