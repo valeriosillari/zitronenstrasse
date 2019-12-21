@@ -38,7 +38,7 @@
 
             li.item
               nuxt-link.item-link(
-                v-on:click.native='isNavOpen = !isNavOpen'
+                v-on:click.native='removeNavOverlay()'
                 title=item.title
                 to=item.link
               )
@@ -51,6 +51,15 @@ export default {
     return {
       isNavOpen: false,
     }
+  },
+
+  methods: {
+    removeNavOverlay() {
+      console.log('removeNavOverlay')
+      setTimeout(() => {
+        this.isNavOpen = !this.isNavOpen
+      }, 300)
+    },
   },
 
   head() {
@@ -98,7 +107,7 @@ export default {
   width: $button_navigation_width
   margin-top: 8px
   cursor: pointer
-  transition: opacity .25s ease
+  transition: opacity .25s ease-in-out
   .btn-menu-line
     background: $color_navigation_btn
     border: none
@@ -107,7 +116,7 @@ export default {
     position: absolute
     top: 0
     left: 0
-    transition:  all .35s ease
+    transition:  all .35s ease-in-out
     cursor: pointer
 
     &:nth-of-type(2)
