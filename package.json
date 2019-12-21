@@ -20,7 +20,6 @@
     "@fortawesome/free-brands-svg-icons": "^5.9.0",
     "@fortawesome/vue-fontawesome": "^0.1.6",
     "@nuxtjs/google-analytics": "^2.2.0",
-    "@nuxtjs/pwa": "^2.6.0",
     "@nuxtjs/sitemap": "^1.2.0",
     "@nuxtjs/style-resources": "^0.1.2",
     "bootstrap": "^4.3.1",

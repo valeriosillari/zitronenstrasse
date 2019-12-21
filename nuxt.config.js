@@ -59,8 +59,6 @@ module.exports = {
    ** Nuxt.js modules
    */
   modules: [
-    '@nuxtjs/pwa',
-
     '@nuxtjs/eslint-module',
 
     '@nuxtjs/sitemap',
