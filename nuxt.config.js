@@ -35,8 +35,8 @@ module.exports = {
   // https://nuxtjs.org/api/configuration-env
   env: {
     metaHeadDescription: headDescription,
-    googleMapApiKey: googleMapApiKey,
     appVersion: pkg.version,
+    googleMapApiKey,
   },
 
   // Customize the progress-bar color
