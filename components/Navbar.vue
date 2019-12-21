@@ -53,12 +53,12 @@ export default {
     }
   },
   methods: {
-    toggleBodyClassAtNavOpen: function(isNavOpen) {
+    toggleBodyClassAtNavOpen: isNavOpen => {
       this.isNavOpen = !isNavOpen
       return this.isNavOpen
     },
     // at click trigger here more events
-    navBarHandler: function(isNavOpen) {
+    navBarHandler: isNavOpen => {
       setTimeout(() => {
         this.toggleBodyClassAtNavOpen(isNavOpen)
       }, 300)
