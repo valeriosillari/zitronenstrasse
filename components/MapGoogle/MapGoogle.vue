@@ -160,7 +160,7 @@ export default {
           // firts create object with all data for current marker
           const marker = new google.maps.Marker({
             // set current map
-            map: map,
+            map,
             // set icon custom style
             icon: customMarker,
             // set position
