@@ -20,7 +20,7 @@
 
   nav.navigation(
     role='navigation'
-    v-bind:class='{ isNavOpen: isNavOpen }'
+    v-bind:class="{ 'is-nav-open' : isNavOpen}"
   )
 
     nuxt-link.logo-link(to='/', title='Home')
@@ -52,23 +52,28 @@ export default {
       isNavOpen: false,
     }
   },
+
   methods: {
-    toggleBodyClassAtNavOpen: isNavOpen => {
-      this.isNavOpen = !isNavOpen
-      return this.isNavOpen
+    toggleBodyClassAtNavOpen: () => {
+      console.log('toggleBodyClassAtNavOpen')
+      console.log(this.isNavOpen)
+      // this.isNavOpen = !this.isNavOpen
+      // return this.isNavOpen
     },
     // at click trigger here more events
-    navBarHandler: isNavOpen => {
-      setTimeout(() => {
-        this.toggleBodyClassAtNavOpen(isNavOpen)
-      }, 300)
+    navBarHandler: () => {
+      console.log('toggleBodyClassAtNavOpen')
+      // setTimeout(() => {
+      //   this.toggleBodyClassAtNavOpen()
+      // }, 300)
     },
   },
+
   head() {
     return {
       // like this it OVERRIDE the logic in vue config. we have to ADD just one class!!!
       bodyAttrs: {
-        class: this.isNavOpen ? 'isNavigationOpenBody' : '',
+        class: this.isNavOpen ? 'is-navigation-open-body' : '',
       },
     }
   },
@@ -187,11 +192,11 @@ export default {
       color: $color_navigation_overlay_text_hvr
 
 // nav is open! set EXTRA BODY class
-.isNavigationOpenBody
+.is-navigation-open-body
   overflow: hidden
 
 // nav is open! see overlay
-.isNavOpen
+.is-nav-open
 
   .btn-menu
     z-index: 200
