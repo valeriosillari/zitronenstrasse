@@ -15,7 +15,7 @@
 <script>
 export default {
   mounted() {
-    // empty
+    console.log('DAII - 001')
   },
 }
 </script>

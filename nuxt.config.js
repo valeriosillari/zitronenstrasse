@@ -1,4 +1,5 @@
 const pkg = require('./package')
+const modernizr = require('modernizr')
 
 // main title
 const headTitle = 'Zitronenstrasse | Romantic Spots in Berlin.'
