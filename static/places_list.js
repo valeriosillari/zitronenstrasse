@@ -915,6 +915,19 @@ const placesList = [
       lng: 13.400525,
     },
   },
+  {
+    // 067
+    // ChIJRZHTR3FPqEcRe3y5-nbOdA4
+    title: 'Atlas Cafe',
+    address: ' Graefestraße 10, 10967',
+    thumb: '067_atlas_cafe.jpg',
+    thumbCredits: 'Atlas Cafe FB Page',
+    fbPage: 'https://www.facebook.com/Atlas-Cafe-754501234895041',
+    position: {
+      lat: 52.4939774,
+      lng: 13.4182787,
+    },
+  },
 ]
 
 export default placesList
