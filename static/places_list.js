@@ -542,20 +542,20 @@ const placesList = [
       lng: 13.4085013,
     },
   },
-  {
-    // 040
-    // ChIJEfO84BdOqEcRD1BMG5OkIvE
-    title: 'Kosmetiksalon Babette',
-    address: 'Karl-Marx-Allee 36, 10178',
-    thumb: '040_babette.jpg',
-    thumbCredits: 'Kosmetiksalon Babette Website',
-    website: 'http://www.barbabette.com/',
-    fbPage: 'https://www.facebook.com/pages/Bar-Babette/136696746381818',
-    position: {
-      lat: 52.5194805,
-      lng: 13.423457,
-    },
-  },
+  // {
+  //   // 040
+  //   // ChIJEfO84BdOqEcRD1BMG5OkIvE
+  //   title: 'Kosmetiksalon Babette',
+  //   address: 'Karl-Marx-Allee 36, 10178',
+  //   thumb: '040_babette.jpg',
+  //   thumbCredits: 'Kosmetiksalon Babette Website',
+  //   website: 'http://www.barbabette.com/',
+  //   fbPage: 'https://www.facebook.com/pages/Bar-Babette/136696746381818',
+  //   position: {
+  //     lat: 52.5194805,
+  //     lng: 13.423457,
+  //   },
+  // },
 
   // ====================== 41 - 50 ======================
   {
@@ -905,7 +905,7 @@ const placesList = [
     // 066
     // ChIJXZ9LIuRRqEcR4MGb8ykDdlM
     title: 'Milch Halle Coffee',
-    address: ' Auguststraße 50, 10119',
+    address: 'Auguststraße 50, 10119',
     thumb: '066_milch_halle.jpg',
     thumbCredits: 'Milch Halle Coffee FB Page',
     website: 'https://www.milchhalle.com/',
@@ -919,13 +919,27 @@ const placesList = [
     // 067
     // ChIJRZHTR3FPqEcRe3y5-nbOdA4
     title: 'Atlas Cafe',
-    address: ' Graefestraße 10, 10967',
+    address: 'Graefestraße 10, 10967',
     thumb: '067_atlas_cafe.jpg',
     thumbCredits: 'Atlas Cafe FB Page',
     fbPage: 'https://www.facebook.com/Atlas-Cafe-754501234895041',
     position: {
       lat: 52.4939774,
       lng: 13.4182787,
+    },
+  },
+  {
+    // 068
+    // ChIJ2wS_AHFPqEcRbTmq9p5kL-I
+    title: 'Cafe Babette',
+    address: 'Am Sudhaus 3, 12053 (Kindl zentrum)',
+    thumb: '068_cafe_babette.jpg',
+    thumbCredits: 'Cafe Babette Website',
+    website: 'http://www.cafebabette.de/',
+    fbPage: 'https://www.facebook.com/kosmetiksalon.babette.79',
+    position: {
+      lat: 52.4794078,
+      lng: 13.4311439,
     },
   },
 ]
