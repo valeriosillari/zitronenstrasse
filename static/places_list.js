@@ -956,6 +956,20 @@ const placesList = [
       lng: 13.3563243,
     },
   },
+  {
+    // 070
+    // ChIJy6JdnBJPqEcRh3f7bcB2cdY
+    title: '21 gramm',
+    address: 'Hermannstraße 179, 12049',
+    thumb: '070_21gramm.jpg',
+    thumbCredits: '21 gramm Website',
+    website: 'https://21gramm.berlin',
+    fbPage: 'https://www.facebook.com/21grammberlin/',
+    position: {
+      lat: 52.472164,
+      lng: 13.4290906,
+    },
+  },
 ]
 
 export default placesList
