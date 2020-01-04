@@ -942,6 +942,20 @@ const placesList = [
       lng: 13.4311439,
     },
   },
+  {
+    // 069
+    // ChIJm3xfm99RqEcRiC8G0-MsMzU
+    title: 'Hubertha',
+    address: 'Tegeler Str. 31, 13353',
+    thumb: '069_hubertha.jpg',
+    thumbCredits: 'Hubertha Website',
+    website: 'http://www.hubertha.de/',
+    fbPage: 'https://www.facebook.com/huberthaberlin',
+    position: {
+      lat: 52.5425573,
+      lng: 13.3563243,
+    },
+  },
 ]
 
 export default placesList
