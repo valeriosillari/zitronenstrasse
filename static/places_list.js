@@ -173,20 +173,20 @@ const placesList = [
       lng: 13.43966,
     },
   },
-  {
-    // 013
-    // ChIJP36bUnVPqEcRIwk3dhSvYWo
-    title: 'Paulinski Palme',
-    address: 'Richardstraße 76, 12043',
-    thumb: '013_paulinski_palme.jpg',
-    thumbCredits: 'Paulinski Palme FB Page',
-    website: 'http://www.paulinskipalme.de/',
-    fbPage: 'https://www.facebook.com/Paulinskipalme/',
-    position: {
-      lat: 52.47483,
-      lng: 13.44494,
-    },
-  },
+  // {
+  //   // 013
+  //   // ChIJP36bUnVPqEcRIwk3dhSvYWo
+  //   title: 'Paulinski Palme',
+  //   address: 'Richardstraße 76, 12043',
+  //   thumb: '013_paulinski_palme.jpg',
+  //   thumbCredits: 'Paulinski Palme FB Page',
+  //   website: 'http://www.paulinskipalme.de/',
+  //   fbPage: 'https://www.facebook.com/Paulinskipalme/',
+  //   position: {
+  //     lat: 52.47483,
+  //     lng: 13.44494,
+  //   },
+  // },
   {
     // 014
     // ChIJC8oyvqJPqEcRJiH6bTWiOos
