@@ -10,7 +10,7 @@
             |
             | |
             |
-            | v{{ appVersion }}
+            | v{{ $config.appVersion }}
 
           p.text
             nuxt-link.item-link(
@@ -84,7 +84,6 @@ export default {
   data() {
     return {
       dateYear: new Date().getFullYear(),
-      appVersion: process.env.appVersion,
     }
   },
 }

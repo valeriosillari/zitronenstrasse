@@ -188,7 +188,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: `Privacy Policy | Zitronenstrasse | ${process.env.metaHeadDescription}`,
+          content: `Privacy Policy | Zitronenstrasse | ${this.$config.metaHeadDescription}`,
         },
       ],
     }

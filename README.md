@@ -19,12 +19,8 @@ $ yarn install
 # serve with hot reload at localhost:3000
 $ yarn dev
 
-# build for production and launch server
-$ yarn run build
-$ yarn start
-
 # generate static project
-$ yarn run generate
+$ yarn deploy
 ```
 
 For detailed explanation on how Nuxt work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
@@ -42,13 +38,10 @@ You can find which ones in the ENV example file:
 
 For detailed explanation on how dotenv work, checkout the [dotenv docs](https://github.com/motdotla/dotenv).
 
-#### SERVER OPTIONS
+### ENV keys List required
 
-We use Express as server. Set by Nuxt Boilerplate option.
+- TODO: here
 
-For setting more server options for the application, we use Nuxt with Express.
-
-Check the server/index.js file and documentation for more info.
 
 ## ROAD MAP
 

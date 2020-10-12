@@ -16,7 +16,7 @@ if (process.browser) {
 
   /*! modernizr 3.6.0 (Custom Build) | MIT *
    * https://modernizr.com/download/?-setclasses !*/
-  !(function(n, e, s) {
+  !(function (n, e, s) {
     function o(n, e) {
       return typeof n === e
     }
@@ -70,20 +70,20 @@ if (process.browser) {
           usePrefixes: !0,
         },
         _q: [],
-        on: function(n, e) {
+        on: function (n, e) {
           var s = this
-          setTimeout(function() {
+          setTimeout(function () {
             e(s[n])
           }, 0)
         },
-        addTest: function(n, e, s) {
+        addTest: function (n, e, s) {
           t.push({ name: n, fn: e, options: s })
         },
-        addAsyncTest: function(n) {
+        addAsyncTest: function (n) {
           t.push({ name: null, fn: n })
         },
       },
-      Modernizr = function() {}
+      Modernizr = function () {}
     ;(Modernizr.prototype = f), (Modernizr = new Modernizr())
     var l = [],
       r = e.documentElement,

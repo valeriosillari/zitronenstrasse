@@ -113,7 +113,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: `About | Zitronenstrasse | ${process.env.metaHeadDescription}`,
+          content: `About | Zitronenstrasse | ${this.$config.metaHeadDescription}`,
         },
       ],
     }

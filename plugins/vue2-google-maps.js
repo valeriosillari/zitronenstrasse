@@ -4,11 +4,11 @@ import * as VueGoogleMaps from '~/node_modules/vue2-google-maps'
 Vue.use(VueGoogleMaps, {
   load: {
     // our key for API set in google
-    // update: removed from here. we have to set new key from JUNE 2018
-    key: process.env.googleMapApiKey,
+    // https://nuxtjs.org/api/configuration-env#automatic-injection-of-environment-variables
+    key: process.env.nuxtEnvGoogleMapKey || '',
     // set version. list of versions here:
     // https://developers.google.com/maps/documentation/javascript/releases
-    version: '3.40',
+    version: '3.42.7',
     // This is required if you use the Autocomplete plugin
     // libraries: 'places'
   },

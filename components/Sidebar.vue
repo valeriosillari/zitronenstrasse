@@ -42,13 +42,7 @@
 </template>
 
 <script>
-import Thumb from '~/components/Thumb.vue'
-
 export default {
-  components: {
-    Thumb,
-  },
-
   props: {
     currentPlace: {
       type: Object,
