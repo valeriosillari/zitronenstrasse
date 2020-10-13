@@ -30,7 +30,8 @@ export default {
   // ENV vars to spread in all the app.
   // https://nuxtjs.org/api/configuration-env
   env: {
-    nuxtEnvGoogleMapKey: process.env.ENV_GOOGLE_MAP_API_KEY || 'no-key-map',
+    nuxtEnvGoogleMapKey:
+      process.env.ENV_ZITRONENSTRASSE_GOOGLE_MAP_API_KEY || 'no-key-map',
   },
 
   // Target (https://go.nuxtjs.dev/config-target)
@@ -92,7 +93,9 @@ export default {
     [
       '@nuxtjs/google-analytics',
       {
-        id: process.env.ENV_GOOGLE_ANALYTICS_KEY || 'no-key-analytics',
+        id:
+          process.env.ENV_ZITRONENSTRASSE_GOOGLE_ANALYTICS_KEY ||
+          'no-key-analytics',
       },
     ],
   ],
