@@ -9,8 +9,7 @@
 
     NoJsFallback
 
-    //- TODO: here
-    //- PrivacyPolicyBanner
+    PrivacyPolicyBanner
 </template>
 
 <script>
