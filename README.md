@@ -19,12 +19,8 @@ $ yarn install
 # serve with hot reload at localhost:3000
 $ yarn dev
 
-# build for production and launch server
-$ yarn run build
-$ yarn start
-
 # generate static project
-$ yarn run generate
+$ yarn deploy
 ```
 
 For detailed explanation on how Nuxt work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
@@ -42,13 +38,11 @@ You can find which ones in the ENV example file:
 
 For detailed explanation on how dotenv work, checkout the [dotenv docs](https://github.com/motdotla/dotenv).
 
-#### SERVER OPTIONS
+### ENV keys List required
 
-We use Express as server. Set by Nuxt Boilerplate option.
+- **ENV_GOOGLE_MAP_API_KEY** : google map api (javascript)
 
-For setting more server options for the application, we use Nuxt with Express.
-
-Check the server/index.js file and documentation for more info.
+- **ENV_GOOGLE_ANALYTICS_KEY** : google analytics
 
 ## ROAD MAP
 
@@ -66,6 +60,18 @@ Check the server/index.js file and documentation for more info.
 
 - **PERFORMANCES**: check speed insight (June 2019)
 
+- **PWA icon**: set on static (icon.png). check how to set custom folder and put it into static/favicons
+
+- **MANIFEST (console log)**: check console log locally, issue on manifest file
+
 #### NICE TO HAVE
 
 - **CONTACT PAGE**: set node mailer and all the logic for form mailer
+
+- **LAZY LOAD MAP?**
+
+- **SVG on IE**: we have to check if we see markers custom svg on windows
+
+- **LAZY LOAD IMAGES**: set logic for place images. we have added plugin, but we got issues with images.
+
+- **MAGES in ASSETS FOLDER**: set all images in asset folder. now in static folder. not quite sure if it is the right place.

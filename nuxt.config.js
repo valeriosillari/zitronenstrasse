@@ -1,13 +1,5 @@
 const pkg = require('./package')
 
-require('dotenv').config({
-  path: './env_variables/env_keys',
-})
-
-// set GOOGLE keys via dotenv
-const googleMapApiKey = process.env.GOOGLE_MAP_API_KEY || ''
-const googleAnalyticsKey = process.env.GOOGLE_ANALYTICS_KEY || ''
-
 // main title
 const headTitle = 'Zitronenstrasse | Romantic Spots in Berlin.'
 
@@ -28,23 +20,44 @@ const ogImage = '/favicons/zitronenstrasse_og_image.png'
 const ogImageWidth = '1200'
 const ogImageHeight = '630'
 
-module.exports = {
-  mode: 'universal',
-
+export default {
+  // TODO: better common logic for ENV Keys
+  // https://nuxtjs.org/blog/moving-from-nuxtjs-dotenv-to-runtime-config/
+  publicRuntimeConfig: {
+    appVersion: pkg.version,
+    metaHeadDescription: headDescription,
+  },
   // ENV vars to spread in all the app.
   // https://nuxtjs.org/api/configuration-env
   env: {
-    metaHeadDescription: headDescription,
-    appVersion: pkg.version,
-    googleMapApiKey,
+    nuxtEnvGoogleMapKey:
+      process.env.ENV_ZITRONENSTRASSE_GOOGLE_MAP_API_KEY || 'no-key-map',
   },
+
+  // Target (https://go.nuxtjs.dev/config-target)
+  target: 'static',
 
   // page transition common name. for css transition
   pageTransition: 'page-transition',
 
-  /*
-   ** Plugins to load before mounting the App
-   */
+  // Load globally Functions / Variables / Mixins
+  styleResources: {
+    sass: ['assets/stylesheets/pre_processing/pre_processing.sass'],
+  },
+
+  // Global CSS | SASS
+  css: [
+    // font awesome
+    '@fortawesome/fontawesome-svg-core/styles.css',
+  ],
+
+  script: [
+    {
+      // js external here
+    },
+  ],
+
+  // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     '~/plugins/modernizr-plugin',
     { src: '~/plugins/vue-cookie-law', mode: 'client' },
@@ -52,10 +65,19 @@ module.exports = {
     '~/plugins/vue2-google-maps',
   ],
 
-  /*
-   ** Nuxt.js modules
-   */
+  // Auto import components (https://go.nuxtjs.dev/config-components)
+  components: true,
+
+  // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
+  buildModules: [
+    // https://go.nuxtjs.dev/eslint
+    '@nuxtjs/eslint-module',
+  ],
+
+  // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
+    // https://go.nuxtjs.dev/pwa
+    '@nuxtjs/pwa',
     '@nuxtjs/eslint-module',
 
     '@nuxtjs/sitemap',
@@ -71,20 +93,11 @@ module.exports = {
     [
       '@nuxtjs/google-analytics',
       {
-        id: googleAnalyticsKey,
+        id:
+          process.env.ENV_ZITRONENSTRASSE_GOOGLE_ANALYTICS_KEY ||
+          'no-key-analytics',
       },
     ],
-  ],
-
-  // Load globally Functions / Variables / Mixins
-  styleResources: {
-    sass: ['assets/stylesheets/pre_processing/pre_processing.sass'],
-  },
-
-  // Global CSS | SASS
-  css: [
-    // font awesome
-    '@fortawesome/fontawesome-svg-core/styles.css',
   ],
 
   // Load fonts from Google via Nuxt Font Package
@@ -271,12 +284,6 @@ module.exports = {
       {
         rel: 'canonical',
         href: thisAppMainUrl,
-      },
-    ],
-
-    script: [
-      {
-        // js external here
       },
     ],
   },

@@ -132,19 +132,19 @@ export default {
   mounted() {
     // wait having the map created. info and tips from this issue:
     // https://github.com/xkjyeah/vue-google-maps/issues/301
-    this.$refs.mapRef.$mapPromise.then(map => {
+    this.$refs.mapRef.$mapPromise.then((map) => {
       // wait google Plugin set and attached to window object
       const google = window.google
       // need to be here, after google is set
       const initLogic = () => {
         // function for PAN movement
-        google.maps.Map.prototype.panToWithOffset = function(
+        google.maps.Map.prototype.panToWithOffset = function (
           latlng,
           offsetX,
           offsetY
         ) {
           const ov = new google.maps.OverlayView()
-          ov.onAdd = function() {
+          ov.onAdd = function () {
             const proj = this.getProjection()
             const aPoint = proj.fromLatLngToContainerPixel(latlng)
             aPoint.x = aPoint.x + offsetX

@@ -7,6 +7,7 @@
     //- https://github.com/apertureless/vue-cookie-law/issues/19
     //- indifiser commented on 23 Apr
     client-only
+      //- TODO: remove import
       cookie-law(theme='lemon-theme' buttonText='Ok')
         div(slot='message')
           | This site uses some cookies in order to count visits. By clicking the 'Ok' button on this banner you give your consent.
