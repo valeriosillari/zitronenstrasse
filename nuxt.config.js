@@ -1,6 +1,6 @@
 const pkg = require('./package')
 
-// main title
+// main title 01
 const headTitle = 'Zitronenstrasse | Romantic Spots in Berlin.'
 
 // used in head description in all the pages
