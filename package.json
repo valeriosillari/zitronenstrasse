@@ -12,8 +12,7 @@
     "build": "nuxt build",
     "generate": "nuxt generate",
     "prettier": "prettier --write '**/*.{css,scss,js,vue}'",
-    "precommit": "yarn run lint",
-    "now-build": "yarn lint && nuxt generate"
+    "precommit": "yarn run lint"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.19",
