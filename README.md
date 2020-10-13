@@ -40,9 +40,9 @@ For detailed explanation on how dotenv work, checkout the [dotenv docs](https://
 
 ### ENV keys List required
 
-- **PWA icon**: set on static (icon.png). check how to set custom folder and put it into static/favicons
+- **ENV_GOOGLE_MAP_API_KEY** : google map api (javascript)
 
-- **MANIFEST (console log)**: check console log locally, issue on manifest file
+- **ENV_GOOGLE_ANALYTICS_KEY** : google analytics
 
 ## ROAD MAP
 
@@ -59,6 +59,10 @@ For detailed explanation on how dotenv work, checkout the [dotenv docs](https://
 #### ISSUES
 
 - **PERFORMANCES**: check speed insight (June 2019)
+
+- **PWA icon**: set on static (icon.png). check how to set custom folder and put it into static/favicons
+
+- **MANIFEST (console log)**: check console log locally, issue on manifest file
 
 #### NICE TO HAVE
 
