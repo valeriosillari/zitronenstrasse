@@ -1,10 +1,8 @@
 # Zitronenstrasse
 
-
 #### Romantic Spots in Berlin.
 
 [zitronenstrasse.com](https://zitronenstrasse.com/)
-
 
 ## GENERAL INFO
 
@@ -27,7 +25,6 @@ $ yarn deploy
 
 For detailed explanation on how Nuxt work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
 
-
 #### ENV OPTIONS
 
 You need to set some CONFIG VAR options locally and on Deploy Server for custom Plugins as Google Map, Analytics etc ...
@@ -41,11 +38,11 @@ You can find which ones in the ENV example file:
 
 For detailed explanation on how dotenv work, checkout the [dotenv docs](https://github.com/motdotla/dotenv).
 
-
 ### ENV keys List required
 
-- TODO: here
+- **PWA icon**: set on static (icon.png). check how to set custom folder and put it into static/favicons
 
+- **MANIFEST (console log)**: check console log locally, issue on manifest file
 
 ## ROAD MAP
 
@@ -59,11 +56,9 @@ For detailed explanation on how dotenv work, checkout the [dotenv docs](https://
 
 - **HEADLINE**: on homepage/map set some kind of headline for recognising the website brand
 
-
 #### ISSUES
 
 - **PERFORMANCES**: check speed insight (June 2019)
-
 
 #### NICE TO HAVE
 
@@ -76,4 +71,3 @@ For detailed explanation on how dotenv work, checkout the [dotenv docs](https://
 - **LAZY LOAD IMAGES**: set logic for place images. we have added plugin, but we got issues with images.
 
 - **MAGES in ASSETS FOLDER**: set all images in asset folder. now in static folder. not quite sure if it is the right place.
-
