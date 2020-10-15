@@ -10,7 +10,7 @@ A side project with a list of romantic spots in Berlin.
 
 Based on **Nuxt (VueJS)** and **Google Maps**.
 
-## Setup
+## SETUP
 
 ```bash
 # install dependencies
@@ -25,24 +25,33 @@ $ yarn deploy
 
 For detailed explanation on how Nuxt work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
 
-#### ENV OPTIONS
+## ENV OPTIONS
 
 You need to set some CONFIG VAR options locally and on Deploy Server for custom Plugins as Google Map, Analytics etc ...
 
-You can find which ones in the ENV example file:
-
-```html
-# example file for CONFIG KEYS required. Based on dotenv package
-./env_variables/env_keys_example
-```
-
 For detailed explanation on how dotenv work, checkout the [dotenv docs](https://github.com/motdotla/dotenv).
-
-### ENV keys List required
 
 - **ENV_GOOGLE_MAP_API_KEY** : google map api (javascript)
 
 - **ENV_GOOGLE_ANALYTICS_KEY** : google analytics
+
+## ISSUES
+
+- **PERFORMANCES**: check speed insight (June 2019)
+
+- **PWA icon**: set on static (icon.png). check how to set custom folder and put it into static/favicons
+
+- **MANIFEST (console log)**: check console log locally, issue on manifest file
+
+## NICE TO HAVE
+
+- **LAZY LOAD MAP?**: load map better (and later), for performance
+
+- **SVG on IE**: we have to check if we see markers custom svg on windows
+
+- **LAZY LOAD IMAGES**: set logic for place images. we have added plugin, but we got issues with images.
+
+- **IMAGES in ASSETS FOLDER**: set all images in asset folder. now in static folder. not quite sure if it is the right place.
 
 ## ROAD MAP
 
@@ -55,23 +64,3 @@ For detailed explanation on how dotenv work, checkout the [dotenv docs](https://
 - **SHARE SINGLE PLACES**: suggestion for sharing (on FB, twitter, as link) only a single place on the map. Conceptually possible? we have to check
 
 - **HEADLINE**: on homepage/map set some kind of headline for recognising the website brand
-
-#### ISSUES
-
-- **PERFORMANCES**: check speed insight (June 2019)
-
-- **PWA icon**: set on static (icon.png). check how to set custom folder and put it into static/favicons
-
-- **MANIFEST (console log)**: check console log locally, issue on manifest file
-
-#### NICE TO HAVE
-
-- **CONTACT PAGE**: set node mailer and all the logic for form mailer
-
-- **LAZY LOAD MAP?**
-
-- **SVG on IE**: we have to check if we see markers custom svg on windows
-
-- **LAZY LOAD IMAGES**: set logic for place images. we have added plugin, but we got issues with images.
-
-- **MAGES in ASSETS FOLDER**: set all images in asset folder. now in static folder. not quite sure if it is the right place.
