@@ -3665,7 +3665,7 @@ end-of-stream@^1.0.0, end-of-stream@^1.1.0:
   dependencies:
     once "^1.4.0"
 
-"endent@github:dword-design/endent#fork":
+endent@dword-design/endent#fork:
   version "1.4.0"
   resolved "https://codeload.github.com/dword-design/endent/tar.gz/be5433db67eaec07c6c9d00ba3bed2ed946dc664"
   dependencies:
@@ -6230,7 +6230,7 @@ mkdirp@0.5.5, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@^0.5.3, mkd
   dependencies:
     minimist "^1.2.5"
 
-modernizr@^3.11.3, modernizr@^3.7.1:
+modernizr@^3.11.3:
   version "3.11.3"
   resolved "https://registry.yarnpkg.com/modernizr/-/modernizr-3.11.3.tgz#15be7aa86743cc0081a74ddc9b3a739bed4cc67e"
   integrity sha512-912QnDnkDxs1w1EbFD3btEGI67rssfjWwJsVXpyoLBvHUwr0r8x6KN0IUCZFH/5xnK0000YxI0N3qcqHVzWjcQ==
