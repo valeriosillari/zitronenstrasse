@@ -1,5 +1,4 @@
 const pkg = require('./package')
-const modernizr = require('modernizr')
 
 // main title
 const headTitle = 'Zitronenstrasse | Romantic Spots in Berlin.'
@@ -97,6 +96,13 @@ export default {
         id:
           process.env.ENV_ZITRONENSTRASSE_GOOGLE_ANALYTICS_KEY ||
           'no-key-analytics',
+      },
+    ],
+    [
+      'nuxt-modernizr',
+      {
+        'feature-detects': ['css/scrollbars', 'css/overflow-scrolling'],
+        options: ['setClasses'],
       },
     ],
   ],

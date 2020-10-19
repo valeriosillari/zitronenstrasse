@@ -15,7 +15,9 @@
 <script>
 export default {
   mounted() {
-    console.log('DAII - 001')
+    console.log('====== START =======')
+    console.log(window.Modernizr)
+    console.log('====== STOP =======')
   },
 }
 </script>
