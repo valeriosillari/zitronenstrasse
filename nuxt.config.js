@@ -59,7 +59,6 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    '~/plugins/modernizr-plugin',
     { src: '~/plugins/vue-cookie-law', mode: 'client' },
     '~/plugins/fontawesome',
     '~/plugins/vue2-google-maps',
@@ -101,8 +100,8 @@ export default {
     [
       'nuxt-modernizr',
       {
+        options: 'setClasses',
         'feature-detects': ['css/scrollbars', 'css/overflow-scrolling'],
-        options: ['setClasses'],
       },
     ],
   ],
