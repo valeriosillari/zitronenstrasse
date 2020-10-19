@@ -12,16 +12,6 @@
     PrivacyPolicyBanner
 </template>
 
-<script>
-export default {
-  mounted() {
-    console.log('====== START =======')
-    console.log(window.Modernizr)
-    console.log('====== STOP =======')
-  },
-}
-</script>
-
 <style lang="sass">
 // @import '../node_modules/bootstrap/scss/print'
 @import '../node_modules/bootstrap/scss/reboot'
