@@ -100,8 +100,11 @@ export default {
     [
       'nuxt-modernizr',
       {
-        options: 'setClasses',
-        'feature-detects': ['css/scrollbars', 'css/overflow-scrolling'],
+        // setClasses: requires to set 'no-js' class in html DOM. For nuxt: into the app.html file
+        options: ['setClasses'],
+        'feature-detects': [
+          // empty now ...
+        ],
       },
     ],
   ],
