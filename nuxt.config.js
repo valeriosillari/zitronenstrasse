@@ -107,6 +107,13 @@ export default {
         ],
       },
     ],
+    [
+      'storyblok-nuxt',
+      {
+        accessToken: process.env.ENV_STORYBLOK_KEY || 'no-key-analytics',
+        cacheProvider: 'memory',
+      },
+    ],
   ],
 
   // Load fonts from Google via Nuxt Font Package
