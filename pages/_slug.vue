@@ -1,6 +1,8 @@
 <template>
   <section>
-    {{ story.name }}
+    <h1>
+      {{ story.name }}
+    </h1>
   </section>
 </template>
 
