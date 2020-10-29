@@ -2,7 +2,7 @@
   section.section
     .container
       h1
-        | About
+        | OLD About
 
       p
         span.text-accent
