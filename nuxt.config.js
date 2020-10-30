@@ -1,3 +1,4 @@
+const axios = require('axios')
 const pkg = require('./package')
 
 // main title
@@ -110,7 +111,7 @@ export default {
     [
       'storyblok-nuxt',
       {
-        accessToken: process.env.ENV_STORYBLOK_KEY || 'no-key-analytics',
+        accessToken: process.env.ENV_STORYBLOK_KEY_PREVIEW,
         cacheProvider: 'memory',
       },
     ],
@@ -164,6 +165,40 @@ export default {
   generate: {
     // set error page for generated static website
     fallback: '404.html',
+
+    // https://www.storyblok.com/faq/how-to-generate-routes-for-nuxt-js-using-storyblok
+    routes: (callback) => {
+      const tokenPublic = process.env.ENV_STORYBLOK_KEY_PUBLIC
+      const version = 'published'
+      const toIgnore = ['home', 'en/settings']
+      let cacheVersion = 0
+
+      // other routes that are not in Storyblok with their slug.
+      const routes = ['/'] // adds / directly
+
+      // Load space and receive latest cache version key to improve performance
+      axios
+        .get(`https://api.storyblok.com/v1/cdn/spaces/me?token=${tokenPublic}`)
+        .then((spaceRes) => {
+          // timestamp of latest publish
+          cacheVersion = spaceRes.data.space.version
+
+          // Call for all Links using the Links API: https://www.storyblok.com/docs/Delivery-Api/Links
+          axios
+            .get(
+              `https://api.storyblok.com/v1/cdn/links?token=${tokenPublic}&version=${version}&cv=${cacheVersion}&per_page=100`
+            )
+            .then((res) => {
+              Object.keys(res.data.links).forEach((key) => {
+                if (!toIgnore.includes(res.data.links[key].slug)) {
+                  routes.push('/' + res.data.links[key].slug)
+                }
+              })
+
+              callback(null, routes)
+            })
+        })
+    },
   },
 
   /*
