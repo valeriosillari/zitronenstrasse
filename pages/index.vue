@@ -1,4 +1,4 @@
 <template lang="pug">
   h1
-    | HOME (index here)
+    | HOME (index content from REPO)
 </template>

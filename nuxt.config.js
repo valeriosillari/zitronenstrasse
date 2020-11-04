@@ -1,5 +1,5 @@
-const axios = require('axios')
-const pkg = require('./package')
+import axios from 'axios'
+import pkg from './package'
 
 // main title
 const headTitle = 'Zitronenstrasse | Romantic Spots in Berlin.'
@@ -111,7 +111,7 @@ export default {
     [
       'storyblok-nuxt',
       {
-        accessToken: process.env.ENV_STORYBLOK_KEY_PREVIEW,
+        accessToken: process.env.ENV_STORYBLOK_API_KEY,
         cacheProvider: 'memory',
       },
     ],
@@ -162,18 +162,18 @@ export default {
   /*
    ** Generate configuration
    */
-
   generate: {
     // set error page for generated static website
     fallback: '404.html',
 
+    // Storyblok dynamic routes: Using Links API
     routes: (callback) => {
-      const token = process.env.ENV_STORYBLOK_KEY_PUBLIC // replace with your key
-      const perPage = 100
-      const version = 'draft'
+      const token = process.env.ENV_STORYBLOK_API_KEY
+      const version = 'published'
+      const toIgnore = ['home', 'en/settings']
+      // other routes that are not in Storyblok with their slug.
+      const routes = ['/'] // adds / directly
       let cacheVersion = 0
-      const page = 1
-      const routes = ['/']
 
       // Load space and receive latest cache version key to improve performance
       axios
@@ -182,58 +182,19 @@ export default {
           // timestamp of latest publish
           cacheVersion = spaceRes.data.space.version
 
-          // Call first Page of the Links API: https://www.storyblok.com/docs/Delivery-Api/Links
+          // Call for all Links using the Links API: https://www.storyblok.com/docs/Delivery-Api/Links
           axios
             .get(
-              `https://api.storyblok.com/v1/cdn/links?token=${token}&version=${version}&perPage=${perPage}&page=${page}&cv=${cacheVersion}`
+              `https://api.storyblok.com/v1/cdn/links?token=${token}&version=${version}&cv=${cacheVersion}&per_page=100`
             )
             .then((res) => {
               Object.keys(res.data.links).forEach((key) => {
-                if (
-                  res.data.links[key].slug !== 'home' &&
-                  res.data.links[key].is_folder === false
-                ) {
+                if (!toIgnore.includes(res.data.links[key].slug)) {
                   routes.push('/' + res.data.links[key].slug)
                 }
               })
 
-              // Check if there are more pages available otherwise execute callback with current routes.
-              const total = res.headers.total
-              const maxPage = Math.ceil(total / perPage)
-              if (maxPage <= 1) {
-                callback(null, routes)
-              }
-
-              // Since we know the total we now can pregenerate all requests we need to get all Links
-              const contentRequests = []
-              for (let page = 2; page <= maxPage; page++) {
-                contentRequests.push(
-                  axios.get(
-                    `https://api.storyblok.com/v1/cdn/links?token=${token}&version=${version}&perPage=${perPage}&page=${page}`
-                  )
-                )
-              }
-
-              // Axios allows us to execute all requests using axios.spread we will than generate our routes and execute the callback
-              axios
-                .all(contentRequests)
-                .then(
-                  axios.spread((...responses) => {
-                    responses.forEach((response) => {
-                      Object.keys(response.data.links).forEach((key) => {
-                        if (
-                          response.data.links[key].slug !== 'home' &&
-                          res.data.links[key].is_folder === false
-                        ) {
-                          routes.push('/' + response.data.links[key].slug)
-                        }
-                      })
-                    })
-
-                    callback(null, routes)
-                  })
-                )
-                .catch(callback)
+              callback(null, routes)
             })
         })
     },
