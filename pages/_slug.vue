@@ -2,6 +2,21 @@
   <section>
     <h1>PAGE TITLEis: {{ story.content.title }}</h1>
     <h2>PAGE HEADLINEis: {{ story.content.headline }}</h2>
+
+    <!-- TODO: later set componet for richtext and also components all sub elements -->
+    <div
+      v-for="(richTextItem, index) in story.content.description.content"
+      :key="`item-${index}`"
+    >
+      <div v-if="richTextItem.type === 'heading'">
+        {{ richTextItem.content[0].text }}
+      </div>
+
+      <div v-if="richTextItem.type === 'paragraph'">
+        {{ richTextItem.content[0].text }}
+      </div>
+    </div>
+
     <NuxtLink to="/">Home back</NuxtLink>
   </section>
 </template>
@@ -17,6 +32,8 @@ export default {
           context.query._storyblok || context.isDev ? 'draft' : 'published',
       })
       .then((res) => {
+        console.log(res.data.story.content.description.content)
+
         return res.data
       })
       .catch((res) => {
