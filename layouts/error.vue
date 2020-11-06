@@ -11,7 +11,7 @@
         | {{ error.statusCode }}
 
       h2.error-message
-        | {{ error.message }}
+        | This page could not be found
 
       p(v-if='error.statusCode === 404')
         nuxt-link.error-link(to='/', title='Back to the home page')
@@ -30,8 +30,16 @@ export default {
     },
   },
   head() {
+    // Set Meta Tags for this Page
     return {
-      title: this.error.message || 'An error occured',
+      title: 'Error Page | Zitronenstrasse',
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: `Error Page | Zitronenstrasse | ${this.$config.metaHeadDescription}`,
+        },
+      ],
     }
   },
 }
