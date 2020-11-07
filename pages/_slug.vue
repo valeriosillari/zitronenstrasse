@@ -5,19 +5,7 @@
         {{ story.content.title }}
       </h1>
 
-      <!-- TODO: later set componet for richtext and also components all sub elements -->
-      <div
-        v-for="(richTextItem, index) in story.content.description.content"
-        :key="`item-${index}`"
-      >
-        <h2 v-if="richTextItem.type === 'heading'">
-          {{ richTextItem.content[0].text }}
-        </h2>
-
-        <p v-if="richTextItem.type === 'paragraph'">
-          {{ richTextItem.content[0].text }}
-        </p>
-      </div>
+      <RichText :rich-text="story.content.description.content" />
     </div>
   </section>
 </template>
