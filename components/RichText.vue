@@ -22,9 +22,9 @@ export default {
   },
 
   // mounted: WHEN ALL code on server is already loaded!
-  mounted() {
-    console.log('================')
-    console.log(this.richText)
-  },
+  //   mounted() {
+  //     console.log('================')
+  //     console.log(this.richText)
+  //   },
 }
 </script>
