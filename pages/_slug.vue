@@ -21,8 +21,6 @@ export default {
           context.query._storyblok || context.isDev ? 'draft' : 'published',
       })
       .then((res) => {
-        console.log(res.data.story.content.description.content)
-
         return res.data
       })
       .catch((res) => {
