@@ -30,8 +30,5 @@ export default {
         })
       })
   },
-  data() {
-    return { story: { content: {} } }
-  },
 }
 </script>
