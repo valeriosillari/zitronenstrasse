@@ -1,15 +1,5 @@
 <template>
-  <div>
-    <div v-for="(richTextItem, index) in richText" :key="`item-${index}`">
-      <h2 v-if="richTextItem.type === 'heading'">
-        {{ richTextItem.content[0].text }}
-      </h2>
-
-      <p v-if="richTextItem.type === 'paragraph'">
-        {{ richTextItem.content[0].text }}
-      </p>
-    </div>
-  </div>
+  <div v-html="richTextMarkup"></div>
 </template>
 
 <script>
@@ -21,10 +11,25 @@ export default {
     },
   },
 
-  // mounted: WHEN ALL code on server is already loaded!
-  //   mounted() {
-  //     console.log('================')
-  //     console.log(this.richText)
-  //   },
+  data() {
+    return {
+      richTextMarkup: '',
+    }
+  },
+
+  // TODO: on created we get storyblok data and evaluate and generate correct markup for it
+  created() {
+    console.log('======== CREATED ========')
+    console.log(this.richText)
+
+    if (!this.richText) {
+      return
+    }
+
+    // we should kinf of "generating" this code with all variations? really? check if there are some plugins/documentrs for avoiding to create all logic manually
+    // https://github.com/storyblok/storyblok-nuxt/issues/34
+    this.richTextMarkup =
+      '<h2>Dummy Title</h2><p>dummy text with <span class="text-accent">span</span> goes here</p>'
+  },
 }
 </script>
