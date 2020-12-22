@@ -23,7 +23,7 @@ $ yarn dev
 $ yarn deploy
 ```
 
-For detailed explanation on how Nuxt work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+For detailed explanation on how Nuxt works, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
 
 ## ENV OPTIONS
 
