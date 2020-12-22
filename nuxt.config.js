@@ -20,9 +20,6 @@ const ogImage = '/favicons/zitronenstrasse_og_image.png'
 const ogImageWidth = '1200'
 const ogImageHeight = '630'
 
-console.log('========== YO ==========')
-console.log(process.env.ENV_ZITRONENSTRASSE_GOOGLE_MAP)
-
 export default {
   // TODO: better common logic for ENV Keys
   // https://nuxtjs.org/blog/moving-from-nuxtjs-dotenv-to-runtime-config/
