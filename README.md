@@ -25,7 +25,7 @@ $ yarn deploy
 
 For detailed explanation on how Nuxt works, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
 
-## ENV OPTIONS (1)
+## ENV OPTIONS (2)
 
 You need to set some CONFIG VAR options locally and on Deploy Server for custom Plugins as Google Map, Analytics etc ...
 
