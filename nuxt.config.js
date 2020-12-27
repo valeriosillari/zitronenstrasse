@@ -32,7 +32,7 @@ export default {
   // https://nuxtjs.org/api/configuration-env
   env: {
     nuxtEnvGoogleMapKey:
-      process.env.ENV_ZITRONENSTRASSE_GOOGLE_MAP_API_KEY || 'no-key-map',
+      process.env.ENV_ZITRONENSTRASSE_GOOGLE_MAP || 'no-key-map',
   },
 
   // Target (https://go.nuxtjs.dev/config-target)
@@ -94,7 +94,7 @@ export default {
       '@nuxtjs/google-analytics',
       {
         id:
-          process.env.ENV_ZITRONENSTRASSE_GOOGLE_ANALYTICS_KEY ||
+          process.env.ENV_ZITRONENSTRASSE_GOOGLE_ANALYTICS ||
           'no-key-analytics',
       },
     ],

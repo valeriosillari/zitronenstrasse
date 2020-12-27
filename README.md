@@ -23,7 +23,7 @@ $ yarn dev
 $ yarn deploy
 ```
 
-For detailed explanation on how Nuxt work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+For detailed explanation on how Nuxt works, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
 
 ## ENV OPTIONS
 
@@ -31,9 +31,9 @@ You need to set some CONFIG VAR options locally and on Deploy Server for custom 
 
 For detailed explanation on how dotenv work, checkout the [dotenv docs](https://github.com/motdotla/dotenv).
 
-- **ENV_GOOGLE_MAP_API_KEY** : google map api (javascript)
+- **ENV_ZITRONENSTRASSE_GOOGLE_MAP** : google map api (javascript)
 
-- **ENV_GOOGLE_ANALYTICS_KEY** : google analytics
+- **ENV_ZITRONENSTRASSE_GOOGLE_ANALYTICS** : google analytics
 
 ## ISSUES
 
