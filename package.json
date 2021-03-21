@@ -36,7 +36,7 @@
     "nuxt": "^2.14.5",
     "nuxt-modernizr": "^1.0.2",
     "nuxt-webfontloader": "^1.1.0",
-    "pug": "^2.0.3",
+    "pug": "^3.0.1",
     "pug-plain-loader": "^1.0.0",
     "sass-loader": "^v8.0.0",
     "vue-cookie-law": "1.12.0",
