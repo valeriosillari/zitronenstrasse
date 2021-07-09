@@ -27,6 +27,13 @@ export default {
 
 <style lang="sass">
 .b-rich-text
-  padding: 15px
-  border: 5px solid #00ff00
+  b
+    color: $color_text_accent
+    font-weight: 400
+
+  // extend default one
+  a
+    text-decoration: underline
+    &:hover
+      text-decoration: underline
 </style>

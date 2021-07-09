@@ -56,12 +56,6 @@ a
     color: $color_link_hvr
     text-decoration: none
 
-.link-text
-  text-decoration: underline
-  &:hover
-    text-decoration: underline
-
-b,
 .text-accent
   color: $color_text_accent
 
