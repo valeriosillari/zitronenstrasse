@@ -61,6 +61,7 @@ a
   &:hover
     text-decoration: underline
 
+b,
 .text-accent
   color: $color_text_accent
 
