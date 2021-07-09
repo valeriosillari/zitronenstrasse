@@ -2,10 +2,10 @@
   <section class="section">
     <div class="container">
       <h1>
-        {{ story.content.title }}
+        {{ content.title }}
       </h1>
 
-      <RichText :rich-text="story.content.description.content" />
+      <RichText :text="content.description" />
     </div>
   </section>
 </template>
@@ -21,7 +21,7 @@ export default {
           context.query._storyblok || context.isDev ? 'draft' : 'published',
       })
       .then((res) => {
-        return res.data
+        return res.data.story
       })
       .catch((res) => {
         context.error({

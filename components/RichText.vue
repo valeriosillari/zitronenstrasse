@@ -1,35 +1,32 @@
 <template>
-  <div v-html="richTextMarkup"></div>
+  <div class="b-rich-text">
+    <div v-html="richtext"></div>
+  </div>
 </template>
 
 <script>
 export default {
+  // props: ['text'],
   props: {
-    richText: {
-      type: Array,
-      required: true,
+    text: {
+      type: Object,
+      default() {
+        return {}
+      },
     },
   },
 
-  data() {
-    return {
-      richTextMarkup: '',
-    }
-  },
-
-  // TODO: on created we get storyblok data and evaluate and generate correct markup for it
-  created() {
-    console.log('======== CREATED ========')
-    console.log(this.richText)
-
-    if (!this.richText) {
-      return
-    }
-
-    // we should kinf of "generating" this code with all variations? really? check if there are some plugins/documentrs for avoiding to create all logic manually
-    // https://github.com/storyblok/storyblok-nuxt/issues/34
-    this.richTextMarkup =
-      '<h2>Dummy Title</h2><p>dummy text with <span class="text-accent">span</span> goes here</p>'
+  computed: {
+    // https://www.storyblok.com/faq/how-to-render-richtext-nuxt
+    richtext() {
+      return this.$storyapi.richTextResolver.render(this.text)
+    },
   },
 }
 </script>
+
+<style lang="sass">
+.b-rich-text
+  padding: 15px
+  border: 5px solid #00ff00
+</style>
