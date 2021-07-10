@@ -56,9 +56,6 @@ a
     color: $color_link_hvr
     text-decoration: none
 
-.text-accent
-  color: $color_text_accent
-
 .section
   min-height: 100%
   // padding top for fixed header alignment

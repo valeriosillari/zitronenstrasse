@@ -17,6 +17,7 @@
 // - check place as item from storyblok
 // - check how many TOKEN / option  you need on SToryblok. 1 is enough ?
 // - check vercel secrets logic again
+// - add "BACK HOME" at end of privacy page
 
 export default {
   asyncData(context) {
