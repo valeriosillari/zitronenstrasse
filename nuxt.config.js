@@ -21,7 +21,9 @@ const ogImage = '/favicons/zitronenstrasse_og_image.png'
 const ogImageWidth = '1200'
 const ogImageHeight = '630'
 
-console.log(`storyblok key is >> ${process.env.ENV_STORYBLOK_API_KEY} <<`)
+console.log(
+  `storyblok key is >> ${process.env.ENV_ZITRONENSTRASSE_STORYBLOK_API_KEY} <<`
+)
 
 export default {
   // TODO: better common logic for ENV Keys
@@ -34,7 +36,7 @@ export default {
   // https://nuxtjs.org/api/configuration-env
   env: {
     nuxtEnvGoogleMapKey:
-      process.env.ENV_ZITRONENSTRASSE_GOOGLE_MAP || 'no-key-map',
+      process.env.ENV_ZITRONENSTRASSE_STORYBLOK_API_KEY || 'no-key-map',
   },
 
   // Target (https://go.nuxtjs.dev/config-target)
