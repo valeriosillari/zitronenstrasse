@@ -26,14 +26,22 @@ export default {
 </script>
 
 <style lang="sass">
+// TODO: now we edit tags. later check how to add classes from storyblok
 .b-rich-text
   b
     color: $color_text_accent
     font-weight: 400
 
-  // extend default one
   a
     text-decoration: underline
     &:hover
       text-decoration: underline
+
+  h2
+    @include font-size($h3-font-size)
+    margin-top: 60px
+
+  h3
+    @include font-size($h5-font-size)
+    margin-top: 30px
 </style>
