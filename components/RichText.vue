@@ -38,10 +38,9 @@ export default {
       text-decoration: underline
 
   h2
-    @include font-size($h3-font-size)
     margin-top: 60px
 
   h3
-    @include font-size($h5-font-size)
+    @include font-size($h4-font-size)
     margin-top: 30px
 </style>
