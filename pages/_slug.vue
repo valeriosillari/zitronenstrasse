@@ -11,6 +11,13 @@
 </template>
 
 <script>
+// TODO:
+// - check meta tags for pages
+// - check css on all pages (error page also)
+// - check place as item from storyblok
+// - check how many TOKEN / option  you need on SToryblok. 1 is enough ?
+// - check vercel secrets logic again
+
 export default {
   asyncData(context) {
     // Load the JSON from the API
