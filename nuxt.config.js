@@ -169,6 +169,7 @@ export default {
     // Storyblok dynamic routes: Using Links API
     routes: (callback) => {
       const token = process.env.ENV_ZITRONENSTRASSE_STORYBLOK_API_KEY
+      // when deploy, any branch, get only published storyblok content
       const version = 'published'
       const toIgnore = ['home', 'en/settings']
       // other routes that are not in Storyblok with their slug.
