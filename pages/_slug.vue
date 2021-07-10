@@ -12,8 +12,8 @@
 
 <script>
 // TODO:
-// - check meta tags for pages
 // - check css on all pages (error page also)
+// - check meta tags for pages
 // - check place as item from storyblok
 // - check how many TOKEN / option  you need on SToryblok. 1 is enough ?
 // - check vercel secrets logic again
