@@ -96,3 +96,6 @@ modernizr.js
 
 # Ignore sitemap file created by Generate
 static/sitemap.xml
+
+# vercel
+.vercel
