@@ -5,7 +5,7 @@ Vue.use(VueGoogleMaps, {
   load: {
     // our key for API set in google
     // https://nuxtjs.org/api/configuration-env#automatic-injection-of-environment-variables
-    key: process.env.nuxtEnvGoogleMapKey || '',
+    // key: process.env.nuxtEnvGoogleMapKey || '',
     // set version. list of versions here:
     // https://developers.google.com/maps/documentation/javascript/releases
     version: '3.42.7',
