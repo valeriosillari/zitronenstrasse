@@ -201,6 +201,7 @@ export default {
     },
   },
 
+  // TODO: i need here default values for meta tags? after storyblok changes
   /*
    ** Headers of the page
    ** https://github.com/declandewet/vue-meta#recognized-metainfo-properties

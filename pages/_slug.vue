@@ -38,5 +38,58 @@ export default {
         })
       })
   },
+
+  head() {
+    const metaTitle = this.content.metaTitle
+      ? `${this.content.metaTitle} | Zitronenstrasse`
+      : 'Zitronenstrasse'
+
+    const metaDescription = this.content.metaDescription
+      ? `${this.content.metaDescription} | ${this.$config.metaHeadDescription}`
+      : `${this.$config.metaHeadDescription}`
+
+    // Set Meta Tags for the Page (with fallback)
+    return {
+      title: metaTitle,
+
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: metaDescription,
+        },
+
+        // OG options for open graph: Fb and Linkedin
+        {
+          hid: `og:title`,
+          property: 'og:title',
+          content: metaTitle,
+        },
+        {
+          hid: `og:description`,
+          property: 'og:description',
+          content: metaDescription,
+        },
+
+        // Twitter card
+        {
+          hid: `twitter:title`,
+          property: 'twitter:title',
+          content: metaTitle,
+        },
+        {
+          hid: `twitter:description`,
+          property: 'twitter:description',
+          content: metaDescription,
+        },
+
+        {
+          hid: `twitter:image:alt`,
+          property: 'twitter:image:alt',
+          content: metaTitle,
+        },
+      ],
+    }
+  },
 }
 </script>
