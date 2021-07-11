@@ -85,3 +85,12 @@ a
 .page-transition-leave-to
   opacity: 0
 </style>
+
+<script>
+export default {
+  mounted() {
+    console.log('================= LAYOUT | check key ===================')
+    console.log(process.env.NODE_ENV)
+  },
+}
+</script>
