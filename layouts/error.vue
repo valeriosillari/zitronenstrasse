@@ -37,7 +37,7 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: `Error Page | Zitronenstrasse | ${this.$config.metaHeadDescription}`,
+          content: `Error Page | ${this.$config.metaHeadDescription}`,
         },
       ],
     }
