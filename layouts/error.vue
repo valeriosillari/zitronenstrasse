@@ -10,6 +10,7 @@
       h1.error-code
         | {{ error.statusCode }}
 
+      //- here text textplain otherwise issue with storyblok. to re-check
       h2.error-message
         | This page could not be found
 
@@ -29,6 +30,7 @@ export default {
       }),
     },
   },
+
   head() {
     // Set Meta Tags for this Page
     return {

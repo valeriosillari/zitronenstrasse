@@ -40,6 +40,7 @@ For detailed explanation on how dotenv work, checkout the [dotenv docs](https://
 #### STORYBLOK
 
 - check place as item from storyblok
+- add css class to rich text items
 - check how many TOKEN / option you need on Storyblok. 1 is enough ?
 - add "BACK HOME" at end of privacy page
 
