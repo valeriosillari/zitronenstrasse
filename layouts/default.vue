@@ -77,15 +77,3 @@ a
 .page-transition-leave-to
   opacity: 0
 </style>
-
-<script>
-export default {
-  mounted() {
-    console.log('======= LAYOUT | check key | process.env.NODE_ENV =======')
-    console.log(process.env.NODE_ENV)
-
-    console.log('====== LAYOUT | check key | process.env.vercelEnv ========')
-    console.log(process.env.vercelEnv)
-  },
-}
-</script>
