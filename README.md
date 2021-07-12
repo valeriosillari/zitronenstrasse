@@ -35,6 +35,8 @@ For detailed explanation on how dotenv work, checkout the [dotenv docs](https://
 
 - **ENV_ZITRONENSTRASSE_GOOGLE_ANALYTICS** : google analytics
 
+- **ENV_ZITRONENSTRASSE_STORYBLOK_API_KEY** : stroyblok
+
 ## TODO
 
 #### STORYBLOK
@@ -47,10 +49,6 @@ For detailed explanation on how dotenv work, checkout the [dotenv docs](https://
 #### VERCEL
 
 - check vercel secrets logic again
-
-#### GOOGLE MAO API
-
-- check test api
 
 ## ISSUES
 
