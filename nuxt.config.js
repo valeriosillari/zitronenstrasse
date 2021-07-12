@@ -31,7 +31,7 @@ export default {
   // ENV vars to spread in all the app.
   // https://nuxtjs.org/api/configuration-env
   env: {
-    nuxtEnvGoogleMapKey: process.env.ENV_ZITRONENSTRASSE_GOOGLE_MAP,
+    nuxtEnvGoogleMapKey: process.env.ENV_ZITRONENSTRASSE_GOOGLE_MAP || '',
   },
 
   // Target (https://go.nuxtjs.dev/config-target)
