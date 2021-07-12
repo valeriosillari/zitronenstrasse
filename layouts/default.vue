@@ -81,8 +81,11 @@ a
 <script>
 export default {
   mounted() {
-    console.log('================= LAYOUT | check key ===================')
-    console.log(process.env.NODE_ENV)
+    console.log('======= LAYOUT | check key | process.env =======')
+    console.log(process)
+
+    console.log('====== LAYOUT | check key | process.env.NODE_ENV ========')
+    console.log(process.env.VUE_APP_VERCEL_ENV)
   },
 }
 </script>
