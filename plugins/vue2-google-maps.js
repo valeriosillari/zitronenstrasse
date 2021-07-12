@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import * as VueGoogleMaps from '~/node_modules/vue2-google-maps'
 
-console.log('================= PLUGIN check key ===================')
+console.log('================= PLUGIN MAP | check key ===================')
 console.log(process.env.NODE_ENV)
 
 // map NOT pass any key, use version downgraded with warning

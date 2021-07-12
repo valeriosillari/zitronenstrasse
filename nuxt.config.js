@@ -26,6 +26,7 @@ export default {
   // https://nuxtjs.org/blog/moving-from-nuxtjs-dotenv-to-runtime-config/
   publicRuntimeConfig: {
     appVersion: pkg.version,
+    vercelEnv: process.env.VUE_APP_VERCEL_ENV,
     metaHeadDescription: headDescription,
   },
   // ENV vars to spread in all the app.
