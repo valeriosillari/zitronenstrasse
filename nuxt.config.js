@@ -21,15 +21,12 @@ const ogImage = '/favicons/zitronenstrasse_og_image.png'
 const ogImageWidth = '1200'
 const ogImageHeight = '630'
 
-console.log('================= config | check keys ===================')
-console.log(process.env.NUXT_APP_VERCEL_ENV)
-
 export default {
   // TODO: better common logic for ENV Keys
   // https://nuxtjs.org/blog/moving-from-nuxtjs-dotenv-to-runtime-config/
   publicRuntimeConfig: {
     appVersion: pkg.version,
-    vercelEnv: process.env.VUE_APP_VERCEL_ENV,
+    // vercelEnv: process.env.VUE_APP_VERCEL_ENV,
     metaHeadDescription: headDescription,
   },
   // ENV vars to spread in all the app.
