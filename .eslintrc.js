@@ -22,5 +22,7 @@ module.exports = {
     'nuxt/no-cjs-in-config': 'off',
     // enable console logs (just warnings)
     'no-console': 1,
+    // ignore v-html (warning: it could lead to XSS attack)
+    'vue/no-v-html': 'off',
   },
 }

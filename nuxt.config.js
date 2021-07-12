@@ -1,4 +1,5 @@
-const pkg = require('./package')
+import axios from 'axios'
+import pkg from './package'
 
 // main title
 const headTitle = 'Zitronenstrasse | Romantic Spots in Berlin.'
@@ -107,6 +108,13 @@ export default {
         ],
       },
     ],
+    [
+      'storyblok-nuxt',
+      {
+        accessToken: process.env.ENV_ZITRONENSTRASSE_STORYBLOK_API_KEY,
+        cacheProvider: 'memory',
+      },
+    ],
   ],
 
   // Load fonts from Google via Nuxt Font Package
@@ -157,8 +165,43 @@ export default {
   generate: {
     // set error page for generated static website
     fallback: '404.html',
+
+    // Storyblok dynamic routes: Using Links API
+    routes: (callback) => {
+      const token = process.env.ENV_ZITRONENSTRASSE_STORYBLOK_API_KEY
+      // when deploy, any branch, get only published storyblok content
+      const version = 'published'
+      const toIgnore = ['home', 'en/settings']
+      // other routes that are not in Storyblok with their slug.
+      const routes = ['/'] // adds / directly
+      let cacheVersion = 0
+
+      // Load space and receive latest cache version key to improve performance
+      axios
+        .get(`https://api.storyblok.com/v1/cdn/spaces/me?token=${token}`)
+        .then((spaceRes) => {
+          // timestamp of latest publish
+          cacheVersion = spaceRes.data.space.version
+
+          // Call for all Links using the Links API: https://www.storyblok.com/docs/Delivery-Api/Links
+          axios
+            .get(
+              `https://api.storyblok.com/v1/cdn/links?token=${token}&version=${version}&cv=${cacheVersion}&per_page=100`
+            )
+            .then((res) => {
+              Object.keys(res.data.links).forEach((key) => {
+                if (!toIgnore.includes(res.data.links[key].slug)) {
+                  routes.push('/' + res.data.links[key].slug)
+                }
+              })
+
+              callback(null, routes)
+            })
+        })
+    },
   },
 
+  // TODO: i need here default values for meta tags? after storyblok changes
   /*
    ** Headers of the page
    ** https://github.com/declandewet/vue-meta#recognized-metainfo-properties

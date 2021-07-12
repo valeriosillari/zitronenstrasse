@@ -35,6 +35,23 @@ For detailed explanation on how dotenv work, checkout the [dotenv docs](https://
 
 - **ENV_ZITRONENSTRASSE_GOOGLE_ANALYTICS** : google analytics
 
+## TODO
+
+#### STORYBLOK
+
+- check place as item from storyblok
+- add css class to rich text items
+- check how many TOKEN / option you need on Storyblok. 1 is enough ?
+- add "BACK HOME" at end of privacy page
+
+#### VERCEL
+
+- check vercel secrets logic again
+
+#### GOOGLE MAO API
+
+- check test api
+
 ## ISSUES
 
 - **PERFORMANCES**: check speed insight (June 2019)

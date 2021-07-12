@@ -56,14 +56,6 @@ a
     color: $color_link_hvr
     text-decoration: none
 
-.link-text
-  text-decoration: underline
-  &:hover
-    text-decoration: underline
-
-.text-accent
-  color: $color_text_accent
-
 .section
   min-height: 100%
   // padding top for fixed header alignment
