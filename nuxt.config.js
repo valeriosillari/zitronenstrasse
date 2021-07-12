@@ -22,7 +22,7 @@ const ogImageWidth = '1200'
 const ogImageHeight = '630'
 
 console.log('================= config | check keys ===================')
-console.log(process.env.VUE_APP_VERCEL_ENV)
+console.log(process.env.NUXT_APP_VERCEL_ENV)
 
 export default {
   // TODO: better common logic for ENV Keys
