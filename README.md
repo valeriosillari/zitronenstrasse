@@ -8,7 +8,7 @@
 
 A side project with a list of romantic spots in Berlin.
 
-Based on **Nuxt (VueJS)** and **Google Maps**.
+Based on **[NuxtJS](https://nuxtjs.org/)**, **[Storyblok](https://www.storyblok.com/)**, **[Google Maps](https://www.google.com/maps)**.
 
 ## SETUP
 
