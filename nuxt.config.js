@@ -209,7 +209,7 @@ export default {
     title: headTitle,
 
     htmlAttrs: {
-      lang: 'en',
+      lang: 'de',
     },
 
     meta: [
@@ -337,5 +337,15 @@ export default {
         href: thisAppMainUrl,
       },
     ],
+  },
+
+  // PWA module configuration: https://go.nuxtjs.dev/pwa
+  pwa: {
+    // manifest lang used also for global html head lang.
+    // if you need difference between manifest lang and html head lang check pwa nuxt documentation
+    // https://pwa.nuxtjs.org/meta
+    manifest: {
+      lang: 'fr',
+    },
   },
 }
