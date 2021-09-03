@@ -10,7 +10,17 @@ A side project with a list of romantic spots in Berlin.
 
 Based on **[NuxtJS](https://nuxtjs.org/)**, **[Storyblok](https://www.storyblok.com/)**, **[Google Maps](https://www.google.com/maps)**.
 
-## SETUP
+## INSTALLATION
+
+1. Create a file in the root for env keys with this exact name: `.env`
+
+2. Copy and past all code from the existing file `.env.example` into the new file `.env`
+
+3. For each empty key `.env` file set the correct keys you will use from third-part services
+
+Now you set the right keys. You're ready to start
+
+## BASIC CLI COMMANDS
 
 ```bash
 # install dependencies
@@ -31,13 +41,13 @@ You need to set some CONFIG VAR options locally and on Deploy Server for custom 
 
 For detailed explanation on how dotenv work, checkout the [dotenv docs](https://github.com/motdotla/dotenv).
 
-- **ENV_ZITRONENSTRASSE_GOOGLE_MAP** : google map api (javascript)
-
-- **ENV_ZITRONENSTRASSE_GOOGLE_ANALYTICS** : google analytics
-
-- **ENV_ZITRONENSTRASSE_STORYBLOK_API_KEY** : stroyblok
+For a list of required keys with right name, check the file in root folder called `.env.example`
 
 ## TODO
+
+#### GOOGLE TAGMANAGER
+
+- update to version 4 (gtag)
 
 #### STORYBLOK
 
