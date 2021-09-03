@@ -22,17 +22,16 @@ const ogImageWidth = '1200'
 const ogImageHeight = '630'
 
 export default {
-  // TODO: better common logic for ENV Keys
+  // get KEY from ENV files or outside configuration files
+  // as Public (Plain String) or Secret (not render out)
   // https://nuxtjs.org/blog/moving-from-nuxtjs-dotenv-to-runtime-config/
   publicRuntimeConfig: {
     appVersion: pkg.version,
     metaHeadDescription: headDescription,
-  },
-  // ENV vars to spread in all the app.
-  // https://nuxtjs.org/api/configuration-env
-  env: {
     nuxtEnvGoogleMapKey: process.env.ENV_ZITRONENSTRASSE_GOOGLE_MAP || '',
   },
+  // privateRuntimeConfig: {
+  // },
 
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',

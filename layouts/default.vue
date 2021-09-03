@@ -77,3 +77,13 @@ a
 .page-transition-leave-to
   opacity: 0
 </style>
+
+<script>
+export default {
+  mounted() {
+    console.log('========= LAYOUT MOUNTED =========')
+    // console.log(this.process.env.nuxtEnvGoogleMapKey)
+    console.log(this.$config.nuxtEnvGoogleMapKey)
+  },
+}
+</script>
