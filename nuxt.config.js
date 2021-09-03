@@ -22,16 +22,21 @@ const ogImageWidth = '1200'
 const ogImageHeight = '630'
 
 export default {
-  // get KEY from ENV files or outside configuration files
+  // used on RUNTIME
   // as Public (Plain String) or Secret (not render out)
   // https://nuxtjs.org/blog/moving-from-nuxtjs-dotenv-to-runtime-config/
   publicRuntimeConfig: {
     appVersion: pkg.version,
     metaHeadDescription: headDescription,
-    nuxtEnvGoogleMapKey: process.env.ENV_ZITRONENSTRASSE_GOOGLE_MAP || '',
   },
   // privateRuntimeConfig: {
   // },
+
+  // used on BUILD time
+  env: {
+    // set fallback as empty, so we can consume map on ""
+    buildEnvGoogleMapKey: process.env.ENV_ZITRONENSTRASSE_GOOGLE_MAP,
+  },
 
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
@@ -91,9 +96,7 @@ export default {
     [
       '@nuxtjs/google-analytics',
       {
-        id:
-          process.env.ENV_ZITRONENSTRASSE_GOOGLE_ANALYTICS ||
-          'no-key-analytics',
+        id: process.env.ENV_ZITRONENSTRASSE_GOOGLE_ANALYTICS,
       },
     ],
     [
