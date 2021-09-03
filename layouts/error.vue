@@ -34,7 +34,7 @@ export default {
   head() {
     // Set Meta Tags for this Page
     return {
-      title: 'Error Page | Zitronenstrasse',
+      title: `Error Page | ${this.$config.metaHeadData.titleShort}`,
       meta: [
         {
           hid: 'description',

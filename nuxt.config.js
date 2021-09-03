@@ -33,6 +33,7 @@ export default {
   // https://nuxtjs.org/blog/moving-from-nuxtjs-dotenv-to-runtime-config/
   publicRuntimeConfig: {
     metaHeadData: {
+      titleShort,
       description: headDescription,
     },
   },

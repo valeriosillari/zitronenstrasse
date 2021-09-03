@@ -33,12 +33,12 @@ export default {
 
   head() {
     const metaTitle = this.content.metaTitle
-      ? `${this.content.metaTitle} | Zitronenstrasse`
-      : 'Zitronenstrasse'
+      ? `${this.content.metaTitle} | ${this.$config.metaHeadData.titleShort}`
+      : this.$config.metaHeadData.titleShort
 
     const metaDescription = this.content.metaDescription
       ? `${this.content.metaDescription} | ${this.$config.metaHeadData.description}`
-      : `${this.$config.metaHeadData.description}`
+      : this.$config.metaHeadData.description
 
     // Set Meta Tags for the Page (with fallback)
     return {
@@ -57,6 +57,7 @@ export default {
           property: 'og:title',
           content: metaTitle,
         },
+
         {
           hid: `og:description`,
           property: 'og:description',
