@@ -37,8 +37,8 @@ export default {
       : 'Zitronenstrasse'
 
     const metaDescription = this.content.metaDescription
-      ? `${this.content.metaDescription} | ${this.$config.metaHeadDescription}`
-      : `${this.$config.metaHeadDescription}`
+      ? `${this.content.metaDescription} | ${this.$config.metaHeadData.description}`
+      : `${this.$config.metaHeadData.description}`
 
     // Set Meta Tags for the Page (with fallback)
     return {

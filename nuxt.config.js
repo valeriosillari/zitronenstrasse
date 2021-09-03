@@ -32,7 +32,9 @@ export default {
   // as Public (Plain String) or Secret (not render out)
   // https://nuxtjs.org/blog/moving-from-nuxtjs-dotenv-to-runtime-config/
   publicRuntimeConfig: {
-    metaHeadDescription: headDescription,
+    metaHeadData: {
+      description: headDescription,
+    },
   },
   // privateRuntimeConfig: {
   // },
