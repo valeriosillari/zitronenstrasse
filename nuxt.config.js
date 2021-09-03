@@ -1,7 +1,11 @@
 import axios from 'axios'
 
+// ===============================
+
+const titleShort = 'Zitronenstrasse'
+
 // main title
-const headTitle = 'Zitronenstrasse | Romantic Spots in Berlin.'
+const headTitle = ` ${titleShort} | Romantic Spots in Berlin.`
 
 // used in head description in all the pages
 const headDescription =
@@ -9,10 +13,11 @@ const headDescription =
 
 // the URL set as variables: for redirect DNS
 // with httpS: in case redirect take care of it
-const thisAppMainUrl = 'https://zitronenstrasse.com'
+const appMainUrl = 'https://zitronenstrasse.com'
 
+// ===============================
 // og for FB and Linkedin
-const ogUrl = thisAppMainUrl
+const ogUrl = appMainUrl
 const ogTitle = headTitle
 const ogDescription = headDescription
 const ogType = 'website'
@@ -324,7 +329,7 @@ export default {
       // link canonical
       {
         rel: 'canonical',
-        href: thisAppMainUrl,
+        href: appMainUrl,
       },
     ],
   },
