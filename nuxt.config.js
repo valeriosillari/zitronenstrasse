@@ -32,12 +32,6 @@ export default {
   // privateRuntimeConfig: {
   // },
 
-  // used on BUILD time
-  env: {
-    // set fallback as empty, so we can consume map on ""
-    buildEnvGoogleMapKey: process.env.ENV_ZITRONENSTRASSE_GOOGLE_MAP,
-  },
-
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
 
