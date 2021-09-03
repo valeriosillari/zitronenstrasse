@@ -51,6 +51,7 @@ For a list of required keys with right name, check the file in root folder calle
 
 #### STORYBLOK
 
+- TODO: ERROR for page at generate command (see CLI), but all work anyway ... (?)
 - check place as item from storyblok
 - add css class to rich text items
 - check how many TOKEN / option you need on Storyblok. 1 is enough ?
