@@ -10,7 +10,7 @@
             |
             | |
             |
-            | v{{ $config.appVersion }}
+            | v{{ appVersion }}
 
           p.text
             nuxt-link.item-link(
@@ -80,10 +80,13 @@
 </template>
 
 <script>
+import packageJson from '../package.json'
+
 export default {
   data() {
     return {
       dateYear: new Date().getFullYear(),
+      appVersion: packageJson.version,
     }
   },
 }

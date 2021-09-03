@@ -1,5 +1,4 @@
 import axios from 'axios'
-import pkg from './package'
 
 // main title
 const headTitle = 'Zitronenstrasse | Romantic Spots in Berlin.'
@@ -26,7 +25,6 @@ export default {
   // as Public (Plain String) or Secret (not render out)
   // https://nuxtjs.org/blog/moving-from-nuxtjs-dotenv-to-runtime-config/
   publicRuntimeConfig: {
-    appVersion: pkg.version,
     metaHeadDescription: headDescription,
   },
   // privateRuntimeConfig: {
