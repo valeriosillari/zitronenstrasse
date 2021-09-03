@@ -30,7 +30,6 @@
     "breakpoint-sass": "^2.7.1",
     "core-js": "^3.6.5",
     "cross-env": "^6.0.3",
-    "dotenv": "^8.0.0",
     "express": "^4.16.4",
     "hover.css": "^2.3.2",
     "node-sass": "^4.12.0",
