@@ -9,28 +9,24 @@
         "dev": "nuxt",
         "build": "nuxt build",
         "start": "nuxt start",
-        "export": "nuxt export",
         "generate": "nuxt generate",
         "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
         "lint": "yarn lint:js",
-        "prettier": "prettier --write '**/*.{css,scss,js,vue}'",
-        "precommit": "yarn run lint",
-        "deploy": "yarn build && yarn export"
+        "prettier": "prettier --write '**/*.{css,scss,js,vue,html}'",
+        "precommit": "yarn run lint"
     },
     "dependencies": {
         "@fortawesome/fontawesome-svg-core": "^1.2.19",
         "@fortawesome/free-brands-svg-icons": "^5.9.0",
         "@fortawesome/vue-fontawesome": "^0.1.6",
         "@nuxtjs/google-analytics": "^2.2.0",
-        "@nuxtjs/pwa": "^3.0.2",
+        "@nuxtjs/pwa": "^3.3.5",
         "@nuxtjs/sitemap": "^2.0.1",
         "@nuxtjs/style-resources": "^1.0.0",
         "axios": "^0.21.0",
         "bootstrap": "^4.3.1",
         "breakpoint-sass": "^2.7.1",
-        "core-js": "^3.6.5",
-        "cross-env": "^6.0.3",
-        "express": "^4.16.4",
+        "core-js": "^3.15.1",
         "hover.css": "^2.3.2",
         "node-sass": "^4.12.0",
         "nuxt": "^2.15.7",
@@ -44,13 +40,14 @@
         "vue2-google-maps": "^0.10.6"
     },
     "devDependencies": {
-        "@nuxtjs/eslint-config": "^3.1.0",
-        "@nuxtjs/eslint-module": "^2.0.0",
-        "babel-eslint": "^10.1.0",
-        "eslint": "^7.8.1",
-        "eslint-config-prettier": "^6.11.0",
-        "eslint-plugin-nuxt": "^1.0.0",
+        "@babel/eslint-parser": "^7.14.7",
+        "@nuxtjs/eslint-config": "^6.0.1",
+        "@nuxtjs/eslint-module": "^3.0.2",
+        "eslint": "^7.29.0",
         "eslint-plugin-prettier": "^3.1.4",
-        "prettier": "^2.1.1"
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-nuxt": "^2.0.0",
+        "eslint-plugin-vue": "^7.12.1",
+        "prettier": "^2.3.2"
     }
 }
