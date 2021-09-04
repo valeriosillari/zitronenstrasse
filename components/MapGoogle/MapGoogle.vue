@@ -1,33 +1,37 @@
 <template lang="pug">
-  .map-main-wrapper.map-wrapper-sidebar-push(
-    v-bind:class="{ 'is-sidebar-open' : $store.state.sidebar.isOpen }"
-  )
-    //- hidden heading for seo.
-    //- inside component for design reasons (I'm lazy)
-    h1.heading-title
-      | Zitronenstrasse
-
-    GmapMap(
-      ref='mapRef'
-      :center='center'
-      :zoom='zoom'
-      :options='options'
+    .map-main-wrapper.map-wrapper-sidebar-push(
+        v-bind:class="{ 'is-sidebar-open' : $store.state.sidebar.isOpen }"
     )
+        //- hidden heading for seo.
+        //- inside component for design reasons (I'm lazy)
+        h1.hidden-text
+            | Zitronenstrasse
+        p.hidden-text
+            | Zitronenstrasse is a mapping project to collect and share romantic spots in Berlin.
+            br
+            | Bars, cafes, restaurants, bistros, parks and some little hidden places around the city
 
-    //- Sidebar
-    //- todo: set via store the close logid
-    .sidebar-animation
-      Sidebar(
-        :currentPlace='$store.state.currentPlace.item'
-      )
+        GmapMap(
+            ref='mapRef'
+            :center='center'
+            :zoom='zoom'
+            :options='options'
+        )
+
+        //- Sidebar
+        //- todo: set via store the close logid
+        .sidebar-animation
+            Sidebar(
+                :currentPlace='$store.state.currentPlace.item'
+            )
 </template>
 
 <style lang="sass">
 .map-main-wrapper
   height: 100%
 
-// title for seo
-.heading-title
+// text for seo
+.hidden-text
   display: none
 
 // WRAPPER classes
