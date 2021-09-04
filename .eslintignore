@@ -1,0 +1,8 @@
+# nuxt dev folder
+.nuxt/
+
+# dist file at generate
+dist/
+
+# ignore it, small conflict with prettier about indentation (prettier will take care of it)
+static/sw.js
