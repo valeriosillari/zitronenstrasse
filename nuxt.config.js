@@ -216,6 +216,11 @@ export default {
     head: {
         title: headTitle,
 
+        // modernizr class added on <html> tag
+        htmlAttrs: {
+            class: 'no-js',
+        },
+
         meta: [
             {
                 'http-equiv': 'x-ua-compatible',
