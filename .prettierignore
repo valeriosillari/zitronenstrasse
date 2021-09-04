@@ -1,0 +1,8 @@
+# dist file at generate
+node_modules/
+
+# nuxt dev folder
+.nuxt/
+
+# dist file at generate
+dist/
