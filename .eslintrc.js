@@ -13,7 +13,6 @@ module.exports = {
         'plugin:nuxt/recommended',
         'plugin:prettier/recommended',
         'prettier',
-        'prettier/vue',
     ],
     plugins: ['prettier'],
     // linter ignore some files here
