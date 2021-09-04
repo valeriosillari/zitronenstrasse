@@ -47,46 +47,46 @@ For a list of required keys with right name, check the file in root folder calle
 
 #### GOOGLE TAGMANAGER
 
-- update to version 4 (gtag)
+-   update to version 4 (gtag)
 
 #### STORYBLOK
 
-- TODO: ERROR for page at generate command (see CLI), but all work anyway ... (?)
-- check place as item from storyblok
-- add css class to rich text items
-- check how many TOKEN / option you need on Storyblok. 1 is enough ?
-- add "BACK HOME" at end of privacy page
+-   TODO: ERROR for page at generate command (see CLI), but all work anyway ... (?)
+-   check place as item from storyblok
+-   add css class to rich text items
+-   check how many TOKEN / option you need on Storyblok. 1 is enough ?
+-   add "BACK HOME" at end of privacy page
 
 #### VERCEL
 
-- check vercel secrets logic again
+-   check vercel secrets logic again
 
 ## ISSUES
 
-- **PERFORMANCES**: check speed insight (June 2019)
+-   **PERFORMANCES**: check speed insight (June 2019)
 
-- **PWA icon**: set on static (icon.png). check how to set custom folder and put it into static/favicons
+-   **PWA icon**: set on static (icon.png). check how to set custom folder and put it into static/favicons
 
-- **MANIFEST (console log)**: check console log locally, issue on manifest file
+-   **MANIFEST (console log)**: check console log locally, issue on manifest file
 
 ## NICE TO HAVE
 
-- **LAZY LOAD MAP?**: load map better (and later), for performance
+-   **LAZY LOAD MAP?**: load map better (and later), for performance
 
-- **SVG on IE**: we have to check if we see markers custom svg on windows
+-   **SVG on IE**: we have to check if we see markers custom svg on windows
 
-- **LAZY LOAD IMAGES**: set logic for place images. we have added plugin, but we got issues with images.
+-   **LAZY LOAD IMAGES**: set logic for place images. we have added plugin, but we got issues with images.
 
-- **IMAGES in ASSETS FOLDER**: set all images in asset folder. now in static folder. not quite sure if it is the right place.
+-   **IMAGES in ASSETS FOLDER**: set all images in asset folder. now in static folder. not quite sure if it is the right place.
 
 ## ROAD MAP
 
-- **MAP PAN (movement)**: set it slow and nicer/smoother
+-   **MAP PAN (movement)**: set it slow and nicer/smoother
 
-- **MAP CUSTOM STYLES**: at map movement it is always flickering cause of image request. is is ok? could we prevent it?
+-   **MAP CUSTOM STYLES**: at map movement it is always flickering cause of image request. is is ok? could we prevent it?
 
-- **FILTERS**: show places sorted by some kind of filter (only bars, only restaurants etc ...). Design + Code need to a concept.
+-   **FILTERS**: show places sorted by some kind of filter (only bars, only restaurants etc ...). Design + Code need to a concept.
 
-- **SHARE SINGLE PLACES**: suggestion for sharing (on FB, twitter, as link) only a single place on the map. Conceptually possible? we have to check
+-   **SHARE SINGLE PLACES**: suggestion for sharing (on FB, twitter, as link) only a single place on the map. Conceptually possible? we have to check
 
-- **HEADLINE**: on homepage/map set some kind of headline for recognising the website brand
+-   **HEADLINE**: on homepage/map set some kind of headline for recognising the website brand
