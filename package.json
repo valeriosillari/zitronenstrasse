@@ -1,7 +1,7 @@
 {
     "name": "zitronenstrasse",
     "description": "Zitronenstrasse | Romantic spots in Berlin.",
-    "version": "16.0.0",
+    "version": "17.0.0",
     "author": "Valerio Sillari <hello@zitronenstrasse.com>",
     "license": "GPL-3.0",
     "private": true,
@@ -44,9 +44,9 @@
         "@nuxtjs/eslint-config": "^6.0.1",
         "@nuxtjs/eslint-module": "^3.0.2",
         "eslint": "^7.29.0",
-        "eslint-plugin-prettier": "^3.1.4",
         "eslint-config-prettier": "^8.3.0",
         "eslint-plugin-nuxt": "^2.0.0",
+        "eslint-plugin-prettier": "^3.1.4",
         "eslint-plugin-vue": "^7.12.1",
         "prettier": "^2.3.2"
     }
