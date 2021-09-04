@@ -21,7 +21,7 @@
 <script>
 import CookieLaw from 'vue-cookie-law'
 export default {
-  components: { CookieLaw },
+    components: { CookieLaw },
 }
 </script>
 

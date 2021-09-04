@@ -83,12 +83,12 @@
 import packageJson from '../package.json'
 
 export default {
-  data() {
-    return {
-      dateYear: new Date().getFullYear(),
-      appVersion: packageJson.version,
-    }
-  },
+    data() {
+        return {
+            dateYear: new Date().getFullYear(),
+            appVersion: packageJson.version,
+        }
+    },
 }
 </script>
 

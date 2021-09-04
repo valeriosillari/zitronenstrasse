@@ -16,13 +16,13 @@
 
 <script>
 export default {
-  props: {
-    // created object with all info for details
-    thumb: {
-      type: Object,
-      required: true,
+    props: {
+        // created object with all info for details
+        thumb: {
+            type: Object,
+            required: true,
+        },
     },
-  },
 }
 </script>
 

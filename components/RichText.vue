@@ -1,26 +1,26 @@
 <template>
-  <div class="b-rich-text">
-    <div v-html="richtext"></div>
-  </div>
+    <div class="b-rich-text">
+        <div v-html="richtext"></div>
+    </div>
 </template>
 
 <script>
 export default {
-  props: {
-    text: {
-      type: Object,
-      default() {
-        return {}
-      },
+    props: {
+        text: {
+            type: Object,
+            default() {
+                return {}
+            },
+        },
     },
-  },
 
-  computed: {
-    // https://www.storyblok.com/faq/how-to-render-richtext-nuxt
-    richtext() {
-      return this.$storyapi.richTextResolver.render(this.text)
+    computed: {
+        // https://www.storyblok.com/faq/how-to-render-richtext-nuxt
+        richtext() {
+            return this.$storyapi.richTextResolver.render(this.text)
+        },
     },
-  },
 }
 </script>
 

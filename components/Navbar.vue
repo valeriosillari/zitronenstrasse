@@ -47,29 +47,29 @@
 
 <script>
 export default {
-  data() {
-    return {
-      isNavOpen: false,
-    }
-  },
-
-  methods: {
-    removeNavOverlay() {
-      setTimeout(() => {
-        this.isNavOpen = !this.isNavOpen
-      }, 350)
+    data() {
+        return {
+            isNavOpen: false,
+        }
     },
-  },
 
-  head() {
-    return {
-      // OVERRIDE the logic in vue config for body element.
-      // we have to ADD just one class
-      bodyAttrs: {
-        class: this.isNavOpen ? 'is-navigation-open-body' : '',
-      },
-    }
-  },
+    methods: {
+        removeNavOverlay() {
+            setTimeout(() => {
+                this.isNavOpen = !this.isNavOpen
+            }, 350)
+        },
+    },
+
+    head() {
+        return {
+            // OVERRIDE the logic in vue config for body element.
+            // we have to ADD just one class
+            bodyAttrs: {
+                class: this.isNavOpen ? 'is-navigation-open-body' : '',
+            },
+        }
+    },
 }
 </script>
 

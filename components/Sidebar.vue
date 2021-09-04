@@ -43,19 +43,19 @@
 
 <script>
 export default {
-  props: {
-    currentPlace: {
-      type: Object,
-      required: true,
+    props: {
+        currentPlace: {
+            type: Object,
+            required: true,
+        },
     },
-  },
 
-  methods: {
-    actionSidebarClose() {
-      // update store: sidebar is open
-      this.$store.commit('sidebar/isSidebarOpen', false)
+    methods: {
+        actionSidebarClose() {
+            // update store: sidebar is open
+            this.$store.commit('sidebar/isSidebarOpen', false)
+        },
     },
-  },
 }
 </script>
 

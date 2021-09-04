@@ -16,7 +16,7 @@ const colorStroke = 'FFC832'
 // for right dimension:
 // to the SVG add always Width and Height info
 const customMarker = {
-  url: `data:image/svg+xml;utf-8, \
+    url: `data:image/svg+xml;utf-8, \
   <svg width="25" height="30" viewBox="0 0 25 30" xml:space="preserve" xmlns="http://www.w3.org/2000/svg">
   <style type="text/css">
     .st0{fill:${hashTag}${colorFill};stroke:${hashTag}${colorStroke};stroke-width:3;stroke-miterlimit:10;}

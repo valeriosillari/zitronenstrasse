@@ -21,29 +21,29 @@
 
 <script>
 export default {
-  props: {
-    error: {
-      type: Object,
-      required: true,
-      default: () => ({
-        message: String,
-      }),
-    },
-  },
-
-  head() {
-    // Set Meta Tags for this Page
-    return {
-      title: `Error Page | ${this.$config.metaHeadData.titleShort}`,
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: `Error Page | ${this.$config.metaHeadData.description}`,
+    props: {
+        error: {
+            type: Object,
+            required: true,
+            default: () => ({
+                message: String,
+            }),
         },
-      ],
-    }
-  },
+    },
+
+    head() {
+        // Set Meta Tags for this Page
+        return {
+            title: `Error Page | ${this.$config.metaHeadData.titleShort}`,
+            meta: [
+                {
+                    hid: 'description',
+                    name: 'description',
+                    content: `Error Page | ${this.$config.metaHeadData.description}`,
+                },
+            ],
+        }
+    },
 }
 </script>
 

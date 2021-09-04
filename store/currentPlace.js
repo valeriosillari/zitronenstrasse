@@ -3,12 +3,12 @@
 
 // set default store object at app start
 export const state = () => ({
-  item: {},
+    item: {},
 })
 
 export const mutations = {
-  updateCurrentPlace(state, newUpdatePlace) {
-    // set store object with new update data (an object)
-    state.item = newUpdatePlace
-  },
+    updateCurrentPlace(state, newUpdatePlace) {
+        // set store object with new update data (an object)
+        state.item = newUpdatePlace
+    },
 }
