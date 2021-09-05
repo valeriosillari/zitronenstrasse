@@ -1,20 +1,13 @@
 <template lang="pug">
-    .map-main-wrapper.map-wrapper-sidebar-push(
-        v-bind:class="{ 'is-sidebar-open' : $store.state.sidebar.isOpen }"
-    )
-        GmapMap(
-            ref='mapRef'
-            :center='center'
-            :zoom='zoom'
-            :options='options'
-        )
+.map-main-wrapper.map-wrapper-sidebar-push(
+    v-bind:class='{ "is-sidebar-open": $store.state.sidebar.isOpen }'
+)
+    GmapMap(ref='mapRef', :center='center', :zoom='zoom', :options='options')
 
-        //- Sidebar
-        //- todo: set via store the close logid
-        .sidebar-animation
-            Sidebar(
-                :currentPlace='$store.state.currentPlace.item'
-            )
+    //- Sidebar
+    //- todo: set via store the close logid
+    .sidebar-animation
+        Sidebar(:currentPlace='$store.state.currentPlace.item')
 </template>
 
 <style lang="sass">

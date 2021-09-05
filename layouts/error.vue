@@ -1,22 +1,20 @@
 <template lang="pug">
-
-  //- main area
-  section.section.section-error
+//- main area
+section.section.section-error
     .container
+        //- div with css bg as svg | compass
+        .svg-icon-compass
 
-      //- div with css bg as svg | compass
-      .svg-icon-compass
+        h1.error-code
+            | {{ error.statusCode }}
 
-      h1.error-code
-        | {{ error.statusCode }}
+        //- here text textplain otherwise issue with storyblok. to re-check
+        h2.error-message
+            | This page could not be found
 
-      //- here text textplain otherwise issue with storyblok. to re-check
-      h2.error-message
-        | This page could not be found
-
-      p(v-if='error.statusCode === 404')
-        nuxt-link.error-link(to='/', title='Back to the home page')
-          | Back to the home page
+        p(v-if='error.statusCode === 404')
+            nuxt-link.error-link(to='/', title='Back to the home page')
+                | Back to the home page
 </template>
 
 <script>

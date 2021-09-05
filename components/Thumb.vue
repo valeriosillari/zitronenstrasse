@@ -1,17 +1,14 @@
 <template lang="pug">
-  .thumb-area
-
+.thumb-area
     //- you need IF for load page. So no errors
     img.thumb(
-      v-if='thumb.thumbPath'
-      :alt='thumb.title'
-      :src="`/places/${thumb.thumbPath}`"
+        v-if='thumb.thumbPath',
+        :alt='thumb.title',
+        :src='`/places/${thumb.thumbPath}`'
     )
 
-    p.credits(
-      v-if='thumb.credits'
-    )
-      | Credits: {{ thumb.credits }}
+    p.credits(v-if='thumb.credits')
+        | Credits: {{ thumb.credits }}
 </template>
 
 <script>

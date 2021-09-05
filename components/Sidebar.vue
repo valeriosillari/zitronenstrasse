@@ -1,44 +1,42 @@
 <template lang="pug">
-  aside.sidebar
+aside.sidebar
     //- btn area
     .clearfix
-      button.btn-close(
-        @click='actionSidebarClose'
-      )
+        button.btn-close(@click='actionSidebarClose')
 
     h2.title
-      | {{ currentPlace.title }}
+        | {{ currentPlace.title }}
 
     //- Thumb for Place
     Thumb(
-      :thumb='{title: currentPlace.title, thumbPath: currentPlace.thumb, credits: currentPlace.thumbCredits}'
+        :thumb='{ title: currentPlace.title, thumbPath: currentPlace.thumb, credits: currentPlace.thumbCredits }'
     )
 
     p.address(v-if='currentPlace.address')
-      span.info
-        | Address:
-      | {{ currentPlace.address }}
+        span.info
+            | Address:
+        | {{ currentPlace.address }}
 
     //- links area
-    span.info(v-if='(currentPlace.website) || (currentPlace.fbPage)')
-      | Links:
+    span.info(v-if='currentPlace.website || currentPlace.fbPage')
+        | Links:
 
     .action-area
-      p.line(v-if='currentPlace.website')
-        a.link.link-website(
-          :href='currentPlace.website',
-          :title="currentPlace.title + ' | Official Website'",
-          target='_blank'
-        )
-          | Official Website
+        p.line(v-if='currentPlace.website')
+            a.link.link-website(
+                :href='currentPlace.website',
+                :title='currentPlace.title + " | Official Website"',
+                target='_blank'
+            )
+                | Official Website
 
-      p.line(v-if='currentPlace.fbPage')
-        a.link.link-facebook(
-          :href='currentPlace.fbPage',
-          :title="currentPlace.title + ' | Facebook Page'",
-          target='_blank'
-        )
-          | Facebook Page
+        p.line(v-if='currentPlace.fbPage')
+            a.link.link-facebook(
+                :href='currentPlace.fbPage',
+                :title='currentPlace.title + " | Facebook Page"',
+                target='_blank'
+            )
+                | Facebook Page
 </template>
 
 <script>

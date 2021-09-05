@@ -1,17 +1,21 @@
 <template lang="pug">
-  .no-js-fallback
+.no-js-fallback
     .content
-      p.h6
-        | Ops! 😮 😮 😮
-      p
-        | Looks like you have Javascript disabled.
-      p
-        | You can also continue watching the website without Javascript, but you will lose a lot of fun ...
-      p
-        | To enable JS follow the info
-        |
-        a(href='https://enable-javascript.com/', target='_blank', title='Enable Javascript')
-          | here
+        p.h6
+            | Ops! 😮 😮 😮
+        p
+            | Looks like you have Javascript disabled.
+        p
+            | You can also continue watching the website without Javascript, but you will lose a lot of fun ...
+        p
+            | To enable JS follow the info
+            |
+            a(
+                href='https://enable-javascript.com/',
+                target='_blank',
+                title='Enable Javascript'
+            )
+                | here
 </template>
 
 <style lang="sass">
