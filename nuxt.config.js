@@ -9,7 +9,7 @@ const headTitle = ` ${titleShort} | Romantic Spots in Berlin.`
 
 // used in head description in all the pages
 const headDescription =
-    'A mapping project to collect and share romantic spots in Berlin.'
+    'A mapping project to collect and share romantic spots in Berlin. Bars, cafes, restaurants, bistros, parks and some little hidden places around the city.'
 
 // the URL set as variables: for redirect DNS
 // with httpS: in case redirect take care of it

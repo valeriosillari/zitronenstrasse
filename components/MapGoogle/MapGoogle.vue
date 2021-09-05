@@ -2,15 +2,6 @@
     .map-main-wrapper.map-wrapper-sidebar-push(
         v-bind:class="{ 'is-sidebar-open' : $store.state.sidebar.isOpen }"
     )
-        //- hidden heading for seo.
-        //- inside component for design reasons (I'm lazy)
-        h1.hidden-text
-            | Zitronenstrasse
-        p.hidden-text
-            | Zitronenstrasse is a mapping project to collect and share romantic spots in Berlin.
-            br
-            | Bars, cafes, restaurants, bistros, parks and some little hidden places around the city
-
         GmapMap(
             ref='mapRef'
             :center='center'
@@ -29,10 +20,6 @@
 <style lang="sass">
 .map-main-wrapper
   height: 100%
-
-// text for seo
-.hidden-text
-  display: none
 
 // WRAPPER classes
 .map-wrapper-sidebar-push
