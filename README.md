@@ -45,8 +45,7 @@ For a list of required keys with right name, check the file in root folder calle
 
 ## TODO
 
-#### GOOGLE TAGMANAGER
-
+-   no-js class crash at navbar menu click !!!
 -   update to version 4 (gtag)
 
 #### STORYBLOK
