@@ -1,8 +1,8 @@
 <template lang="pug">
-  //- Multi-Line Array Literal
-  //- https://github.com/pugjs/pug/issues/502
-  //- answer by: ForbesLindesay commented on 23 Apr 2014
-  -
+//- Multi-Line Array Literal
+//- https://github.com/pugjs/pug/issues/502
+//- answer by: ForbesLindesay commented on 23 Apr 2014
+-
     var naviItems = [
       {
         title: 'Home',
@@ -18,31 +18,26 @@
       }
     ];
 
-  nav.navigation(
-    role='navigation'
-    v-bind:class="{ 'is-nav-open' : isNavOpen}"
-  )
-
+nav.navigation(role='navigation', v-bind:class='{ "is-nav-open": isNavOpen }')
     nuxt-link.logo-link(to='/', title='Home')
-      .logo
+        .logo
 
     .btn-menu(v-on:click='isNavOpen = !isNavOpen')
-      span.btn-menu-line.top
-      span.btn-menu-line.middle
-      span.btn-menu-line.bottom
+        span.btn-menu-line.top
+        span.btn-menu-line.middle
+        span.btn-menu-line.bottom
 
     .overlay
-      nav.overlay-menu
-        ul.items
-          each item in naviItems
-
-            li.item
-              nuxt-link.item-link(
-                v-on:click.native='removeNavOverlay()'
-                title=item.title
-                to=item.link
-              )
-                =item.title
+        nav.overlay-menu
+            ul.items
+                each item in naviItems
+                    li.item
+                        nuxt-link.item-link(
+                            v-on:click.native='removeNavOverlay()',
+                            title=item.title,
+                            to=item.link
+                        )
+                            = item.title
 </template>
 
 <script>

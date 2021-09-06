@@ -1,82 +1,78 @@
 <template lang="pug">
-  footer.footer
+footer.footer
     .container
-      .row.align-items-center
-        .col-10.col-sm-7.col-md-8.col-left
-          p.text
-            | Zitronenstrasse
-            |
-            | {{ dateYear }}
-            |
-            | |
-            |
-            | v{{ appVersion }}
+        .row.align-items-center
+            .col-10.col-sm-7.col-md-8.col-left
+                p.text
+                    | Zitronenstrasse
+                    |
+                    | {{ dateYear }}
+                    |
+                    | |
+                    |
+                    | v{{ appVersion }}
 
-          p.text
-            nuxt-link.item-link(
-              to='/privacy-policy'
-              title='Privacy Policy'
-            )
-              | Privacy Policy
-            |
-            | |
-            |
-            | A project by
-            |
-            a.item-link(
-              href='http://www.valeriosillari.com/'
-              title='Valerio Sillari'
-              target='_blank'
-            )
-              | Valerio Sillari
+                p.text
+                    nuxt-link.item-link(
+                        to='/privacy-policy',
+                        title='Privacy Policy'
+                    )
+                        | Privacy Policy
+                    |
+                    | |
+                    |
+                    | A project by
+                    |
+                    a.item-link(
+                        href='http://www.valeriosillari.com/',
+                        title='Valerio Sillari',
+                        target='_blank'
+                    )
+                        | Valerio Sillari
 
-        .col-sm-5.col-md-4.col-right
-          ul.item-icons
-            //- Facebook
-            li.item-icon
-              a.item-social(
-                href='https://www.facebook.com/zitronenstrasse/'
-                title='Zitronenstrasse on Facebook'
-                target='_blank'
-              )
-                font-awesome-icon(
-                  class='icon-svg'
-                  :icon="['fab', 'facebook-f']"
-                )
+            .col-sm-5.col-md-4.col-right
+                ul.item-icons
+                    //- Facebook
+                    li.item-icon
+                        a.item-social(
+                            href='https://www.facebook.com/zitronenstrasse/',
+                            title='Zitronenstrasse on Facebook',
+                            target='_blank'
+                        )
+                            font-awesome-icon.icon-svg(
+                                :icon='["fab", "facebook-f"]'
+                            )
 
-            //- Twitter
-            li.item-icon
-              a.item-social(
-                href='https://twitter.com/zitronenstrasse'
-                title='Zitronenstrasse on Twitter'
-                target='_blank'
-              )
-                font-awesome-icon(
-                  class='icon-svg'
-                  :icon="['fab', 'twitter']"
-                )
-            //- Spotify
-            li.item-icon
-              a.item-social(
-                href='https://open.spotify.com/user/stellavalerio/playlist/4J2AU9XfvfJOgc0MBE1WlX?si=xoXk0YnDRWGlmgtR99qXrw'
-                title='Zitronenstrasse Playlist on Spotify'
-                target='_blank'
-              )
-                font-awesome-icon(
-                  class='icon-svg'
-                  :icon="['fab', 'spotify']"
-                )
-            //- Github
-            li.item-icon
-              a.item-social(
-                href='https://github.com/valeriosillari/zitronenstrasse'
-                title='Zitronenstrasse on Github'
-                target='_blank'
-              )
-                font-awesome-icon(
-                  class='icon-svg'
-                  :icon="['fab', 'github']"
-                )
+                    //- Twitter
+                    li.item-icon
+                        a.item-social(
+                            href='https://twitter.com/zitronenstrasse',
+                            title='Zitronenstrasse on Twitter',
+                            target='_blank'
+                        )
+                            font-awesome-icon.icon-svg(
+                                :icon='["fab", "twitter"]'
+                            )
+                    //- Spotify
+                    li.item-icon
+                        a.item-social(
+                            href='https://open.spotify.com/user/stellavalerio/playlist/4J2AU9XfvfJOgc0MBE1WlX?si=xoXk0YnDRWGlmgtR99qXrw',
+                            title='Zitronenstrasse Playlist on Spotify',
+                            target='_blank'
+                        )
+                            font-awesome-icon.icon-svg(
+                                :icon='["fab", "spotify"]'
+                            )
+                    //- Github
+                    li.item-icon
+                        a.item-social(
+                            href='https://github.com/valeriosillari/zitronenstrasse',
+                            title='Zitronenstrasse on Github',
+                            target='_blank'
+                        )
+                            font-awesome-icon.icon-svg(
+                                :icon='["fab", "github"]'
+                            )
 </template>
 
 <script>
