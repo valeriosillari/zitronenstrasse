@@ -6,6 +6,3 @@ node_modules/
 
 # dist file at generate
 dist/
-
-# ignore it, small conflict with prettier about indentation (nuxt chnage it at nuxt dev)
-static/sw.js
