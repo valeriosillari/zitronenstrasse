@@ -45,7 +45,7 @@ export default {
     data() {
         return {
             isNavOpen: false,
-            cssVars: `--navigation-item-number: 4`,
+            cssVars: `--navigation-item-number: 3`,
         }
     },
 
@@ -157,7 +157,7 @@ export default {
   // LI
   .item
     display: block
-    height: calc(100% / 3)
+    height: calc(100% / var(--navigation-item-number))
     position: relative
     opacity: 0
     display: flex
