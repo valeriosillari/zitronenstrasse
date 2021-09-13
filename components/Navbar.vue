@@ -31,7 +31,7 @@ nav.navigation(role='navigation', v-bind:class='{ "is-nav-open": isNavOpen }')
         nav.overlay-menu
             ul.items
                 each item in naviItems
-                    li.item
+                    li.item(:style='cssVars')
                         nuxt-link.item-link(
                             v-on:click.native='removeNavOverlay()',
                             title=item.title,
@@ -45,6 +45,7 @@ export default {
     data() {
         return {
             isNavOpen: false,
+            cssVars: `--navigation-item-number: 4`,
         }
     },
 
