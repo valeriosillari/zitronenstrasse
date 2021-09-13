@@ -45,8 +45,15 @@ export default {
     data() {
         return {
             isNavOpen: false,
-            cssVars: `--navigation-item-number: 3`,
         }
+    },
+
+    computed: {
+        cssVars() {
+            return {
+                '--navigation-item-number': 4,
+            }
+        },
     },
 
     methods: {
