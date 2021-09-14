@@ -11,6 +11,8 @@ nav.navigation(role='navigation', v-bind:class='{ "is-nav-open": isNavOpen }')
     .overlay
         nav.overlay-menu
             ul.items
+                //- css var logi to pass dynamic vars from vue to css
+                //- https://www.telerik.com/blogs/passing-variables-to-css-on-a-vue-component
                 li.item(v-for='(item, index) in naviItems', :style='cssVars')
                     nuxt-link.item-link(
                         v-on:click.native='removeNavOverlay()',
