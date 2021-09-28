@@ -26,7 +26,6 @@ nav.navigation(role='navigation', v-bind:class='{ "is-nav-open": isNavOpen }')
 export default {
     data() {
         return {
-            isNavOpen: false,
             naviItems: [
                 {
                     title: 'Home',
@@ -45,6 +44,10 @@ export default {
     },
 
     computed: {
+        isNavOpen() {
+            return this.$store.state.navigation.isOpen
+        },
+
         cssVars() {
             return {
                 '--navigation-item-number': this.naviItems.length,
@@ -54,7 +57,7 @@ export default {
 
     methods: {
         handleClickNavigation() {
-            this.isNavOpen = !this.isNavOpen
+            this.$store.commit('navigation/toggleOpenState')
         },
     },
 
