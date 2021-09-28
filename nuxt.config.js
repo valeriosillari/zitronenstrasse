@@ -174,6 +174,7 @@ export default {
             const token = process.env.ENV_ZITRONENSTRASSE_STORYBLOK_API_KEY
             // when deploy, any branch, get only published storyblok content
             const version = 'published'
+            // TODO: ignore?
             const toIgnore = ['home', 'en/settings']
             // other routes that are not in Storyblok with their slug.
             const routes = ['/'] // adds / directly
