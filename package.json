@@ -24,7 +24,7 @@
         "@nuxtjs/sitemap": "^2.0.1",
         "@nuxtjs/style-resources": "^1.0.0",
         "axios": "^0.21.0",
-        "bootstrap": "^4.3.1",
+        "bootstrap": "^5.1.1",
         "breakpoint-sass": "^2.7.1",
         "core-js": "^3.15.1",
         "hover.css": "^2.3.2",
