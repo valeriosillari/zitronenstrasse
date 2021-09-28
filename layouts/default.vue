@@ -2,6 +2,8 @@
 .layout-wrapper
     Navbar
 
+    Overlay
+
     nuxt(role='main')
 
     Footer
