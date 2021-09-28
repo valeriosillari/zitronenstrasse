@@ -31,11 +31,6 @@ export default {
     color: $color_text_accent
     font-weight: 400
 
-  a
-    text-decoration: underline
-    &:hover
-      text-decoration: underline
-
   h2
     margin-top: 60px
 

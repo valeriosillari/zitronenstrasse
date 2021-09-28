@@ -176,6 +176,7 @@ export default {
     font-family: $font_family_secondary
     font-size: 6rem
     line-height: 1.2
+    text-decoration: none
     +breakpoint($breakpoint_sm)
       font-size: 11rem
       line-height: 1

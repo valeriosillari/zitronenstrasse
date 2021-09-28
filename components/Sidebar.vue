@@ -81,7 +81,6 @@ export default {
   color: $color_sidebar_link
   &:hover
     color: $color_sidebar_link_hvr
-    text-decoration: underline
 
 .btn-close
   position: relative
