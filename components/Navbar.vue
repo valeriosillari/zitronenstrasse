@@ -3,7 +3,7 @@ nav.navigation(role='navigation', v-bind:class='{ "is-nav-open": isNavOpen }')
     nuxt-link.logo-link(to='/', title='Home')
         .logo
 
-    .btn-menu(v-on:click='isNavOpen = !isNavOpen')
+    .btn-menu(@click='handleClickNavigation()')
         span.btn-menu-line.top
         span.btn-menu-line.middle
         span.btn-menu-line.bottom
@@ -15,7 +15,7 @@ nav.navigation(role='navigation', v-bind:class='{ "is-nav-open": isNavOpen }')
                 //- https://www.telerik.com/blogs/passing-variables-to-css-on-a-vue-component
                 li.item(v-for='(item, index) in naviItems', :style='cssVars')
                     nuxt-link.item-link(
-                        v-on:click.native='removeNavOverlay()',
+                        @click='handleClickNavigation()',
                         :title='item.title',
                         :to='item.link'
                     )
@@ -53,10 +53,8 @@ export default {
     },
 
     methods: {
-        removeNavOverlay() {
-            setTimeout(() => {
-                this.isNavOpen = !this.isNavOpen
-            }, 350)
+        handleClickNavigation() {
+            this.isNavOpen = !this.isNavOpen
         },
     },
 
