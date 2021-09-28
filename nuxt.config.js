@@ -169,42 +169,31 @@ export default {
         // set error page for generated static website
         fallback: '404.html',
 
-        // Storyblok dynamic routes: Using Links API
-        routes: (callback) => {
+        // basic logic set and customised, from this tutorial on youtube:
+        // https://www.youtube.com/watch?v=JHCKab2oS4s&ab_channel=Academind
+        // final tutorial code as reference: https://github.com/academind/nuxt-storyblok-complete-blog
+        routes: () => {
+            // storyblok project token
             const token = process.env.ENV_ZITRONENSTRASSE_STORYBLOK_API_KEY
             // when deploy, any branch, get only published storyblok content
             const version = 'published'
-            // TODO: ignore?
-            const toIgnore = ['home', 'en/settings']
-            // other routes that are not in Storyblok with their slug.
-            const routes = ['/'] // adds / directly
-            let cacheVersion = 0
+            // cache logic
+            const cache = Math.floor(Date.now() / 1e3)
 
-            // Load space and receive latest cache version key to improve performance
-            axios
+            return axios
                 .get(
-                    `https://api.storyblok.com/v1/cdn/spaces/me?token=${token}`
+                    `https://api.storyblok.com/v1/cdn/stories?version=${version}&token=${token}&cv=${cache}`
                 )
-                .then((spaceRes) => {
-                    // timestamp of latest publish
-                    cacheVersion = spaceRes.data.space.version
+                .then((res) => {
+                    // array of all storyblok pages: set ana array with full slug of all of them dynamically
+                    const storyblockPages = res.data.stories.map(
+                        (singlePage) => singlePage.full_slug
+                    )
 
-                    // Call for all Links using the Links API: https://www.storyblok.com/docs/Delivery-Api/Links
-                    axios
-                        .get(
-                            `https://api.storyblok.com/v1/cdn/links?token=${token}&version=${version}&cv=${cacheVersion}&per_page=100`
-                        )
-                        .then((res) => {
-                            Object.keys(res.data.links).forEach((key) => {
-                                if (
-                                    !toIgnore.includes(res.data.links[key].slug)
-                                ) {
-                                    routes.push('/' + res.data.links[key].slug)
-                                }
-                            })
+                    console.log('======== storyblockPages GENERATED ==========')
+                    console.log(storyblockPages)
 
-                            callback(null, routes)
-                        })
+                    return ['/', ...storyblockPages]
                 })
         },
     },
