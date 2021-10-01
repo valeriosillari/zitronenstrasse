@@ -6,11 +6,7 @@
             //- https://www.telerik.com/blogs/passing-variables-to-css-on-a-vue-component
             li.item(v-for='(item, index) in naviItems', :style='cssVars')
                 //- link to another page + trigger also overlay removal
-                nuxt-link.item-link(
-                    @click='handleClickNavigation()',
-                    :title='item.title',
-                    :to='item.link'
-                )
+                nuxt-link.item-link(:title='item.title', :to='item.link')
                     | {{ item.title }}
 </template>
 
@@ -69,11 +65,25 @@ export default {
 
 .overlay
   background: green
+  bottom: -100%
+  // 100% - header height?
+  height: 100%
+  width: 100%
+  overflow: hidden
+  transition: all .75s ease-in-out
+  position: absolute
+  display: flex
+  align-items: center
+  justify-content: center
+  z-index: 10
+
+
+  &.is-overlay-show
+    background: #0f0
+    bottom: 0
 
   .overlay-menu
     position: relative
-    height: 85%
-    top: 50%
     font-size: 80px
     text-align: center
 
@@ -84,18 +94,13 @@ export default {
     margin: 0 auto
     display: inline-block
     position: relative
-    width: 100%
-    height: 100%
 
   // LI
   .item
     display: block
-    height: calc(100% / var(--navigation-item-number))
+    // height: calc(100% / var(--navigation-item-number))
     position: relative
     display: flex
     align-items: center
     justify-content: center
-
-  &.is-overlay-show
-    background: #0f0
 </style>
