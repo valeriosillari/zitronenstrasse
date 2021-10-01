@@ -49,15 +49,15 @@ export default {
         },
     },
 
-    // head() {
-    //     return {
-    //         // OVERRIDE the logic in vue config for body element.
-    //         // we have to ADD just one class
-    //         bodyAttrs: {
-    //             class: this.isNavOpen ? 'is-navigation-open-body' : '',
-    //         },
-    //     }
-    // },
+    head() {
+        return {
+            // OVERRIDE the logic in vue config for body element.
+            // we have to ADD just one class
+            bodyAttrs: {
+                class: this.isNavOpen ? 'is-navigation-open-body' : '',
+            },
+        }
+    },
 }
 </script>
 
@@ -66,21 +66,22 @@ export default {
 .overlay
   background: green
   bottom: -100%
-  // 100% - header height?
-  height: 100%
   width: 100%
   overflow: hidden
-  transition: all .75s ease-in-out
-  position: absolute
+  transition: all .35s ease-in-out
   display: flex
   align-items: center
   justify-content: center
-  z-index: 10
+  height: 0
+  position: absolute
 
 
   &.is-overlay-show
+    z-index: 10
     background: #0f0
     bottom: 0
+    // 100% - header height?
+    height: 100%
 
   .overlay-menu
     position: relative

@@ -65,6 +65,10 @@ a
   // padding top for fixed header alignment
   padding: 60px 0
 
+
+.is-navigation-open-body
+  overflow: hidden
+
 // ============
 // page transition (vue transition)
 .page-transition-enter
