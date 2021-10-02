@@ -61,6 +61,7 @@ export default {
 </script>
 
 <style lang="sass">
+// keyframe move to a general file
 @keyframes fadeInRight
     0%
         opacity: 0
@@ -74,7 +75,7 @@ export default {
     bottom: -100%
     width: 100%
     overflow: hidden
-    transition: all .35s ease-in-out
+    transition: all .45s ease-in-out
     display: flex
     align-items: center
     justify-content: center
