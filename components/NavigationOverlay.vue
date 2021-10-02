@@ -77,8 +77,8 @@ export default {
 
     &.is-overlay-show
         bottom: 0
-        // 100% - header height?
-        height: 100%
+        // 100% - header height
+        height: calc(100% - #{$navi_min_height})
 
     // UL
     .items
