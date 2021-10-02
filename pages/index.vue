@@ -11,5 +11,12 @@ export default {
             }
         },
     },
+
+    mounted() {
+        if (this.$store.state.navigation.isOpen) {
+            alert('OPEN | Page slug')
+            this.$store.commit('navigation/toggleOpenState')
+        }
+    },
 }
 </script>
