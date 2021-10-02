@@ -1,6 +1,6 @@
 <template lang="pug">
 .layout-wrapper
-    Navbar
+    Header
 
     Overlay
 
