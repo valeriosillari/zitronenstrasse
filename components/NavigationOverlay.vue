@@ -51,7 +51,7 @@ export default {
     head() {
         return {
             // OVERRIDE the logic in vue config for body element.
-            // we have to ADD just one class
+            // we have to ADD just one class to body
             bodyAttrs: {
                 class: this.isNavOpen ? 'is-navigation-open-body' : '',
             },

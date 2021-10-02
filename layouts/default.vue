@@ -49,6 +49,9 @@
 // @import '../node_modules/bootstrap/scss/helpers'
 // @import '../node_modules/bootstrap/utilities/api'
 
+body
+  &.is-navigation-open-body
+    overflow: hidden
 
 // need it for map area spacing and footer
 .layout-wrapper
@@ -65,9 +68,6 @@ a
   // padding top for fixed header alignment
   padding: 60px 0
 
-.is-navigation-open-body
-  overflow: hidden
-
 // ============
 // page transition (vue transition)
 .page-transition-active,
@@ -81,14 +81,3 @@ a
 .page-transition-leave-to
   opacity: 0
 </style>
-
-<script>
-export default {
-    mounted() {
-        if (this.$store.state.navigation.isOpen) {
-            alert('OPEN | LAYOUT defula')
-            this.$store.commit('navigation/toggleOpenState')
-        }
-    },
-}
-</script>
