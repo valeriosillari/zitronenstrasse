@@ -1,5 +1,5 @@
 <template lang="pug">
-.overlay(v-bind:class='{ "is-overlay-show": isNavOpen }')
+.overlay(:class='{ "is-overlay-show": isNavOpen }')
     nav.overlay-menu
         ul.items
             //- css var logi to pass dynamic vars from vue to css
