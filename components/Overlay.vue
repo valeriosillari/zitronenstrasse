@@ -64,7 +64,7 @@ export default {
 <style lang="sass">
 
 .overlay
-    background: green
+    background: $color_navigation_overlay_bg
     bottom: -100%
     width: 100%
     overflow: hidden
@@ -76,9 +76,7 @@ export default {
     position: absolute
     z-index: 10
 
-
     &.is-overlay-show
-        background: #0f0
         bottom: 0
         // 100% - header height?
         height: 100%
