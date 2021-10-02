@@ -38,8 +38,8 @@ export default {
     // related to the map height trick
     height: $navi_min_height
     +paddingBoxDefaut()
-    background: $color_navigation_bg
-    border-bottom: 1px solid $color_navigation_border
+    background: $color_header_bg
+    border-bottom: 1px solid $color_header_border
 
     .logo
         height: 45px
@@ -57,7 +57,7 @@ export default {
     transition: opacity .25s ease-in-out
 
     .btn-menu-line
-        background: $color_navigation_btn
+        background: $color_header_btn
         border: none
         height: 5px
         width: 100%
@@ -75,7 +75,7 @@ export default {
 
     &:hover
         .btn-menu-line
-            background: $color_navigation_btn_hvr
+            background: $color_header_btn_hvr
 
     // nav is open! see overlay
     &.is-status-close

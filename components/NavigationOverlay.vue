@@ -122,6 +122,11 @@ export default {
                 &:focus
                     color: $color_navigation_overlay_text_hvr
 
+                &.nuxt-link-exact-active
+                    color: $color_navigation_overlay_link_exact_active
+                    pointer-events: none
+
+
     &.is-overlay-show
         bottom: 0
         // 100% - header height
