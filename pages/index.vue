@@ -13,8 +13,8 @@ export default {
     },
 
     mounted() {
+        // trick for removing nav overlay if coming on page from error page (by navigation link/logic)
         if (this.$store.state.navigation.isOpen) {
-            alert('OPEN | Page slug')
             this.$store.commit('navigation/toggleOpenState')
         }
     },
