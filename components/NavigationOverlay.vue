@@ -61,6 +61,13 @@ export default {
 </script>
 
 <style lang="sass">
+@keyframes fadeInRight
+    0%
+        opacity: 0
+        left: 20%
+    100%
+        opacity: 1
+        left: 0
 
 .b-navigation-overlay
     background: $color_navigation_overlay_bg
@@ -75,11 +82,6 @@ export default {
     position: absolute
     z-index: 10
 
-    &.is-overlay-show
-        bottom: 0
-        // 100% - header height
-        height: calc(100% - #{$navi_min_height})
-
     // UL
     .items
         list-style: none
@@ -89,13 +91,51 @@ export default {
         position: relative
         font-size: 80px
         text-align: center
+        height: 100%
 
         // LI
         .item
             display: block
-            // height: calc(100% / var(--navigation-item-number))
+            height: calc(100% / var(--navigation-item-number))
             position: relative
+            opacity: 0
             display: flex
             align-items: center
             justify-content: center
+
+            // <a> tag
+            .item-link
+                display: block
+                overflow: hidden
+                color: $color_navigation_overlay_text
+                +underline-from-center()
+                font-family: $font_family_secondary
+                font-size: 6rem
+                line-height: 1.2
+                text-decoration: none
+                +breakpoint($breakpoint_sm)
+                font-size: 11rem
+                line-height: 1
+
+                &:hover,
+                &:focus
+                    color: $color_navigation_overlay_text_hvr
+
+    &.is-overlay-show
+        bottom: 0
+        // 100% - header height
+        height: calc(100% - #{$navi_min_height})
+
+        .items
+            .item
+                opacity 1
+                animation: fadeInRight .5s ease forwards
+                animation-delay: .35s
+
+                &:nth-of-type(2)
+                    animation-delay: .4s
+                &:nth-of-type(3)
+                    animation-delay: .45s
+                &:nth-of-type(4)
+                    animation-delay: .5s
 </style>
