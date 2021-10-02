@@ -74,7 +74,8 @@ a
 .page-transition-leave-active
   transition-property: opacity
   transition-timing-function: ease-in-out
-  transition-duration: 500ms
+  transition-duration: .5s
+  transition-delay: .25s
 
 .page-transition-enter,
 .page-transition-leave-to
