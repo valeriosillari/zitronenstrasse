@@ -1,13 +1,12 @@
 <template lang="pug">
-.overlay(:class='{ "is-overlay-show": isNavOpen }')
-    nav.overlay-menu
-        ul.items
-            //- css var logi to pass dynamic vars from vue to css
-            //- https://www.telerik.com/blogs/passing-variables-to-css-on-a-vue-component
-            li.item(v-for='(item, index) in naviItems', :style='cssVars')
-                //- link to another page + trigger also overlay removal
-                nuxt-link.item-link(:title='item.title', :to='item.link')
-                    | {{ item.title }}
+nav.b-navigation-overlay(:class='{ "is-overlay-show": isNavOpen }')
+    ul.items
+        //- css var logi to pass dynamic vars from vue to css
+        //- https://www.telerik.com/blogs/passing-variables-to-css-on-a-vue-component
+        li.item(v-for='(item, index) in naviItems', :style='cssVars')
+            //- link to another page + trigger also overlay removal
+            nuxt-link.item-link(:title='item.title', :to='item.link')
+                | {{ item.title }}
 </template>
 
 <script>
@@ -63,7 +62,7 @@ export default {
 
 <style lang="sass">
 
-.overlay
+.b-navigation-overlay
     background: $color_navigation_overlay_bg
     bottom: -100%
     width: 100%
@@ -81,11 +80,6 @@ export default {
         // 100% - header height?
         height: 100%
 
-    .overlay-menu
-        position: relative
-        font-size: 80px
-        text-align: center
-
     // UL
     .items
         list-style: none
@@ -93,13 +87,15 @@ export default {
         margin: 0 auto
         display: inline-block
         position: relative
+        font-size: 80px
+        text-align: center
 
-    // LI
-    .item
-        display: block
-        // height: calc(100% / var(--navigation-item-number))
-        position: relative
-        display: flex
-        align-items: center
-        justify-content: center
+        // LI
+        .item
+            display: block
+            // height: calc(100% / var(--navigation-item-number))
+            position: relative
+            display: flex
+            align-items: center
+            justify-content: center
 </style>

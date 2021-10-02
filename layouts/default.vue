@@ -2,7 +2,7 @@
 .layout-wrapper
     Header
 
-    Overlay
+    NavigationOverlay
 
     nuxt(role='main')
 
