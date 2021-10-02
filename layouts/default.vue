@@ -81,3 +81,14 @@ a
 .page-transition-leave-to
   opacity: 0
 </style>
+
+<script>
+export default {
+    mounted() {
+        if (this.$store.state.navigation.isOpen) {
+            alert('OPEN | LAYOUT defula')
+            this.$store.commit('navigation/toggleOpenState')
+        }
+    },
+}
+</script>
