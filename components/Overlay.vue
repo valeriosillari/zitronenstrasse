@@ -64,44 +64,44 @@ export default {
 <style lang="sass">
 
 .overlay
-  background: green
-  bottom: -100%
-  width: 100%
-  overflow: hidden
-  transition: all .35s ease-in-out
-  display: flex
-  align-items: center
-  justify-content: center
-  height: 0
-  position: absolute
-
-
-  &.is-overlay-show
-    z-index: 10
-    background: #0f0
-    bottom: 0
-    // 100% - header height?
-    height: 100%
-
-  .overlay-menu
-    position: relative
-    font-size: 80px
-    text-align: center
-
-  // UL
-  .items
-    list-style: none
-    padding: 0
-    margin: 0 auto
-    display: inline-block
-    position: relative
-
-  // LI
-  .item
-    display: block
-    // height: calc(100% / var(--navigation-item-number))
-    position: relative
+    background: green
+    bottom: -100%
+    width: 100%
+    overflow: hidden
+    transition: all .35s ease-in-out
     display: flex
     align-items: center
     justify-content: center
+    height: 0
+    position: absolute
+    z-index: 10
+
+
+    &.is-overlay-show
+        background: #0f0
+        bottom: 0
+        // 100% - header height?
+        height: 100%
+
+    .overlay-menu
+        position: relative
+        font-size: 80px
+        text-align: center
+
+    // UL
+    .items
+        list-style: none
+        padding: 0
+        margin: 0 auto
+        display: inline-block
+        position: relative
+
+    // LI
+    .item
+        display: block
+        // height: calc(100% / var(--navigation-item-number))
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: center
 </style>

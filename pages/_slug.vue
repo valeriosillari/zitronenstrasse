@@ -12,6 +12,14 @@
 
 <script>
 export default {
+    transition: {
+        beforeLeave() {
+            if (this.$store.state.navigation.isOpen) {
+                this.$store.commit('navigation/toggleOpenState')
+            }
+        },
+    },
+
     asyncData(context) {
         // Load the JSON from the API
         return context.app.$storyapi
@@ -84,12 +92,6 @@ export default {
                     content: metaTitle,
                 },
             ],
-        }
-    },
-
-    mounted() {
-        if (this.$store.state.navigation.isOpen) {
-            this.$store.commit('navigation/toggleOpenState')
         }
     },
 }

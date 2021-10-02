@@ -4,10 +4,12 @@ MapGoogle
 
 <script>
 export default {
-    mounted() {
-        if (this.$store.state.navigation.isOpen) {
-            this.$store.commit('navigation/toggleOpenState')
-        }
+    transition: {
+        beforeLeave() {
+            if (this.$store.state.navigation.isOpen) {
+                this.$store.commit('navigation/toggleOpenState')
+            }
+        },
     },
 }
 </script>
