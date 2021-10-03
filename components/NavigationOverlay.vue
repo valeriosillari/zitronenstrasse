@@ -90,7 +90,6 @@ export default {
         margin: 0 auto
         display: inline-block
         position: relative
-        font-size: 80px
         text-align: center
         height: 100%
 
@@ -114,9 +113,6 @@ export default {
                 font-size: 6rem
                 line-height: 1.2
                 text-decoration: none
-                +breakpoint($breakpoint_sm)
-                font-size: 11rem
-                line-height: 1
 
                 &:hover,
                 &:focus
@@ -144,4 +140,14 @@ export default {
                     animation-delay: .45s
                 &:nth-of-type(4)
                     animation-delay: .5s
+
+    +breakpoint($breakpoint_sm)
+        // UL
+        .items
+            // LI
+            .item
+                // <a> tag
+                .item-link
+                    font-size: 11rem
+                    line-height: 1
 </style>
