@@ -1,5 +1,7 @@
 <template lang="pug">
 .layout-wrapper
+    NoJsFallback
+
     Header
 
     NavigationOverlay
@@ -7,8 +9,6 @@
     nuxt(role='main')
 
     Footer
-
-    NoJsFallback
 
     PrivacyPolicyBanner
 </template>
