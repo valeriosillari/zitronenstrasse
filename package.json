@@ -13,6 +13,7 @@
         "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
         "lint": "yarn lint:js",
         "prettier": "prettier --write '**/*.{css,scss,js,vue,html,pug}'",
+        "test": "jest",
         "deploy": "yarn run lint && yarn generate"
     },
     "dependencies": {
@@ -42,13 +43,18 @@
         "@babel/eslint-parser": "^7.14.7",
         "@nuxtjs/eslint-config": "^6.0.1",
         "@nuxtjs/eslint-module": "^3.0.2",
+        "@vue/test-utils": "^1.2.1",
         "@prettier/plugin-pug": "^1.16.5",
+        "babel-core": "7.0.0-bridge.0",
+        "babel-jest": "^27.0.5",
         "eslint": "^7.29.0",
         "eslint-config-prettier": "^8.3.0",
         "eslint-plugin-nuxt": "^2.0.0",
         "eslint-plugin-prettier": "^3.1.4",
         "eslint-plugin-vue": "^7.12.1",
+        "jest": "^27.0.5",
         "prettier": "^2.3.2",
-        "storyblok-nuxt": "^2.0.1"
+        "storyblok-nuxt": "^2.0.1",
+        "vue-jest": "^3.0.4"
     }
 }
