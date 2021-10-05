@@ -29,8 +29,33 @@
     opacity: 1
 
 @keyframes cssAnimation
-  to
-    height: auto
+  transform: translateY(0%)
+
+  // 0%
+  //   opacity: 0
+  // 66%
+  //   opacity: 0
+  // 100%
+  //   opacity: 1
+  // to
+  //   height: auto
+
+
+// TO SET DYNAMICALLY for each viewport?
+$box_alert_height: 148px
+
+@keyframes myMove
+  0%
+    transform: translateY(-100%)
+    margin-top: -#{$box_alert_height}
+
+  70%
+    transform: translateY(-100%)
+    margin-top: -#{$box_alert_height}
+
+  100%
+        transform: translateY(0)
+        margin-top: 0
 
 
 .no-js-fallback
@@ -41,17 +66,21 @@
   border-bottom: 1px solid $color_fallback_border
   color: $color_fallback_text
   // fade in animation
-  // animation: 5s ease 0s normal forwards 1 fadein
+  // animation: 7s ease 0s normal forwards 1 fadein
 
   // position: absolute
-  // z-index: 100000
+  // // z-index: 100000
   // top: 0
   // width: 100%
 
-  height: 0
+  // height: 0
   overflow: hidden
+  // transform: translateY(- 100%)
 
-  animation: cssAnimation 0s ease-in 5s forwards
+
+  // animation: cssAnimation 0s ease-in 5s forwards
+  // animation: 4s ease 0s normal forwards 1 cssAnimation
+  animation: 7s ease 0s normal forwards 1 myMove
 
 
   // content area: centered by flexbox
