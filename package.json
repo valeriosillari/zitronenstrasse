@@ -14,7 +14,7 @@
         "lint": "yarn lint:js",
         "prettier": "prettier --write '**/*.{css,scss,js,vue,html,pug}'",
         "test": "jest",
-        "deploy": "yarn run lint && yarn generate"
+        "deploy": "yarn lint && yarn test && yarn generate"
     },
     "dependencies": {
         "@fortawesome/fontawesome-svg-core": "^1.2.19",
