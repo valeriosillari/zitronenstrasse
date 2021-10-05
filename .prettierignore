@@ -6,3 +6,6 @@ node_modules/
 
 # dist file at generate
 dist/
+
+# jest coverage folder
+coverage/
