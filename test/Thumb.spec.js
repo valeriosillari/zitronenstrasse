@@ -6,7 +6,7 @@ describe('Thumb', () => {
         const wrapper = mount(Thumb, {
             propsData: {
                 thumb: {
-                    thumbPath: 'ssss',
+                    thumbPath: '001_nothaftcafes.jpg',
                     title: 'title',
                 },
             },
