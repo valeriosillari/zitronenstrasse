@@ -43,7 +43,9 @@
   //   height: auto
 
 
-$newBreakpoint: 400px
+$delayTime: 10s
+
+$newBreakpoint: 370px
 
 // TO SET DYNAMICALLY for each viewport?
 $box_alert_height_mobile: 190px
@@ -100,10 +102,10 @@ $box_alert_height_desktop: 178px
 
   // animation: cssAnimation 0s ease-in 5s forwards
   // animation: 4s ease 0s normal forwards 1 cssAnimation
-  animation: 7s ease 0s normal forwards 1 myMoveMobile
+  animation: $delayTime ease 0s normal forwards 1 myMoveMobile
 
   +breakpoint($newBreakpoint)
-    animation: 7s ease 0s normal forwards 1 myMoveDesktop
+    animation: $delayTime ease 0s normal forwards 1 myMoveDesktop
 
   // content area: centered by flexbox
   .content
