@@ -6,7 +6,9 @@
         p
             | Looks like you have Javascript disabled.
         p
-            | You can also continue watching the website without Javascript, but you will lose a lot of fun ...
+            | You can also continue watching the website without Javascript.
+        p
+            | But you will lose a lot of fun ...
         p
             | To enable JS follow the info
             |
@@ -41,18 +43,36 @@
   //   height: auto
 
 
-// TO SET DYNAMICALLY for each viewport?
-$box_alert_height: 148px
+$newBreakpoint: 400px
 
-@keyframes myMove
+// TO SET DYNAMICALLY for each viewport?
+$box_alert_height_mobile: 190px
+$box_alert_height_desktop: 178px
+
+@keyframes myMoveMobile
   0%
     transform: translateY(-100%)
-    margin-top: -#{$box_alert_height}
+    margin-top: -#{$box_alert_height_mobile}
 
-  70%
+  75%
     transform: translateY(-100%)
-    margin-top: -#{$box_alert_height}
+    margin-top: -#{$box_alert_height_mobile}
 
+  // reset, show box
+  100%
+        transform: translateY(0)
+        margin-top: 0
+
+@keyframes myMoveDesktop
+  0%
+    transform: translateY(-100%)
+    margin-top: -#{$box_alert_height_desktop}
+
+  75%
+    transform: translateY(-100%)
+    margin-top: -#{$box_alert_height_desktop}
+
+  // reset, show box
   100%
         transform: translateY(0)
         margin-top: 0
@@ -80,8 +100,10 @@ $box_alert_height: 148px
 
   // animation: cssAnimation 0s ease-in 5s forwards
   // animation: 4s ease 0s normal forwards 1 cssAnimation
-  animation: 7s ease 0s normal forwards 1 myMove
+  animation: 7s ease 0s normal forwards 1 myMoveMobile
 
+  +breakpoint($newBreakpoint)
+    animation: 7s ease 0s normal forwards 1 myMoveDesktop
 
   // content area: centered by flexbox
   .content
