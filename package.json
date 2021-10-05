@@ -13,7 +13,7 @@
         "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
         "lint": "yarn lint:js",
         "prettier": "prettier --write '**/*.{css,scss,js,vue,html,pug}'",
-        "precommit": "yarn run lint"
+        "deploy": "yarn run lint && yarn generate"
     },
     "dependencies": {
         "@fortawesome/fontawesome-svg-core": "^1.2.19",
