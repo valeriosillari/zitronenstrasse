@@ -21,91 +21,51 @@
 </template>
 
 <style lang="sass">
+// sass var to move out
+$no_js_fallback_delay_time: 7s
+$no_js_fallback_custom_breakpoint: 370px
+$no_js_fallback_box_alert_height_mobile: 190px
+$no_js_fallback_box_alert_height_desktop: 178px
 
-@keyframes fadein
-  0%
-    opacity: 0
-  66%
-    opacity: 0
-  100%
-    opacity: 1
-
-@keyframes cssAnimation
-  transform: translateY(0%)
-
-  // 0%
-  //   opacity: 0
-  // 66%
-  //   opacity: 0
-  // 100%
-  //   opacity: 1
-  // to
-  //   height: auto
-
-
-$delayTime: 10s
-
-$newBreakpoint: 370px
-
-// TO SET DYNAMICALLY for each viewport?
-$box_alert_height_mobile: 190px
-$box_alert_height_desktop: 178px
-
-@keyframes myMoveMobile
+@keyframes slideFallbackMobile
   0%
     transform: translateY(-100%)
-    margin-top: -#{$box_alert_height_mobile}
+    margin-top: -#{$no_js_fallback_box_alert_height_mobile}
 
   75%
     transform: translateY(-100%)
-    margin-top: -#{$box_alert_height_mobile}
+    margin-top: -#{$no_js_fallback_box_alert_height_mobile}
 
   // reset, show box
   100%
-        transform: translateY(0)
-        margin-top: 0
+    transform: translateY(0)
+    margin-top: 0
 
-@keyframes myMoveDesktop
+@keyframes slideFallbackDesktop
   0%
     transform: translateY(-100%)
-    margin-top: -#{$box_alert_height_desktop}
+    margin-top: -#{$no_js_fallback_box_alert_height_desktop}
 
   75%
     transform: translateY(-100%)
-    margin-top: -#{$box_alert_height_desktop}
+    margin-top: -#{$no_js_fallback_box_alert_height_desktop}
 
   // reset, show box
   100%
-        transform: translateY(0)
-        margin-top: 0
-
+    transform: translateY(0)
+    margin-top: 0
 
 .no-js-fallback
   align-items: center
   justify-content: center
-
   background: $color_fallback_bg
   border-bottom: 1px solid $color_fallback_border
   color: $color_fallback_text
-  // fade in animation
-  // animation: 7s ease 0s normal forwards 1 fadein
-
-  // position: absolute
-  // // z-index: 100000
-  // top: 0
-  // width: 100%
-
-  // height: 0
   overflow: hidden
-  // transform: translateY(- 100%)
-
-
-  // animation: cssAnimation 0s ease-in 5s forwards
-  // animation: 4s ease 0s normal forwards 1 cssAnimation
-  animation: $delayTime ease 0s normal forwards 1 myMoveMobile
-
-  +breakpoint($newBreakpoint)
-    animation: $delayTime ease 0s normal forwards 1 myMoveDesktop
+  // animation with slide trick
+  animation: $no_js_fallback_delay_time ease 0s normal forwards 1 slideFallbackMobile
+  +breakpoint($no_js_fallback_custom_breakpoint)
+    animation: $no_js_fallback_delay_time ease 0s normal forwards 1 slideFallbackDesktop
 
   // content area: centered by flexbox
   .content
@@ -113,6 +73,7 @@ $box_alert_height_desktop: 178px
     font-size: 0.75rem
     line-height: .9rem
 
+// if you got js enable, no box at all.
 .js
   .no-js-fallback
     display: none
