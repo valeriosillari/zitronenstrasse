@@ -21,12 +21,6 @@
 </template>
 
 <style lang="sass">
-// sass var to move out
-$no_js_fallback_delay_time: 7s
-$no_js_fallback_custom_breakpoint: 370px
-$no_js_fallback_box_alert_height_mobile: 190px
-$no_js_fallback_box_alert_height_desktop: 178px
-
 @keyframes slideFallbackMobile
   0%
     transform: translateY(-100%)
@@ -64,7 +58,7 @@ $no_js_fallback_box_alert_height_desktop: 178px
   overflow: hidden
   // animation with slide trick
   animation: $no_js_fallback_delay_time ease 0s normal forwards 1 slideFallbackMobile
-  +breakpoint($no_js_fallback_custom_breakpoint)
+  +breakpoint($breakpoint_xs)
     animation: $no_js_fallback_delay_time ease 0s normal forwards 1 slideFallbackDesktop
 
   // content area: centered by flexbox
