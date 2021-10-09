@@ -59,6 +59,7 @@ For a list of required keys with right name, check the file in root folder calle
 
 #### JEST
 
+-   define structure for jest files: inside a folder with each component? or set structure on test folder?
 -   set basic dummy Jest configuration, with couple of tests (dummy ones). start set real / useful tests
 
 ## GENERAL ISSUES
