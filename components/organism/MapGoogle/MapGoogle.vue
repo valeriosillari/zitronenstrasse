@@ -7,7 +7,7 @@
     //- Sidebar
     //- todo: set via store the close logid
     .sidebar-animation
-        Sidebar(:currentPlace='$store.state.currentPlace.item')
+        MoleculeSidebar(:currentPlace='$store.state.currentPlace.item')
 </template>
 
 <style lang="sass">
@@ -80,15 +80,10 @@ $sidebar_animation: all .35s ease
 
 <script>
 import placesList from '~/static/places_list.js'
-import mapStylesDark from '~/components/MapGoogle/_mapStylesDark.js'
-import customMarker from '~/components/MapGoogle/_markerCustomStyles.js'
-import Sidebar from '~/components/Sidebar.vue'
+import mapStylesDark from '~/components/organism/MapGoogle/_mapStylesDark.js'
+import customMarker from '~/components/organism/MapGoogle/_markerCustomStyles.js'
 
 export default {
-    components: {
-        Sidebar,
-    },
-
     data() {
         return {
             // map

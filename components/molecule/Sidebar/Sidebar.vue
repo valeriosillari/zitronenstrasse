@@ -8,7 +8,7 @@ aside.sidebar
         | {{ currentPlace.title }}
 
     //- Thumb for Place
-    Thumb(
+    AtomThumb(
         :thumb='{ title: currentPlace.title, thumbPath: currentPlace.thumb, credits: currentPlace.thumbCredits }'
     )
 

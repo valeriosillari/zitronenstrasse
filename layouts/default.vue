@@ -1,20 +1,19 @@
 <template lang="pug">
 .layout-wrapper
-    NoJsFallback
+    MoleculeNoJsFallback
 
-    Header
+    OrganismHeader
 
-    NavigationOverlay
+    OrganismNavigationOverlay
 
     nuxt(role='main')
 
-    Footer
+    OrganismFooter
 
-    PrivacyPolicyBanner
+    MoleculePrivacyPolicyBanner
 </template>
 
 <style lang="sass">
-
 @import '../node_modules/bootstrap/scss/root'
 @import '../node_modules/bootstrap/scss/reboot'
 @import '../node_modules/bootstrap/scss/type'

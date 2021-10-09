@@ -5,7 +5,7 @@
                 {{ content.title }}
             </h1>
 
-            <RichText :text="content.description" />
+            <AtomRichText :text="content.description" />
         </div>
     </section>
 </template>

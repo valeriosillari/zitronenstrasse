@@ -1,5 +1,5 @@
 <template lang="pug">
-MapGoogle
+OrganismMapGoogle
 </template>
 
 <script>

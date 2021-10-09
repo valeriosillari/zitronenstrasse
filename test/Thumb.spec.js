@@ -1,5 +1,5 @@
 import { mount } from '@vue/test-utils'
-import Thumb from '@/components/Thumb.vue'
+import Thumb from '~/components/organism/atoms/Thumb/Thumb.vue'
 
 describe('Thumb', () => {
     test('is a Vue instance', () => {
