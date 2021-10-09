@@ -30,6 +30,16 @@ export default {
         }
     },
 
+    head() {
+        return {
+            // OVERRIDE the logic in vue config for body element.
+            // we have to ADD just one class to body
+            bodyAttrs: {
+                class: this.isNavOpen ? 'is-navigation-open-body' : '',
+            },
+        }
+    },
+
     computed: {
         isNavOpen() {
             return this.$store.state.navigation.isOpen
@@ -46,16 +56,6 @@ export default {
         handleClickNavigation() {
             this.$store.commit('navigation/toggleOpenState')
         },
-    },
-
-    head() {
-        return {
-            // OVERRIDE the logic in vue config for body element.
-            // we have to ADD just one class to body
-            bodyAttrs: {
-                class: this.isNavOpen ? 'is-navigation-open-body' : '',
-            },
-        }
     },
 }
 </script>
