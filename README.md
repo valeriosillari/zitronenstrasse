@@ -65,8 +65,6 @@ For a list of required keys with right name, check the file in root folder calle
 
 -   **PERFORMANCES**: check speed insight (June 2019)
 
--   **PWA icon**: set on static (icon.png). check how to set custom folder and put it into static/favicons
-
 -   **MANIFEST (console log)**: check console log locally, issue on manifest file
 
 ## NICE TO HAVE
