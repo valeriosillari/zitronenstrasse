@@ -39,28 +39,29 @@ For detailed explanation on how Nuxt works, checkout the [Nuxt.js docs](https://
 
 You need to set some CONFIG VAR options locally and on Deploy Server for custom Plugins as Google Map, Analytics etc ...
 
-For detailed explanation on how dotenv work, checkout the [dotenv docs](https://github.com/motdotla/dotenv).
-
 For a list of required keys with right name, check the file in root folder called `.env.example`
 
 ## TODO
 
--   no-js class crash at navbar menu click !!!
--   update to version 4 (gtag)
+-   update google analytics to version 4 (gtag)
 
 #### STORYBLOK
 
--   TODO: ERROR for page at generate command (see CLI), but all work anyway ... (?)
+-   set homepage as block
 -   check place as item from storyblok
 -   add css class to rich text items
 -   check how many TOKEN / option you need on Storyblok. 1 is enough ?
--   add "BACK HOME" at end of privacy page
+-   add "BACK HOME" at end of privacy page (new block)
 
 #### VERCEL
 
 -   check vercel secrets logic again
 
-## ISSUES
+#### JEST
+
+-   set basic dummy Jest configuration, with couple of tests (dummy ones). start set real / useful tests
+
+## GENERAL ISSUES
 
 -   **PERFORMANCES**: check speed insight (June 2019)
 
