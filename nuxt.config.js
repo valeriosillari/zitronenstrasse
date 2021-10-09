@@ -162,6 +162,12 @@ export default {
         ],
     },
 
+    pwa: {
+        icon: {
+            source: 'static/favicons/icon.png',
+        },
+    },
+
     /*
      ** Generate configuration
      */
