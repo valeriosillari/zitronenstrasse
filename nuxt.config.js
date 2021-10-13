@@ -184,7 +184,7 @@ export default {
             // storyblok project token
             const token = process.env.ENV_ZITRONENSTRASSE_STORYBLOK_API_KEY
             // when deploy, any branch, get only published storyblok content
-            const version = 'published'
+            const version = 'draft'
             // cache logic
             const cache = Math.floor(Date.now() / 1e3)
 
@@ -193,9 +193,16 @@ export default {
                     `https://api.storyblok.com/v1/cdn/stories?version=${version}&token=${token}&cv=${cache}`
                 )
                 .then((res) => {
-                    // array of all storyblok pages: set ana array with full slug of all of them dynamically
                     const storyblockPages = res.data.stories.map(
-                        (singlePage) => singlePage.full_slug
+                        (singlePage) => {
+                            if (singlePage.full_slug !== 'homepage') {
+                                console.log('==== singlePage.full_slug ====')
+                                console.log(singlePage.full_slug)
+
+                                return singlePage.full_slug
+                            }
+                            return false
+                        }
                     )
 
                     console.log('======== storyblockPages GENERATED ==========')

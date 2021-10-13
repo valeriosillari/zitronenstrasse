@@ -25,10 +25,10 @@ export default {
         return context.app.$storyapi
             .get(`cdn/stories/${context.params.slug}`, {
                 // Check if we are in the editor mode
-                version:
-                    context.query._storyblok || context.isDev
-                        ? 'draft'
-                        : 'published',
+                version: 'draft',
+                // context.query._storyblok || context.isDev
+                //     ? 'draft'
+                //     : 'published',
             })
             .then((res) => {
                 console.log('========= SLUG ==============')

@@ -20,13 +20,14 @@ export default {
         return context.app.$storyapi
             .get('cdn/stories/homepage', {
                 // Check if we are in the editor mode
-                version:
-                    context.query._storyblok || context.isDev
-                        ? 'draft'
-                        : 'published',
+                version: 'draft',
+                // context.query._storyblok || context.isDev
+                //     ? 'draft'
+                //     : 'published',
             })
             .then((res) => {
                 console.log('========= PAGE INDEX ==============')
+                console.log(res.data.story)
 
                 return res.data.story
             })
