@@ -26,6 +26,8 @@ export default {
                         : 'published',
             })
             .then((res) => {
+                console.log('========= PAGE INDEX ==============')
+
                 return res.data.story
             })
             .catch((res) => {

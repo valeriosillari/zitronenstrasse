@@ -31,6 +31,8 @@ export default {
                         : 'published',
             })
             .then((res) => {
+                console.log('========= SLUG ==============')
+
                 return res.data.story
             })
             .catch((res) => {
