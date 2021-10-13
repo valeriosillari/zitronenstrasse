@@ -154,6 +154,7 @@ export default {
         exclude: [
             // empty
         ],
+        // TODO: set route listening path from storyblok?
         routes: [
             { url: '/', changefreq: 'daily' },
             { url: '/about', changefreq: 'daily' },
