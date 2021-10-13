@@ -32,8 +32,14 @@ export default {
             })
             .then((res) => {
                 console.log('========= SLUG ==============')
+                console.log(res.data.story)
 
-                return res.data.story
+                // if storyblock is NOT "homepage", get data
+                if (res.data.story.full_slug !== 'homepage') {
+                    return res.data.story
+                }
+
+                return false
             })
             .catch((res) => {
                 context.error({
