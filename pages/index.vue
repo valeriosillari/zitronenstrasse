@@ -1,24 +1,12 @@
 <template>
-    <section style="border: 5px solid #0f0">
-        <h1>START | INDEX</h1>
-
-        <h1>
-            {{ content.title }}
-        </h1>
-
-        <div v-for="blok in content.blocks" :key="blok._uid">
-            {{ blok }}
-        </div>
-
+    <div style="border: 5px solid red">
         <component
             :is="blok.component"
             v-for="blok in content.blocks"
             :key="blok._uid"
             :blok="blok"
         />
-
-        <h1>END | INDEX</h1>
-    </section>
+    </div>
 </template>
 
 <script>
