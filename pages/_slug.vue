@@ -20,6 +20,8 @@
 </template>
 
 <script>
+const INDEX_SLUG = 'homepage'
+
 export default {
     transition: {
         beforeLeave() {
@@ -30,16 +32,18 @@ export default {
     },
 
     asyncData(context) {
-        if (context.params.slug === 'homepage') {
+        if (context.params.slug === INDEX_SLUG) {
             context.error({
                 statusCode: 404,
                 message: 'homepage slug as no page!',
             })
+            return
             // throw { statusCode: 404, message: 'Post not found' }
         }
 
         console.log('====== context ========')
         console.log(context.params.slug)
+
         // Load the JSON from the API
         return context.app.$storyapi
             .get(`cdn/stories/${context.params.slug}`, {
@@ -50,7 +54,7 @@ export default {
                 //     : 'published',
             })
             .then((res) => {
-                console.log('========= ALL SLUGS ==============')
+                console.log('========= CURRENT STORY DATA ==============')
                 console.log(res.data.story)
 
                 return res.data.story
