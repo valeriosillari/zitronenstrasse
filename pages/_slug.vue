@@ -1,12 +1,21 @@
 <template>
-    <section class="section">
-        <div class="container">
-            <h1>
-                {{ content.title }}
-            </h1>
+    <section style="border: 5px solid red">
+        <h1>START | SLUG</h1>
 
-            <AtomRichText :text="content.description" />
-        </div>
+        <h1>
+            {{ content.title }}
+        </h1>
+
+        <!-- <AtomRichText :text="content.description" /> -->
+
+        <!-- <component
+            v-for="blok in content.blocks"
+            :key="blok._uid"
+            :blok="blok"
+            :is="blok.component"
+        /> -->
+
+        <h1>END | SLUG</h1>
     </section>
 </template>
 
@@ -21,6 +30,16 @@ export default {
     },
 
     asyncData(context) {
+        if (context.params.slug === 'homepage') {
+            context.error({
+                statusCode: 404,
+                message: 'homepage slug as no page!',
+            })
+            // throw { statusCode: 404, message: 'Post not found' }
+        }
+
+        console.log('====== context ========')
+        console.log(context.params.slug)
         // Load the JSON from the API
         return context.app.$storyapi
             .get(`cdn/stories/${context.params.slug}`, {
@@ -31,15 +50,10 @@ export default {
                 //     : 'published',
             })
             .then((res) => {
-                console.log('========= SLUG ==============')
+                console.log('========= ALL SLUGS ==============')
                 console.log(res.data.story)
 
-                // if storyblock is NOT "homepage", get data
-                if (res.data.story.full_slug !== 'homepage') {
-                    return res.data.story
-                }
-
-                return false
+                return res.data.story
             })
             .catch((res) => {
                 context.error({
@@ -49,61 +63,62 @@ export default {
             })
     },
 
-    head() {
-        const metaTitle = this.content.metaTitle
-            ? `${this.content.metaTitle} | ${this.$config.metaHeadData.titleShort}`
-            : this.$config.metaHeadData.titleShort
+    // head() {
+    //     const metaTitle = this.content.metaTitle
+    //         ? `${this.content.metaTitle} | ${this.$config.metaHeadData.titleShort}`
+    //         : this.$config.metaHeadData.titleShort
 
-        const metaDescription = this.content.metaDescription
-            ? `${this.content.metaDescription} | ${this.$config.metaHeadData.description}`
-            : this.$config.metaHeadData.description
+    //     const metaDescription = this.content.metaDescription
+    //         ? `${this.content.metaDescription} | ${this.$config.metaHeadData.description}`
+    //         : this.$config.metaHeadData.description
 
-        // Set Meta Tags for the Page (with fallback)
-        return {
-            title: metaTitle,
+    //     // Set Meta Tags for the Page (with fallback)
+    //     return {
+    //         title: metaTitle,
 
-            meta: [
-                {
-                    hid: 'description',
-                    name: 'description',
-                    content: metaDescription,
-                },
+    //         meta: [
+    //             {
+    //                 hid: 'description',
+    //                 name: 'description',
+    //                 content: metaDescription,
+    //             },
 
-                // OG options for open graph: Fb and Linkedin
-                {
-                    hid: `og:title`,
-                    property: 'og:title',
-                    content: metaTitle,
-                },
+    //             // OG options for open graph: Fb and Linkedin
+    //             {
+    //                 hid: `og:title`,
+    //                 property: 'og:title',
+    //                 content: metaTitle,
+    //             },
 
-                {
-                    hid: `og:description`,
-                    property: 'og:description',
-                    content: metaDescription,
-                },
+    //             {
+    //                 hid: `og:description`,
+    //                 property: 'og:description',
+    //                 content: metaDescription,
+    //             },
 
-                // Twitter card
-                {
-                    hid: `twitter:title`,
-                    property: 'twitter:title',
-                    content: metaTitle,
-                },
-                {
-                    hid: `twitter:description`,
-                    property: 'twitter:description',
-                    content: metaDescription,
-                },
+    //             // Twitter card
+    //             {
+    //                 hid: `twitter:title`,
+    //                 property: 'twitter:title',
+    //                 content: metaTitle,
+    //             },
+    //             {
+    //                 hid: `twitter:description`,
+    //                 property: 'twitter:description',
+    //                 content: metaDescription,
+    //             },
 
-                {
-                    hid: `twitter:image:alt`,
-                    property: 'twitter:image:alt',
-                    content: metaTitle,
-                },
-            ],
-        }
-    },
+    //             {
+    //                 hid: `twitter:image:alt`,
+    //                 property: 'twitter:image:alt',
+    //                 content: metaTitle,
+    //             },
+    //         ],
+    //     }
+    // },
 
     mounted() {
+        console.log('======= MOUNTED =======')
         // trick for removing nav overlay if coming on page from error page (by navigation link/logic)
         if (this.$store.state.navigation.isOpen) {
             this.$store.commit('navigation/toggleOpenState')
