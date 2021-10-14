@@ -6,14 +6,7 @@
             {{ content.title }}
         </h1>
 
-        <!-- <AtomRichText :text="content.description" /> -->
-
-        <!-- <component
-            v-for="blok in content.blocks"
-            :key="blok._uid"
-            :blok="blok"
-            :is="blok.component"
-        /> -->
+        <AtomRichText :text="content.description" />
 
         <h1>END | SLUG</h1>
     </section>
