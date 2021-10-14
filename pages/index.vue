@@ -1,10 +1,11 @@
 <template>
-    <div style="border: 5px solid red">
+    <div v-frag>
         <component
             :is="blok.component"
             v-for="blok in content.blocks"
             :key="blok._uid"
             :blok="blok"
+            role="main"
         />
     </div>
 </template>

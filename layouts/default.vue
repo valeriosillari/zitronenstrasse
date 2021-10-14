@@ -6,7 +6,7 @@
 
     OrganismNavigationOverlay
 
-    nuxt(role='main')
+    nuxt
 
     OrganismFooter
 

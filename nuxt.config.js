@@ -68,6 +68,7 @@ export default {
         { src: '~/plugins/components' },
         { src: '~/plugins/fontawesome' },
         { src: '~/plugins/vue-cookie-law.client' },
+        { src: '~/plugins/vue-frag' },
         { src: '~/plugins/vue2-google-maps' },
     ],
 

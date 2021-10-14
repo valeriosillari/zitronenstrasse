@@ -1,5 +1,5 @@
 <template>
-    <section class="section">
+    <section class="section" role="main">
         <div class="container">
             <h1>
                 {{ content.title }}
