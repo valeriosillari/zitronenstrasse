@@ -6,11 +6,15 @@
             {{ content.title }}
         </h1>
 
+        <div v-for="blok in content.blocks" :key="blok._uid">
+            {{ blok }}
+        </div>
+
         <component
-            :is="blok.component"
             v-for="blok in content.blocks"
             :key="blok._uid"
             :blok="blok"
+            :is="blok.component"
         />
 
         <h1>END | INDEX</h1>
@@ -43,7 +47,7 @@ export default {
                 //     : 'published',
             })
             .then((res) => {
-                console.log('========= ALL SLUGS ==============')
+                console.log('====== res.data.story ========')
                 console.log(res.data.story)
 
                 return res.data.story
@@ -57,7 +61,7 @@ export default {
     },
 
     mounted() {
-        console.log('======= MOUNTED =======')
+        console.log('======= MOUNTED | INDEX =======')
         // trick for removing nav overlay if coming on page from error page (by navigation link/logic)
         if (this.$store.state.navigation.isOpen) {
             this.$store.commit('navigation/toggleOpenState')

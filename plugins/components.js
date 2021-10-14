@@ -1,4 +1,4 @@
 import Vue from 'vue'
-import Teaser from '~/components/Teaser.vue'
+import MapGoogle from '~/components/organism/MapGoogle/MapGoogle'
 
-Vue.component('teaser', Teaser)
+Vue.component('MapGoogle', MapGoogle)
