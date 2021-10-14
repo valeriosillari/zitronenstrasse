@@ -26,6 +26,8 @@ export default {
     asyncData(context) {
         // if slug is 'homepage', DO NOT create page but throw an error. this page is used as nuxt INDEX page.
         if (context.params.slug === INDEX_SLUG) {
+            // basic inspiration to force getting an error page
+            // https://github.com/nuxt/nuxt.js/issues/2022
             context.error({
                 statusCode: 404,
                 message: 'homepage slug as no page!',
