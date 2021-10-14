@@ -11,10 +11,10 @@
         </div>
 
         <component
+            :is="blok.component"
             v-for="blok in content.blocks"
             :key="blok._uid"
             :blok="blok"
-            :is="blok.component"
         />
 
         <h1>END | INDEX</h1>
