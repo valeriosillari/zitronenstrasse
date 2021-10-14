@@ -23,9 +23,6 @@ export default {
     },
 
     asyncData(context) {
-        console.log('====== context ========')
-        console.log(context.params)
-
         // Load the JSON from the API
         return context.app.$storyapi
             .get(`cdn/stories/${INDEX_SLUG}`, {
@@ -36,9 +33,6 @@ export default {
                 //     : 'published',
             })
             .then((res) => {
-                console.log('====== res.data.story ========')
-                console.log(res.data.story)
-
                 return res.data.story
             })
             .catch((res) => {
@@ -50,7 +44,6 @@ export default {
     },
 
     mounted() {
-        console.log('======= MOUNTED | INDEX =======')
         // trick for removing nav overlay if coming on page from error page (by navigation link/logic)
         if (this.$store.state.navigation.isOpen) {
             this.$store.commit('navigation/toggleOpenState')
