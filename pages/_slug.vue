@@ -1,9 +1,5 @@
 <template>
-    <section class="section" role="main">
-        <div class="container">
-            <OrganismPageCore :content="content" />
-        </div>
-    </section>
+    <OrganismPageCore :content="content" role="main" />
 </template>
 
 <script>

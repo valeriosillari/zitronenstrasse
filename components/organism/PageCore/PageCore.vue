@@ -1,17 +1,28 @@
 <template>
     <div v-frag>
-        <h1 v-if="content.title">
-            {{ content.title }}
-        </h1>
+        <template v-if="content.component === 'page_index'">
+            <component
+                :is="blok.component"
+                v-for="blok in content.blocks"
+                :key="blok._uid"
+                :blok="blok.component"
+            />
+        </template>
 
-        <AtomRichText v-if="content.description" :text="content.description" />
+        <template v-else>
+            <section class="section">
+                <div class="container">
+                    <h1 v-if="content.title">
+                        {{ content.title }}
+                    </h1>
 
-        <component
-            :is="blok.component"
-            v-for="blok in content.blocks"
-            :key="blok._uid"
-            :blok="blok.component"
-        />
+                    <AtomRichText
+                        v-if="content.description"
+                        :text="content.description"
+                    />
+                </div>
+            </section>
+        </template>
     </div>
 </template>
 
@@ -21,6 +32,11 @@ export default {
         content: {
             type: Object,
             required: true,
+        },
+
+        isPageDynamicSlug: {
+            type: Boolean,
+            default: false,
         },
     },
 
