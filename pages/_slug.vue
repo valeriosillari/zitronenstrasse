@@ -3,9 +3,6 @@
 </template>
 
 <script>
-// TODO: update as unique var for all applicaction
-const INDEX_SLUG = 'homepage'
-
 export default {
     transition: {
         beforeLeave() {
@@ -18,7 +15,11 @@ export default {
     asyncData(context) {
         // if slug is 'homepage', DO NOT create page but throw an error. this page is used as nuxt INDEX page.
         // logic only for PROD. on DEV you can see the page, so you can play with it on storyblok interface (preview)
-        if (!context.isDev && context.params.slug === INDEX_SLUG) {
+        if (
+            !context.isDev &&
+            context.params.slug ===
+                this.$store.state.storyblok.stringNameForHomePage
+        ) {
             // basic inspiration to force getting an error page
             // https://github.com/nuxt/nuxt.js/issues/2022
             context.error({

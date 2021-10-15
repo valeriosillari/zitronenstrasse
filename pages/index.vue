@@ -3,9 +3,6 @@
 </template>
 
 <script>
-// TODO: update as unique var for all applicaction
-const INDEX_SLUG = 'homepage'
-
 export default {
     transition: {
         beforeLeave() {
@@ -18,13 +15,16 @@ export default {
     asyncData(context) {
         // Load the JSON from the API
         return context.app.$storyapi
-            .get(`cdn/stories/${INDEX_SLUG}`, {
-                // Check if we are in the editor mode
-                version:
-                    context.query._storyblok || context.isDev
-                        ? 'draft'
-                        : 'published',
-            })
+            .get(
+                `cdn/stories/${context.store.state.storyblok.stringNameForHomePage}`,
+                {
+                    // Check if we are in the editor mode
+                    version:
+                        context.query._storyblok || context.isDev
+                            ? 'draft'
+                            : 'published',
+                }
+            )
             .then((res) => {
                 return res.data.story
             })
