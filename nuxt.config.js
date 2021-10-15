@@ -1,5 +1,8 @@
 import axios from 'axios'
 
+// TODO: update as unique var for all applicaction
+const INDEX_SLUG = 'homepage'
+
 // ===============================
 
 const titleShort = 'Zitronenstrasse'
@@ -196,7 +199,8 @@ export default {
                 .then((res) => {
                     const storyblockPages = res.data.stories.map(
                         (singlePage) => {
-                            if (singlePage.full_slug !== 'homepage') {
+                            // create url for all routes based on slugs, except this one, this is special and already used for index
+                            if (singlePage.full_slug !== INDEX_SLUG) {
                                 return singlePage.full_slug
                             }
                             return false
