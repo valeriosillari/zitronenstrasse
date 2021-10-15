@@ -1,11 +1,7 @@
 <template>
     <section class="section" role="main">
         <div class="container">
-            <h1>
-                {{ content.title }}
-            </h1>
-
-            <AtomRichText :text="content.description" />
+            <OrganismPageCore :content="content" />
         </div>
     </section>
 </template>

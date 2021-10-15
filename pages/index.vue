@@ -1,13 +1,5 @@
 <template>
-    <div v-frag>
-        <component
-            :is="blok.component"
-            v-for="blok in content.blocks"
-            :key="blok._uid"
-            :blok="blok"
-            role="main"
-        />
-    </div>
+    <OrganismPageCore :content="content" />
 </template>
 
 <script>
