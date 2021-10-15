@@ -1,7 +1,7 @@
 <template>
     <div v-frag>
         <template v-if="content.component === 'page_index'">
-            <component
+            <storyblockComponent
                 :is="blok.component"
                 v-for="blok in content.blocks"
                 :key="blok._uid"

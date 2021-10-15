@@ -68,8 +68,8 @@ export default {
 
     // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
     plugins: [
-        { src: '~/plugins/components' },
         { src: '~/plugins/fontawesome' },
+        { src: '~/plugins/storyblokComponents' },
         { src: '~/plugins/vue-cookie-law.client' },
         { src: '~/plugins/vue-frag' },
         { src: '~/plugins/vue2-google-maps' },
