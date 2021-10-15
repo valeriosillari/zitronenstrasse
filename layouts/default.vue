@@ -63,6 +63,7 @@ a
     color: $color_link_hvr
 
 .section
+  // trick for sticky footer
   min-height: 100%
   // padding top for fixed header alignment
   padding: 60px 0
