@@ -33,11 +33,6 @@ export default {
             type: Object,
             required: true,
         },
-
-        isPageDynamicSlug: {
-            type: Boolean,
-            default: false,
-        },
     },
 }
 </script>
