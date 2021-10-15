@@ -1,7 +1,5 @@
 import axios from 'axios'
-
-// TODO: update as unique var for all applicaction
-const INDEX_SLUG = 'homepage'
+import stringNameForHomePage from './assets/javascripts/utilities/storyblok.js'
 
 // ===============================
 
@@ -200,7 +198,9 @@ export default {
                     const storyblockPages = res.data.stories.map(
                         (singlePage) => {
                             // create url for all routes based on slugs, except this one, this is special and already used for index
-                            if (singlePage.full_slug !== INDEX_SLUG) {
+                            if (
+                                singlePage.full_slug !== stringNameForHomePage
+                            ) {
                                 return singlePage.full_slug
                             }
                             return false
