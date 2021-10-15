@@ -185,7 +185,7 @@ export default {
             // storyblok project token
             const token = process.env.ENV_ZITRONENSTRASSE_STORYBLOK_API_KEY
             // when deploy, any branch, get only published storyblok content
-            const version = 'draft'
+            const version = 'published'
             // cache logic
             const cache = Math.floor(Date.now() / 1e3)
 
@@ -197,16 +197,13 @@ export default {
                     const storyblockPages = res.data.stories.map(
                         (singlePage) => {
                             if (singlePage.full_slug !== 'homepage') {
-                                console.log('==== singlePage.full_slug ====')
-                                console.log(singlePage.full_slug)
-
                                 return singlePage.full_slug
                             }
                             return false
                         }
                     )
 
-                    console.log('======== storyblockPages GENERATED ==========')
+                    console.log('======== url pages GENERATED ==========')
                     console.log(storyblockPages)
 
                     return ['/', ...storyblockPages]

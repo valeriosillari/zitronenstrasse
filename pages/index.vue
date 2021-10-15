@@ -20,10 +20,10 @@ export default {
         return context.app.$storyapi
             .get(`cdn/stories/${INDEX_SLUG}`, {
                 // Check if we are in the editor mode
-                version: 'draft',
-                // context.query._storyblok || context.isDev
-                //     ? 'draft'
-                //     : 'published',
+                version:
+                    context.query._storyblok || context.isDev
+                        ? 'draft'
+                        : 'published',
             })
             .then((res) => {
                 return res.data.story

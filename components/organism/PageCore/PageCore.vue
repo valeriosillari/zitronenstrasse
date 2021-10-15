@@ -39,9 +39,5 @@ export default {
             default: false,
         },
     },
-
-    mounted() {
-        console.log('========= LOADED PAGE CORE ==========')
-    },
 }
 </script>
