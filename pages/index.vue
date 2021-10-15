@@ -3,6 +3,7 @@
 </template>
 
 <script>
+// TODO: update as unique var for all applicaction
 const INDEX_SLUG = 'homepage'
 
 export default {
