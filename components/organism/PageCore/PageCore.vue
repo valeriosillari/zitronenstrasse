@@ -11,7 +11,6 @@
             v-for="blok in content.blocks"
             :key="blok._uid"
             :blok="blok.component"
-            role="main"
         />
     </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-    <OrganismPageCore :content="content" />
+    <OrganismPageCore :content="content" role="main" />
 </template>
 
 <script>
