@@ -1,6 +1,11 @@
 <template>
     <div v-frag>
-        <template v-if="content.component === 'page_index'">
+        <template
+            v-if="
+                content.component ===
+                $store.state.storyblok.stringNameForHomePageTemplate
+            "
+        >
             <storyblockComponent
                 :is="blok.component"
                 v-for="blok in content.blocks"
