@@ -1,3 +1,3 @@
 <template>
-    <h1>CIPPA</h1>
+    <h1>YOLO</h1>
 </template>
