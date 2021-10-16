@@ -45,7 +45,12 @@ export default {
     target: 'static',
 
     // page transition common name. for css transition
-    pageTransition: 'page-transition',
+    pageTransition: {
+        // namekey becomes required
+        name: 'page-transition',
+        mode: 'out-in', // default is out-in
+        appear: false, // default is false
+    },
 
     // Load globally Functions / Variables / Mixins
     styleResources: {

@@ -75,12 +75,21 @@ a
 
 // ============
 // page transition (vue transition)
-.page-transition-active,
+// .page-transition-active,
+// .page-transition-leave-active
+//   transition-property: opacity
+//   transition-timing-function: ease-in-out
+//   transition-duration: 1.5s
+//   // transition-delay: .25s
+
+// .page-transition-enter,
+// .page-transition-leave-to
+//   opacity: 0
+
+
+.page-transition-enter-active,
 .page-transition-leave-active
-  transition-property: opacity
-  transition-timing-function: ease-in-out
-  transition-duration: 1.5s
-  // transition-delay: .25s
+  transition: opacity 2.5s
 
 .page-transition-enter,
 .page-transition-leave-to
