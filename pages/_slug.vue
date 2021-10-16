@@ -18,7 +18,7 @@ export default {
         if (
             !context.isDev &&
             context.params.slug ===
-                this.$store.state.storyblok.stringNameForHomePage
+                context.store.state.storyblok.stringNameForHomePage
         ) {
             // basic inspiration to force getting an error page
             // https://github.com/nuxt/nuxt.js/issues/2022
