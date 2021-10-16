@@ -3,6 +3,14 @@ header.b-header
     nuxt-link.logo-link(to='/', title='Home')
         .logo
 
+    nuxt-link(to='/yolo')
+        | YOLO lnk
+
+    nuxt-link(to='/about')
+        | about lnk
+
+    nuxt-link(to='/contact')
+        | contact lnk
     //- TODO: separate vue component
     //- btn menu
     .btn-menu(
