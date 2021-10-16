@@ -68,6 +68,7 @@ a
   min-height: 100%
 
 
+// default page + error page
 .section
   // padding top for fixed header alignment
   padding: 60px 0
