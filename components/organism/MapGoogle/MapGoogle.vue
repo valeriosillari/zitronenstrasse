@@ -52,8 +52,6 @@ $sidebar_animation: all .35s ease
 // Transitions
 .sidebar-animation,
 .map-wrapper-sidebar-push
-  -webkit-transition: $sidebar_animation
-  -moz-transition: $sidebar_animation
   transition: $sidebar_animation
 
 // -- OPEN. js add classes
