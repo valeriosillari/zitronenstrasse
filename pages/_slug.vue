@@ -1,5 +1,5 @@
-<template>
-    <OrganismPageCore :content="content" role="main" />
+<template lang="pug">
+OrganismPageCore(:content='content', role='main')
 </template>
 
 <script>
