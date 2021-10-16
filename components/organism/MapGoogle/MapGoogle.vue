@@ -1,16 +1,29 @@
 <template lang="pug">
-.map-main-wrapper.map-wrapper-sidebar-push(
-    v-bind:class='{ "is-sidebar-open": $store.state.sidebar.isOpen }'
-)
-    GmapMap(ref='mapRef', :center='center', :zoom='zoom', :options='options')
+.b-map
+    .map-main-wrapper.map-wrapper-sidebar-push(
+        v-bind:class='{ "is-sidebar-open": $store.state.sidebar.isOpen }'
+    )
+        GmapMap(
+            ref='mapRef',
+            :center='center',
+            :zoom='zoom',
+            :options='options'
+        )
 
-    //- Sidebar
-    //- todo: set via store the close logid
-    .sidebar-animation
-        MoleculeSidebar(:currentPlace='$store.state.currentPlace.item')
+        //- Sidebar
+        //- todo: set via store the close logid
+        .sidebar-animation
+            MoleculeSidebar(:currentPlace='$store.state.currentPlace.item')
 </template>
 
 <style lang="sass">
+.b-map
+    position: absolute
+    left: 0
+    right: 0
+    top: 0
+    bottom: 0
+
 .map-main-wrapper
   height: 100%
 
@@ -65,7 +78,6 @@ $sidebar_animation: all .35s ease
 
 // plugin wrapper overwritten
 .vue-map-container
-  width: 100%
   height: 100%
 
 // map bg when loading

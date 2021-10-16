@@ -6,7 +6,8 @@
 
     OrganismNavigationOverlay
 
-    nuxt
+    .main-core
+        nuxt
 
     OrganismFooter
 
@@ -62,9 +63,13 @@ a
   &:focus
     color: $color_link_hvr
 
-.section
-  // trick for sticky footer
+.main-core
+  background: red
+  position: relative
   min-height: 100%
+
+
+.section
   // padding top for fixed header alignment
   padding: 60px 0
 
