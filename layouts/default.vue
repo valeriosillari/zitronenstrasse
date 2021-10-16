@@ -64,7 +64,6 @@ a
     color: $color_link_hvr
 
 .main-core
-  background: red
   position: relative
   min-height: 100%
 
