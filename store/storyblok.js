@@ -1,4 +1,4 @@
-import data from '../assets/javascripts/utilities/storyblok.js'
+import data from '../assets/javascripts/utilities/storyblok'
 
 export const state = () => ({
     // on storyblok we set a component as "page" to set some trick for our application index page on Nuxt
