@@ -1,5 +1,5 @@
 import axios from 'axios'
-import stroyblokValues from './assets/javascripts/utilities/storyblok'
+import { stringNameForHomePage } from './assets/javascripts/utilities/storyblok'
 
 // ===============================
 
@@ -199,8 +199,7 @@ export default {
                         (singlePage) => {
                             // create url for all routes based on slugs, except this one, this is special and already used for index
                             if (
-                                singlePage.full_slug !==
-                                stroyblokValues.stringNameForHomePage
+                                singlePage.full_slug !== stringNameForHomePage
                             ) {
                                 return singlePage.full_slug
                             }
