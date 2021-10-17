@@ -62,11 +62,6 @@ a
   &:focus
     color: $color_link_hvr
 
-// default page + error page
-.section
-  // padding top for fixed header alignment
-  padding: 60px 0
-
 // ============
 // page transition (vue transition)
 .page-transition-enter-active,

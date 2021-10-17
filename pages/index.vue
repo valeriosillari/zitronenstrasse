@@ -55,6 +55,8 @@ export default {
 
 <style lang="sass">
 .b-page-index
+    // padding top for fixed header alignment
+    padding: 60px 0
     position: relative
     min-height: 100%
 </style>

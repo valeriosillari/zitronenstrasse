@@ -1,5 +1,5 @@
 <template>
-    <section class="b-page-slug section">
+    <div class="b-page-slug">
         <div class="container">
             <h1 v-if="content.title">
                 {{ content.title }}
@@ -10,7 +10,7 @@
                 :text="content.description"
             />
         </div>
-    </section>
+    </div>
 </template>
 
 <script>
@@ -127,4 +127,6 @@ export default {
 .b-page-slug
     position: relative
     min-height: 100%
+    // padding top for fixed header alignment
+    padding: 60px 0
 </style>

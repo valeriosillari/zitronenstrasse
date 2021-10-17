@@ -1,6 +1,6 @@
 <template lang="pug">
 //- main area
-section.section.section-error
+.b-page-error
     .container
         //- div with css bg as svg | compass
         .svg-icon-compass
@@ -46,21 +46,23 @@ export default {
 </script>
 
 <style lang="sass">
-.error-message
-  @include font-size($h4-font-size)
-  color: $color_error_page_subtitle
+.b-page-error
+    text-align: center
+    min-height: 100%
+    // padding top for fixed header alignment
+    padding: 60px 0
 
-.section-error
-  text-align: center
-  min-height: 100%
+    .error-message
+        @include font-size($h4-font-size)
+        color: $color_error_page_subtitle
 
-.svg-icon-compass
-  width: 260px
-  height: 260px
-  margin: 30px auto
-  // we set svg as image in css. nuxt is happy, but we lost the fill color options
-  // trick for assets loaded on Nuxt 2
-  // "~assets/", NOT "~/assets/" : removed slash
-  // info: https://github.com/nuxt/nuxt.js/issues/3723
-  background-image: url('~assets/svg/compass.svg')
+    .svg-icon-compass
+        width: 260px
+        height: 260px
+        margin: 30px auto
+        // we set svg as image in css. nuxt is happy, but we lost the fill color options
+        // trick for assets loaded on Nuxt 2
+        // "~assets/", NOT "~/assets/" : removed slash
+        // info: https://github.com/nuxt/nuxt.js/issues/3723
+        background-image: url('~assets/svg/compass.svg')
 </style>
