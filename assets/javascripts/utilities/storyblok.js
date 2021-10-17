@@ -3,6 +3,4 @@
 
 const stringNameForHomePage = 'homepage'
 
-const stringNameForHomePageTemplate = 'page_index'
-
-export default { stringNameForHomePage, stringNameForHomePageTemplate }
+export default { stringNameForHomePage }
