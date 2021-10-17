@@ -10,6 +10,12 @@
 </template>
 
 <script>
+import transitionTime from '../assets/javascripts/utilities/transitionTime'
+
+const timeTransitionCalculation = (transitionTime / 2) * 1.2
+
+console.log(`===== ${timeTransitionCalculation} =====`)
+
 export default {
     transition: {
         beforeLeave() {
@@ -17,7 +23,7 @@ export default {
                 setTimeout(() => {
                     this.$store.commit('navigation/toggleOpenState')
                     // little more of page transition time (now 500ms)
-                }, 300)
+                }, timeTransitionCalculation)
             }
         },
     },
