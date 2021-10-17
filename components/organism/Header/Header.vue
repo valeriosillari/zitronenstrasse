@@ -3,17 +3,6 @@ header.b-header
     nuxt-link.logo-link(to='/', title='Home')
         .logo
 
-    nuxt-link(to='/yolo', style='margin-left: 10px')
-        | YOLO lnk
-
-    nuxt-link(to='/hei', style='margin-left: 10px')
-        | Hei lnk
-
-    nuxt-link(to='/about', style='margin-left: 10px')
-        | ABOUT lnk
-
-    nuxt-link(to='/contact', style='margin-left: 10px')
-        | CONTACT lnk
     //- TODO: separate vue component
     //- btn menu
     .btn-menu(
