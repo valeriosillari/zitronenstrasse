@@ -52,6 +52,7 @@ export default {
 
 .section-error
   text-align: center
+  min-height: 100%
 
 .svg-icon-compass
   width: 260px
