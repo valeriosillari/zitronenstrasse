@@ -19,6 +19,7 @@ export default {
         },
     },
 
+    // TODO: on stotry block set real pathe as "/" for page homepage. works on stporyblok interface
     asyncData(context) {
         // Load the JSON from the API
         return context.app.$storyapi
