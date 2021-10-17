@@ -1,5 +1,5 @@
 <template lang="pug">
-.layout-wrapper
+.layout-wrapper(:style='cssTransitionVars')
     MoleculeNoJsFallback
 
     OrganismHeader
@@ -12,6 +12,20 @@
 
     MoleculePrivacyPolicyBanner
 </template>
+
+<script>
+import transitionTime from '../assets/javascripts/utilities/transitionTime'
+
+export default {
+    computed: {
+        cssTransitionVars() {
+            return {
+                '--timeTransition': `.${transitionTime}s`,
+            }
+        },
+    },
+}
+</script>
 
 <style lang="sass">
 @import '../node_modules/bootstrap/scss/root'
@@ -66,7 +80,7 @@ a
 // page transition (vue transition)
 .page-transition-enter-active,
 .page-transition-leave-active
-  transition: opacity .5s
+  transition: opacity var(--timeTransition)
 
 .page-transition-enter,
 .page-transition-leave-to
