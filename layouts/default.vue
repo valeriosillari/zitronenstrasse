@@ -6,8 +6,7 @@
 
     OrganismNavigationOverlay
 
-    .main-core
-        nuxt
+    nuxt(role='main')
 
     OrganismFooter
 
@@ -62,11 +61,6 @@ a
   &:hover,
   &:focus
     color: $color_link_hvr
-
-.main-core
-  position: relative
-  min-height: 100%
-
 
 // default page + error page
 .section

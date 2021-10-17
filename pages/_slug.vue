@@ -1,5 +1,16 @@
-<template lang="pug">
-OrganismPageCore(:content='content', role='main')
+<template>
+    <section class="b-page-slug section">
+        <div class="container">
+            <h1 v-if="content.title">
+                {{ content.title }}
+            </h1>
+
+            <AtomRichText
+                v-if="content.description"
+                :text="content.description"
+            />
+        </div>
+    </section>
 </template>
 
 <script>
@@ -111,3 +122,9 @@ export default {
     },
 }
 </script>
+
+<style lang="sass">
+.b-page-slug
+    position: relative
+    min-height: 100%
+</style>

@@ -1,5 +1,12 @@
-<template lang="pug">
-OrganismPageCore(:content='content', role='main')
+<template>
+    <div class="b-page-index">
+        <storyblockComponent
+            :is="blok.component"
+            v-for="blok in content.blocks"
+            :key="blok._uid"
+            :blok="blok.component"
+        />
+    </div>
 </template>
 
 <script>
@@ -44,3 +51,9 @@ export default {
     },
 }
 </script>
+
+<style lang="sass">
+.b-page-index
+    position: relative
+    min-height: 100%
+</style>
