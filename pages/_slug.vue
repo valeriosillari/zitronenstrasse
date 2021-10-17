@@ -18,7 +18,10 @@ export default {
     transition: {
         beforeLeave() {
             if (this.$store.state.navigation.isOpen) {
-                this.$store.commit('navigation/toggleOpenState')
+                setTimeout(() => {
+                    this.$store.commit('navigation/toggleOpenState')
+                    // little more of page transition time (now 500ms)
+                }, 300)
             }
         },
     },
