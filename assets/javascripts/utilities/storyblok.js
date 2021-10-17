@@ -3,4 +3,4 @@
 
 const stringNameForHomePage = 'homepage'
 
-export default { stringNameForHomePage }
+export default stringNameForHomePage

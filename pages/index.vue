@@ -11,10 +11,9 @@
 
 <script>
 import transitionTime from '../assets/javascripts/utilities/transitionTime'
+import stringNameForHomePage from '../assets/javascripts/utilities/storyblok'
 
 const timeTransitionCalculation = (transitionTime / 2) * 1.2
-
-console.log(`===== ${timeTransitionCalculation} =====`)
 
 export default {
     transition: {
@@ -32,16 +31,13 @@ export default {
     asyncData(context) {
         // Load the JSON from the API
         return context.app.$storyapi
-            .get(
-                `cdn/stories/${context.store.state.storyblok.stringNameForHomePage}`,
-                {
-                    // Check if we are in the editor mode
-                    version:
-                        context.query._storyblok || context.isDev
-                            ? 'draft'
-                            : 'published',
-                }
-            )
+            .get(`cdn/stories/${stringNameForHomePage}`, {
+                // Check if we are in the editor mode
+                version:
+                    context.query._storyblok || context.isDev
+                        ? 'draft'
+                        : 'published',
+            })
             .then((res) => {
                 return res.data.story
             })

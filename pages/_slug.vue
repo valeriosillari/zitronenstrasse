@@ -15,10 +15,9 @@
 
 <script>
 import transitionTime from '../assets/javascripts/utilities/transitionTime'
+import stringNameForHomePage from '../assets/javascripts/utilities/storyblok'
 
 const timeTransitionCalculation = (transitionTime / 2) * 1.2
-
-console.log(`===== ${timeTransitionCalculation} =====`)
 
 export default {
     transition: {
@@ -35,11 +34,7 @@ export default {
     asyncData(context) {
         // if slug is 'homepage', DO NOT create page but throw an error. this page is used as nuxt INDEX page.
         // logic only for PROD. on DEV you can see the page, so you can play with it on storyblok interface (preview)
-        if (
-            !context.isDev &&
-            context.params.slug ===
-                context.store.state.storyblok.stringNameForHomePage
-        ) {
+        if (!context.isDev && context.params.slug === stringNameForHomePage) {
             // basic inspiration to force getting an error page
             // https://github.com/nuxt/nuxt.js/issues/2022
             context.error({
