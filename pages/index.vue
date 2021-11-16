@@ -27,9 +27,8 @@ export default {
         },
     },
 
-    // TODO: on stotry block set real pathe as "/" for page homepage. works on stporyblok interface
+    // on stotry block set real path as "/" for homepage. it works (make the trick) on storyblok preview interface
     asyncData(context) {
-        // Load the JSON from the API
         return context.app.$storyapi
             .get(`cdn/stories/${stringNameForHomePage}`, {
                 // Check if we are in the editor mode
