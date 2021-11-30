@@ -12,9 +12,10 @@
         "generate": "nuxt generate",
         "lint:js": "eslint --ext .js,.vue --ignore-path .gitignore .",
         "lint": "yarn lint:js",
+        "prettier-check": "prettier --check '**/*.{css,scss,js,vue,html,pug}'",
         "prettier": "prettier --write '**/*.{css,scss,js,vue,html,pug}'",
         "test": "jest",
-        "deploy": "yarn lint && yarn test && yarn generate"
+        "deploy": "yarn prettier-check && yarn lint && yarn test && yarn generate"
     },
     "dependencies": {
         "@fortawesome/fontawesome-svg-core": "^1.2.19",
