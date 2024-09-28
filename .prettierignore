@@ -9,3 +9,6 @@ dist/
 
 # jest coverage folder
 coverage/
+
+# vercel env systm folder and files (at deploy)
+.vercel

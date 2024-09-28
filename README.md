@@ -1,90 +1,59 @@
 # Zitronenstrasse
 
-#### Romantic Spots in Berlin.
+# FEATURE: VUE3 + GQL
 
-[zitronenstrasse.com](https://zitronenstrasse.com/)
+## TODO:
 
-## GENERAL INFO
+-   check Plugins for : MAP
+-   check Plugins for : COOKIES
+-   check Plugins for : TRACKING
 
-A side project with a list of romantic spots in Berlin.
+-   error page (use layout, no transition effect)
 
-Based on **[NuxtJS](https://nuxtjs.org/)**, **[Storyblok](https://www.storyblok.com/)**, **[Google Maps](https://www.google.com/maps)**.
+-   set all styles as VAR by bootstrap (request as much as possible)
+-   space with REM (trick as pixels)
+-   split sass variables in more files?
+-   sass font file with all vars
 
-## INSTALLATION
+-   splash screen
+-   no js
 
-1. Create a file in the root for env keys with this exact name: `.env`
+-   sitemap (dynamic data from CMS)
 
-2. Copy and past all code from the existing file `.env.example` into the new file `.env`
+-   transition between pages (improve animations)
 
-3. For each empty key `.env` file set the correct keys you will use from third-part services
+-   set typescript logic for types
 
-Now you set the right keys. You're ready to start
+## NICE TO HAVE / CHECK AGAIN:
 
-## BASIC CLI COMMANDS
+-   filter (where) for data of single page (gql query)
+-   load data at page switch? cannot pre genearted all data? >> REAL STATIC + git hooks?
+
+Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+
+## Setup
+
+Make sure to install the dependencies:
 
 ```bash
-# install dependencies
-$ yarn install
-
-# serve with hot reload at localhost:3000
-$ yarn dev
-
-# generate static project
-$ yarn deploy
+# npm
+npm install
 ```
 
-For detailed explanation on how Nuxt works, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+## Development Server
 
-## ENV OPTIONS
+Start the development server on `http://localhost:3000`:
 
-You need to set some CONFIG VAR options locally and on Deploy Server for custom Plugins as Google Map, Analytics etc ...
+```bash
+# npm
+npm run dev
+```
 
-For a list of required keys with right name, check the file in root folder called `.env.example`
+## Production
 
-## TODO
+Build the application for production:
 
--   update google analytics to version 4 (gtag)
-
-#### STORYBLOK
-
--   set homepage as block
--   check place as item from storyblok
--   add css class to rich text items
--   check how many TOKEN / option you need on Storyblok. 1 is enough ?
--   add "BACK HOME" at end of privacy page (new block)
-
-#### VERCEL
-
--   check vercel secrets logic again
-
-#### JEST
-
--   set basic dummy Jest configuration, with couple of tests (dummy ones). start set real / useful tests
-
-## GENERAL ISSUES
-
--   **PERFORMANCES**: check speed insight (June 2019)
-
--   **MANIFEST (console log)**: check console log locally, issue on manifest file
-
-## NICE TO HAVE
-
--   **LAZY LOAD MAP?**: load map better (and later), for performance
-
--   **SVG on IE**: we have to check if we see markers custom svg on windows
-
--   **LAZY LOAD IMAGES**: set logic for place images. we have added plugin, but we got issues with images.
-
--   **IMAGES in ASSETS FOLDER**: set all images in asset folder. now in static folder. not quite sure if it is the right place.
-
-## ROAD MAP
-
--   **MAP PAN (movement)**: set it slow and nicer/smoother
-
--   **MAP CUSTOM STYLES**: at map movement it is always flickering cause of image request. is is ok? could we prevent it?
-
--   **FILTERS**: show places sorted by some kind of filter (only bars, only restaurants etc ...). Design + Code need to a concept.
-
--   **SHARE SINGLE PLACES**: suggestion for sharing (on FB, twitter, as link) only a single place on the map. Conceptually possible? we have to check
-
--   **HEADLINE**: on homepage/map set some kind of headline for recognising the website brand
+```bash
+# npm
+npm run deploy-generate
+```

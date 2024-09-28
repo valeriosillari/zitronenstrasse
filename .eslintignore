@@ -1,8 +1,0 @@
-# nuxt dev folder
-.nuxt/
-
-# dist file at generate
-dist/
-
-# jest coverage folder
-coverage/

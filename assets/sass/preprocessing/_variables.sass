@@ -1,0 +1,209 @@
+// --------------------------------------
+// --------------------------------------
+// --------------------------------------
+
+// overwrite bootstrap fonts. now we use this,
+// font face come from nuxt font loader
+$font_family_basic: 'Roboto', 'Helvetica Neue', Arial, sans-serif
+$font_family_secondary: 'Saira Condensed', 'Helvetica Neue', Arial, sans-serif
+
+// ===== Spaces ======
+$space_00: 0
+$space_01: 5px
+$space_02: 10px
+$space_03: 15px
+$space_04: 30px
+$space_05: 45px
+$space_06: 60px
+$space_07: 90px
+$space_08: 120px
+
+// ===== Z index ======
+$z_index_01: 100
+$z_index_02: 200
+$z_index_03: 300
+
+// --------------------------------------
+// --------------------------------------
+// --------------------------------------
+$color_white: white
+$color_transparent: transparent
+
+$color_dark_01: #2b2b2b
+$color_dark_02: #797978
+$color_dark_03: #1f1f1c
+$color_dark_04: #464545
+$color_dark_05: #6f6f6f
+$color_dark_07: #353535
+$color_dark_08: #444444
+$color_dark_09: #505050
+$color_dark_10: #212121
+$color_dark_11: #445069
+
+$color_light_01: #f3eccc
+$color_light_02: #b3b3b3
+$color_light_03: #c1c1c1
+
+$color_main: #ffd400
+$color_main_02: #f5dd66
+$color_main_03: #fce67c
+
+$color_success: $green
+$color_danger: #d26771
+$color_warning: $orange
+
+// --------------------------------------
+// --------------------------------------
+// --------------------------------------
+
+$color_text_selection_text: $color_white
+$color_text_selection_bg: $color_dark_11
+
+// icons
+$color_icon: $color_dark_02
+$color_icon_hvr: $color_main
+
+// --------------------------------------
+// body as basic
+$color_body_bg: $color_dark_01
+$color_body_text: $color_light_02
+$color_heading: $color_white
+
+// links
+$color_link: $color_main
+$color_link_hvr: darken($color_main, 5%)
+
+// text accent
+$color_text_accent: $color_main
+
+// --------------------------------------
+// logo (in header)
+$color_logo_01: $color_main
+$color_logo_02: $color_white
+
+// --------------------------------------
+// header
+$color_header_bg: $color_dark_01
+$color_header_border: $color_dark_04
+
+$color_btn_menu: $color_dark_09
+$color_btn_menu_hvr: $color_icon_hvr
+
+// --------------------------------------
+// navigation overlay
+$color_navigation_overlay_bg: $color_dark_03
+$color_navigation_overlay_text: $color_dark_04
+$color_navigation_overlay_text_hvr: $color_main
+$color_navigation_overlay_link_exact_active: $color_main_03
+// rewrite hover.css options var (for color of navigaton link underline at hover)
+$activeColor: $color_light_01
+
+// --------------------------------------
+// footer
+$color_footer_bg: $color_dark_03
+$color_footer_border: $color_dark_01
+$color_footer_text: $color_dark_04
+$color_footer_link: $color_dark_02
+$color_footer_link_hvr: $color_link_hvr
+
+$color_social_icon: $color_dark_07
+$color_social_icon_hvr: $color_dark_02
+
+// --------------------------------------
+// google map styles
+$color_map_bg: $color_body_bg
+
+// --------------------------------------
+// error page
+$color_error_page_subtitle: $color_dark_05
+
+// --------------------------------------
+// --------------------------------------
+// SIZES
+$btn_menu_width: 36px
+$btn_menu_height: 30px
+
+// --------------------------------------
+// navigation
+$header_min_height: 65px
+
+$btn_menu_top_size: 11px
+
+$social_icon_size: 32px
+
+// --------------------------------------
+// sidebar
+// set calc with inside sass var
+// https://codepen.io/thebabydino/pen/hgFno
+$map_height: calc(100vh - #{$header_min_height})
+
+// we have to play here ...
+$sidebar_width_xs: 100%
+$sidebar_width_sm: 360px
+$sidebar_width_md: 480px
+
+$color_sidebar_bg: $color_dark_10
+$color_sidebar_text: $color_white
+$color_sidebar_credits: $color_dark_09
+$color_sidebar_info: $color_light_03
+$color_sidebar_link: #ffe198
+$color_sidebar_link_hvr: $color_link_hvr
+
+// --------------------------------------
+// sidebar
+$color_fallback_bg: $color_danger
+$color_fallback_border: #dcabb0
+$color_fallback_text: $color_white
+
+// --------------------------------------
+// color button
+
+$color_btn_bg: $color_transparent
+$color_btn_border: $color_link
+$color_btn_txt: $color_link
+$color_btn_border_hvr: $color_link_hvr
+$color_btn_txt_hvr: $color_link_hvr
+
+// --------------------------------------
+// --------------------------------------
+$animation_navigation_overlay: 0.25s
+
+// --------------------------------------
+// no js fallback box
+$no_js_fallback_delay_time: 7s
+$no_js_fallback_box_alert_height_mobile: 190px
+$no_js_fallback_box_alert_height_desktop: 178px
+
+// --------------------------------------
+// --------------------------------------
+// breakpoints (breakpoint-sass)
+$breakpoint_xs: 375px
+$breakpoint_sm: 576px
+$breakpoint_md: 768px
+$breakpoint_lg: 992px
+$breakpoint_xl: 1200px
+
+// --------------------------------------
+// --------------------------------------
+// Bootstrap: rewrite vars
+
+$font-family-base: $font_family_basic
+$font-size-base: 16px
+$font-weight-normal: 400
+$line-height-base: 2
+
+$body-bg: $color_body_bg
+$body-color: $color_body_text
+
+$link-color: $color_link
+$link-hover-color: $color_link_hvr
+
+$headings-color: $color_heading
+$headings-font-family: $font_family_secondary
+$headings-font-weight: 300
+$h1-font-size: 5rem
+$h2-font-size: 3.6rem
+$h3-font-size: 3rem
+$h4-font-size: 2.5rem
+$h5-font-size: 2.2rem
+$h6-font-size: 1.5rem
