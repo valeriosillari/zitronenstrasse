@@ -54,7 +54,7 @@ const { data } = await useAsyncQuery(
     query_collection_vars
 )
 
-const footerLinks = data._rawValue.pageCollection.items
+const footerLinks = data.value.pageCollection.items
 </script>
 
 <style lang="sass">

@@ -27,7 +27,7 @@ const { data } = await useAsyncQuery(
     GQL_QUERY_PAGE_BY_URL_REFERENCE,
     gql_query_vars
 )
-const page = data._rawValue.pageCollection.items[0]
+const page = data.value.pageCollection.items[0]
 
 const descriptionText = page.description.json
 </script>

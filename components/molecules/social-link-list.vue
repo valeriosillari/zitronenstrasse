@@ -62,7 +62,6 @@ const socialLinks = [
             width: $social_icon_size
             height: $social_icon_size
 
-+breakpoint($breakpoint_sm)
-    .b-social-link-list
+    +breakpoint($breakpoint_sm)
         justify-content: flex-end
 </style>

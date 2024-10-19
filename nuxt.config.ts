@@ -11,6 +11,8 @@ export default defineNuxtConfig({
         public: {
             limitQueryGql: 5,
             valeSiteRoot: valeSiteRoot,
+            googleMapKey: process.env.GOOGLE_MAP_KEY,
+            googleMapStyleMapId: process.env.GOOGLE_MAP_STYLE_MAP_ID,
         },
     },
 
@@ -18,6 +20,7 @@ export default defineNuxtConfig({
         '@nuxtjs/apollo',
         '@nuxt/eslint',
         '@pinia/nuxt',
+        '@nuxt/image',
         '@nuxtjs/sitemap',
         [
             // https://masanos.com/notes/l37t1_8qf-fv/
@@ -81,6 +84,4 @@ export default defineNuxtConfig({
             mode: 'out-in',
         },
     },
-
-    compatibilityDate: '2024-09-28',
 })

@@ -34,7 +34,7 @@ const handleClickNavigation = () => {
     .btn-menu-line
         background: $color_btn_menu
         border: none
-        height: $space_01
+        height: $btn_menu_item_height
         width: 100%
         position: absolute
         top: $space_00

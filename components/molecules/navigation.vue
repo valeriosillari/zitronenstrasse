@@ -47,7 +47,7 @@ const footerLinks = [
     },
 ]
 
-const responseDataLinksArray = data._rawValue.pageCollection.items
+const responseDataLinksArray = data.value.pageCollection.items
 
 responseDataLinksArray.forEach((singleLink) => {
     footerLinks.push(singleLink)

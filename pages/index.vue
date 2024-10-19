@@ -1,5 +1,5 @@
 <template>
     <div class="b-page-index">
-        <OrganismsMapContainer />
+        <OrganismsMapOffCanvasStructure />
     </div>
 </template>

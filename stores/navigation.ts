@@ -10,11 +10,9 @@ export const useNavigationStore = defineStore('navigationStore', {
         },
 
         resetNavState() {
-            console.log('route is changed')
             if (this.isNavOpen) {
                 setTimeout(() => {
                     this.isNavOpen = false
-                    console.log('nav is resetted')
                 }, 350)
             }
         },

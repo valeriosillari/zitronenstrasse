@@ -1,10 +1,13 @@
-# Zitronenstrasse
-
-# FEATURE: VUE3 + GQL
+# ZITRONENSTRASSE 2024
 
 ## TODO:
 
--   check Plugins for : MAP
+-   styles marker
+-   set marker animation at marker click ("jump")
+-   check graphQL query at CLIENT (click on single spot, get data by IDs)
+
+-   set typescript logic for types !!!
+
 -   check Plugins for : COOKIES
 -   check Plugins for : TRACKING
 
@@ -22,38 +25,15 @@
 
 -   transition between pages (improve animations)
 
--   set typescript logic for types
+-   icons and social images
+
+-   meta tags
+
+-   map THEME set correct colors
+
+-   button : 1 component with all logic and styles (now 2: button and button MENU)
 
 ## NICE TO HAVE / CHECK AGAIN:
 
 -   filter (where) for data of single page (gql query)
--   load data at page switch? cannot pre genearted all data? >> REAL STATIC + git hooks?
-
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
-
-## Setup
-
-Make sure to install the dependencies:
-
-```bash
-# npm
-npm install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run deploy-generate
-```
+-   load data at page switch? cannot pre generated all data? >> REAL STATIC + git hooks?
