@@ -1,4 +1,8 @@
 <template>
+    <MoleculesNoJsFallback />
+
+    <MoleculesSplashscreen />
+
     <OrganismsHeader />
 
     <div role="main" class="main-container">
@@ -30,6 +34,9 @@ watch(
 )
 
 onMounted(() => {
+    // no js logic
+    utilsRemoveNoJsClass()
+
     console.log('🚀')
 })
 </script>

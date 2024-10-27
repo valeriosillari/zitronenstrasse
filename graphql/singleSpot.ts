@@ -8,8 +8,10 @@ const GQL_QUERY_SINGLE_SPOT_BY_ID = gql`
                 url
             }
             imageCredits
+            addressStreet
             urlWebsite
             urlFacebook
+            urlInstagram
         }
     }
 `

@@ -1,17 +1,18 @@
 <template>
     <div class="b-social-link-list">
-        <AtomsLinkExternal
+        <NuxtLink
             v-for="link in socialLinks"
             :key="link.name"
-            :text="link.name"
-            :url="link.url"
+            :title="link.name"
+            :to="link.url"
+            target="_blank"
             class="social-link-item"
         >
             <font-awesome-icon
                 :icon="['fab', link.icon]"
                 class="social-link-icon"
             />
-        </AtomsLinkExternal>
+        </NuxtLink>
     </div>
 </template>
 

@@ -14,6 +14,8 @@
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 import GQL_QUERY_PAGE_BY_URL_REFERENCE from '../graphql/page'
 
+let pageTitle = ''
+
 const route = useRoute()
 
 const runtimeConfig = useRuntimeConfig()
@@ -30,6 +32,13 @@ const { data } = await useAsyncQuery(
 const page = data.value.pageCollection.items[0]
 
 const descriptionText = page.description.json
+
+// when get page info from API response
+pageTitle = page.title
+
+useHead({
+    title: `${pageTitle} | ${runtimeConfig.public.headTitleString}`,
+})
 </script>
 
 <style lang="sass">

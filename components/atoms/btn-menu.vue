@@ -22,6 +22,8 @@ const handleClickNavigation = () => {
 
 <style lang="sass">
 .b-btn-menu
+    opacity: 0
+    pointer-events: none
     position: relative
     float: right
     height: $btn_menu_height
@@ -62,4 +64,8 @@ const handleClickNavigation = () => {
                 opacity: 0
             &.bottom
                 transform: translateY(-$btn_menu_top_size) translateX(0) rotate(-45deg)
+    .js &
+        opacity: 1
+        animation: animationFadeIn 1s
+        pointer-events: auto
 </style>

@@ -25,7 +25,8 @@ const props = defineProps({
         overflow: hidden
         background: $color_transparent
         border: 0
-        top: $space_03
+        // padding space for place detail (space 3) + extra space for visual alignment
+        top: $space_03 +  $space_01
         right: $space_03
 
         &::before,

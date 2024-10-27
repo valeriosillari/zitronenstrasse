@@ -18,11 +18,13 @@
                             {{ link.title }}
                         </NuxtLink>
                         | A project by
-                        <AtomsLinkExternal
-                            text="Valerio Sillari"
-                            :url="$config.public.valeSiteRoot"
+                        <NuxtLink
+                            :title="$config.public.valeSiteAuthorName"
+                            :to="$config.public.valeSiteRoot"
                             class="footer-link"
-                        />
+                        >
+                            {{ $config.public.valeSiteAuthorName }}
+                        </NuxtLink>
                     </p>
                 </div>
 

@@ -3,13 +3,28 @@
         <h2 class="place-details-heading">{{ currentSpotData.title }}</h2>
 
         <div class="place-details-thumb-area">
-            <NuxtImg
-                class="place-details-thumb-image"
-                :alt="currentSpotData.image.title"
-                :src="currentSpotData.image.url"
-            />
+            <div class="place-details-thumb-image-inner">
+                <!-- TODO image data as computed -->
+                <NuxtImg
+                    v-if="currentSpotData.image"
+                    class="place-details-thumb-image"
+                    :alt="currentSpotData.image.title"
+                    :src="currentSpotData.image.url"
+                    loading="lazy"
+                />
+                <NuxtImg
+                    v-else
+                    class="place-details-thumb-image"
+                    :alt="currentSpotData.title"
+                    :src="'/img/place_image_fallback.jpg'"
+                    loading="lazy"
+                />
+            </div>
 
-            <div class="place-details-thumb-credits">
+            <div
+                v-if="currentSpotData.imageCredits"
+                class="place-details-thumb-credits"
+            >
                 <span>Credits:&nbsp;</span>
                 <span>{{ currentSpotData.imageCredits }}</span>
             </div>
@@ -17,10 +32,19 @@
 
         <div class="place-details-line">
             <span class="place-details-lin-text">Address:</span>
-            <span class="place-details-address">address here</span>
+            <span class="place-details-address">{{
+                currentSpotData.addressStreet
+            }}</span>
         </div>
 
-        <div class="place-details-line">
+        <div
+            v-if="
+                currentSpotData.urlWebsite ||
+                currentSpotData.urlFacebook ||
+                currentSpotData.urlInstagram
+            "
+            class="place-details-line"
+        >
             <span class="place-details-line-text">Links:</span>
             <ul class="list-unstyled">
                 <li v-if="currentSpotData.urlWebsite">
@@ -33,11 +57,19 @@
                         Facebook
                     </NuxtLink>
                 </li>
+                <li v-if="currentSpotData.urlInstagram">
+                    <NuxtLink
+                        :to="currentSpotData.urlInstagram"
+                        target="_blank"
+                    >
+                        Instagram
+                    </NuxtLink>
+                </li>
             </ul>
         </div>
     </section>
 
-    <section v-else class="">Loading</section>
+    <AtomsLoaderSpinner v-else />
 </template>
 
 <script setup lang="ts">
@@ -51,6 +83,7 @@ const currentSpotData = computed(() => singleSpotSelectedStore.currentSpot)
     color: $color_place_details_text
     line-height: 1.5
     animation: animationFadeIn 2s
+    padding: $space_03
 
     .place-details-heading
         @include font-size($h5-font-size)
@@ -61,8 +94,22 @@ const currentSpotData = computed(() => singleSpotSelectedStore.currentSpot)
         flex-direction: column
         margin-top: 15px
 
-        .place-details-thumb-image
-            +img-fluid
+        // image aspect ratio padding trick
+        // https://css-tricks.com/aspect-ratio-boxes/
+        .place-details-thumb-image-inner
+            height: 0
+            overflow: hidden
+            position: relative
+            background: $color_dark_01
+            // numbers from size original image
+            padding-top: calc(250px / 440px * 100%)
+
+            .place-details-thumb-image
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
 
         .place-details-thumb-credits
             font-size: .65rem

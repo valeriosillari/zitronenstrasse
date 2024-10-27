@@ -15,3 +15,20 @@
 // box padding
 =paddingBoxDefaut()
     padding: 10px 15px
+
+// custom scrollbar
+=mixins-scrollbar($color-scrollbar: $color-scrollbar-default)
+    ::-webkit-scrollbar
+        width: 6px
+
+    ::-webkit-scrollbar-track,
+    ::-webkit-scrollbar-thumb
+        border-radius: 2px
+
+    &::-webkit-scrollbar-track,
+    ::-webkit-scrollbar-track
+        background-color: rgba($color-scrollbar, .2)
+
+    &::-webkit-scrollbar-thumb,
+    ::-webkit-scrollbar-thumb
+        background-color: $color-scrollbar

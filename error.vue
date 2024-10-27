@@ -14,6 +14,8 @@
 </template>
 
 <script setup lang="ts">
+const runtimeConfig = useRuntimeConfig()
+
 const props = defineProps({
     title: {
         type: String,
@@ -28,6 +30,10 @@ const handleError = () => {
         redirect: '/',
     })
 }
+
+useHead({
+    title: `Ops! Error Page | ${runtimeConfig.public.headTitleString}`,
+})
 </script>
 
 <style lang="sass">

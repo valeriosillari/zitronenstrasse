@@ -1,9 +1,9 @@
 <template>
     <GoogleMap
         ref="mapRef"
-        class="b-google-map"
-        :api-key="config.public.googleMapKey"
-        :map-id="config.public.googleMapStyleMapId"
+        :class="['b-google-map', { 'is-map-loaded': isMapLoaded }]"
+        :api-key="runtimeConfig.public.googleMapKey"
+        :map-id="runtimeConfig.public.googleMapStyleMapId"
         :center="mapCenter"
         :background-color="mapBgColor"
         :zoom="mapZoom"
@@ -13,29 +13,34 @@
         :fullscreen-control="false"
         :map-type-control="false"
     >
-        <AdvancedMarker
+        <CustomMarker
             v-for="singlePlace in placesList"
             :key="singlePlace.id"
-            :pin-options="pinOptions"
             :options="{
+                anchorPoint: 'BOTTOM_CENTER',
                 position: {
                     lat: singlePlace.address.lat,
                     lng: singlePlace.address.lon,
                 },
             }"
             @click="clickMarkerHandler(singlePlace)"
-        />
+        >
+            <img
+                :id="`marker-id-${singlePlace.id}`"
+                class="map-marker"
+                src="/assets/svg/markerStyled.svg"
+            />
+        </CustomMarker>
     </GoogleMap>
 </template>
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { GoogleMap, AdvancedMarker } from 'vue3-google-map'
+import { GoogleMap, CustomMarker } from 'vue3-google-map'
 import GQL_QUERY_SINGLE_SPOT_COLLECTION from '../../graphql/singleSpotCollection'
 import GQL_QUERY_SINGLE_SPOT_BY_ID from '../../graphql/singleSpot'
 
-// import { GoogleMap, Marker } from 'vue3-google-map'
-const config = useRuntimeConfig()
+const runtimeConfig = useRuntimeConfig()
 
 const mapRef = ref(null)
 
@@ -49,15 +54,17 @@ const mapCenter = {
     lng: 13.4395546,
 }
 
+const isMapLoaded = ref(false)
+
 const mapZoom = 14
 
+// TODO: set as var global?
 // as page body bg
 const mapBgColor = '#2B2B2B'
 
-const pinOptions = { background: '#0f0' }
-
 const { data } = await useAsyncQuery(GQL_QUERY_SINGLE_SPOT_COLLECTION, {
-    limit: 10,
+    // max
+    limit: 100,
 })
 
 const placesList = data.value.singleSpotCollection.items
@@ -74,6 +81,20 @@ const centerMapToCurrentPlace = (singlePlace: object) => {
     // then arrange map position again to "balance" map off canvas area
     // 200 is the magic number
     mapRef.value.map.panBy(-200, 0)
+}
+
+const currentMarkerAnimation = (markerId) => {
+    const bounceClass = 'is-bouncing'
+    const previousMarkerBounced = document.getElementsByClassName(bounceClass)
+    const currentMarker = document.getElementById(`marker-id-${markerId}`)
+
+    // reset previous class if already added
+    for (const item of previousMarkerBounced) {
+        item.classList.remove(bounceClass)
+    }
+
+    // add class >>> set animation by css
+    currentMarker.classList.add(bounceClass)
 }
 
 // TODO: here try to decouple logic, too much stuff
@@ -120,9 +141,21 @@ const clickMarkerHandler = (singlePlace: object) => {
             // set pan and center NOT mobile screen (sidebar take all screen, pan not necessary)
             if (window.innerWidth >= 576) {
                 centerMapToCurrentPlace(singlePlace)
+
+                setTimeout(() => {
+                    currentMarkerAnimation(singlePlace.id)
+                }, 500)
             }
         })
 }
+
+onMounted(() => {
+    // got map loaded
+    if (window.google.maps) {
+        // then update value (for markers with fade animation)
+        isMapLoaded.value = true
+    }
+})
 </script>
 
 <style lang="sass">
@@ -134,5 +167,23 @@ const clickMarkerHandler = (singlePlace: object) => {
     // remove google cc
     // and remove some weird grey box set on right side from google
     .gm-style-cc
+        display: none
+
+    // custom marker / pin
+    .map-marker
+        width: 25px
+        height: 30px
+        opacity: 0
+        // bouncing animation @click (class added by JS)
+        &.is-bouncing
+            animation: bounceMarker 1.8s 3
+
+    // class added when map loaded: marker shown at map loaded
+    &.is-map-loaded
+        .map-marker
+            opacity: 1
+
+    // no js fallback | no map (no div loaded unstyled that "crash" page layout)
+    .no-js &
         display: none
 </style>
