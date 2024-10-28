@@ -27,6 +27,7 @@
         >
             <img
                 :id="`marker-id-${singlePlace.id}`"
+                :alt="singlePlace.title"
                 class="map-marker"
                 src="/assets/svg/markerStyled.svg"
             />

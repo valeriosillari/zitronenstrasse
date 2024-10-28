@@ -2,6 +2,7 @@
     <button
         type="button"
         :class="['b-btn', props.classNames]"
+        :title="title"
         @click="$emit('clickBtn')"
     />
 </template>
@@ -11,6 +12,11 @@ const props = defineProps({
     classNames: {
         type: String,
         default: null,
+    },
+
+    title: {
+        type: String,
+        default: '',
     },
 })
 </script>

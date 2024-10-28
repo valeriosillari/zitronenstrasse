@@ -7,6 +7,7 @@ const GQL_QUERY_SINGLE_SPOT_COLLECTION = gql`
                     id
                 }
                 id
+                title
                 address {
                     lat
                     lon
