@@ -1,35 +1,66 @@
-# ZITRONENSTRASSE 2024
+# Zitronenstrasse
 
-## TODO (REAL):
+#### Romantic Spots in Berlin.
 
--   check Plugins for : TRACKING
-    LEGAL STUFF GOOGLE MAP
-    https://www.google.com/intl/en_US/help/terms_maps/
+[zitronenstrasse.com](https://zitronenstrasse.com/)
 
--   map THEME set correct colors
+## GENERAL INFO
 
-## TODO:
+A side project with a list of romantic spots in Berlin.
+
+Based on **[NuxtJS](https://nuxt.com/)**, **[Contentful Headless CMS ](https://www.contentful.com/)**, **[GraphQL](https://graphql.org/)** and **[Google Maps](https://www.google.com/maps)**.
+
+## INSTALLATION
+
+1. Create a file in the root for env keys with this exact name: `.env`
+
+2. Copy and past all code from the existing file `.env.example` into the new file `.env`
+
+3. For each empty key `.env` file set the correct keys you will use from third-part services
+
+Now you set the right keys. You're ready to start
+
+## BASIC CLI COMMANDS
+
+```bash
+# install dependencies
+$ npm install
+
+# serve with hot reload at localhost:3000
+$ npm run dev
+
+# generate static project (static website)
+$ npm run deploy-generate
+```
+
+## TODO
 
 -   google map e consent? start map only after user says all fine?
-
 -   sitemap DYNAMIC (nuxt module, data from API)
-
 -   check graphQL query at CLIENT (click on single spot, get data by IDs)
-
--   set typescript logic for types !!!
-
--   set all styles as VAR by bootstrap (request as much as possible)
+-   set typescript logic for types
 -   space with REM (trick as pixels)?
 -   split sass variables in more files?
 -   sass font file with all vars
-
 -   transition between pages (improve animations)
-
 -   button : 1 component with all logic and styles (now 2: button and button MENU)
+-   remove all nuxt/vue google map module and set plain js?
 
+## NICE TO HAVE
+
+-   error page : 1) use layout, show FOOTER. 2) no transition effect 3) button back with NO js
+-   filter (where) for data of single page (gql query)
+-   load data at page switch? cannot pre generated all data? >> REAL STATIC + git hooks?
 -   image fallback set logic as computed
+-   check speed insight (June 2019). load map better (and later), for performance
 
-## PLACES TO ADD
+## ROAD MAP
+
+-   **FILTERS**: show places sorted by some kind of filter (only bars, only restaurants etc ...). Design + Code needs a concept.
+
+-   **SHARE SINGLE PLACES**: suggestion for sharing (on FB, twitter, as link) only a single place on the map. Conceptually possible? we have to check
+
+## NEW PLACES TO ADD
 
 -   silent garden
 -   vagabund brauerei
@@ -38,10 +69,3 @@
 -   dilekerei
 -   senorita ploff
 -   ewig Freunde (prenz brunch)
-
-## NICE TO HAVE / CHECK AGAIN:
-
--   error page : 1) use layout, show FOOTER. 2) no transition effect 3) button back with NO js
-
--   filter (where) for data of single page (gql query)
--   load data at page switch? cannot pre generated all data? >> REAL STATIC + git hooks?
