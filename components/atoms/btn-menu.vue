@@ -7,7 +7,7 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 const navigationStore = useNavigationStore()
 
 // btn switch class at value change

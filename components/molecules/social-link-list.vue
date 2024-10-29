@@ -16,7 +16,7 @@
     </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 // https://dev.to/ceceliacreates/using-fontawesome-icons-with-nuxt-3-50cd
 const socialLinks = [
     {

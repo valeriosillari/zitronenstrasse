@@ -18,7 +18,7 @@
     </nav>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import GQL_QUERY_PAGE_COLLECTION from '../../graphql/pageCollection'
 
 const runtimeConfig = useRuntimeConfig()

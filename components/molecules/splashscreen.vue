@@ -7,7 +7,7 @@
     <div v-if="isSplashscreenActive" ref="root" class="b-splashscreen" />
 </template>
 
-<script setup>
+<script setup lang="ts">
 const root = ref(null)
 const isSplashscreenActive = ref(true)
 

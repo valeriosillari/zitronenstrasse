@@ -36,7 +36,7 @@
     </footer>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import GQL_QUERY_PAGE_COLLECTION from '../../graphql/pageCollection'
 
 import packageJson from '../../package.json'
