@@ -54,7 +54,7 @@ responseDataLinksArray.forEach((singleLink) => {
 })
 
 // list by API + 1 extra for Home "added statically"
-const navigationIitemNumber = ref(responseDataLinksArray.length + 1)
+const navigationItemNumber = ref(responseDataLinksArray.length + 1)
 </script>
 
 <style lang="sass">
@@ -96,7 +96,7 @@ const navigationIitemNumber = ref(responseDataLinksArray.length + 1)
         // LI
         .navigation-item
             display: block
-            height: calc(100% / v-bind(navigationIitemNumber))
+            height: calc(100% / v-bind(navigationItemNumber))
             position: relative
             opacity: 0
             display: flex

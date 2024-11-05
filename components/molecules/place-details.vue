@@ -1,5 +1,5 @@
 <template>
-    <section v-if="currentSpotData" class="b-place-details">
+    <section v-if="currentSpotData.title" class="b-place-details">
         <h2 class="place-details-heading">{{ currentSpotData.title }}</h2>
 
         <div class="place-details-thumb-area">
@@ -74,6 +74,7 @@
 
 <script setup lang="ts">
 const singleSpotSelectedStore = useSingleSpotSelectedStore()
+
 // data from store
 const currentSpotData = computed(() => singleSpotSelectedStore.currentSpot)
 </script>

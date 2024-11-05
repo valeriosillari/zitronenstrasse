@@ -71,7 +71,12 @@ const { data } = await useAsyncQuery(GQL_QUERY_SINGLE_SPOT_COLLECTION, {
 const placesList = data.value.singleSpotCollection.items
 
 // function for PAN movement that also consider some window movement (to balance center with off canvas)
-const centerMapToCurrentPlace = (singlePlace: object) => {
+const centerMapToCurrentPlace = (singlePlace: {
+    address: {
+        lat: number
+        lon: number
+    }
+}) => {
     // fiest center map to marker
     mapRef.value.map.panTo({
         lat: singlePlace.address.lat,
@@ -84,7 +89,7 @@ const centerMapToCurrentPlace = (singlePlace: object) => {
     mapRef.value.map.panBy(-200, 0)
 }
 
-const currentMarkerAnimation = (markerId) => {
+const currentMarkerAnimation = (markerId: number) => {
     const bounceClass = 'is-bouncing'
     const previousMarkerBounced = document.getElementsByClassName(bounceClass)
     const currentMarker = document.getElementById(`marker-id-${markerId}`)
