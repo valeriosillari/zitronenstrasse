@@ -32,8 +32,9 @@ const htmlNoJsClass = 'no-js'
 export default defineNuxtConfig({
     devtools: { enabled: true },
 
+    // check "forced "typescript checks | types and more ...
     typescript: {
-        typeCheck: false,
+        typeCheck: true,
     },
 
     runtimeConfig: {
