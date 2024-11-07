@@ -24,12 +24,15 @@
                 },
             }"
         >
-            <img
-                :id="`marker-id-${singlePlace.id}`"
-                :alt="singlePlace.title"
-                class="map-marker"
-                src="/assets/svg/markerStyled.svg"
-            />
+            <div>
+                {{ singlePlace.title }}
+                <img
+                    :id="`marker-id-${singlePlace.id}`"
+                    :alt="singlePlace.title"
+                    class="map-marker"
+                    src="/assets/svg/markerStyled.svg"
+                />
+            </div>
         </CustomMarker>
     </GoogleMap>
 </template>
@@ -40,19 +43,21 @@ import { GoogleMap, CustomMarker } from 'vue3-google-map'
 import GQL_QUERY_SINGLE_SPOT_COLLECTION from '../../graphql/singleSpotCollection'
 // import GQL_QUERY_SINGLE_SPOT_BY_ID from '../../graphql/singleSpot'
 
+type TypeSpotsItems = {
+    sys: {
+        id: string
+    }
+    id: number
+    title: string
+    address: {
+        lat: number
+        lon: number
+    }
+}
+
 type SingleSpotCollection = {
     singleSpotCollection: {
-        items: {
-            sys: {
-                id: string
-            }
-            id: number
-            title: string
-            address: {
-                lat: number
-                lon: number
-            }
-        }
+        items: TypeSpotsItems[]
     }
 }
 
@@ -86,9 +91,7 @@ const { data } = await useAsyncQuery<SingleSpotCollection>(
     }
 )
 
-const placesList = data.value?.singleSpotCollection.items
-
-console.log(placesList)
+const placesList = data.value?.singleSpotCollection?.items
 
 // // function for PAN movement that also consider some window movement (to balance center with off canvas)
 // const centerMapToCurrentPlace = (singlePlace: {
