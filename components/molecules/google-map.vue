@@ -53,6 +53,20 @@ type TypeSpotsItems = {
     }
 }
 
+type TypeSingleSpotDetails = {
+    addressStreet: string
+    id: number
+    image?: {
+        title: string
+        url: string
+    }
+    imageCredits?: string
+    title: string
+    urlFacebook?: string
+    urlInstagram?: string
+    urlWebsite?: string
+}
+
 type SingleSpotCollection = {
     singleSpotCollection: {
         items: TypeSpotsItems[]
@@ -92,16 +106,11 @@ const { data } = await useAsyncQuery<SingleSpotCollection>(
 const placesList = data.value?.singleSpotCollection?.items
 
 // function for PAN movement that also consider some window movement (to balance center with off canvas)
-const centerMapToCurrentPlace = (singlePlace: {
-    address: {
-        lat: number
-        lon: number
-    }
-}) => {
+const centerMapToCurrentPlace = (lat: number, lng: number) => {
     // fiest center map to marker
     mapRef.value.map.panTo({
-        lat: singlePlace.address.lat,
-        lng: singlePlace.address.lon,
+        lat,
+        lng,
     })
 
     // magic trick
@@ -155,9 +164,13 @@ const clickMarkerHandler = (singlePlace: {
     // TODO: can be query done on PINIA action?
     // got data, we have to return it
     const getDataSingleSpot = async (idString: string) => {
-        const { data } = await useAsyncQuery(GQL_QUERY_SINGLE_SPOT_BY_ID, {
-            id: idString,
-        })
+        const { data } = await useAsyncQuery<TypeSingleSpotDetails>(
+            GQL_QUERY_SINGLE_SPOT_BY_ID,
+            {
+                id: idString,
+            }
+        )
+
         return data
     }
 
