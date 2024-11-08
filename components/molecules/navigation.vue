@@ -21,6 +21,22 @@
 <script setup lang="ts">
 import GQL_QUERY_PAGE_COLLECTION from '../../graphql/pageCollection'
 
+// TODO: types logic used on navigation AND on footer. set one file for all types
+type TypePageCollectionItem = {
+    sys: {
+        id: string
+    }
+    title: string
+    urlReference: string
+}
+
+type TypePageCollection = {
+    pageCollection: {
+        total: number
+        items: TypePageCollectionItem[]
+    }
+}
+
 const runtimeConfig = useRuntimeConfig()
 
 const navigationStore = useNavigationStore()
@@ -35,7 +51,7 @@ const query_collection_vars = {
     urlReferenceIn: ['about', 'contacts'],
 }
 
-const { data } = await useAsyncQuery(
+const { data } = await useAsyncQuery<TypePageCollection>(
     GQL_QUERY_PAGE_COLLECTION,
     query_collection_vars
 )
@@ -47,14 +63,18 @@ const footerLinks = [
     },
 ]
 
-const responseDataLinksArray = data.value.pageCollection.items
+const responseDataLinksArray = data.value?.pageCollection?.items
 
-responseDataLinksArray.forEach((singleLink) => {
-    footerLinks.push(singleLink)
-})
+if (responseDataLinksArray) {
+    responseDataLinksArray.forEach((singleLink) => {
+        footerLinks.push(singleLink)
+    })
+}
 
 // list by API + 1 extra for Home "added statically"
-const navigationItemNumber = ref(responseDataLinksArray.length + 1)
+const navigationItemNumber = ref(
+    responseDataLinksArray ? responseDataLinksArray.length + 1 : null
+)
 </script>
 
 <style lang="sass">

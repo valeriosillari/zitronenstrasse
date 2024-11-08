@@ -41,6 +41,7 @@ import GQL_QUERY_PAGE_COLLECTION from '../../graphql/pageCollection'
 
 import packageJson from '../../package.json'
 
+// TODO: types logic used on navigation AND on footer. set one file for all types
 type TypePageCollectionItem = {
     sys: {
         id: string
