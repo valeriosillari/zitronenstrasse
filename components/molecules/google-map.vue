@@ -23,16 +23,14 @@
                     lng: singlePlace.address.lon,
                 },
             }"
+            @click="clickMarkerHandler(singlePlace)"
         >
-            <div>
-                {{ singlePlace.title }}
-                <img
-                    :id="`marker-id-${singlePlace.id}`"
-                    :alt="singlePlace.title"
-                    class="map-marker"
-                    src="/assets/svg/markerStyled.svg"
-                />
-            </div>
+            <img
+                :id="`marker-id-${singlePlace.id}`"
+                :alt="singlePlace.title"
+                class="map-marker"
+                src="/assets/svg/markerStyled.svg"
+            />
         </CustomMarker>
     </GoogleMap>
 </template>
@@ -41,7 +39,7 @@
 import { ref } from 'vue'
 import { GoogleMap, CustomMarker } from 'vue3-google-map'
 import GQL_QUERY_SINGLE_SPOT_COLLECTION from '../../graphql/singleSpotCollection'
-// import GQL_QUERY_SINGLE_SPOT_BY_ID from '../../graphql/singleSpot'
+import GQL_QUERY_SINGLE_SPOT_BY_ID from '../../graphql/singleSpot'
 
 type TypeSpotsItems = {
     sys: {
@@ -65,10 +63,10 @@ const runtimeConfig = useRuntimeConfig()
 
 const mapRef = ref(null)
 
-// const sidebarStore = useSidebarStore()
-// const singleSpotSelectedStore = useSingleSpotSelectedStore()
+const sidebarStore = useSidebarStore()
+const singleSpotSelectedStore = useSingleSpotSelectedStore()
 
-// const currentSpotData = computed(() => singleSpotSelectedStore.currentSpot)
+const currentSpotData = computed(() => singleSpotSelectedStore.currentSpot)
 
 const mapCenter = {
     lat: 52.48383,
@@ -93,90 +91,95 @@ const { data } = await useAsyncQuery<SingleSpotCollection>(
 
 const placesList = data.value?.singleSpotCollection?.items
 
-// // function for PAN movement that also consider some window movement (to balance center with off canvas)
-// const centerMapToCurrentPlace = (singlePlace: {
-//     address: {
-//         lat: number
-//         lon: number
-//     }
-// }) => {
-//     // fiest center map to marker
-//     mapRef.value.map.panTo({
-//         lat: singlePlace.address.lat,
-//         lng: singlePlace.address.lon,
-//     })
+// function for PAN movement that also consider some window movement (to balance center with off canvas)
+const centerMapToCurrentPlace = (singlePlace: {
+    address: {
+        lat: number
+        lon: number
+    }
+}) => {
+    // fiest center map to marker
+    mapRef.value.map.panTo({
+        lat: singlePlace.address.lat,
+        lng: singlePlace.address.lon,
+    })
 
-//     // magic trick
-//     // then arrange map position again to "balance" map off canvas area
-//     // 200 is the magic number
-//     mapRef.value.map.panBy(-200, 0)
-// }
+    // magic trick
+    // then arrange map position again to "balance" map off canvas area
+    // 200 is the magic number
+    mapRef.value.map.panBy(-200, 0)
+}
 
-// const currentMarkerAnimation = (markerId: number) => {
-//     const bounceClass = 'is-bouncing'
-//     const previousMarkerBounced = document.getElementsByClassName(bounceClass)
-//     const currentMarker = document.getElementById(`marker-id-${markerId}`)
+const currentMarkerAnimation = (markerId: number) => {
+    const bounceClass = 'is-bouncing'
+    const previousMarkerBounced = document.getElementsByClassName(bounceClass)
+    const currentMarker = document.getElementById(`marker-id-${markerId}`)
 
-//     // reset previous class if already added
-//     for (const item of previousMarkerBounced) {
-//         item.classList.remove(bounceClass)
-//     }
+    // reset previous class if already added
+    for (const item of previousMarkerBounced) {
+        item.classList.remove(bounceClass)
+    }
 
-//     // add class >>> set animation by css
-//     currentMarker.classList.add(bounceClass)
-// }
+    // add class >>> set animation by css
+    if (currentMarker) {
+        currentMarker.classList.add(bounceClass)
+    }
+}
 
-// // TODO: here try to decouple logic, too much stuff
-// // a click get marker/place ID (from CMS)
-// const clickMarkerHandler = (singlePlace: object) => {
-//     // if click on same marker (and sidebar OPENED with already current place) >> do nothing
-//     if (
-//         sidebarStore.isSidebarOpen &&
-//         currentSpotData.value &&
-//         currentSpotData.value.id === singlePlace.id
-//     ) {
-//         return false
-//     }
+// TODO: here try to decouple logic, too much stuff
+// a click get marker/place ID (from CMS)
+const clickMarkerHandler = (singlePlace: {
+    id: number
+    sys: { id: string }
+}) => {
+    // if click on same marker (and sidebar OPENED with already current place) >> do nothing
+    if (
+        sidebarStore.isSidebarOpen &&
+        currentSpotData.value &&
+        currentSpotData.value.id === singlePlace.id
+    ) {
+        return false
+    }
 
-//     // reset data on sidebar
-//     singleSpotSelectedStore.resetSidebarState()
+    // reset data on sidebar
+    singleSpotSelectedStore.resetSidebarState()
 
-//     // ================
-//     // 1. first check if we need sidebar (open it or already opened)
-//     if (!sidebarStore.isSidebarOpen) {
-//         sidebarStore.openSidebarState()
-//     }
+    // ================
+    // 1. first check if we need sidebar (open it or already opened)
+    if (!sidebarStore.isSidebarOpen) {
+        sidebarStore.openSidebarState()
+    }
 
-//     // ================
-//     // 2) update data into the sidebar
-//     // TODO: can be query done on PINIA action?
-//     // got data, we have to return it
-//     const getDataSingleSpot = async (idString: string) => {
-//         const { data } = await useAsyncQuery(GQL_QUERY_SINGLE_SPOT_BY_ID, {
-//             id: idString,
-//         })
-//         return data
-//     }
+    // ================
+    // 2) update data into the sidebar
+    // TODO: can be query done on PINIA action?
+    // got data, we have to return it
+    const getDataSingleSpot = async (idString: string) => {
+        const { data } = await useAsyncQuery(GQL_QUERY_SINGLE_SPOT_BY_ID, {
+            id: idString,
+        })
+        return data
+    }
 
-//     getDataSingleSpot(singlePlace.sys.id)
-//         .then((singleSpotData: object) => {
-//             // pass data to store
-//             singleSpotSelectedStore.updateSingleSpotSelectedState(
-//                 singleSpotData.value.singleSpot
-//             )
-//         })
-//         // 3) MOVE / PAN map to new marker at center
-//         .then(() => {
-//             // set pan and center NOT mobile screen (sidebar take all screen, pan not necessary)
-//             if (window.innerWidth >= 576) {
-//                 centerMapToCurrentPlace(singlePlace)
+    getDataSingleSpot(singlePlace.sys.id)
+        .then((singleSpotData: object) => {
+            // pass data to store
+            singleSpotSelectedStore.updateSingleSpotSelectedState(
+                singleSpotData.value.singleSpot
+            )
+        })
+        // 3) MOVE / PAN map to new marker at center
+        .then(() => {
+            // set pan and center NOT mobile screen (sidebar take all screen, pan not necessary)
+            if (window.innerWidth >= 576) {
+                centerMapToCurrentPlace(singlePlace)
 
-//                 setTimeout(() => {
-//                     currentMarkerAnimation(singlePlace.id)
-//                 }, 500)
-//             }
-//         })
-// }
+                setTimeout(() => {
+                    currentMarkerAnimation(singlePlace.id)
+                }, 500)
+            }
+        })
+}
 
 onMounted(() => {
     // got map loaded
