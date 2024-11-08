@@ -138,6 +138,10 @@ const currentMarkerAnimation = (markerId: number) => {
 // TODO: here try to decouple logic, too much stuff
 // a click get marker/place ID (from CMS)
 const clickMarkerHandler = (singlePlace: {
+    address: {
+        lat: number
+        lon: number
+    }
     id: number
     sys: { id: string }
 }) => {
@@ -185,7 +189,10 @@ const clickMarkerHandler = (singlePlace: {
         .then(() => {
             // set pan and center NOT mobile screen (sidebar take all screen, pan not necessary)
             if (window.innerWidth >= 576) {
-                centerMapToCurrentPlace(singlePlace)
+                centerMapToCurrentPlace(
+                    singlePlace.address.lat,
+                    singlePlace.address.lon
+                )
 
                 setTimeout(() => {
                     currentMarkerAnimation(singlePlace.id)
