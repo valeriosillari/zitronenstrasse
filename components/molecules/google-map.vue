@@ -179,8 +179,8 @@ const clickMarkerHandler = (singlePlace: {
     }
 
     getDataSingleSpot(singlePlace.sys.id)
-        // TODO: set ANY, but types need to be defined
-        .then((singleSpotData: any) => {
+        // TODO: types need to be defined
+        .then((singleSpotData: object) => {
             // pass data to store
             singleSpotSelectedStore.updateSingleSpotSelectedState(
                 singleSpotData.value.singleSpot
