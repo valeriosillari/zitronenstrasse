@@ -5,7 +5,9 @@
                 {{ page.title }}
             </h1>
 
-            <AtomsRichText :rich-text="documentToHtmlString(descriptionText)" />
+            <AtomsRichText
+                :rich-text="documentToHtmlString(page.description.json)"
+            />
         </div>
     </div>
 </template>
@@ -13,8 +15,6 @@
 <script lang="ts" setup>
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 import GQL_QUERY_PAGE_BY_URL_REFERENCE from '../graphql/page'
-
-let pageTitle = ''
 
 const route = useRoute()
 
@@ -31,13 +31,8 @@ const { data } = await useAsyncQuery(
 )
 const page = data.value.pageCollection.items[0]
 
-const descriptionText = page.description.json
-
-// when get page info from API response
-pageTitle = page.title
-
 useHead({
-    title: `${pageTitle} | ${runtimeConfig.public.headTitleString}`,
+    title: `${page.title} | ${runtimeConfig.public.headTitleString}`,
 })
 </script>
 
