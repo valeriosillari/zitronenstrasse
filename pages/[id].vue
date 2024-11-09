@@ -2,12 +2,10 @@
     <div class="b-page-detail">
         <div class="container">
             <h1>
-                {{ page.title }}
+                {{ pageTitle }}
             </h1>
 
-            <AtomsRichText
-                :rich-text="documentToHtmlString(page.description.json)"
-            />
+            <AtomsRichText :rich-text="pageDescription" />
         </div>
     </div>
 </template>
@@ -15,6 +13,19 @@
 <script lang="ts" setup>
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 import GQL_QUERY_PAGE_BY_URL_REFERENCE from '../graphql/page'
+
+type TypePageCollectionItems = {
+    title: string
+    description: {
+        json: JSON
+    }
+}
+
+type TypePageCollection = {
+    pageCollection: {
+        items: TypePageCollectionItems[]
+    }
+}
 
 const route = useRoute()
 
@@ -25,14 +36,23 @@ const gql_query_vars = {
     urlReference: route.params.id,
 }
 
-const { data } = await useAsyncQuery(
+const { data } = await useAsyncQuery<TypePageCollection>(
     GQL_QUERY_PAGE_BY_URL_REFERENCE,
     gql_query_vars
 )
-const page = data.value.pageCollection.items[0]
+
+const page = data.value?.pageCollection?.items[0]
+
+const pageTitle = computed(() => {
+    return page?.title
+})
+
+const pageDescription = computed(() => {
+    return documentToHtmlString(page.description.json)
+})
 
 useHead({
-    title: `${page.title} | ${runtimeConfig.public.headTitleString}`,
+    title: `${page?.title} | ${runtimeConfig.public.headTitleString}`,
 })
 </script>
 
