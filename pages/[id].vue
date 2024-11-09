@@ -78,7 +78,7 @@ console.log(page)
 
 const pageDescription = computed(() => {
     // TODO:  we have to check all types for JSON rich text api response
-    // @ts-expect-error
+    // @ts-expect-error: Should expect complex JSON
     return documentToHtmlString(page?.description?.json)
 })
 
