@@ -6,24 +6,19 @@
 <template>
     <div
         v-if="isSplashscreenActive"
-        class="b-splashscreen"
-        :style="styleOptions"
+        :class="['b-splashscreen', isSplashscreenFading ? 'is-fading-out' : '']"
     />
 </template>
 
 <script setup lang="ts">
+const isSplashscreenFading = ref(false)
 const isSplashscreenActive = ref(true)
-const styleOptions = ref({})
+// custom value, used on JS (fade timeout) and also on css (they work together on timing)
+const fadeTimeMilliseconds = ref(1500)
+const fadeTimeVarCss = ref(`${fadeTimeMilliseconds.value / 1000}s`)
 
 const removeFadeOut = (speed: number) => {
-    const seconds = speed / 1000
-
-    // TODO: why not set a class instead?
-    // set inline styles for trigger FADE OUT
-    styleOptions.value = {
-        transition: 'opacity ' + seconds + 's ease',
-        opacity: 0,
-    }
+    isSplashscreenFading.value = true
 
     // remove component itself when fade completed (vue IF logic)
     setTimeout(() => {
@@ -32,7 +27,7 @@ const removeFadeOut = (speed: number) => {
 }
 
 onMounted(() => {
-    removeFadeOut(1500)
+    removeFadeOut(fadeTimeMilliseconds.value)
 })
 </script>
 
@@ -44,6 +39,11 @@ onMounted(() => {
     position: fixed
     z-index: $z_index_04
     top: 0
+    opacity: 1
+
+    &.is-fading-out
+        transition: opacity v-bind(fadeTimeVarCss) ease
+        opacity: 0
 
     // remove splashscreen after several seconds if browser has no JS enabled
     .no-js &
