@@ -19,23 +19,8 @@
 </template>
 
 <script setup lang="ts">
+import type { TypePageCollection } from '../../types/TypePageCollection'
 import GQL_QUERY_PAGE_COLLECTION from '../../graphql/pageCollection'
-
-// TODO: types logic used on navigation AND on footer. set one file for all types
-type TypePageCollectionItem = {
-    sys: {
-        id: string
-    }
-    title: string
-    urlReference: string
-}
-
-type TypePageCollection = {
-    pageCollection: {
-        total: number
-        items: TypePageCollectionItem[]
-    }
-}
 
 const runtimeConfig = useRuntimeConfig()
 
