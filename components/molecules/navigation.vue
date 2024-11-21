@@ -19,6 +19,7 @@
 </template>
 
 <script setup lang="ts">
+// TODO: remove types import, set in config file
 import type { TypePageCollection } from '../../types/TypePageCollection'
 import GQL_QUERY_PAGE_COLLECTION from '../../graphql/pageCollection'
 
