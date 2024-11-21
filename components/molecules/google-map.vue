@@ -107,14 +107,14 @@ const placesList = data.value?.singleSpotCollection?.items
 
 // function for PAN movement that also consider some window movement (to balance center with off canvas)
 const centerMapToCurrentPlace = (lat: number, lng: number) => {
-    // fiest center map to marker
+    // FIRST: center map to marker
     mapRef.value.map.panTo({
         lat,
         lng,
     })
 
     // magic trick
-    // then arrange map position again to "balance" map off canvas area
+    // THEN: arrange map position again to "balance" map off canvas area
     // 200 is the magic number
     mapRef.value.map.panBy(-200, 0)
 }
