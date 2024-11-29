@@ -1,10 +1,12 @@
 <template>
-    <section v-if="currentSpotData.title" class="b-place-details">
-        <h2 class="place-details-heading">{{ currentSpotData.title }}</h2>
+    <section class="b-place-details">
+        DETAIL HERE - {{ singleSpotSelectedStore.currentSpotId }}
+
+        <!-- <h2 class="place-details-heading">{{ currentSpotData.title }}</h2>
 
         <div class="place-details-thumb-area">
             <div class="place-details-thumb-image-inner">
-                <!-- TODO image data as computed -->
+                <!-- TODO image data as computed
                 <NuxtImg
                     v-if="currentSpotData.image"
                     class="place-details-thumb-image"
@@ -66,17 +68,17 @@
                     </NuxtLink>
                 </li>
             </ul>
-        </div>
+        </div> -->
     </section>
 
-    <AtomsLoaderSpinner v-else />
+    <!-- <AtomsLoaderSpinner v-else /> -->
 </template>
 
 <script setup lang="ts">
 const singleSpotSelectedStore = useSingleSpotSelectedStore()
 
-// data from store
-const currentSpotData = computed(() => singleSpotSelectedStore.currentSpot)
+// // data from store
+// const currentSpotData = computed(() => singleSpotSelectedStore.currentSpot)
 </script>
 
 <style lang="sass">

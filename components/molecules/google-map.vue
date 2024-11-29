@@ -39,7 +39,7 @@
 import { ref } from 'vue'
 import { GoogleMap, CustomMarker } from 'vue3-google-map'
 import GQL_QUERY_SINGLE_SPOT_COLLECTION from '../../graphql/singleSpotCollection'
-import GQL_QUERY_SINGLE_SPOT_BY_ID from '../../graphql/singleSpot'
+// import GQL_QUERY_SINGLE_SPOT_BY_ID from '../../graphql/singleSpot'
 
 type TypeSpotsItems = {
     sys: {
@@ -156,43 +156,49 @@ const clickMarkerHandler = (singlePlace: TypeSpotsItems) => {
         sidebarStore.openSidebarState()
     }
 
-    // ================
-    // 2) update data into the sidebar
-    // TODO: can be query done on PINIA action?
-    // got data, we have to return it
-    const getDataSingleSpot = async (idString: string) => {
-        const { data } = await useAsyncQuery<TypeSingleSpotDetails>(
-            GQL_QUERY_SINGLE_SPOT_BY_ID,
-            {
-                id: idString,
-            }
-        )
+    console.log('=========== CLICK | ID ===========')
+    console.log(singlePlace.id)
 
-        return data
-    }
+    // pass spotID to store | to start API call (query GraphQL) and get spot data
+    singleSpotSelectedStore.updateSingleSpotSelectedState(singlePlace.id)
 
-    getDataSingleSpot(singlePlace.sys.id)
-        // TODO: types need to be defined
-        .then((singleSpotData: object) => {
-            // pass data to store
-            singleSpotSelectedStore.updateSingleSpotSelectedState(
-                singleSpotData.value.singleSpot
-            )
-        })
-        // 3) MOVE / PAN map to new marker at center
-        .then(() => {
-            // set pan and center NOT mobile screen (sidebar take all screen, pan not necessary)
-            if (window.innerWidth >= 576) {
-                centerMapToCurrentPlace(
-                    singlePlace.address.lat,
-                    singlePlace.address.lon
-                )
+    // // ================
+    // // 2) update data into the sidebar
+    // // TODO: can be query done on PINIA action?
+    // // got data, we have to return it
+    // const getDataSingleSpot = async (idString: string) => {
+    //     const { data } = await useAsyncQuery<TypeSingleSpotDetails>(
+    //         GQL_QUERY_SINGLE_SPOT_BY_ID,
+    //         {
+    //             id: idString,
+    //         }
+    //     )
 
-                setTimeout(() => {
-                    currentMarkerAnimation(singlePlace.id)
-                }, 500)
-            }
-        })
+    //     return data
+    // }
+
+    // getDataSingleSpot(singlePlace.sys.id)
+    //     // TODO: types need to be defined
+    //     .then((singleSpotData: object) => {
+    //         // pass data to store
+    //         singleSpotSelectedStore.updateSingleSpotSelectedState(
+    //             singleSpotData.value.singleSpot
+    //         )
+    //     })
+    //     // 3) MOVE / PAN map to new marker at center
+    //     .then(() => {
+    //         // set pan and center NOT mobile screen (sidebar take all screen, pan not necessary)
+    //         if (window.innerWidth >= 576) {
+    //             centerMapToCurrentPlace(
+    //                 singlePlace.address.lat,
+    //                 singlePlace.address.lon
+    //             )
+
+    //             setTimeout(() => {
+    //                 currentMarkerAnimation(singlePlace.id)
+    //             }, 500)
+    //         }
+    //     })
 }
 
 onMounted(() => {
