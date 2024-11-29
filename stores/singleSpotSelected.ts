@@ -12,6 +12,7 @@ export const useSingleSpotSelectedStore = defineStore(
                 this.currentSpotId = data
             },
 
+            // TODO: check me again
             resetSidebarState() {
                 this.currentSpotId = 0
             },

@@ -147,6 +147,7 @@ const clickMarkerHandler = (singlePlace: TypeSpotsItems) => {
         return false
     }
 
+    // TODO: check me again
     // reset data on sidebar
     singleSpotSelectedStore.resetSidebarState()
 
