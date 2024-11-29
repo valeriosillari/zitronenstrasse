@@ -16,43 +16,8 @@
 <script lang="ts" setup>
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 import GQL_QUERY_PAGE_BY_URL_REFERENCE from '../graphql/page'
-
-// TODO: all this types seems too much. to check again
-type TypePageCollectionItemRichTextContentMarks = {
-    type: string
-}
-
-type TypePageCollectionItemRichTextContent = {
-    data: object
-    nodeType: string
-    value: string
-    marks: TypePageCollectionItemRichTextContentMarks[]
-}
-
-type TypePageCollectionItemRichTextContentList = {
-    data: object
-    nodeType: string
-    content: TypePageCollectionItemRichTextContent[]
-}
-
-type TypePageCollectionItemRichText = {
-    nodeType: string
-    data: object
-    content: TypePageCollectionItemRichTextContentList[]
-}
-
-type TypePageCollectionItems = {
-    title: string
-    description: {
-        json?: TypePageCollectionItemRichText[]
-    }
-}
-
-type TypePageCollection = {
-    pageCollection: {
-        items: TypePageCollectionItems[]
-    }
-}
+// TODO: remove types import, set in config file
+import type { TypePageCollection } from '../types/TypePageCollection'
 
 const route = useRoute()
 
