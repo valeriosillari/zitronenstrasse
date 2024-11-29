@@ -1,12 +1,12 @@
 <template>
-    <section class="b-place-details">
+    <section v-if="currentSpotData" class="b-place-details">
         DETAIL HERE - {{ singleSpotSelectedStore.currentSpotId }} - END
 
         <br />
         <br />
-        <p>
-            <!-- {{ currentSpotData }} -->
-        </p>
+        <pre>
+            {{ currentSpotData }}
+        </pre>
 
         <!-- <h2 class="place-details-heading">{{ currentSpotData.title }}</h2>
 
@@ -77,11 +77,15 @@
         </div> -->
     </section>
 
-    <!-- <AtomsLoaderSpinner v-else /> -->
+    <AtomsLoaderSpinner v-else />
 </template>
 
 <script setup lang="ts">
 import GQL_QUERY_SINGLE_SPOT_BY_ID from '../../graphql/singleSpot'
+
+const currentSpotData = ref({
+    singleSpot: {},
+})
 
 const singleSpotSelectedStore = useSingleSpotSelectedStore()
 
@@ -94,8 +98,11 @@ const getDataSingleSpot = async (idString: string) => {
 
     console.log('>>>> data reposne HERE OK <<<<<<')
     console.log(data)
-
+    console.log(typeof data)
+    currentSpotData.value = data
     return data
+
+    // return false
 }
 
 watch(
