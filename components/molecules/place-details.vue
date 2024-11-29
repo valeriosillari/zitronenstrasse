@@ -1,9 +1,11 @@
 <template>
     <section class="b-place-details">
-        DETAIL HERE - {{ singleSpotSelectedStore.currentSpotId }}
+        DETAIL HERE - {{ singleSpotSelectedStore.currentSpotId }} - END
 
+        <br />
+        <br />
         <p>
-            {{ testMe }}
+            <!-- {{ currentSpotData }} -->
         </p>
 
         <!-- <h2 class="place-details-heading">{{ currentSpotData.title }}</h2>
@@ -83,32 +85,51 @@ import GQL_QUERY_SINGLE_SPOT_BY_ID from '../../graphql/singleSpot'
 
 const singleSpotSelectedStore = useSingleSpotSelectedStore()
 
-const { data } = await useAsyncQuery(GQL_QUERY_SINGLE_SPOT_BY_ID, {
-    id: singleSpotSelectedStore.currentSpotId,
+const getDataSingleSpot = async (idString: string) => {
+    console.log('>>>> FUNCION getDataSingleSpot')
+
+    const { data } = await useAsyncQuery(GQL_QUERY_SINGLE_SPOT_BY_ID, {
+        id: idString,
+    })
+
+    console.log('>>>> data reposne HERE OK <<<<<<')
+    console.log(data)
+
+    return data
+}
+
+watch(
+    () => singleSpotSelectedStore.currentSpotId,
+    () => {
+        if (singleSpotSelectedStore.currentSpotId) {
+            getDataSingleSpot(singleSpotSelectedStore.currentSpotId)
+        }
+    }
+)
+
+onMounted(() => {
+    console.log('>>>>>> single spot component | MOUNTED')
+
+    // getDataSingleSpot(singleSpotSelectedStore.currentSpotId)
+
+    // if (singleSpotSelectedStore.currentSpotId) {
+    //     getDataSingleSpot(singleSpotSelectedStore.currentSpotId)
+    // }
+
+    // if (singleSpotSelectedStore.currentSpotId > 0) {
+    //     const { data } = useAsyncQuery(GQL_QUERY_SINGLE_SPOT_BY_ID, {
+    //         id: singleSpotSelectedStore.currentSpotId,
+    //     })
+
+    //     singleSpotRef.value = data
+
+    //     console.log('======= data =======')
+    //     console.log(singleSpotRef.value)
+    // } else {
+    //     console.log('======= NO SPOT " value is ZERO" =======')
+    //     console.log(singleSpotRef.value)
+    // }
 })
-
-const testMe = data
-
-// onMounted(() => {
-//     console.log('single spot component | MOUNTED')
-
-//     if (singleSpotSelectedStore.currentSpotId > 0) {
-//         const { data } = useAsyncQuery(GQL_QUERY_SINGLE_SPOT_BY_ID, {
-//             id: singleSpotSelectedStore.currentSpotId,
-//         })
-
-//         singleSpotRef.value = data
-
-//         console.log('======= data =======')
-//         console.log(singleSpotRef.value)
-//     } else {
-//         console.log('======= NO SPOT " value is ZERO" =======')
-//         console.log(singleSpotRef.value)
-//     }
-// })
-
-// // data from store
-// const currentSpotData = computed(() => singleSpotSelectedStore.currentSpot)
 </script>
 
 <style lang="sass">
