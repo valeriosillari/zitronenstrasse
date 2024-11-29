@@ -137,14 +137,7 @@ const currentMarkerAnimation = (markerId: number) => {
 
 // TODO: here try to decouple logic, too much stuff
 // a click get marker/place ID (from CMS)
-const clickMarkerHandler = (singlePlace: {
-    address: {
-        lat: number
-        lon: number
-    }
-    id: number
-    sys: { id: string }
-}) => {
+const clickMarkerHandler = (singlePlace: TypeSpotsItems) => {
     // if click on same marker (and sidebar OPENED with already current place) >> do nothing
     if (
         sidebarStore.isSidebarOpen &&
