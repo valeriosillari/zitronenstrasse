@@ -4,7 +4,7 @@
 
         <br />
         <br />
-        <pre v-if="currentSpotData">
+        <pre v-if="currentSpotData.title">
             {{ currentSpotData.title }}
         </pre>
 
@@ -81,23 +81,31 @@
 </template>
 
 <script setup lang="ts">
+import type { TypeSingleSpot } from '../../types/TypeSingleSpot'
 import GQL_QUERY_SINGLE_SPOT_BY_ID from '../../graphql/singleSpot'
 
-const currentSpotData = ref({})
+const currentSpotData = ref({
+    singleSpot: {
+        title: '',
+    },
+})
 
 const singleSpotSelectedStore = useSingleSpotSelectedStore()
 
 const getDataSingleSpot = async (idString: string) => {
     console.log('>>>> FUNCION getDataSingleSpot')
 
-    const { data } = await useAsyncQuery(GQL_QUERY_SINGLE_SPOT_BY_ID, {
-        id: idString,
-    })
+    const { data } = await useAsyncQuery<TypeSingleSpot>(
+        GQL_QUERY_SINGLE_SPOT_BY_ID,
+        {
+            id: idString,
+        }
+    )
 
     console.log('>>>> data reposne HERE OK <<<<<<')
     console.log(data)
     console.log(typeof data)
-    currentSpotData.value = data._value.singleSpot
+    currentSpotData.value = data.value?.singleSpot
     return data
 
     // return false
