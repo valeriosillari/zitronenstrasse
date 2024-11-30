@@ -1,3 +1,16 @@
+import GQL_QUERY_SINGLE_SPOT_BY_ID from '../graphql/singleSpot'
+
+const apiCallResponse = async (singleSpotSysId: string) => {
+    const { data } = await useAsyncQuery<TypeSingleSpotDetails>(
+        GQL_QUERY_SINGLE_SPOT_BY_ID,
+        {
+            id: singleSpotSysId,
+        }
+    )
+
+    return data._value.singleSpot
+}
+
 export const useSingleSpotSelectedStore = defineStore(
     'singleSpotSelectedStore',
     {
@@ -13,42 +26,34 @@ export const useSingleSpotSelectedStore = defineStore(
                 )
                 console.log(singleSpotSysId)
 
-                // this.currentSpotId = data
+                apiCallResponse(singleSpotSysId).then(
+                    (singleSpotData: object) => {
+                        console.log('==== HRE???? ====')
+                        console.log(singleSpotData)
 
-                this.currentSpotData = {
-                    id: 1,
-                    title: 'cippa',
-                    imageCredits: 'xsdgsd',
-                    image: {
-                        title: 'sdgsd',
-                        url: '',
-                    },
-                    addressStreet: 'street',
-                    urlWebsite: 'https://urlWebsite.com',
-                    urlFacebook: 'https://urlFacebook.com',
-                    urlInstagram: 'https://urlInstagram.com',
-                }
+                        this.currentSpotData = singleSpotData
+                    }
+                )
+
+                // // this.currentSpotId = data
+
+                // this.currentSpotData = {
+                //     id: 1,
+                //     title: 'cippa',
+                //     imageCredits: 'xsdgsd',
+                //     image: {
+                //         title: 'sdgsd',
+                //         url: '',
+                //     },
+                //     addressStreet: 'street',
+                //     urlWebsite: 'https://urlWebsite.com',
+                //     urlFacebook: 'https://urlFacebook.com',
+                //     urlInstagram: 'https://urlInstagram.com',
+                // }
             },
         },
     }
 )
-
-// import type { TypeSingleSpot } from '../../types/TypeSingleSpot'
-// import GQL_QUERY_SINGLE_SPOT_BY_ID from '../../graphql/singleSpot'
-
-const currentSpotData = ref({
-    id: 0,
-    title: '',
-    imageCredits: '',
-    image: {
-        title: '',
-        url: '',
-    },
-    addressStreet: '',
-    urlWebsite: '',
-    urlFacebook: '',
-    urlInstagram: '',
-})
 
 // const getDataSingleSpot = async (idString: string) => {
 //     console.log('>>>> FUNCION getDataSingleSpot')

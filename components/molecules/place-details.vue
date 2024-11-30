@@ -73,19 +73,7 @@
 </template>
 
 <script setup lang="ts">
-const currentSpotData = reactive({
-    id: 0,
-    title: '',
-    imageCredits: '',
-    image: {
-        title: '',
-        url: '',
-    },
-    addressStreet: '',
-    urlWebsite: '',
-    urlFacebook: '',
-    urlInstagram: '',
-})
+const currentSpotData = ref({})
 
 const singleSpotSelectedStore = useSingleSpotSelectedStore()
 
@@ -114,6 +102,9 @@ watch(
     () => singleSpotSelectedStore.currentSpotData,
     () => {
         if (singleSpotSelectedStore.currentSpotData) {
+            console.log('++++ WATCH | new data? ++++')
+            console.log(singleSpotSelectedStore.currentSpotData)
+
             // TODO: fix using reactive later
             currentSpotData.value = singleSpotSelectedStore.currentSpotData
         }
