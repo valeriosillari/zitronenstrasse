@@ -93,7 +93,6 @@ watch(
     () => singleSpotSelectedStore.currentSpotData,
     () => {
         if (singleSpotSelectedStore.currentSpotData) {
-            // TODO: fix issue setting not ref but reactive?
             currentSpotData.value = singleSpotSelectedStore.currentSpotData
         }
     }

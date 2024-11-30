@@ -9,7 +9,7 @@ const apiCallResponse = async (singleSpotSysId: string) => {
         }
     )
 
-    return data?._value.singleSpot
+    return data?.value?.singleSpot
 }
 
 export const useSingleSpotSelectedStore = defineStore(
@@ -17,39 +17,27 @@ export const useSingleSpotSelectedStore = defineStore(
     {
         // arrow function recommended for full type inference
         state: () => ({
-            currentSpotData: {},
+            currentSpotData: {
+                id: 0,
+                title: '',
+                imageCredits: '',
+                image: {
+                    title: '',
+                    url: '',
+                },
+                addressStreet: '',
+                urlWebsite: '',
+                urlFacebook: '',
+                urlInstagram: '',
+            },
         }),
 
         actions: {
             updateSingleSpotSelectedState(singleSpotSysId: string) {
-                apiCallResponse(singleSpotSysId).then(
-                    (singleSpotData: object) => {
-                        console.log('==== HRE???? ====')
-                        console.log(singleSpotData)
-
-                        this.currentSpotData = singleSpotData
-                    }
-                )
+                apiCallResponse(singleSpotSysId).then((singleSpotData) => {
+                    this.currentSpotData = singleSpotData
+                })
             },
         },
     }
 )
-
-// const getDataSingleSpot = async (idString: string) => {
-//     console.log('>>>> FUNCION getDataSingleSpot')
-
-//     const { data } = await useAsyncQuery<TypeSingleSpot>(
-//         GQL_QUERY_SINGLE_SPOT_BY_ID,
-//         {
-//             id: idString,
-//         }
-//     )
-
-//     console.log('>>>> data reposne HERE OK <<<<<<')
-
-//     currentSpotData.value = data.value?.singleSpot
-
-//     return data
-
-//     // return false
-// }
