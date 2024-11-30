@@ -11,6 +11,7 @@
 </template>
 
 <script setup lang="ts">
+// TODO: not use ref, set a reactive?
 const isSplashscreenFading = ref(false)
 const isSplashscreenActive = ref(true)
 // custom value, used on JS (fade timeout) and also on css (they work together on timing)
