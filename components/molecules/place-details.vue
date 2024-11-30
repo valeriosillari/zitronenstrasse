@@ -73,10 +73,7 @@
 </template>
 
 <script setup lang="ts">
-import type { TypeSingleSpot } from '../../types/TypeSingleSpot'
-import GQL_QUERY_SINGLE_SPOT_BY_ID from '../../graphql/singleSpot'
-
-const currentSpotData = ref({
+const currentSpotData = reactive({
     id: 0,
     title: '',
     imageCredits: '',
@@ -92,30 +89,33 @@ const currentSpotData = ref({
 
 const singleSpotSelectedStore = useSingleSpotSelectedStore()
 
-const getDataSingleSpot = async (idString: string) => {
-    console.log('>>>> FUNCION getDataSingleSpot')
+// const currentSpotData = singleSpotSelectedStore.currentSpotId
 
-    const { data } = await useAsyncQuery<TypeSingleSpot>(
-        GQL_QUERY_SINGLE_SPOT_BY_ID,
-        {
-            id: idString,
-        }
-    )
+// const getDataSingleSpot = async (idString: string) => {
+//     console.log('>>>> FUNCION getDataSingleSpot')
 
-    console.log('>>>> data reposne HERE OK <<<<<<')
+//     const { data } = await useAsyncQuery<TypeSingleSpot>(
+//         GQL_QUERY_SINGLE_SPOT_BY_ID,
+//         {
+//             id: idString,
+//         }
+//     )
 
-    currentSpotData.value = data.value?.singleSpot
+//     console.log('>>>> data reposne HERE OK <<<<<<')
 
-    return data
+//     currentSpotData.value = data.value?.singleSpot
 
-    // return false
-}
+//     return data
+
+//     // return false
+// }
 
 watch(
-    () => singleSpotSelectedStore.currentSpotId,
+    () => singleSpotSelectedStore.currentSpotData,
     () => {
-        if (singleSpotSelectedStore.currentSpotId) {
-            getDataSingleSpot(singleSpotSelectedStore.currentSpotId)
+        if (singleSpotSelectedStore.currentSpotData) {
+            // TODO: fix using reactive later
+            currentSpotData.value = singleSpotSelectedStore.currentSpotData
         }
     }
 )
