@@ -77,9 +77,17 @@ import type { TypeSingleSpot } from '../../types/TypeSingleSpot'
 import GQL_QUERY_SINGLE_SPOT_BY_ID from '../../graphql/singleSpot'
 
 const currentSpotData = ref({
-    singleSpot: {
+    id: 0,
+    title: '',
+    imageCredits: '',
+    image: {
         title: '',
+        url: '',
     },
+    addressStreet: '',
+    urlWebsite: '',
+    urlFacebook: '',
+    urlInstagram: '',
 })
 
 const singleSpotSelectedStore = useSingleSpotSelectedStore()
@@ -95,9 +103,9 @@ const getDataSingleSpot = async (idString: string) => {
     )
 
     console.log('>>>> data reposne HERE OK <<<<<<')
-    console.log(data)
-    console.log(typeof data)
+
     currentSpotData.value = data.value?.singleSpot
+
     return data
 
     // return false

@@ -1,8 +1,12 @@
 export type TypeSingleSpot = {
-    SingleSpot: {
+    singleSpot: {
         id: string
         title: string
-        imageCredits: string
+        imageCredits?: string
+        image?: {
+            title?: string
+            url: string
+        }
         addressStreet: string
         urlWebsite?: string
         urlFacebook?: string
