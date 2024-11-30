@@ -73,67 +73,31 @@
 </template>
 
 <script setup lang="ts">
-const currentSpotData = ref({})
+const currentSpotData = ref({
+    id: 0,
+    title: '',
+    imageCredits: '',
+    image: {
+        title: '',
+        url: '',
+    },
+    addressStreet: '',
+    urlWebsite: '',
+    urlFacebook: '',
+    urlInstagram: '',
+})
 
 const singleSpotSelectedStore = useSingleSpotSelectedStore()
-
-// const currentSpotData = singleSpotSelectedStore.currentSpotId
-
-// const getDataSingleSpot = async (idString: string) => {
-//     console.log('>>>> FUNCION getDataSingleSpot')
-
-//     const { data } = await useAsyncQuery<TypeSingleSpot>(
-//         GQL_QUERY_SINGLE_SPOT_BY_ID,
-//         {
-//             id: idString,
-//         }
-//     )
-
-//     console.log('>>>> data reposne HERE OK <<<<<<')
-
-//     currentSpotData.value = data.value?.singleSpot
-
-//     return data
-
-//     // return false
-// }
 
 watch(
     () => singleSpotSelectedStore.currentSpotData,
     () => {
         if (singleSpotSelectedStore.currentSpotData) {
-            console.log('++++ WATCH | new data? ++++')
-            console.log(singleSpotSelectedStore.currentSpotData)
-
-            // TODO: fix using reactive later
+            // TODO: fix issue setting not ref but reactive?
             currentSpotData.value = singleSpotSelectedStore.currentSpotData
         }
     }
 )
-
-onMounted(() => {
-    console.log('>>>>>> single spot component | MOUNTED')
-
-    // getDataSingleSpot(singleSpotSelectedStore.currentSpotId)
-
-    // if (singleSpotSelectedStore.currentSpotId) {
-    //     getDataSingleSpot(singleSpotSelectedStore.currentSpotId)
-    // }
-
-    // if (singleSpotSelectedStore.currentSpotId > 0) {
-    //     const { data } = useAsyncQuery(GQL_QUERY_SINGLE_SPOT_BY_ID, {
-    //         id: singleSpotSelectedStore.currentSpotId,
-    //     })
-
-    //     singleSpotRef.value = data
-
-    //     console.log('======= data =======')
-    //     console.log(singleSpotRef.value)
-    // } else {
-    //     console.log('======= NO SPOT " value is ZERO" =======')
-    //     console.log(singleSpotRef.value)
-    // }
-})
 </script>
 
 <style lang="sass">
