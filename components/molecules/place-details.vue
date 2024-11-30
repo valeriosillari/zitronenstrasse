@@ -4,8 +4,8 @@
 
         <br />
         <br />
-        <pre>
-            {{ currentSpotData }}
+        <pre v-if="currentSpotData">
+            {{ currentSpotData.title }}
         </pre>
 
         <!-- <h2 class="place-details-heading">{{ currentSpotData.title }}</h2>
@@ -83,9 +83,7 @@
 <script setup lang="ts">
 import GQL_QUERY_SINGLE_SPOT_BY_ID from '../../graphql/singleSpot'
 
-const currentSpotData = ref({
-    singleSpot: {},
-})
+const currentSpotData = ref({})
 
 const singleSpotSelectedStore = useSingleSpotSelectedStore()
 
@@ -99,7 +97,7 @@ const getDataSingleSpot = async (idString: string) => {
     console.log('>>>> data reposne HERE OK <<<<<<')
     console.log(data)
     console.log(typeof data)
-    currentSpotData.value = data
+    currentSpotData.value = data._value.singleSpot
     return data
 
     // return false
