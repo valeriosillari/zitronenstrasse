@@ -1,10 +1,12 @@
+<!-- TODO: set back later. here we got 1 error and 1 UI issue (fade not work at change) -->
 <template>
-    <section v-if="currentSpotData.title" class="b-place-details">
+    <div>here</div>
+    <!-- <section v-if="currentSpotData.title" class="b-place-details">
         <h2 class="place-details-heading">{{ currentSpotData.title }}</h2>
 
         <div class="place-details-thumb-area">
             <div class="place-details-thumb-image-inner">
-                <!-- TODO image data as computed -->
+                <!-- TODO image data as computed
                 <NuxtImg
                     v-if="currentSpotData.image"
                     class="place-details-thumb-image"
@@ -69,10 +71,10 @@
         </div>
     </section>
 
-    <AtomsLoaderSpinner v-else />
+    <AtomsLoaderSpinner v-else /> -->
 </template>
 
-<script setup lang="ts">
+<!-- <script setup lang="ts">
 const currentSpotData = ref({
     id: 0,
     title: '',
@@ -97,7 +99,7 @@ watch(
         }
     }
 )
-</script>
+</script> -->
 
 <style lang="sass">
 .b-place-details
