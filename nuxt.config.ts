@@ -39,7 +39,7 @@ export default defineNuxtConfig({
     // TODO:
     // check "forced "typescript checks | types and more ...
     typescript: {
-        typeCheck: false,
+        typeCheck: true,
     },
 
     runtimeConfig: {
