@@ -22,7 +22,6 @@ export const useSingleSpotSelectedStore = defineStore(
 
         actions: {
             resetSpotData() {
-                alert('RESET')
                 this.currentSpotData = null
             },
 
