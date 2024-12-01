@@ -80,7 +80,7 @@ const mapRef = ref(null)
 const sidebarStore = useSidebarStore()
 const singleSpotSelectedStore = useSingleSpotSelectedStore()
 
-const currentSpotData = computed(() => singleSpotSelectedStore.currentSpot)
+const currentSpotData = computed(() => singleSpotSelectedStore.currentSpotData)
 
 const mapCenter = {
     lat: 52.48383,
