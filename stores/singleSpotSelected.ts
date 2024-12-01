@@ -1,22 +1,6 @@
 import type { TypeSingleSpot } from '../types/TypeSingleSpot'
 import GQL_QUERY_SINGLE_SPOT_BY_ID from '../graphql/singleSpot'
 
-const spotInitialState = {
-    currentSpotData: {
-        id: 0,
-        title: '',
-        imageCredits: '',
-        image: {
-            title: '',
-            url: '',
-        },
-        addressStreet: '',
-        urlWebsite: '',
-        urlFacebook: '',
-        urlInstagram: '',
-    },
-}
-
 const apiCallResponse = async (singleSpotSysId: string) => {
     const { data } = await useAsyncQuery<TypeSingleSpot>(
         GQL_QUERY_SINGLE_SPOT_BY_ID,
@@ -32,18 +16,33 @@ export const useSingleSpotSelectedStore = defineStore(
     'singleSpotSelectedStore',
     {
         // arrow function recommended for full type inference
-        state: () => spotInitialState,
+        state: () => ({
+            currentSpotData: null as TypeSingleSpot | null,
+        }),
 
         actions: {
-            updateSingleSpotSelectedState(singleSpotSysId: string) {
-                // reset | enable UI "fade" effect
-                this.currentSpotData = spotInitialState
+            resetSpotData() {
+                alert('RESET')
+                this.currentSpotData = null
+            },
 
-                this.currentSpotData = apiCallResponse(singleSpotSysId).then(
-                    (singleSpotData) => {
-                        this.currentSpotData = singleSpotData
-                    }
-                )
+            async updateSingleSpotSelectedState(singleSpotSysId: string) {
+                // reset | enable UI "fade" effect
+                this.resetSpotData()
+
+                // remove component itself when fade completed (vue IF logic)
+                console.log('======== this.currentSpotData | AFTER ==========')
+                console.log(this.currentSpotData)
+
+                apiCallResponse(singleSpotSysId).then((singleSpotData) => {
+                    console.log(
+                        '======== this.currentSpotData | THEN done =========='
+                    )
+                    console.log(singleSpotData)
+                    console.log(typeof singleSpotData)
+
+                    this.currentSpotData = singleSpotData
+                })
             },
         },
     }
