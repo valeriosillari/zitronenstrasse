@@ -1,6 +1,6 @@
 export type TypeSingleSpot = {
     singleSpot: {
-        id: string
+        id: number
         title: string
         imageCredits?: string
         image?: {
