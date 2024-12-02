@@ -2,9 +2,15 @@
 <template>
     <div>START</div>
 
-    <pre v-if="currentSpotData">
-        hey - {{ currentSpotData.title }} - yo
-    </pre>
+    <div v-if="currentSpotData" style="border: 5px solid red">
+        <pre>
+            title - {{ currentSpotData.singleSpot.title }} - END
+        </pre>
+
+        <pre v-if="currentSpotData.singleSpot.imageCredits">
+            image credits - {{ currentSpotData.singleSpot.imageCredits }} - END
+        </pre>
+    </div>
 
     <div>END</div>
 
@@ -83,17 +89,20 @@
 
 <script setup lang="ts">
 const currentSpotData = ref<{
-    id: number
-    title: string
-    imageCredits?: string
-    image?: {
-        title?: string
-        url: string
+    // TODO: set here "singleSpot" | works but syntax error? | remove it, no syntas error but NO data
+    singleSpot: {
+        id: number
+        title: string
+        imageCredits?: string
+        image?: {
+            title?: string
+            url: string
+        }
+        addressStreet: string
+        urlWebsite?: string
+        urlFacebook?: string
+        urlInstagram?: string
     }
-    addressStreet: string
-    urlWebsite?: string
-    urlFacebook?: string
-    urlInstagram?: string
 } | null>(null)
 
 const singleSpotSelectedStore = useSingleSpotSelectedStore()
