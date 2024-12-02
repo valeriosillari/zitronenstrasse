@@ -1,6 +1,13 @@
 <!-- TODO: set back later. here we got 1 error and 1 UI issue (fade not work at change) -->
 <template>
-    <div>here</div>
+    <div>START</div>
+
+    <pre v-if="currentSpotData">
+        hey - {{ currentSpotData.title }} - yo
+    </pre>
+
+    <div>END</div>
+
     <!-- <section v-if="currentSpotData.title" class="b-place-details">
         <h2 class="place-details-heading">{{ currentSpotData.title }}</h2>
 
@@ -74,20 +81,20 @@
     <AtomsLoaderSpinner v-else /> -->
 </template>
 
-<!-- <script setup lang="ts">
-const currentSpotData = ref({
-    id: 0,
-    title: '',
-    imageCredits: '',
-    image: {
-        title: '',
-        url: '',
-    },
-    addressStreet: '',
-    urlWebsite: '',
-    urlFacebook: '',
-    urlInstagram: '',
-})
+<script setup lang="ts">
+const currentSpotData = ref<{
+    id: number
+    title: string
+    imageCredits?: string
+    image?: {
+        title?: string
+        url: string
+    }
+    addressStreet: string
+    urlWebsite?: string
+    urlFacebook?: string
+    urlInstagram?: string
+} | null>(null)
 
 const singleSpotSelectedStore = useSingleSpotSelectedStore()
 
@@ -95,11 +102,14 @@ watch(
     () => singleSpotSelectedStore.currentSpotData,
     () => {
         if (singleSpotSelectedStore.currentSpotData) {
+            console.log('======== TO USE Now ========')
+            console.log(singleSpotSelectedStore.currentSpotData)
+
             currentSpotData.value = singleSpotSelectedStore.currentSpotData
         }
     }
 )
-</script> -->
+</script>
 
 <style lang="sass">
 .b-place-details

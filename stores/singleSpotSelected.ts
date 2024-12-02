@@ -9,7 +9,7 @@ const apiCallResponse = async (singleSpotSysId: string) => {
         }
     )
 
-    return data?.value?.singleSpot
+    return data?.value
 }
 
 export const useSingleSpotSelectedStore = defineStore(
