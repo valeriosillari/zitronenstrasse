@@ -1,7 +1,7 @@
 export const useSidebarStore = defineStore('sidebarStore', {
     // arrow function recommended for full type inference
     state: () => ({
-        isSidebarOpen: true,
+        isSidebarOpen: false,
     }),
 
     actions: {
