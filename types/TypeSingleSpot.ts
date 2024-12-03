@@ -1,4 +1,4 @@
-export type TypeSingleSpot = {
+export type TypeSingleSpotData = {
     id: number
     title: string
     imageCredits?: string
@@ -10,4 +10,8 @@ export type TypeSingleSpot = {
     urlWebsite?: string
     urlFacebook?: string
     urlInstagram?: string
+}
+
+export type TypeSingleSpot = {
+    singleSpot: TypeSingleSpotData
 }

@@ -1,25 +1,10 @@
-<!-- TODO: set back later. here we got 1 error and 1 UI issue (fade not work at change) -->
 <template>
-    <div>START</div>
-
-    <div v-if="currentSpotData" style="border: 5px solid red">
-        <pre>
-            title - {{ currentSpotData.singleSpot.title }} - END
-        </pre>
-
-        <pre v-if="currentSpotData.singleSpot.imageCredits">
-            image credits - {{ currentSpotData.singleSpot.imageCredits }} - END
-        </pre>
-    </div>
-
-    <div>END</div>
-
-    <!-- <section v-if="currentSpotData.title" class="b-place-details">
+    <section v-if="currentSpotData" class="b-place-details">
         <h2 class="place-details-heading">{{ currentSpotData.title }}</h2>
 
         <div class="place-details-thumb-area">
             <div class="place-details-thumb-image-inner">
-                <!-- TODO image data as computed
+                <!-- TODO image data as computed -->
                 <NuxtImg
                     v-if="currentSpotData.image"
                     class="place-details-thumb-image"
@@ -84,26 +69,13 @@
         </div>
     </section>
 
-    <AtomsLoaderSpinner v-else /> -->
+    <AtomsLoaderSpinner v-else />
 </template>
 
 <script setup lang="ts">
-const currentSpotData = ref<{
-    // TODO: set here "singleSpot" | works but syntax error? | remove it, no syntas error but NO data
-    singleSpot: {
-        id: number
-        title: string
-        imageCredits?: string
-        image?: {
-            title?: string
-            url: string
-        }
-        addressStreet: string
-        urlWebsite?: string
-        urlFacebook?: string
-        urlInstagram?: string
-    }
-} | null>(null)
+import type { TypeSingleSpotData } from '../../types/TypeSingleSpot'
+
+const currentSpotData = ref<TypeSingleSpotData | null>(null)
 
 const singleSpotSelectedStore = useSingleSpotSelectedStore()
 
@@ -111,10 +83,8 @@ watch(
     () => singleSpotSelectedStore.currentSpotData,
     () => {
         if (singleSpotSelectedStore.currentSpotData) {
-            console.log('======== TO USE Now ========')
-            console.log(singleSpotSelectedStore.currentSpotData)
-
-            currentSpotData.value = singleSpotSelectedStore.currentSpotData
+            currentSpotData.value =
+                singleSpotSelectedStore.currentSpotData.singleSpot
         }
     }
 )
