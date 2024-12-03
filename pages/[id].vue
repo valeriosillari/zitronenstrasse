@@ -39,8 +39,6 @@ const pageTitle = computed(() => {
     return page?.title
 })
 
-console.log(page)
-
 const pageDescription = computed(() => {
     // TODO:  we have to check all types for JSON rich text api response
     // @ts-expect-error: Should expect complex JSON

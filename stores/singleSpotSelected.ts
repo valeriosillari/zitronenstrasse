@@ -29,17 +29,7 @@ export const useSingleSpotSelectedStore = defineStore(
                 // reset | enable UI "fade" effect
                 this.resetSpotData()
 
-                // remove component itself when fade completed (vue IF logic)
-                console.log('======== this.currentSpotData | AFTER ==========')
-                console.log(this.currentSpotData)
-
                 apiCallResponse(singleSpotSysId).then((singleSpotData) => {
-                    console.log(
-                        '======== this.currentSpotData | THEN done =========='
-                    )
-                    console.log(singleSpotData)
-                    console.log(typeof singleSpotData)
-
                     this.currentSpotData = singleSpotData
                 })
             },

@@ -143,9 +143,6 @@ const clickMarkerHandler = (singlePlace: TypeSpotsItems) => {
         sidebarStore.openSidebarState()
     }
 
-    console.log('=========== CLICK | ID ===========')
-    console.log(singlePlace.sys.id)
-
     // pass spotID to store | to start API call (query GraphQL) and get spot data
     singleSpotSelectedStore
         .updateSingleSpotSelectedState(singlePlace.sys.id)
