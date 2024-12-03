@@ -27,9 +27,6 @@ export const useSingleSpotSelectedStore = defineStore(
             },
 
             async updateSingleSpotSelectedState(singleSpotSysId: string) {
-                // reset | enable UI "fade" effect
-                this.resetSpotData()
-
                 apiCallResponse(singleSpotSysId).then((singleSpotData) => {
                     this.currentSpotData = singleSpotData
                 })
