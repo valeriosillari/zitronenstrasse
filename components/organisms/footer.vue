@@ -38,7 +38,6 @@
 
 <script setup lang="ts">
 import packageJson from '../../package.json'
-// TODO: remove types import, set in config file
 import type { TypePageCollection } from '../../types/TypePageCollection'
 import GQL_QUERY_PAGE_COLLECTION from '../../graphql/pageCollection'
 
