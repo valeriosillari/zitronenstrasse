@@ -107,7 +107,7 @@ const currentMarkerAnimation = (markerId: number) => {
 }
 
 // TODO: here try to decouple logic, too much stuff
-// a click get marker/place ID (from CMS)
+// at click get marker/place ID (from CMS)
 const clickMarkerHandler = (singlePlace: TypeSingleSpotData) => {
     // if click on same marker (and sidebar OPENED with already current place) >> do nothing
     if (
@@ -118,8 +118,7 @@ const clickMarkerHandler = (singlePlace: TypeSingleSpotData) => {
         return false
     }
 
-    // ================
-    // 1. first check if we need sidebar (open it or already opened)
+    // check if we need to open sidebar (open it or not - already opened)
     if (!sidebarStore.isSidebarOpen) {
         sidebarStore.openSidebarState()
     }
@@ -127,7 +126,7 @@ const clickMarkerHandler = (singlePlace: TypeSingleSpotData) => {
     // pass spotID to store | to start API call (query GraphQL) and get spot data
     singleSpotSelectedStore
         .updateSingleSpotSelectedState(singlePlace.sys.id)
-        // TODO: set as sepaarte function?
+        // TODO: set as sepaarate function?
         // 3) MOVE / PAN map to new marker at center
         .then(() => {
             // set pan and center NOT mobile screen (sidebar take all screen, pan not necessary)
