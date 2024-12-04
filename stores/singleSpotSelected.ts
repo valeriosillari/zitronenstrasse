@@ -19,16 +19,21 @@ export const useSingleSpotSelectedStore = defineStore(
         // arrow function recommended for full type inference
         state: () => ({
             currentSpotData: null as TypeSingleSpot | null,
+            isSpotShown: false,
         }),
 
         actions: {
-            resetSpotData() {
-                this.currentSpotData = null
+            resetSpotShowState() {
+                this.isSpotShown = false
             },
 
             async updateSingleSpotSelectedState(singleSpotSysId: string) {
+                // reset
+                this.resetSpotShowState()
+
                 apiCallResponse(singleSpotSysId).then((singleSpotData) => {
                     this.currentSpotData = singleSpotData
+                    this.isSpotShown = true
                 })
             },
         },
