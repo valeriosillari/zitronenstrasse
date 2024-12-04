@@ -19,6 +19,7 @@
 </template>
 
 <script setup lang="ts">
+import type { TypePageCollection } from '../../types/TypePageCollection'
 import GQL_QUERY_PAGE_COLLECTION from '../../graphql/pageCollection'
 
 const runtimeConfig = useRuntimeConfig()
@@ -35,7 +36,7 @@ const query_collection_vars = {
     urlReferenceIn: ['about', 'contacts'],
 }
 
-const { data } = await useAsyncQuery(
+const { data } = await useAsyncQuery<TypePageCollection>(
     GQL_QUERY_PAGE_COLLECTION,
     query_collection_vars
 )
@@ -47,14 +48,18 @@ const footerLinks = [
     },
 ]
 
-const responseDataLinksArray = data.value.pageCollection.items
+const responseDataLinksArray = data.value?.pageCollection?.items
 
-responseDataLinksArray.forEach((singleLink) => {
-    footerLinks.push(singleLink)
-})
+if (responseDataLinksArray) {
+    responseDataLinksArray.forEach((singleLink) => {
+        footerLinks.push(singleLink)
+    })
+}
 
 // list by API + 1 extra for Home "added statically"
-const navigationIitemNumber = ref(responseDataLinksArray.length + 1)
+const navigationItemNumber = ref(
+    responseDataLinksArray ? responseDataLinksArray.length + 1 : null
+)
 </script>
 
 <style lang="sass">
@@ -96,7 +101,7 @@ const navigationIitemNumber = ref(responseDataLinksArray.length + 1)
         // LI
         .navigation-item
             display: block
-            height: calc(100% / v-bind(navigationIitemNumber))
+            height: calc(100% / v-bind(navigationItemNumber))
             position: relative
             opacity: 0
             display: flex

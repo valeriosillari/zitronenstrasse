@@ -1,5 +1,5 @@
 <template>
-    <section v-if="currentSpotData" class="b-place-details">
+    <section v-if="currentSpotData && isSpotShown" class="b-place-details">
         <h2 class="place-details-heading">{{ currentSpotData.title }}</h2>
 
         <div class="place-details-thumb-area">
@@ -73,9 +73,25 @@
 </template>
 
 <script setup lang="ts">
+import type { TypeSingleSpotData } from '../../types/TypeSingleSpot'
+
+const currentSpotData = ref<TypeSingleSpotData | null>(null)
+
+const isSpotShown = computed(() => {
+    return singleSpotSelectedStore.isSpotShown
+})
+
 const singleSpotSelectedStore = useSingleSpotSelectedStore()
-// data from store
-const currentSpotData = computed(() => singleSpotSelectedStore.currentSpot)
+
+watch(
+    () => singleSpotSelectedStore.currentSpotData,
+    () => {
+        if (singleSpotSelectedStore.currentSpotData) {
+            currentSpotData.value =
+                singleSpotSelectedStore.currentSpotData.singleSpot
+        }
+    }
+)
 </script>
 
 <style lang="sass">

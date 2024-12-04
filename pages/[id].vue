@@ -2,19 +2,21 @@
     <div class="b-page-detail">
         <div class="container">
             <h1>
-                {{ page.title }}
+                {{ pageTitle }}
             </h1>
 
-            <AtomsRichText :rich-text="documentToHtmlString(descriptionText)" />
+            <AtomsRichText
+                v-if="pageDescription"
+                :rich-text="pageDescription"
+            />
         </div>
     </div>
 </template>
 
 <script lang="ts" setup>
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
+import type { TypePageCollection } from '../types/TypePageCollection'
 import GQL_QUERY_PAGE_BY_URL_REFERENCE from '../graphql/page'
-
-let pageTitle = ''
 
 const route = useRoute()
 
@@ -25,19 +27,25 @@ const gql_query_vars = {
     urlReference: route.params.id,
 }
 
-const { data } = await useAsyncQuery(
+const { data } = await useAsyncQuery<TypePageCollection>(
     GQL_QUERY_PAGE_BY_URL_REFERENCE,
     gql_query_vars
 )
-const page = data.value.pageCollection.items[0]
 
-const descriptionText = page.description.json
+const page = data.value?.pageCollection?.items[0]
 
-// when get page info from API response
-pageTitle = page.title
+const pageTitle = computed(() => {
+    return page?.title
+})
+
+const pageDescription = computed(() => {
+    // TODO:  we have to check all types for JSON rich text api response
+    // @ts-expect-error: Should expect complex JSON
+    return documentToHtmlString(page?.description?.json)
+})
 
 useHead({
-    title: `${pageTitle} | ${runtimeConfig.public.headTitleString}`,
+    title: `${page?.title} | ${runtimeConfig.public.headTitleString}`,
 })
 </script>
 

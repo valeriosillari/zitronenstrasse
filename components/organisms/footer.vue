@@ -37,9 +37,9 @@
 </template>
 
 <script setup lang="ts">
-import GQL_QUERY_PAGE_COLLECTION from '../../graphql/pageCollection'
-
 import packageJson from '../../package.json'
+import type { TypePageCollection } from '../../types/TypePageCollection'
+import GQL_QUERY_PAGE_COLLECTION from '../../graphql/pageCollection'
 
 const dateYear = new Date().getFullYear()
 const appVersion = packageJson.version
@@ -51,12 +51,12 @@ const query_collection_vars = {
     urlReferenceIn: ['privacy'],
 }
 
-const { data } = await useAsyncQuery(
+const { data } = await useAsyncQuery<TypePageCollection>(
     GQL_QUERY_PAGE_COLLECTION,
     query_collection_vars
 )
 
-const footerLinks = data.value.pageCollection.items
+const footerLinks = data.value?.pageCollection?.items
 </script>
 
 <style lang="sass">
