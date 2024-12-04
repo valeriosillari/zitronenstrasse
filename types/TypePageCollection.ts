@@ -1,4 +1,4 @@
-// TODO: all this types for DESCRIPTION seems too much. to check again
+// TODO: all types for DESCRIPTION seem too much. to check again
 
 export type TypePageCollectionItemRichTextContentMarks = {
     type: string
