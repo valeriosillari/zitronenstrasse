@@ -1,7 +1,9 @@
 {
-    "name": "nuxt-app",
-    "private": true,
-    "type": "module",
+    "name": "zitronenstrasse",
+    "description": "Zitronenstrasse | Romantic spots in Berlin.",
+    "version": "22.0.0",
+    "author": "Valerio Sillari <hello@zitronenstrasse.com>",
+    "license": "GPL-3.0",
     "scripts": {
         "build": "nuxt build",
         "dev": "nuxt dev",
@@ -29,7 +31,6 @@
         "vue-router": "^4.3.3",
         "vue3-google-map": "^0.21.0"
     },
-    "version": "22.0.0",
     "devDependencies": {
         "@fortawesome/fontawesome-svg-core": "^6.6.0",
         "@fortawesome/free-brands-svg-icons": "^6.6.0",
