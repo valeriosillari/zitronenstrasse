@@ -1,5 +1,8 @@
 export type TypeSingleSpotData = {
     id: number
+    sys: {
+        id: string
+    }
     title: string
     imageCredits?: string
     image?: {
@@ -7,6 +10,10 @@ export type TypeSingleSpotData = {
         url: string
     }
     addressStreet: string
+    address: {
+        lat: number
+        lon: number
+    }
     urlWebsite?: string
     urlFacebook?: string
     urlInstagram?: string
@@ -14,4 +21,10 @@ export type TypeSingleSpotData = {
 
 export type TypeSingleSpot = {
     singleSpot: TypeSingleSpotData
+}
+
+export type TypeSingleSpotCollection = {
+    singleSpotCollection: {
+        items: TypeSingleSpotData[]
+    }
 }

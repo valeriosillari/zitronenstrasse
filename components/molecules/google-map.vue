@@ -38,26 +38,11 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { GoogleMap, CustomMarker } from 'vue3-google-map'
+import type {
+    TypeSingleSpotData,
+    TypeSingleSpotCollection,
+} from '../../types/TypeSingleSpot'
 import GQL_QUERY_SINGLE_SPOT_COLLECTION from '../../graphql/singleSpotCollection'
-
-// TODO: set TYPES in separate folder
-type TypeSpotsItems = {
-    sys: {
-        id: string
-    }
-    id: number
-    title: string
-    address: {
-        lat: number
-        lon: number
-    }
-}
-
-type TypeSingleSpotCollection = {
-    singleSpotCollection: {
-        items: TypeSpotsItems[]
-    }
-}
 
 const runtimeConfig = useRuntimeConfig()
 
@@ -123,7 +108,7 @@ const currentMarkerAnimation = (markerId: number) => {
 
 // TODO: here try to decouple logic, too much stuff
 // a click get marker/place ID (from CMS)
-const clickMarkerHandler = (singlePlace: TypeSpotsItems) => {
+const clickMarkerHandler = (singlePlace: TypeSingleSpotData) => {
     // if click on same marker (and sidebar OPENED with already current place) >> do nothing
     if (
         sidebarStore.isSidebarOpen &&
