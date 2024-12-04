@@ -8,7 +8,7 @@
 
 A side project with a list of romantic spots in Berlin.
 
-Based on **[NuxtJS](https://nuxt.com/)**, **[Contentful Headless CMS ](https://www.contentful.com/)**, **[GraphQL](https://graphql.org/)** and **[Google Maps](https://www.google.com/maps)**.
+Based on **[NuxtJS](https://nuxt.com/)**, **[Contentful Headless CMS](https://www.contentful.com/)**, **[GraphQL](https://graphql.org/)** and **[Google Maps](https://www.google.com/maps)**.
 
 ## INSTALLATION
 
@@ -35,16 +35,16 @@ $ npm run deploy-generate
 
 ## TODO
 
--   google map e consent? start map only after user says all fine?
+-   typescript types | RICH TEXT (description on text)
+-   typescript types | MAP object (change map plugin)
+-   google map and consent? start map only after user says all fine?
 -   sitemap DYNAMIC (nuxt module, data from API)
 -   check graphQL query at CLIENT (click on single spot, get data by IDs)
--   set typescript logic for types
 -   space with REM (trick as pixels)?
 -   split sass variables in more files?
 -   sass font file with all vars
 -   transition between pages (improve animations)
 -   button : 1 component with all logic and styles (now 2: button and button MENU)
--   remove all nuxt/vue google map module and set plain js?
 
 ## NICE TO HAVE
 
