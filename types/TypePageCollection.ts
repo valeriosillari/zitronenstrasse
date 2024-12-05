@@ -1,27 +1,4 @@
-// TODO: all types for DESCRIPTION seem too much. to check again
-
-export type TypePageCollectionItemRichTextContentMarks = {
-    type: string
-}
-
-export type TypePageCollectionItemRichTextContent = {
-    data: object
-    nodeType: string
-    value: string
-    marks: TypePageCollectionItemRichTextContentMarks[]
-}
-
-export type TypePageCollectionItemRichTextContentList = {
-    data: object
-    nodeType: string
-    content: TypePageCollectionItemRichTextContent[]
-}
-
-export type TypePageCollectionItemRichText = {
-    nodeType: string
-    data: object
-    content: TypePageCollectionItemRichTextContentList[]
-}
+import type { Document } from '@contentful/rich-text-types'
 
 export type TypePageCollectionItem = {
     sys: {
@@ -30,7 +7,7 @@ export type TypePageCollectionItem = {
     title: string
     urlReference: string
     description: {
-        json?: TypePageCollectionItemRichText[]
+        json: Document
     }
 }
 

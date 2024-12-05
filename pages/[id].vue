@@ -39,9 +39,10 @@ const pageTitle = computed(() => {
 })
 
 const pageDescription = computed(() => {
-    // TODO:  we have to check all types for JSON rich text api response
-    // @ts-expect-error: Should expect complex JSON
-    return documentToHtmlString(page?.description?.json)
+    if (page?.description) {
+        return documentToHtmlString(page?.description.json)
+    }
+    return false
 })
 
 useHead({
