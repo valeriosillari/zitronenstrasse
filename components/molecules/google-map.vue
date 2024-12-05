@@ -46,7 +46,7 @@ import GQL_QUERY_SINGLE_SPOT_COLLECTION from '../../graphql/singleSpotCollection
 
 const runtimeConfig = useRuntimeConfig()
 
-const mapRef = ref(null)
+const mapRef = ref<InstanceType<typeof GoogleMap> | null>(null)
 
 const sidebarStore = useSidebarStore()
 const singleSpotSelectedStore = useSingleSpotSelectedStore()
@@ -78,16 +78,21 @@ const placesList = data.value?.singleSpotCollection?.items
 
 // function for PAN movement that also consider some window movement (to balance center with off canvas)
 const centerMapToCurrentPlace = (lat: number, lng: number) => {
-    // FIRST: center map to marker
-    mapRef.value.map.panTo({
-        lat,
-        lng,
-    })
+    if (mapRef.value?.map) {
+        const googleMap = mapRef.value.map as google.maps.Map
+        // Perform operations with `googleMap`
 
-    // magic trick
-    // THEN: arrange map position again to "balance" map off canvas area
-    // 200 is the magic number
-    mapRef.value.map.panBy(-200, 0)
+        // FIRST: center map to marker
+        googleMap.panTo({
+            lat,
+            lng,
+        })
+
+        // magic trick
+        // THEN: arrange map position again to "balance" map off canvas area
+        // 200 is the magic number
+        googleMap.panBy(-200, 0)
+    }
 }
 
 const currentMarkerAnimation = (markerId: number) => {

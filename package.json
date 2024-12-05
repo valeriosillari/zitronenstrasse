@@ -23,6 +23,7 @@
         "@nuxtjs/apollo": "^5.0.0-alpha.14",
         "@nuxtjs/google-fonts": "^3.2.0",
         "@pinia/nuxt": "^0.5.1",
+        "@types/google.maps": "^3.58.1",
         "hover.css": "^2.3.2",
         "nuxt": "^3.12.2",
         "nuxt-gtag": "^3.0.1",

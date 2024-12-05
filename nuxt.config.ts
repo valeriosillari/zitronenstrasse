@@ -36,10 +36,9 @@ export default defineNuxtConfig({
         port: 8000,
     },
 
-    // TODO:
-    // check "forced "typescript checks | types and more ...
+    //  "forced" typescript checks | very strict mode
     typescript: {
-        typeCheck: false,
+        typeCheck: true,
     },
 
     runtimeConfig: {
