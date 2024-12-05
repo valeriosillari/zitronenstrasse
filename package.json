@@ -19,6 +19,7 @@
     },
     "dependencies": {
         "@contentful/rich-text-html-renderer": "^16.6.6",
+        "@contentful/rich-text-types": "^17.0.0",
         "@nuxt/image": "^1.8.1",
         "@nuxtjs/apollo": "^5.0.0-alpha.14",
         "@nuxtjs/google-fonts": "^3.2.0",
