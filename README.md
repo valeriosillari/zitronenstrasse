@@ -36,7 +36,6 @@ $ npm run deploy-generate
 ## TODO
 
 -   typescript types | RICH TEXT (description on text)
--   typescript types | MAP object (change map plugin)
 -   google map and consent? start map only after user says all fine?
 -   sitemap DYNAMIC (nuxt module, data from API)
 -   check graphQL query at CLIENT (click on single spot, get data by IDs)
