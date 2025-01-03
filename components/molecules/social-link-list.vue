@@ -25,11 +25,6 @@ const socialLinks = [
         icon: 'facebook-f',
     },
     {
-        name: 'Zitronenstrasse on Twitter',
-        url: 'https://twitter.com/zitronenstrasse/',
-        icon: 'twitter',
-    },
-    {
         name: 'Zitronenstrasse Playlist on Spotify',
         url: 'https://open.spotify.com/user/stellavalerio/playlist/4J2AU9XfvfJOgc0MBE1WlX?si=xoXk0YnDRWGlmgtR99qXrw',
         icon: 'spotify',

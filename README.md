@@ -56,4 +56,4 @@ $ npm run deploy-generate
 
 -   **FILTERS**: show places sorted by some kind of filter (only bars, only restaurants etc ...). Design + Code needs a concept.
 
--   **SHARE SINGLE PLACES**: suggestion for sharing (on FB, twitter, as link) only a single place on the map. Conceptually possible? we have to check
+-   **SHARE SINGLE PLACES**: suggestion for sharing (on FB, as link) only a single place on the map. Conceptually possible? we have to check
