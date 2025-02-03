@@ -1,6 +1,6 @@
 # Zitronenstrasse
 
-#### Romantic Spots in Berlin.
+#### Romantic Spots in Berlin
 
 [zitronenstrasse.com](https://zitronenstrasse.com/)
 
