@@ -27,12 +27,12 @@
         "@pinia/nuxt": "^0.5.1",
         "@types/google.maps": "^3.58.1",
         "hover.css": "^2.3.2",
-        "nuxt": "^3.15.3",
-        "nuxt-gtag": "^3.0.1",
+        "nuxt": "^3.15.4",
+        "nuxt-gtag": "^3.0.2",
         "pinia": "^2.1.7",
-        "vue": "^3.4.29",
-        "vue-router": "^4.3.3",
-        "vue3-google-map": "^0.21.0"
+        "vue": "^3.5.13",
+        "vue-router": "^4.5.0",
+        "vue3-google-map": "^0.21.1s"
     },
     "devDependencies": {
         "@fortawesome/fontawesome-svg-core": "^6.6.0",
