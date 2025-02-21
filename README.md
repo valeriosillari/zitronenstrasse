@@ -35,25 +35,25 @@ $ npm run deploy-generate
 
 ## TODO
 
--   google map and consent? start map only after user says all fine?
--   sitemap DYNAMIC (nuxt module, data from API)
--   check graphQL query at CLIENT (click on single spot, get data by IDs)
--   space with REM (trick as pixels)?
--   split sass variables in more files?
--   sass font file with all vars
--   transition between pages (improve animations)
--   button : 1 component with all logic and styles (now 2: button and button MENU)
+- google map and consent? start map only after user says all fine?
+- sitemap DYNAMIC (nuxt module, data from API)
+- check graphQL query at CLIENT (click on single spot, get data by IDs)
+- space with REM (trick as pixels)?
+- split sass variables in more files?
+- sass font file with all vars
+- transition between pages (improve animations)
+- button : 1 component with all logic and styles (now 2: button and button MENU)
 
 ## NICE TO HAVE
 
--   error page : 1) use layout, show FOOTER. 2) no transition effect 3) button back with NO js
--   filter (where) for data of single page (gql query)
--   load data at page switch? cannot pre generated all data? >> REAL STATIC + git hooks?
--   image fallback set logic as computed
--   check speed insight (June 2019). load map better (and later), for performance
+- error page : 1) use layout, show FOOTER. 2) no transition effect 3) button back with NO js
+- filter (where) for data of single page (gql query)
+- load data at page switch? cannot pre generated all data? >> REAL STATIC + git hooks?
+- image fallback set logic as computed
+- check speed insight (June 2019). load map better (and later), for performance
 
 ## ROAD MAP
 
--   **FILTERS**: show places sorted by some kind of filter (only bars, only restaurants etc ...). Design + Code needs a concept.
+- **FILTERS**: show places sorted by some kind of filter (only bars, only restaurants etc ...). Design + Code needs a concept.
 
--   **SHARE SINGLE PLACES**: suggestion for sharing (on FB, as link) only a single place on the map. Conceptually possible? we have to check
+- **SHARE SINGLE PLACES**: suggestion for sharing (on FB, as link) only a single place on the map. Conceptually possible? we have to check
