@@ -139,98 +139,81 @@ export default defineNuxtConfig({
                 },
 
                 {
-                    hid: 'description',
                     name: 'description',
                     content: headDescription,
                 },
 
                 {
-                    hid: 'author',
                     name: 'author',
                     content: authorName,
                 },
 
                 {
-                    hid: 'keywords',
                     name: 'keywords',
                     content: metaKeywords,
                 },
 
                 // OG options for open graph: Fb and Linkedin
                 {
-                    hid: 'og:title',
                     property: 'og:title',
                     content: ogTitle,
                 },
                 {
-                    hid: 'og:description',
                     property: 'og:description',
                     content: ogDescription,
                 },
                 {
-                    hid: 'og:type',
                     property: 'og:type',
                     content: ogType,
                 },
                 {
-                    hid: 'og:url',
                     property: 'og:url',
                     content: ogUrl,
                 },
                 {
-                    hid: 'og:image',
                     property: 'og:image',
                     content: ogImage,
                 },
                 {
-                    hid: 'og:image:width',
                     property: 'og:image:width',
                     content: ogImageWidth,
                 },
                 {
-                    hid: 'og:image:height',
                     property: 'og:image:height',
                     content: ogImageHeight,
                 },
                 // Twitter card
                 {
-                    hid: 'twitter:card',
                     property: 'twitter:card',
                     content: 'summary_large_image',
                 },
 
                 {
-                    hid: 'twitter:site',
                     property: 'twitter:site',
                     content: twitterUserAccountReference,
                 },
 
                 {
-                    hid: 'twitter:creator',
                     property: 'twitter:creator',
                     content: authorName,
                 },
 
                 {
-                    hid: 'twitter:title',
                     property: 'twitter:title',
                     content: ogTitle,
                 },
 
                 {
-                    hid: 'twitter:description',
                     property: 'twitter:description',
                     content: ogDescription,
                 },
 
                 {
-                    hid: 'twitter:image',
                     property: 'twitter:image',
                     content: ogImage,
                 },
 
                 {
-                    hid: 'twitter:image:alt',
                     property: 'twitter:image:alt',
                     content: ogTitle,
                 },
