@@ -209,7 +209,7 @@ export default defineNuxtConfig({
                 },
 
                 {
-                    property: 'twitter:image',
+                    name: 'twitter:image',
                     content: ogImage,
                 },
 
