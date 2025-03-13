@@ -184,27 +184,27 @@ export default defineNuxtConfig({
                 },
                 // Twitter card
                 {
-                    property: 'twitter:card',
+                    name: 'twitter:card',
                     content: 'summary_large_image',
                 },
 
                 {
-                    property: 'twitter:site',
+                    name: 'twitter:site',
                     content: twitterUserAccountReference,
                 },
 
                 {
-                    property: 'twitter:creator',
+                    name: 'twitter:creator',
                     content: authorName,
                 },
 
                 {
-                    property: 'twitter:title',
+                    name: 'twitter:title',
                     content: ogTitle,
                 },
 
                 {
-                    property: 'twitter:description',
+                    name: 'twitter:description',
                     content: ogDescription,
                 },
 
@@ -214,7 +214,7 @@ export default defineNuxtConfig({
                 },
 
                 {
-                    property: 'twitter:image:alt',
+                    name: 'twitter:image:alt',
                     content: ogTitle,
                 },
             ],
