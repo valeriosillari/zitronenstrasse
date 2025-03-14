@@ -1,31 +1,5 @@
-const titleShort = 'Zitronenstrasse'
-
-// main title
-const headTitle = ` ${titleShort} | Romantic Spots in Berlin.`
-
-// used in head description in all the pages
-const headDescription =
-    'A mapping project to collect and share romantic spots in Berlin. Bars, cafes, restaurants, bistros, parks and some little hidden places around the city.'
-
-const authorName = 'Valerio Sillari'
-
-const appMainUrl = 'https://www.zitronenstrasse.com'
-
-const valeSiteRoot = 'https://www.valeriosillari.com'
-
-const metaKeywords = `Zitronenstrasse, Zitrone, Strasse, Berlin, Zitrone Berlin, Zitronen Berlin, Map, Mapping, Frontend, Vue, Nuxt, Romantic, Spots, Romantic Spots Berlin, ${authorName}`
-
-// ===============================
-// og for FB and Linkedin
-const ogUrl = appMainUrl
-const ogTitle = headTitle
-const ogDescription = headDescription
-const ogType = 'website'
-const ogImage = `${appMainUrl}/app-icons/logo_og_image.png`
-const ogImageWidth = '1200'
-const ogImageHeight = '630'
-// ====== Twitter
-const twitterUserAccountReference = '@stellavalerio'
+import CONSTANT from './utils/constants'
+import metaData from './utils/metaData'
 
 const htmlNoJsClass = 'no-js'
 
@@ -45,9 +19,10 @@ export default defineNuxtConfig({
         public: {
             htmlNoJsClass,
             limitQueryGql: 5,
-            valeSiteRoot: valeSiteRoot,
-            valeSiteAuthorName: authorName,
-            headTitleString: headTitle,
+            valeSiteRoot: CONSTANT.valeSiteRoot,
+            appVersion: CONSTANT.appVersion,
+            valeSiteAuthorName: CONSTANT.authorName,
+            headTitleString: CONSTANT.title,
             googleMapKey: process.env.GOOGLE_MAP_KEY,
             googleMapStyleMapId: process.env.GOOGLE_MAP_STYLE_MAP_ID,
         },
@@ -84,7 +59,7 @@ export default defineNuxtConfig({
             default: {
                 // GraphQL endpoint (contentful), proxied on my website
                 // note: it needs to be under "www" domain
-                httpEndpoint: `${valeSiteRoot}/api/zitronenstrasse`,
+                httpEndpoint: `${CONSTANT.valeSiteRoot}/api/zitronenstrasse`,
             },
         },
     },
@@ -128,101 +103,10 @@ export default defineNuxtConfig({
                 class: htmlNoJsClass,
             },
 
-            title: headTitle,
+            title: CONSTANT.title,
 
-            meta: [
-                // viewport set on mobile
-                {
-                    name: 'viewport',
-                    content:
-                        'width=device-width, initial-scale=1, shrink-to-fit=no',
-                },
-
-                {
-                    name: 'description',
-                    content: headDescription,
-                },
-
-                {
-                    name: 'author',
-                    content: authorName,
-                },
-
-                {
-                    name: 'keywords',
-                    content: metaKeywords,
-                },
-
-                // OG options for open graph: Fb and Linkedin
-                {
-                    property: 'og:title',
-                    content: ogTitle,
-                },
-                {
-                    property: 'og:description',
-                    content: ogDescription,
-                },
-                {
-                    property: 'og:type',
-                    content: ogType,
-                },
-                {
-                    property: 'og:url',
-                    content: ogUrl,
-                },
-                {
-                    property: 'og:image',
-                    content: ogImage,
-                },
-                {
-                    property: 'og:image:width',
-                    content: ogImageWidth,
-                },
-                {
-                    property: 'og:image:height',
-                    content: ogImageHeight,
-                },
-                {
-                    property: 'og:image:type',
-                    content: 'image/png',
-                },
-
-                // Twitter card
-                {
-                    name: 'twitter:card',
-                    content: 'summary_large_image',
-                },
-
-                {
-                    name: 'twitter:site',
-                    content: twitterUserAccountReference,
-                },
-
-                {
-                    name: 'twitter:creator',
-                    content: authorName,
-                },
-
-                {
-                    name: 'twitter:title',
-                    content: ogTitle,
-                },
-
-                {
-                    name: 'twitter:description',
-                    content: ogDescription,
-                },
-
-                // {
-                //     name: 'twitter:image',
-                //     content: ogImage,
-                // },
-
-                // {
-                //     name: 'twitter:image:alt',
-                //     content: ogTitle,
-                // },
-            ],
+            // all HEAD meta data options
+            meta: metaData,
 
             link: [
                 // favicon (ico)
@@ -254,7 +138,7 @@ export default defineNuxtConfig({
                 // link canonical
                 {
                     rel: 'canonical',
-                    href: appMainUrl,
+                    href: CONSTANT.appMainUrl,
                 },
             ],
 
@@ -266,5 +150,5 @@ export default defineNuxtConfig({
         },
     },
 
-    compatibilityDate: '2024-10-21',
+    compatibilityDate: '2025-03-14',
 })

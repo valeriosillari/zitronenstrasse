@@ -2,7 +2,7 @@
     "name": "zitronenstrasse",
     "description": "Zitronenstrasse | Romantic spots in Berlin.",
     "version": "22.0.1",
-    "author": "Valerio Sillari <hello@zitronenstrasse.com>",
+    "author": "Valerio Sillari",
     "license": "GPL-3.0",
     "scripts": {
         "build": "nuxt build",
