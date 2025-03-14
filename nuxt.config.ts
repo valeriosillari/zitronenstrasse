@@ -21,7 +21,7 @@ const ogUrl = appMainUrl
 const ogTitle = headTitle
 const ogDescription = headDescription
 const ogType = 'website'
-const ogImage = '/app-icons/logo_og_image.png'
+const ogImage = `${appMainUrl}/app-icons/logo_og_image.png`
 const ogImageWidth = '1200'
 const ogImageHeight = '630'
 // ====== Twitter
