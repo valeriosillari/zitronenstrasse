@@ -1,6 +1,8 @@
+import packageJson from '../package.json'
+
 const titleShort = 'Zitronenstrasse'
 
-const authorName = 'Valerio Sillari'
+const authorName = packageJson.author
 
 const CONSTANT = {
     authorName,
