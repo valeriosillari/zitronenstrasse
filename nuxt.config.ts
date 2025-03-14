@@ -213,15 +213,15 @@ export default defineNuxtConfig({
                     content: ogDescription,
                 },
 
-                {
-                    name: 'twitter:image',
-                    content: ogImage,
-                },
+                // {
+                //     name: 'twitter:image',
+                //     content: ogImage,
+                // },
 
-                {
-                    name: 'twitter:image:alt',
-                    content: ogTitle,
-                },
+                // {
+                //     name: 'twitter:image:alt',
+                //     content: ogTitle,
+                // },
             ],
 
             link: [
