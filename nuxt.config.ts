@@ -9,7 +9,7 @@ const headDescription =
 
 const authorName = 'Valerio Sillari'
 
-const appMainUrl = 'https://zitronenstrasse.com'
+const appMainUrl = 'https://www.zitronenstrasse.com'
 
 const valeSiteRoot = 'https://www.valeriosillari.com'
 
