@@ -12,7 +12,7 @@ const CONSTANT = {
     // main title | CHECK
     title: `${titleShort} | Romantic Spots in Berlin.`,
 
-    appMainUrl: 'https://www.zitronenstrasse.com',
+    appMainUrl: 'https://zitronenstrasse.com',
 
     valeSiteRoot: 'https://www.valeriosillari.com',
 
