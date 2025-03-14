@@ -57,7 +57,7 @@ const metaData = [
     },
 
     {
-        property: 'og:image',
+        property: 'og:image:secure_url',
         content: ogImage,
     },
 
