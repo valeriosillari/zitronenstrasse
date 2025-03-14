@@ -1,13 +1,5 @@
+import CONSTANT from './utils/constants'
 import metaData from './utils/metaData'
-
-const titleShort = 'Zitronenstrasse'
-const headTitle = ` ${titleShort} | Romantic Spots in Berlin.`
-
-const authorName = 'Valerio Sillari'
-
-const appMainUrl = 'https://www.zitronenstrasse.com'
-
-const valeSiteRoot = 'https://www.valeriosillari.com'
 
 const htmlNoJsClass = 'no-js'
 
@@ -27,9 +19,9 @@ export default defineNuxtConfig({
         public: {
             htmlNoJsClass,
             limitQueryGql: 5,
-            valeSiteRoot: valeSiteRoot,
-            valeSiteAuthorName: authorName,
-            headTitleString: headTitle,
+            valeSiteRoot: CONSTANT.valeSiteRoot,
+            valeSiteAuthorName: CONSTANT.authorName,
+            headTitleString: CONSTANT.headTitle,
             googleMapKey: process.env.GOOGLE_MAP_KEY,
             googleMapStyleMapId: process.env.GOOGLE_MAP_STYLE_MAP_ID,
         },
@@ -66,7 +58,7 @@ export default defineNuxtConfig({
             default: {
                 // GraphQL endpoint (contentful), proxied on my website
                 // note: it needs to be under "www" domain
-                httpEndpoint: `${valeSiteRoot}/api/zitronenstrasse`,
+                httpEndpoint: `${CONSTANT.valeSiteRoot}/api/zitronenstrasse`,
             },
         },
     },
@@ -110,7 +102,7 @@ export default defineNuxtConfig({
                 class: htmlNoJsClass,
             },
 
-            title: headTitle,
+            title: CONSTANT.headTitle,
 
             // all HEAD meta data options
             meta: metaData,
@@ -145,7 +137,7 @@ export default defineNuxtConfig({
                 // link canonical
                 {
                     rel: 'canonical',
-                    href: appMainUrl,
+                    href: CONSTANT.appMainUrl,
                 },
             ],
 
@@ -156,6 +148,4 @@ export default defineNuxtConfig({
             // ],
         },
     },
-
-    compatibilityDate: '2024-10-21',
 })
