@@ -182,6 +182,11 @@ export default defineNuxtConfig({
                     property: 'og:image:height',
                     content: ogImageHeight,
                 },
+                {
+                    property: 'og:image:type',
+                    content: 'image/png',
+                },
+
                 // Twitter card
                 {
                     name: 'twitter:card',
