@@ -7,6 +7,8 @@ const authorName = packageJson.author
 const CONSTANT = {
     authorName,
 
+    appVersion: packageJson.version,
+
     // main title | CHECK
     headTitle: `${titleShort} | Romantic Spots in Berlin.`,
 

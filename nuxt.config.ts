@@ -20,6 +20,7 @@ export default defineNuxtConfig({
             htmlNoJsClass,
             limitQueryGql: 5,
             valeSiteRoot: CONSTANT.valeSiteRoot,
+            appVersion: CONSTANT.appVersion,
             valeSiteAuthorName: CONSTANT.authorName,
             headTitleString: CONSTANT.headTitle,
             googleMapKey: process.env.GOOGLE_MAP_KEY,

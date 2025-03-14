@@ -37,14 +37,13 @@
 </template>
 
 <script setup lang="ts">
-import packageJson from '../../package.json'
 import type { TypePageCollection } from '../../types/TypePageCollection'
 import GQL_QUERY_PAGE_COLLECTION from '../../graphql/pageCollection'
 
-const dateYear = new Date().getFullYear()
-const appVersion = packageJson.version
-
 const runtimeConfig = useRuntimeConfig()
+
+const dateYear = new Date().getFullYear()
+const appVersion = runtimeConfig.public.appVersion
 
 const query_collection_vars = {
     limit: runtimeConfig.public.limitQueryGql,
