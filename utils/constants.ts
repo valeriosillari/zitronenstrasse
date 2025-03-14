@@ -1,7 +1,9 @@
 const titleShort = 'Zitronenstrasse'
 
+const authorName = 'Valerio Sillari'
+
 const CONSTANT = {
-    authorName: 'Valerio Sillari',
+    authorName,
 
     // main title | CHECK
     headTitle: `${titleShort} | Romantic Spots in Berlin.`,
@@ -13,6 +15,8 @@ const CONSTANT = {
     // used in head description in all the pages
     headDescription:
         'A mapping project to collect and share romantic spots in Berlin. Little hidden places around the city.',
+
+    metaKeywords: `Zitronenstrasse, Zitrone, Strasse, Berlin, Zitrone Berlin, Zitronen Berlin, Map, Mapping, Frontend, Vue, Nuxt, Romantic, Spots, Romantic Spots Berlin, ${authorName}`,
 }
 
 export default CONSTANT
