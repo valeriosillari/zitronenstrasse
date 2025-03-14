@@ -3,8 +3,9 @@ import CONSTANT from './constants'
 // ===============================
 // og for FB and Linkedin
 const ogUrl = CONSTANT.appMainUrl
-const ogTitle = CONSTANT.headTitle
-const ogDescription = CONSTANT.headDescription
+const ogTitle = CONSTANT.title
+const ogDescription = CONSTANT.description
+const authorName = CONSTANT.authorName
 const ogType = 'website'
 const ogImage = `${CONSTANT.appMainUrl}/app-icons/logo_og_image.png`
 const ogImageWidth = '1200'
@@ -20,17 +21,17 @@ const metaData = [
 
     {
         name: 'description',
-        content: CONSTANT.headDescription,
+        content: ogDescription,
     },
 
     {
         name: 'author',
-        content: CONSTANT.authorName,
+        content: authorName,
     },
 
     {
         name: 'keywords',
-        content: CONSTANT.metaKeywords,
+        content: CONSTANT.keywords,
     },
 
     // ======================
@@ -89,7 +90,7 @@ const metaData = [
 
     {
         name: 'twitter:creator',
-        content: CONSTANT.authorName,
+        content: authorName,
     },
 
     {

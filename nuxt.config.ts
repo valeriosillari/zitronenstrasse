@@ -22,7 +22,7 @@ export default defineNuxtConfig({
             valeSiteRoot: CONSTANT.valeSiteRoot,
             appVersion: CONSTANT.appVersion,
             valeSiteAuthorName: CONSTANT.authorName,
-            headTitleString: CONSTANT.headTitle,
+            headTitleString: CONSTANT.title,
             googleMapKey: process.env.GOOGLE_MAP_KEY,
             googleMapStyleMapId: process.env.GOOGLE_MAP_STYLE_MAP_ID,
         },
@@ -103,7 +103,7 @@ export default defineNuxtConfig({
                 class: htmlNoJsClass,
             },
 
-            title: CONSTANT.headTitle,
+            title: CONSTANT.title,
 
             // all HEAD meta data options
             meta: metaData,
