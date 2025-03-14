@@ -76,6 +76,11 @@ const metaData = [
         content: 'image/png',
     },
 
+    {
+        property: 'og:image:alt',
+        content: ogTitle,
+    },
+
     // ======================
     // Twitter card
     {
