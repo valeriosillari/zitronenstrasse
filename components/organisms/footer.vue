@@ -38,7 +38,6 @@
 
 <script setup lang="ts">
 import type { TypePageCollection } from '../../types/TypePageCollection'
-import GQL_QUERY_PAGE_COLLECTION from '../../graphql/pageCollection'
 
 const runtimeConfig = useRuntimeConfig()
 
@@ -50,8 +49,8 @@ const query_collection_vars = {
     urlReferenceIn: ['privacy'],
 }
 
-const { data } = await useAsyncQuery<TypePageCollection>(
-    GQL_QUERY_PAGE_COLLECTION,
+const { data } = await useAsyncGql<TypePageCollection>(
+    'pageCollection',
     query_collection_vars
 )
 

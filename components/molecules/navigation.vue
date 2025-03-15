@@ -2,7 +2,7 @@
     <nav :class="['b-navigation', naviActiveClass]">
         <ul class="navigation-list">
             <li
-                v-for="link in footerLinks"
+                v-for="link in navigationLinks"
                 :key="link.title"
                 class="navigation-item"
             >
@@ -20,7 +20,6 @@
 
 <script setup lang="ts">
 import type { TypePageCollection } from '../../types/TypePageCollection'
-import GQL_QUERY_PAGE_COLLECTION from '../../graphql/pageCollection'
 
 const runtimeConfig = useRuntimeConfig()
 
@@ -36,12 +35,14 @@ const query_collection_vars = {
     urlReferenceIn: ['about', 'contacts'],
 }
 
-const { data } = await useAsyncQuery<TypePageCollection>(
-    GQL_QUERY_PAGE_COLLECTION,
+const { data } = await useAsyncGql<TypePageCollection>(
+    'pageCollection',
     query_collection_vars
 )
 
-const footerLinks = [
+console.log('>>>>> HEADER data | ', data)
+
+const navigationLinks = [
     {
         title: 'Home',
         urlReference: '/',
@@ -52,7 +53,7 @@ const responseDataLinksArray = data.value?.pageCollection?.items
 
 if (responseDataLinksArray) {
     responseDataLinksArray.forEach((singleLink) => {
-        footerLinks.push(singleLink)
+        navigationLinks.push(singleLink)
     })
 }
 
