@@ -93,7 +93,7 @@ export default defineNuxtConfig({
         '@nuxt/eslint',
         '@pinia/nuxt',
         '@nuxt/image',
-        // 'nuxt-gtag',
+        'nuxt-gtag',
         [
             // https://masanos.com/notes/l37t1_8qf-fv/
             '@nuxtjs/google-fonts',
@@ -110,9 +110,9 @@ export default defineNuxtConfig({
         ],
     ],
 
-    // gtag: {
-    //     id: process.env.GOOGLE_ANALYTICS_KEY,
-    // },
+    gtag: {
+        id: process.env.GOOGLE_ANALYTICS_KEY,
+    },
 
     // apollo: {
     //     clients: {
