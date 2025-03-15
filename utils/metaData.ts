@@ -7,7 +7,7 @@ const ogTitle = CONSTANT.title
 const ogDescription = CONSTANT.description
 const authorName = CONSTANT.authorName
 const ogType = 'website'
-const ogImage = `${CONSTANT.appMainUrl}/app-icons/logo_og_image.png`
+const ogImage = '/app-icons/logo_og_image.png'
 const ogImageWidth = '1200'
 const ogImageHeight = '630'
 
