@@ -89,7 +89,7 @@ export default defineNuxtConfig({
     },
 
     modules: [
-        // '@nuxtjs/apollo',
+        '@nuxtjs/apollo',
         '@nuxt/eslint',
         '@pinia/nuxt',
         '@nuxt/image',
@@ -114,15 +114,15 @@ export default defineNuxtConfig({
         id: process.env.GOOGLE_ANALYTICS_KEY,
     },
 
-    // apollo: {
-    //     clients: {
-    //         default: {
-    //             // GraphQL endpoint (contentful), proxied on my website
-    //             // note: it needs to be under "www" domain
-    //             httpEndpoint: CONSTANT.apiUrl,
-    //         },
-    //     },
-    // },
+    apollo: {
+        clients: {
+            default: {
+                // GraphQL endpoint (contentful), proxied on my website
+                // note: it needs to be under "www" domain
+                httpEndpoint: CONSTANT.apiUrl,
+            },
+        },
+    },
 
     vite: {
         css: {
