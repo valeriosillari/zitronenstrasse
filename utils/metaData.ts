@@ -70,6 +70,18 @@ const metaData = [
     },
 
     {
+        hid: 'og:image:url',
+        property: 'og:image:url',
+        content: ogImage,
+    },
+
+    {
+        hid: 'og:image:secure_url',
+        property: 'og:image:secure_url',
+        content: ogImage,
+    },
+
+    {
         hid: 'og:image:width',
         property: 'og:image:width',
         content: ogImageWidth,
