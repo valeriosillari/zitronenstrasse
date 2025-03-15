@@ -4,6 +4,8 @@ const titleShort = 'Zitronenstrasse'
 
 const authorName = packageJson.author
 
+const valeSiteRoot = 'https://www.valeriosillari.com'
+
 const CONSTANT = {
     authorName,
 
@@ -12,9 +14,11 @@ const CONSTANT = {
     // main title | CHECK
     title: `${titleShort} | Romantic Spots in Berlin.`,
 
-    appMainUrl: 'https://zitronenstrasse.com',
+    appMainUrl: 'https://www.zitronenstrasse.com',
 
-    valeSiteRoot: 'https://www.valeriosillari.com',
+    valeSiteRoot,
+
+    apiUrl: `${valeSiteRoot}/api/zitronenstrasse`,
 
     // used in head description in all the pages
     description:
