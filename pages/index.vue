@@ -1,5 +1,3 @@
 <template>
-    <div class="b-page-index">
-        <OrganismsMapOffCanvasStructure />
-    </div>
+    <div class="b-page-index">Home here</div>
 </template>

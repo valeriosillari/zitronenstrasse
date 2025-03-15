@@ -2,8 +2,6 @@ import CONSTANT from './utils/constants'
 import metaData from './utils/metaData'
 
 export default defineNuxtConfig({
-    ssr: true,
-
     app: {
         pageTransition: {
             name: 'page',
@@ -91,11 +89,11 @@ export default defineNuxtConfig({
     },
 
     modules: [
-        '@nuxtjs/apollo',
+        // '@nuxtjs/apollo',
         '@nuxt/eslint',
         '@pinia/nuxt',
         '@nuxt/image',
-        'nuxt-gtag',
+        // 'nuxt-gtag',
         [
             // https://masanos.com/notes/l37t1_8qf-fv/
             '@nuxtjs/google-fonts',
@@ -112,19 +110,19 @@ export default defineNuxtConfig({
         ],
     ],
 
-    gtag: {
-        id: process.env.GOOGLE_ANALYTICS_KEY,
-    },
+    // gtag: {
+    //     id: process.env.GOOGLE_ANALYTICS_KEY,
+    // },
 
-    apollo: {
-        clients: {
-            default: {
-                // GraphQL endpoint (contentful), proxied on my website
-                // note: it needs to be under "www" domain
-                httpEndpoint: CONSTANT.apiUrl,
-            },
-        },
-    },
+    // apollo: {
+    //     clients: {
+    //         default: {
+    //             // GraphQL endpoint (contentful), proxied on my website
+    //             // note: it needs to be under "www" domain
+    //             httpEndpoint: CONSTANT.apiUrl,
+    //         },
+    //     },
+    // },
 
     vite: {
         css: {
