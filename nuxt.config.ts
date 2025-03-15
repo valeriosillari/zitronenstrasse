@@ -2,6 +2,8 @@ import CONSTANT from './utils/constants'
 import metaData from './utils/metaData'
 
 export default defineNuxtConfig({
+    ssr: true,
+
     app: {
         pageTransition: {
             name: 'page',
