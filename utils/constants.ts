@@ -11,6 +11,10 @@ const CONSTANT = {
 
     appVersion: packageJson.version,
 
+    htmlNoJsClass: 'no-js',
+
+    htmlYesJsClass: 'js',
+
     // main title | CHECK
     title: `${titleShort} | Romantic Spots in Berlin.`,
 

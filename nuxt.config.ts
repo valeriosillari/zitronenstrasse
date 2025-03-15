@@ -1,8 +1,6 @@
 import CONSTANT from './utils/constants'
 import metaData from './utils/metaData'
 
-const htmlNoJsClass = 'no-js'
-
 export default defineNuxtConfig({
     app: {
         pageTransition: {
@@ -15,7 +13,7 @@ export default defineNuxtConfig({
                 lang: 'en',
                 // // no js class (as Modernizr).
                 // // removed later by the application (by utils function on app level)
-                class: htmlNoJsClass,
+                class: CONSTANT.htmlNoJsClass,
             },
 
             title: CONSTANT.title,
@@ -78,7 +76,8 @@ export default defineNuxtConfig({
 
     runtimeConfig: {
         public: {
-            htmlNoJsClass,
+            htmlNoJsClass: CONSTANT.htmlNoJsClass,
+            htmlYesJsClass: CONSTANT.htmlYesJsClass,
             limitQueryGql: 5,
             valeSiteRoot: CONSTANT.valeSiteRoot,
             appVersion: CONSTANT.appVersion,

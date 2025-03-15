@@ -10,7 +10,9 @@ const utilsRemoveNoJsClass = () => {
         document.documentElement.classList.remove(
             runtimeConfig.public.htmlNoJsClass
         )
-        document.documentElement.classList.add('js')
+        document.documentElement.classList.add(
+            runtimeConfig.public.htmlYesJsClass
+        )
     }, 25)
 }
 
