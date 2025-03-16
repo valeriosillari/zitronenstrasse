@@ -10,7 +10,7 @@
 
         <!-- btn + navigation logic (overlay navi) -->
         <AtomsBtnMenu />
-        <MoleculesNavigation />
+        <!-- <MoleculesNavigation /> -->
     </header>
 </template>
 
