@@ -19,9 +19,9 @@
 </template>
 
 <script setup lang="ts">
-import type { TypePageCollection } from '../../types/TypePageCollection'
+// import type { TypePageCollection } from '../../types/TypePageCollection'
 
-const runtimeConfig = useRuntimeConfig()
+// const runtimeConfig = useRuntimeConfig()
 
 const navigationStore = useNavigationStore()
 
@@ -30,17 +30,17 @@ const naviActiveClass = computed(() => ({
     'is-overlay-show': navigationStore.isNavOpen,
 }))
 
-const query_collection_vars = {
-    limit: runtimeConfig.public.limitQueryGql,
-    urlReferenceIn: ['about', 'contacts'],
-}
+// const query_collection_vars = {
+//     limit: runtimeConfig.public.limitQueryGql,
+//     urlReferenceIn: ['about', 'contacts'],
+// }
 
-const { data } = await useAsyncGql<TypePageCollection>(
-    'pageCollection',
-    query_collection_vars
-)
+// const { data } = await useAsyncGql<TypePageCollection>(
+//     'pageCollection',
+//     query_collection_vars
+// )
 
-console.log('>>>>> HEADER data | ', data)
+// console.log('>>>>> HEADER data | ', data)
 
 const navigationLinks = [
     {
@@ -49,18 +49,19 @@ const navigationLinks = [
     },
 ]
 
-const responseDataLinksArray = data.value?.pageCollection?.items
+// const responseDataLinksArray = data.value?.pageCollection?.items
 
-if (responseDataLinksArray) {
-    responseDataLinksArray.forEach((singleLink) => {
-        navigationLinks.push(singleLink)
-    })
-}
+// if (responseDataLinksArray) {
+//     responseDataLinksArray.forEach((singleLink) => {
+//         navigationLinks.push(singleLink)
+//     })
+// }
 
 // list by API + 1 extra for Home "added statically"
-const navigationItemNumber = ref(
-    responseDataLinksArray ? responseDataLinksArray.length + 1 : null
-)
+// const navigationItemNumber = ref(
+//     responseDataLinksArray ? responseDataLinksArray.length + 1 : null
+// )
+const navigationItemNumber = ref(1)
 </script>
 
 <style lang="sass">
