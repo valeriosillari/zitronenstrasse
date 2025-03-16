@@ -9,7 +9,7 @@
         </NuxtLink>
 
         <!-- btn + navigation logic (overlay navi) -->
-        <AtomsBtnMenu />
+        <!-- <AtomsBtnMenu /> -->
         <!-- <MoleculesNavigation /> -->
     </header>
 </template>
