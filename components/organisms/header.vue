@@ -20,7 +20,7 @@ const headerLink = {
     url: '/',
 }
 </script>
-
+<!-- 
 <style lang="sass">
 .b-header
     position: relative
@@ -38,4 +38,4 @@ const headerLink = {
         float: left
         background-image: url('assets/svg/logo.svg')
         text-indent: -9999px
-</style>
+</style> -->
