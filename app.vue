@@ -3,7 +3,7 @@
 
     <MoleculesSplashscreen />
 
-    <!-- <OrganismsHeader /> -->
+    <OrganismsHeader />
 
     <div role="main" class="main-container">
         <NuxtPage />
