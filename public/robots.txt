@@ -2,9 +2,8 @@
 
 # Allow crawling of all content
 User-agent: *
+# Disallow crawling of some pages below
+Disallow: /wip_page/
 
 # Set where is the sitemap file for crawlers
 # Sitemap: https://zitronenstrasse.com/sitemap.xml
-
-# Disallow crawling of some pages below
-wip_page
