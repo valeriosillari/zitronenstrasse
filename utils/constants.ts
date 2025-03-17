@@ -26,7 +26,7 @@ const CONSTANT = {
 
     // used in head description in all the pages
     description:
-        'A mapping project to collect and share romantic spots in Berlin. Little hidden places around the city.',
+        'A mapping project to collect and share romantic spots in Berlin.',
 
     keywords: `Zitronenstrasse, Zitrone, Strasse, Berlin, Zitrone Berlin, Zitronen Berlin, Map, Mapping, Frontend, Vue, Nuxt, Romantic, Spots, Romantic Spots Berlin, ${authorName}`,
 }
