@@ -63,6 +63,9 @@ const navigationItemNumber = ref(
 </script>
 
 <style lang="sass">
+// hover.css : scss file from node (set of mixins)
+@import '@/node_modules/hover.css/scss/hover'
+
 // keyframe move to a general file
 @keyframes fadeInRight
     0%
@@ -113,7 +116,7 @@ const navigationItemNumber = ref(
                 display: block
                 overflow: hidden
                 color: $color_navigation_overlay_text
-                // +underline-from-center()
+                +underline-from-center()
                 font-family: $font_family_secondary
                 font-size: 6rem
                 // TODO: set rem or px?
