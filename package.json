@@ -26,7 +26,6 @@
         "@nuxtjs/google-fonts": "^3.2.0",
         "@pinia/nuxt": "^0.5.1",
         "@types/google.maps": "^3.58.1",
-        "hover.css": "^2.3.2",
         "nuxt": "^3.15.4",
         "nuxt-gtag": "^3.0.2",
         "pinia": "^2.1.7",

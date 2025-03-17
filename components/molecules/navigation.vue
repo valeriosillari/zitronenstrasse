@@ -63,9 +63,6 @@ const navigationItemNumber = ref(
 </script>
 
 <style lang="sass">
-// hover.css : scss file from node (set of mixins)
-@import '@/node_modules/hover.css/scss/hover'
-
 // keyframe move to a general file
 @keyframes fadeInRight
     0%
@@ -113,19 +110,42 @@ const navigationItemNumber = ref(
 
             // <a> tag
             .navigation-link
-                display: block
                 overflow: hidden
                 color: $color_navigation_overlay_text
-                +underline-from-center()
                 font-family: $font_family_secondary
                 font-size: 6rem
                 // TODO: set rem or px?
                 line-height: 1.2
                 text-decoration: none
 
+                // for hover effect, inspired by hover.css  package ("underline-from-center")
+                display: inline-block
+                box-shadow: 0 0 1px transparent
+                position: relative
+                text-decoration: none
+                transform: perspective(1px) translateZ(0)
+                vertical-align: middle
+                // for hover effect
+                &::before
+                    background: $color_navigation_overlay_border
+                    bottom: 0
+                    content: ''
+                    height: 4px
+                    left: 51%
+                    position: absolute
+                    right: 51%
+                    transition-duration: .3s
+                    transition-property: left, right
+                    transition-timing-function: ease-out
+                    z-index: -1
+
                 &:hover,
                 &:focus
                     color: $color_navigation_overlay_text_hvr
+
+                    &::before
+                        left: 0
+                        right: 0
 
                 &.router-link-exact-active
                     color: $color_navigation_overlay_link_exact_active
