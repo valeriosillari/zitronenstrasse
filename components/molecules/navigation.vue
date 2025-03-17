@@ -113,7 +113,7 @@ const navigationItemNumber = ref(
                 display: block
                 overflow: hidden
                 color: $color_navigation_overlay_text
-                +underline-from-center()
+                // +underline-from-center()
                 font-family: $font_family_secondary
                 font-size: 6rem
                 // TODO: set rem or px?
