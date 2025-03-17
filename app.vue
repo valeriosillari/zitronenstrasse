@@ -42,6 +42,8 @@ onMounted(() => {
 </script>
 
 <style lang="sass">
+@import '@/assets/sass/root'
+
 // main page container
 .main-container
     min-height: $map_height

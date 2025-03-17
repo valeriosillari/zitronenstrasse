@@ -146,8 +146,5 @@ export default defineNuxtConfig({
         ],
     },
 
-    // all pure code (sass, css, scss ...)
-    css: ['@/assets/sass/root.sass'],
-
     compatibilityDate: '2025-03-14',
 })
