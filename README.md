@@ -35,8 +35,6 @@ $ npm run deploy-generate
 
 ## TODO
 
-- constant values for home url
-- constant logic as good pattern in nuxt?
 - google map and consent? start map only after user says all fine?
 - sitemap DYNAMIC (nuxt module, data from API)
 - check graphQL query at CLIENT (click on single spot, get data by IDs)
