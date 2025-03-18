@@ -1,5 +1,5 @@
-import CONSTANT from './utils/constants'
-import metaData from './utils/metaData'
+import CONSTANT from './config/constants'
+import metaData from './config/metaData'
 
 export default defineNuxtConfig({
     app: {
