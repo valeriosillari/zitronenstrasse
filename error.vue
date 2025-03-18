@@ -14,6 +14,8 @@
 </template>
 
 <script setup lang="ts">
+import { HOME_LINK } from '@/config/constants'
+
 const runtimeConfig = useRuntimeConfig()
 
 const props = defineProps({
@@ -27,7 +29,7 @@ const { title } = props
 const handleError = () => {
     clearError({
         // home
-        redirect: '/',
+        redirect: HOME_LINK.url,
     })
 }
 

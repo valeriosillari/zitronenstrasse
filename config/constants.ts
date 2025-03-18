@@ -32,3 +32,8 @@ const CONSTANT = {
 }
 
 export default CONSTANT
+
+export const HOME_LINK = {
+    url: '/',
+    text: 'Home',
+}

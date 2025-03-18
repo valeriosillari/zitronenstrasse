@@ -73,7 +73,7 @@
 </template>
 
 <script setup lang="ts">
-import type { TypeSingleSpotData } from '../../types/TypeSingleSpot'
+import type { TypeSingleSpotData } from '@/types/TypeSingleSpot'
 
 const currentSpotData = ref<TypeSingleSpotData | null>(null)
 
