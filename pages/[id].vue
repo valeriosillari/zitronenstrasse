@@ -34,6 +34,11 @@ const { data } = await useAsyncQuery<TypePageCollection>(
 
 const page = data.value?.pageCollection?.items[0]
 
+// If there's no data/page, throw an error to trigger the error page
+if (!page) {
+    throw createError({ statusCode: 404, message: 'Page not found' })
+}
+
 const pageTitle = computed(() => {
     return page?.title
 })
