@@ -19,9 +19,9 @@
 </template>
 
 <script setup lang="ts">
-import { HOME_LINK } from '../../config/constants'
-import type { TypePageCollection } from '../../types/TypePageCollection'
-import GQL_QUERY_PAGE_COLLECTION from '../../graphql/pageCollection'
+import { HOME_LINK } from '@/config/constants'
+import type { TypePageCollection } from '@/types/TypePageCollection'
+import GQL_QUERY_PAGE_COLLECTION from '@/graphql/pageCollection'
 
 const runtimeConfig = useRuntimeConfig()
 
