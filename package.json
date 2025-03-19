@@ -19,25 +19,25 @@
         "deploy-generate": "npm run lint && npm run generate"
     },
     "dependencies": {
-        "@contentful/rich-text-html-renderer": "^16.6.6",
+        "@contentful/rich-text-html-renderer": "^17.0.0",
         "@contentful/rich-text-types": "^17.0.0",
         "@nuxt/image": "^1.9.0",
-        "@nuxtjs/apollo": "^5.0.0-alpha.14",
+        "@nuxtjs/apollo": "^5.0.0-alpha.12",
         "@nuxtjs/google-fonts": "^3.2.0",
         "@pinia/nuxt": "^0.5.1",
-        "@types/google.maps": "^3.58.1",
         "nuxt": "^3.16.0",
         "nuxt-gtag": "^3.0.2",
         "pinia": "^2.1.7",
         "vue": "^3.5.13",
         "vue-router": "^4.5.0",
-        "vue3-google-map": "^0.21.1s"
+        "vue3-google-map": "^0.21.1"
     },
     "devDependencies": {
         "@fortawesome/fontawesome-svg-core": "^6.6.0",
         "@fortawesome/free-brands-svg-icons": "^6.6.0",
         "@fortawesome/vue-fontawesome": "^3.0.8",
         "@nuxt/eslint": "^1.2.0",
+        "@types/google.maps": "^3.58.1",
         "@types/node": "^22.13.10",
         "bootstrap": "^5.3.3",
         "breakpoint-sass": "^3.0.0",
