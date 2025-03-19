@@ -37,7 +37,7 @@
 </template>
 
 <script setup lang="ts">
-// import type { TypePageCollection } from '@/types/TypePageCollection'
+import type { TypePageCollection } from '@/types/TypePageCollection'
 // import GQL_QUERY_PAGE_COLLECTION from '@/graphql/pageCollection'
 
 const runtimeConfig = useRuntimeConfig()
@@ -55,7 +55,10 @@ const query_collection_vars = {
 //     query_collection_vars
 // )
 
-const { data } = await useAsyncGql('pageCollection', query_collection_vars)
+const { data } = await useAsyncGql(
+    'pageCollection'<TypePageCollection>,
+    query_collection_vars
+)
 
 const footerLinks = data.value?.pageCollection?.items
 </script>
