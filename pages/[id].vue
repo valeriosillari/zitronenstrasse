@@ -27,6 +27,14 @@ const gql_query_vars = {
     urlReference: route.params.id,
 }
 
+console.log('======================')
+console.log('route')
+console.log(route)
+
+console.log('======================')
+console.log('gql_query_vars')
+console.log(gql_query_vars)
+
 const { data } = await useAsyncQuery<TypePageCollection>(
     GQL_QUERY_PAGE_BY_URL_REFERENCE,
     gql_query_vars
@@ -37,6 +45,10 @@ const page = data.value?.pageCollection?.items[0]
 // If there's no data/page, throw an error to trigger the error page
 if (!page) {
     throw createError({ statusCode: 404, message: 'Page not found' })
+} else {
+    console.log('======================')
+    console.log('page')
+    console.log(page)
 }
 
 const pageTitle = computed(() => {
