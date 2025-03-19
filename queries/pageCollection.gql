@@ -1,0 +1,16 @@
+query pageCollection($limit: Int!, $urlReferenceIn: [String]) {
+    pageCollection(
+        limit: $limit
+        where: { urlReference_in: $urlReferenceIn }
+        order: title_ASC
+    ) {
+        total
+        items {
+            sys {
+                id
+            }
+            title
+            urlReference
+        }
+    }
+}

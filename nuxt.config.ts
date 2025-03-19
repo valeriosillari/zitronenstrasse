@@ -76,6 +76,7 @@ export default defineNuxtConfig({
 
     runtimeConfig: {
         public: {
+            GQL_HOST: CONSTANT.apiUrl,
             htmlNoJsClass: CONSTANT.htmlNoJsClass,
             htmlYesJsClass: CONSTANT.htmlYesJsClass,
             limitQueryGql: 5,
@@ -89,7 +90,8 @@ export default defineNuxtConfig({
     },
 
     modules: [
-        '@nuxtjs/apollo',
+        // '@nuxtjs/apollo',
+        'nuxt-graphql-client',
         '@nuxt/eslint',
         '@pinia/nuxt',
         '@nuxt/image',
@@ -114,15 +116,15 @@ export default defineNuxtConfig({
         id: process.env.GOOGLE_ANALYTICS_KEY,
     },
 
-    apollo: {
-        clients: {
-            default: {
-                // GraphQL endpoint (contentful), proxied on my website
-                // note: it needs to be under "www" domain
-                httpEndpoint: CONSTANT.apiUrl,
-            },
-        },
-    },
+    // apollo: {
+    //     clients: {
+    //         default: {
+    //             // GraphQL endpoint (contentful), proxied on my website
+    //             // note: it needs to be under "www" domain
+    //             httpEndpoint: CONSTANT.apiUrl,
+    //         },
+    //     },
+    // },
 
     vite: {
         css: {

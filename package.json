@@ -26,6 +26,7 @@
         "@pinia/nuxt": "^0.5.1",
         "@types/google.maps": "^3.58.1",
         "nuxt": "^3.16.0",
+        "nuxt-graphql-client": "^0.2.43",
         "nuxt-gtag": "^3.0.2",
         "pinia": "^2.1.7",
         "vue": "^3.5.13",

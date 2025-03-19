@@ -20,8 +20,8 @@
 
 <script setup lang="ts">
 import { HOME_LINK } from '@/config/constants'
-import type { TypePageCollection } from '@/types/TypePageCollection'
-import GQL_QUERY_PAGE_COLLECTION from '@/graphql/pageCollection'
+// import type { TypePageCollection } from '@/types/TypePageCollection'
+// import GQL_QUERY_PAGE_COLLECTION from '@/graphql/pageCollection'
 
 const runtimeConfig = useRuntimeConfig()
 
@@ -37,10 +37,12 @@ const query_collection_vars = {
     urlReferenceIn: ['about', 'contacts'],
 }
 
-const { data } = await useAsyncQuery<TypePageCollection>(
-    GQL_QUERY_PAGE_COLLECTION,
-    query_collection_vars
-)
+// const { data } = await useAsyncQuery<TypePageCollection>(
+//     GQL_QUERY_PAGE_COLLECTION,
+//     query_collection_vars
+// )
+
+const { data } = await useAsyncGql('pageCollection', query_collection_vars)
 
 const footerLinks = [
     // home
