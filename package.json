@@ -37,7 +37,6 @@
         "@fortawesome/free-brands-svg-icons": "^6.6.0",
         "@fortawesome/vue-fontawesome": "^3.0.8",
         "@nuxt/eslint": "^1.2.0",
-        "@types/google.maps": "^3.58.1",
         "bootstrap": "^5.3.3",
         "breakpoint-sass": "^3.0.0",
         "eslint": "^9.22.0",
@@ -45,6 +44,8 @@
         "eslint-plugin-prettier": "^5.2.3",
         "prettier": "^3.3.2",
         "sass": "1.77.6",
+        "@types/node": "^22.13.10",
+        "@types/google.maps": "^3.58.1",
         "typescript": "^5.6.3",
         "vue-tsc": "^2.1.10"
     }
