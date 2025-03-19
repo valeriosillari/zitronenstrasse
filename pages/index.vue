@@ -1,5 +1,6 @@
 <template>
     <div class="b-page-index">
-        <OrganismsMapOffCanvasStructure />
+        <!-- <OrganismsMapOffCanvasStructure /> -->
+        HOME
     </div>
 </template>
