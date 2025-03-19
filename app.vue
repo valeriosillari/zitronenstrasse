@@ -9,7 +9,7 @@
         <NuxtPage />
     </div>
 
-    <!-- <OrganismsFooter /> -->
+    <OrganismsFooter />
 </template>
 
 <script lang="ts" setup>
