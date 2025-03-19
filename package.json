@@ -37,6 +37,7 @@
         "@fortawesome/free-brands-svg-icons": "^6.6.0",
         "@fortawesome/vue-fontawesome": "^3.0.8",
         "@nuxt/eslint": "^1.2.0",
+        "@types/google.maps": "^3.58.1",
         "bootstrap": "^5.3.3",
         "breakpoint-sass": "^3.0.0",
         "eslint": "^9.22.0",
