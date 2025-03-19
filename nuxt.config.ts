@@ -1,6 +1,8 @@
 import CONSTANT from './config/constants'
 import metaData from './config/metaData'
 
+const graphqlEndpoint = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_GQL_SPACE}?access_token=${process.env.CONTENTFUL_GQL_TOKEN}`
+
 export default defineNuxtConfig({
     app: {
         pageTransition: {
@@ -119,7 +121,8 @@ export default defineNuxtConfig({
             default: {
                 // GraphQL endpoint (contentful), proxied on my website
                 // note: it needs to be under "www" domain
-                httpEndpoint: CONSTANT.apiUrl,
+                // httpEndpoint: CONSTANT.apiUrl,
+                httpEndpoint: graphqlEndpoint,
             },
         },
     },

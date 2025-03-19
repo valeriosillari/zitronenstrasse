@@ -22,7 +22,7 @@ const CONSTANT = {
 
     valeSiteRoot,
 
-    apiUrl: `${valeSiteRoot}/api/zitronenstrasse`,
+    // apiUrl: `${valeSiteRoot}/api/zitronenstrasse`,
 
     // used in head description in all the pages
     description:
