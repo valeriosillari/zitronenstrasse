@@ -1,16 +1,16 @@
 # Zitronenstrasse
 
-#### Romantic Spots in Berlin.
+### Romantic Spots in Berlin.
 
 [zitronenstrasse.com](https://zitronenstrasse.com/)
 
-## GENERAL INFO
+### GENERAL INFO
 
 A side project with a list of romantic spots in Berlin.
 
 Based on **[NuxtJS](https://nuxt.com/)**, **[Contentful Headless CMS](https://www.contentful.com/)**, **[GraphQL](https://graphql.org/)** and **[Google Maps](https://www.google.com/maps)**.
 
-## INSTALLATION
+### INSTALLATION
 
 1. Create a file in the root for env keys with this exact name: `.env`
 
@@ -20,7 +20,7 @@ Based on **[NuxtJS](https://nuxt.com/)**, **[Contentful Headless CMS](https://ww
 
 Now you set the right keys. You're ready to start
 
-## BASIC CLI COMMANDS
+### BASIC CLI COMMANDS
 
 ```bash
 # install dependencies
@@ -33,7 +33,7 @@ $ npm run dev
 $ npm run deploy-generate
 ```
 
-## TODO
+### TODO
 
 - google map and consent? start map only after user says all fine?
 - sitemap DYNAMIC (nuxt module, data from API)
@@ -44,7 +44,7 @@ $ npm run deploy-generate
 - transition between pages (improve animations)
 - button : 1 component with all logic and styles (now 2: button and button MENU)
 
-## NICE TO HAVE
+### NICE TO HAVE
 
 - error page : 1) use layout, show FOOTER. 2) no transition effect 3) button back with NO js
 - filter (where) for data of single page (gql query)
@@ -52,7 +52,7 @@ $ npm run deploy-generate
 - image fallback set logic as computed
 - check speed insight (June 2019). load map better (and later), for performance
 
-## ROAD MAP
+### ROAD MAP
 
 - **FILTERS**: show places sorted by some kind of filter (only bars, only restaurants etc ...). Design + Code needs a concept.
 
