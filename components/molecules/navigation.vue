@@ -42,9 +42,6 @@ const { data } = await useAsyncQuery<TypePageCollection>(
     query_collection_vars
 )
 
-console.log('=========== data ==============')
-console.log(data)
-
 const footerLinks = [
     // home
     {
@@ -55,15 +52,10 @@ const footerLinks = [
 
 const responseDataLinksArray = data.value?.pageCollection?.items
 
-console.log('============= responseDataLinksArray ============')
-console.log(responseDataLinksArray)
-
 if (responseDataLinksArray) {
     responseDataLinksArray.forEach((singleLink) => {
         footerLinks.push(singleLink)
     })
-} else {
-    console.log('============ NO LINKS=============')
 }
 
 // list by API + 1 extra for Home "added statically"
