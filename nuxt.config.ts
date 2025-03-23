@@ -2,67 +2,6 @@ import CONSTANT from './config/constants'
 import metaData from './config/metaData'
 
 export default defineNuxtConfig({
-    app: {
-        pageTransition: {
-            name: 'page',
-            mode: 'out-in',
-        },
-
-        head: {
-            htmlAttrs: {
-                lang: 'en',
-                // // no js class (as Modernizr).
-                // // removed later by the application (by utils function on app level)
-                class: CONSTANT.htmlNoJsClass,
-            },
-
-            title: CONSTANT.title,
-
-            // all HEAD meta data options
-            meta: metaData,
-
-            link: [
-                // favicon (ico)
-                {
-                    rel: 'icon',
-                    sizes: 'any',
-                    href: '/app-icons/favicon.ico',
-                },
-
-                // TODO: set correct icon as svg
-                {
-                    rel: 'icon',
-                    type: 'image/svg+xml',
-                    href: '/app-icons/icon.svg',
-                },
-
-                // apple-touch-icon
-                {
-                    rel: 'apple-touch-icon',
-                    href: '/app-icons/apple_touch_icon.png',
-                },
-
-                // site manifest
-                {
-                    rel: 'manifest',
-                    href: '/app-icons/site.webmanifest',
-                },
-
-                // link canonical
-                {
-                    rel: 'canonical',
-                    href: CONSTANT.appMainUrl,
-                },
-            ],
-
-            // // external js
-            // script: [
-            //     {
-            //     },
-            // ],
-        },
-    },
-
     devtools: { enabled: true },
 
     devServer: {
@@ -148,6 +87,67 @@ export default defineNuxtConfig({
 
     // all pure code (sass, css, scss ...)
     css: ['@/assets/sass/root.sass'],
+
+    app: {
+        pageTransition: {
+            name: 'page',
+            mode: 'out-in',
+        },
+
+        head: {
+            htmlAttrs: {
+                lang: 'en',
+                // // no js class (as Modernizr).
+                // // removed later by the application (by utils function on app level)
+                class: CONSTANT.htmlNoJsClass,
+            },
+
+            title: CONSTANT.title,
+
+            // all HEAD meta data options
+            meta: metaData,
+
+            link: [
+                // favicon (ico)
+                {
+                    rel: 'icon',
+                    sizes: 'any',
+                    href: '/app-icons/favicon.ico',
+                },
+
+                // TODO: set correct icon as svg
+                {
+                    rel: 'icon',
+                    type: 'image/svg+xml',
+                    href: '/app-icons/icon.svg',
+                },
+
+                // apple-touch-icon
+                {
+                    rel: 'apple-touch-icon',
+                    href: '/app-icons/apple_touch_icon.png',
+                },
+
+                // site manifest
+                {
+                    rel: 'manifest',
+                    href: '/app-icons/site.webmanifest',
+                },
+
+                // link canonical
+                {
+                    rel: 'canonical',
+                    href: CONSTANT.appMainUrl,
+                },
+            ],
+
+            // // external js
+            // script: [
+            //     {
+            //     },
+            // ],
+        },
+    },
 
     compatibilityDate: '2025-03-14',
 })
