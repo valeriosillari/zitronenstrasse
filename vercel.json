@@ -1,0 +1,14 @@
+{
+    "redirects": [
+        {
+            "source": "/contact",
+            "destination": "/contacts",
+            "permanent": true
+        },
+        {
+            "source": "/privacy-policy",
+            "destination": "/privacy",
+            "permanent": true
+        }
+    ]
+}
