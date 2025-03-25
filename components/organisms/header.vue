@@ -15,7 +15,7 @@
 </template>
 
 <script setup lang="ts">
-import { HOME_LINK } from '@/config/constants'
+import HOME_LINK from '@/config/homeLink'
 
 const headerLink = {
     url: HOME_LINK.url,
