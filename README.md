@@ -35,9 +35,8 @@ $ npm run deploy-generate
 
 ### TODO
 
-- google map and consent? start map only after user says all fine?
-- sitemap DYNAMIC (nuxt module, data from API)
 - check graphQL query at CLIENT (click on single spot, get data by IDs)
+- google map and consent? start map only after user says all fine?
 - space with REM (trick as pixels)?
 - split sass variables in more files?
 - sass font file with all vars
