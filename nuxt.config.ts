@@ -1,5 +1,5 @@
 import CONSTANT from './config/constants'
-import metaData from './config/metaData'
+import METADATA from './config/metaData'
 
 export default defineNuxtConfig({
     devtools: { enabled: true },
@@ -111,7 +111,7 @@ export default defineNuxtConfig({
             title: CONSTANT.title,
 
             // all HEAD meta data options
-            meta: metaData,
+            meta: METADATA,
 
             link: [
                 // favicon (ico)

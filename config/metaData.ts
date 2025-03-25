@@ -12,7 +12,7 @@ const ogImageWidth = '1200'
 const ogImageHeight = '630'
 
 // ======================
-const metaData = [
+const METADATA = [
     // viewport set on mobile
     {
         name: 'viewport',
@@ -150,4 +150,4 @@ const metaData = [
     },
 ]
 
-export default metaData
+export default METADATA
