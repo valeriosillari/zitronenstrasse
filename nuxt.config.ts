@@ -12,6 +12,10 @@ const APP_ROOT_URL =
     // local
     `http://localhost:${LOCAL_PORT}`
 
+const APP_VERSION = process.env.VERCEL_GIT_COMMIT_SHA
+    ? process.env.VERCEL_GIT_COMMIT_SHA.substring(0, 7)
+    : 'DEV'
+
 export default defineNuxtConfig({
     devtools: { enabled: true },
 
@@ -30,10 +34,7 @@ export default defineNuxtConfig({
             htmlYesJsClass: CONSTANT.htmlYesJsClass,
             limitQueryGql: 5,
             valeSiteRoot: CONSTANT.valeSiteRoot,
-            // appVersion: CONSTANT.appVersion,
-            appVersion: process.env.VERCEL_GIT_COMMIT_SHA
-                ? process.env.VERCEL_GIT_COMMIT_SHA.substring(0, 8)
-                : 'DEV',
+            appVersion: APP_VERSION,
             valeSiteAuthorName: CONSTANT.authorName,
             headTitleString: CONSTANT.title,
             googleMapKey: process.env.GOOGLE_MAP_KEY,
