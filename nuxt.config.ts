@@ -64,6 +64,11 @@ export default defineNuxtConfig({
         },
     },
 
+    site: {
+        url: CONSTANT.appMainUrl,
+        name: CONSTANT.title,
+    },
+
     vite: {
         css: {
             preprocessorOptions: {
