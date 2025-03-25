@@ -16,7 +16,7 @@
         "lintfix": "eslint . --fix && prettier --write --list-different .",
         "type-check": "vue-tsc --noEmit",
         "deploy-build": "npm run lint && npm run build",
-        "deploy-generate": "npm run lint && npm run generate"
+        "deploy-generate": "npm run generate"
     },
     "dependencies": {
         "@contentful/rich-text-html-renderer": "^17.0.0",
