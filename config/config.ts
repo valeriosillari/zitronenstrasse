@@ -22,7 +22,7 @@ if (process.env.NODE_ENV === 'production' && process.env.VERCEL_URL) {
     }
 }
 
-const CONSTANT = {
+const CONFIG = {
     authorName: AUTHOR_NAME,
 
     htmlNoJsClass: 'no-js',
@@ -51,4 +51,4 @@ const CONSTANT = {
         : 'DEV',
 }
 
-export default CONSTANT
+export default CONFIG
