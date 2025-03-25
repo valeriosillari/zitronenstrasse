@@ -4,17 +4,23 @@ import metaData from './config/metaData'
 // TODO: move to config CONST file?
 const LOCAL_PORT = 8000
 
-const APP_ROOT_URL =
-    // prod
-    process.env.VERCEL_PROJECT_PRODUCTION_URL ||
-    // feature branches
-    process.env.VERCEL_URL ||
-    // local
-    `http://localhost:${LOCAL_PORT}`
-
 const APP_VERSION = process.env.VERCEL_GIT_COMMIT_SHA
     ? process.env.VERCEL_GIT_COMMIT_SHA.substring(0, 7)
     : 'DEV'
+
+let APP_ROOT_URL = `http://localhost:${LOCAL_PORT}`
+
+if (process.env.NODE_ENV === 'production' && process.env.VERCEL_URL) {
+    APP_ROOT_URL = process.env.VERCEL_URL
+
+    if (
+        process.env.VERCEL_PROJECT_PRODUCTION_URL &&
+        process.env.VERCEL_GIT_COMMIT_REF &&
+        process.env.VERCEL_GIT_COMMIT_REF === 'main'
+    ) {
+        APP_ROOT_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
+    }
+}
 
 export default defineNuxtConfig({
     devtools: { enabled: true },
