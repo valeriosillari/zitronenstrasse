@@ -23,6 +23,7 @@ export default defineNuxtConfig({
 
     runtimeConfig: {
         public: {
+            NODE_ENV: process.env.NODE_ENV,
             htmlNoJsClass: CONSTANT.htmlNoJsClass,
             htmlYesJsClass: CONSTANT.htmlYesJsClass,
             limitQueryGql: 5,

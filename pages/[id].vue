@@ -6,7 +6,11 @@
             </h1>
 
             <h1 style="background: orange">
-                {{ runtimeConfig.public.appRootUrl }}
+                appRootUrl: {{ runtimeConfig.public.appRootUrl }}
+            </h1>
+
+            <h1 style="background: red">
+                NODE_ENV: {{ runtimeConfig.public.NODE_ENV }}
             </h1>
 
             <AtomsRichText
