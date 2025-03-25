@@ -1,11 +1,19 @@
 import CONSTANT from './config/constants'
 import metaData from './config/metaData'
 
+// TODO: move to config CONST file?
+const LOCAL_PORT = 8000
+
+const APP_ROOT_URL =
+    process.env.NODE_ENV === 'production'
+        ? `HERERERERER-PROD`
+        : `http://localhost:${LOCAL_PORT}`
+
 export default defineNuxtConfig({
     devtools: { enabled: true },
 
     devServer: {
-        port: 8000,
+        port: LOCAL_PORT,
     },
 
     //  "forced" typescript checks | very strict mode
@@ -24,6 +32,7 @@ export default defineNuxtConfig({
             headTitleString: CONSTANT.title,
             googleMapKey: process.env.GOOGLE_MAP_KEY,
             googleMapStyleMapId: process.env.GOOGLE_MAP_STYLE_MAP_ID,
+            appRootUrl: APP_ROOT_URL,
         },
     },
 
@@ -65,7 +74,7 @@ export default defineNuxtConfig({
     },
 
     site: {
-        url: CONSTANT.appMainUrl,
+        url: APP_ROOT_URL,
         name: CONSTANT.title,
     },
 

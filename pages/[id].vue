@@ -5,6 +5,10 @@
                 {{ pageTitle }}
             </h1>
 
+            <h1 style="background: orange">
+                {{ runtimeConfig.public.appRootUrl }}
+            </h1>
+
             <AtomsRichText
                 v-if="pageDescription"
                 :rich-text="pageDescription"
