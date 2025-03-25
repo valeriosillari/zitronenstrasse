@@ -1,20 +1,6 @@
 import CONSTANT from './config/constants'
 import metaData from './config/metaData'
 
-let APP_ROOT_URL = `http://localhost:${CONSTANT.localPort}`
-
-if (process.env.NODE_ENV === 'production' && process.env.VERCEL_URL) {
-    APP_ROOT_URL = `https://${process.env.VERCEL_URL}`
-
-    if (
-        process.env.VERCEL_PROJECT_PRODUCTION_URL &&
-        process.env.VERCEL_GIT_COMMIT_REF &&
-        process.env.VERCEL_GIT_COMMIT_REF === 'main'
-    ) {
-        APP_ROOT_URL = `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    }
-}
-
 export default defineNuxtConfig({
     devtools: { enabled: true },
 
@@ -39,7 +25,6 @@ export default defineNuxtConfig({
             googleMapKey: process.env.GOOGLE_MAP_KEY,
             googleMapStyleMapId: process.env.GOOGLE_MAP_STYLE_MAP_ID,
             NODE_ENV: process.env.NODE_ENV,
-            APP_ROOT_URL,
         },
     },
 
@@ -81,7 +66,7 @@ export default defineNuxtConfig({
     },
 
     site: {
-        url: APP_ROOT_URL,
+        url: CONSTANT.appRootUrl,
         name: CONSTANT.title,
     },
 
