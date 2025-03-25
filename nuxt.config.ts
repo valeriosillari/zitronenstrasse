@@ -7,11 +7,11 @@ const LOCAL_PORT = 8000
 let APP_ROOT_URL = `http://localhost:${LOCAL_PORT}`
 
 if (process.env.NODE_ENV === 'production') {
+    let appUrlSet = `https://${process.env.VERCEL_URL}`
     if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
-        APP_ROOT_URL = `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    } else {
-        APP_ROOT_URL = `https://${process.env.VERCEL_URL}`
+        appUrlSet = `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
     }
+    APP_ROOT_URL = appUrlSet
 }
 
 export default defineNuxtConfig({
