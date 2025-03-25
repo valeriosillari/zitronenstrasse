@@ -4,15 +4,13 @@ import metaData from './config/metaData'
 // TODO: move to config CONST file?
 const LOCAL_PORT = 8000
 
-let APP_ROOT_URL = `http://localhost:${LOCAL_PORT}`
-
-if (process.env.NODE_ENV === 'production') {
-    let appUrlSet = `https://${process.env.VERCEL_URL}`
-    if (process.env.VERCEL_PROJECT_PRODUCTION_URL) {
-        appUrlSet = `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-    }
-    APP_ROOT_URL = appUrlSet
-}
+const APP_ROOT_URL =
+    // prod
+    process.env.VERCEL_PROJECT_PRODUCTION_URL ||
+    // feature branches
+    process.env.VERCEL_URL ||
+    // local
+    `http://localhost:${LOCAL_PORT}`
 
 export default defineNuxtConfig({
     devtools: { enabled: true },
@@ -28,7 +26,6 @@ export default defineNuxtConfig({
 
     runtimeConfig: {
         public: {
-            NODE_ENV: process.env.NODE_ENV,
             htmlNoJsClass: CONSTANT.htmlNoJsClass,
             htmlYesJsClass: CONSTANT.htmlYesJsClass,
             limitQueryGql: 5,
@@ -38,7 +35,8 @@ export default defineNuxtConfig({
             headTitleString: CONSTANT.title,
             googleMapKey: process.env.GOOGLE_MAP_KEY,
             googleMapStyleMapId: process.env.GOOGLE_MAP_STYLE_MAP_ID,
-            appRootUrl: APP_ROOT_URL,
+            NODE_ENV: process.env.NODE_ENV,
+            APP_ROOT_URL,
         },
     },
 
