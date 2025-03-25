@@ -5,7 +5,7 @@ export default defineNuxtConfig({
     devtools: { enabled: true },
 
     devServer: {
-        port: 8000,
+        port: CONSTANT.localPort,
     },
 
     //  "forced" typescript checks | very strict mode

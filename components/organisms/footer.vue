@@ -4,7 +4,8 @@
             <div class="row align-items-center">
                 <div class="col-10 col-sm-7 col-md-8 col-left">
                     <p class="footer-text">
-                        Zitronenstrasse {{ dateYear }} | v{{ appVersion }}
+                        Zitronenstrasse {{ dateYear }} | version
+                        {{ appVersion }}
                     </p>
 
                     <p class="footer-text">

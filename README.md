@@ -26,7 +26,7 @@ Now you set the right keys. You're ready to start
 # install dependencies
 $ npm install
 
-# serve with hot reload at localhost:3000
+# serve with hot reload at localhost:8000
 $ npm run dev
 
 # generate static project (static website)

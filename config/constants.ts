@@ -4,12 +4,28 @@ const titleShort = 'Zitronenstrasse'
 
 const authorName = packageJson.author
 
-const valeSiteRoot = 'https://www.valeriosillari.com'
+const VALERIO_SITE_ROOT = 'https://www.valeriosillari.com'
+
+const LOCAL_PORT = 8000
+
+let APP_ROOT_URL = `http://localhost:${LOCAL_PORT}`
+
+if (process.env.NODE_ENV === 'production' && process.env.VERCEL_URL) {
+    // feature branch deployed
+    APP_ROOT_URL = `https://${process.env.VERCEL_URL}`
+
+    // MAIN / PROD branch
+    if (
+        process.env.VERCEL_PROJECT_PRODUCTION_URL &&
+        process.env.VERCEL_GIT_COMMIT_REF &&
+        process.env.VERCEL_GIT_COMMIT_REF === 'main'
+    ) {
+        APP_ROOT_URL = `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    }
+}
 
 const CONSTANT = {
     authorName,
-
-    appVersion: packageJson.version,
 
     htmlNoJsClass: 'no-js',
 
@@ -18,17 +34,23 @@ const CONSTANT = {
     // main title | CHECK
     title: `${titleShort} | Romantic Spots in Berlin.`,
 
-    appMainUrl: 'https://www.zitronenstrasse.com',
+    appMainUrl: APP_ROOT_URL,
 
-    valeSiteRoot,
+    valeSiteRoot: VALERIO_SITE_ROOT,
 
-    apiUrl: `${valeSiteRoot}/api/zitronenstrasse`,
+    apiUrl: `${VALERIO_SITE_ROOT}/api/zitronenstrasse`,
 
     // used in head description in all the pages
     description:
         'A mapping project to collect and share romantic spots in Berlin.',
 
     keywords: `Zitronenstrasse, Zitrone, Strasse, Berlin, Zitrone Berlin, Zitronen Berlin, Map, Mapping, Frontend, Vue, Nuxt, Romantic, Spots, Romantic Spots Berlin, ${authorName}`,
+
+    localPort: LOCAL_PORT,
+
+    appVersion: process.env.VERCEL_GIT_COMMIT_SHA
+        ? process.env.VERCEL_GIT_COMMIT_SHA.substring(0, 7)
+        : 'DEV',
 }
 
 export default CONSTANT
