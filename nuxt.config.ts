@@ -11,14 +11,14 @@ const APP_VERSION = process.env.VERCEL_GIT_COMMIT_SHA
 let APP_ROOT_URL = `http://localhost:${LOCAL_PORT}`
 
 if (process.env.NODE_ENV === 'production' && process.env.VERCEL_URL) {
-    APP_ROOT_URL = process.env.VERCEL_URL
+    APP_ROOT_URL = `https://${process.env.VERCEL_URL}`
 
     if (
         process.env.VERCEL_PROJECT_PRODUCTION_URL &&
         process.env.VERCEL_GIT_COMMIT_REF &&
         process.env.VERCEL_GIT_COMMIT_REF === 'main'
     ) {
-        APP_ROOT_URL = process.env.VERCEL_PROJECT_PRODUCTION_URL
+        APP_ROOT_URL = `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
     }
 }
 
