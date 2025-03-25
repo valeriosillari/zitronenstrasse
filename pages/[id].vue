@@ -5,14 +5,6 @@
                 {{ pageTitle }}
             </h1>
 
-            <h1 style="background: orange">
-                APP_ROOT_URL: {{ runtimeConfig.public.APP_ROOT_URL }}
-            </h1>
-
-            <h1 style="background: red">
-                NODE_ENV: {{ runtimeConfig.public.NODE_ENV }}
-            </h1>
-
             <AtomsRichText
                 v-if="pageDescription"
                 :rich-text="pageDescription"
