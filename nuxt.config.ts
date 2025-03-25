@@ -1,14 +1,7 @@
 import CONSTANT from './config/constants'
 import metaData from './config/metaData'
 
-// TODO: move to config CONST file?
-const LOCAL_PORT = 8000
-
-const APP_VERSION = process.env.VERCEL_GIT_COMMIT_SHA
-    ? process.env.VERCEL_GIT_COMMIT_SHA.substring(0, 7)
-    : 'DEV'
-
-let APP_ROOT_URL = `http://localhost:${LOCAL_PORT}`
+let APP_ROOT_URL = `http://localhost:${CONSTANT.localPort}`
 
 if (process.env.NODE_ENV === 'production' && process.env.VERCEL_URL) {
     APP_ROOT_URL = `https://${process.env.VERCEL_URL}`
@@ -26,7 +19,7 @@ export default defineNuxtConfig({
     devtools: { enabled: true },
 
     devServer: {
-        port: LOCAL_PORT,
+        port: CONSTANT.localPort,
     },
 
     //  "forced" typescript checks | very strict mode
@@ -40,7 +33,7 @@ export default defineNuxtConfig({
             htmlYesJsClass: CONSTANT.htmlYesJsClass,
             limitQueryGql: 5,
             valeSiteRoot: CONSTANT.valeSiteRoot,
-            appVersion: APP_VERSION,
+            appVersion: CONSTANT.appVersion,
             valeSiteAuthorName: CONSTANT.authorName,
             headTitleString: CONSTANT.title,
             googleMapKey: process.env.GOOGLE_MAP_KEY,

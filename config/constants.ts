@@ -9,8 +9,6 @@ const valeSiteRoot = 'https://www.valeriosillari.com'
 const CONSTANT = {
     authorName,
 
-    appVersion: packageJson.version,
-
     htmlNoJsClass: 'no-js',
 
     htmlYesJsClass: 'js',
@@ -29,6 +27,12 @@ const CONSTANT = {
         'A mapping project to collect and share romantic spots in Berlin.',
 
     keywords: `Zitronenstrasse, Zitrone, Strasse, Berlin, Zitrone Berlin, Zitronen Berlin, Map, Mapping, Frontend, Vue, Nuxt, Romantic, Spots, Romantic Spots Berlin, ${authorName}`,
+
+    localPort: 8000,
+
+    appVersion: process.env.VERCEL_GIT_COMMIT_SHA
+        ? process.env.VERCEL_GIT_COMMIT_SHA.substring(0, 7)
+        : 'DEV',
 }
 
 export default CONSTANT
