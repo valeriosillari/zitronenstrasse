@@ -24,6 +24,7 @@
         "@nuxt/image": "^1.9.0",
         "@nuxtjs/apollo": "^5.0.0-alpha.14",
         "@nuxtjs/google-fonts": "^3.2.0",
+        "@nuxtjs/sitemap": "^7.2.9",
         "@pinia/nuxt": "^0.5.1",
         "nuxt": "^3.16.1",
         "nuxt-gtag": "^3.0.2",
@@ -37,6 +38,8 @@
         "@fortawesome/free-brands-svg-icons": "^6.6.0",
         "@fortawesome/vue-fontawesome": "^3.0.8",
         "@nuxt/eslint": "^1.2.0",
+        "@types/google.maps": "^3.58.1",
+        "@types/node": "^22.13.11",
         "bootstrap": "^5.3.3",
         "breakpoint-sass": "^3.0.0",
         "eslint": "^9.22.0",
@@ -44,8 +47,6 @@
         "eslint-plugin-prettier": "^5.2.3",
         "prettier": "^3.3.2",
         "sass": "1.77.6",
-        "@types/node": "^22.13.11",
-        "@types/google.maps": "^3.58.1",
         "typescript": "^5.8",
         "vue-tsc": "^2.2.8"
     }
