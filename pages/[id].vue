@@ -6,7 +6,7 @@
             </h1>
 
             <h1 style="background: orange">
-                appRootUrl: {{ runtimeConfig.public.appRootUrl }}
+                APP_ROOT_URL: {{ runtimeConfig.public.APP_ROOT_URL }}
             </h1>
 
             <h1 style="background: red">

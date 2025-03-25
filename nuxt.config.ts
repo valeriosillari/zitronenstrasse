@@ -4,11 +4,12 @@ import metaData from './config/metaData'
 // TODO: move to config CONST file?
 const LOCAL_PORT = 8000
 
-const APP_ROOT_URL = process.env.VERCEL_URL
-    ? process.env.VERCEL_URL
-    : `http://localhost:${LOCAL_PORT}`
+const APP_ROOT_URL = process.env.VERCEL_URL || `http://localhost:${LOCAL_PORT}`
 
-console.log('============== TEST ME ===============')
+console.log('============== APP_ROOT_URL ===============')
+console.log(APP_ROOT_URL)
+
+console.log('============== process.env.VERCEL_URL ===============')
 console.log(process.env.VERCEL_URL)
 
 export default defineNuxtConfig({
@@ -35,7 +36,7 @@ export default defineNuxtConfig({
             headTitleString: CONSTANT.title,
             googleMapKey: process.env.GOOGLE_MAP_KEY,
             googleMapStyleMapId: process.env.GOOGLE_MAP_STYLE_MAP_ID,
-            appRootUrl: APP_ROOT_URL,
+            APP_ROOT_URL,
         },
     },
 
