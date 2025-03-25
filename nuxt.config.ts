@@ -6,7 +6,7 @@ const LOCAL_PORT = 8000
 
 const APP_ROOT_URL =
     process.env.NODE_ENV === 'production'
-        ? `HERERERERER-PROD`
+        ? process.env.VERCEL_URL
         : `http://localhost:${LOCAL_PORT}`
 
 export default defineNuxtConfig({
