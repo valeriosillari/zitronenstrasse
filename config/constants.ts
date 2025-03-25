@@ -1,8 +1,8 @@
 import packageJson from '../package.json'
 
-const titleShort = 'Zitronenstrasse'
+const TITLE_SHORT = 'Zitronenstrasse'
 
-const authorName = packageJson.author
+const AUTHOR_NAME = packageJson.author
 
 const VALERIO_SITE_ROOT = 'https://www.valeriosillari.com'
 
@@ -25,14 +25,14 @@ if (process.env.NODE_ENV === 'production' && process.env.VERCEL_URL) {
 }
 
 const CONSTANT = {
-    authorName,
+    authorName: AUTHOR_NAME,
 
     htmlNoJsClass: 'no-js',
 
     htmlYesJsClass: 'js',
 
     // main title | CHECK
-    title: `${titleShort} | Romantic Spots in Berlin.`,
+    title: `${TITLE_SHORT} | Romantic Spots in Berlin.`,
 
     appMainUrl: APP_ROOT_URL,
 
