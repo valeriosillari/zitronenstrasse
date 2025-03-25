@@ -66,7 +66,7 @@ export default defineNuxtConfig({
     },
 
     site: {
-        url: CONSTANT.appRootUrl,
+        url: CONSTANT.appMainUrl,
         name: CONSTANT.title,
     },
 
