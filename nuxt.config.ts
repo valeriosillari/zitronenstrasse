@@ -4,10 +4,12 @@ import metaData from './config/metaData'
 // TODO: move to config CONST file?
 const LOCAL_PORT = 8000
 
-const APP_ROOT_URL =
-    process.env.NODE_ENV === 'production'
-        ? process.env.VERCEL_URL
-        : `http://localhost:${LOCAL_PORT}`
+const APP_ROOT_URL = process.env.VERCEL_URL
+    ? process.env.VERCEL_URL
+    : `http://localhost:${LOCAL_PORT}`
+
+console.log('============== TEST ME ===============')
+console.log(process.env.VERCEL_URL)
 
 export default defineNuxtConfig({
     devtools: { enabled: true },
