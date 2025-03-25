@@ -24,7 +24,6 @@ export default defineNuxtConfig({
             headTitleString: CONSTANT.title,
             googleMapKey: process.env.GOOGLE_MAP_KEY,
             googleMapStyleMapId: process.env.GOOGLE_MAP_STYLE_MAP_ID,
-            NODE_ENV: process.env.NODE_ENV,
         },
     },
 
