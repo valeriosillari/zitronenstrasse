@@ -12,4 +12,5 @@ coverage/
 
 # vercel env system folder and files (at deploy)
 .vercel
+# file to set redirects. ignore it, it seems got issue on vercel deployment
 vercel.json
