@@ -10,5 +10,7 @@ dist/
 # jest coverage folder
 coverage/
 
-# vercel env systm folder and files (at deploy)
+# vercel env system folder and files (at deploy)
 .vercel
+# file to set redirects. ignore it, it seems got issue on vercel deployment
+vercel.json

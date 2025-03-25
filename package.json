@@ -10,13 +10,13 @@
         "generate": "nuxt generate",
         "preview": "nuxt preview",
         "postinstall": "nuxt prepare",
-        "lint": "npm run lint:eslint && npm run lint:prettier",
+        "type-check": "vue-tsc --noEmit",
         "lint:eslint": "eslint .",
         "lint:prettier": "prettier . --check",
         "lintfix": "eslint . --fix && prettier --write --list-different .",
-        "type-check": "vue-tsc --noEmit",
-        "deploy-build": "npm run lint && npm run build",
-        "deploy-generate": "npm run lint && npm run generate"
+        "check-all": "npm run type-check && npm run lint:eslint && npm run lint:prettier",
+        "deploy-build": "npm run check-all && npm run build",
+        "deploy-generate": "npm run check-all && npm run generate"
     },
     "dependencies": {
         "@contentful/rich-text-html-renderer": "^17.0.0",
