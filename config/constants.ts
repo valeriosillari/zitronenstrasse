@@ -1,7 +1,5 @@
 import packageJson from '../package.json'
 
-const TITLE_SHORT = 'Zitronenstrasse'
-
 const AUTHOR_NAME = packageJson.author
 
 const VALERIO_SITE_ROOT = 'https://www.valeriosillari.com'
@@ -31,8 +29,7 @@ const CONSTANT = {
 
     htmlYesJsClass: 'js',
 
-    // main title | CHECK
-    title: `${TITLE_SHORT} | Romantic Spots in Berlin.`,
+    title: packageJson.description,
 
     appMainUrl: APP_ROOT_URL,
 
