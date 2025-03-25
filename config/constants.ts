@@ -49,7 +49,8 @@ const CONSTANT = {
     localPort: LOCAL_PORT,
 
     appVersion: process.env.VERCEL_GIT_COMMIT_SHA
-        ? process.env.VERCEL_GIT_COMMIT_SHA.substring(0, 7)
+        ? // 7 digits, for "short" commit hash
+          process.env.VERCEL_GIT_COMMIT_SHA.substring(0, 7)
         : 'DEV',
 }
 
