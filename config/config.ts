@@ -1,4 +1,5 @@
 import packageJson from '../package.json'
+import type { TypeConfig } from '@/types/TypeConfig'
 
 const AUTHOR_NAME = packageJson.author
 
@@ -22,7 +23,7 @@ if (process.env.NODE_ENV === 'production' && process.env.VERCEL_URL) {
     }
 }
 
-const CONFIG = {
+const CONFIG: TypeConfig = {
     authorName: AUTHOR_NAME,
 
     htmlNoJsClass: 'no-js',
