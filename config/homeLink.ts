@@ -1,4 +1,6 @@
-const HOME_LINK = {
+import type { TypeHomeLink } from '@/types/TypeHomeLink'
+
+const HOME_LINK: TypeHomeLink = {
     url: '/',
     text: 'Home',
 }
