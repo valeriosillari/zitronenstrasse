@@ -60,7 +60,8 @@ useHead({
         {
             // FB + Linkedin
             property: 'og:title',
-            content: pageMetaTitle,
+            // content: pageMetaTitle,
+            content: 'TEST MEEEEE',
         },
 
         {
