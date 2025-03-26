@@ -4,19 +4,18 @@
 
         <div class="place-details-thumb-area">
             <div class="place-details-thumb-image-inner">
-                <!-- TODO image data as computed -->
                 <NuxtImg
-                    v-if="currentSpotData.image"
                     class="place-details-thumb-image"
-                    :alt="currentSpotData.image.title"
-                    :src="currentSpotData.image.url"
-                    loading="lazy"
-                />
-                <NuxtImg
-                    v-else
-                    class="place-details-thumb-image"
-                    :alt="currentSpotData.title"
-                    :src="'/img/place_image_fallback.jpg'"
+                    :alt="
+                        currentSpotData.image?.title
+                            ? currentSpotData.image.title
+                            : currentSpotData.title
+                    "
+                    :src="
+                        currentSpotData.image?.url
+                            ? currentSpotData.image.url
+                            : '/img/place_image_fallback.jpg'
+                    "
                     loading="lazy"
                 />
             </div>
