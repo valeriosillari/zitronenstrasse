@@ -65,6 +65,11 @@ useHead({
         },
 
         {
+            property: 'og:url',
+            content: `${CONFIG.appMainUrl}${route.fullPath}`,
+        },
+
+        {
             name: 'twitter:title',
             content: pageMetaTitle,
         },
