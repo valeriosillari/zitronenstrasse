@@ -6,7 +6,7 @@ export type TypeMetaDataItem = {
     content: string
 }
 
-export type TypeMetaData = MetadataItem[]
+export type TypeMetaData = TypeMetaDataItem[]
 
 // =======
 export type TypeHomeLink = {
