@@ -48,7 +48,6 @@ $ npm run deploy-generate
 - error page : 1) use layout, show FOOTER. 2) no transition effect 3) button back with NO js
 - filter (where) for data of single page (gql query)
 - load data at page switch? cannot pre generated all data? >> REAL STATIC + git hooks?
-- image fallback set logic as computed
 - check speed insight (June 2019). load map better (and later), for performance
 
 ### ROAD MAP

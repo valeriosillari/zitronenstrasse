@@ -4,19 +4,10 @@
 
         <div class="place-details-thumb-area">
             <div class="place-details-thumb-image-inner">
-                <!-- TODO image data as computed -->
                 <NuxtImg
-                    v-if="currentSpotData.image"
                     class="place-details-thumb-image"
-                    :alt="currentSpotData.image.title"
-                    :src="currentSpotData.image.url"
-                    loading="lazy"
-                />
-                <NuxtImg
-                    v-else
-                    class="place-details-thumb-image"
-                    :alt="currentSpotData.title"
-                    :src="'/img/place_image_fallback.jpg'"
+                    :alt="imageTitle"
+                    :src="imageUrl"
                     loading="lazy"
                 />
             </div>
@@ -82,6 +73,28 @@ const isSpotShown = computed(() => {
 })
 
 const singleSpotSelectedStore = useSingleSpotSelectedStore()
+
+const imageUrl = computed(() => {
+    if (!currentSpotData.value || !currentSpotData.value.image) {
+        return '/img/place_image_fallback.jpg'
+    }
+
+    return currentSpotData.value.image.url
+})
+
+const imageTitle = computed(() => {
+    // no data at all (typescript fallback)
+    if (!currentSpotData.value) {
+        return ''
+    }
+
+    // no image title set >> title of spot as fallback
+    if (!currentSpotData.value.image || !currentSpotData.value.image.title) {
+        return currentSpotData.value.title
+    }
+
+    return currentSpotData.value.image.title
+})
 
 watch(
     () => singleSpotSelectedStore.currentSpotData,
