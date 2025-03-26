@@ -70,7 +70,17 @@ useHead({
         },
 
         {
+            property: 'og:image:alt',
+            content: pageMetaTitle,
+        },
+
+        {
             name: 'twitter:title',
+            content: pageMetaTitle,
+        },
+
+        {
+            name: 'twitter:image:alt',
             content: pageMetaTitle,
         },
     ],
