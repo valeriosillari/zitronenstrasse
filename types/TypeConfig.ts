@@ -15,7 +15,6 @@ export type TypeConfig = {
 
 // =======
 export type TypeMetaDataItem = {
-    hid?: string
     name?: string
     property?: string
     content: string
