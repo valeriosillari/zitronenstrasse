@@ -16,6 +16,7 @@
 <script lang="ts" setup>
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 import type { TypePageCollection } from '@/types/TypePageCollection'
+import CONFIG from '@/config/config'
 import GQL_QUERY_PAGE_BY_URL_REFERENCE from '@/graphql/page'
 
 const route = useRoute()
@@ -50,8 +51,45 @@ const pageDescription = computed(() => {
     return false
 })
 
+const pageMetaTitle = computed(() => {
+    return `${page?.title} | ${runtimeConfig.public.headTitleString}`
+})
+
 useHead({
-    title: `${page?.title} | ${runtimeConfig.public.headTitleString}`,
+    title: pageMetaTitle,
+    meta: [
+        {
+            // FB + Linkedin
+            property: 'og:title',
+            content: pageMetaTitle,
+        },
+
+        {
+            property: 'og:url',
+            content: `${CONFIG.appMainUrl}${route.fullPath}`,
+        },
+
+        {
+            property: 'og:image:alt',
+            content: pageMetaTitle,
+        },
+
+        {
+            name: 'twitter:title',
+            content: pageMetaTitle,
+        },
+
+        {
+            name: 'twitter:image:alt',
+            content: pageMetaTitle,
+        },
+    ],
+    link: [
+        {
+            rel: 'canonical',
+            href: `${CONFIG.appMainUrl}${route.fullPath}`,
+        },
+    ],
 })
 </script>
 

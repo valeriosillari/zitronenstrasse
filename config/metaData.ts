@@ -22,19 +22,16 @@ const METADATA: TypeMetaData = [
     },
 
     {
-        hid: 'description',
         name: 'description',
         content: ogDescription,
     },
 
     {
-        hid: 'author',
         name: 'author',
         content: ogAuthorName,
     },
 
     {
-        hid: 'keywords',
         name: 'keywords',
         content: CONFIG.keywords,
     },
@@ -42,67 +39,56 @@ const METADATA: TypeMetaData = [
     // ======================
     // OG options for open graph: Fb and Linkedin
     {
-        hid: 'og:title',
         property: 'og:title',
         content: ogTitle,
     },
 
     {
-        hid: 'og:description',
         property: 'og:description',
         content: ogDescription,
     },
 
     {
-        hid: 'og:type',
         property: 'og:type',
         content: ogType,
     },
 
     {
-        hid: 'og:url',
         property: 'og:url',
         content: ogUrl,
     },
 
     {
-        hid: 'og:image',
         property: 'og:image',
         content: ogImage,
     },
 
     {
-        hid: 'og:image:url',
         property: 'og:image:url',
         content: ogImage,
     },
 
     {
-        hid: 'og:image:secure_url',
         property: 'og:image:secure_url',
         content: ogImage,
     },
 
     {
-        hid: 'og:image:width',
         property: 'og:image:width',
         content: ogImageWidth,
     },
 
     {
-        hid: 'og:image:height',
         property: 'og:image:height',
         content: ogImageHeight,
     },
 
     {
-        hid: 'og:image:type',
         property: 'og:image:type',
         content: 'image/png',
     },
 
     {
-        hid: 'og:image:alt',
         property: 'og:image:alt',
         content: ogTitle,
     },
@@ -110,43 +96,36 @@ const METADATA: TypeMetaData = [
     // ======================
     // Twitter card
     {
-        hid: 'twitter:card',
         name: 'twitter:card',
         content: 'summary_large_image',
     },
 
     {
-        hid: 'twitter:site',
         name: 'twitter:site',
         content: ogTwitterSite,
     },
 
     {
-        hid: 'twitter:creator',
         name: 'twitter:creator',
         content: ogAuthorName,
     },
 
     {
-        hid: 'twitter:title',
         name: 'twitter:title',
         content: ogTitle,
     },
 
     {
-        hid: 'twitter:description',
         name: 'twitter:description',
         content: ogDescription,
     },
 
     {
-        hid: 'twitter:image',
         name: 'twitter:image',
         content: ogImage,
     },
 
     {
-        hid: 'twitter:image:alt',
         name: 'twitter:image:alt',
         content: ogTitle,
     },
