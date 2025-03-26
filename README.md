@@ -20,7 +20,7 @@ Based on **[NuxtJS](https://nuxt.com/)**, **[Contentful Headless CMS](https://ww
 
 Now you set the right keys. You're ready to start
 
-### BASIC CLI COMMANDSS
+### BASIC CLI COMMANDS
 
 ```bash
 # install dependencies
