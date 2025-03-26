@@ -1,17 +1,17 @@
-// =======
-export type TypeConfig = {
-    authorName: string
-    htmlNoJsClass: string
-    htmlYesJsClass: string
-    title: string
-    appMainUrl: string
-    valeSiteRoot: string
-    apiUrl: string
-    description: string
-    keywords: string
-    localPort: number
-    appVersion: string
-}
+// // =======
+// export type TypeConfig = {
+//     authorName: string
+//     htmlNoJsClass: string
+//     htmlYesJsClass: string
+//     title: string
+//     appMainUrl: string
+//     valeSiteRoot: string
+//     apiUrl: string
+//     description: string
+//     keywords: string
+//     localPort: number
+//     appVersion: string
+// }
 
 // =======
 export type TypeMetaDataItem = {
