@@ -50,8 +50,24 @@ const pageDescription = computed(() => {
     return false
 })
 
+const pageMetaTitle = computed(() => {
+    return `${page?.title} | ${runtimeConfig.public.headTitleString}`
+})
+
 useHead({
-    title: `${page?.title} | ${runtimeConfig.public.headTitleString}`,
+    title: pageMetaTitle,
+    meta: [
+        {
+            // FB + Linkedin
+            property: 'og:title',
+            content: pageMetaTitle,
+        },
+
+        {
+            name: 'twitter:title',
+            content: pageMetaTitle,
+        },
+    ],
 })
 </script>
 
