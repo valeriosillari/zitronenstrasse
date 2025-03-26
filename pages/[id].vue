@@ -16,6 +16,7 @@
 <script lang="ts" setup>
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 import type { TypePageCollection } from '@/types/TypePageCollection'
+import CONFIG from '@/config/config'
 import GQL_QUERY_PAGE_BY_URL_REFERENCE from '@/graphql/page'
 
 const route = useRoute()
@@ -60,13 +61,18 @@ useHead({
         {
             // FB + Linkedin
             property: 'og:title',
-            // content: pageMetaTitle,
-            content: 'TEST MEEEEE',
+            content: pageMetaTitle,
         },
 
         {
             name: 'twitter:title',
             content: pageMetaTitle,
+        },
+    ],
+    link: [
+        {
+            rel: 'canonical',
+            href: `${CONFIG.appMainUrl}${route.fullPath}`,
         },
     ],
 })
