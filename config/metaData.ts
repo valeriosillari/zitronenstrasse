@@ -1,3 +1,4 @@
+import type { TypeMetaData } from '@/types/TypeConfig'
 import CONFIG from './config'
 
 // ===============================
@@ -6,13 +7,14 @@ const ogUrl = CONFIG.appMainUrl
 const ogTitle = CONFIG.title
 const ogDescription = CONFIG.description
 const ogAuthorName = CONFIG.authorName
+const ogTwitterSite = '@stellavalerio'
 const ogType = 'website'
 const ogImage = `${CONFIG.appMainUrl}/app-icons/logo_og_image.png`
 const ogImageWidth = '1200'
 const ogImageHeight = '630'
 
 // ======================
-const METADATA = [
+const METADATA: TypeMetaData = [
     // viewport set on mobile
     {
         name: 'viewport',
@@ -116,7 +118,7 @@ const METADATA = [
     {
         hid: 'twitter:site',
         name: 'twitter:site',
-        content: '@stellavalerio',
+        content: ogTwitterSite,
     },
 
     {
