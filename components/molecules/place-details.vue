@@ -84,7 +84,7 @@ const imageUrl = computed(() => {
 
 const imageTitle = computed(() => {
     // no data at all (typescript fallback)
-    if (currentSpotData.value === null) {
+    if (!currentSpotData.value) {
         return ''
     }
 
