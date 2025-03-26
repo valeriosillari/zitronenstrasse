@@ -15,6 +15,7 @@ export default defineNuxtConfig({
 
     runtimeConfig: {
         public: {
+            projectName: CONFIG.projectName,
             htmlNoJsClass: CONFIG.htmlNoJsClass,
             htmlYesJsClass: CONFIG.htmlYesJsClass,
             limitQueryGql: 5,

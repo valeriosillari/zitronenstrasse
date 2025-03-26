@@ -17,20 +17,22 @@
 </template>
 
 <script setup lang="ts">
+const runtimeConfig = useRuntimeConfig()
+
 // https://dev.to/ceceliacreates/using-fontawesome-icons-with-nuxt-3-50cd
 const socialLinks = [
     {
-        name: 'Zitronenstrasse on Facebook',
+        name: `${runtimeConfig.public.projectName} on Facebook`,
         url: 'https://www.facebook.com/zitronenstrasse/',
         icon: 'facebook-f',
     },
     {
-        name: 'Zitronenstrasse Playlist on Spotify',
+        name: `${runtimeConfig.public.projectName} Playlist on Spotify`,
         url: 'https://open.spotify.com/user/stellavalerio/playlist/4J2AU9XfvfJOgc0MBE1WlX?si=xoXk0YnDRWGlmgtR99qXrw',
         icon: 'spotify',
     },
     {
-        name: 'Zitronenstrasse on Github',
+        name: `${runtimeConfig.public.projectName} on Github`,
         url: 'https://github.com/valeriosillari/zitronenstrasse',
         icon: 'github',
     },

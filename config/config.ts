@@ -1,6 +1,8 @@
 import packageJson from '../package.json'
 import type { TypeConfig } from '@/types/TypeConfig'
 
+const PROJECT_NAME = 'Zitronenstrasse'
+
 const AUTHOR_NAME = packageJson.author
 
 const VALERIO_SITE_ROOT = 'https://www.valeriosillari.com'
@@ -24,6 +26,8 @@ if (process.env.NODE_ENV === 'production' && process.env.VERCEL_URL) {
 }
 
 const CONFIG: TypeConfig = {
+    projectName: PROJECT_NAME,
+
     authorName: AUTHOR_NAME,
 
     htmlNoJsClass: 'no-js',
@@ -42,7 +46,7 @@ const CONFIG: TypeConfig = {
     description:
         'A mapping project to collect and share romantic spots in Berlin.',
 
-    keywords: `Zitronenstrasse, Zitrone, Strasse, Berlin, Zitrone Berlin, Zitronen Berlin, Map, Mapping, Frontend, Vue, Nuxt, Romantic, Spots, Romantic Spots Berlin, ${AUTHOR_NAME}`,
+    keywords: `${PROJECT_NAME}, Zitrone, Strasse, Berlin, Zitrone Berlin, Zitronen Berlin, Map, Mapping, Frontend, Vue, Nuxt, Romantic, Spots, Romantic Spots Berlin, ${AUTHOR_NAME}`,
 
     localPort: LOCAL_PORT,
 
