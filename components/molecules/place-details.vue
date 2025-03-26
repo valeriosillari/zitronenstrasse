@@ -6,11 +6,7 @@
             <div class="place-details-thumb-image-inner">
                 <NuxtImg
                     class="place-details-thumb-image"
-                    :alt="
-                        currentSpotData.image?.title
-                            ? currentSpotData.image.title
-                            : currentSpotData.title
-                    "
+                    :alt="imageTitle"
                     :src="imageUrl"
                     loading="lazy"
                 />
@@ -84,6 +80,20 @@ const imageUrl = computed(() => {
     }
 
     return currentSpotData.value.image.url
+})
+
+const imageTitle = computed(() => {
+    // no data at all (typescript fallback)
+    if (currentSpotData.value === null) {
+        return ''
+    }
+
+    // no image title set >> title of spot as fallback
+    if (!currentSpotData.value.image || !currentSpotData.value.image.title) {
+        return currentSpotData.value.title
+    }
+
+    return currentSpotData.value.image.title
 })
 
 watch(
