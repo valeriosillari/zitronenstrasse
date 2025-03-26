@@ -11,11 +11,7 @@
                             ? currentSpotData.image.title
                             : currentSpotData.title
                     "
-                    :src="
-                        currentSpotData.image?.url
-                            ? currentSpotData.image.url
-                            : '/img/place_image_fallback.jpg'
-                    "
+                    :src="imageUrl"
                     loading="lazy"
                 />
             </div>
@@ -81,6 +77,14 @@ const isSpotShown = computed(() => {
 })
 
 const singleSpotSelectedStore = useSingleSpotSelectedStore()
+
+const imageUrl = computed(() => {
+    if (!currentSpotData.value || !currentSpotData.value.image) {
+        return '/img/place_image_fallback.jpg'
+    }
+
+    return currentSpotData.value.image.url
+})
 
 watch(
     () => singleSpotSelectedStore.currentSpotData,
