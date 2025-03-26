@@ -1,18 +1,20 @@
-import CONSTANT from './constants'
+import type { TypeMetaData } from '@/types/TypeConfig'
+import CONFIG from './config'
 
 // ===============================
 // og for FB and Linkedin
-const ogUrl = CONSTANT.appMainUrl
-const ogTitle = CONSTANT.title
-const ogDescription = CONSTANT.description
-const authorName = CONSTANT.authorName
+const ogUrl = CONFIG.appMainUrl
+const ogTitle = CONFIG.title
+const ogDescription = CONFIG.description
+const ogAuthorName = CONFIG.authorName
+const ogTwitterSite = '@stellavalerio'
 const ogType = 'website'
-const ogImage = `${CONSTANT.appMainUrl}/app-icons/logo_og_image.png`
+const ogImage = `${CONFIG.appMainUrl}/app-icons/logo_og_image.png`
 const ogImageWidth = '1200'
 const ogImageHeight = '630'
 
 // ======================
-const metaData = [
+const METADATA: TypeMetaData = [
     // viewport set on mobile
     {
         name: 'viewport',
@@ -28,13 +30,13 @@ const metaData = [
     {
         hid: 'author',
         name: 'author',
-        content: authorName,
+        content: ogAuthorName,
     },
 
     {
         hid: 'keywords',
         name: 'keywords',
-        content: CONSTANT.keywords,
+        content: CONFIG.keywords,
     },
 
     // ======================
@@ -116,13 +118,13 @@ const metaData = [
     {
         hid: 'twitter:site',
         name: 'twitter:site',
-        content: '@stellavalerio',
+        content: ogTwitterSite,
     },
 
     {
         hid: 'twitter:creator',
         name: 'twitter:creator',
-        content: authorName,
+        content: ogAuthorName,
     },
 
     {
@@ -150,4 +152,4 @@ const metaData = [
     },
 ]
 
-export default metaData
+export default METADATA

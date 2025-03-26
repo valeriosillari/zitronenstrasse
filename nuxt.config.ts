@@ -1,11 +1,11 @@
-import CONSTANT from './config/constants'
-import metaData from './config/metaData'
+import CONFIG from './config/config'
+import METADATA from './config/metaData'
 
 export default defineNuxtConfig({
     devtools: { enabled: true },
 
     devServer: {
-        port: CONSTANT.localPort,
+        port: CONFIG.localPort,
     },
 
     //  "forced" typescript checks | very strict mode
@@ -15,13 +15,13 @@ export default defineNuxtConfig({
 
     runtimeConfig: {
         public: {
-            htmlNoJsClass: CONSTANT.htmlNoJsClass,
-            htmlYesJsClass: CONSTANT.htmlYesJsClass,
+            htmlNoJsClass: CONFIG.htmlNoJsClass,
+            htmlYesJsClass: CONFIG.htmlYesJsClass,
             limitQueryGql: 5,
-            valeSiteRoot: CONSTANT.valeSiteRoot,
-            appVersion: CONSTANT.appVersion,
-            valeSiteAuthorName: CONSTANT.authorName,
-            headTitleString: CONSTANT.title,
+            valeSiteRoot: CONFIG.valeSiteRoot,
+            appVersion: CONFIG.appVersion,
+            valeSiteAuthorName: CONFIG.authorName,
+            headTitleString: CONFIG.title,
             googleMapKey: process.env.GOOGLE_MAP_KEY,
             googleMapStyleMapId: process.env.GOOGLE_MAP_STYLE_MAP_ID,
         },
@@ -59,14 +59,14 @@ export default defineNuxtConfig({
             default: {
                 // GraphQL endpoint (contentful), proxied on my website
                 // note: it needs to be under "www" domain
-                httpEndpoint: CONSTANT.apiUrl,
+                httpEndpoint: CONFIG.apiUrl,
             },
         },
     },
 
     site: {
-        url: CONSTANT.appMainUrl,
-        name: CONSTANT.title,
+        url: CONFIG.appMainUrl,
+        name: CONFIG.title,
     },
 
     vite: {
@@ -103,15 +103,15 @@ export default defineNuxtConfig({
         head: {
             htmlAttrs: {
                 lang: 'en',
-                // // no js class (as Modernizr).
-                // // removed later by the application (by utils function on app level)
-                class: CONSTANT.htmlNoJsClass,
+                // no js class (as Modernizr).
+                // removed later by the application (by utils function on app level)
+                class: CONFIG.htmlNoJsClass,
             },
 
-            title: CONSTANT.title,
+            title: CONFIG.title,
 
             // all HEAD meta data options
-            meta: metaData,
+            meta: METADATA,
 
             link: [
                 // favicon (ico)
@@ -143,7 +143,7 @@ export default defineNuxtConfig({
                 // link canonical
                 {
                     rel: 'canonical',
-                    href: CONSTANT.appMainUrl,
+                    href: CONFIG.appMainUrl,
                 },
             ],
 

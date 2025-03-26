@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import { HOME_LINK } from '@/config/constants'
+import HOME_LINK from '@/config/homeLink'
 import type { TypePageCollection } from '@/types/TypePageCollection'
 import GQL_QUERY_PAGE_COLLECTION from '@/graphql/pageCollection'
 

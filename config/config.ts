@@ -1,8 +1,7 @@
 import packageJson from '../package.json'
+import type { TypeConfig } from '@/types/TypeConfig'
 
-const titleShort = 'Zitronenstrasse'
-
-const authorName = packageJson.author
+const AUTHOR_NAME = packageJson.author
 
 const VALERIO_SITE_ROOT = 'https://www.valeriosillari.com'
 
@@ -24,15 +23,14 @@ if (process.env.NODE_ENV === 'production' && process.env.VERCEL_URL) {
     }
 }
 
-const CONSTANT = {
-    authorName,
+const CONFIG: TypeConfig = {
+    authorName: AUTHOR_NAME,
 
     htmlNoJsClass: 'no-js',
 
     htmlYesJsClass: 'js',
 
-    // main title | CHECK
-    title: `${titleShort} | Romantic Spots in Berlin.`,
+    title: packageJson.description,
 
     appMainUrl: APP_ROOT_URL,
 
@@ -44,7 +42,7 @@ const CONSTANT = {
     description:
         'A mapping project to collect and share romantic spots in Berlin.',
 
-    keywords: `Zitronenstrasse, Zitrone, Strasse, Berlin, Zitrone Berlin, Zitronen Berlin, Map, Mapping, Frontend, Vue, Nuxt, Romantic, Spots, Romantic Spots Berlin, ${authorName}`,
+    keywords: `Zitronenstrasse, Zitrone, Strasse, Berlin, Zitrone Berlin, Zitronen Berlin, Map, Mapping, Frontend, Vue, Nuxt, Romantic, Spots, Romantic Spots Berlin, ${AUTHOR_NAME}`,
 
     localPort: LOCAL_PORT,
 
@@ -54,9 +52,4 @@ const CONSTANT = {
         : 'DEV',
 }
 
-export default CONSTANT
-
-export const HOME_LINK = {
-    url: '/',
-    text: 'Home',
-}
+export default CONFIG

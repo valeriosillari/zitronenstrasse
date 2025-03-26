@@ -41,7 +41,7 @@ import { GoogleMap, CustomMarker } from 'vue3-google-map'
 import type {
     TypeSingleSpotData,
     TypeSingleSpotCollection,
-} from '../../types/TypeSingleSpot'
+} from '@/types/TypeSingleSpot'
 import GQL_QUERY_SINGLE_SPOT_COLLECTION from '@/graphql/singleSpotCollection'
 
 const runtimeConfig = useRuntimeConfig()
