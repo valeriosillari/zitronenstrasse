@@ -148,13 +148,66 @@ const clickMarkerHandler = (singlePlace: TypeSingleSpotData) => {
         })
 }
 
-onMounted(() => {
-    // got map loaded
-    if (window.google.maps) {
-        // then update value (for markers with fade animation)
-        isMapLoaded.value = true
+// onMounted(() => {
+//     setTimeout(() => {
+//         // got map loaded
+//         if (mapRef.value.ready) {
+//             console.log('++++++++ YES READY +++++++')
+
+//             console.log('============= window.google.maps =========')
+//             console.log(window.google.maps)
+
+//             window.google.maps.event.addListenerOnce(
+//                 mapRef.value.mapRef,
+//                 'idle',
+//                 function () {
+//                     // do something only the first time the map is loaded
+//                 }
+//             )
+
+//             // then update value (for markers with fade animation)
+//             // isMapLoaded.value = true
+
+//             // window.google.maps.event.addListenerOnce(
+//             //     googleMap,
+//             //     'tilesloaded',
+//             //     () => {
+//             //         alert('NOW 2')
+//             //         // do something only the first time the map is loaded
+//             //     }
+//             // )
+//         } else {
+//             console.log('++++++++ NOT READY +++++++')
+//         }
+//     }, 3000)
+// })
+
+watch(
+    () => mapRef.value?.mapTilesLoaded,
+    () => {
+        if (mapRef.value?.mapTilesLoaded) {
+            console.log('++++++++ YES READY +++++++')
+
+            // console.log('>>>>> mapRef.value')
+            console.log(mapRef.value.mapTilesLoaded)
+
+            // const googleMap = mapRef.value.map as google.maps.Map
+            // console.log('>>>>> googleMap')
+            // console.log(googleMap)
+
+            // // window.google.maps.event.addListenerOnce(
+            // //     window.google.maps,
+            // //     'tilesloaded',
+            // //     () => {
+            // //         alert('NOW 2')
+            // //         // do something only the first time the map is loaded
+            // //     }
+            // // )
+        } else {
+            console.log('++++++++ NOT READY +++++++')
+        }
     }
-})
+)
 </script>
 
 <style lang="sass">
@@ -173,6 +226,8 @@ onMounted(() => {
         width: 25px
         height: 30px
         opacity: 0
+        transition: .3s
+
         // bouncing animation @click (class added by JS)
         &.is-bouncing
             animation: bounceMarker 1.8s 3
