@@ -148,64 +148,14 @@ const clickMarkerHandler = (singlePlace: TypeSingleSpotData) => {
         })
 }
 
-// onMounted(() => {
-//     setTimeout(() => {
-//         // got map loaded
-//         if (mapRef.value.ready) {
-//             console.log('++++++++ YES READY +++++++')
-
-//             console.log('============= window.google.maps =========')
-//             console.log(window.google.maps)
-
-//             window.google.maps.event.addListenerOnce(
-//                 mapRef.value.mapRef,
-//                 'idle',
-//                 function () {
-//                     // do something only the first time the map is loaded
-//                 }
-//             )
-
-//             // then update value (for markers with fade animation)
-//             // isMapLoaded.value = true
-
-//             // window.google.maps.event.addListenerOnce(
-//             //     googleMap,
-//             //     'tilesloaded',
-//             //     () => {
-//             //         alert('NOW 2')
-//             //         // do something only the first time the map is loaded
-//             //     }
-//             // )
-//         } else {
-//             console.log('++++++++ NOT READY +++++++')
-//         }
-//     }, 3000)
-// })
-
 watch(
+    // "mapTilesLoaded" trick: check when all map is set
+    // value is coming from vue plugin, using official property from google map "tilesloaded"
+    // ref: https://stackoverflow.com/questions/832692/how-can-i-check-whether-google-maps-is-fully-loaded
     () => mapRef.value?.mapTilesLoaded,
     () => {
         if (mapRef.value?.mapTilesLoaded) {
-            console.log('++++++++ YES READY +++++++')
-
-            // console.log('>>>>> mapRef.value')
-            console.log(mapRef.value.mapTilesLoaded)
             isMapLoaded.value = true
-
-            // const googleMap = mapRef.value.map as google.maps.Map
-            // console.log('>>>>> googleMap')
-            // console.log(googleMap)
-
-            // // window.google.maps.event.addListenerOnce(
-            // //     window.google.maps,
-            // //     'tilesloaded',
-            // //     () => {
-            // //         alert('NOW 2')
-            // //         // do something only the first time the map is loaded
-            // //     }
-            // // )
-        } else {
-            console.log('++++++++ NOT READY +++++++')
         }
     }
 )
@@ -234,7 +184,7 @@ watch(
         &.is-bouncing
             animation: bounceMarker 1.8s 3
 
-    // class added when map loaded: shown map when all loaded
+    // class added when map loaded: shown map when all loaded (avoid some visual glitches)
     &.is-map-loaded
         opacity: 1
 
