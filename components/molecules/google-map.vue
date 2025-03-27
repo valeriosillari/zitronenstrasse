@@ -148,13 +148,17 @@ const clickMarkerHandler = (singlePlace: TypeSingleSpotData) => {
         })
 }
 
-onMounted(() => {
-    // got map loaded
-    if (window.google.maps) {
-        // then update value (for markers with fade animation)
-        isMapLoaded.value = true
+watch(
+    // "mapTilesLoaded" trick: check when all map is set
+    // value is coming from vue plugin, using official property from google map "tilesloaded"
+    // ref: https://stackoverflow.com/questions/832692/how-can-i-check-whether-google-maps-is-fully-loaded
+    () => mapRef.value?.mapTilesLoaded,
+    () => {
+        if (mapRef.value?.mapTilesLoaded) {
+            isMapLoaded.value = true
+        }
     }
-})
+)
 </script>
 
 <style lang="sass">
@@ -162,6 +166,9 @@ onMounted(() => {
     position: relative
     height: 100%
     width: 100%
+    opacity: 0
+    transition-delay: 250ms
+    transition: .5s
 
     // remove google cc
     // and remove some weird grey box set on right side from google
@@ -172,15 +179,14 @@ onMounted(() => {
     .map-marker
         width: 25px
         height: 30px
-        opacity: 0
+
         // bouncing animation @click (class added by JS)
         &.is-bouncing
             animation: bounceMarker 1.8s 3
 
-    // class added when map loaded: marker shown at map loaded
+    // class added when map loaded: shown map when all loaded (avoid some visual glitches)
     &.is-map-loaded
-        .map-marker
-            opacity: 1
+        opacity: 1
 
     // no js fallback | no map (no div loaded unstyled that "crash" page layout)
     .no-js &
