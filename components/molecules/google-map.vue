@@ -190,6 +190,7 @@ watch(
 
             // console.log('>>>>> mapRef.value')
             console.log(mapRef.value.mapTilesLoaded)
+            isMapLoaded.value = true
 
             // const googleMap = mapRef.value.map as google.maps.Map
             // console.log('>>>>> googleMap')
@@ -215,6 +216,9 @@ watch(
     position: relative
     height: 100%
     width: 100%
+    opacity: 0
+    transition-delay: 250ms
+    transition: .5s
 
     // remove google cc
     // and remove some weird grey box set on right side from google
@@ -225,17 +229,14 @@ watch(
     .map-marker
         width: 25px
         height: 30px
-        opacity: 0
-        transition: .3s
 
         // bouncing animation @click (class added by JS)
         &.is-bouncing
             animation: bounceMarker 1.8s 3
 
-    // class added when map loaded: marker shown at map loaded
+    // class added when map loaded: shown map when all loaded
     &.is-map-loaded
-        .map-marker
-            opacity: 1
+        opacity: 1
 
     // no js fallback | no map (no div loaded unstyled that "crash" page layout)
     .no-js &
