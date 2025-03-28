@@ -6,9 +6,11 @@
 
             <h1>{{ title }}</h1>
 
-            <button type="button" class="btn" @click="handleError">
-                Back to Homepage
-            </button>
+            <AtomsButton
+                class-names="btn"
+                text="Back to Homepage"
+                @click-btn="handleError"
+            />
         </div>
     </div>
 </template>
