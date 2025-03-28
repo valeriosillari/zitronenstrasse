@@ -2,16 +2,25 @@
     <button
         type="button"
         :class="['b-btn', props.classNames]"
-        :title="title"
-        @click="$emit('clickBtn')"
-    />
+        :title="buttonTitle"
+        @click="handleClick"
+    >
+        {{ text }}
+    </button>
 </template>
 
 <script setup lang="ts">
+const emit = defineEmits(['clickBtn'])
+
 const props = defineProps({
     classNames: {
         type: String,
         default: null,
+    },
+
+    text: {
+        type: String,
+        default: '',
     },
 
     title: {
@@ -19,6 +28,14 @@ const props = defineProps({
         default: '',
     },
 })
+
+const buttonTitle = computed(() => props.title || props.text)
+
+// Later in your code, you can safely emit the event:
+const handleClick = () => {
+    console.log('EMIT')
+    emit('clickBtn')
+}
 </script>
 
 <style lang="sass">

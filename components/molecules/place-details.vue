@@ -76,7 +76,7 @@ const singleSpotSelectedStore = useSingleSpotSelectedStore()
 
 const imageUrl = computed(() => {
     if (!currentSpotData.value || !currentSpotData.value.image) {
-        return '/img/place_image_fallback.jpg'
+        return '/image/place_image_fallback.jpg'
     }
 
     return currentSpotData.value.image.url
