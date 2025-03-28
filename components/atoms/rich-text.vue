@@ -1,5 +1,4 @@
 <template>
-    <!-- eslint-disable-next-line vue/no-v-html -->
     <div class="b-rich-text" v-html="richText" />
 </template>
 
