@@ -25,11 +25,11 @@
             }"
             @click="clickMarkerHandler(singlePlace)"
         >
-            <img
+            <NuxtImg
                 :id="`marker-id-${singlePlace.id}`"
-                :alt="singlePlace.title"
                 class="map-marker"
-                src="/assets/svg/markerStyled.svg"
+                src="/svg/markerStyled.svg"
+                loading="lazy"
             />
         </CustomMarker>
     </GoogleMap>
