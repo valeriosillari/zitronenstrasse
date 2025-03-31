@@ -1,7 +1,7 @@
 <template>
     <aside class="b-sidebar">
         <AtomsButton
-            :class-names="'is-btn-sidebar-close'"
+            class-names="is-btn-sidebar-close"
             title="Close Button Sidebar"
             @click-btn="handleCloseSidebar"
         />

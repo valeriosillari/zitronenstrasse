@@ -41,7 +41,6 @@ $ npm run deploy-generate
 - split sass variables in more files?
 - sass font file with all vars
 - transition between pages (improve animations)
-- button : 1 component with all logic and styles (now 2: button and button MENU)
 
 ### NICE TO HAVE
 
