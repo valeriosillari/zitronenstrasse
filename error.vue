@@ -52,16 +52,4 @@ useHead({
     height: 260px
     margin: 30px auto
     background-image: url('assets/svg/compass.svg')
-
-// bootstrap "like"
-.btn
-    background: $color_btn_bg
-    border: 1px solid $color_btn_border
-    color: $color_btn_txt
-    line-height: 1.5
-    padding: 4px 7.5px
-
-    &:hover
-        border: 1px solid $color_btn_border_hvr
-        color: $color_btn_txt_hvr
 </style>

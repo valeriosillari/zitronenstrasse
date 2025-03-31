@@ -42,14 +42,31 @@ const handleClick = () => {
 
 <style lang="sass">
 .b-btn
+    background: $color_btn_bg
+    border-color: $color_btn_border
+    border-width: 1px
+    color: $color_btn_txt
+    line-height: inherit
+    box-sizing: border-box
+    // as bootstrap
+    padding: 4px 7.5px
+
+    &:hover
+        border-color: $color_btn_border_hvr
+        color: $color_btn_txt_hvr
+
+    // reset
+    &.is-btn-sidebar-close,
+    &.is-btn-menu
+        border: 0
+        padding: 0
+
     // sidebar close button
     &.is-btn-sidebar-close
         position: absolute
         width: 50px
         height: 50px
         overflow: hidden
-        background: $color_transparent
-        border: 0
         top: calc($space_03 / 2)
         right: $space_00
         display: flex
@@ -78,8 +95,6 @@ const handleClick = () => {
 
     &.is-btn-menu
         opacity: 0
-        border: 0
-        background: $color_transparent
         pointer-events: none
         position: relative
         float: right
@@ -87,7 +102,6 @@ const handleClick = () => {
         width: $btn_menu_width
         // magic number
         margin-top: 8px
-        cursor: pointer
         transition: opacity .25s ease-in-out
 
         .btn-menu-line
