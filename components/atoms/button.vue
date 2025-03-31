@@ -45,6 +45,7 @@ const handleClick = () => {
     background: $color_btn_bg
     border-color: $color_btn_border
     border-width: 1px
+    border-style: solid
     color: $color_btn_txt
     line-height: inherit
     box-sizing: border-box
