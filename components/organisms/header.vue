@@ -8,8 +8,17 @@
             {{ headerLink.title }}
         </NuxtLink>
 
-        <!-- btn + navigation logic (overlay navi) -->
-        <AtomsBtnMenu />
+        <!-- btn for navigation logic (overlay) -->
+        <AtomsButton
+            :class-names="['is-btn-menu', btnActiveClass]"
+            @click="handleClickNavigation"
+        >
+            <span class="btn-menu-line top" />
+            <span class="btn-menu-line middle" />
+            <span class="btn-menu-line bottom" />
+        </AtomsButton>
+
+        <!-- navigation (overlay) -->
         <MoleculesNavigation />
     </header>
 </template>
@@ -17,9 +26,20 @@
 <script setup lang="ts">
 import HOME_LINK from '@/config/homeLink'
 
+const navigationStore = useNavigationStore()
+
 const headerLink = {
     url: HOME_LINK.url,
     title: HOME_LINK.text,
+}
+
+// btn switch class at value change
+const btnActiveClass = computed(() => ({
+    'is-menu-opened': navigationStore.isNavOpen,
+}))
+
+const handleClickNavigation = () => {
+    navigationStore.toggleNavState()
 }
 </script>
 
