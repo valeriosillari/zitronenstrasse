@@ -10,7 +10,7 @@
 
         <!-- btn for navigation logic (overlay) -->
         <AtomsButton
-            :class-names="['is-btn-menu', btnActiveClass]"
+            :class-names="btnActiveClass()"
             @click="handleClickNavigation"
         >
             <span class="btn-menu-line top" />
@@ -34,9 +34,14 @@ const headerLink = {
 }
 
 // btn switch class at value change
-const btnActiveClass = computed(() => ({
-    'is-menu-opened': navigationStore.isNavOpen,
-}))
+const btnActiveClass = () => {
+    let classMenuOpened = ''
+
+    if (navigationStore.isNavOpen) {
+        classMenuOpened = 'is-menu-opened'
+    }
+    return `is-btn-menu ${classMenuOpened}`
+}
 
 const handleClickNavigation = () => {
     navigationStore.toggleNavState()
