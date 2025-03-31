@@ -38,11 +38,16 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { GoogleMap, CustomMarker } from 'vue3-google-map'
+import { useWindowSize } from '@vueuse/core'
+
 import type {
     TypeSingleSpotData,
     TypeSingleSpotCollection,
 } from '@/types/TypeSingleSpot'
 import GQL_QUERY_SINGLE_SPOT_COLLECTION from '@/graphql/singleSpotCollection'
+
+const { width } = useWindowSize()
+const windowWidth = width.value
 
 const runtimeConfig = useRuntimeConfig()
 
@@ -135,7 +140,7 @@ const clickMarkerHandler = (singlePlace: TypeSingleSpotData) => {
         // 3) MOVE / PAN map to new marker at center
         .then(() => {
             // set pan and center NOT mobile screen (sidebar take all screen, pan not necessary)
-            if (window.innerWidth >= 576) {
+            if (windowWidth >= 576) {
                 centerMapToCurrentPlace(
                     singlePlace.address.lat,
                     singlePlace.address.lon

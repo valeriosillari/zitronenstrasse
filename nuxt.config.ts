@@ -35,6 +35,7 @@ export default defineNuxtConfig({
         '@nuxt/image',
         '@nuxtjs/sitemap',
         'nuxt-gtag',
+        '@vueuse/nuxt',
         [
             // https://masanos.com/notes/l37t1_8qf-fv/
             '@nuxtjs/google-fonts',
