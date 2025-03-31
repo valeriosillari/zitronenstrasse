@@ -43,24 +43,24 @@ const handleClick = () => {
     // sidebar close button
     &.is-btn-sidebar-close
         position: absolute
-        width: 30px
-        height: 30px
+        width: 50px
+        height: 50px
         overflow: hidden
         background: $color_transparent
         border: 0
-        // padding space for place detail (space 3) + extra space for visual alignment
-        top: $space_03 +  $space_01
-        right: $space_03
+        top: calc($space_03 / 2)
+        right: $space_00
+        display: flex
+        justify-content: center
+        align-items: center
+        z-index: $z_index_01
 
         &::before,
         &::after
             content: ''
             position: absolute
             height: 1px
-            width: 100%
-            top: 50%
-            left: 0
-            // margin-top: -1px
+            width: 30px
             background: $color_icon
 
         &::before
