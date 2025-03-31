@@ -33,9 +33,8 @@ const props = defineProps({
 
 const buttonTitle = computed(() => props.title || props.text)
 
-// Later in your code, you can safely emit the event:
 const handleClick = () => {
-    console.log('EMIT')
+    // inform parent component about event
     emit('clickBtn')
 }
 </script>
