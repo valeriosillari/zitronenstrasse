@@ -29,9 +29,11 @@ export const useSingleSpotSelectedStore = defineStore(
             },
 
             updateSingleSpotSelectedState(singleSpotSysId: string) {
+                console.log('>>> API call START ...')
                 apiCallResponse(singleSpotSysId).then((singleSpotData) => {
                     this.currentSpotData = singleSpotData
                     this.isSpotShown = true
+                    console.log('>>> API call DONE')
                 })
             },
         },
