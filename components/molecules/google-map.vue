@@ -76,7 +76,6 @@ const placesList = data.value?.singleSpotCollection?.items
 const centerMapToCurrentPlace = (lat: number, lng: number) => {
     if (mapRef.value?.map) {
         const googleMap = mapRef.value.map as google.maps.Map
-        // Perform operations with `googleMap`
 
         // FIRST: center map to marker
         googleMap.panTo({
