@@ -116,30 +116,37 @@ const currentMarkerAnimation = (markerId: number) => {
     }
 }
 
-const doPanAndJump = (singlePlace: TypeSingleSpotData) => {
-    return new Promise((resolve) => {
-        // TODO: check later
-        if (mapRef.value) {
+const waitForIdle = (
+    map: google.maps.Map,
+    singlePlace: TypeSingleSpotData
+): Promise<void> =>
+    new Promise((resolve) => {
+        google.maps.event.addListenerOnce(map, 'idle', () => {
+            console.log('>>>>>> Pan finished.')
+
+            setTimeout(() => {
+                currentMarkerAnimation(singlePlace.id)
+                resolve()
+            }, 500)
+        })
+    })
+
+async function doPanAndJump(singlePlace: TypeSingleSpotData): Promise<void> {
+    // TODO: check later
+    if (mapRef.value) {
+        // set pan and center NOT mobile screen (sidebar take all screen, pan not necessary)
+        if (windowWidth >= 576) {
+            centerMapToCurrentPlace(
+                singlePlace.address.lat,
+                singlePlace.address.lon
+            )
+
             const googleMap = mapRef.value.map as google.maps.Map
 
-            // set pan and center NOT mobile screen (sidebar take all screen, pan not necessary)
-            if (windowWidth >= 576) {
-                centerMapToCurrentPlace(
-                    singlePlace.address.lat,
-                    singlePlace.address.lon
-                )
-
-                google.maps.event.addListenerOnce(googleMap, 'idle', () => {
-                    console.log('>>>>>> Pan finished.')
-
-                    setTimeout(() => {
-                        currentMarkerAnimation(singlePlace.id)
-                        resolve()
-                    }, 500)
-                })
-            }
+            await waitForIdle(googleMap, singlePlace)
+            console.log('>>>>>> Pan finished and RETRUNED, END FUNCTION.')
         }
-    })
+    }
 }
 
 // TODO: here try to decouple logic, too much stuff
@@ -160,15 +167,13 @@ const clickMarkerHandler = async (singlePlace: TypeSingleSpotData) => {
     // PAN map movement + jumping pin
     await doPanAndJump(singlePlace)
 
-    console.log('>>> HERE MOVE ON')
-
     // check if we need to open sidebar (open it or not - already opened)
     if (!sidebarStore.isSidebarOpen) {
         sidebarStore.openSidebarState()
         console.log('>>>open sidebar')
     }
 
-    // pass spotID to store | to start API call (query GraphQL) and GET spot data
+    // pass spotID to store | to start API call (query GraphQL) and GET new spot data
     singleSpotSelectedStore.updateSingleSpotSelectedState(singlePlace.sys.id)
 }
 
