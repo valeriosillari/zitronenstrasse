@@ -102,15 +102,15 @@ const currentMarkerAnimation = (markerId: number) => {
     }
 }
 
-const waitForPanEnd = (map: google.maps.Map): Promise<void> =>
-    new Promise((resolve) => {
-        // "idle trick": trigger event when map is  "idle" / not moving
-        // a trick to get when pan is ending and map is on new single spot
+const waitForPanEnd = (map: google.maps.Map): Promise<void> => {
+    return new Promise((resolve) => {
+        // Listen for the 'idle' event which signals that the panning has finished.
         google.maps.event.addListenerOnce(map, 'idle', () => {
             console.log('>>>>>> Pan finished.')
             resolve()
         })
     })
+}
 
 const moveMapByPan = async (singlePlace: TypeSingleSpotData): Promise<void> => {
     // TODO: check later
