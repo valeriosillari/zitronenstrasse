@@ -107,22 +107,17 @@ const currentMarkerAnimation = (markerId: number) => {
     }
 }
 
-const waitForIdle = (
-    map: google.maps.Map,
-    singlePlace: TypeSingleSpotData
-): Promise<void> =>
+const waitForPanEnd = (map: google.maps.Map): Promise<void> =>
     new Promise((resolve) => {
+        // "idle trick": trigger event wehn map is  "idle" / not moving
+        // a trick to get wehn pan is ending and map is on new single spot
         google.maps.event.addListenerOnce(map, 'idle', () => {
             console.log('>>>>>> Pan finished.')
-
-            // setTimeout(() => {
-            currentMarkerAnimation(singlePlace.id)
             resolve()
-            // }, 500)
         })
     })
 
-const doPanAndJump = async (singlePlace: TypeSingleSpotData): Promise<void> => {
+const moveMapByPan = async (singlePlace: TypeSingleSpotData): Promise<void> => {
     // TODO: check later
     if (mapRef.value?.map) {
         // INNER WIDTH!!!! check me again
@@ -133,7 +128,7 @@ const doPanAndJump = async (singlePlace: TypeSingleSpotData): Promise<void> => {
                 singlePlace.address.lon
             )
 
-            await waitForIdle(mapRef.value.map, singlePlace)
+            await waitForPanEnd(mapRef.value.map)
             console.log('>>>>>> Pan finished and RETRUNED, END FUNCTION.')
         }
     }
@@ -155,18 +150,22 @@ const clickMarkerHandler = async (singlePlace: TypeSingleSpotData) => {
     singleSpotSelectedStore.resetSpotShowState()
 
     // map movement (PAN) + jumping pin (wait for it on JS for UI animation)
-    await doPanAndJump(singlePlace)
+    await moveMapByPan(singlePlace)
 
     // check if we need to open sidebar (open it or not - already opened)
-    if (!sidebarStore.isSidebarOpen) {
-        // added timeout for UX:
-        // when pan is done, wait "a moment" for opening sidebar. to avoid "jumpy effect"
-        setTimeout(() => {
-            currentMarkerAnimation(singlePlace.id)
+    // added timeout for UX:
+    // when pan is done, wait "a moment" for opening sidebar and "pin jump".
+    // to avoid "jumpy effect" and too much animation next to each other
+    setTimeout(() => {
+        // jump pin
+        currentMarkerAnimation(singlePlace.id)
+
+        // open sidebar
+        if (!sidebarStore.isSidebarOpen) {
             sidebarStore.openSidebarState()
             console.log('>>>open sidebar')
-        }, 300)
-    }
+        }
+    }, 300)
 
     // pass spotID to store | to start API call (query GraphQL) and GET new spot data
     singleSpotSelectedStore.updateSingleSpotSelectedState(singlePlace.sys.id)
