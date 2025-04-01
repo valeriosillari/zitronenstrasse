@@ -5,7 +5,6 @@
         :api-key="runtimeConfig.public.googleMapKey"
         :map-id="runtimeConfig.public.googleMapStyleMapId"
         :center="mapCenter"
-        :background-color="mapBgColor"
         :zoom="mapZoom"
         language="EN"
         :clickable-icons="false"
@@ -62,10 +61,6 @@ const mapCenter = {
 const isMapLoaded = ref(false)
 
 const mapZoom = 14
-
-// TODO: set as var global?
-// as page body bg
-const mapBgColor = '#2B2B2B'
 
 const { data } = await useAsyncQuery<TypeSingleSpotCollection>(
     GQL_QUERY_SINGLE_SPOT_COLLECTION,
