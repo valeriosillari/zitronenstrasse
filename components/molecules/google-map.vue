@@ -116,6 +116,20 @@ const currentMarkerAnimation = (markerId: number) => {
     }
 }
 
+const doPanAndJump = (singlePlace: TypeSingleSpotData) => {
+    // set pan and center NOT mobile screen (sidebar take all screen, pan not necessary)
+    if (windowWidth >= 576) {
+        centerMapToCurrentPlace(
+            singlePlace.address.lat,
+            singlePlace.address.lon
+        )
+
+        setTimeout(() => {
+            currentMarkerAnimation(singlePlace.id)
+        }, 500)
+    }
+}
+
 // TODO: here try to decouple logic, too much stuff
 // at click get marker/place ID (from CMS)
 const clickMarkerHandler = (singlePlace: TypeSingleSpotData) => {
@@ -128,29 +142,20 @@ const clickMarkerHandler = (singlePlace: TypeSingleSpotData) => {
         return false
     }
 
-    // check if we need to open sidebar (open it or not - already opened)
-    if (!sidebarStore.isSidebarOpen) {
-        sidebarStore.openSidebarState()
-    }
+    // reset spot data (from previous iteration)
+    singleSpotSelectedStore.resetSpotShowState()
 
-    // pass spotID to store | to start API call (query GraphQL) and get spot data
-    singleSpotSelectedStore
-        .updateSingleSpotSelectedState(singlePlace.sys.id)
-        // TODO: set as sepaarate function?
-        // 3) MOVE / PAN map to new marker at center
-        .then(() => {
-            // set pan and center NOT mobile screen (sidebar take all screen, pan not necessary)
-            if (windowWidth >= 576) {
-                centerMapToCurrentPlace(
-                    singlePlace.address.lat,
-                    singlePlace.address.lon
-                )
+    // // check if we need to open sidebar (open it or not - already opened)
+    // if (!sidebarStore.isSidebarOpen) {
+    //     sidebarStore.openSidebarState()
+    // }
 
-                setTimeout(() => {
-                    currentMarkerAnimation(singlePlace.id)
-                }, 500)
-            }
-        })
+    doPanAndJump(singlePlace)
+
+    console.log('>>> MOVE ON')
+
+    // // pass spotID to store | to start API call (query GraphQL) and get spot data
+    // singleSpotSelectedStore.updateSingleSpotSelectedState(singlePlace.sys.id)
 }
 
 watch(
