@@ -157,6 +157,7 @@ const clickMarkerHandler = async (singlePlace: TypeSingleSpotData) => {
     // reset spot data (from previous iteration)
     singleSpotSelectedStore.resetSpotShowState()
 
+    // PAN map movement + jumping pin
     await doPanAndJump(singlePlace)
 
     console.log('>>> HERE MOVE ON')
@@ -167,8 +168,8 @@ const clickMarkerHandler = async (singlePlace: TypeSingleSpotData) => {
         console.log('>>>open sidebar')
     }
 
-    // // pass spotID to store | to start API call (query GraphQL) and get spot data
-    // singleSpotSelectedStore.updateSingleSpotSelectedState(singlePlace.sys.id)
+    // pass spotID to store | to start API call (query GraphQL) and GET spot data
+    singleSpotSelectedStore.updateSingleSpotSelectedState(singlePlace.sys.id)
 }
 
 watch(
