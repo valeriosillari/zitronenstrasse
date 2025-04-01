@@ -5,7 +5,6 @@
         :api-key="runtimeConfig.public.googleMapKey"
         :map-id="runtimeConfig.public.googleMapStyleMapId"
         :center="mapCenter"
-        :background-color="mapBgColor"
         :zoom="mapZoom"
         language="EN"
         :clickable-icons="false"
@@ -38,16 +37,12 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { GoogleMap, CustomMarker } from 'vue3-google-map'
-import { useWindowSize } from '@vueuse/core'
 
 import type {
     TypeSingleSpotData,
     TypeSingleSpotCollection,
 } from '@/types/TypeSingleSpot'
 import GQL_QUERY_SINGLE_SPOT_COLLECTION from '@/graphql/singleSpotCollection'
-
-const { width } = useWindowSize()
-const windowWidth = width.value
 
 const runtimeConfig = useRuntimeConfig()
 
@@ -67,10 +62,6 @@ const isMapLoaded = ref(false)
 
 const mapZoom = 14
 
-// TODO: set as var global?
-// as page body bg
-const mapBgColor = '#2B2B2B'
-
 const { data } = await useAsyncQuery<TypeSingleSpotCollection>(
     GQL_QUERY_SINGLE_SPOT_COLLECTION,
     {
@@ -82,22 +73,17 @@ const { data } = await useAsyncQuery<TypeSingleSpotCollection>(
 const placesList = data.value?.singleSpotCollection?.items
 
 // function for PAN movement that also consider some window movement (to balance center with off canvas)
-const centerMapToCurrentPlace = (lat: number, lng: number) => {
-    if (mapRef.value?.map) {
-        const googleMap = mapRef.value.map as google.maps.Map
-        // Perform operations with `googleMap`
+const centerMapToCurrentPlace = (lat: number, lng: number): void => {
+    // Early return if the map reference is not available
+    const googleMap = mapRef.value?.map as google.maps.Map | undefined
 
-        // FIRST: center map to marker
-        googleMap.panTo({
-            lat,
-            lng,
-        })
+    if (!googleMap) return
 
-        // magic trick
-        // THEN: arrange map position again to "balance" map off canvas area
-        // 200 is the magic number
-        googleMap.panBy(-200, 0)
-    }
+    // Center the map to the specified marker position
+    googleMap.panTo({ lat, lng })
+
+    // Adjust the map position to balance off-canvas elements
+    googleMap.panBy(-200, 0)
 }
 
 const currentMarkerAnimation = (markerId: number) => {
@@ -116,9 +102,34 @@ const currentMarkerAnimation = (markerId: number) => {
     }
 }
 
+const waitForPanEnd = (map: google.maps.Map): Promise<void> => {
+    return new Promise((resolve) => {
+        // Listen for the 'idle' event which signals that the panning has finished.
+        google.maps.event.addListenerOnce(map, 'idle', () => {
+            resolve()
+        })
+    })
+}
+
+const moveMapByPan = async (singlePlace: TypeSingleSpotData): Promise<void> => {
+    // TODO: check later
+    if (mapRef.value?.map) {
+        // INNER WIDTH!!!! check me again
+        // set pan and center NOT mobile screen (sidebar take all screen, pan not necessary)
+        if (window.innerWidth >= 576) {
+            centerMapToCurrentPlace(
+                singlePlace.address.lat,
+                singlePlace.address.lon
+            )
+
+            await waitForPanEnd(mapRef.value.map)
+        }
+    }
+}
+
 // TODO: here try to decouple logic, too much stuff
 // at click get marker/place ID (from CMS)
-const clickMarkerHandler = (singlePlace: TypeSingleSpotData) => {
+const clickMarkerHandler = async (singlePlace: TypeSingleSpotData) => {
     // if click on same marker (and sidebar OPENED with already current place) >> do nothing
     if (
         sidebarStore.isSidebarOpen &&
@@ -128,29 +139,28 @@ const clickMarkerHandler = (singlePlace: TypeSingleSpotData) => {
         return false
     }
 
+    // reset spot data (from previous iteration)
+    singleSpotSelectedStore.resetSpotShowState()
+
+    // map movement (PAN) + jumping pin (wait for it on JS for UI animation)
+    await moveMapByPan(singlePlace)
+
     // check if we need to open sidebar (open it or not - already opened)
-    if (!sidebarStore.isSidebarOpen) {
-        sidebarStore.openSidebarState()
-    }
+    // added timeout for UX:
+    // when pan is done, wait "a moment" for opening sidebar and "pin jump".
+    // to avoid "jumpy effect" and too much animation next to each other
+    setTimeout(() => {
+        // jump pin
+        currentMarkerAnimation(singlePlace.id)
 
-    // pass spotID to store | to start API call (query GraphQL) and get spot data
-    singleSpotSelectedStore
-        .updateSingleSpotSelectedState(singlePlace.sys.id)
-        // TODO: set as sepaarate function?
-        // 3) MOVE / PAN map to new marker at center
-        .then(() => {
-            // set pan and center NOT mobile screen (sidebar take all screen, pan not necessary)
-            if (windowWidth >= 576) {
-                centerMapToCurrentPlace(
-                    singlePlace.address.lat,
-                    singlePlace.address.lon
-                )
+        // open sidebar
+        if (!sidebarStore.isSidebarOpen) {
+            sidebarStore.openSidebarState()
+        }
+    }, 200)
 
-                setTimeout(() => {
-                    currentMarkerAnimation(singlePlace.id)
-                }, 500)
-            }
-        })
+    // pass spotID to store | to start API call (query GraphQL) and GET new spot data
+    singleSpotSelectedStore.updateSingleSpotSelectedState(singlePlace.sys.id)
 }
 
 watch(

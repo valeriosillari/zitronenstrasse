@@ -25,12 +25,10 @@ export const useSingleSpotSelectedStore = defineStore(
         actions: {
             resetSpotShowState() {
                 this.isSpotShown = false
+                this.currentSpotData = null
             },
 
-            async updateSingleSpotSelectedState(singleSpotSysId: string) {
-                // reset
-                this.resetSpotShowState()
-
+            updateSingleSpotSelectedState(singleSpotSysId: string) {
                 apiCallResponse(singleSpotSysId).then((singleSpotData) => {
                     this.currentSpotData = singleSpotData
                     this.isSpotShown = true

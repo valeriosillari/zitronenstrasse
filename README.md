@@ -35,6 +35,9 @@ $ npm run deploy-generate
 
 ### TODO
 
+- check vueUse again
+- check timeout and timing as config var?
+- google map component: check object used (mapRef.value)
 - check graphQL query at CLIENT (click on single spot, get data by IDs)
 - google map and consent? start map only after user says all fine?
 - space with REM (trick as pixels)?
