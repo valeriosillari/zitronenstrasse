@@ -38,16 +38,12 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { GoogleMap, CustomMarker } from 'vue3-google-map'
-import { useWindowSize } from '@vueuse/core'
 
 import type {
     TypeSingleSpotData,
     TypeSingleSpotCollection,
 } from '@/types/TypeSingleSpot'
 import GQL_QUERY_SINGLE_SPOT_COLLECTION from '@/graphql/singleSpotCollection'
-
-const { width } = useWindowSize()
-const windowWidth = width.value
 
 const runtimeConfig = useRuntimeConfig()
 
@@ -133,7 +129,7 @@ const waitForIdle = (
 
 const doPanAndJump = async (singlePlace: TypeSingleSpotData): Promise<void> => {
     // TODO: check later
-    if (mapRef.value) {
+    if (mapRef.value?.map) {
         // INNER WIDTH!!!! check me again
         // set pan and center NOT mobile screen (sidebar take all screen, pan not necessary)
         if (window.innerWidth >= 576) {
@@ -142,9 +138,7 @@ const doPanAndJump = async (singlePlace: TypeSingleSpotData): Promise<void> => {
                 singlePlace.address.lon
             )
 
-            const googleMap = mapRef.value.map as google.maps.Map
-
-            await waitForIdle(googleMap, singlePlace)
+            await waitForIdle(mapRef.value.map, singlePlace)
             console.log('>>>>>> Pan finished and RETRUNED, END FUNCTION.')
         }
     }
