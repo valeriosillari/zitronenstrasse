@@ -106,7 +106,6 @@ const waitForPanEnd = (map: google.maps.Map): Promise<void> => {
     return new Promise((resolve) => {
         // Listen for the 'idle' event which signals that the panning has finished.
         google.maps.event.addListenerOnce(map, 'idle', () => {
-            console.log('>>>>>> Pan finished.')
             resolve()
         })
     })
@@ -124,7 +123,6 @@ const moveMapByPan = async (singlePlace: TypeSingleSpotData): Promise<void> => {
             )
 
             await waitForPanEnd(mapRef.value.map)
-            console.log('>>>>>> Pan finished and RETRUNED, END FUNCTION.')
         }
     }
 }
@@ -158,7 +156,6 @@ const clickMarkerHandler = async (singlePlace: TypeSingleSpotData) => {
         // open sidebar
         if (!sidebarStore.isSidebarOpen) {
             sidebarStore.openSidebarState()
-            console.log('>>>open sidebar')
         }
     }, 300)
 
