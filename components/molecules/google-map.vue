@@ -157,7 +157,7 @@ const clickMarkerHandler = async (singlePlace: TypeSingleSpotData) => {
         if (!sidebarStore.isSidebarOpen) {
             sidebarStore.openSidebarState()
         }
-    }, 300)
+    }, 200)
 
     // pass spotID to store | to start API call (query GraphQL) and GET new spot data
     singleSpotSelectedStore.updateSingleSpotSelectedState(singlePlace.sys.id)
