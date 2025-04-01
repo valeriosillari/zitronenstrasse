@@ -117,22 +117,34 @@ const currentMarkerAnimation = (markerId: number) => {
 }
 
 const doPanAndJump = (singlePlace: TypeSingleSpotData) => {
-    // set pan and center NOT mobile screen (sidebar take all screen, pan not necessary)
-    if (windowWidth >= 576) {
-        centerMapToCurrentPlace(
-            singlePlace.address.lat,
-            singlePlace.address.lon
-        )
+    return new Promise((resolve) => {
+        // TODO: check later
+        if (mapRef.value) {
+            const googleMap = mapRef.value.map as google.maps.Map
 
-        setTimeout(() => {
-            currentMarkerAnimation(singlePlace.id)
-        }, 500)
-    }
+            // set pan and center NOT mobile screen (sidebar take all screen, pan not necessary)
+            if (windowWidth >= 576) {
+                centerMapToCurrentPlace(
+                    singlePlace.address.lat,
+                    singlePlace.address.lon
+                )
+
+                google.maps.event.addListenerOnce(googleMap, 'idle', () => {
+                    console.log('>>>>>> Pan finished.')
+
+                    setTimeout(() => {
+                        currentMarkerAnimation(singlePlace.id)
+                        resolve()
+                    }, 500)
+                })
+            }
+        }
+    })
 }
 
 // TODO: here try to decouple logic, too much stuff
 // at click get marker/place ID (from CMS)
-const clickMarkerHandler = (singlePlace: TypeSingleSpotData) => {
+const clickMarkerHandler = async (singlePlace: TypeSingleSpotData) => {
     // if click on same marker (and sidebar OPENED with already current place) >> do nothing
     if (
         sidebarStore.isSidebarOpen &&
@@ -145,14 +157,15 @@ const clickMarkerHandler = (singlePlace: TypeSingleSpotData) => {
     // reset spot data (from previous iteration)
     singleSpotSelectedStore.resetSpotShowState()
 
-    // // check if we need to open sidebar (open it or not - already opened)
-    // if (!sidebarStore.isSidebarOpen) {
-    //     sidebarStore.openSidebarState()
-    // }
+    await doPanAndJump(singlePlace)
 
-    doPanAndJump(singlePlace)
+    console.log('>>> HERE MOVE ON')
 
-    console.log('>>> MOVE ON')
+    // check if we need to open sidebar (open it or not - already opened)
+    if (!sidebarStore.isSidebarOpen) {
+        sidebarStore.openSidebarState()
+        console.log('>>>open sidebar')
+    }
 
     // // pass spotID to store | to start API call (query GraphQL) and get spot data
     // singleSpotSelectedStore.updateSingleSpotSelectedState(singlePlace.sys.id)
