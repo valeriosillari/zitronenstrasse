@@ -73,21 +73,17 @@ const { data } = await useAsyncQuery<TypeSingleSpotCollection>(
 const placesList = data.value?.singleSpotCollection?.items
 
 // function for PAN movement that also consider some window movement (to balance center with off canvas)
-const centerMapToCurrentPlace = (lat: number, lng: number) => {
-    if (mapRef.value?.map) {
-        const googleMap = mapRef.value.map as google.maps.Map
+const centerMapToCurrentPlace = (lat: number, lng: number): void => {
+    // Early return if the map reference is not available
+    const googleMap = mapRef.value?.map as google.maps.Map | undefined
 
-        // FIRST: center map to marker
-        googleMap.panTo({
-            lat,
-            lng,
-        })
+    if (!googleMap) return
 
-        // magic trick
-        // THEN: arrange map position again to "balance" map off canvas area
-        // 200 is the magic number
-        googleMap.panBy(-200, 0)
-    }
+    // Center the map to the specified marker position
+    googleMap.panTo({ lat, lng })
+
+    // Adjust the map position to balance off-canvas elements
+    googleMap.panBy(-200, 0)
 }
 
 const currentMarkerAnimation = (markerId: number) => {
