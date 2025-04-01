@@ -131,11 +131,12 @@ const waitForIdle = (
         })
     })
 
-async function doPanAndJump(singlePlace: TypeSingleSpotData): Promise<void> {
+const doPanAndJump = async (singlePlace: TypeSingleSpotData): Promise<void> => {
     // TODO: check later
     if (mapRef.value) {
+        // INNER WIDTH!!!! check me again
         // set pan and center NOT mobile screen (sidebar take all screen, pan not necessary)
-        if (windowWidth >= 576) {
+        if (window.innerWidth >= 576) {
             centerMapToCurrentPlace(
                 singlePlace.address.lat,
                 singlePlace.address.lon
