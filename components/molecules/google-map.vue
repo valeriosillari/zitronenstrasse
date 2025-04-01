@@ -115,10 +115,10 @@ const waitForIdle = (
         google.maps.event.addListenerOnce(map, 'idle', () => {
             console.log('>>>>>> Pan finished.')
 
-            setTimeout(() => {
-                currentMarkerAnimation(singlePlace.id)
-                resolve()
-            }, 500)
+            // setTimeout(() => {
+            currentMarkerAnimation(singlePlace.id)
+            resolve()
+            // }, 500)
         })
     })
 
@@ -159,8 +159,13 @@ const clickMarkerHandler = async (singlePlace: TypeSingleSpotData) => {
 
     // check if we need to open sidebar (open it or not - already opened)
     if (!sidebarStore.isSidebarOpen) {
-        sidebarStore.openSidebarState()
-        console.log('>>>open sidebar')
+        // added timeout for UX:
+        // when pan is done, wait "a moment" for opening sidebar. to avoid "jumpy effect"
+        setTimeout(() => {
+            currentMarkerAnimation(singlePlace.id)
+            sidebarStore.openSidebarState()
+            console.log('>>>open sidebar')
+        }, 300)
     }
 
     // pass spotID to store | to start API call (query GraphQL) and GET new spot data
