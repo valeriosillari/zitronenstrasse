@@ -165,7 +165,7 @@ const clickMarkerHandler = async (singlePlace: TypeSingleSpotData) => {
     // reset spot data (from previous iteration)
     singleSpotSelectedStore.resetSpotShowState()
 
-    // PAN map movement + jumping pin
+    // map movement (PAN) + jumping pin (wait for it on JS for UI animation)
     await doPanAndJump(singlePlace)
 
     // check if we need to open sidebar (open it or not - already opened)
