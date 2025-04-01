@@ -40,6 +40,8 @@
         "@nuxt/eslint": "^1.2.0",
         "@types/google.maps": "^3.58.1",
         "@types/node": "^22.13.11",
+        "@vueuse/core": "^13.0.0",
+        "@vueuse/nuxt": "^13.0.0",
         "bootstrap": "^5.3.3",
         "breakpoint-sass": "^3.0.0",
         "eslint": "^9.22.0",
