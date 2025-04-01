@@ -10,7 +10,7 @@ export default defineNuxtConfig({
 
     //  "forced" typescript checks | very strict mode
     typescript: {
-        typeCheck: false,
+        typeCheck: true,
     },
 
     runtimeConfig: {
