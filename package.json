@@ -26,6 +26,8 @@
         "@nuxtjs/google-fonts": "^3.2.0",
         "@nuxtjs/sitemap": "^7.2.9",
         "@pinia/nuxt": "^0.5.1",
+        "@vueuse/core": "^13.0.0",
+        "@vueuse/nuxt": "^13.0.0",
         "nuxt": "^3.16.1",
         "nuxt-gtag": "^3.0.2",
         "pinia": "^2.1.7",

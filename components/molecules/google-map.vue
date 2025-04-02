@@ -37,12 +37,16 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { GoogleMap, CustomMarker } from 'vue3-google-map'
+import { useWindowSize } from '@vueuse/core'
 
 import type {
     TypeSingleSpotData,
     TypeSingleSpotCollection,
 } from '@/types/TypeSingleSpot'
+
 import GQL_QUERY_SINGLE_SPOT_COLLECTION from '@/graphql/singleSpotCollection'
+
+const { width } = useWindowSize()
 
 const runtimeConfig = useRuntimeConfig()
 
@@ -112,11 +116,11 @@ const waitForPanEnd = (map: google.maps.Map): Promise<void> => {
 }
 
 const moveMapByPan = async (singlePlace: TypeSingleSpotData): Promise<void> => {
-    // TODO: check later
     if (mapRef.value?.map) {
-        // INNER WIDTH!!!! check me again
-        // set pan and center NOT mobile screen (sidebar take all screen, pan not necessary)
-        if (window.innerWidth >= 576) {
+        // if NOT mobile screen (sidebar take all screen, pan not necessary)
+        // set pan to center current pin / spot (sidebar opened, you need to pan)
+        // on mobile sidebar is full screen, useless. even more, avoid "moving" strange flickering mobile
+        if (width.value >= 576) {
             centerMapToCurrentPlace(
                 singlePlace.address.lat,
                 singlePlace.address.lon
@@ -127,7 +131,6 @@ const moveMapByPan = async (singlePlace: TypeSingleSpotData): Promise<void> => {
     }
 }
 
-// TODO: here try to decouple logic, too much stuff
 // at click get marker/place ID (from CMS)
 const clickMarkerHandler = async (singlePlace: TypeSingleSpotData) => {
     // if click on same marker (and sidebar OPENED with already current place) >> do nothing
