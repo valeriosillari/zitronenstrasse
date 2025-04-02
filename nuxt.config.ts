@@ -34,6 +34,7 @@ export default defineNuxtConfig({
         '@pinia/nuxt',
         '@nuxt/image',
         '@nuxtjs/sitemap',
+        '@vueuse/nuxt',
         'nuxt-gtag',
         [
             // https://masanos.com/notes/l37t1_8qf-fv/

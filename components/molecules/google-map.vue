@@ -37,12 +37,16 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import { GoogleMap, CustomMarker } from 'vue3-google-map'
+import { useWindowSize } from '@vueuse/core'
 
 import type {
     TypeSingleSpotData,
     TypeSingleSpotCollection,
 } from '@/types/TypeSingleSpot'
+
 import GQL_QUERY_SINGLE_SPOT_COLLECTION from '@/graphql/singleSpotCollection'
+
+const { width } = useWindowSize()
 
 const runtimeConfig = useRuntimeConfig()
 
@@ -116,7 +120,8 @@ const moveMapByPan = async (singlePlace: TypeSingleSpotData): Promise<void> => {
     if (mapRef.value?.map) {
         // INNER WIDTH!!!! check me again
         // set pan and center NOT mobile screen (sidebar take all screen, pan not necessary)
-        if (window.innerWidth >= 576) {
+
+        if (width.value >= 576) {
             centerMapToCurrentPlace(
                 singlePlace.address.lat,
                 singlePlace.address.lon
