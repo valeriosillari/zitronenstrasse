@@ -131,7 +131,6 @@ const moveMapByPan = async (singlePlace: TypeSingleSpotData): Promise<void> => {
     }
 }
 
-// TODO: here try to decouple logic, too much stuff
 // at click get marker/place ID (from CMS)
 const clickMarkerHandler = async (singlePlace: TypeSingleSpotData) => {
     // if click on same marker (and sidebar OPENED with already current place) >> do nothing
