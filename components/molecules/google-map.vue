@@ -116,11 +116,10 @@ const waitForPanEnd = (map: google.maps.Map): Promise<void> => {
 }
 
 const moveMapByPan = async (singlePlace: TypeSingleSpotData): Promise<void> => {
-    // TODO: check later
     if (mapRef.value?.map) {
-        // INNER WIDTH!!!! check me again
-        // set pan and center NOT mobile screen (sidebar take all screen, pan not necessary)
-
+        // if NOT mobile screen (sidebar take all screen, pan not necessary)
+        // set pan to center current pin / spot (sidebar opened, you need to pan)
+        // on mobile sidebar is full screen, useless. even more, avoid "moving" strange flickering mobile
         if (width.value >= 576) {
             centerMapToCurrentPlace(
                 singlePlace.address.lat,
