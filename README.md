@@ -35,7 +35,6 @@ $ npm run deploy-generate
 
 ### TODO
 
-- check vueUse again
 - check timeout and timing as config var?
 - google map component: check object used (mapRef.value)
 - check graphQL query at CLIENT (click on single spot, get data by IDs)
