@@ -1,5 +1,5 @@
 <template>
-    <div class="layout-default">
+    <div class="b-layout-default">
         <MoleculesNoJsFallback />
 
         <MoleculesSplashscreen />
@@ -44,8 +44,6 @@ onMounted(() => {
 </script>
 
 <style lang="sass">
-
-// .layout-default
 
 // main page container
 .main-container
