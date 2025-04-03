@@ -18,17 +18,17 @@ const isSplashscreenActive = ref(true)
 const fadeTimeMilliseconds = ref(1500)
 const fadeTimeVarCss = ref(`${fadeTimeMilliseconds.value / 1000}s`)
 
-const removeFadeOut = (speed: number) => {
-    isSplashscreenFading.value = true
+// const removeFadeOut = (speed: number) => {
+//     isSplashscreenFading.value = true
 
-    // remove component itself when fade completed (vue IF logic)
-    setTimeout(() => {
-        isSplashscreenActive.value = false
-    }, speed)
-}
+//     // remove component itself when fade completed (vue IF logic)
+//     setTimeout(() => {
+//         isSplashscreenActive.value = false
+//     }, speed)
+// }
 
 onMounted(() => {
-    removeFadeOut(fadeTimeMilliseconds.value)
+    // removeFadeOut(fadeTimeMilliseconds.value)
 })
 </script>
 
