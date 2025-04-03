@@ -35,7 +35,6 @@ $ npm run deploy-generate
 
 ### TODO
 
-- check vueUse again
 - check timeout and timing as config var?
 - google map component: check object used (mapRef.value)
 - check graphQL query at CLIENT (click on single spot, get data by IDs)
@@ -47,7 +46,6 @@ $ npm run deploy-generate
 
 ### NICE TO HAVE
 
-- error page : 1) use layout, show FOOTER. 2) no transition effect 3) button back with NO js
 - filter (where) for data of single page (gql query)
 - load data at page switch? cannot pre generated all data? >> REAL STATIC + git hooks?
 - check speed insight (June 2019). load map better (and later), for performance
