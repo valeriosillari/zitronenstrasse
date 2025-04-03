@@ -1,6 +1,6 @@
 <template>
-    <div role="main" class="error-container">
-        <div class="container">
+    <NuxtLayout>
+        <div class="b-page-error">
             <!-- css bg as svg | compass -->
             <span class="svg-icon-compass" />
 
@@ -12,7 +12,7 @@
                 @click-btn="handleError"
             />
         </div>
-    </div>
+    </NuxtLayout>
 </template>
 
 <script setup lang="ts">
@@ -41,15 +41,14 @@ useHead({
 </script>
 
 <style lang="sass">
-// main page container
-.error-container
+.b-page-error
     margin: 40px auto
     text-align: center
 
-.svg-icon-compass
-    display: block
-    width: 260px
-    height: 260px
-    margin: 30px auto
-    background-image: url('assets/svg/compass.svg')
+    .svg-icon-compass
+        display: block
+        width: 260px
+        height: 260px
+        margin: 30px auto
+        background-image: url('assets/svg/compass.svg')
 </style>
