@@ -29,7 +29,7 @@ const isSidebarActiveClass = computed(() => ({
     bottom: 0
 
     .map-wrapper
-        height: 100%
+        height: 100vh
         position: relative
         left: 0
 
