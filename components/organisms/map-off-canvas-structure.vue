@@ -32,7 +32,6 @@ const isSidebarActiveClass = computed(() => ({
         height: 100vh
         position: relative
         left: 0
-        background: #0f0
 
     .sidebar-wrapper
         position: fixed
