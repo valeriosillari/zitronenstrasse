@@ -33,7 +33,7 @@
         "pinia": "^2.1.7",
         "vue": "^3.5.13",
         "vue-router": "^4.5.0",
-        "vue3-google-map": "^0.21.1s"
+        "vue3-google-map": "^0.21.1"
     },
     "devDependencies": {
         "@fortawesome/fontawesome-svg-core": "^6.6.0",
