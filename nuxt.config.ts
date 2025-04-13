@@ -36,21 +36,19 @@ export default defineNuxtConfig({
         '@nuxtjs/sitemap',
         '@vueuse/nuxt',
         'nuxt-gtag',
-        [
-            // https://masanos.com/notes/l37t1_8qf-fv/
-            '@nuxtjs/google-fonts',
-            {
-                families: {
-                    Roboto: {
-                        wght: [400],
-                    },
-                    'Saira+Condensed': {
-                        wght: [300],
-                    },
-                },
-            },
-        ],
+        '@nuxtjs/google-fonts',
     ],
+
+    googleFonts: {
+        families: {
+            Roboto: {
+                wght: [400],
+            },
+            'Saira+Condensed': {
+                wght: [300],
+            },
+        },
+    },
 
     gtag: {
         id: process.env.GOOGLE_ANALYTICS_KEY,
