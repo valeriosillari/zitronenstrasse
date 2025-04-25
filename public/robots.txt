@@ -2,8 +2,14 @@
 
 # Allow crawling of all content
 User-agent: *
+
 # Disallow crawling of some pages below
-Disallow: /wip_page/
+Disallow:
+/wip_page/
+/?ref=madewithvuejs.com
+/?ref=producthunt
+/contact/
+/privacy-policy/
 
 # Set where is the sitemap file for crawlers
 # Sitemap: https://zitronenstrasse.com/sitemap.xml
