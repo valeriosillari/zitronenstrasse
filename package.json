@@ -18,9 +18,9 @@
         "lint:eslint": "eslint .",
         "lint:prettier": "prettier . --check",
         "lintfix": "eslint . --fix && prettier --write --list-different .",
-        "check-all": "npm run type-check && npm run lint:eslint && npm run lint:prettier",
-        "deploy-build": "npm run check-all && npm run build",
-        "deploy-generate": "npm run check-all && npm run generate"
+        "check-all": "bun type-check && bun lint:eslint && bun lint:prettier",
+        "deploy-build": "bun check-all && bun build",
+        "deploy-generate": "bun check-all && bun generate"
     },
     "dependencies": {
         "@contentful/rich-text-html-renderer": "^17.0.0",
