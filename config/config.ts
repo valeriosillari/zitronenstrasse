@@ -5,7 +5,7 @@ const PROJECT_NAME = 'Zitronenstrasse'
 
 const AUTHOR_NAME = packageJson.author
 
-const VALERIO_SITE_ROOT = 'https://www.valeriosillari.com'
+const AUTHOR_SITE_ROOT = 'https://www.valeriosillari.com'
 
 const LOCAL_PORT = 8000
 
@@ -38,9 +38,9 @@ const CONFIG: TypeConfig = {
 
     appMainUrl: APP_ROOT_URL,
 
-    valeSiteRoot: VALERIO_SITE_ROOT,
+    valeSiteRoot: AUTHOR_SITE_ROOT,
 
-    apiUrl: `${VALERIO_SITE_ROOT}/api/zitronenstrasse`,
+    apiUrl: `${AUTHOR_SITE_ROOT}/api/zitronenstrasse`,
 
     // used in head description in all the pages
     description:
