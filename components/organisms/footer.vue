@@ -21,11 +21,11 @@
                         </NuxtLink>
                         | A project by
                         <NuxtLink
-                            :title="$config.public.valeSiteAuthorName"
-                            :to="$config.public.valeSiteRoot"
+                            :title="$config.public.authorName"
+                            :to="$config.public.authorSiteRoot"
                             class="footer-link"
                         >
-                            {{ $config.public.valeSiteAuthorName }}
+                            {{ $config.public.authorName }}
                         </NuxtLink>
                     </p>
                 </div>

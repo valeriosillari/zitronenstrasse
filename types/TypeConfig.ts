@@ -6,11 +6,12 @@ export type TypeConfig = {
     htmlYesJsClass: string
     title: string
     appMainUrl: string
-    valeSiteRoot: string
+    authorSiteRoot: string
     apiUrl: string
     description: string
     keywords: string
     localPort: number
+    twitterSite: string
     appVersion: string
 }
 
