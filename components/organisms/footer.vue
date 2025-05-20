@@ -5,7 +5,7 @@
                 <div class="col-10 col-sm-7 col-md-8 col-left">
                     <p class="footer-text">
                         {{ runtimeConfig.public.projectName }} {{ dateYear }} |
-                        version
+                        version Valerio
                         {{ appVersion }}
                     </p>
 
