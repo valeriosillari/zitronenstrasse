@@ -19,7 +19,7 @@ export default defineNuxtConfig({
             htmlNoJsClass: CONFIG.htmlNoJsClass,
             htmlYesJsClass: CONFIG.htmlYesJsClass,
             limitQueryGql: 5,
-            valeSiteRoot: CONFIG.valeSiteRoot,
+            authorSiteRoot: CONFIG.authorSiteRoot,
             appVersion: CONFIG.appVersion,
             valeSiteAuthorName: CONFIG.authorName,
             headTitleString: CONFIG.title,

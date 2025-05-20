@@ -38,7 +38,7 @@ const CONFIG: TypeConfig = {
 
     appMainUrl: APP_ROOT_URL,
 
-    valeSiteRoot: AUTHOR_SITE_ROOT,
+    authorSiteRoot: AUTHOR_SITE_ROOT,
 
     apiUrl: `${AUTHOR_SITE_ROOT}/api/zitronenstrasse`,
 

@@ -22,7 +22,7 @@
                         | A project by
                         <NuxtLink
                             :title="$config.public.valeSiteAuthorName"
-                            :to="$config.public.valeSiteRoot"
+                            :to="$config.public.authorSiteRoot"
                             class="footer-link"
                         >
                             {{ $config.public.valeSiteAuthorName }}
