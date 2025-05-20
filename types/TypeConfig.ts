@@ -11,6 +11,7 @@ export type TypeConfig = {
     description: string
     keywords: string
     localPort: number
+    twitterSite: string
     appVersion: string
 }
 

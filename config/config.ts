@@ -50,6 +50,8 @@ const CONFIG: TypeConfig = {
 
     localPort: LOCAL_PORT,
 
+    twitterSite: '@zitronenstrasse',
+
     appVersion: process.env.VERCEL_GIT_COMMIT_SHA
         ? // 7 digits, for "short" commit hash
           process.env.VERCEL_GIT_COMMIT_SHA.substring(0, 7)
