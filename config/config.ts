@@ -9,7 +9,11 @@ const AUTHOR_SITE_ROOT = 'https://www.valeriosillari.com'
 
 const LOCAL_PORT = 8000
 
-let APP_ROOT_URL = `http://localhost:${LOCAL_PORT}`
+let APP_ROOT_URL = ''
+
+if (process.env.NODE_ENV === 'development') {
+    APP_ROOT_URL = `http://localhost:${LOCAL_PORT}`
+}
 
 if (process.env.NODE_ENV === 'production' && process.env.VERCEL_URL) {
     // feature branch deployed
