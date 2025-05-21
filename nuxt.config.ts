@@ -65,7 +65,9 @@ export default defineNuxtConfig({
     },
 
     site: {
-        url: CONFIG.appMainUrl,
+        url:
+            process.env.NUXT_PUBLIC_SITE_URL ||
+            (process.env.NODE_ENV === 'development' ? CONFIG.appMainUrl : ''),
         name: CONFIG.title,
     },
 
