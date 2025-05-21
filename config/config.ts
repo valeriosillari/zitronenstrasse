@@ -9,6 +9,7 @@ const AUTHOR_SITE_ROOT = 'https://www.valeriosillari.com'
 
 const LOCAL_PORT = 8000
 
+// empty by default, to avoid warning on package install
 let APP_ROOT_URL = ''
 
 if (process.env.NODE_ENV === 'development') {
