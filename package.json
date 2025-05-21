@@ -19,6 +19,8 @@
         "lint:fix": "eslint . --fix",
         "prettier:check": "prettier . --check",
         "prettier:fix": "prettier --write --list-different .",
+        "cy:open": "cypress open",
+        "cy:run": "cypress run",
         "check-all": "bun types:check && bun lint:check && bun prettier:check",
         "fix-all": "bun lint:fix && bun prettier:fix",
         "deploy-build": "bun check-all && bun build",
