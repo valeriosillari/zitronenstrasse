@@ -16,7 +16,6 @@
 <script lang="ts" setup>
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
 import type { TypePageCollection } from '@/types/TypePageCollection'
-import CONFIG from '@/config/config'
 import GQL_QUERY_PAGE_BY_URL_REFERENCE from '@/graphql/page'
 
 const route = useRoute()
@@ -55,6 +54,8 @@ const pageMetaTitle = computed(() => {
     return `${page?.title} | ${runtimeConfig.public.headTitleString}`
 })
 
+const urlDynamicUrl = `${runtimeConfig.public.appMainUrl}${route.fullPath}`
+
 useHead({
     title: pageMetaTitle,
     meta: [
@@ -66,7 +67,7 @@ useHead({
 
         {
             property: 'og:url',
-            content: `${CONFIG.appMainUrl}${route.fullPath}`,
+            content: urlDynamicUrl,
         },
 
         {
@@ -87,7 +88,7 @@ useHead({
     link: [
         {
             rel: 'canonical',
-            href: `${CONFIG.appMainUrl}${route.fullPath}`,
+            href: urlDynamicUrl,
         },
     ],
 })
