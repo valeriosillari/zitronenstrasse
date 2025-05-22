@@ -21,6 +21,7 @@ export default defineNuxtConfig({
             limitQueryGql: 5,
             appVersion: CONFIG.appVersion,
             authorSiteRoot: CONFIG.authorSiteRoot,
+            appMainUrl: CONFIG.appMainUrl,
             authorName: CONFIG.authorName,
             headTitleString: CONFIG.title,
             googleMapKey: process.env.GOOGLE_MAP_KEY,

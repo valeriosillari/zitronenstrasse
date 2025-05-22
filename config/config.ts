@@ -9,9 +9,26 @@ const AUTHOR_SITE_ROOT = 'https://www.valeriosillari.com'
 
 const LOCAL_PORT = 8000
 
-// env NUXT_PUBLIC_SITE_URL on PROD, local host as fallback on develop mode
-const APP_ROOT_URL =
-    process.env.NUXT_PUBLIC_SITE_URL || `http://localhost:${LOCAL_PORT}`
+// empty by default, to avoid warning on package install
+let APP_ROOT_URL = ''
+
+if (process.env.NODE_ENV === 'development') {
+    APP_ROOT_URL = `http://localhost:${LOCAL_PORT}`
+}
+
+if (process.env.NODE_ENV === 'production' && process.env.VERCEL_URL) {
+    // feature branch deployed
+    APP_ROOT_URL = `https://${process.env.VERCEL_URL}`
+
+    // MAIN / PROD branch
+    if (
+        process.env.VERCEL_PROJECT_PRODUCTION_URL &&
+        process.env.VERCEL_GIT_COMMIT_REF &&
+        process.env.VERCEL_GIT_COMMIT_REF === 'main'
+    ) {
+        APP_ROOT_URL = `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    }
+}
 
 const CONFIG: TypeConfig = {
     projectName: PROJECT_NAME,
