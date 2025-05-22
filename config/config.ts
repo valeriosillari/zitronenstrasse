@@ -18,7 +18,8 @@ if (process.env.NODE_ENV === 'development') {
 
 if (
     process.env.NODE_ENV === 'production' &&
-    process.env.VERCEL_GIT_COMMIT_REF !== 'main'
+    process.env.VERCEL_GIT_COMMIT_REF !== 'main' &&
+    process.env.VERCEL_URL
 ) {
     // feature branch deployed
     APP_ROOT_URL = `https://${process.env.VERCEL_URL}`

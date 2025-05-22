@@ -5,6 +5,10 @@
                 {{ pageTitle }}
             </h1>
 
+            <h2 style="background: pink">
+                {{ CONFIG.appMainUrl }}
+            </h2>
+
             <AtomsRichText
                 v-if="pageDescription"
                 :rich-text="pageDescription"
