@@ -54,7 +54,7 @@ const pageMetaTitle = computed(() => {
     return `${page?.title} | ${runtimeConfig.public.headTitleString}`
 })
 
-const urlDynamicUrl = runtimeConfig.public.appMainUrl
+const urlDynamicUrl = `${runtimeConfig.public.appMainUrl}${route.fullPath}`
 
 useHead({
     title: pageMetaTitle,
@@ -67,7 +67,7 @@ useHead({
 
         {
             property: 'og:url',
-            content: `${urlDynamicUrl}${route.fullPath}`,
+            content: urlDynamicUrl,
         },
 
         {
@@ -88,7 +88,7 @@ useHead({
     link: [
         {
             rel: 'canonical',
-            href: `${urlDynamicUrl}${route.fullPath}`,
+            href: urlDynamicUrl,
         },
     ],
 })
