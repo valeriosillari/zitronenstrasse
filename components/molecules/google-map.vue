@@ -106,14 +106,11 @@ const currentMarkerAnimation = (markerId: number) => {
     }
 }
 
-const waitForPanEnd = (map: google.maps.Map): Promise<void> => {
-    return new Promise((resolve) => {
-        // Listen for the 'idle' event which signals that the panning has finished.
-        google.maps.event.addListenerOnce(map, 'idle', () => {
-            resolve()
-        })
+const waitForPanEnd = (map: google.maps.Map) =>
+    new Promise((resolve) => {
+        // Listen for the 'idle' event, which tell us that the panning has finished.
+        google.maps.event.addListenerOnce(map, 'idle', resolve)
     })
-}
 
 const moveMapByPan = async (singlePlace: TypeSingleSpotData): Promise<void> => {
     if (mapRef.value?.map) {
@@ -149,8 +146,8 @@ const clickMarkerHandler = async (singlePlace: TypeSingleSpotData) => {
     await moveMapByPan(singlePlace)
 
     // check if we need to open sidebar (open it or not - already opened)
-    // added timeout for UX:
-    // when pan is done, wait "a moment" for opening sidebar and "pin jump".
+    // added TIMEOUT for UX:
+    // when pan is done, add a "wait moment" for opening sidebar and "pin jump".
     // to avoid "jumpy effect" and too much animation next to each other
     setTimeout(() => {
         // jump pin
