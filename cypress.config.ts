@@ -1,8 +1,10 @@
 import { defineConfig } from 'cypress'
+import CONFIG from './config/config'
 
 export default defineConfig({
     e2e: {
-        baseUrl: 'http://localhost:8000', // Nuxt default dev server
+        // Nuxt default dev server
+        baseUrl: CONFIG.appMainUrl,
         setupNodeEvents() {
             // implement node event listeners here if needed
         },
