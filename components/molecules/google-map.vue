@@ -28,6 +28,7 @@
                 :id="`marker-id-${singlePlace.id}`"
                 class="map-marker"
                 src="/svg/markerStyled.svg"
+                :alt="singlePlace.title"
                 loading="lazy"
             />
         </CustomMarker>
