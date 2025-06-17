@@ -19,7 +19,7 @@
         </AtomsButton>
 
         <!-- navigation (overlay) -->
-        <MoleculesNavigation />
+        <LazyMoleculesNavigation />
     </header>
 </template>
 
