@@ -6,6 +6,8 @@ const GQL_QUERY_SINGLE_SPOT_BY_ID = gql`
             image {
                 title
                 url
+                # webP (available on CDN)
+                webpUrl: url(transform: { format: WEBP })
             }
             imageCredits
             addressStreet
