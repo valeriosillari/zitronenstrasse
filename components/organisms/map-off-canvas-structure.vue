@@ -1,11 +1,11 @@
 <template>
     <div :class="['b-map-off-canvas-structure', isSidebarActiveClass]">
         <div class="map-wrapper">
-            <MoleculesGoogleMap />
+            <LazyMoleculesGoogleMap />
         </div>
 
         <div class="sidebar-wrapper">
-            <OrganismsSidebar />
+            <LazyOrganismsSidebar />
         </div>
     </div>
 </template>
