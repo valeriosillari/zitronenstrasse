@@ -4,12 +4,15 @@
 
         <div class="place-details-thumb-area">
             <div class="place-details-thumb-image-inner">
-                <NuxtImg
-                    class="place-details-thumb-image"
-                    :alt="imageTitle"
-                    :src="imageUrl"
-                    loading="lazy"
-                />
+                <picture class="place-details-thumb-image">
+                    <source
+                        :srcset="imageWebPUrl"
+                        type="image/webp"
+                        :alt="imageTitle"
+                        loading="lazy"
+                    />
+                    <NuxtImg :src="imageUrl" :alt="imageTitle" loading="lazy" />
+                </picture>
             </div>
 
             <div
@@ -80,6 +83,18 @@ const imageUrl = computed(() => {
     }
 
     return currentSpotData.value.image.url
+})
+
+const imageWebPUrl = computed(() => {
+    if (!currentSpotData.value || !currentSpotData.value.image) {
+        return '/image/place_image_fallback.jpg'
+    }
+
+    console.log('======= currentSpotData.value.image ========')
+    console.log(currentSpotData.value.image)
+    console.log(currentSpotData.value.image.webpUrl)
+
+    return currentSpotData.value.image.webpUrl
 })
 
 const imageTitle = computed(() => {
