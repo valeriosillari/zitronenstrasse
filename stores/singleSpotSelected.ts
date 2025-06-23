@@ -1,16 +1,17 @@
 import type { TypeSingleSpot } from '@/types/TypeSingleSpot'
 import GQL_QUERY_SINGLE_SPOT_BY_ID from '@/graphql/singleSpot'
 
-// TODO: move in or take it out? can be moved to separate file as service?
-const apiCallResponse = async (singleSpotSysId: string) => {
-    const { data } = await useAsyncQuery<TypeSingleSpot>(
-        GQL_QUERY_SINGLE_SPOT_BY_ID,
-        {
-            id: singleSpotSysId,
-        }
-    )
+const apolloClient = useApolloClient()
 
-    return data?.value
+const apiCallResponse = async (singleSpotSysId: string) => {
+    const { data } = await apolloClient.client.query<TypeSingleSpot>({
+        query: GQL_QUERY_SINGLE_SPOT_BY_ID,
+        variables: {
+            id: singleSpotSysId,
+        },
+    })
+
+    return data
 }
 
 export const useSingleSpotSelectedStore = defineStore(
