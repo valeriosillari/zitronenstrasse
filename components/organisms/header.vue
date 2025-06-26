@@ -41,6 +41,19 @@ const btnActiveClass = computed(() => {
 const handleClickNavigation = () => {
     navigationStore.toggleNavState()
 }
+
+// esc button logic
+// !!! can be set as utility if needed in other components
+const handleEscBtnLogic = (event: KeyboardEvent) => {
+    if (event.key === 'Escape' && navigationStore.isNavOpen) {
+        handleClickNavigation()
+    }
+}
+
+onMounted(() => {
+    // logic to close navigation when user click ESC key
+    window.addEventListener('keydown', handleEscBtnLogic)
+})
 </script>
 
 <style lang="sass">
