@@ -42,8 +42,8 @@ const handleClickNavigation = () => {
     navigationStore.toggleNavState()
 }
 
-// TODO: set css logic
 // esc button logic
+// !!! can be set as utility if needed in other components
 const handleEscBtnLogic = (event: KeyboardEvent) => {
     if (event.key === 'Escape' && navigationStore.isNavOpen) {
         handleClickNavigation()
