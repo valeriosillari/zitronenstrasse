@@ -1,6 +1,9 @@
 import CONFIG from './config/config'
 import METADATA from './config/metaData'
 
+console.log('====== CONFIG.apiUrlFull ==== ')
+console.log(CONFIG.apiUrlFull)
+
 export default defineNuxtConfig({
     devtools: { enabled: true },
 
