@@ -7,6 +7,9 @@ export default defineEventHandler(async (event) => {
 
     const url = graphqlEndpoint + event.node.req.url.replace(CONFIG.apiUrl, '')
 
+    console.log('========== URL ==========')
+    console.log(url)
+
     const headers = Object.fromEntries(
         Object.entries(getRequestHeaders(event)).map(([key, value]) => [
             key,
@@ -18,6 +21,12 @@ export default defineEventHandler(async (event) => {
     const method = (event.node.req.method?.toUpperCase() ?? 'POST') as
         | 'GET'
         | 'POST'
+
+    console.log('========== headers ==========')
+    console.log(headers)
+
+    console.log('========== method ==========')
+    console.log(method)
 
     return await $fetch(url, {
         method,
