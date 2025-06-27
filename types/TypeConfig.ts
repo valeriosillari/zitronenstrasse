@@ -8,6 +8,7 @@ export type TypeConfig = {
     appMainUrl: string
     authorSiteRoot: string
     apiUrl: string
+    apiUrlFull: string
     description: string
     keywords: string
     localPort: number

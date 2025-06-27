@@ -9,11 +9,18 @@ const AUTHOR_SITE_ROOT = 'https://www.valeriosillari.com'
 
 const LOCAL_PORT = 8000
 
+const API_URL = '/api/graphql'
+
 // empty by default, to avoid warning on package install
 let APP_ROOT_URL = ''
 
 if (process.env.NODE_ENV === 'development') {
     APP_ROOT_URL = `http://localhost:${LOCAL_PORT}`
+}
+
+// when build or generate locally
+if (process.env.NODE_ENV === 'production' && !process.env.VERCEL_URL) {
+    APP_ROOT_URL = 'http://localhost::3000'
 }
 
 if (process.env.NODE_ENV === 'production' && process.env.VERCEL_URL) {
@@ -45,7 +52,9 @@ const CONFIG: TypeConfig = {
 
     authorSiteRoot: AUTHOR_SITE_ROOT,
 
-    apiUrl: `${AUTHOR_SITE_ROOT}/api/zitronenstrasse`,
+    apiUrl: API_URL,
+
+    apiUrlFull: `${APP_ROOT_URL}${API_URL}`,
 
     // used in head description in all the pages
     description:

@@ -59,8 +59,7 @@ export default defineNuxtConfig({
         clients: {
             default: {
                 // GraphQL endpoint (contentful), proxied on my website
-                // note: it needs to be under "www" domain
-                httpEndpoint: CONFIG.apiUrl,
+                httpEndpoint: CONFIG.apiUrlFull,
             },
         },
     },
