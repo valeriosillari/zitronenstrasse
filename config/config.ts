@@ -20,10 +20,14 @@ if (process.env.NODE_ENV === 'development') {
 
 // when build or generate locally
 if (process.env.NODE_ENV === 'production' && !process.env.VERCEL_URL) {
+    console.log('========== URL PROD | LOCALLY ==========')
+
     APP_ROOT_URL = 'http://localhost::3000'
 }
 
 if (process.env.NODE_ENV === 'production' && process.env.VERCEL_URL) {
+    console.log('========== URL PROD | @ DEPLOY ==========')
+
     // feature branch deployed
     APP_ROOT_URL = `https://${process.env.VERCEL_URL}`
 
