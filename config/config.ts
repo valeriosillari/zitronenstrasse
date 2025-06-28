@@ -16,6 +16,11 @@ if (process.env.NODE_ENV === 'development') {
     APP_ROOT_URL = `http://localhost:${LOCAL_PORT}`
 }
 
+// when build or generate locally | for testing locally the build
+if (process.env.NODE_ENV === 'production' && !process.env.VERCEL_URL) {
+    APP_ROOT_URL = 'http://localhost::3000'
+}
+
 if (process.env.NODE_ENV === 'production' && process.env.VERCEL_URL) {
     // feature branch deployed
     APP_ROOT_URL = `https://${process.env.VERCEL_URL}`
