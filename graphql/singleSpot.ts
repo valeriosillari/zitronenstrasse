@@ -6,9 +6,9 @@ const GQL_QUERY_SINGLE_SPOT_BY_ID = gql`
             image {
                 title
                 # TODO: set but not used now. later set as fallback
-                url(
-                    transform: { width: 440, height: 250, resizeStrategy: FILL }
-                )
+                # url(
+                #     transform: { width: 440, height: 250, resizeStrategy: FILL }
+                # )
                 webpUrl: url(
                     transform: {
                         format: WEBP

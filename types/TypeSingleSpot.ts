@@ -7,7 +7,7 @@ export type TypeSingleSpotData = {
     imageCredits?: string
     image?: {
         title?: string
-        url: string
+        // url: string
         webpUrl: string
     }
     addressStreet: string
