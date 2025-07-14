@@ -79,7 +79,7 @@ const imageUrl = computed(() => {
         return '/image/place_image_fallback.jpg'
     }
 
-    return currentSpotData.value.image.url
+    return currentSpotData.value.image.webpUrl
 })
 
 const imageTitle = computed(() => {
