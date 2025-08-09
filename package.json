@@ -48,7 +48,7 @@
         "@nuxt/eslint": "^1.2.0",
         "@types/google.maps": "^3.58.1",
         "@types/node": "^22.13.11",
-        "bootstrap": "^5.3.3",
+        "bootstrap": "^5.3.7",
         "breakpoint-sass": "^3.0.0",
         "eslint": "^9.22.0",
         "eslint-config-prettier": "^10.1.1",
