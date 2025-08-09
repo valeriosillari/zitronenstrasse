@@ -92,7 +92,7 @@ export default defineNuxtConfig({
         ],
     },
 
-    // all pure code (sass, css, scss ...)
+    // all global css code (sass, css, scss ...)
     css: ['@/assets/sass/root.sass'],
 
     app: {
