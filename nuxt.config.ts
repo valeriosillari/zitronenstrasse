@@ -66,6 +66,7 @@ export default defineNuxtConfig({
     },
 
     site: {
+        // url on local + bun will give a warning on bun install. it's all fine.
         url: CONFIG.appMainUrl,
         name: CONFIG.title,
     },
