@@ -1,6 +1,8 @@
 import CONFIG from './config/config'
 import METADATA from './config/metaData'
 
+import { fileURLToPath } from 'node:url'
+
 export default defineNuxtConfig({
     devtools: { enabled: true },
 
@@ -69,6 +71,11 @@ export default defineNuxtConfig({
         // url on local + bun will give a warning on bun install. it's all fine.
         url: CONFIG.appMainUrl,
         name: CONFIG.title,
+    },
+
+    alias: {
+        '@Types': fileURLToPath(new URL('./types', import.meta.url)),
+        '@Config': fileURLToPath(new URL('./config', import.meta.url)),
     },
 
     vite: {

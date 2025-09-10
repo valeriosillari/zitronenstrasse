@@ -43,7 +43,7 @@ import { useWindowSize } from '@vueuse/core'
 import type {
     TypeSingleSpotData,
     TypeSingleSpotCollection,
-} from '../../../types/TypeSingleSpot'
+} from '@Types/TypeSingleSpot'
 
 import GQL_QUERY_SINGLE_SPOT_COLLECTION from '@/graphql/singleSpotCollection'
 
