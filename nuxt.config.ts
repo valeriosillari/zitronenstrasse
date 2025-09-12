@@ -94,7 +94,7 @@ export default defineNuxtConfig({
     },
 
     // all global css code (sass, css, scss ...)
-    css: ['@/assets/sass/root.sass'],
+    css: ['~/assets/sass/root.sass'],
 
     app: {
         pageTransition: {
