@@ -1,4 +1,4 @@
-import type { TypeSingleSpot } from '@/types/TypeSingleSpot'
+import type { TypeSingleSpot } from '../../types/TypeSingleSpot'
 import GQL_QUERY_SINGLE_SPOT_BY_ID from '@/graphql/singleSpot'
 
 const apolloClient = useApolloClient()
