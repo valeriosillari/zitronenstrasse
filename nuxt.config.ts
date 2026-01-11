@@ -1,6 +1,8 @@
 import CONFIG from './config/config'
 import METADATA from './config/metaData'
 
+import { fileURLToPath } from 'node:url'
+
 export default defineNuxtConfig({
     devtools: { enabled: true },
 
@@ -71,6 +73,11 @@ export default defineNuxtConfig({
         name: CONFIG.title,
     },
 
+    alias: {
+        '@Types': fileURLToPath(new URL('./types', import.meta.url)),
+        '@Config': fileURLToPath(new URL('./config', import.meta.url)),
+    },
+
     vite: {
         css: {
             preprocessorOptions: {
@@ -94,7 +101,7 @@ export default defineNuxtConfig({
     },
 
     // all global css code (sass, css, scss ...)
-    css: ['@/assets/sass/root.sass'],
+    css: ['~/assets/sass/root.sass'],
 
     app: {
         pageTransition: {

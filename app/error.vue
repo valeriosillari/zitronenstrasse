@@ -16,7 +16,7 @@
 </template>
 
 <script setup lang="ts">
-import HOME_LINK from '@/config/homeLink'
+import HOME_LINK from '@Config/homeLink'
 
 const runtimeConfig = useRuntimeConfig()
 
