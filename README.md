@@ -35,6 +35,7 @@ $ npm run deploy-generate
 
 ### TODO
 
+- Nuxt 4 set, but NODE version + all packages need to be checked. if we update them we got conflicts/issue
 - better image lazy fade effect
 - check timeout and timing as config var?
 - google map component: check object used (mapRef.value)
