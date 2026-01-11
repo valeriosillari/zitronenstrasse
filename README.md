@@ -35,7 +35,6 @@ $ npm run deploy-generate
 
 ### TODO
 
-- APOLLO CLINET issue (warning)
 - better image lazy fade effect
 - check timeout and timing as config var?
 - google map component: check object used (mapRef.value)
