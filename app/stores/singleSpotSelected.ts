@@ -1,18 +1,6 @@
+import { provideApolloClient } from '@vue/apollo-composable'
 import type { TypeSingleSpot } from '@Types/TypeSingleSpot'
 import GQL_QUERY_SINGLE_SPOT_BY_ID from '@/graphql/singleSpot'
-
-const apolloClient = useApolloClient()
-
-const apiCallResponse = async (singleSpotSysId: string) => {
-    const { data } = await apolloClient.client.query<TypeSingleSpot>({
-        query: GQL_QUERY_SINGLE_SPOT_BY_ID,
-        variables: {
-            id: singleSpotSysId,
-        },
-    })
-
-    return data
-}
 
 export const useSingleSpotSelectedStore = defineStore(
     'singleSpotSelectedStore',
@@ -29,11 +17,28 @@ export const useSingleSpotSelectedStore = defineStore(
                 this.currentSpotData = null
             },
 
-            updateSingleSpotSelectedState(singleSpotSysId: string) {
-                apiCallResponse(singleSpotSysId).then((singleSpotData) => {
-                    this.currentSpotData = singleSpotData
-                    this.isSpotShown = true
-                })
+            async updateSingleSpotSelectedState(singleSpotSysId: string) {
+                const nuxtApp = useNuxtApp()
+
+                // default Apollo client
+                const apolloClient = nuxtApp.$apollo.defaultClient
+
+                const data = await provideApolloClient(apolloClient)(
+                    async () => {
+                        const { data } =
+                            await apolloClient.query<TypeSingleSpot>({
+                                query: GQL_QUERY_SINGLE_SPOT_BY_ID,
+                                variables: {
+                                    id: singleSpotSysId,
+                                },
+                            })
+
+                        return data
+                    }
+                )
+
+                this.currentSpotData = data
+                this.isSpotShown = true
             },
         },
     }
