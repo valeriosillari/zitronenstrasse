@@ -1,5 +1,6 @@
 import CONFIG from './config/config'
 import METADATA from './config/metaData'
+import { fileURLToPath } from 'node:url'
 
 console.log('====== CONFIG.apiUrlFull ==== ')
 console.log(CONFIG.apiUrlFull)
@@ -68,8 +69,14 @@ export default defineNuxtConfig({
     },
 
     site: {
+        // url on local + bun will give a warning on bun install. it's all fine.
         url: CONFIG.appMainUrl,
         name: CONFIG.title,
+    },
+
+    alias: {
+        '@Types': fileURLToPath(new URL('./types', import.meta.url)),
+        '@Config': fileURLToPath(new URL('./config', import.meta.url)),
     },
 
     vite: {
@@ -94,8 +101,8 @@ export default defineNuxtConfig({
         ],
     },
 
-    // all pure code (sass, css, scss ...)
-    css: ['@/assets/sass/root.sass'],
+    // all global css code (sass, css, scss ...)
+    css: ['~/assets/sass/root.sass'],
 
     app: {
         pageTransition: {

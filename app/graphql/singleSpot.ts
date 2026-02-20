@@ -5,7 +5,9 @@ const GQL_QUERY_SINGLE_SPOT_BY_ID = gql`
             title
             image {
                 title
-                url
+                url(
+                    transform: { width: 440, height: 250, resizeStrategy: FILL }
+                )
             }
             imageCredits
             addressStreet

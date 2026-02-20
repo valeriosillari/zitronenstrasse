@@ -1,9 +1,9 @@
-import CONFIG from '@/config/config'
-
-const graphqlEndpoint = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_GQL_SPACE}?access_token=${process.env.CONTENTFUL_GQL_TOKEN}`
+import CONFIG from '@Config/config'
 
 export default defineEventHandler(async (event) => {
     if (!event.node.req.url?.startsWith(CONFIG.apiUrl)) return
+
+    const graphqlEndpoint = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_GQL_SPACE}?access_token=${process.env.CONTENTFUL_GQL_TOKEN}`
 
     const url = graphqlEndpoint + event.node.req.url.replace(CONFIG.apiUrl, '')
 
