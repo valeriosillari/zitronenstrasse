@@ -24,6 +24,8 @@ export default defineNuxtConfig({
     },
 
     runtimeConfig: {
+        secondAppGraphql: graphqlEndpoint, // server-only
+
         public: {
             projectName: CONFIG.projectName,
             htmlNoJsClass: CONFIG.htmlNoJsClass,
