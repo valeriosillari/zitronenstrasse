@@ -63,7 +63,7 @@ export default defineNuxtConfig({
         clients: {
             default: {
                 // GraphQL endpoint (contentful), proxied on my website
-                httpEndpoint: CONFIG.apiUrlFull,
+                httpEndpoint: CONFIG.apiUrlFull || 'https://emptywebsite.com',
             },
         },
     },
