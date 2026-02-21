@@ -15,18 +15,15 @@ const API_URL_FULL_ORIGINAL = `https://graphql.contentful.com/content/v1/spaces/
 
 // empty by default, to avoid warning on package install
 let APP_ROOT_URL = ''
-
 if (process.env.NODE_ENV === 'development') {
     APP_ROOT_URL = `http://localhost:${LOCAL_PORT}`
 }
-
 // when build or generate locally
 if (process.env.NODE_ENV === 'production' && !process.env.VERCEL_URL) {
     console.log('========== URL PROD | LOCALLY ==========')
 
     APP_ROOT_URL = 'http://localhost::3000'
 }
-
 if (process.env.NODE_ENV === 'production' && process.env.VERCEL_URL) {
     console.log('========== URL PROD | @ DEPLOY ==========')
 
@@ -45,23 +42,15 @@ if (process.env.NODE_ENV === 'production' && process.env.VERCEL_URL) {
 
 const CONFIG: TypeConfig = {
     projectName: PROJECT_NAME,
-
     authorName: AUTHOR_NAME,
-
     htmlNoJsClass: 'no-js',
-
     htmlYesJsClass: 'js',
-
     title: packageJson.description,
-
     appMainUrl: APP_ROOT_URL,
-
     authorSiteRoot: AUTHOR_SITE_ROOT,
-
+    // graphQL (server and client)
     apiUrlRelative: API_URL_RELATIVE,
-
     apiUrlFullOriginal: API_URL_FULL_ORIGINAL,
-
     // used in head description in all the pages
     description:
         'A mapping project to collect and share romantic spots in Berlin.',

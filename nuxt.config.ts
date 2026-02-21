@@ -15,9 +15,10 @@ export default defineNuxtConfig({
     },
 
     runtimeConfig: {
-        // server-only
+        // server only | value used to set a proxy api endpoint inside the app itself
         apiUrlFullOriginal: CONFIG.apiUrlFullOriginal,
 
+        // public
         public: {
             projectName: CONFIG.projectName,
             htmlNoJsClass: CONFIG.htmlNoJsClass,
@@ -61,6 +62,9 @@ export default defineNuxtConfig({
 
     apollo: {
         clients: {
+            // INFO: 2 endpoints
+            // - one for Server : original Contentful | on server so absolute and protected
+            // - one for Client: application internal api endpoint, with proxied original url
             default: {
                 // SSR | server: MUST be absolute (Node fetch needs absolute URL)
                 httpEndpoint: CONFIG.apiUrlFullOriginal,

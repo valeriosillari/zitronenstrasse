@@ -1,16 +1,13 @@
-// =======
 export type TypeConfig = {
     projectName: string
     authorName: string
     htmlNoJsClass: string
     htmlYesJsClass: string
     title: string
-
     appMainUrl: string
     authorSiteRoot: string
     apiUrlRelative: string
     apiUrlFullOriginal: string
-
     description: string
     keywords: string
     localPort: number
@@ -18,7 +15,6 @@ export type TypeConfig = {
     appVersion: string
 }
 
-// =======
 export type TypeMetaDataItem = {
     name?: string
     property?: string
@@ -27,7 +23,6 @@ export type TypeMetaDataItem = {
 
 export type TypeMetaData = TypeMetaDataItem[]
 
-// =======
 export type TypeHomeLink = {
     url: string
     text: string
