@@ -7,13 +7,6 @@ const graphqlEndpoint = `https://graphql.contentful.com/content/v1/spaces/${proc
 export default defineNuxtConfig({
     devtools: { enabled: true },
 
-    // for CLIENT logic (not expose Contentful "real endpoint")
-    routeRules: {
-        '/api/graphql': {
-            proxy: graphqlEndpoint,
-        },
-    },
-
     devServer: {
         port: CONFIG.localPort,
     },
