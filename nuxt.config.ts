@@ -2,11 +2,17 @@ import CONFIG from './config/config'
 import METADATA from './config/metaData'
 import { fileURLToPath } from 'node:url'
 
-console.log('====== CONFIG.apiUrlFull ==== ')
-console.log(CONFIG.apiUrlFull)
+const graphqlEndpoint = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_GQL_SPACE}?access_token=${process.env.CONTENTFUL_GQL_TOKEN}`
 
 export default defineNuxtConfig({
     devtools: { enabled: true },
+
+    // for CLIENT logic (not expose Contentful "real endpoint")
+    routeRules: {
+        '/api/graphql': {
+            proxy: graphqlEndpoint,
+        },
+    },
 
     devServer: {
         port: CONFIG.localPort,
@@ -62,8 +68,10 @@ export default defineNuxtConfig({
     apollo: {
         clients: {
             default: {
-                // GraphQL endpoint (contentful), proxied on my website
-                httpEndpoint: CONFIG.apiUrlFull || 'https://emptywebsite.com',
+                // SSR / server: MUST be absolute (Node fetch needs absolute URL)
+                httpEndpoint: graphqlEndpoint,
+                // CLIENT / Browser: can be relative at runtime and build?
+                browserHttpEndpoint: '/api/graphql',
             },
         },
     },
