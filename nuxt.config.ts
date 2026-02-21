@@ -2,8 +2,6 @@ import CONFIG from './config/config'
 import METADATA from './config/metaData'
 import { fileURLToPath } from 'node:url'
 
-const graphqlEndpoint = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_GQL_SPACE}?access_token=${process.env.CONTENTFUL_GQL_TOKEN}`
-
 export default defineNuxtConfig({
     devtools: { enabled: true },
 
@@ -17,7 +15,8 @@ export default defineNuxtConfig({
     },
 
     runtimeConfig: {
-        secondAppGraphql: graphqlEndpoint, // server-only
+        // server-only
+        apiUrlFullOriginal: CONFIG.apiUrlFullOriginal,
 
         public: {
             projectName: CONFIG.projectName,
@@ -63,10 +62,10 @@ export default defineNuxtConfig({
     apollo: {
         clients: {
             default: {
-                // SSR / server: MUST be absolute (Node fetch needs absolute URL)
-                httpEndpoint: graphqlEndpoint,
-                // CLIENT / Browser: can be relative at runtime and build?
-                browserHttpEndpoint: '/api/graphql',
+                // SSR | server: MUST be absolute (Node fetch needs absolute URL)
+                httpEndpoint: CONFIG.apiUrlFullOriginal,
+                // CLIENT | Browser: can be relative at runtime and build
+                browserHttpEndpoint: CONFIG.apiUrlRelative,
             },
         },
     },

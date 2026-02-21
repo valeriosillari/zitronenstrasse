@@ -5,10 +5,12 @@ export type TypeConfig = {
     htmlNoJsClass: string
     htmlYesJsClass: string
     title: string
+
     appMainUrl: string
     authorSiteRoot: string
-    apiUrl: string
-    apiUrlFull: string
+    apiUrlRelative: string
+    apiUrlFullOriginal: string
+
     description: string
     keywords: string
     localPort: number

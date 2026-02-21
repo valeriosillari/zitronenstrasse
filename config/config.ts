@@ -9,7 +9,9 @@ const AUTHOR_SITE_ROOT = 'https://www.valeriosillari.com'
 
 const LOCAL_PORT = 8000
 
-const API_URL = '/api/graphql'
+const API_URL_RELATIVE = '/api/graphql'
+
+const API_URL_FULL_ORIGINAL = `https://graphql.contentful.com/content/v1/spaces/${process.env.CONTENTFUL_GQL_SPACE}?access_token=${process.env.CONTENTFUL_GQL_TOKEN}`
 
 // empty by default, to avoid warning on package install
 let APP_ROOT_URL = ''
@@ -56,9 +58,9 @@ const CONFIG: TypeConfig = {
 
     authorSiteRoot: AUTHOR_SITE_ROOT,
 
-    apiUrl: API_URL,
+    apiUrlRelative: API_URL_RELATIVE,
 
-    apiUrlFull: `${APP_ROOT_URL}${API_URL}`,
+    apiUrlFullOriginal: API_URL_FULL_ORIGINAL,
 
     // used in head description in all the pages
     description:
