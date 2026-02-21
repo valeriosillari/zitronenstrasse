@@ -16,7 +16,7 @@ export default defineNuxtConfig({
 
     runtimeConfig: {
         // server only | value used to set a proxy api endpoint inside the app itself
-        apiUrlFullOriginal: CONFIG.apiUrlFullOriginal,
+        originalEndpointToBeProxied: CONFIG.apiUrlFullOriginal,
 
         // public
         public: {
