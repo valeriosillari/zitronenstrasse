@@ -21,8 +21,8 @@
         "prettier:fix": "prettier --write --list-different .",
         "check-all": "bun types:check && bun lint:check && bun prettier:check",
         "fix-all": "bun lint:fix && bun prettier:fix",
-        "deploy-build": "bun check-all && bun build",
-        "deploy-generate": "bun check-all && bun build"
+        "deploy-build": "bun check-all && bun run build",
+        "deploy-generate": "bun check-all && bun run build"
     },
     "dependencies": {
         "@contentful/rich-text-html-renderer": "^17.0.0",
