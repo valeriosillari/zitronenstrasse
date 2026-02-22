@@ -24,14 +24,23 @@ Now you set the right keys. You're ready to start
 
 ```bash
 # install dependencies
-$ npm install
+$ bun install
 
 # serve with hot reload at localhost:8000
-$ npm run dev
+$ bun dev
 
-# generate static project (static website)
-$ npm run deploy-generate
+# generate BUILD project
+$ bun deploy-build
 ```
+
+### DEPLOY LOGIC/NOTE
+
+We deploy using nuxt BUILD, not GENERATE (static site).
+
+The project is using a internal API endpoint for GraphQL, that then proxies our real endpoint on Contentful.
+
+Because we need to use a nuxt API endpoint (server), we cannot "generate".
+Meaning: you can generate at deploy, but then you should use a GraphQL an "external" and already existing endpoint.
 
 ### TODO
 
@@ -39,7 +48,6 @@ $ npm run deploy-generate
 - better image lazy fade effect
 - check timeout and timing as config var?
 - google map component: check object used (mapRef.value)
-- check graphQL query at CLIENT (click on single spot, get data by IDs)
 - google map and consent? start map only after user says all fine?
 - space with REM (trick as pixels)?
 - split sass variables in more files?
