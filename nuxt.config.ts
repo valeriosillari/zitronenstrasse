@@ -1,6 +1,5 @@
 import CONFIG from './config/config'
 import METADATA from './config/metaData'
-
 import { fileURLToPath } from 'node:url'
 
 export default defineNuxtConfig({
@@ -16,6 +15,10 @@ export default defineNuxtConfig({
     },
 
     runtimeConfig: {
+        // server only | value used to set a proxy api endpoint inside the app itself
+        originalEndpointToBeProxied: CONFIG.apiUrlFullOriginal,
+
+        // public
         public: {
             projectName: CONFIG.projectName,
             htmlNoJsClass: CONFIG.htmlNoJsClass,
@@ -59,10 +62,14 @@ export default defineNuxtConfig({
 
     apollo: {
         clients: {
+            // INFO: 2 endpoints
+            // - one for Server : original Contentful | on server so absolute and protected
+            // - one for Client: application internal api endpoint, with proxied original url
             default: {
-                // GraphQL endpoint (contentful), proxied on my website
-                // note: it needs to be under "www" domain
-                httpEndpoint: CONFIG.apiUrl,
+                // SSR | server: MUST be absolute (Node fetch needs absolute URL)
+                httpEndpoint: CONFIG.apiUrlFullOriginal,
+                // CLIENT | Browser: can be relative at runtime and build
+                browserHttpEndpoint: CONFIG.apiUrlRelative,
             },
         },
     },
