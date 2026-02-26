@@ -19,9 +19,9 @@
 </template>
 
 <script setup lang="ts">
+import GQL_QUERY_PAGE_COLLECTION from '@/graphql/pageCollection'
 import HOME_LINK from '@Config/homeLink'
 import type { TypePageCollection } from '@Types/TypePageCollection'
-import GQL_QUERY_PAGE_COLLECTION from '@/graphql/pageCollection'
 
 const runtimeConfig = useRuntimeConfig()
 

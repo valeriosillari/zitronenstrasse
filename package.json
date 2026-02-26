@@ -31,6 +31,7 @@
         "@nuxtjs/google-fonts": "^3.2.0",
         "@nuxtjs/sitemap": "^7.2.9",
         "@pinia/nuxt": "^0.5.1",
+        "@trivago/prettier-plugin-sort-imports": "^6.0.2",
         "@vueuse/core": "^13.0.0",
         "@vueuse/nuxt": "^13.0.0",
         "nuxt": "^4.0.0",
