@@ -15,8 +15,10 @@
 
 <script lang="ts" setup>
 import { documentToHtmlString } from '@contentful/rich-text-html-renderer'
-import type { TypePageCollection } from '@Types/TypePageCollection'
+
 import GQL_QUERY_PAGE_BY_URL_REFERENCE from '@/graphql/page'
+
+import type { TypePageCollection } from '@Types/TypePageCollection'
 
 const route = useRoute()
 

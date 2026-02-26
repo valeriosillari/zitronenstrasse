@@ -1,5 +1,6 @@
-import packageJson from '../package.json'
 import type { TypeConfig } from '@Types/TypeConfig'
+
+import packageJson from '../package.json'
 
 const PROJECT_NAME = 'Zitronenstrasse'
 

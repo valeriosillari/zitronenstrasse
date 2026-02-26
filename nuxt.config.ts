@@ -1,6 +1,7 @@
+import { fileURLToPath } from 'node:url'
+
 import CONFIG from './config/config'
 import METADATA from './config/metaData'
-import { fileURLToPath } from 'node:url'
 
 export default defineNuxtConfig({
     devtools: { enabled: true },
