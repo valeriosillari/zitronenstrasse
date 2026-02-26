@@ -20,7 +20,7 @@
         "^[./].*\\.(css|scss|sass)$"
     ],
 
-    "importOrderSeparation": true,
+    "importOrderSeparation": false,
     "importOrderSortSpecifiers": true,
     "importOrderParserPlugins": ["typescript", "jsx"]
 }
