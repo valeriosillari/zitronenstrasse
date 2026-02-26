@@ -1,5 +1,4 @@
 import type { TypeMetaData } from '@Types/TypeConfig'
-
 import CONFIG from './config'
 
 // ===============================

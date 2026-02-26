@@ -1,7 +1,5 @@
 import { provideApolloClient } from '@vue/apollo-composable'
-
 import GQL_QUERY_SINGLE_SPOT_BY_ID from '@/graphql/singleSpot'
-
 import type { TypeSingleSpot } from '@Types/TypeSingleSpot'
 
 export const useSingleSpotSelectedStore = defineStore(

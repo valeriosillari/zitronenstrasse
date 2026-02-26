@@ -40,7 +40,6 @@
 
 <script setup lang="ts">
 import GQL_QUERY_PAGE_COLLECTION from '@/graphql/pageCollection'
-
 import type { TypePageCollection } from '@Types/TypePageCollection'
 
 const runtimeConfig = useRuntimeConfig()

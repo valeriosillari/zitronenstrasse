@@ -37,13 +37,9 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-
 import { useWindowSize } from '@vueuse/core'
-
 import { CustomMarker, GoogleMap } from 'vue3-google-map'
-
 import GQL_QUERY_SINGLE_SPOT_COLLECTION from '@/graphql/singleSpotCollection'
-
 import type {
     TypeSingleSpotCollection,
     TypeSingleSpotData,

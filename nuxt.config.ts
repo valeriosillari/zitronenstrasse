@@ -1,5 +1,4 @@
 import { fileURLToPath } from 'node:url'
-
 import CONFIG from './config/config'
 import METADATA from './config/metaData'
 
