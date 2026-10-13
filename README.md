@@ -24,13 +24,13 @@ Now you set the right keys. You're ready to start
 
 ```bash
 # install dependencies
-$ bun install
+$ yarn install
 
 # serve with hot reload at localhost:8000
-$ bun dev
+$ yarn dev
 
 # generate BUILD project
-$ bun deploy-build
+$ yarn deploy-build
 ```
 
 ### DEPLOY LOGIC/NOTE
@@ -44,7 +44,6 @@ Meaning: you can generate at deploy, but then you should use a GraphQL an "exter
 
 ### TODO
 
-- Nuxt 4 set, but NODE version + all packages need to be checked. if we update them we got conflicts/issue
 - better image lazy fade effect
 - check timeout and timing as config var?
 - google map component: check object used (mapRef.value)
@@ -53,6 +52,7 @@ Meaning: you can generate at deploy, but then you should use a GraphQL an "exter
 - split sass variables in more files?
 - sass font file with all vars
 - transition between pages (improve animations)
+- devTools v4 (now beta with minor issues)
 
 ### NICE TO HAVE
 

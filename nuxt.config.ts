@@ -7,9 +7,10 @@ export default defineNuxtConfig({
 
     devServer: {
         port: CONFIG.localPort,
+        https: true,
     },
 
-    //  "forced" typescript checks | very strict mode
+    // "forced" typescript checks | very strict mode
     typescript: {
         typeCheck: true,
     },
@@ -75,7 +76,7 @@ export default defineNuxtConfig({
     },
 
     site: {
-        // url on local + bun will give a warning on bun install. it's all fine.
+        // url on local will give a warning on packages install. it's all fine.
         url: CONFIG.appMainUrl,
         name: CONFIG.title,
     },
