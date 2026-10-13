@@ -9,6 +9,9 @@ dist
 # Node dependencies
 node_modules
 
+# Yarn
+.yarn/install-state.gz
+
 # Logs
 logs
 *.log
