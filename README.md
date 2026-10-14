@@ -44,7 +44,6 @@ Meaning: you can generate at deploy, but then you should use a GraphQL an "exter
 
 ### TODO
 
-- check no JS at back to homepage
 - check warning on pipeline (vercel)
 
 - better image lazy fade effect
