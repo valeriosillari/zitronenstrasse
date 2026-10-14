@@ -120,9 +120,6 @@ export default defineNuxtConfig({
         head: {
             htmlAttrs: {
                 lang: 'en',
-                // no js class (as Modernizr).
-                // removed later by the application (by utils function on app level)
-                class: CONFIG.htmlNoJsClass,
             },
 
             title: CONFIG.title,
