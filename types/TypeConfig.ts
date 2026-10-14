@@ -1,8 +1,6 @@
 export type TypeConfig = {
     projectName: string
     authorName: string
-    htmlNoJsClass: string
-    htmlYesJsClass: string
     title: string
     appMainUrl: string
     authorSiteRoot: string

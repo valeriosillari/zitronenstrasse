@@ -22,8 +22,6 @@ export default defineNuxtConfig({
         // public
         public: {
             projectName: CONFIG.projectName,
-            htmlNoJsClass: CONFIG.htmlNoJsClass,
-            htmlYesJsClass: CONFIG.htmlYesJsClass,
             limitQueryGql: 5,
             appVersion: CONFIG.appVersion,
             authorSiteRoot: CONFIG.authorSiteRoot,
