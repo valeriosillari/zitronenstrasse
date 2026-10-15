@@ -13,16 +13,16 @@ help:
 	@echo "  make fix           - Fix lint and formatting issues"
 
 install:
-	yarn install
+	bun install
 
 dev:
-	yarn dev
+	bun run dev
 
 build:
-	yarn build
+	bun run build
 
 check:
-	yarn check-all
+	bun run check-all
 
 fix:
-	yarn fix-all
+	bun run fix-all

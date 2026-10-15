@@ -5,10 +5,13 @@
     "author": "Valerio Sillari",
     "license": "GPL-3.0",
     "type": "module",
-    "packageManager": "yarn@4.18.1",
+    "engines": {
+        "node": "24.21.0",
+        "npm": "11.19.0"
+    },
     "volta": {
         "node": "24.21.0",
-        "yarn": "4.18.1"
+        "npm": "11.19.0"
     },
     "scripts": {
         "build": "nuxt build",
@@ -21,9 +24,9 @@
         "lint:fix": "eslint . --fix",
         "prettier:check": "prettier . --check",
         "prettier:fix": "prettier --write --list-different .",
-        "check-all": "yarn types:check && yarn lint:check && yarn prettier:check",
-        "fix-all": "yarn lint:fix && yarn prettier:fix",
-        "deploy-build": "yarn check-all && yarn run build"
+        "check-all": "bun run types:check && bun run lint:check && bun run prettier:check",
+        "fix-all": "bun run lint:fix && bun run prettier:fix",
+        "deploy-build": "bun run check-all && bun run build"
     },
     "dependencies": {
         "@contentful/rich-text-html-renderer": "^17.0.0",
