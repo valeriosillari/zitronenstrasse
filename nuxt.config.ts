@@ -24,6 +24,7 @@ export default defineNuxtConfig({
             projectName: CONFIG.projectName,
             limitQueryGql: 5,
             appVersion: CONFIG.appVersion,
+            gitCommitHash: CONFIG.gitCommitHash,
             authorSiteRoot: CONFIG.authorSiteRoot,
             appMainUrl: CONFIG.appMainUrl,
             authorName: CONFIG.authorName,

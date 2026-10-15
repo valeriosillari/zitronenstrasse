@@ -4,9 +4,14 @@
             <div class="row align-items-center">
                 <div class="col-10 col-sm-7 col-md-8 col-left">
                     <p class="footer-text">
-                        {{ runtimeConfig.public.projectName }} {{ dateYear }} |
-                        version
-                        {{ appVersion }}
+                        <span>
+                            {{ runtimeConfig.public.projectName }}
+                            {{ dateYear }}
+                        </span>
+                        |
+                        <span>v {{ appVersion }}</span>
+                        |
+                        <span>{{ gitCommitHash }}</span>
                     </p>
 
                     <p class="footer-text">
@@ -46,6 +51,7 @@ const runtimeConfig = useRuntimeConfig()
 
 const dateYear = new Date().getFullYear()
 const appVersion = runtimeConfig.public.appVersion
+const gitCommitHash = runtimeConfig.public.gitCommitHash
 
 const query_collection_vars = {
     limit: runtimeConfig.public.limitQueryGql,

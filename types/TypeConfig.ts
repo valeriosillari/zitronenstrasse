@@ -11,6 +11,7 @@ export type TypeConfig = {
     localPort: number
     twitterSite: string
     appVersion: string
+    gitCommitHash: string
 }
 
 export type TypeHomeLink = {
