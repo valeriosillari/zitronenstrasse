@@ -1,4 +1,4 @@
-import type { TypeMetaData } from '@Types/TypeConfig'
+import type { Meta } from 'unhead/types'
 import CONFIG from './config'
 
 // ===============================
@@ -13,8 +13,7 @@ const ogImage = `${CONFIG.appMainUrl}/app-icons/logo_og_image.png`
 const ogImageWidth = '1200'
 const ogImageHeight = '630'
 
-// ======================
-const METADATA: TypeMetaData = [
+const METADATA = [
     // viewport set on mobile
     {
         name: 'viewport',
@@ -129,6 +128,6 @@ const METADATA: TypeMetaData = [
         name: 'twitter:image:alt',
         content: ogTitle,
     },
-]
+] satisfies Meta[]
 
 export default METADATA

@@ -39,8 +39,6 @@ if (process.env.NODE_ENV === 'production' && process.env.VERCEL_URL) {
 const CONFIG: TypeConfig = {
     projectName: PROJECT_NAME,
     authorName: AUTHOR_NAME,
-    htmlNoJsClass: 'no-js',
-    htmlYesJsClass: 'js',
     title: packageJson.description,
     appMainUrl: APP_ROOT_URL,
     authorSiteRoot: AUTHOR_SITE_ROOT,

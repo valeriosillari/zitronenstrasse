@@ -1,8 +1,6 @@
 export type TypeConfig = {
     projectName: string
     authorName: string
-    htmlNoJsClass: string
-    htmlYesJsClass: string
     title: string
     appMainUrl: string
     authorSiteRoot: string
@@ -14,14 +12,6 @@ export type TypeConfig = {
     twitterSite: string
     appVersion: string
 }
-
-export type TypeMetaDataItem = {
-    name?: string
-    property?: string
-    content: string
-}
-
-export type TypeMetaData = TypeMetaDataItem[]
 
 export type TypeHomeLink = {
     url: string

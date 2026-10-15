@@ -7,9 +7,10 @@ export default defineNuxtConfig({
 
     devServer: {
         port: CONFIG.localPort,
+        https: true,
     },
 
-    //  "forced" typescript checks | very strict mode
+    // "forced" typescript checks | very strict mode
     typescript: {
         typeCheck: true,
     },
@@ -21,8 +22,6 @@ export default defineNuxtConfig({
         // public
         public: {
             projectName: CONFIG.projectName,
-            htmlNoJsClass: CONFIG.htmlNoJsClass,
-            htmlYesJsClass: CONFIG.htmlYesJsClass,
             limitQueryGql: 5,
             appVersion: CONFIG.appVersion,
             authorSiteRoot: CONFIG.authorSiteRoot,
@@ -75,7 +74,7 @@ export default defineNuxtConfig({
     },
 
     site: {
-        // url on local + bun will give a warning on bun install. it's all fine.
+        // url on local will give a warning on packages install. it's all fine.
         url: CONFIG.appMainUrl,
         name: CONFIG.title,
     },
@@ -119,9 +118,6 @@ export default defineNuxtConfig({
         head: {
             htmlAttrs: {
                 lang: 'en',
-                // no js class (as Modernizr).
-                // removed later by the application (by utils function on app level)
-                class: CONFIG.htmlNoJsClass,
             },
 
             title: CONFIG.title,

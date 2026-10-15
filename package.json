@@ -1,12 +1,17 @@
 {
     "name": "zitronenstrasse",
     "description": "Zitronenstrasse | Romantic spots in Berlin.",
-    "version": "23.0.1",
+    "version": "24.0.0",
     "author": "Valerio Sillari",
     "license": "GPL-3.0",
+    "type": "module",
+    "engines": {
+        "node": "24.21.0",
+        "npm": "11.19.0"
+    },
     "volta": {
-        "node": "20.19.6",
-        "npm": "10.9.4"
+        "node": "24.21.0",
+        "npm": "11.19.0"
     },
     "scripts": {
         "build": "nuxt build",
@@ -19,14 +24,14 @@
         "lint:fix": "eslint . --fix",
         "prettier:check": "prettier . --check",
         "prettier:fix": "prettier --write --list-different .",
-        "check-all": "bun types:check && bun lint:check && bun prettier:check",
-        "fix-all": "bun lint:fix && bun prettier:fix",
-        "deploy-build": "bun check-all && bun run build"
+        "check-all": "bun run types:check && bun run lint:check && bun run prettier:check",
+        "fix-all": "bun run lint:fix && bun run prettier:fix",
+        "deploy-build": "bun run check-all && bun run build"
     },
     "dependencies": {
         "@contentful/rich-text-html-renderer": "^17.0.0",
         "@contentful/rich-text-types": "^17.0.0",
-        "@nuxt/image": "^1.9.0",
+        "@nuxt/image": "^2.1.0",
         "@nuxtjs/apollo": "^5.0.0-alpha.16",
         "@nuxtjs/google-fonts": "^3.2.0",
         "@nuxtjs/sitemap": "^7.2.9",
@@ -34,28 +39,31 @@
         "@trivago/prettier-plugin-sort-imports": "^6.0.2",
         "@vueuse/core": "^13.0.0",
         "@vueuse/nuxt": "^13.0.0",
-        "nuxt": "^4.0.0",
+        "nuxt": "^4.6.1",
         "nuxt-gtag": "^3.0.2",
         "pinia": "^2.1.7",
+        "unhead": "^3.4.2",
         "vue": "^3.5.13",
-        "vue-router": "^4.5.0",
         "vue3-google-map": "^0.21.1"
     },
     "devDependencies": {
         "@fortawesome/fontawesome-svg-core": "^6.6.0",
         "@fortawesome/free-brands-svg-icons": "^6.6.0",
         "@fortawesome/vue-fontawesome": "^3.0.8",
-        "@nuxt/eslint": "^1.2.0",
+        "@nuxt/eslint": "^1.17.0",
         "@types/google.maps": "^3.58.1",
         "@types/node": "^22.13.11",
         "bootstrap": "^5.3.7",
         "breakpoint-sass": "^3.0.0",
-        "eslint": "^9.22.0",
-        "eslint-config-prettier": "^10.1.1",
-        "eslint-plugin-prettier": "^5.2.3",
-        "prettier": "^3.3.2",
+        "eslint": "^10.12.0",
+        "eslint-config-prettier": "^10.1.8",
+        "eslint-plugin-prettier": "^5.5.7",
+        "prettier": "^3.9.10",
         "sass": "1.77.6",
         "typescript": "^5.9.3",
-        "vue-tsc": "^3.2.2"
+        "vue-tsc": "^3.3.13"
+    },
+    "resolutions": {
+        "@nuxt/devtools": "4.0.0-beta.4"
     }
 }
