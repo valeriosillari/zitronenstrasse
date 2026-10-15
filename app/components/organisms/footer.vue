@@ -4,9 +4,12 @@
             <div class="row align-items-center">
                 <div class="col-10 col-sm-7 col-md-8 col-left">
                     <p class="footer-text">
-                        {{ runtimeConfig.public.projectName }} {{ dateYear }} |
-                        version
-                        {{ appVersion }}
+                        <span>
+                            {{ runtimeConfig.public.projectName }}
+                            {{ dateYear }}
+                        </span>
+                        |
+                        <span>version {{ appVersion }}</span>
                     </p>
 
                     <p class="footer-text">
