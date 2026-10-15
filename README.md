@@ -45,7 +45,8 @@ Meaning: you can generate at deploy, but then you should use a GraphQL an "exter
 ### TODO
 
 - check warning on pipeline (vercel)
-
+- devTools v4 (now beta with minor issues)
+- remove bun and set NPM or YARN (so I can use Volta properly for node + package manager)
 - better image lazy fade effect
 - check timeout and timing as config var?
 - google map component: check object used (mapRef.value)
@@ -54,7 +55,6 @@ Meaning: you can generate at deploy, but then you should use a GraphQL an "exter
 - split sass variables in more files?
 - sass font file with all vars
 - transition between pages (improve animations)
-- devTools v4 (now beta with minor issues)
 
 ### NICE TO HAVE
 
