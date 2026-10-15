@@ -8,9 +8,10 @@ help:
 	@echo "Available commands:"
 	@echo "  make install       - Install dependencies"
 	@echo "  make dev           - Start development server"
-	@echo "  make build         - Build Nuxt application"
 	@echo "  make check         - Run all code checks"
 	@echo "  make fix           - Fix lint and formatting issues"
+	@echo "  make build         - Build Nuxt application"
+	@echo "  make deploy  		- Run all checks and build the application"
 
 install:
 	bun install
@@ -18,11 +19,14 @@ install:
 dev:
 	bun dev
 
-build:
-	bun run build
-
 check:
 	bun check-all
 
 fix:
 	bun fix-all
+
+build:
+	bun run build	
+
+deploy:
+	bun run deploy-build
