@@ -16,13 +16,13 @@ install:
 	bun install
 
 dev:
-	bun run dev
+	bun dev
 
 build:
 	bun run build
 
 check:
-	bun run check-all
+	bun check-all
 
 fix:
-	bun run fix-all
+	bun fix-all

@@ -20,17 +20,17 @@ Based on **[NuxtJS](https://nuxt.com/)**, **[Contentful Headless CMS](https://ww
 
 Now you set the right keys. You're ready to start
 
-### BASIC CLI COMMANDS (or using Make)
+### BASIC CLI COMMANDS
 
 ```bash
 # install dependencies
 $ bun install
 
 # serve with hot reload at localhost:8000
-$ bun run dev
+$ bun dev
 
 # generate BUILD project
-$ bun run deploy-build
+$ bun deploy-build
 ```
 
 ### DEPLOY LOGIC/NOTE
