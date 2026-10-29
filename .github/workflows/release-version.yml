@@ -1,20 +1,20 @@
 name: Release Version
 
 on:
-  push:
-    branches:
-      - main
+    push:
+        branches:
+            - main
 
 permissions:
-  contents: write
-  pull-requests: write
+    contents: write
+    pull-requests: write
 
 jobs:
-  release-version:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Create or update release pull request
-        uses: googleapis/release-please-action@v4
-        with:
-          config-file: .github/workflows/release-version-config.json
-          manifest-file: .github/workflows/release-version-manifest.json
+    release-version:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Create or update release pull request
+              uses: googleapis/release-please-action@v4
+              with:
+                  config-file: .github/workflows/release-version-config.json
+                  manifest-file: .github/workflows/release-version-manifest.json
