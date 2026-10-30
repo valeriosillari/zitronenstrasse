@@ -24,13 +24,13 @@ Now you set the right keys. You're ready to start
 
 ```bash
 # install dependencies
-$ bun install
+$ npm install
 
 # serve with hot reload at localhost:8000
-$ bun dev
+$ npm run dev
 
 # generate BUILD project
-$ bun deploy-build
+$ npm run deploy-build
 ```
 
 ### DEPLOY LOGIC/NOTE
@@ -44,7 +44,6 @@ Meaning: you can generate at deploy, but then you should use a GraphQL an "exter
 
 ### TODO
 
-- remove bun and set NPM or YARN (so I can use Volta properly for node + package manager)
 - prettier handle also json files for github workflow
 - check warning on pipeline (vercel)
 - devTools v4 (now beta with minor issues)
