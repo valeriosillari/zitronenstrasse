@@ -47,9 +47,9 @@
         "vue3-google-map": "^0.21.1"
     },
     "devDependencies": {
-        "@fortawesome/fontawesome-svg-core": "^6.6.0",
-        "@fortawesome/free-brands-svg-icons": "^6.6.0",
-        "@fortawesome/vue-fontawesome": "^3.0.8",
+        "@fortawesome/fontawesome-svg-core": "^7.3.1",
+        "@fortawesome/free-brands-svg-icons": "^7.3.1",
+        "@fortawesome/vue-fontawesome": "^3.3.3",
         "@nuxt/eslint": "^1.17.0",
         "@types/google.maps": "^3.58.1",
         "@types/node": "^22.13.11",
