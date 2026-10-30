@@ -44,9 +44,10 @@ Meaning: you can generate at deploy, but then you should use a GraphQL an "exter
 
 ### TODO
 
+- remove bun and set NPM or YARN (so I can use Volta properly for node + package manager)
+- prettier handle also json files for github workflow
 - check warning on pipeline (vercel)
 - devTools v4 (now beta with minor issues)
-- remove bun and set NPM or YARN (so I can use Volta properly for node + package manager)
 - better image lazy fade effect
 - check timeout and timing as config var?
 - google map component: check object used (mapRef.value)
@@ -60,7 +61,6 @@ Meaning: you can generate at deploy, but then you should use a GraphQL an "exter
 
 - error page : 1) use layout, show FOOTER. 2) no transition effect 3) button back with NO js
 - filter (where) for data of single page (gql query)
-- load data at page switch? cannot pre generated all data? >> REAL STATIC + git hooks?
 - check speed insight (June 2019). load map better (and later), for performance
 
 ### ROAD MAP
