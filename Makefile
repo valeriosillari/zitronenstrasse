@@ -14,19 +14,19 @@ help:
 	@echo "  make deploy  		- Run all checks and build the application"
 
 install:
-	bun install
+	npm install
 
 dev:
-	bun dev
+	npm run dev
 
 check:
-	bun check-all
+	npm run check-all
 
 fix:
-	bun fix-all
+	npm run fix-all
 
 build:
-	bun run build	
+	npm run build
 
 deploy:
-	bun run deploy-build
+	npm run deploy-build
