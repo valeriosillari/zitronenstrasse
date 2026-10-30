@@ -17,4 +17,4 @@ jobs:
               uses: googleapis/release-please-action@v4
               with:
                   config-file: .github/workflows/release-version-config.json
-                  manifest-file: .github/workflows/release-version-manifest.json
+                  manifest-file: release-version-manifest.json
