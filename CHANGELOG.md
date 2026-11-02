@@ -1,5 +1,12 @@
 # Changelog
 
+## [24.1.1](https://github.com/valeriosillari/zitronenstrasse/compare/24.1.0...24.1.1) (2026-11-02)
+
+
+### Features
+
+* update packages ([#102](https://github.com/valeriosillari/zitronenstrasse/issues/102)) ([e134a92](https://github.com/valeriosillari/zitronenstrasse/commit/e134a92c814c8582d5e19ff5400650ad0fb0bcc5))
+
 ## [24.1.0](https://github.com/valeriosillari/zitronenstrasse/compare/24.0.1...24.1.0) (2026-10-30)
 
 
