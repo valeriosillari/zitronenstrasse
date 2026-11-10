@@ -14,6 +14,8 @@
 
 <script lang="ts" setup>
 const navigationStore = useNavigationStore()
+const sidebarStore = useSidebarStore()
+const singleSpotSelectedStore = useSingleSpotSelectedStore()
 const route = useRoute()
 // for no-js logic (as Modernizr)
 const isHtmlClassJsEnabled = ref(false)
@@ -36,6 +38,8 @@ watch(
     () => route.fullPath,
     () => {
         navigationStore.resetNavState()
+        sidebarStore.closeSidebarState()
+        singleSpotSelectedStore.resetSelection()
     }
 )
 

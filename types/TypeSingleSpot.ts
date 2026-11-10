@@ -1,8 +1,17 @@
-export type TypeSingleSpotData = {
+export type TypeSingleSpotMapItem = {
     id: number
     sys: {
         id: string
     }
+    title: string
+    address: {
+        lat: number
+        lon: number
+    }
+}
+
+export type TypeSingleSpotDetails = {
+    id: number
     title: string
     imageCredits?: string
     image?: {
@@ -10,21 +19,18 @@ export type TypeSingleSpotData = {
         url: string
     }
     addressStreet: string
-    address: {
-        lat: number
-        lon: number
-    }
     urlWebsite?: string
     urlFacebook?: string
     urlInstagram?: string
 }
 
-export type TypeSingleSpot = {
-    singleSpot: TypeSingleSpotData
+export type TypeSingleSpotByIdQuery = {
+    singleSpot: TypeSingleSpotDetails | null
 }
 
 export type TypeSingleSpotCollection = {
     singleSpotCollection: {
-        items: TypeSingleSpotData[]
+        total: number
+        items: TypeSingleSpotMapItem[]
     }
 }

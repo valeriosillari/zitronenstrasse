@@ -1,5 +1,5 @@
 <template>
-    <section v-if="currentSpotData && isSpotShown" class="b-place-details">
+    <section v-if="currentSpotData" class="b-place-details">
         <h2 class="place-details-heading">{{ currentSpotData.title }}</h2>
 
         <div class="place-details-thumb-area">
@@ -60,19 +60,20 @@
         </div>
     </section>
 
-    <AtomsLoaderSpinner v-else />
+    <div v-else-if="isLoading" class="b-place-details-loading">
+        <AtomsLoaderSpinner />
+    </div>
+
+    <p v-else-if="errorMessage" class="b-place-details-error" role="alert">
+        {{ errorMessage }}
+    </p>
 </template>
 
 <script setup lang="ts">
-import type { TypeSingleSpotData } from '@Types/TypeSingleSpot'
-
-const currentSpotData = ref<TypeSingleSpotData | null>(null)
-
-const isSpotShown = computed(() => {
-    return singleSpotSelectedStore.isSpotShown
-})
-
 const singleSpotSelectedStore = useSingleSpotSelectedStore()
+const currentSpotData = computed(() => singleSpotSelectedStore.currentSpotData)
+const isLoading = computed(() => singleSpotSelectedStore.status === 'loading')
+const errorMessage = computed(() => singleSpotSelectedStore.errorMessage)
 
 const imageUrl = computed(() => {
     if (!currentSpotData.value || !currentSpotData.value.image) {
@@ -95,16 +96,6 @@ const imageTitle = computed(() => {
 
     return currentSpotData.value.image.title
 })
-
-watch(
-    () => singleSpotSelectedStore.currentSpotData,
-    () => {
-        if (singleSpotSelectedStore.currentSpotData) {
-            currentSpotData.value =
-                singleSpotSelectedStore.currentSpotData.singleSpot
-        }
-    }
-)
 </script>
 
 <style lang="sass">

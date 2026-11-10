@@ -36,13 +36,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { onScopeDispose, ref } from 'vue'
 import { useWindowSize } from '@vueuse/core'
 import { CustomMarker, GoogleMap } from 'vue3-google-map'
 import GQL_QUERY_SINGLE_SPOT_COLLECTION from '@/graphql/singleSpotCollection'
 import type {
     TypeSingleSpotCollection,
-    TypeSingleSpotData,
+    TypeSingleSpotMapItem,
 } from '@Types/TypeSingleSpot'
 
 const { width } = useWindowSize()
@@ -53,8 +53,6 @@ const mapRef = ref<InstanceType<typeof GoogleMap> | null>(null)
 
 const sidebarStore = useSidebarStore()
 const singleSpotSelectedStore = useSingleSpotSelectedStore()
-
-const currentSpotData = computed(() => singleSpotSelectedStore.currentSpotData)
 
 const mapCenter = {
     lat: 52.48383,
@@ -73,7 +71,7 @@ const { data } = await useAsyncQuery<TypeSingleSpotCollection>(
     }
 )
 
-const placesList = data.value?.singleSpotCollection?.items
+const placesList = data.value?.singleSpotCollection?.items ?? []
 
 // function for PAN movement that also consider some window movement (to balance center with off canvas)
 const centerMapToCurrentPlace = (lat: number, lng: number): void => {
@@ -111,7 +109,9 @@ const waitForPanEnd = (map: google.maps.Map) =>
         google.maps.event.addListenerOnce(map, 'idle', resolve)
     })
 
-const moveMapByPan = async (singlePlace: TypeSingleSpotData): Promise<void> => {
+const moveMapByPan = async (
+    singlePlace: TypeSingleSpotMapItem
+): Promise<void> => {
     if (mapRef.value?.map) {
         // if NOT mobile screen (sidebar take all screen, pan not necessary)
         // set pan to center current pin / spot (sidebar opened, you need to pan)
@@ -127,28 +127,42 @@ const moveMapByPan = async (singlePlace: TypeSingleSpotData): Promise<void> => {
     }
 }
 
+let markerSelectionTimer: ReturnType<typeof setTimeout> | undefined
+
 // at click get marker/place ID (from CMS)
-const clickMarkerHandler = async (singlePlace: TypeSingleSpotData) => {
-    // if click on same marker (and sidebar OPENED with already current place) >> do nothing
+const clickMarkerHandler = async (singlePlace: TypeSingleSpotMapItem) => {
+    const singleSpotSysId = singlePlace.sys.id
+
+    // Ignore a repeated click while this place is already open or loading.
     if (
         sidebarStore.isSidebarOpen &&
-        currentSpotData.value &&
-        currentSpotData.value.singleSpot.id === singlePlace.id
+        singleSpotSelectedStore.selectedSpotSysId === singleSpotSysId &&
+        (singleSpotSelectedStore.status === 'loading' ||
+            singleSpotSelectedStore.status === 'success')
     ) {
-        return false
+        return
     }
 
-    // reset spot data (from previous iteration)
-    singleSpotSelectedStore.resetSpotShowState()
+    // Load in parallel with the map pan. The store ignores stale responses.
+    void singleSpotSelectedStore.selectSpot(singleSpotSysId)
 
     // map movement (PAN) + jumping pin (wait for it on JS for UI animation)
     await moveMapByPan(singlePlace)
+
+    // A newer marker click or route change may have happened during the pan.
+    if (singleSpotSelectedStore.selectedSpotSysId !== singleSpotSysId) return
+
+    if (markerSelectionTimer) clearTimeout(markerSelectionTimer)
 
     // check if we need to open sidebar (open it or not - already opened)
     // added TIMEOUT for UX:
     // when pan is done, add a "wait moment" for opening sidebar and "pin jump".
     // to avoid "jumpy effect" and too much animation next to each other
-    setTimeout(() => {
+    markerSelectionTimer = setTimeout(() => {
+        if (singleSpotSelectedStore.selectedSpotSysId !== singleSpotSysId) {
+            return
+        }
+
         // jump pin
         currentMarkerAnimation(singlePlace.id)
 
@@ -157,10 +171,11 @@ const clickMarkerHandler = async (singlePlace: TypeSingleSpotData) => {
             sidebarStore.openSidebarState()
         }
     }, 200)
-
-    // pass spotID to store | to start API call (query GraphQL) and GET new spot data
-    singleSpotSelectedStore.updateSingleSpotSelectedState(singlePlace.sys.id)
 }
+
+onScopeDispose(() => {
+    if (markerSelectionTimer) clearTimeout(markerSelectionTimer)
+})
 
 watch(
     // "mapTilesLoaded" trick: check when all map is set
