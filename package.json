@@ -65,6 +65,6 @@
         "vue-tsc": "^3.3.13"
     },
     "overrides": {
-        "@nuxt/devtools": "^4.0.0"
+        "@nuxt/devtools": "^4.1.0"
     }
 }
