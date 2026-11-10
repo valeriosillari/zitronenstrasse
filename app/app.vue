@@ -6,7 +6,7 @@
     <OrganismsHeader />
 
     <div role="main" class="main-container">
-        <NuxtPage />
+        <NuxtPage :transition="pageTransitionHooks" />
     </div>
 
     <OrganismsFooter />
@@ -17,6 +17,10 @@ const navigationStore = useNavigationStore()
 const sidebarStore = useSidebarStore()
 const singleSpotSelectedStore = useSingleSpotSelectedStore()
 const route = useRoute()
+// Keep the navigation over both pages, then close it after the new page enters.
+const pageTransitionHooks = {
+    onAfterEnter: () => navigationStore.closeNavState(),
+}
 // for no-js logic (as Modernizr)
 const isHtmlClassJsEnabled = ref(false)
 
@@ -37,7 +41,6 @@ useHead({
 watch(
     () => route.fullPath,
     () => {
-        navigationStore.resetNavState()
         sidebarStore.closeSidebarState()
         singleSpotSelectedStore.resetSelection()
     }
@@ -58,7 +61,7 @@ onMounted(() => {
 // page transitions
 .page-enter-active,
 .page-leave-active
-    transition: all 0.5s
+    transition: all $animation_page_transition
 
 .page-enter-from,
 .page-leave-to

@@ -62,7 +62,7 @@ const navigationItemNumber = computed(() => footerLinks.value.length)
     right: $space_00
     width: 100%
     overflow: hidden
-    transition: all .45s ease-in-out
+    transition: all $animation_navigation_overlay ease-in-out
     display: flex
     align-items: center
     justify-content: center

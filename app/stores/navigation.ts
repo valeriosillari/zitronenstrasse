@@ -9,12 +9,8 @@ export const useNavigationStore = defineStore('navigationStore', {
             this.isNavOpen = !this.isNavOpen
         },
 
-        resetNavState() {
-            if (this.isNavOpen) {
-                setTimeout(() => {
-                    this.isNavOpen = false
-                }, 350)
-            }
+        closeNavState() {
+            this.isNavOpen = false
         },
     },
 })
