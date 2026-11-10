@@ -36,7 +36,7 @@
 </template>
 
 <script setup lang="ts">
-import { onScopeDispose, ref } from 'vue'
+import { onUnmounted, ref } from 'vue'
 import { useWindowSize } from '@vueuse/core'
 import { CustomMarker, GoogleMap } from 'vue3-google-map'
 import GQL_QUERY_SINGLE_SPOT_COLLECTION from '@/graphql/singleSpotCollection'
@@ -173,7 +173,7 @@ const clickMarkerHandler = async (singlePlace: TypeSingleSpotMapItem) => {
     }, 200)
 }
 
-onScopeDispose(() => {
+onUnmounted(() => {
     if (markerSelectionTimer) clearTimeout(markerSelectionTimer)
 })
 
