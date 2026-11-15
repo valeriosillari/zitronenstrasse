@@ -6,12 +6,12 @@
     "license": "GPL-3.0",
     "type": "module",
     "engines": {
-        "node": "24.22.1",
-        "npm": "12.2.1"
+        "node": "26.13.1",
+        "npm": "12.2.2"
     },
     "volta": {
-        "node": "24.22.1",
-        "npm": "12.2.1"
+        "node": "26.13.1",
+        "npm": "12.2.2"
     },
     "scripts": {
         "build": "nuxt build",
