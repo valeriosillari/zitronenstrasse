@@ -44,8 +44,7 @@
 </template>
 
 <script setup lang="ts">
-import GQL_QUERY_PAGE_COLLECTION from '@/graphql/pageCollection'
-import type { TypePageCollection } from '@Types/TypePageCollection'
+import { usePageList } from '@/composables/usePageList'
 
 const runtimeConfig = useRuntimeConfig()
 
@@ -53,17 +52,7 @@ const dateYear = new Date().getFullYear()
 const appVersion = runtimeConfig.public.appVersion
 const gitCommitHash = runtimeConfig.public.gitCommitHash
 
-const query_collection_vars = {
-    limit: runtimeConfig.public.limitQueryGql,
-    urlReferenceIn: ['privacy'],
-}
-
-const { data } = await useAsyncQuery<TypePageCollection>(
-    GQL_QUERY_PAGE_COLLECTION,
-    query_collection_vars
-)
-
-const footerLinks = data.value?.pageCollection?.items
+const { pages: footerLinks } = await usePageList(['privacy'])
 </script>
 
 <style lang="sass">
