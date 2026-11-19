@@ -2,7 +2,7 @@
     <nav :class="['b-navigation', naviActiveClass]">
         <ul class="navigation-list">
             <li
-                v-for="link in footerLinks"
+                v-for="link in navigationLinks"
                 :key="link.title"
                 class="navigation-item"
             >
@@ -19,11 +19,8 @@
 </template>
 
 <script setup lang="ts">
-import GQL_QUERY_PAGE_COLLECTION from '@/graphql/pageCollection'
+import { usePageList } from '@/composables/usePageList'
 import HOME_LINK from '@Config/homeLink'
-import type { TypePageCollection } from '@Types/TypePageCollection'
-
-const runtimeConfig = useRuntimeConfig()
 
 const navigationStore = useNavigationStore()
 
@@ -32,36 +29,16 @@ const naviActiveClass = computed(() => ({
     'is-overlay-show': navigationStore.isNavOpen,
 }))
 
-const query_collection_vars = {
-    limit: runtimeConfig.public.limitQueryGql,
-    urlReferenceIn: ['about', 'contacts'],
-}
+const { pages } = await usePageList(['about', 'contacts'])
 
-const { data } = await useAsyncQuery<TypePageCollection>(
-    GQL_QUERY_PAGE_COLLECTION,
-    query_collection_vars
-)
-
-const footerLinks = [
+const navigationLinks = computed(() => [
     // home
     {
         urlReference: HOME_LINK.url,
         title: HOME_LINK.text,
     },
-]
-
-const responseDataLinksArray = data.value?.pageCollection?.items
-
-if (responseDataLinksArray) {
-    responseDataLinksArray.forEach((singleLink) => {
-        footerLinks.push(singleLink)
-    })
-}
-
-// list by API + 1 extra for Home "added statically"
-const navigationItemNumber = ref(
-    responseDataLinksArray ? responseDataLinksArray.length + 1 : null
-)
+    ...pages.value,
+])
 </script>
 
 <style lang="sass">
@@ -103,7 +80,7 @@ const navigationItemNumber = ref(
         // LI
         .navigation-item
             display: block
-            height: calc(100% / v-bind(navigationItemNumber))
+            height: calc(100% / v-bind('navigationLinks.length'))
             position: relative
             opacity: 0
             display: flex
