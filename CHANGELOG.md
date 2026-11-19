@@ -1,5 +1,12 @@
 # Changelog
 
+## [24.2.0](https://github.com/valeriosillari/zitronenstrasse/compare/24.1.1...24.2.0) (2026-11-19)
+
+
+### Features
+
+* set composable for handling page list (on navigation and footer) ([#104](https://github.com/valeriosillari/zitronenstrasse/issues/104)) ([cd00abb](https://github.com/valeriosillari/zitronenstrasse/commit/cd00abbb624d820c54a0a322fa3a40d55af8f2ae))
+
 ## [24.1.1](https://github.com/valeriosillari/zitronenstrasse/compare/24.1.0...24.1.1) (2026-11-02)
 
 
