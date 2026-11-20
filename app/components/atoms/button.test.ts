@@ -1,6 +1,6 @@
+import { computed } from 'vue'
 import { mount } from '@vue/test-utils'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
-import { computed } from 'vue'
 import Button from './button.vue'
 
 describe('Button', () => {
@@ -20,5 +20,14 @@ describe('Button', () => {
 
         expect(wrapper.text()).toBe('Save')
         expect(wrapper.attributes('title')).toBe('Save')
+    })
+
+    it('renders its title and its text | uses the provided title and keeps the button text', () => {
+        const wrapper = mount(Button, {
+            props: { text: 'Save', title: 'Save the changes' },
+        })
+
+        expect(wrapper.text()).toBe('Save')
+        expect(wrapper.attributes('title')).toBe('Save the changes')
     })
 })
