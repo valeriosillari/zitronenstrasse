@@ -30,4 +30,12 @@ describe('Button', () => {
         expect(wrapper.text()).toBe('Save')
         expect(wrapper.attributes('title')).toBe('Save the changes')
     })
+
+    it('emits clickBtn once when clicked', async () => {
+        const wrapper = mount(Button)
+
+        await wrapper.get('button').trigger('click')
+
+        expect(wrapper.emitted('clickBtn')).toHaveLength(1)
+    })
 })
