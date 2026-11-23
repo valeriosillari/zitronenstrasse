@@ -8,6 +8,7 @@ export type TypeSingleSpotData = {
     image?: {
         title?: string
         url: string
+        webpUrl: string
     }
     addressStreet: string
     address: {

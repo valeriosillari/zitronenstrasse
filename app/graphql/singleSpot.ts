@@ -8,6 +8,14 @@ const GQL_QUERY_SINGLE_SPOT_BY_ID = gql`
                 url(
                     transform: { width: 440, height: 250, resizeStrategy: FILL }
                 )
+                webpUrl: url(
+                    transform: {
+                        format: WEBP
+                        width: 440
+                        height: 250
+                        resizeStrategy: FILL
+                    }
+                )
             }
             imageCredits
             addressStreet

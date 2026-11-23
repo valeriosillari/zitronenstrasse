@@ -7,7 +7,7 @@
                 <NuxtImg
                     class="place-details-thumb-image"
                     :alt="imageTitle"
-                    :src="imageUrl"
+                    :src="imageUrlWebP"
                     loading="lazy"
                 />
             </div>
@@ -74,12 +74,12 @@ const isSpotShown = computed(() => {
 
 const singleSpotSelectedStore = useSingleSpotSelectedStore()
 
-const imageUrl = computed(() => {
+const imageUrlWebP = computed(() => {
     if (!currentSpotData.value || !currentSpotData.value.image) {
         return '/image/place_image_fallback.jpg'
     }
 
-    return currentSpotData.value.image.url
+    return currentSpotData.value.image.webpUrl
 })
 
 const imageTitle = computed(() => {
