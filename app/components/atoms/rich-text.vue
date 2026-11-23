@@ -1,15 +1,31 @@
 <template>
-    <div class="b-rich-text" v-html="richText" />
+    <component
+        :is="'div'"
+        v-bind="{ innerHTML: sanitizedHtml }"
+        class="b-rich-text"
+    />
 </template>
 
 <script lang="ts" setup>
+import sanitizeHtml from 'sanitize-html'
+
 const props = defineProps({
     richText: {
         type: String,
         required: true,
     },
 })
-const { richText } = props
+
+const sanitizedHtml = computed(() =>
+    sanitizeHtml(props.richText, {
+        allowedTags: [...sanitizeHtml.defaults.allowedTags, 'img'],
+        allowedAttributes: {
+            a: ['href'],
+            img: ['src', 'alt', 'loading'],
+        },
+        allowedSchemes: ['http', 'https', 'mailto', 'tel'],
+    })
+)
 </script>
 
 <style lang="sass">
