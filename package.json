@@ -1,17 +1,17 @@
 {
     "name": "zitronenstrasse",
     "description": "Zitronenstrasse | Romantic spots in Berlin.",
-    "version": "24.2.0",
+    "version": "24.3.0",
     "author": "Valerio Sillari",
     "license": "GPL-3.0",
     "type": "module",
     "engines": {
-        "node": "24.22.1",
-        "npm": "12.2.1"
+        "node": "26.13.1",
+        "npm": "12.2.3"
     },
     "volta": {
-        "node": "24.22.1",
-        "npm": "12.2.1"
+        "node": "26.13.1",
+        "npm": "12.2.3"
     },
     "scripts": {
         "build": "nuxt build",
