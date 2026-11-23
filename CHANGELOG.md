@@ -1,5 +1,12 @@
 # Changelog
 
+## [24.2.1](https://github.com/valeriosillari/zitronenstrasse/compare/24.2.0...24.2.1) (2026-11-23)
+
+
+### Features
+
+* images as webp ([#108](https://github.com/valeriosillari/zitronenstrasse/issues/108)) ([14c2271](https://github.com/valeriosillari/zitronenstrasse/commit/14c2271fcf0c322892922808b529bcf6958fb879))
+
 ## [24.2.0](https://github.com/valeriosillari/zitronenstrasse/compare/24.1.1...24.2.0) (2026-11-19)
 
 
