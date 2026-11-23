@@ -3,5 +3,24 @@
     "useTabs": false,
     "tabWidth": 4,
     "semi": false,
-    "singleQuote": true
+    "singleQuote": true,
+
+    "plugins": ["@trivago/prettier-plugin-sort-imports"],
+
+    "importOrder": [
+        "^vue$",
+        "^nuxt(/.*)?$",
+        "^@vueuse(/.*)?$",
+        "^vue3-.*$",
+        "<THIRD_PARTY_MODULES>",
+        "^@/graphql(/.*)?$",
+        "^@Config(/.*)?$",
+        "^@Types(/.*)?$",
+        "^[./]",
+        "^[./].*\\.(css|scss|sass)$"
+    ],
+
+    "importOrderSeparation": false,
+    "importOrderSortSpecifiers": true,
+    "importOrderParserPlugins": ["typescript", "jsx"]
 }

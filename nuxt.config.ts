@@ -1,3 +1,4 @@
+import { fileURLToPath } from 'node:url'
 import CONFIG from './config/config'
 import METADATA from './config/metaData'
 
@@ -6,20 +7,24 @@ export default defineNuxtConfig({
 
     devServer: {
         port: CONFIG.localPort,
+        https: true,
     },
 
-    //  "forced" typescript checks | very strict mode
+    // "forced" typescript checks | very strict mode
     typescript: {
         typeCheck: true,
     },
 
     runtimeConfig: {
+        // server only | value used to set a proxy api endpoint inside the app itself
+        originalEndpointToBeProxied: CONFIG.apiUrlFullOriginal,
+
+        // public
         public: {
             projectName: CONFIG.projectName,
-            htmlNoJsClass: CONFIG.htmlNoJsClass,
-            htmlYesJsClass: CONFIG.htmlYesJsClass,
             limitQueryGql: 5,
             appVersion: CONFIG.appVersion,
+            gitCommitHash: CONFIG.gitCommitHash,
             authorSiteRoot: CONFIG.authorSiteRoot,
             appMainUrl: CONFIG.appMainUrl,
             authorName: CONFIG.authorName,
@@ -57,17 +62,27 @@ export default defineNuxtConfig({
 
     apollo: {
         clients: {
+            // INFO: 2 endpoints
+            // - one for Server : original Contentful | on server so absolute and protected
+            // - one for Client: application internal api endpoint, with proxied original url
             default: {
-                // GraphQL endpoint (contentful), proxied on my website
-                // note: it needs to be under "www" domain
-                httpEndpoint: CONFIG.apiUrl,
+                // SSR | server: MUST be absolute (Node fetch needs absolute URL)
+                httpEndpoint: CONFIG.apiUrlFullOriginal,
+                // CLIENT | Browser: can be relative at runtime and build
+                browserHttpEndpoint: CONFIG.apiUrlRelative,
             },
         },
     },
 
     site: {
+        // url on local will give a warning on packages install. it's all fine.
         url: CONFIG.appMainUrl,
         name: CONFIG.title,
+    },
+
+    alias: {
+        '@Types': fileURLToPath(new URL('./types', import.meta.url)),
+        '@Config': fileURLToPath(new URL('./config', import.meta.url)),
     },
 
     vite: {
@@ -92,8 +107,8 @@ export default defineNuxtConfig({
         ],
     },
 
-    // all pure code (sass, css, scss ...)
-    css: ['@/assets/sass/root.sass'],
+    // all global css code (sass, css, scss ...)
+    css: ['~/assets/sass/root.sass'],
 
     app: {
         pageTransition: {
@@ -104,9 +119,6 @@ export default defineNuxtConfig({
         head: {
             htmlAttrs: {
                 lang: 'en',
-                // no js class (as Modernizr).
-                // removed later by the application (by utils function on app level)
-                class: CONFIG.htmlNoJsClass,
             },
 
             title: CONFIG.title,

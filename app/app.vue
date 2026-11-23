@@ -15,8 +15,14 @@
 <script lang="ts" setup>
 const navigationStore = useNavigationStore()
 const route = useRoute()
+// for no-js logic (as Modernizr)
+const isHtmlClassJsEnabled = ref(false)
 
 useHead({
+    htmlAttrs: {
+        class: computed(() => (isHtmlClassJsEnabled.value ? 'js' : 'no-js')),
+    },
+
     bodyAttrs: {
         class: computed(() => {
             if (navigationStore.isNavOpen) return 'is-navigation-open-body'
@@ -34,8 +40,7 @@ watch(
 )
 
 onMounted(() => {
-    // no js logic
-    utilsRemoveNoJsClass()
+    isHtmlClassJsEnabled.value = true
 
     console.log('🚀')
 })

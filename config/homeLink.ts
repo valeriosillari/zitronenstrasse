@@ -1,4 +1,4 @@
-import type { TypeHomeLink } from '@/types/TypeConfig'
+import type { TypeHomeLink } from '@Types/TypeConfig'
 
 const HOME_LINK: TypeHomeLink = {
     url: '/',

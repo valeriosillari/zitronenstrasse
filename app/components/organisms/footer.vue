@@ -4,9 +4,14 @@
             <div class="row align-items-center">
                 <div class="col-10 col-sm-7 col-md-8 col-left">
                     <p class="footer-text">
-                        {{ runtimeConfig.public.projectName }} {{ dateYear }} |
-                        version
-                        {{ appVersion }}
+                        <span>
+                            {{ runtimeConfig.public.projectName }}
+                            {{ dateYear }}
+                        </span>
+                        |
+                        <span>v {{ appVersion }}</span>
+                        |
+                        <span>{{ gitCommitHash }}</span>
                     </p>
 
                     <p class="footer-text">
@@ -39,25 +44,15 @@
 </template>
 
 <script setup lang="ts">
-import type { TypePageCollection } from '@/types/TypePageCollection'
-import GQL_QUERY_PAGE_COLLECTION from '@/graphql/pageCollection'
+import { usePageList } from '@/composables/usePageList'
 
 const runtimeConfig = useRuntimeConfig()
 
 const dateYear = new Date().getFullYear()
 const appVersion = runtimeConfig.public.appVersion
+const gitCommitHash = runtimeConfig.public.gitCommitHash
 
-const query_collection_vars = {
-    limit: runtimeConfig.public.limitQueryGql,
-    urlReferenceIn: ['privacy'],
-}
-
-const { data } = await useAsyncQuery<TypePageCollection>(
-    GQL_QUERY_PAGE_COLLECTION,
-    query_collection_vars
-)
-
-const footerLinks = data.value?.pageCollection?.items
+const { pages: footerLinks } = await usePageList(['privacy'])
 </script>
 
 <style lang="sass">
