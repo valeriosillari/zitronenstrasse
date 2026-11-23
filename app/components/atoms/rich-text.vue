@@ -1,9 +1,5 @@
 <template>
-    <component
-        :is="'div'"
-        v-bind="{ innerHTML: sanitizedHtml }"
-        class="b-rich-text"
-    />
+    <div class="b-rich-text" v-bind="{ innerHTML: sanitizedHtml }" />
 </template>
 
 <script lang="ts" setup>
