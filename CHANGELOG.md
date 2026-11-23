@@ -1,5 +1,12 @@
 # Changelog
 
+## [24.3.0](https://github.com/valeriosillari/zitronenstrasse/compare/24.2.1...24.3.0) (2026-11-23)
+
+
+### Features
+
+* update node and npm ([#110](https://github.com/valeriosillari/zitronenstrasse/issues/110)) ([49f9c1b](https://github.com/valeriosillari/zitronenstrasse/commit/49f9c1b25e64da4ff1e0705d896b51629471348f))
+
 ## [24.2.1](https://github.com/valeriosillari/zitronenstrasse/compare/24.2.0...24.2.1) (2026-11-23)
 
 
