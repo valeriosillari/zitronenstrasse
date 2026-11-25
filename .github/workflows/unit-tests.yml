@@ -1,8 +1,8 @@
 name: Unit Tests
 
 on:
-    # Manual trigger for now. Add push and pull_request triggers when
-    # the `test` script is available in package.json.
+    push:
+    pull_request:
     workflow_dispatch:
 
 jobs:
