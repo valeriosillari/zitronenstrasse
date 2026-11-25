@@ -41,7 +41,7 @@
         "@trivago/prettier-plugin-sort-imports": "^6.0.2",
         "@vueuse/core": "^13.0.0",
         "@vueuse/nuxt": "^13.0.0",
-        "nuxt": "^4.6.1",
+        "nuxt": "^4.7.0",
         "nuxt-gtag": "^3.0.2",
         "pinia": "^2.1.7",
         "sanitize-html": "^2.18.2",
