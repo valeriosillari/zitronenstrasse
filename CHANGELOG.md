@@ -1,5 +1,12 @@
 # Changelog
 
+## [24.3.1](https://github.com/valeriosillari/zitronenstrasse/compare/24.3.0...24.3.1) (2026-11-25)
+
+
+### Features
+
+* add vitest ([#112](https://github.com/valeriosillari/zitronenstrasse/issues/112)) ([6902f37](https://github.com/valeriosillari/zitronenstrasse/commit/6902f372eb0a6b5d3c28003dd5cb485438802f07))
+
 ## [24.3.0](https://github.com/valeriosillari/zitronenstrasse/compare/24.2.1...24.3.0) (2026-11-23)
 
 
