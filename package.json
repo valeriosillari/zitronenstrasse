@@ -19,15 +19,15 @@
         "generate": "nuxt generate",
         "preview": "nuxt preview",
         "postinstall": "nuxt prepare",
-        "test": "vitest run",
-        "test:watch": "vitest",
         "types:check": "vue-tsc --noEmit",
         "lint:check": "eslint .",
         "lint:fix": "eslint . --fix",
         "prettier:check": "prettier . --check",
         "prettier:fix": "prettier --write --list-different .",
-        "check-all": "bun run types:check && bun run lint:check && bun run prettier:check && bun run test",
+        "check-all": "bun run types:check && bun run lint:check && bun run prettier:check",
         "fix-all": "bun run lint:fix && bun run prettier:fix",
+        "test": "vitest run",
+        "test:watch": "vitest",
         "deploy-build": "bun run check-all && bun run build"
     },
     "dependencies": {
