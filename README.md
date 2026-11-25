@@ -29,9 +29,17 @@ $ bun install
 # serve with hot reload at localhost:8000
 $ bun dev
 
+# run the Vitest suite once
+$ bun run test
+
+# rerun the Vitest suite when files change
+$ bun run test:watch
+
 # generate BUILD project
 $ bun deploy-build
 ```
+
+`bun test` starts Bun's built-in test runner. Use `bun run test` to run the project's Vitest script.
 
 ### DEPLOY LOGIC/NOTE
 
