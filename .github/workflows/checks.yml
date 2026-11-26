@@ -23,3 +23,17 @@ jobs:
 
             - name: Check Prettier formatting
               run: bun run prettier:check
+
+    unit-tests:
+        name: Unit Tests
+        needs: checks
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out repository
+              uses: actions/checkout@v5
+
+            - name: Set up project
+              uses: ./.github/actions/setup-project
+
+            - name: Run Vitest
+              run: bun run test
