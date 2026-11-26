@@ -4,8 +4,8 @@ on:
     push:
 
 jobs:
-    checks:
-        name: Code Quality Checks
+    check-types:
+        name: Check types
         runs-on: ubuntu-latest
         steps:
             - name: Check out repository
@@ -17,15 +17,37 @@ jobs:
             - name: Check types
               run: bun run types:check
 
+    check-eslint:
+        name: Check ESLint
+        needs: check-types
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out repository
+              uses: actions/checkout@v5
+
+            - name: Set up project
+              uses: ./.github/actions/setup-project
+
             - name: Check ESLint
               run: bun run lint:check
+
+    check-prettier:
+        name: Check Prettier formatting
+        needs: check-eslint
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out repository
+              uses: actions/checkout@v5
+
+            - name: Set up project
+              uses: ./.github/actions/setup-project
 
             - name: Check Prettier formatting
               run: bun run prettier:check
 
     unit-tests:
-        name: Unit Tests
-        needs: checks
+        name: Unit Tests (Vitest)
+        needs: check-prettier
         runs-on: ubuntu-latest
         steps:
             - name: Check out repository
