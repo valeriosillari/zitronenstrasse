@@ -38,4 +38,10 @@ describe('Button', () => {
 
         expect(wrapper.emitted('clickBtn')).toHaveLength(1)
     })
+
+    it('uses the expected button class (intentional CI failure check)', () => {
+        const wrapper = mount(Button)
+
+        expect(wrapper.classes()).toContain('b-button')
+    })
 })
