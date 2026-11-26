@@ -1,15 +1,15 @@
 <template>
-    <div class="b-rich-text" v-html="richText" />
+    <div class="b-rich-text" v-html="safeRichText" />
 </template>
 
 <script lang="ts" setup>
-const props = defineProps({
-    richText: {
-        type: String,
-        required: true,
-    },
-})
-const { richText } = props
+import sanitizeHtml from 'sanitize-html'
+
+const props = defineProps<{
+    richText: string
+}>()
+
+const safeRichText = computed(() => sanitizeHtml(props.richText))
 </script>
 
 <style lang="sass">

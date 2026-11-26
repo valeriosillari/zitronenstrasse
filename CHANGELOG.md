@@ -1,5 +1,12 @@
 # Changelog
 
+## [24.4.0](https://github.com/valeriosillari/zitronenstrasse/compare/24.3.1...24.4.0) (2026-11-25)
+
+
+### Features
+
+* sanitized rich text ([#116](https://github.com/valeriosillari/zitronenstrasse/issues/116)) ([4cc8bbe](https://github.com/valeriosillari/zitronenstrasse/commit/4cc8bbe1dff32c593391c4d2c4d3bfe5e110e03f))
+
 ## [24.3.1](https://github.com/valeriosillari/zitronenstrasse/compare/24.3.0...24.3.1) (2026-11-25)
 
 
