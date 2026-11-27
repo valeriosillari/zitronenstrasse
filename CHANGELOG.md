@@ -1,5 +1,12 @@
 # Changelog
 
+## [24.5.0](https://github.com/valeriosillari/zitronenstrasse/compare/24.4.1...24.5.0) (2026-11-27)
+
+
+### Features
+
+* github actions (polishing) ([#120](https://github.com/valeriosillari/zitronenstrasse/issues/120)) ([185d52c](https://github.com/valeriosillari/zitronenstrasse/commit/185d52ccd3490c29b18d04558cc2c9e9315c924a))
+
 ## [24.4.1](https://github.com/valeriosillari/zitronenstrasse/compare/24.4.0...24.4.1) (2026-11-27)
 
 
