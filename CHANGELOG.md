@@ -1,5 +1,12 @@
 # Changelog
 
+## [24.4.1](https://github.com/valeriosillari/zitronenstrasse/compare/24.4.0...24.4.1) (2026-11-27)
+
+
+### Features
+
+* github action for checks and vitest ([#115](https://github.com/valeriosillari/zitronenstrasse/issues/115)) ([3cb63a2](https://github.com/valeriosillari/zitronenstrasse/commit/3cb63a26866d74df5a921c947b0ae2063c316366))
+
 ## [24.4.0](https://github.com/valeriosillari/zitronenstrasse/compare/24.3.1...24.4.0) (2026-11-25)
 
 
