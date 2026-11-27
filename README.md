@@ -1,6 +1,6 @@
 # Zitronenstrasse
 
-### Romantic Spots in Berlin.
+## Romantic Spots in Berlin
 
 [zitronenstrasse.com](https://zitronenstrasse.com/)
 
@@ -39,8 +39,6 @@ $ bun run test:watch
 $ bun deploy-build
 ```
 
-`bun test` starts Bun's built-in test runner. Use `bun run test` to run the project's Vitest script.
-
 ### DEPLOY LOGIC/NOTE
 
 We deploy using nuxt BUILD, not GENERATE (static site).
@@ -53,7 +51,6 @@ Meaning: you can generate at deploy, but then you should use a GraphQL an "exter
 ### TODO
 
 - remove bun and set NPM or YARN (so I can use Volta properly for node + package manager)
-- prettier handle also json files for github workflow
 - check warning on pipeline (vercel)
 - devTools v4 (now beta with minor issues)
 - better image lazy fade effect
