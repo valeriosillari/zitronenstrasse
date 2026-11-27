@@ -42,7 +42,7 @@ watch(
 onMounted(() => {
     isHtmlClassJsEnabled.value = true
 
-    console.log('🚀 - 2')
+    console.log('🚀')
 })
 </script>
 
