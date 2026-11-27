@@ -1,0 +1,17 @@
+name: Set up project
+description: Set up Node.js and Bun, then install project dependencies
+
+runs:
+    using: composite
+    steps:
+        - name: Set up Node.js
+          uses: actions/setup-node@v5
+          with:
+              node-version: 26.13.1
+
+        - name: Set up Bun
+          uses: oven-sh/setup-bun@v2
+
+        - name: Install dependencies
+          shell: bash
+          run: bun install --frozen-lockfile

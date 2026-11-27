@@ -16,5 +16,5 @@ jobs:
             - name: Create or update release pull request
               uses: googleapis/release-please-action@v4
               with:
-                  config-file: .github/workflows/release-version-config.json
+                  config-file: .github/release-please-config.json
                   manifest-file: release-version-manifest.json
