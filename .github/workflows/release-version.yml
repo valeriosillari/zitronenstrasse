@@ -16,5 +16,8 @@ jobs:
             - name: Create or update release pull request
               uses: googleapis/release-please-action@v4
               with:
+                  # The token used to create the release pull request.
+                  # set and stored on github | no need on repo itself, but on github workflow
+                  token: ${{ secrets.RELEASE_PLEASE_TOKEN }}
                   config-file: .github/release-please-config.json
                   manifest-file: release-version-manifest.json
