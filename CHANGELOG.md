@@ -1,5 +1,12 @@
 # Changelog
 
+## [24.6.0](https://github.com/valeriosillari/zitronenstrasse/compare/24.5.0...24.6.0) (2026-11-28)
+
+
+### Features
+
+* automatic ci logic triggered on release workflow/branch ([#123](https://github.com/valeriosillari/zitronenstrasse/issues/123)) ([6d7dfbe](https://github.com/valeriosillari/zitronenstrasse/commit/6d7dfbe4304a757df36cd1d79392ea4cea6a6724))
+
 ## [24.5.0](https://github.com/valeriosillari/zitronenstrasse/compare/24.4.1...24.5.0) (2026-11-27)
 
 
